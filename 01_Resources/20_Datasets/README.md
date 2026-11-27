@@ -1,20 +1,43 @@
 # Datasets for Exercises and Projects
 
-38 resources (13 core). Built 2026-11-24 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+46 resources (14 core). Built 2026-11-27 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
 ## Contents
 
+- [Earnings-call transcripts](#earnings-call-transcripts) (3)
 - [AI models and releases](#ai-models-and-releases) (1)
-- [Transactions, RFM and CLV](#transactions-rfm-and-clv) (7)
+- [Transactions, RFM and CLV](#transactions-rfm-and-clv) (8)
 - [Experiments, uplift and causal inference](#experiments-uplift-and-causal-inference) (6)
 - [Pricing, choice and conjoint](#pricing-choice-and-conjoint) (5)
 - [Prediction: churn, response, CTR, recommendations](#prediction-churn-response-ctr-recommendations) (5)
 - [Marketing mix modeling](#marketing-mix-modeling) (2)
 - [Text, reviews, social and networks](#text-reviews-social-and-networks) (6)
-- [Aggregators and package datasets](#aggregators-and-package-datasets) (5)
+- [Public, census and survey data](#public-census-and-survey-data) (3)
+- [Aggregators and package datasets](#aggregators-and-package-datasets) (6)
 - [Python for marketing analytics: notebooks and code](#python-for-marketing-analytics-notebooks-and-code) (1)
+
+## Earnings-Call Transcripts
+
+- [recommended] **[S&P 500 Earnings Call Transcripts with Speaker Turns, Roles and SEC CIKs (2005-2025), Hugging Face](https://huggingface.co/datasets/zcyeee/sp500-earnings-call-turns)** (2026). zcyeee (Hugging Face), derived from kurry/sp500_earnings_transcripts
+  `dataset` · `intermediate` · `access: open` · `MIT (as stated by the uploader; underlying transcripts are third-party)`
+  33,362 S&P 500 earnings calls from October 2005 to 15 May 2025, with full text split into 2.8 million speaker turns. Each turn carries the speaker's name, affiliation, role (management, analyst, operator) and section, and each call carries a SEC CIK and Capital IQ id. Distributed as four Parquet files (~1.2 GB) with 64-row row groups, so students can read only the columns and rows they need.
+  *Use in wiki:* Bulk corpus for M5 text-analytics projects needing many calls before mid-2025; the speaker-role fields save the parsing heuristics used in the pricing-risk dataset.
+  Tools: pandas, pyarrow, duckdb
+  *Note:* Ends 15 May 2025. Hugging Face rate-limits anonymous downloads; use huggingface_hub with a free token for the full files.
+
+- [optional] **[roic.ai: earnings call transcript pages by ticker and fiscal quarter](https://www.roic.ai/)** (2026). ROIC AI
+  `website` · `intro` · `access: open`
+  Server-rendered transcript pages at /quote/<TICKER>/transcripts/<FY>-year/<Q>-quarter with one heading per speaker turn and a per-ticker list of quarters; coverage was complete for nearly all S&P 1500 retailers in Nov 2021 - Nov 2026. Source for the course's pricing-risk dataset.
+  *Use in wiki:* Where to get a recent call when the bulk corpora stop in 2025; see the pricing-risk dataset's Python collector for a polite scraper.
+  *Note:* Check the site's terms before large reruns; do not republish full transcripts.
+
+- [optional] **[The Motley Fool: earnings call transcripts (free web pages, with monthly sitemaps)](https://www.fool.com/earnings-call-transcripts/)** (2026). The Motley Fool
+  `website` · `intro` · `access: open`
+  Free transcripts with speaker names and titles, listed in monthly sitemaps at fool.com/sitemap/YYYY/MM. Coverage is broad in 2021 and again from late 2025 but thin from about April to December 2025: many large retailers' calls are missing.
+  *Use in wiki:* Quick source for single calls and an M2 example of discovering pages through sitemaps; check coverage before building a panel.
+  *Note:* Copyrighted; quote briefly with attribution. robots.txt sets ai-train=no.
 
 ## AI Models and Releases
 
@@ -24,6 +47,13 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Candidate event-date source for M6/M8. Check each model record, linked announcement, and access timing before constructing event windows. No local Epoch table was supplied in the GenAI bundle.
 
 ## Transactions, RFM and CLV
+
+- [core] **[Open e-commerce 1.0: five years of crowdsourced US Amazon purchase histories with user demographics](https://doi.org/10.7910/DVN/YGLYDY)** (2024). Berke, A.; Calacci, D.; Mahari, R.; Yabe, T.; Larson, K.; Pentland, S. *Scientific Data 11, 491 (data on Harvard Dataverse)*
+  `dataset` · `intermediate` · `access: open` · `CC0 1.0 (Dataverse); analysis code MIT (github.com/aberke/amazon-study)`
+  1,850,717 Amazon.com orders from 5,027 consenting US users, January 2018 to early 2023 (order date, unit price, quantity, ASIN, title, category, shipping state), linked by respondent ID to a survey of demographics, household, Amazon use, lifestyle and health. Files: amazon-purchases.csv (313 MB), survey.csv (1.3 MB), fields.csv, survey instruments.
+  *Use in wiki:* The rare open individual-level purchase panel with demographics: RFM and cohort exercises (M2/M4), next-purchase and recommender exercises (M7), and an M8 privacy discussion (the authors also show which sensitive attributes can be inferred from purchases). Pair with Online Retail II, which has transactions but no demographics.
+  DOI [10.1038/s41597-024-03329-6](https://doi.org/10.1038/s41597-024-03329-6) · Tools: pandas
+  *Note:* License and file sizes read from the Dataverse API on 2026-10-27. The authors ask that the data be used for research and never to re-identify participants. Sample skews female and under-represents older and high-income households (validated against Census in the paper). Not downloaded: 313 MB exceeds the library's local-copy cap; the survey file and an example purchase export (MIT) are small and on GitHub.
 
 - [core] **[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)** (2021). Olist. *Kaggle*
   `dataset` · `intermediate` · `access: free-registration` · `CC BY-NC-SA 4.0`
@@ -248,6 +278,24 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Required policy reading for M5 social-media analysis. It explains why students should not scrape Reddit or use the API for research projects, and how research access works.
   *Note:* Reddit for Researchers eligibility is not listed; applications go through a support ticket. Requests from hosted-service IP ranges, likely including cloud notebooks, need OAuth or a login. Checked 2026-10-23: access needs an application and approval (Data API app review, or Reddit for Researchers); it is not self-serve sign-up. Don't plan student projects on Reddit data without lead time.
 
+## Public, Census and Survey Data
+
+- [optional] **[American Time Use Survey (ATUS): 24-hour time diaries, 2003 to present](https://www.bls.gov/tus/)** (2026). U.S. Bureau of Labor Statistics
+  `dataset` · `intermediate` · `access: open`
+  Minute-by-minute diaries of what a sample of Americans did on one day, where and with whom, linked to the Current Population Survey; activity codes include shopping, consumer purchases, media use and eating and drinking. An IPUMS version (atusdata.org) makes extracts easy.
+  *Use in wiki:* Segmentation on behaviour rather than demographics (who shops when, who streams instead of shopping) for M4 clustering, and time-of-day patterns for M2 visualisation.
+
+- [optional] **[Census County Business Patterns (establishments, employment and payroll by industry and area)](https://www.census.gov/programs-surveys/cbp/data.html)** (2026). U.S. Census Bureau
+  `dataset` · `intro` · `access: open`
+  Annual counts of establishments, employment and payroll by detailed NAICS industry for every US county, metro area, zip code (establishment counts) and state, with size-class breakdowns; available as files and through the Census API.
+  *Use in wiki:* Market-sizing and competitive-density inputs for segmentation and site-selection cases (how many gyms per 10,000 residents in each Illinois county?). Pairs with ACS demographics.
+
+- [optional] **[Zillow Research housing data (home values, rents, inventory, days on market)](https://www.zillow.com/research/data/)** (2026). Zillow Research
+  `dataset` · `intro` · `access: open`
+  Monthly CSV series for the Zillow Home Value Index, Observed Rent Index, inventory, new listings, price cuts and days on market at metro, county, city and zip level.
+  *Use in wiki:* Ready-made panel for M3 regression review (prices on local characteristics, before-and-after comparisons) when students want a non-retail example.
+  *Note:* Page not fetched (blocked from the workspace on 2026-10-27); listed in the Jones directory. Check Zillow's terms of use before redistributing the files.
+
 ## Aggregators and Package Datasets
 
 - [recommended] **[Hugging Face Datasets Hub](https://huggingface.co/datasets)**. Hugging Face. *Hugging Face*
@@ -275,6 +323,12 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Weekly M2 viz warm-ups or a 'pick any TidyTuesday dataset' option for a short assignment; CC0 allows hosting copies on the wiki.
   Tools: pandas, seaborn, plotnine
   *Note:* Python resources: github.com/posit-dev/python-tidytuesday-challenge (linked from the README). Download only the selected weeks; the full repo is large.
+
+- [optional] **[Free Datasets for Social Science Research (curated list)](https://github.com/toddrjones/datasets)** (2026). Jones, T. R
+  `website` · `intro` · `access: open` · `CC0 1.0`
+  A single README listing about 130 free datasets under 33 headings (time use, household surveys, businesses, shopping, names, real estate, social networks, sports, weather and more), each with years, access terms, unit of observation and often a sample paper. Mostly public US data; a few need free data agreements.
+  *Use in wiki:* Point students here when they need data for a term project; most entries are social-science rather than marketing, so pair it with the Datasets folder README, which lists the marketing-specific picks.
+  *Note:* Screened 2026-10-27 at commit 4ba0bda. Marketing-relevant entries not already catalogued were added as separate items (Amazon purchase histories, BTOS AI use, Open-Meteo, Chicago business licenses, SSA names, Social Connectedness Index, Our World in Data, County Business Patterns, Zillow, ATUS).
 
 - [optional] **[Google Dataset Search](https://datasetsearch.research.google.com/)**. Google. *Google Research*
   `tool` · `intro` · `access: open`

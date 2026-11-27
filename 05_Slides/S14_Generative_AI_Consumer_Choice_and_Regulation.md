@@ -28,6 +28,7 @@ Session 14. M8, M9. 170 minutes.
 - Defend the empirical and moral premises behind reassurance to affected households.
 - Distinguish truth, evidential warrant, and the norms governing disclosure and public justification.
 - Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections.
+- Evaluate whether restricted research ought to be conducted, published, or used to justify public action.
 
 ## Related Materials
 
@@ -68,6 +69,7 @@ Session 14. M8, M9. 170 minutes.
 - [Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)
 - [Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
+- [Confidentiality and research independence](../01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -1143,15 +1145,17 @@ In the synthetic savings scenario, the operating-project effect is minus 2 dolla
 
 Source: ../03_Data_and_Code/Bad_Controls/README.md
 
-## Slide 98: A Dataset Has an Origin and an Intended Use
+## Slide 98: Created Records and Reasons Owed to People
 
-- Created artifacts have histories and dependencies.
-- Distinguish a dataset version, a copy, and the people it represents.
-- Institutional production leaves accuracy open to evidence.
+Creation, evidential warrant, and justification require different premises.
 
-The artifact analogy concerns creation, identity, preservation, and recognized use. It does not make household bills fictional. Billing incentives can improve accuracy while classification and access rules exclude questions that matter to residents. A valid institutional charge remains open to moral criticism. The artifact analogy draws on created dependencies and public norms of use (Thomasson, 1999, 2014).
+**Figure description:** Creation concerns purpose, schema, authority, and revision. Evidence concerns events, coverage, and comparison. Justification concerns people, objections, and alternatives. An objection can require changes to the evidence or the practice.
 
-Source: M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+[Editable TikZ](../06_Lecture_Notes/figures/M09_artifact_justification.tex)
+
+The artifactual application asks who designed the record and what practices govern it (Thomasson, 2003, 2014). The analogy with fictional characters concerns creation and dependence, leaving actual people distinct from their representation (Thomasson, 1999). Accurate charges leave the causal and moral questions open. Ask who can contest a category and which feasible alternative addresses the person’s burden (Scanlon, 1998).
+
+Source: M9 §§9.60–9.65. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
 ## Slide 99: Truth, Evidence, and Permission
 
@@ -1175,7 +1179,43 @@ Develop the contractualist premises (Scanlon, 1998): material burden, informatio
 
 Source: M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 101: Evidentiary Standards Allocate Uncertainty
+## Slide 101: How Agreements Can Shape the Public Record
+
+Identify actual terms: access, permitted analysis, and publication are separate gates.
+
+**Figure description:** Three gates affect the available records, questions, and outputs. Confidentiality review can protect identities; restrictions on questions or approval of conclusions can shape public evidence. An NDA label alone establishes neither a veto nor its absence.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_restricted_research.tex)
+
+An NDA may concern confidentiality alone; a data-use or research agreement may add scope, linkage, review, or publication terms. Distinguish a fixed review for disclosure risks from discretionary sponsor approval. Selection at publication can change the visible literature even when the preselection estimator is unbiased. Unknown terms do not reveal hidden results. Contract provisions have been studied in clinical research (Mello et al., 2005); no marketing prevalence claim follows. M9 §9.65 distinguishes ICMJE guidance and AEA policy, with their applicable scope.
+
+Source: M9 §§9.60–9.65. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 102: One History, Three Research Agreements
+
+| Hypothetical Agreement | Access | Public Scrutiny |
+| --- | --- | --- |
+| A: confidentiality review | Status and requests | Defined review |
+| B: retention purpose | Status only | Narrow question |
+| C: sponsor approval | Status and requests | Discretionary consent |
+
+The six-account synthetic history remains fixed across agreements.
+
+Under A, researchers may publish nonidentifying aggregates after a bounded review, with the hypothetical review outcome stipulated. Under B, retained status supports forecasting but leaves requests outside the permitted extract. Under C, the internal evidence matches A but readers depend on discretionary publication consent. No agreement is attributed to a named paper. Distinguish public code, access to the fixed extract, source-record access, and visibility of unreported analyses.
+
+Source: M9 §§9.60–9.65. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 103: Should Research Under an NDA Exist?
+
+- Separate conducting, publishing, and relying on the study.
+- Defend terms that justify proceeding, renegotiating, or refusing.
+- Whose reasonable objection could change your decision?
+
+Give the strongest argument for useful inquiry under confidentiality and the strongest objection to sponsor control of public conclusions. Consider privacy, knowledge foregone, affected people’s ability to contest claims, and feasible alternative agreements. A lawful contract or precise estimate supplies only part of the argument. If a sponsor can veto adverse findings, conceal that authority, and invoke independent credibility, declining the study can protect the public evidential record. Defend that judgment through an explicit principle and a condition for revision (Scanlon, 1998).
+
+Source: M9 §§9.60–9.65. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 104: Evidentiary Standards Allocate Uncertainty
 
 A definition of harm and a decision rule determine which concerns receive a response.
 
@@ -1187,7 +1227,7 @@ Conceptual engineering asks how concepts organize attention and responses (Hasla
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 102: The Critical Claim Must Name the Asymmetry
+## Slide 105: The Critical Claim Must Name the Asymmetry
 
 - Can a firm act on forecasts while customers need precise causal proof for protection?
 - Who bears the consequences while that proof remains unavailable?
@@ -1197,7 +1237,7 @@ The criticism is strongest when it specifies the rule, the action, access to evi
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 103: Build an Argument for Action Under Uncertainty
+## Slide 106: Build an Argument for Action Under Uncertainty
 
 An ought conclusion requires supported factual premises and a defended principle.
 
@@ -1209,7 +1249,7 @@ A person’s interests extend beyond a dataset. Credible institutional evidence 
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 104: Evaluate the Strongest Reply
+## Slide 107: Evaluate the Strongest Reply
 
 - False condemnation can harm livelihood, useful services, and fair procedures.
 - Missed harm can persist when entry, exit, or public challenge is difficult.
@@ -1219,7 +1259,7 @@ The influential argument that precedent makes false positives persistent while e
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 105: A Decision with Consumer Outcomes
+## Slide 108: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

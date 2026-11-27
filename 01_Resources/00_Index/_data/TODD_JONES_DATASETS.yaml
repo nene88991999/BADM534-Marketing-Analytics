@@ -1,0 +1,248 @@
+# Picks from Todd Jones's "Free Datasets for Social Science Research" (github.com/toddrjones/datasets, CC0 list),
+# screened for BADM 534 on 2026-10-27. The repo is a README of links (no data files); entries below are the
+# marketing-relevant ones not already in the library, plus two AI-adoption sources found while checking them.
+- id: toddrjones-free-datasets-list
+  category: DATASETS
+  subtopic: "Dataset directories"
+  section: "Aggregators and package datasets"
+  title: "Free Datasets for Social Science Research (curated list)"
+  authors: "Jones, T. R."
+  year: 2026
+  type: website
+  url: https://github.com/toddrjones/datasets
+  access: open
+  license: "CC0 1.0"
+  level: intro
+  priority: optional
+  modules: [M2, M3]
+  summary: "A single README listing about 130 free datasets under 33 headings (time use, household surveys, businesses, shopping, names, real estate, social networks, sports, weather and more), each with years, access terms, unit of observation and often a sample paper. Mostly public US data; a few need free data agreements."
+  wiki_use: "Point students here when they need data for a term project; most entries are social-science rather than marketing, so pair it with the Datasets folder README, which lists the marketing-specific picks."
+  ai_angle: false
+  verified_via: fetch
+  notes: "Screened 2026-10-27 at commit 4ba0bda. Marketing-relevant entries not already catalogued were added as separate items (Amazon purchase histories, BTOS AI use, Open-Meteo, Chicago business licenses, SSA names, Social Connectedness Index, Our World in Data, County Business Patterns, Zillow, ATUS)."
+
+- id: berke-2024-open-ecommerce-amazon-purchases
+  category: DATASETS
+  subtopic: "Transactions / RFM / CLV"
+  title: "Open e-commerce 1.0: five years of crowdsourced US Amazon purchase histories with user demographics"
+  authors: "Berke, A.; Calacci, D.; Mahari, R.; Yabe, T.; Larson, K.; Pentland, S."
+  year: 2024
+  type: dataset
+  venue: "Scientific Data 11, 491 (data on Harvard Dataverse)"
+  url: https://doi.org/10.7910/DVN/YGLYDY
+  doi: "10.1038/s41597-024-03329-6"
+  access: open
+  license: "CC0 1.0 (Dataverse); analysis code MIT (github.com/aberke/amazon-study)"
+  level: intermediate
+  priority: core
+  modules: [M2, M4, M7, M8]
+  summary: "1,850,717 Amazon.com orders from 5,027 consenting US users, January 2018 to early 2023 (order date, unit price, quantity, ASIN, title, category, shipping state), linked by respondent ID to a survey of demographics, household, Amazon use, lifestyle and health. Files: amazon-purchases.csv (313 MB), survey.csv (1.3 MB), fields.csv, survey instruments."
+  wiki_use: "The rare open individual-level purchase panel with demographics: RFM and cohort exercises (M2/M4), next-purchase and recommender exercises (M7), and an M8 privacy discussion (the authors also show which sensitive attributes can be inferred from purchases). Pair with Online Retail II, which has transactions but no demographics."
+  tools: [pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "License and file sizes read from the Dataverse API on 2026-10-27. The authors ask that the data be used for research and never to re-identify participants. Sample skews female and under-represents older and high-income households (validated against Census in the paper). Not downloaded: 313 MB exceeds the library's local-copy cap; the survey file and an example purchase export (MIT) are small and on GitHub."
+
+- id: berke-2024-cscw-amazon-data-sharing-experiment
+  category: M8
+  subtopic: "Privacy (academic)"
+  section: "Privacy and measurement"
+  title: "Insights from an experiment crowdsourcing data from thousands of US Amazon users: the importance of transparency, money, and data use"
+  authors: "Berke, A.; Mahari, R.; Pentland, S.; Larson, K.; Calacci, D."
+  year: 2024
+  type: paper
+  venue: "Proceedings of the ACM on Human-Computer Interaction 8 (CSCW2), Article 466"
+  url: https://arxiv.org/abs/2404.13172
+  doi: "10.1145/3687005"
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M8, M6]
+  summary: "Randomised experiment embedded in the data-collection tool behind Open e-commerce 1.0: showing people their own data raises willingness to share it, sharing rises linearly with the payment offered, real money moves people more than hypothetical money (a field test of the privacy paradox), and willingness differs by demographic group."
+  wiki_use: "M8 privacy session: a field experiment on what consumers' data is worth to them, from the same people whose purchases students can analyse. Also an M6 example of an experiment built into a product flow."
+  ai_angle: false
+  verified_via: search
+
+- id: census-btos-ai-use
+  category: M8
+  subtopic: Demand for generative AI
+  title: "Census Business Trends and Outlook Survey (BTOS): biweekly AI use by US businesses"
+  authors: "U.S. Census Bureau"
+  year: 2026
+  type: dataset
+  url: https://www.census.gov/hfp/btos/data
+  access: open
+  level: intro
+  priority: core
+  modules: [M8, M2]
+  summary: "Nationally representative biweekly survey of US employer businesses since September 2023, with a question on AI use (revised in November 2025 from 'in producing goods or services' to 'in any business function') and expected use in the next six months, by sector, state, the 25 largest metro areas and firm size. National AI use was 19.8% for the period ending 3 May 2026; 37% for firms with 250+ employees; 39.7% in Information, about 14% in Retail."
+  wiki_use: "The official counterpart to the Ramp AI Index in genai_demand_lab: compare a probability survey of firms with card-transaction adoption among Ramp customers, and discuss why the levels differ. The November 2025 wording change is a ready-made lesson in series breaks."
+  ai_angle: true
+  verified_via: fetch
+  notes: "Figures from the Census story 'Large Firms With at Least 20 Employees Biggest AI Users' (26 May 2026); supplement documented in CES-WP-26-25. Download files from the BTOS data page."
+
+- id: allen-2026-feds-monitoring-ai-adoption
+  category: M8
+  subtopic: Demand for generative AI
+  title: "Monitoring AI Adoption in the US Economy"
+  authors: "Allen, J. S."
+  year: 2026
+  type: report
+  venue: "FEDS Notes, Board of Governors of the Federal Reserve System, 3 April 2026"
+  url: https://www.federalreserve.gov/econres/notes/feds-notes/monitoring-ai-adoption-in-the-u-s-economy-20260403.html
+  access: open
+  level: intro
+  priority: recommended
+  modules: [M8]
+  summary: "Compares three public measures of AI adoption: Census BTOS (about 18% of firms at year-end 2025), the Atlanta Fed's Survey of Business Uncertainty (about 78% employment-weighted firm adoption, 54% for LLMs) and the Real-Time Population Survey (about 41% of workers using generative AI at work, November 2025), and explains why they differ."
+  wiki_use: "Five-minute read for the M8 measurement discussion: three numbers that look contradictory until you ask who is counted, how, and whether paid or free use counts. Pairs with Egan et al. (consumers, paid) and the Ramp AI Index (businesses, paid)."
+  ai_angle: true
+  verified_via: fetch
+
+- id: open-meteo-historical-weather-api
+  category: M2
+  subtopic: Public APIs
+  title: "Open-Meteo historical weather API (keyless, hourly and daily since 1940)"
+  authors: "Open-Meteo"
+  year: 2026
+  type: documentation
+  url: https://open-meteo.com/en/docs/historical-weather-api
+  access: freemium
+  level: intro
+  priority: recommended
+  modules: [M2, M3, M6]
+  summary: "GET https://archive-api.open-meteo.com/v1/archive with latitude, longitude, start_date, end_date and a list of hourly or daily variables (temperature, precipitation, snowfall, wind) returns JSON; no key for non-commercial use, reanalysis-based history back to 1940, plus a forecast API."
+  wiki_use: "The second API in the M2 sequence after McBroken: parameters, query strings and JSON arrays. Then join daily weather to sales (McBroken outages, Chicago business data, or any store-level series) for an M3 regression or as a weather instrument in M6."
+  tools: [requests, pandas]
+  ai_angle: false
+  verified_via: fetch
+  notes: "Free for non-commercial use; commercial use needs a key. Cite Open-Meteo and the Copernicus/ERA5 source as the docs page requests."
+
+- id: chicago-business-licenses
+  category: M2
+  subtopic: Public APIs
+  title: "City of Chicago Data Portal: Business Licenses (current active), via the Socrata (SODA) API"
+  authors: "City of Chicago"
+  year: 2026
+  type: dataset
+  url: https://data.cityofchicago.org/Community-Economic-Development/Business-Licenses-Current-Active/uupf-x98q
+  access: open
+  level: intro
+  priority: optional
+  modules: [M2, M3]
+  summary: "Every active business license in Chicago with business name, license type and activity, address, ward, community area, latitude and longitude, and start and expiration dates; the portal serves it as CSV or through the SODA JSON API with SQL-like filters ($where, $select, $limit)."
+  wiki_use: "A local, geocoded market map for trade-area and competitor-density exercises (how many coffee shops within 1 km of a site?), and a clean example of an API with query parameters. A companion dataset covers all historical licenses."
+  tools: [requests, pandas, sodapy]
+  ai_angle: false
+  verified_via: search
+  notes: "API endpoint by Socrata convention: https://data.cityofchicago.org/resource/uupf-x98q.json (not test-called from here; the portal blocked automated page loads on 2026-10-27). Anonymous calls are throttled; a free app token raises the limit."
+
+- id: ssa-baby-names
+  category: M2
+  subtopic: "Chart galleries"
+  title: "Social Security Administration baby names (national, state and territory files)"
+  authors: "U.S. Social Security Administration"
+  year: 2026
+  type: dataset
+  url: https://www.ssa.gov/oact/babynames/limits.html
+  access: open
+  level: intro
+  priority: optional
+  modules: [M2, M5]
+  summary: "Counts of first names by sex and birth year from Social Security card applications since 1880, nationally (names.zip, 7 MB) and by state (namesbystate.zip, 23 MB); names with fewer than five occurrences are suppressed."
+  wiki_use: "A classic first visualisation dataset that is also a diffusion and fashion-cycle dataset: names rise and fall like products, and brand names (Alexa, Siri, Khaleesi) leave visible marks. Good for M2 time-series charts and an M5 text-meets-culture discussion."
+  tools: [pandas]
+  ai_angle: false
+  verified_via: fetch
+
+- id: facebook-social-connectedness-index
+  category: M5
+  subtopic: "Social networks"
+  section: "Network analysis and diffusion"
+  title: "Facebook Social Connectedness Index (SCI): friendship links between US counties, zip codes and countries"
+  authors: "Bailey, M.; Cao, R.; Kuchler, T.; Stroebel, J.; Wong, A. (Meta Data for Good)"
+  year: 2018
+  type: dataset
+  url: https://ai.meta.com/ai-for-good/datasets/social-connectedness-index/
+  access: open
+  level: intermediate
+  priority: recommended
+  modules: [M5, M8, M3]
+  summary: "Relative probability that a Facebook user in one area is friends with a user in another, for every pair of US counties and zip codes and of countries and many sub-national regions, built from aggregated Facebook friendships."
+  wiki_use: "Word of mouth has a geography: use the SCI to ask whether a product spreads along friendship links (housing beliefs, product adoption, political ads in the authors' papers). Join to county data for an M3 gravity-style regression."
+  ai_angle: false
+  verified_via: search
+  notes: "Introduced in Bailey, Cao, Kuchler, Stroebel and Wong, 'Social Connectedness: Measurement, Determinants, and Effects', Journal of Economic Perspectives 32(3), 2018 (replication data on openICPSR 114016). Download terms are on the Meta / Humanitarian Data Exchange pages."
+
+- id: our-world-in-data
+  category: M2
+  subtopic: "Chart galleries"
+  title: "Our World in Data: charts and downloadable data, with a chart-level CSV API"
+  authors: "Global Change Data Lab"
+  year: 2026
+  type: website
+  url: https://ourworldindata.org/
+  access: open
+  license: "CC BY 4.0 for OWID-produced charts and data (third-party sources keep their own terms)"
+  level: intro
+  priority: recommended
+  modules: [M2, M8]
+  summary: "Thousands of interactive charts on health, economy, technology, energy and more, each downloadable as CSV with metadata; appending .csv to a chart URL returns its data, and the owidapi R package wraps the chart API."
+  wiki_use: "Model charts for the M2 critique activity alongside FlowingData and the FT Visual Vocabulary, and a one-line data source for the technology-adoption curves used when introducing AI diffusion in M8."
+  ai_angle: false
+  verified_via: search
+
+- id: census-county-business-patterns
+  category: DATASETS
+  subtopic: "Market sizing / local markets"
+  section: "Public, census and survey data"
+  title: "Census County Business Patterns (establishments, employment and payroll by industry and area)"
+  authors: "U.S. Census Bureau"
+  year: 2026
+  type: dataset
+  url: https://www.census.gov/programs-surveys/cbp/data.html
+  access: open
+  level: intro
+  priority: optional
+  modules: [M2, M4]
+  summary: "Annual counts of establishments, employment and payroll by detailed NAICS industry for every US county, metro area, zip code (establishment counts) and state, with size-class breakdowns; available as files and through the Census API."
+  wiki_use: "Market-sizing and competitive-density inputs for segmentation and site-selection cases (how many gyms per 10,000 residents in each Illinois county?). Pairs with ACS demographics."
+  ai_angle: false
+  verified_via: search
+
+- id: zillow-research-data
+  category: DATASETS
+  subtopic: "Housing prices"
+  section: "Public, census and survey data"
+  title: "Zillow Research housing data (home values, rents, inventory, days on market)"
+  authors: "Zillow Research"
+  year: 2026
+  type: dataset
+  url: https://www.zillow.com/research/data/
+  access: open
+  level: intro
+  priority: optional
+  modules: [M3]
+  summary: "Monthly CSV series for the Zillow Home Value Index, Observed Rent Index, inventory, new listings, price cuts and days on market at metro, county, city and zip level."
+  wiki_use: "Ready-made panel for M3 regression review (prices on local characteristics, before-and-after comparisons) when students want a non-retail example."
+  ai_angle: false
+  verified_via: search
+  notes: "Page not fetched (blocked from the workspace on 2026-10-27); listed in the Jones directory. Check Zillow's terms of use before redistributing the files."
+
+- id: bls-american-time-use-survey
+  category: DATASETS
+  subtopic: "Survey data"
+  section: "Public, census and survey data"
+  title: "American Time Use Survey (ATUS): 24-hour time diaries, 2003 to present"
+  authors: "U.S. Bureau of Labor Statistics"
+  year: 2026
+  type: dataset
+  url: https://www.bls.gov/tus/
+  access: open
+  level: intermediate
+  priority: optional
+  modules: [M4, M2]
+  summary: "Minute-by-minute diaries of what a sample of Americans did on one day, where and with whom, linked to the Current Population Survey; activity codes include shopping, consumer purchases, media use and eating and drinking. An IPUMS version (atusdata.org) makes extracts easy."
+  wiki_use: "Segmentation on behaviour rather than demographics (who shops when, who streams instead of shopping) for M4 clustering, and time-of-day patterns for M2 visualisation."
+  ai_angle: false
+  verified_via: search

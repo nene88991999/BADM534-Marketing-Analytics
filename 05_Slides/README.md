@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 536 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 541 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -194,3 +194,7 @@ Six slides in Sessions 2, 10, and 14 connect data production, selected evidence,
 ## Measurement Traditions and Unequal Error Costs
 
 Sessions 1, 2, 4, 5, 7, 9, 10, 11, 13, and 14 connect institutional history, the definition of harm, heterogeneity, and evidence for action. Session 9 derives the [synthetic decision example](../03_Data_and_Code/Evidence_Standards/README.md); Session 14 uses editable diagrams for evidentiary standards and reasonable protection. The [session plan](SESSION_PLAN.md#evidence-standards-and-unequal-error-costs) selects these discussions within existing meeting blocks. [Optional practice](../07_Labs/Evidence_Standards/README.md) supplies extended calculation and philosophical arguments.
+
+## Data Artifacts and Restricted Research
+
+Session 2 uses minutes 155–170 to compare events, records, versions, and copies through synthetic retention and pending-request counts. Session 14 selects the artifact and NDA comparison within minutes 95–110: should the study be conducted, published, and used for public decisions? The extended agreement comparison and complete Python are optional practice in [Data, Truth, and Norms](../07_Labs/Data_Truth_and_Norms/README.md). These choices fit the existing 170-minute meetings; the full Session 14 deck remains a case library.

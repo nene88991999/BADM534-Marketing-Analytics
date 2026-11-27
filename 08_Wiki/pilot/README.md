@@ -26,3 +26,7 @@ The page uses Illinois colors and the course's parchment direction. No raster il
 ## Action Under Uncertainty
 
 The `uncertainty` section and matching Markdown text add a static, accessible comparison of error costs, an editable TikZ figure, and questions about records, protection, and remedy. The original bill inputs and feedback remain interactive. The new section links to the full standard-library calculation and optional practice; it collects no responses.
+
+## Data Construction and Restricted Research
+
+The companion [artifact and NDA practice](../../07_Labs/Data_Truth_and_Norms/README.md) extends the bill interpretation question to the origin and governed use of evidence. It asks whether research under an NDA should be conducted, published, or used for public decisions. The interactive bill calculator is unchanged; the new material is available in the linked notes, complete Python example, and discussion exercise.

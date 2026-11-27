@@ -447,7 +447,8 @@
       "Assess changing coverage in mHealth, McBroken, and earnings-call records.",
       "Preserve requests, confirmations, unknown states, and the reporting cutoff.",
       "Trace data production and identify the effect of selective access on population claims.",
-      "Distinguish an interest, its measure, and the standard for action."
+      "Distinguish an interest, its measure, and the standard for action.",
+      "Distinguish events, records, dataset versions, and copies; assess the meaning of an administrative outcome."
     ],
     "slides": [
       {
@@ -748,6 +749,44 @@
         "source": "M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
+        "kind": "figure",
+        "title": "Events, Records, and Dataset Versions",
+        "figure": "../06_Lecture_Notes/figures/M02_artifact_identity.tex",
+        "caption": "Synthetic subscription history: changing the representation changes the available question.",
+        "description": "An event becomes a record and then a dataset version. Two files can encode the same keyed records with different bytes. A subscription-status claim leaves consent unresolved.",
+        "notes": "Artifact creation involves intended features and sufficient success in realizing them (Thomasson, 2003, 2014). A valid table can contain false entries; an accurate entry can support a narrow claim while leaving a broader interpretation unjustified. Row order is irrelevant under this example’s declared identity rule. A file hash checks bytes, while evidence about the event is needed to check the record. The complete Python program appears in M2 §2.34.",
+        "source": "M2 §§2.33–2.34. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "table",
+        "title": "Retention and Pending Cancellation",
+        "headers": [
+          "Synthetic Quantity",
+          "Count",
+          "Denominator"
+        ],
+        "rows": [
+          [
+            "Retained accounts",
+            "5",
+            "6 initial accounts"
+          ],
+          [
+            "Pending requests",
+            "3",
+            "4 submitted requests"
+          ],
+          [
+            "Pending among retained",
+            "3",
+            "5 retained accounts"
+          ]
+        ],
+        "caption": "Same events and cutoff; each denominator answers a different question.",
+        "notes": "All six synthetic accounts are initially subscribed. Four submit requests; one completes before February 1, 2027 at 00:00 UTC; three remain pending. No other opening or closure occurs. Retention is 83.33%, pending among requests is 75%, and pending among retained is 60%. Administrative retention is compatible with unresolved requests. This does not identify the cause of delay or the causal effect of an interface. Compare the V1 and V2 files and explain why accurate status prediction cannot establish voluntary loyalty.",
+        "source": "M2 §§2.33–2.34. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
         "kind": "bullets",
         "title": "A Definition of Harm Selects Evidence",
         "bullets": [
@@ -781,7 +820,8 @@
       "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)",
       "../07_Labs/AI_Augmented_Learning/README.md",
       "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)",
-      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)",
+      "[Artifact and NDA practice](../07_Labs/Data_Truth_and_Norms/README.md)"
     ],
     "practice": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Compare identical synthetic public releases with opposite population effects.",
     "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations."
@@ -5186,7 +5226,8 @@
       "Assess conflicts of interest through duties, consumer purposes, and reasons for a feasible alternative.",
       "Defend the empirical and moral premises behind reassurance to affected households.",
       "Distinguish truth, evidential warrant, and the norms governing disclosure and public justification.",
-      "Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections."
+      "Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections.",
+      "Evaluate whether restricted research ought to be conducted, published, or used to justify public action."
     ],
     "slides": [
       {
@@ -6328,15 +6369,13 @@
         "source": "../03_Data_and_Code/Bad_Controls/README.md"
       },
       {
-        "kind": "bullets",
-        "title": "A Dataset Has an Origin and an Intended Use",
-        "bullets": [
-          "Created artifacts have histories and dependencies.",
-          "Distinguish a dataset version, a copy, and the people it represents.",
-          "Institutional production leaves accuracy open to evidence."
-        ],
-        "notes": "The artifact analogy concerns creation, identity, preservation, and recognized use. It does not make household bills fictional. Billing incentives can improve accuracy while classification and access rules exclude questions that matter to residents. A valid institutional charge remains open to moral criticism. The artifact analogy draws on created dependencies and public norms of use (Thomasson, 1999, 2014).",
-        "source": "M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+        "kind": "figure",
+        "title": "Created Records and Reasons Owed to People",
+        "figure": "../06_Lecture_Notes/figures/M09_artifact_justification.tex",
+        "caption": "Creation, evidential warrant, and justification require different premises.",
+        "description": "Creation concerns purpose, schema, authority, and revision. Evidence concerns events, coverage, and comparison. Justification concerns people, objections, and alternatives. An objection can require changes to the evidence or the practice.",
+        "notes": "The artifactual application asks who designed the record and what practices govern it (Thomasson, 2003, 2014). The analogy with fictional characters concerns creation and dependence, leaving actual people distinct from their representation (Thomasson, 1999). Accurate charges leave the causal and moral questions open. Ask who can contest a category and which feasible alternative addresses the person’s burden (Scanlon, 1998).",
+        "source": "M9 §§9.60–9.65. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "figure",
@@ -6357,6 +6396,55 @@
         ],
         "notes": "Develop the contractualist premises (Scanlon, 1998): material burden, informational control, standing to contest, and feasible alternatives. Test a privacy objection and propose controlled linkage with aggregate public results. Undone science concerns institutional research priorities; deliberate suppression requires additional evidence. Political sensitivity can motivate disclosure as well as secrecy. The introduced S. 5640 is a reporting proposal, not an effective duty. Effective critical interaction requires venues, uptake, public standards, and tempered equality of intellectual authority (Longino, 2004).",
         "source": "M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "How Agreements Can Shape the Public Record",
+        "figure": "../06_Lecture_Notes/figures/M09_restricted_research.tex",
+        "caption": "Identify actual terms: access, permitted analysis, and publication are separate gates.",
+        "description": "Three gates affect the available records, questions, and outputs. Confidentiality review can protect identities; restrictions on questions or approval of conclusions can shape public evidence. An NDA label alone establishes neither a veto nor its absence.",
+        "notes": "An NDA may concern confidentiality alone; a data-use or research agreement may add scope, linkage, review, or publication terms. Distinguish a fixed review for disclosure risks from discretionary sponsor approval. Selection at publication can change the visible literature even when the preselection estimator is unbiased. Unknown terms do not reveal hidden results. Contract provisions have been studied in clinical research (Mello et al., 2005); no marketing prevalence claim follows. M9 §9.65 distinguishes ICMJE guidance and AEA policy, with their applicable scope.",
+        "source": "M9 §§9.60–9.65. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "table",
+        "title": "One History, Three Research Agreements",
+        "headers": [
+          "Hypothetical Agreement",
+          "Access",
+          "Public Scrutiny"
+        ],
+        "rows": [
+          [
+            "A: confidentiality review",
+            "Status and requests",
+            "Defined review"
+          ],
+          [
+            "B: retention purpose",
+            "Status only",
+            "Narrow question"
+          ],
+          [
+            "C: sponsor approval",
+            "Status and requests",
+            "Discretionary consent"
+          ]
+        ],
+        "caption": "The six-account synthetic history remains fixed across agreements.",
+        "notes": "Under A, researchers may publish nonidentifying aggregates after a bounded review, with the hypothetical review outcome stipulated. Under B, retained status supports forecasting but leaves requests outside the permitted extract. Under C, the internal evidence matches A but readers depend on discretionary publication consent. No agreement is attributed to a named paper. Distinguish public code, access to the fixed extract, source-record access, and visibility of unreported analyses.",
+        "source": "M9 §§9.60–9.65. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Should Research Under an NDA Exist?",
+        "bullets": [
+          "Separate conducting, publishing, and relying on the study.",
+          "Defend terms that justify proceeding, renegotiating, or refusing.",
+          "Whose reasonable objection could change your decision?"
+        ],
+        "notes": "Give the strongest argument for useful inquiry under confidentiality and the strongest objection to sponsor control of public conclusions. Consider privacy, knowledge foregone, affected people’s ability to contest claims, and feasible alternative agreements. A lawful contract or precise estimate supplies only part of the argument. If a sponsor can veto adverse findings, conceal that authority, and invoke independent credibility, declining the study can protect the public evidential record. Defend that judgment through an explicit principle and a condition for revision (Scanlon, 1998).",
+        "source": "M9 §§9.60–9.65. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
         "kind": "figure",
@@ -6449,7 +6537,8 @@
       "[Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)",
       "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)",
       "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)",
-      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)",
+      "[Confidentiality and research independence](../01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
     "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed."

@@ -1,0 +1,18 @@
+{
+  "dataset": "Synthetic Subscription Records",
+  "synthetic": true,
+  "as_of_utc": "2027-02-01T00:00:00Z",
+  "population": "Six accounts subscribed at the start of January 2027",
+  "unit": "Account at the cutoff; one request at most per account",
+  "v1_purpose": "Describe subscription status at the cutoff",
+  "v2_purpose": "Also assess completion of submitted cancellation requests",
+  "retained_definition": "No completed cancellation before the cutoff",
+  "identity_rule": "Same schema and values by unique account; ignore row order",
+  "v2_parent": "V1 plus the synthetic request history defined in the program",
+  "files_sha256": {
+    "retention_v1.csv": "c02bbbddeb4a83e070eb8b347d7e7a9812059b07a8f8fa8393a4c9c4a56d45a7",
+    "assessment_v2.csv": "8be141faef20649dba2d977544e68a8306742c8e8c720c59c1f46cb57fc35ad4",
+    "assessment_v2_reordered.csv": "48474bf9c1f8dc46c58f9caae924c6cb6cd415e820cbdfca6fd05f6446161c16"
+  },
+  "interpretation": "Counts describe status and request completion. They do not measure consent, satisfaction, or causal effects."
+}

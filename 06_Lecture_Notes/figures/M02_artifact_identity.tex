@@ -1,0 +1,14 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.0cm,minimum height=1.0cm] (event) at (1.7,0) {\textbf{Event}\\Submitted cancellation};
+\node[box,text width=3.0cm,minimum height=1.0cm] (record) at (6.0,0) {\textbf{Record}\\Account and timestamp};
+\node[orangebox,text width=3.0cm,minimum height=1.0cm] (version) at (10.3,0) {\textbf{Dataset Version}\\Schema and selected fields};
+\draw[edge] (event) -- (record);
+\draw[edge] (record) -- (version);
+\node[box,text width=3.2cm,minimum height=1.0cm] (copy) at (10.3,-3.1) {\textbf{Two Physical Files}\\Same keyed records;\\different bytes.};
+\node[box,text width=3.2cm,minimum height=1.0cm] (meaning) at (6.0,-3.1) {\textbf{Status Claim}\\Five of six accounts\\remain subscribed.};
+\node[orangebox,text width=3.2cm,minimum height=1.0cm] (welfare) at (1.7,-3.1) {\textbf{Customer Judgment}\\Consent requires\\further evidence.};
+\draw[edge] (version) -- (copy);
+\draw[edge] (version.south west) -- (meaning.north east);
+\draw[accent,dashed] (meaning) -- (welfare);
+\node[align=center,text width=12.5cm,font=\footnotesize] at (6.0,-4.85) {Synthetic: six initial accounts, four submitted requests, one completed request.\\The identity of a file, the meaning of a category, and the truth of a claim require different checks.};
+\end{tikzpicture}

@@ -29,3 +29,23 @@ End with a supported public statement and a separate recommendation. Explain whi
 ## Evidence and the Proposed Action
 
 Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.
+
+## The Dataset as an Artifact
+
+Read M2 §§2.33–2.34 and M9 §§9.60–9.62. Run `python3 03_Data_and_Code/Data_Production/data_artifacts.py` and inspect the [outputs](../../03_Data_and_Code/Data_Production/artifact_results/README.md).
+
+1. Explain why two files with different hashes contain the same records under the stated identity rule. Give a transformation that would preserve a filename while changing the represented comparison.
+2. Calculate retention, pending requests among requests, and pending requests among retained accounts by hand. Explain the information supplied by each denominator.
+3. Construct a supported status claim and an unsupported claim about voluntary loyalty from V1. Identify the missing premise and how V2 changes the available criticism.
+4. Apply creation, meaning, preservation, and evidential-use questions to a billing record, mHealth entry, or call transcript. Identify the represented event separately from its record.
+5. Formulate a reasonable principle for correcting a contested classification. State who may challenge it, who has relevant evidence, and how privacy can be protected.
+
+## Should Research Under an NDA Exist?
+
+Read M9 §§9.63–9.65 and the [restricted-research guide](../../01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md). Agreements A–C are hypothetical. They use the same synthetic account history and differ in the allocation of access and reporting authority.
+
+Compare the three agreements on the questions researchers can ask, the findings they may disclose, preservation, and independent scrutiny. Distinguish a bounded confidentiality review from discretionary control over conclusions. For each agreement, decide separately whether researchers ought to conduct the study, publish it, and use it to justify a public decision.
+
+Defend a principle for proceeding, renegotiating, or refusing. Give the strongest case for allowing confidential research and the strongest reasonable objection from a person affected by its use. Explain which term or circumstance would reverse your judgment. Assess the value of declining a prestigious publication when the agreement prevents adequate public justification.
+
+Finally, assess a paper's actual access and funding statements. Record what the available documents establish, what remains unknown, and which further evidence would distinguish confidentiality from selective reporting. Do not assign a publication veto, suppression decision, or hidden result to a named study without evidence. Draft a public claim whose scope remains supported under the documented restrictions.

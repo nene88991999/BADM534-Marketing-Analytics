@@ -1,0 +1,15 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.2cm,minimum height=1.35cm] (creation) at (1.8,0) {\textbf{Creation}\\Purpose, schema, authority, and revision rules};
+\node[box,text width=3.2cm,minimum height=1.35cm] (warrant) at (6.2,0) {\textbf{Evidence}\\Recorded events, coverage, and the comparison};
+\node[orangebox,text width=3.2cm,minimum height=1.35cm] (reason) at (10.6,0) {\textbf{Justification}\\Affected people, objections, and feasible alternatives};
+\draw[edge] (creation) -- (warrant);
+\draw[accent] (warrant) -- (reason);
+\node[box,text width=3.2cm,minimum height=1.15cm] (question1) at (1.8,-3.0) {Who can define or\\correct the record?};
+\node[box,text width=3.2cm,minimum height=1.15cm] (question2) at (6.2,-3.0) {What supports the\\household-cost claim?};
+\node[orangebox,text width=3.2cm,minimum height=1.15cm] (question3) at (10.6,-3.0) {Who bears the burden\\if reassurance is wrong?};
+\draw[edge] (creation) -- (question1);
+\draw[edge] (warrant) -- (question2);
+\draw[accent] (reason) -- (question3);
+\draw[accent,dashed] (question3.south) -- ++(0,-0.55) -| (question1.south);
+\node[align=center,text width=12.8cm,font=\footnotesize] at (6.2,-5.25) {A reasonable objection can require better categories, access, or safeguards.\\Neither institutional acceptance nor accurate computation settles the obligation.};
+\end{tikzpicture}

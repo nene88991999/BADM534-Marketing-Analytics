@@ -11,7 +11,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 36 |
-| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 30 |
+| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 32 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 30 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 33 |
@@ -23,7 +23,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 61 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 23 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 105 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 108 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -331,8 +331,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–90 | Kantian, Confucian, and Scanlonian Evaluation |
 | 90–95 | Premises for Proportionate Protection Under Uncertainty |
-| 95–100 | Evidentiary Standards and the Burden of Uncertainty |
-| 100–110 | Pricing Burdens, Feasible Alternatives, and the Strongest Reply |
+| 95–100 | Evidence, Artifacts, and Research Agreements |
+| 100–110 | Reasonable Objections and the Decision to Proceed |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–165 | Digital Channels and Meaningful Customer Choice |
@@ -427,3 +427,7 @@ The [optional lab](../07_Labs/Evidence_Standards/README.md) links M1 §1.23, M2 
 - **Session 14:** Use 90–95 for the premises of protection under uncertainty, 95–100 for evidentiary standards, and 100–110 for pricing burdens and the strongest reply. Select these slides within existing discussion; the full deck is a case library, and extended comparisons are optional practice.
 
 These allocations select among the existing examples within each 170-minute meeting. The full decks retain alternatives and detailed follow-up; the complete code and extended philosophical comparisons remain available for optional practice.
+
+## Data Artifacts and Restricted Research
+
+Session 2 uses minutes 155–170 to compare events, records, versions, and copies through synthetic retention and pending-request counts. Session 14 selects the artifact and NDA comparison within minutes 95–110: should the study be conducted, published, and used for public decisions? The extended agreement comparison and complete Python are optional practice in [Data, Truth, and Norms](../07_Labs/Data_Truth_and_Norms/README.md). These choices fit the existing 170-minute meetings; the full Session 14 deck remains a case library.

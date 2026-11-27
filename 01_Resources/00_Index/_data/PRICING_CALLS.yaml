@@ -1,0 +1,103 @@
+- id: pricing-risk-earnings-calls
+  category: M5
+  section: Earnings calls and pricing-risk text data
+  subtopic: Earnings calls and pricing-risk text data
+  title: 'Dataset: retailer earnings-call mentions of dynamic, surge, personalized and AI pricing (Nov 2021 - Nov 2026)'
+  authors: Yang, N. (Marketing Analytics course materials)
+  year: 2026
+  type: dataset
+  url: https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/03_Data_and_Code/Earnings_Calls
+  access: open
+  license: Public numerical teaching export and source-linked paraphrases; original excerpts remain local.
+  level: intermediate
+  priority: core
+  modules:
+  - M5
+  - M8
+  - M6
+  - M4
+  - M7
+  summary: A public teaching export contains 2,326 call records, 971 match records, a 123-firm roster, and 19 dictionary terms. Complete programs assess coverage,
+    disclosure, interpretation, and event windows. Original transcript excerpts are excluded; seven interpretation cases use course-authored paraphrases. The supplied
+    source collection is not a historical market census.
+  wiki_use: Data for a PR / investor-relations risk-assessment exercise on dynamic and surveillance pricing, paired with the M8 ethics-and-law crosswalk; also an
+    M5 dictionary-measurement exercise (precision, recall, LLM comparison) and an M6 event study around backlash dates.
+  tools:
+  - pandas
+  - requests
+  - beautifulsoup4
+  - matplotlib
+  ai_angle: true
+  verified_via: course adaptation and executed checks
+  notes: Use the tested teaching export. Original collectors, excerpts, and provisional precision checks remain local reference material.
+  local_copy: ../03_Data_and_Code/Earnings_Calls
+- id: zcyeee-sp500-earnings-call-turns
+  category: DATASETS
+  section: Earnings-call transcripts
+  subtopic: Earnings-call transcripts
+  title: S&P 500 Earnings Call Transcripts with Speaker Turns, Roles and SEC CIKs (2005-2025), Hugging Face
+  authors: zcyeee (Hugging Face), derived from kurry/sp500_earnings_transcripts
+  year: 2026
+  type: dataset
+  url: https://huggingface.co/datasets/zcyeee/sp500-earnings-call-turns
+  access: open
+  license: MIT (as stated by the uploader; underlying transcripts are third-party)
+  level: intermediate
+  priority: recommended
+  modules:
+  - M5
+  - M7
+  - M8
+  summary: 33,362 S&P 500 earnings calls from October 2005 to 15 May 2025, with full text split into 2.8 million speaker turns. Each turn carries the speaker's name,
+    affiliation, role (management, analyst, operator) and section, and each call carries a SEC CIK and Capital IQ id. Distributed as four Parquet files (~1.2 GB)
+    with 64-row row groups, so students can read only the columns and rows they need.
+  wiki_use: Bulk corpus for M5 text-analytics projects needing many calls before mid-2025; the speaker-role fields save the parsing heuristics used in the pricing-risk
+    dataset.
+  tools:
+  - pandas
+  - pyarrow
+  - duckdb
+  ai_angle: false
+  verified_via: fetch
+  notes: Ends 15 May 2025. Hugging Face rate-limits anonymous downloads; use huggingface_hub with a free token for the full files.
+- id: motley-fool-earnings-call-transcripts
+  category: DATASETS
+  section: Earnings-call transcripts
+  subtopic: Earnings-call transcripts
+  title: 'The Motley Fool: earnings call transcripts (free web pages, with monthly sitemaps)'
+  authors: The Motley Fool
+  year: 2026
+  type: website
+  url: https://www.fool.com/earnings-call-transcripts/
+  access: open
+  level: intro
+  priority: optional
+  modules:
+  - M5
+  - M2
+  summary: 'Free transcripts with speaker names and titles, listed in monthly sitemaps at fool.com/sitemap/YYYY/MM. Coverage is broad in 2021 and again from late
+    2025 but thin from about April to December 2025: many large retailers'' calls are missing.'
+  wiki_use: Quick source for single calls and an M2 example of discovering pages through sitemaps; check coverage before building a panel.
+  ai_angle: false
+  verified_via: fetch
+  notes: Copyrighted; quote briefly with attribution. robots.txt sets ai-train=no.
+- id: roic-ai-earnings-call-transcripts
+  category: DATASETS
+  section: Earnings-call transcripts
+  subtopic: Earnings-call transcripts
+  title: 'roic.ai: earnings call transcript pages by ticker and fiscal quarter'
+  authors: ROIC AI
+  year: 2026
+  type: website
+  url: https://www.roic.ai/
+  access: open
+  level: intro
+  priority: optional
+  modules:
+  - M5
+  summary: Server-rendered transcript pages at /quote/<TICKER>/transcripts/<FY>-year/<Q>-quarter with one heading per speaker turn and a per-ticker list of quarters;
+    coverage was complete for nearly all S&P 1500 retailers in Nov 2021 - Nov 2026. Source for the course's pricing-risk dataset.
+  wiki_use: Where to get a recent call when the bulk corpora stop in 2025; see the pricing-risk dataset's Python collector for a polite scraper.
+  ai_angle: false
+  verified_via: fetch
+  notes: Check the site's terms before large reruns; do not republish full transcripts.

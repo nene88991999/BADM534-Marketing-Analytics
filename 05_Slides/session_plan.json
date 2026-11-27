@@ -91,11 +91,11 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 30,
+      "slides": 32,
       "companion": "S02_Customer_Data_and_Measurement.md",
       "pdf": "S02_Customer_Data_and_Measurement.pdf",
       "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator. Use the optional Digital Usage lab for the complete geographic analysis. Optional synthetic disclosure comparison and bounds in M2 §2.31.",
-      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states. Digital-usage comparisons distinguish geographic activity from individual service needs. Distinguish an interest, its measure, and the standard for action.",
+      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states. Digital-usage comparisons distinguish geographic activity from individual service needs. Distinguish an interest, its measure, and the standard for action. Distinguish status, submitted requests, dataset versions, and physical copies.",
       "ethics": "Missingness, sample exclusions, and customer representation",
       "timing": [
         {
@@ -150,13 +150,14 @@
           "start_minute": 155,
           "end_minute": 170,
           "minutes": 15,
-          "activity": "Data Production, Selective Access, and Household Claims"
+          "activity": "Data Artifacts, Selective Access, and Household Claims"
         }
       ],
       "date": "2027-01-27",
       "digital_usage_minutes": 8,
       "ai_augmented_learning_coverage": "Use minutes 148–155 for a prediction and bill calculation; extend percentages in optional practice.",
-      "evidence_standards_coverage": "Use five minutes of measurement discussion for the interest, its representation, and the action standard."
+      "evidence_standards_coverage": "Use five minutes of measurement discussion for the interest, its representation, and the action standard.",
+      "artifact_coverage": "Use minutes 155–170 for dataset origin, identity, and the synthetic retention/request comparison; full code and selective-release extensions remain optional practice."
     },
     {
       "session": 3,
@@ -947,12 +948,12 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 105,
+      "slides": 108,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
       "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, mobile targeting (Dubé et al., 2017), and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice. Compare conflicts of interest, reward-learning evidence, and consumer control through the synthetic feed case and Kantian, Scanlonian, and Confucian arguments. Bad controls, phantom-project exposure, and thoughtful sample design. Evaluate data as artifacts, truth and norms, undone science, and institutional duties to produce evidence. Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections.",
-      "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims. Reasonable rejection, pricing authority, antitrust evidence, and access to critical replication.; measurement quality, worthy objectives, and reasonableness across pricing and data-center claims",
+      "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims. Reasonable rejection, pricing authority, antitrust evidence, and access to critical replication.; measurement quality, worthy objectives, and reasonableness across pricing and data-center claims Assess whether research under an NDA ought to exist, separating conduct, publication, and public reliance.",
       "timing": [
         {
           "start_minute": 0,
@@ -1006,13 +1007,13 @@
           "start_minute": 95,
           "end_minute": 100,
           "minutes": 5,
-          "activity": "Evidentiary Standards and the Burden of Uncertainty"
+          "activity": "Evidence, Artifacts, and Research Agreements"
         },
         {
           "start_minute": 100,
           "end_minute": 110,
           "minutes": 10,
-          "activity": "Pricing Burdens, Feasible Alternatives, and the Strongest Reply"
+          "activity": "Reasonable Objections and the Decision to Proceed"
         },
         {
           "start_minute": 110,
@@ -1081,7 +1082,8 @@
       "pricing_reasons_coverage": "Select the demand-completion and burden comparison at 50–60, a Kantian or Scanlonian pricing case within 80–110, and antitrust evidence within the existing policy discussion. Other cases are alternative discussions; extended reconstruction remains optional.",
       "ai_augmented_learning_coverage": "Use three minutes within the existing ethics discussion for learner authority and supported disagreement.",
       "bad_controls_practice": "../07_Labs/Bad_Controls/README.md",
-      "evidence_standards_coverage": "Use 90–95 for the premises of protection under uncertainty, 95–100 for evidentiary standards, and 100–110 for pricing burdens and the strongest reply. Select these slides within existing discussion; the full deck is a case library, and extended comparisons are optional practice."
+      "evidence_standards_coverage": "Use 90–95 for the premises of protection under uncertainty, 95–100 for evidentiary standards, and 100–110 for pricing burdens and the strongest reply. Select these slides within existing discussion; the full deck is a case library, and extended comparisons are optional practice.",
+      "artifact_coverage": "Select the artifact and NDA comparison within minutes 95–110; extended contract assessment is optional practice. The deck remains a case library."
     },
     {
       "session": 15,

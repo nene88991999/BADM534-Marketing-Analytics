@@ -1,6 +1,6 @@
 # M5 · Content Analysis, Text and Social Media
 
-59 resources (18 core). Built 2026-11-24 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
+61 resources (20 core). Built 2026-11-27 from `00_Index/_data/`; edit the YAML there and rerun `00_Index/_build/build_catalog.py` rather than editing this file.
 
 Priority: **core** = likely to assign or build on; **recommended** = strong supplement; **optional** = background or niche. *Access* tells you whether students can open it without a login.
 
@@ -11,8 +11,9 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 - [LLMs as annotators: methods and validation](#llms-as-annotators-methods-and-validation) (8)
 - [Failure modes of LLM text analysis](#failure-modes-of-llm-text-analysis) (2)
 - [Classifying text at scale with LLM APIs](#classifying-text-at-scale-with-llm-apis) (3)
+- [Earnings calls and pricing-risk text data](#earnings-calls-and-pricing-risk-text-data) (1)
 - [Social media and reviews](#social-media-and-reviews) (11)
-- [Network analysis and diffusion](#network-analysis-and-diffusion) (5)
+- [Network analysis and diffusion](#network-analysis-and-diffusion) (6)
 - [Python for marketing analytics: notebooks and code](#python-for-marketing-analytics-notebooks-and-code) (5)
 
 ## Text Analysis in Marketing: Anchor Papers
@@ -287,6 +288,15 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   Tools: openai
   *Note:* platform.openai.com/docs/guides/batch now redirects here. Output order may differ from input, so match on custom_id. Output files are deleted after 30 days.
 
+## Earnings Calls and Pricing-Risk Text Data
+
+- [core] **[Dataset: retailer earnings-call mentions of dynamic, surge, personalized and AI pricing (Nov 2021 - Nov 2026)](https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/03_Data_and_Code/Earnings_Calls)** (2026). Yang, N. (Marketing Analytics course materials)
+  `dataset` · `intermediate` · `access: open` · `Public numerical teaching export and source-linked paraphrases; original excerpts remain local.` · `AI angle`
+  A public teaching export contains 2,326 call records, 971 match records, a 123-firm roster, and 19 dictionary terms. Complete programs assess coverage, disclosure, interpretation, and event windows. Original transcript excerpts are excluded; seven interpretation cases use course-authored paraphrases. The supplied source collection is not a historical market census.
+  *Use in wiki:* Data for a PR / investor-relations risk-assessment exercise on dynamic and surveillance pricing, paired with the M8 ethics-and-law crosswalk; also an M5 dictionary-measurement exercise (precision, recall, LLM comparison) and an M6 event study around backlash dates.
+  Tools: pandas, requests, beautifulsoup4, matplotlib · Local copy: `../03_Data_and_Code/Earnings_Calls`
+  *Note:* Use the tested teaching export. Original collectors, excerpts, and provisional precision checks remain local reference material.
+
 ## Social Media and Reviews
 
 - [core] **[Bluesky API Directory: public endpoints (no authentication)](https://docs.bsky.app/docs/advanced-guides/api-directory)** (2026). Bluesky PBC. *docs.bsky.app*
@@ -295,6 +305,13 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Default platform for live social-media labs: students collect posts on a brand or hashtag with the Python SDK, then run sentiment, topic and reply-network analyses.
   Tools: atproto, websockets
   *Note:* Jetstream announcement (Oct 2024; not a formally stable API): https://docs.bsky.app/blog/jetstream. Community Python SDK: https://atproto.blue/en/latest/ (pip install atproto). Main docs: https://docs.bsky.app/. All fetched. Remind students of ethics: public posts are not consent for redistribution.
+
+- [core] **[The Market for Fake Reviews](https://doi.org/10.1287/mksc.2022.1353)** (2022). He, S.; Hollenbeck, B.; Proserpio, D. *Marketing Science 41(5), 896-921*
+  `paper` · `intermediate` · `access: library`
+  Documents the online market for buying fake Amazon reviews (organized via Facebook groups) and its effects on ratings, sales and product outcomes.
+  *Use in wiki:* Case for discussing review-data validity before running sentiment on reviews. Pairs with the FTC's 2024 fake-review rule.
+  DOI [10.1287/mksc.2022.1353](https://doi.org/10.1287/mksc.2022.1353)
+  *Note:* DOI metadata confirmed via Crossref; summary is from general knowledge of the paper. Also see Luca & Zervas (2016), 'Fake It Till You Make It', Management Science 62(12):3412-3427, doi 10.1287/mnsc.2015.2304 (Crossref-verified).
 
 - [recommended] **[Reddit Data API Wiki](https://support.reddithelp.com/hc/en-us/articles/16160319875092-Reddit-Data-API-Wiki)** (2026). Reddit, Inc. *Reddit Help*
   `documentation` · `intro` · `access: application`
@@ -329,13 +346,6 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Framework reading for influencer analytics; pairs with the MBA 542 TikTok transcript exercise, in which an LLM scores expertise and authenticity cues.
   DOI [10.1007/s11747-021-00829-4](https://doi.org/10.1007/s11747-021-00829-4) · [Open-access copy](https://ira.lib.polyu.edu.hk/bitstream/10397/94874/1/Leung_Online_Influencer_Marketing.pdf)
   *Note:* Also on the MBA 542 Module 3 reading list. Distinct from the Leung et al. (2022) Journal of Marketing paper on influencer marketing effectiveness, which is also in this catalog.
-
-- [recommended] **[The Market for Fake Reviews](https://doi.org/10.1287/mksc.2022.1353)** (2022). He, S.; Hollenbeck, B.; Proserpio, D. *Marketing Science 41(5), 896-921*
-  `paper` · `intermediate` · `access: library`
-  Documents the online market for buying fake Amazon reviews (organized via Facebook groups) and its effects on ratings, sales and product outcomes.
-  *Use in wiki:* Case for discussing review-data validity before running sentiment on reviews. Pairs with the FTC's 2024 fake-review rule.
-  DOI [10.1287/mksc.2022.1353](https://doi.org/10.1287/mksc.2022.1353)
-  *Note:* DOI metadata confirmed via Crossref; summary is from general knowledge of the paper. Also see Luca & Zervas (2016), 'Fake It Till You Make It', Management Science 62(12):3412-3427, doi 10.1287/mnsc.2015.2304 (Crossref-verified).
 
 - [recommended] **[The Effect of Word of Mouth on Sales: Online Book Reviews](https://doi.org/10.1509/jmkr.43.3.345)** (2006). Chevalier, J. A.; Mayzlin, D. *Journal of Marketing Research 43(3), 345-354*
   `paper` · `intermediate` · `access: library`
@@ -385,6 +395,12 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
   *Use in wiki:* Adapt the hubs/centrality and bipartite (customer-product) notebooks as M5 labs. Bipartite graphs link to recommendation in M7.
   Tools: networkx, nxviz · Local copy: `05_M5_Text_and_Social_Media_Analytics/repos/ericmjl__Network-Analysis-Made-Simple`
   *Note:* Binder supported; Colab not mentioned. The ebook (PDF/EPUB) on LeanPub is paid, but the notebooks are free. Year reflects the live site.
+
+- [recommended] **[Facebook Social Connectedness Index (SCI): friendship links between US counties, zip codes and countries](https://ai.meta.com/ai-for-good/datasets/social-connectedness-index/)** (2018). Bailey, M.; Cao, R.; Kuchler, T.; Stroebel, J.; Wong, A. (Meta Data for Good)
+  `dataset` · `intermediate` · `access: open`
+  Relative probability that a Facebook user in one area is friends with a user in another, for every pair of US counties and zip codes and of countries and many sub-national regions, built from aggregated Facebook friendships.
+  *Use in wiki:* Word of mouth has a geography: use the SCI to ask whether a product spreads along friendship links (housing beliefs, product adoption, political ads in the authors' papers). Join to county data for an M3 gravity-style regression.
+  *Note:* Introduced in Bailey, Cao, Kuchler, Stroebel and Wong, 'Social Connectedness: Measurement, Determinants, and Effects', Journal of Economic Perspectives 32(3), 2018 (replication data on openICPSR 114016). Download terms are on the Meta / Humanitarian Data Exchange pages.
 
 - [recommended] **[Identifying Influential and Susceptible Members of Social Networks](https://doi.org/10.1126/science.1215842)** (2012). Aral, S.; Walker, D. *Science 337(6092), 337-341*
   `paper` · `intermediate` · `access: library`
@@ -440,6 +456,7 @@ Priority: **core** = likely to assign or build on; **recommended** = strong supp
 
 Resources in this folder that show the method done with AI help, LLM versions of the method, or documented failure modes of AI-written analysis:
 
+- [Dataset: retailer earnings-call mentions of dynamic, surge, personalized and AI pricing (Nov 2021 - Nov 2026)](https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/03_Data_and_Code/Earnings_Calls)
 - [OpenAI Cookbook: embedding and classification notebooks on Amazon fine-food reviews, plus structured outputs and synthetic data](https://github.com/openai/openai-cookbook)
 - [Using natural language processing to analyse text data in behavioural science](https://www.nature.com/articles/s44159-024-00392-z)
 - [Best Practices for Text Annotation with Large Language Models](https://sociologica.unibo.it/article/view/19461)
@@ -466,12 +483,12 @@ Resources in this folder that show the method done with AI help, LLM versions of
 ## Related Resources in Other Folders
 
 - **`01_M1_Marketing_Analytics_and_Python`**: [Applying Data Analytics in Marketing](https://www.coursera.org/learn/applying-data-analytics-business-in-marketing); [Principles of Marketing Engineering and Analytics (3rd ed.)](https://faculty.essec.edu/research/3268-principles-of-marketing-engineering-and-analytics-3rd-edition)
-- **`02_M2_Customer_Data_and_Visualization`**: [Wikimedia REST API: pageviews per article (daily since 2015)](https://wikimedia.org/api/rest_v1/)
+- **`02_M2_Customer_Data_and_Visualization`**: [Wikimedia REST API: pageviews per article (daily since 2015)](https://wikimedia.org/api/rest_v1/); [Social Security Administration baby names (national, state and territory files)](https://www.ssa.gov/oact/babynames/limits.html)
 - **`04_M4_Conjoint_Segmentation_CLV`**: [AI-Human Hybrids for Marketing Research: Leveraging Large Language Models (LLMs) as Collaborators](https://journals.sagepub.com/doi/10.1177/00222429241276529); [TensorHouse: reference notebooks for marketing, promotions and pricing (successor to Introduction to Algorithmic Marketing examples)](https://github.com/ikatsov/tensor-house)
 - **`07_M7_Predictive_Models_ML_and_AI`**: [Machine learning and AI in marketing: Connecting computing power to human insights](https://ideas.repec.org/a/eee/ijrema/v37y2020i3p481-504.html)
-- **`08_M8_Current_Topics_in_Marketing`**: [Gemini API Cookbook: Market a Jet Backpack, JSON sentiment and classification, embeddings classification and clustering](https://github.com/google-gemini/cookbook); [2025 Creator Economy Ad Spend & Strategy Report](https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/); [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735); [Google Cloud generative-ai repo: creative content generation, product attribute extraction, multimodal sentiment, AI-assisted data science](https://github.com/GoogleCloudPlatform/generative-ai); [Frontiers: Supporting Content Marketing with Natural Language Generation](https://ideas.repec.org/a/inm/ormksc/v41y2022i3p441-452.html)
+- **`08_M8_Current_Topics_in_Marketing`**: [Course note: marketing tactics, consumer harm, and the law (crosswalk for M1-M8)](https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/01_Resources/08_M8_Current_Topics_in_Marketing/ethics_and_law); [Gemini API Cookbook: Market a Jet Backpack, JSON sentiment and classification, embeddings classification and clustering](https://github.com/google-gemini/cookbook); [2025 Creator Economy Ad Spend & Strategy Report](https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/); [FTC Consumer Reviews and Testimonials Rule, 16 CFR Part 465](https://www.ecfr.gov/current/title-16/part-465); [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735); [Blind Spot: The Attention Economy and the Law](https://scholarship.law.columbia.edu/faculty_scholarship/2029/); [Dark Patterns at Scale: Findings from a Crawl of 11K Shopping Websites](https://doi.org/10.1145/3359183); [Google Cloud generative-ai repo: creative content generation, product attribute extraction, multimodal sentiment, AI-assisted data science](https://github.com/GoogleCloudPlatform/generative-ai); [FTC Guides Concerning Endorsements and Testimonials, 16 CFR Part 255 (2023 revision)](https://www.ecfr.gov/current/title-16/part-255); [Frontiers: Supporting Content Marketing with Natural Language Generation](https://ideas.repec.org/a/inm/ormksc/v41y2022i3p441-452.html); [FTC v. Fashion Nova: $4.2 million for suppressing negative reviews (2022)](https://www.fox26houston.com/news/fashion-nova-to-pay-4-2m-to-settle-claims-it-blocked-negative-online-reviews); [The Effects of Influencer Advertising Disclosure Regulations: Evidence from Instagram](https://doi.org/10.1145/3391403.3399477); [Fake It Till You Make It: Reputation, Competition, and Yelp Review Fraud](https://doi.org/10.1287/mnsc.2015.2304); [The Attention Merchants: The Epic Scramble to Get Inside Our Heads](https://scholarship.law.columbia.edu/books/64/); [Promotional Reviews: An Empirical Investigation of Online Review Manipulation](https://doi.org/10.1257/aer.104.8.2421)
 - **`10_AI_Coding_Concepts_and_Evidence`**: [Anthropic Economic Index: AI's impact on software development](https://www.anthropic.com/research/impact-software-development)
 - **`11_AI_Coding_Tools_and_Workflows`**: [Claude Cookbooks (anthropics/claude-cookbooks)](https://github.com/anthropics/claude-cookbooks); [Generative AI for Beginners (21 lessons)](https://github.com/microsoft/generative-ai-for-beginners)
 - **`12_AI_Coding_Pedagogy_and_Policy`**: [Anthropic Education Report: How University Students Use Claude](https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude)
-- **`20_Datasets`**: [Amazon Reviews 2023 (Amazon Reviews'23)](https://amazon-reviews-2023.github.io/); [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce); [The Upworthy Research Archive](https://upworthy.natematias.com/); [Stanford Large Network Dataset Collection (SNAP)](https://snap.stanford.edu/data/); [Yelp Open Dataset](https://business.yelp.com/data/resources/open-dataset/); [TweetEval](https://huggingface.co/datasets/cardiffnlp/tweet_eval); [Bluesky developer docs and Jetstream](https://docs.bsky.app/); [Hugging Face Datasets Hub](https://huggingface.co/datasets); [Reddit Data API and Reddit for Researchers access rules](https://support.reddithelp.com/hc/en-us/articles/14945211791892-Developer-Platform-Accessing-Reddit-Data)
+- **`20_Datasets`**: [Amazon Reviews 2023 (Amazon Reviews'23)](https://amazon-reviews-2023.github.io/); [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce); [The Upworthy Research Archive](https://upworthy.natematias.com/); [S&P 500 Earnings Call Transcripts with Speaker Turns, Roles and SEC CIKs (2005-2025), Hugging Face](https://huggingface.co/datasets/zcyeee/sp500-earnings-call-turns); [Stanford Large Network Dataset Collection (SNAP)](https://snap.stanford.edu/data/); [Yelp Open Dataset](https://business.yelp.com/data/resources/open-dataset/); [TweetEval](https://huggingface.co/datasets/cardiffnlp/tweet_eval); [Bluesky developer docs and Jetstream](https://docs.bsky.app/); [Hugging Face Datasets Hub](https://huggingface.co/datasets); [Reddit Data API and Reddit for Researchers access rules](https://support.reddithelp.com/hc/en-us/articles/14945211791892-Developer-Platform-Accessing-Reddit-Data); [roic.ai: earnings call transcript pages by ticker and fiscal quarter](https://www.roic.ai/); [The Motley Fool: earnings call transcripts (free web pages, with monthly sitemaps)](https://www.fool.com/earnings-call-transcripts/)
 - **`21_Open_Textbooks_and_Courses`**: [Coding for Economists](https://aeturrell.github.io/coding-for-economists/); [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1); [Speech and Language Processing, 3rd ed. draft](https://web.stanford.edu/~jurafsky/slp3/); [Applied Marketing Analytics Using Python](https://collegepublishing.sagepub.com/products/applied-marketing-analytics-using-python-1-288563); [Data 100 Course Notes: Principles and Techniques of Data Science](https://ds100.org/course-notes/); [Machine Learning and Generative AI for Marketing (companion code)](https://github.com/PacktPublishing/Machine-Learning-and-Generative-AI-for-Marketing); [Dealing with Data (NYU teaching notebooks)](https://github.com/ipeirotis/dealing_with_data); [QuantEcon DataScience: Introduction to Economic Modeling and Data Science](https://datascience.quantecon.org/); [Practical Deep Learning for Coders](https://course.fast.ai/); [Marketing Data Science: Modeling Techniques in Predictive Analytics with R and Python (code downloads)](https://www.informit.com/promotions/marketing-data-science-modeling-techniques-in-predictive-141181)

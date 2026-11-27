@@ -476,7 +476,9 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Evidence_Standards/README.md",
     "03_Data_and_Code/Evidence_Standards/VERIFICATION.md",
     "03_Data_and_Code/Evidence_Standards/results/README.md",
-    "07_Labs/Evidence_Standards/README.md"
+    "07_Labs/Evidence_Standards/README.md",
+    "03_Data_and_Code/Data_Production/artifact_results/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -525,12 +527,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-integrated-evidence-standards",
+    "revision": "2026-11-27-data-artifacts-and-research-independence",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 150,
-    "pages": 620,
+    "figures_count": 153,
+    "pages": 634,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -565,7 +567,7 @@ Generated from course.json and the source files identified below. This file cont
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
     "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
     "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
-    "python_source_blocks": 130
+    "python_source_blocks": 131
   },
   "datasets": [
     {
@@ -662,7 +664,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 536,
+    "slides": 541,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1238,7 +1240,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-27-integrated-evidence-standards",
+  "revision": "2026-11-27-data-artifacts-and-research-independence",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1702,26 +1704,31 @@ Generated from course.json and the source files identified below. This file cont
     "practice": "07_Labs/Data_Truth_and_Norms/README.md",
     "verification": "03_Data_and_Code/Data_Production/VERIFICATION.md",
     "sections": [
-      "M2 \u00a7\u00a72.30\u20132.31",
+      "M2 \u00a7\u00a72.30\u20132.31, 2.33\u20132.34",
       "M6 \u00a76.43",
-      "M9 \u00a7\u00a79.51\u20139.54"
+      "M9 \u00a7\u00a79.51\u20139.54, 9.60\u20139.65"
     ],
     "sessions": [
       2,
       10,
       14
     ],
-    "philosophical_and_methodological_sources": 18,
-    "institutional_sources": 8,
+    "philosophical_and_methodological_sources": 20,
+    "institutional_sources": 10,
     "local_source_files": 14,
     "local_pdf_copies": 12,
     "local_word_manuscripts": 2,
-    "original_programs": 1,
-    "original_figures": 3,
-    "additional_slides": 6,
+    "original_programs": 2,
+    "original_figures": 6,
+    "additional_slides": 11,
     "scope": "Original synthetic disclosure comparison and verified source assessment; no empirical utility effect or suppression finding.",
-    "matching_python_blocks": 129,
-    "rendered_pages_checked": 53
+    "matching_python_blocks": 131,
+    "rendered_pages_checked": 43,
+    "updated_on": "2026-11-27",
+    "artifact_example": "03_Data_and_Code/Data_Production/data_artifacts.py",
+    "artifact_results": "03_Data_and_Code/Data_Production/artifact_results/README.md",
+    "restricted_research": "01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md",
+    "verification_date": "2026-11-27"
   },
   "measurement_and_evidence_standards": {
     "released_on": "2026-11-27",
@@ -2378,6 +2385,10 @@ M2 §§2.30–2.31 develop provenance and selective access; M6 §6.43 separates 
 
 The [historical collection](01_Resources/46_Measurement_and_Disciplinary_History/README.md) supports M1 §1.23 and M9 §9.55. The [evidence-standards collection](01_Resources/47_Evidence_Standards_and_Error_Costs/README.md) connects M2 §2.32, M3 §3.22, M4 §4.30, M5 §5.28, M6 §§6.44–6.45, M7 §7.48, M8 §8.34, and M9 §§9.56–9.59. A [complete synthetic example](03_Data_and_Code/Evidence_Standards/README.md) compares error costs with fixed evidence; [optional practice](07_Labs/Evidence_Standards/README.md) develops the statistical and philosophical argument. The syllabus, ten session decks, and [electricity wiki pilot](08_Wiki/pilot/index.html#uncertainty) carry the same distinctions between inquiry, protection, and remedy.
 
+## Data, Artifacts, and Research Agreements
+
+M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical copies through a complete synthetic subscription program. M9 §§9.60–9.65 connects artifact creation, public norms, NDA restrictions, publication selection, and reasons owed to affected people. The discussion asks whether research under an NDA ought to exist and distinguishes conducting, publishing, and relying on a study. Sessions 2 and 14 use the same cases, with three editable TikZ diagrams and optional practice in `07_Labs/Data_Truth_and_Norms/`. Source annotations and professional-policy scope appear in `01_Resources/45_Data_Truth_and_Norms/`.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2734,9 +2745,9 @@ The full derivation and program appear in M6 §6.44. [Optional practice](../07_L
 
 # Lecture Notes
 
-**By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
+**By Nathan Yang. Updated November 27, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 150 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 153 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2750,7 +2761,7 @@ Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with t
 | M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content assessments and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
-| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 26 editable TikZ figures |
+| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 28 editable TikZ figures |
 
 The sequence follows the historical syllabus’s topic families, with current dates and requirements supplied by the released syllabus. Published research motivates selected cases, while empirical mHealth results, simulations, and synthetic examples retain their own assumptions and interpretations.
 
@@ -2812,7 +2823,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 130 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 131 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -2970,6 +2981,10 @@ M2 §§2.30–2.31, M6 §6.43, and M9 §§9.51–9.54 distinguish data artifacts
 
 M1 §1.23, M2 §2.32, M3 §3.22, M4 §4.30, M5 §5.28, M6 §§6.44–6.45, M7 §7.48, M8 §8.34, and M9 §§9.55–9.59 connect disciplinary history, heterogeneous demand, unequal error costs, and reasonable action under uncertainty. The complete [Python example](../03_Data_and_Code/Evidence_Standards/README.md) appears in M6 §6.44.4. Three shared TikZ figures explain expected loss, institutional standards, and the premises of proportionate protection. [Optional practice](../07_Labs/Evidence_Standards/README.md) compares opposing costs and the strongest objections.
 
+## Data as Artifacts and Restricted Research
+
+M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical copies through a complete synthetic subscription program. M9 §§9.60–9.65 connects artifact creation, public norms, NDA restrictions, publication selection, and reasons owed to affected people. The discussion asks whether research under an NDA ought to exist and distinguishes conducting, publishing, and relying on a study. Sessions 2 and 14 use the same cases, with three editable TikZ diagrams and optional practice in `07_Labs/Data_Truth_and_Norms/`. Source annotations and professional-policy scope appear in `01_Resources/45_Data_Truth_and_Norms/`.
+
 ---
 
 ## Source: 06_Lecture_Notes/Preface.md
@@ -3056,7 +3071,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 536 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 541 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -3246,6 +3261,10 @@ Six slides in Sessions 2, 10, and 14 connect data production, selected evidence,
 ## Measurement Traditions and Unequal Error Costs
 
 Sessions 1, 2, 4, 5, 7, 9, 10, 11, 13, and 14 connect institutional history, the definition of harm, heterogeneity, and evidence for action. Session 9 derives the [synthetic decision example](../03_Data_and_Code/Evidence_Standards/README.md); Session 14 uses editable diagrams for evidentiary standards and reasonable protection. The [session plan](SESSION_PLAN.md#evidence-standards-and-unequal-error-costs) selects these discussions within existing meeting blocks. [Optional practice](../07_Labs/Evidence_Standards/README.md) supplies extended calculation and philosophical arguments.
+
+## Data Artifacts and Restricted Research
+
+Session 2 uses minutes 155–170 to compare events, records, versions, and copies through synthetic retention and pending-request counts. Session 14 selects the artifact and NDA comparison within minutes 95–110: should the study be conducted, published, and used for public decisions? The extended agreement comparison and complete Python are optional practice in [Data, Truth, and Norms](../07_Labs/Data_Truth_and_Norms/README.md). These choices fit the existing 170-minute meetings; the full Session 14 deck remains a case library.
 
 ---
 
@@ -3843,6 +3862,10 @@ The [collection](../01_Resources/45_Data_Truth_and_Norms/README.md) develops an 
 
 The [historical readings](../01_Resources/46_Measurement_and_Disciplinary_History/README.md) support M1 §1.23 and M9 §9.55. The [evidence-standards collection](../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md) supports M2 §2.32, M3 §3.22, M4 §4.30, M5 §5.28, M6 §§6.44–6.45, M7 §7.48, M8 §8.34, and M9 §§9.56–9.59. The integration distinguishes historical evidence, model restrictions, a philosophical institutional critique, exact synthetic calculation, and legal requirements. It preserves contrary evidence about identification, markup direction, theory at Cowles, and continuing societal marketing research. Complete Python, three editable figures, selected slides in ten sessions, and [optional practice](../07_Labs/Evidence_Standards/README.md) accompany the discussion.
 
+## Data as Artifacts and Research Independence
+
+M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical copies through a complete synthetic subscription program. M9 §§9.60–9.65 connects artifact creation, public norms, NDA restrictions, publication selection, and reasons owed to affected people. The discussion asks whether research under an NDA ought to exist and distinguishes conducting, publishing, and relying on a study. Sessions 2 and 14 use the same cases, with three editable TikZ diagrams and optional practice in `07_Labs/Data_Truth_and_Norms/`. Source annotations and professional-policy scope appear in `01_Resources/45_Data_Truth_and_Norms/`.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -4199,7 +4222,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 36 |
-| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 30 |
+| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 32 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 30 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 33 |
@@ -4211,7 +4234,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 61 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 23 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 105 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 108 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -4519,8 +4542,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–90 | Kantian, Confucian, and Scanlonian Evaluation |
 | 90–95 | Premises for Proportionate Protection Under Uncertainty |
-| 95–100 | Evidentiary Standards and the Burden of Uncertainty |
-| 100–110 | Pricing Burdens, Feasible Alternatives, and the Strongest Reply |
+| 95–100 | Evidence, Artifacts, and Research Agreements |
+| 100–110 | Reasonable Objections and the Decision to Proceed |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–165 | Digital Channels and Meaningful Customer Choice |
@@ -4615,6 +4638,10 @@ The [optional lab](../07_Labs/Evidence_Standards/README.md) links M1 §1.23, M2 
 - **Session 14:** Use 90–95 for the premises of protection under uncertainty, 95–100 for evidentiary standards, and 100–110 for pricing burdens and the strongest reply. Select these slides within existing discussion; the full deck is a case library, and extended comparisons are optional practice.
 
 These allocations select among the existing examples within each 170-minute meeting. The full decks retain alternatives and detailed follow-up; the complete code and extended philosophical comparisons remain available for optional practice.
+
+## Data Artifacts and Restricted Research
+
+Session 2 uses minutes 155–170 to compare events, records, versions, and copies through synthetic retention and pending-request counts. Session 14 selects the artifact and NDA comparison within minutes 95–110: should the study be conducted, published, and used for public decisions? The extended agreement comparison and complete Python are optional practice in [Data, Truth, and Norms](../07_Labs/Data_Truth_and_Norms/README.md). These choices fit the existing 170-minute meetings; the full Session 14 deck remains a case library.
 
 ---
 
@@ -7996,6 +8023,149 @@ For electricity, a household can reasonably ask why an average revenue-per-kWh r
 For targeted pricing, a customer can ask why accurate prediction of acceptance authorizes exploiting restricted alternatives. A firm's reason based on expected profit meets the customer's reasons concerning dependence, privacy, and authority to refuse. The firm may defend the practice through lower prices for some customers, improved access, or a valuable service. Assess those defenses against the actual policy and a feasible alternative. A demand model contributes evidence to this comparison without selecting whose interests have standing.
 
 Across both cases, statistical uncertainty creates a question about responsibility. Institutions can distribute the burden of producing evidence according to access, control, exposure, and the cost of obtaining reliable records. An actor that controls relevant information has a reason to facilitate scrutiny when its activity creates a credible threat. This principle supports proportionate evidence production and review while preserving the factual requirements of a particular allegation. The defensible conclusion states what ought to be done, for whom, on which premises, and under what conditions it should change.
+
+## 9.60 The Ontology of a Dataset
+
+A resident evaluating a development proposal needs to know what a published electricity dataset represents. Its rows may describe utilities, service territories, customer classes, accounts, or households. These objects have different relations to the people who pay bills. Calling the file household-cost data does not establish those relations. The analyst must defend the connection between the created representation and the claim advanced in public discussion.
+
+An artifactual account directs attention to the conditions under which a dataset is created, persists, and changes. Artifactual kinds depend on intentional production under a substantive conception of what is being made; successful creation requires more than the maker's declaration (Thomasson, 2003, pp. 592–600). In the application to data, a schema, encoding, population rule, and recording process supply relevant features. A dataset designed to track operating facilities exists because people built a system with those features. Physical electricity consumption and a household's hardship have further conditions of existence that the dataset's designers do not determine.
+
+### 9.60.1 Four Forms of Dependence
+
+The connection between a dataset and an institution has several forms. **Dependence for creation** concerns the activity that brought the object into existence. **Dependence for meaning** concerns the conventions under which its fields count as records of particular things. **Dependence for preservation** concerns the copies, documentation, and practices through which it remains available and intelligible. **Dependence for evidential use** concerns the additional premises through which it supports a claim. These relations can coexist without making every object called data a member of one metaphysical category.
+
+A tariff table may be created for billing, use a specified currency and effective date, survive through archived versions, and later support an analysis of residential cost incidence. Each relation answers a different question. A file can survive while its meaning becomes inaccessible because the codebook is lost. Its meaning can remain clear while its sample is inadequate for a population claim. Its data can support an accurate description while the proposed action remains unjustified to affected residents.
+
+The comparison with fictional characters is useful for asking about creation and identity. On the artifactual account, a character has a history connected to its creation and sustaining practices (Thomasson, 1999, chapter 3). Extending those questions to datasets leaves open whether a particular dataset version is best treated as an abstract object, a material object, or an organized informational entity. The practical argument needs the distinction between the representation and its referents. It does not require settling every dispute about abstract artifacts.
+
+### 9.60.2 Intended Use and Public Norms
+
+Public artifacts can depend on norms of recognition and treatment, including who is expected to use them and how (Thomasson, 2014, §§5.3–5.4). Applied to records, the relevant questions include who can issue an official version, correct an entry, authorize a linkage, or contest a classification. An unofficial copy may contain the same values while lacking the institutional authority to settle a payment dispute. Conversely, an official entry can contain an error that the account holder has grounds to challenge.
+
+Institutional acceptance gives a record a role within a practice. It does not establish the moral acceptability of that practice. A valid charge can impose an unreasonable burden, and a recognized customer category can exclude a concern that deserves attention. The authority to maintain a database therefore differs from the authority to decide which of the represented person's interests matter.
+
+## 9.61 What the Artifact Makes Visible
+
+A firm can record purchases, subscriptions, and clicks because its systems must process those events. It may devote fewer resources to recording unsuccessful attempts to leave, occasions when a customer resisted an offer, or reasons for declining a service. The resulting asymmetry makes some managerial questions easier to answer. Explaining that asymmetry requires evidence about the design, incentives, duties, and costs of collection. The artifact's existence supplies a starting point for institutional inquiry, while the particular incentive responsible remains an empirical question.
+
+The synthetic subscription example (§2.34) holds events fixed while expanding the released fields. Five of six initial accounts remain subscribed, and three of those five have pending cancellation requests. Accurate retention accounting is compatible with unresolved objections to the process that produces retention. The problem arises when the status is used as a sufficient reason to describe the relationship as wanted. Adding the request fields improves the basis for criticism without creating the customers' reasons or exhausting them.
+
+The same distinction changes several recurring cases. An mHealth log is an artifact of an entry interface, food database, and recording practice; it represents logged intake under those conditions. A transcript is an artifact of recording, speaker attribution, editing, and release; it can support a claim about what was said, while actual cost recovery requires additional institutional evidence. A personalized-pricing score is produced under an outcome definition and an optimization objective; high predictive accuracy leaves the permissibility of using it open. The objects' designed features help explain both their analytical usefulness and the questions they leave unanswered.
+
+### 9.61.1 Electricity Records and Project Histories
+
+An operating-facility database can be well suited to counting facilities that meet its inclusion rule. A cost-incidence inquiry may also need proposed projects, preparatory investment, withdrawn applications, and approved cost allocation. A failed project can disappear from the operating category while investments made in anticipation of it remain economically relevant. The absence of a row under one rule therefore cannot establish the absence of exposure under another. Whether this occurred for a particular utility and period requires project and regulatory evidence.
+
+Similarly, revenue divided by electricity sold has a defined aggregate meaning. Its relation to actual household payments depends on customer composition, consumption, fixed charges, credits, and the relevant billing interval. Renaming the variable does not alter its observation unit. Household billing evidence already exists; the remaining tasks can include access, linkage, historical coverage, and construction of a credible counterfactual (§§6.43, 9.53.1). Political incentives may influence these tasks, but political sensitivity alone does not establish that collection or release will never occur.
+
+### 9.61.2 Two Invalid Inferences
+
+The first invalid inference moves from institutional production to automatic unreliability: because a company created a dataset, its contents must be false. A billing incentive can improve the accuracy of recorded charges, and independent records can support or contradict particular entries. The criticism becomes stronger when it identifies a mechanism through which a field, exclusion, or access rule changes the inference.
+
+The second moves from accuracy within a schema to completeness of the institution's description of people. A correct record of payment does not exhaust the payer's interests, alternatives, or reasons for objection. Predicting behavior precisely does not supply a complete moral ontology. Missing recorded variables remain empirical gaps; the Kantian question concerns the limits of treating empirical representation as an exhaustive account of a person (§9.55.3).
+
+## 9.62 Reasons Owed to the People Represented
+
+Suppose an institution proposes to use an internally defined record as sufficient grounds for a public assurance. The people exposed to that assurance can ask how its categories address their burdens, how errors can be corrected, and what evidence would change the conclusion. A contractualist assessment asks whether the governing principle could be reasonably rejected by those affected, considering their individual complaints and feasible alternatives (Scanlon, 1998). The fact that the record is an artifact identifies choices for scrutiny. A moral conclusion requires reasons about those choices and their consequences.
+
+![Creation concerns the dataset's purpose, schema, authority, and revision rules. Evidence concerns events, coverage, and comparisons. Justification concerns affected people, objections, and alternatives. A reasonable objection can require changes to categories, access, or safeguards.](../figures/M09_artifact_justification.png)
+
+Consider a rule that permits reassuring residents whenever the institution's chosen indicator shows little change, even when the institution controls other information needed to assess their costs. The argument against that rule has four premises:
+
+1. The assurance can influence a decision that imposes material consequences on residents.
+2. The chosen indicator leaves a relevant connection to those consequences unresolved.
+3. Residents have a reason to demand justification that addresses their exposure, including an effective opportunity to challenge errors or omissions.
+4. Feasible alternatives can improve scrutiny through narrower claims, protected access, additional reporting, or proportionate safeguards.
+
+These premises support a requirement to improve the justification or narrow the assurance. They do not establish that every development raises household costs. The opposing argument can cite privacy, cost, commercial confidentiality, or the value of timely decisions. Its strength depends on the actual burden of the proposed alternative and on which people would bear the consequences of delay or error. An accessible aggregate report or controlled linkage may address these objections more reasonably than either unrestricted release or complete denial of scrutiny.
+
+The obligation follows from the practice's effects on people and their standing to demand reasons. A more comprehensive dataset can improve that discussion. Its comprehensiveness alone cannot justify every use, and a person's objection can remain important when no available variable captures it. The analyst ought to explain the construction of the record, defend the inference, and justify the action to the people affected.
+
+### Further Reading
+
+(Thomasson, 2003), [Realism and Human Kinds](https://doi.org/10.1111/j.1933-1592.2003.tb00309.x), §§2–3; (Thomasson, 2014), [Public Artifacts, Intentions, and Norms](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc), §§5.2–5.4; (Thomasson, 1999), [Fiction and Metaphysics](https://www.cambridge.org/core/books/abs/fiction-and-metaphysics/fictional-characters-as-abstract-artifacts/CE4968D080D4B81C9DE76FF589C70017), chapter 3; (Scanlon, 1998), [What We Owe to Each Other](https://www.hup.harvard.edu/books/9780674004238), chapters 4–5.
+
+
+## 9.63 Research Under Confidentiality Agreements
+
+A company may provide records to researchers while retaining authority over their disclosure or use. The resulting paper reaches readers through an arrangement that can affect which questions are investigated, which observations enter the analysis, and which findings become public. Evaluating the paper therefore requires examining the arrangement alongside the statistical procedure. The central issue is how contractual control changes the evidence available for a claim and the opportunity to contest it.
+
+A nondisclosure agreement usually concerns confidentiality. Restrictions on analysis, publication, ownership, and future access may instead appear in a data-use agreement, research contract, or associated approval process. The relevant unit of assessment is the actual bundle of terms and practices. The label NDA does not establish that a sponsor has a publication veto, and a statement that data are proprietary does not reveal which analyses were permitted.
+
+### 9.63.1 A Governed Artifact
+
+The dataset's schema and contents describe one part of the research object. Its governed use includes who can inspect it, which transformations are authorized, who may retain a copy, and which outputs may leave the research environment. An unchanged file can be accessible for one inquiry and unavailable for another under different agreements. The agreement changes its permitted evidential use without changing the past transactions represented by its rows.
+
+Public artifacts can depend on shared norms of treatment (Thomasson, 2014, §5.4). Here, *public* concerns recognizable practices within a community; it does not mean that every artifact is freely downloadable. Applying this distinction to confidential research directs attention to the professional and contractual practices that authorize a dataset as research evidence. The institutional status of an approved output is itself a fact about the research process. Its approval does not establish the truth, completeness, or moral adequacy of every interpretation attached to it.
+
+The published paper is also a created representation. Its tables, variable names, exclusions, and permitted explanations present a particular path from records to conclusions. An agreement can shape that path before estimation begins or after results are known. A philosophical assessment asks both what the public object represents and how the conditions of its production determined what it leaves out.
+
+### 9.63.2 Where Restrictions Can Enter
+
+| Point of Control | Possible Restriction | Consequence to Examine |
+|---|---|---|
+| Access | Only selected accounts, periods, or variables are supplied | Coverage of the target population and relevant burdens |
+| Research question | Use is limited to a specified product or commercial purpose | Whether competing welfare questions can be investigated |
+| Linkage | Joining complaints, billing histories, or external outcomes is prohibited | Which mechanisms remain distinguishable |
+| Output review | Small cells or identifiable records must be suppressed | Privacy protection, lost subgroup information, and available alternatives |
+| Publication review | A fixed review period checks confidential details or patents | Review scope, duration, and independence of interpretation |
+| Approval | Publication requires sponsor consent | Whether unfavorable findings can enter the public record |
+| Explanation | The agreement or relevant restrictions cannot be described publicly | Whether readers can evaluate the scope of the evidence |
+| Preservation | Data must be destroyed or access ends | Whether later corrections and independent checks remain feasible |
+
+These are possible mechanisms to investigate, not universal NDA provisions. Confidentiality review can protect people and legitimate commercial information while preserving independent conclusions. An open-ended approval right creates a different allocation of authority. Even where an explicit veto is absent, dependence on future access may create an incentive to avoid questions that threaten the relationship. Establishing that this incentive altered a particular paper requires evidence about the choices made.
+
+Contractual constraints on research independence have been studied directly in clinical research. A survey of medical-school research administrators documented disagreement over permissible sponsor involvement in manuscripts and restrictions on later data sharing (Mello et al., 2005). That setting supplies evidence that research contracts can allocate consequential control. It does not establish the prevalence of those provisions in marketing research or their presence in a particular pricing or electricity study.
+
+### 9.63.3 Selection Before and After Estimation
+
+Restrictions can alter reporting through several distinct mechanisms. A variable restriction changes the measurable question. A sample restriction changes the population represented. An approval requirement can select which completed studies become visible. A reporting restriction can remove a table or prevent an explanation of an exclusion. These mechanisms deserve separate assessment because better estimation within the supplied sample cannot, by itself, repair all of them.
+
+Suppose studies favorable to a sponsor are more likely to receive publication permission than unfavorable studies. Even if each study uses an unbiased estimator before that decision, the visible set of estimates can overrepresent favorable results. The selection arises at publication. Conversely, if review checks only disclosure risk under a fixed rule applied equally across results, sponsor-favorable publication selection does not follow from the mere existence of review. The critic should identify the rule and its operation, including evidence about delayed, withdrawn, or unreported work when available.
+
+The absence of an adverse published result is consequently ambiguous when the selection process is unknown. It can reflect the underlying evidence, the questions permitted, the population supplied, the decision to publish, or other research choices. Unknown restrictions justify uncertainty about this process. They do not establish the sign of an unpublished effect or prove that a sponsor suppressed a result.
+
+## 9.64 Worked Comparison: Three Research Agreements
+
+Apply three hypothetical agreements to the same synthetic subscription history in §2.34. The records contain six initial accounts, five retained accounts, four submitted cancellation requests, and three pending requests. The complete Python program fixes these events across the comparison. Only the permitted research and reporting conditions change.
+
+**Agreement A: Confidential Records and Independent Reporting.** Identifiers remain in a protected environment. Researchers may analyze both status and submitted requests and publish nonidentifying aggregates after a defined disclosure review. Under the stipulated review outcome, the paper reports retention and pending-request counts with their denominators. Readers can see that administrative retention leaves voluntary continuation unresolved. Actual disclosure rules would need to assess re-identification risk; no threshold in this hypothetical agreement establishes a generally safe release size.
+
+**Agreement B: Restricted Research Purpose.** The supplied extract contains only account status, and its permitted use is retention forecasting. An accurate model can predict that status. The paper can describe this prediction, but a claim that customers choose freely to remain would require evidence beyond the permitted extract. The agreement shapes the answerable question before the model is estimated. An appropriate title, outcome definition, and interpretation should preserve that scope.
+
+**Agreement C: Sponsor Approval of All Public Outputs.** Researchers can inspect both status and requests, but publication requires discretionary approval without a stated deadline. The data available internally are as informative as under A. Public scrutiny nevertheless depends on another decision. Without a record of how approval operated, an outside reader cannot determine whether a missing request table was omitted by the authors, withheld by the sponsor, or excluded for another reason. Reporting the existence and scope of the approval right, where lawfully permitted, helps identify the uncertainty; it does not resolve it.
+
+These agreements produce different evidential opportunities from the same underlying events. A differs from B in the available question and from C in the allocation of publication authority. Confidentiality can enable research that would otherwise be impossible. The philosophical objection concerns a rule that turns that access into authority to control public conclusions while presenting them as independent evidence.
+
+## 9.65 Justifying Restricted Research to Affected People
+
+A consumer or resident can reasonably object to a principle that lets an institution obtain the credibility of independent research while reserving undisclosed control over whether unfavorable findings appear. The person's complaint concerns both the decision informed by the paper and the unequal ability to challenge it. A Scanlonian assessment weighs that complaint against the interests protected by restriction and the feasible alternatives (Scanlon, 1998). Protecting personal records is a substantial reason. It does not automatically justify control over the direction of the conclusion.
+
+![Data access, permitted analysis, and publication are separate contractual gates. Confidentiality review can protect identities; restrictions on questions or discretionary approval can change what reaches readers. A public conclusion requires an account of the relevant gates and independent justification of the resulting claim.](../figures/M09_restricted_research.png)
+
+The comparison should consider protected access, independent replication under equivalent confidentiality, publication of code and variable definitions, prespecified outcomes, a bounded disclosure review, and retention arrangements that support correction. Each safeguard addresses a particular mechanism. Public code helps inspect computation but cannot reveal omitted source fields by itself. A synthetic dataset can demonstrate how code runs while leaving the empirical findings unverified. An independent reproducer with access to a fixed extract can check those calculations while still lacking evidence about excluded records or an unreported analysis.
+
+Existing professional standards give concrete benchmarks. Medical-journal recommendations require authors to avoid sponsor agreements that interfere with independent access, analysis, interpretation, and publication, and call for disclosure of sponsor roles and publication restrictions (ICMJE, n.d.). These are standards for the journals and authors within their scope. Their application to marketing is an ethical comparison. The AEA's 2026 data policy allows documented exceptions for nonpublic data while retaining requirements concerning preservation, code, source documentation, and assistance with replication, subject to specified editorial exceptions (American Economic Association, 2026). Such an exception permits publication under a policy; it does not establish unlimited independent verification.
+
+A useful public disclosure identifies the data holder, permitted population and outcomes, material linkage restrictions, sponsor participation, review or approval rights, preservation conditions, and the route for independent access, to the extent these can lawfully be reported. If even that account is restricted, editors can seek confidential contractual review and authors can seek permission to disclose the relevant limits. The remaining public uncertainty should constrain the breadth of the public claim. Researchers ought to negotiate adequate independence before entering an agreement and decline public assurances whose necessary justification the arrangement prevents them from providing.
+
+For electricity research, the assessment should begin with the actual access statement and any available terms. Public utility data, restricted household records, and confidential development contracts are different sources. A paper's use of one does not establish control by the holder of another. Where an agreement excludes canceled projects, contract terms, or household links, the criticism should identify that exclusion and explain the claim it prevents the evidence from supporting. Readers can evaluate an explicitly limited result while withholding endorsement of a broader reassurance.
+
+### 9.65.1 Should Research Under an NDA Exist?
+
+The decision to undertake a study already has moral significance. Access to a valuable dataset can create knowledge, protect privacy, and permit scrutiny that would otherwise be impossible. The same arrangement can lend scholarly authority to an institution that controls which questions and conclusions reach others. The appropriate comparison includes the feasible alternatives: research under the offered terms, renegotiated terms, independent data collection, a narrower study, and declining the project. Access alone supplies no obligation to accept its conditions.
+
+The strongest argument for proceeding concerns the knowledge and protection the study can provide under defensible restrictions. Confidential records may be essential to studying vulnerable people, and public release can expose them to serious harm. A protected environment with independent analysis and a defined review process can make useful inquiry possible. An argument for categorical refusal must address the losses to those people when beneficial inquiry is foregone.
+
+The strongest argument for refusal concerns terms that prevent adequate justification to the people affected. Suppose a sponsor can veto adverse findings, prevent disclosure of that authority, and publicly invoke the study's independence. The agreement gives the sponsor an opportunity to obtain credibility while denying affected people a fair basis for evaluating it. If feasible negotiation cannot remove that arrangement, the researcher has a substantial reason to decline. Foregoing the publication can preserve the integrity of the public evidential record and avoid making academic authority an instrument of selective reassurance.
+
+Conducting a study, publishing its findings, and relying on it for a consequential public decision remain distinct choices. Restricted analysis may be suitable for exploratory learning while supplying inadequate grounds for public reassurance. A published result with explicit boundaries may contribute knowledge while leaving a regulatory or managerial action unjustified. The question at each stage is which principle can be defended to those who bear its risks, including the risks of lost knowledge and continued ignorance.
+
+**Discussion question.** Should research under an NDA exist, and under what conditions ought a researcher refuse it? Defend a principle governing access, publication independence, disclosure of restrictions, and scrutiny by affected people. Apply it to Agreements A–C, give the strongest reasonable objection, and identify a change in the terms or circumstances that would reverse your judgment. Explain separately whether the study ought to be conducted, published, and used to justify action. A claim that the contract is lawful, the estimate is precise, or the data would otherwise be unavailable is one premise to assess; none completes the moral argument on its own.
+
+### Further Reading
+
+(Mello et al., 2005), [Academic Medical Centers' Standards for Clinical-Trial Agreements with Industry](https://doi.org/10.1056/NEJMsa044115); (ICMJE, n.d.), [Disclosure of Financial and Non-Financial Relationships and Activities, and Conflicts of Interest](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/author-responsibilities--conflicts-of-interest.html), §§1–2; (American Economic Association, 2026), [Data and Code Availability Policy](https://www.aeaweb.org/journals/data/data-code-policy). The agreement comparison is hypothetical and makes no assertion about the terms governing a named study.
 
 ---
 
@@ -14954,6 +15124,10 @@ The page uses Illinois colors and the course's parchment direction. No raster il
 
 The `uncertainty` section and matching Markdown text add a static, accessible comparison of error costs, an editable TikZ figure, and questions about records, protection, and remedy. The original bill inputs and feedback remain interactive. The new section links to the full standard-library calculation and optional practice; it collects no responses.
 
+## Data Construction and Restricted Research
+
+The companion [artifact and NDA practice](../../07_Labs/Data_Truth_and_Norms/README.md) extends the bill interpretation question to the origin and governed use of evidence. It asks whether research under an NDA should be conducted, published, or used for public decisions. The interactive bill calculator is unchanged; the new material is available in the linked notes, complete Python example, and discussion exercise.
+
 ---
 
 ## Source: 08_Wiki/pilot/LESSON.md
@@ -15892,15 +16066,16 @@ Treatment elsewhere can change comparison outcomes and treated outcomes. The rel
 
 A household needs evidence about the burdens of a proposed development. A utility, developer, regulator, and researcher may each produce records for different purposes. The relevant question is how those records become evidence for the household's decision, and which further reasons justify an institution's recommendation.
 
-The collection contains 26 sources: 18 philosophical and methodological readings and eight institutional sources. Fourteen source files are saved locally in categorized `readings/` subfolders: 12 PDFs and two author manuscripts in Word formats. Public guides and original teaching materials are synchronized with GitHub; the source originals remain in Dropbox. The [catalog](catalog.json) records URLs, versions, inspected passages, availability, and local-copy checksums. Access to an original does not establish a general right to redistribute it.
+The collection contains 30 sources: 20 philosophical and methodological readings and ten institutional sources. Fourteen source files are saved locally in categorized `readings/` subfolders: 12 PDFs and two author manuscripts in Word formats. Public guides and original teaching materials are synchronized with GitHub; the source originals remain in Dropbox. The [catalog](catalog.json) records URLs, versions, inspected passages, availability, and local-copy checksums. Access to an original does not establish a general right to redistribute it.
 
 ## Reading Routes
 
 | Question | Readings | Course Application |
 | --- | --- | --- |
-| What kind of object is a dataset? | [Artifacts and representation](01_Artifacts/README.md): origins, identity, evidence, and institutional categories | M2 §2.30; M9 §9.51 |
+| What kind of object is a dataset? | [Artifacts and representation](01_Artifacts/README.md): origins, identity, evidence, and institutional categories | M2 §§2.30, 2.33–2.34; M9 §§9.51, 9.60–9.62 |
 | What connects a record, a true claim, and a justified action? | [Truth and norms](02_Truth_and_Norms/README.md): truth conditions, norms, error, and criticism | M9 §9.52 |
 | Why are some questions easier to answer than others? | [Institutions and ignorance](03_Institutions_and_Ignorance/README.md): research priorities, strategic ignorance, and classification | M9 §9.53 |
+| How can confidentiality terms shape the public record? | [Research independence](05_Restricted_Research/README.md): access, publication selection, and justified refusal | M9 §§9.63–9.65 |
 | Which household electricity evidence actually exists? | [Electricity evidence](04_Electricity_Evidence/README.md): EIA, DOE, Virginia, Senate documents, company correspondence | M6 §6.43; M9 §§9.53–9.54 |
 
 Begin with T01 (Thomasson, 1999), T05 (Leonelli, 2015), T08 (Douglas, 2000), T09 (Longino, 2004), T15 (Frickel et al., 2010), and EIA E01–E03. The recommended sequence is background reading, with no new graded requirement. T07 (Gitelman and Jackson, 2013) is an unavailable full-text lead; T13 (McGoey, 2012) and T14 (Steel, 2010) are abstract-based entries. Their inspection limits are explicit in the catalog.
@@ -15921,6 +16096,10 @@ The electricity case supplies a consequential correction: household billing data
 - [M2](../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md) §§2.30–2.31, [M6](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) §6.43, and [M9](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) §§9.51–9.54.
 
 The original figures and code do not replicate the data-center paper or estimate actual household harms. They identify premises that a broader reassurance would need to establish. They connect to the existing [project-exposure assessment](../44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md), [institutional assessment](../41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md), and [utility cost-recovery evidence](../../03_Data_and_Code/Utility_Cost_Recovery/README.md).
+
+## Restricted Research and Public Justification
+
+The [restricted-research readings](05_Restricted_Research/README.md) connect artifact governance to access, permitted analysis, publication authority, and the question of whether research under an NDA ought to proceed. M9 §§9.63–9.65 and the optional lab distinguish conducting a study, publishing it, and relying on it for public action. The three hypothetical agreements hold the synthetic subscription history fixed. No agreement is attributed to a named study without documentary evidence.
 
 ---
 
@@ -16009,6 +16188,14 @@ The same public file is compatible with a population increase and a population d
 
 The [resource collection](../../01_Resources/45_Data_Truth_and_Norms/README.md) and [electricity assessment](../../01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) distinguish this logical example from documented institutional practices. The example estimates neither the data-center paper's coefficients nor the prevalence of selective release. [Optional practice](../../07_Labs/Data_Truth_and_Norms/README.md) connects the calculation to truth, norms, and household reasons.
 
+## Data as Artifacts
+
+The [subscription program](data_artifacts.py) constructs two releases of six synthetic accounts. Both preserve the same history, while the expanded release adds cancellation requests. Five accounts remain subscribed, and three have pending requests. Reordering the expanded file preserves its keyed records while changing its byte hash. The [results and manifest](artifact_results/README.md) distinguish events, schema, release, and physical copy. The complete code appears in M2 §2.34.
+
+Run `python3 03_Data_and_Code/Data_Production/data_artifacts.py`. Python 3.10 or later and the standard library are sufficient. No external data, API, or account is used. This deterministic example requires no random seed. The program checks identifiers, timing, counts, projection between releases, and equality under the stated identity rule. It makes no empirical claim about a company.
+
+M9 §§9.60–9.65 connects the artifact's production and governed use to reasons owed to the people represented. Three hypothetical agreements change access and publication rights while holding this synthetic history fixed. The [restricted-research guide](../../01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md) supplies the professional-policy sources and their scope.
+
 ---
 
 ## Source: 03_Data_and_Code/Data_Production/DATA_DICTIONARY.md
@@ -16033,6 +16220,19 @@ The released files omit both oracle fields. A household missing from a release i
 
 `bounds.csv` records the observed mean, coverage, assumed bounds on unreleased effects, and the resulting population-mean endpoints. Fractions such as `10/3` are exact rational values. They can be parsed with Python's `fractions.Fraction`; treating them as dates or text categories changes their meaning.
 
+## Synthetic Subscription Releases
+
+`artifact_results/retention_v1.csv` and `assessment_v2.csv` have one row for each of six accounts subscribed at the start of January 2027. The cutoff is 00:00 UTC on February 1, 2027. The reordered V2 file contains the same records under the declared key-based identity rule.
+
+| Field | Type and Meaning |
+|---|---|
+| `account` | Unique synthetic identifier A–F; no personal identity |
+| `retained` | Integer 1 if no completed cancellation precedes the cutoff, otherwise 0 |
+| `request_submitted` | Integer 1 if an explicit request was submitted before the cutoff, otherwise 0 |
+| `request_completed` | Integer 1 if the submitted request was completed before the cutoff, otherwise 0 |
+
+All accounts are initially subscribed; at most one request occurs per account; no other opening or closure occurs. The program's `REQUESTS` history uses ISO UTC timestamps. Empty completion means pending at the cutoff in this construction. In empirical records it requires validation against the recording process. `summary.json` stores counts and fractions with their denominators; `manifest.json` records purpose, population, definitions, lineage, and file hashes. No variable measures consent, satisfaction, or causal harm.
+
 ---
 
 ## Source: 03_Data_and_Code/Data_Production/results/README.md
@@ -16053,27 +16253,33 @@ These are logical illustrations, with no estimate of actual utility effects or d
 
 # Verification
 
-Verified November 26, 2026 with Python 3.12.14. The original example uses the standard library. It makes no network requests and executes no downloaded source code.
+Verified November 27, 2026. Both programs use the Python standard library, make no network requests, and execute no downloaded source code.
 
-## Numerical Checks
+## Selective Release Example
 
-`data_availability.py` generated two 400-row synthetic ledgers, six releases, six comparison rows, and one bounds row. `verify_example.py` passed independent checks of the full-population effect totals (+4,000 and -4,000), exact identity of the restricted public releases, the broader-release mean (10/3), positive-inclusion weighting, the [-15, 15] support interval, and row-order invariance. Duplicate household identifiers and zero-inclusion weighting fail explicitly. Assigning zero to unreleased effects is shown to produce the incorrect mean -5 in world H.
+`data_availability.py` generated two 400-row synthetic ledgers, six releases, six comparison rows, and one bounds row. The independent checks executed on November 26 with Python 3.12.14 verified the full-population effect totals (+4,000 and -4,000), exact identity of the restricted public releases, the broader-release mean (10/3), positive-inclusion weighting, the [-15, 15] support interval, and row-order invariance. Duplicate household identifiers and zero-inclusion weighting fail explicitly. Assigning zero to unreleased effects produces the incorrect mean -5 in world H.
 
-The weighting calculation is the Horvitz–Thompson total divided by the known population size. Its exact recovery in the constructed examples follows from constant effects within strata. The synthetic prior bill equals the current no-project bill by construction; this is not an empirical identification result.
+The weighting calculation is the Horvitz–Thompson total divided by the known population size. Its exact recovery in these examples follows from constant effects within strata. The synthetic prior bill equals the current no-project bill by construction. These conditions do not establish empirical identification.
 
-The course checker verified 129 matching, syntactically valid Python source blocks, including the full program in M2 §2.31. The existing small lecture-example checks also passed. Their generated CSV values agree with the committed inputs.
+## Dataset Versions and Pending Cancellation
+
+Executed `data_artifacts.py` with Python 3.14.8. The six-account synthetic history gives five retained accounts, four requests, one completion, and three pending requests. Independent checks of the released CSV files verified the account identities, V2 projected onto account/status equaling V1, the pending share of requests (3/4), and the pending share of retained accounts (3/5). Reversing row order changes the file hash and preserves keyed records. The printed fractions, saved summary, and manifest checksums agree.
+
+The comparison of three research agreements holds this event history fixed. The agreements are hypothetical. The checks concern the deterministic example, without estimating empirical cancellation practices or attributing contractual terms to a named study.
 
 ## Sources and Teaching Scope
 
-The [catalog](../../01_Resources/45_Data_Truth_and_Norms/catalog.json) records 26 sources and the inspection scope for each. Checksums match all 14 local source copies. Unavailable full texts and abstract-only entries are identified. No original source file from this collection is included in the public Git package.
+The [catalog](../../01_Resources/45_Data_Truth_and_Norms/catalog.json) records 30 sources and the inspection scope for each. The 14 previously checked local source copies are unchanged. Unavailable full texts and abstract-only entries are identified. Original source files from this collection remain in Dropbox and are excluded from the public Git package.
 
-The source assessment verifies existing EIA household billing collection and public expenditure microdata. Contract correspondence documents particular confidentiality practices and exceptions. The introduced text of S. 5640 is treated as proposed federal legislation; no enactment or effective reporting duty is inferred. The course does not estimate actual utility harms, identify the target paper's donor contamination, or establish intentional suppression.
+The electricity assessment identifies existing EIA household billing collection and public expenditure microdata. Contract correspondence documents particular confidentiality practices and exceptions. Proposed legislation remains identified by its status. The research-agreement discussion distinguishes professional publication policies, actual contractual provisions, and hypothetical comparisons. It does not infer a publication veto from an NDA label.
 
-## Document Checks
+## Code and Document Checks
 
-The complete notes and standalone Marketing Dialectics chapter were rebuilt from Markdown and TikZ. The syllabus and Sessions 2, 10, and 14 were rebuilt from maintained sources, and the combined deck was regenerated from all 15 session PDFs. The complete notes contain 603 pages and 147 original note figures; Marketing Dialectics contains 105 pages; the combined deck contains 520 slides. Sessions 2, 10, and 14 contain 29, 30, and 101 pages, respectively. The syllabus remains two pages.
+All 131 Python source blocks in the notes match their standalone files and parse successfully. The existing lecture-example calculations also executed successfully; their CSV values remain unchanged. The artifact calculation received separate checks of records, denominators, identity, and hashes.
 
-Visual review covered the changed material and neighboring page breaks, the table of contents, all three new diagram previews, the changed slides, and both syllabus pages. Slide-specific diagram layouts preserve the comparisons with larger projected labels. Complete notes, standalone notes, and the syllabus contain no replacement characters in extracted text. The final note builds have no overfull boxes or unresolved references.
+The complete notes and standalone Marketing Dialectics chapter were rebuilt from Markdown and TikZ. Sessions 2 and 14 were rebuilt from their maintained source, and the combined deck was regenerated from all 15 session PDFs. The complete notes contain 634 pages and 153 original note figures. Marketing Dialectics contains 119 pages. The combined deck contains 541 pages; Sessions 2 and 14 contain 32 and 108 pages, respectively.
+
+Visual review covered the added sections and adjacent page breaks in both note PDFs, the changed slides, and the three new diagram previews. All changed pages were rendered, with 43 distinct pages inspected across the four PDFs. The affected note and slide builds have no overfull boxes or unresolved references. Source labels, numerical populations, and agreement conditions are preserved in the Markdown companions.
 
 ---
 
@@ -16110,6 +16316,26 @@ End with a supported public statement and a separate recommendation. Explain whi
 ## Evidence and the Proposed Action
 
 Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.
+
+## The Dataset as an Artifact
+
+Read M2 §§2.33–2.34 and M9 §§9.60–9.62. Run `python3 03_Data_and_Code/Data_Production/data_artifacts.py` and inspect the [outputs](../../03_Data_and_Code/Data_Production/artifact_results/README.md).
+
+1. Explain why two files with different hashes contain the same records under the stated identity rule. Give a transformation that would preserve a filename while changing the represented comparison.
+2. Calculate retention, pending requests among requests, and pending requests among retained accounts by hand. Explain the information supplied by each denominator.
+3. Construct a supported status claim and an unsupported claim about voluntary loyalty from V1. Identify the missing premise and how V2 changes the available criticism.
+4. Apply creation, meaning, preservation, and evidential-use questions to a billing record, mHealth entry, or call transcript. Identify the represented event separately from its record.
+5. Formulate a reasonable principle for correcting a contested classification. State who may challenge it, who has relevant evidence, and how privacy can be protected.
+
+## Should Research Under an NDA Exist?
+
+Read M9 §§9.63–9.65 and the [restricted-research guide](../../01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md). Agreements A–C are hypothetical. They use the same synthetic account history and differ in the allocation of access and reporting authority.
+
+Compare the three agreements on the questions researchers can ask, the findings they may disclose, preservation, and independent scrutiny. Distinguish a bounded confidentiality review from discretionary control over conclusions. For each agreement, decide separately whether researchers ought to conduct the study, publish it, and use it to justify a public decision.
+
+Defend a principle for proceeding, renegotiating, or refusing. Give the strongest case for allowing confidential research and the strongest reasonable objection from a person affected by its use. Explain which term or circumstance would reverse your judgment. Assess the value of declining a prestigious publication when the agreement prevents adequate public justification.
+
+Finally, assess a paper's actual access and funding statements. Record what the available documents establish, what remains unknown, and which further evidence would distinguish confidentiality from selective reporting. Do not assign a publication veto, suppression decision, or hidden result to a named study without evidence. Draft a public claim whose scope remains supported under the documented restrictions.
 
 ---
 
@@ -16199,7 +16425,7 @@ Fictional characters depend on creative acts and literary practices. The course 
 
 ## T02. Public Artifacts, Intentions and Norms
 
-(Thomasson, 1999). 2014; Artefact Kinds, pp. 45–62. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc).
+(Thomasson, 2014). 2014; Artefact Kinds, pp. 45–62. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc).
 
 **Reading focus:** Intended features and public norms of treatment.
 
@@ -16209,7 +16435,7 @@ Public artifacts can involve structural, perceptual, receptive, and normative fe
 
 ## T04. If Models Were Fictions, Then What Would They Be?
 
-(Thomasson, 1999). 2020; The Scientific Imagination, pp. 50–73. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_793dccac983145af90b9e580203e5333.docx).
+(Thomasson, 2020). 2020; The Scientific Imagination, pp. 50–73. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_793dccac983145af90b9e580203e5333.docx).
 
 **Reading focus:** Model descriptions, model systems, and the conditional argument.
 
@@ -16239,7 +16465,7 @@ Reliable patterns are inferred from particular records using substantive reasoni
 
 ## T16. Learning from Data Journeys
 
-(Leonelli, 2015). 2020; Data Journeys in the Sciences, pp. 1–24; DOI 10.1007/978-3-030-37177-7_1. [Source](https://link.springer.com/chapter/10.1007/978-3-030-37177-7_1).
+(Leonelli and Tempini, 2020). 2020; Data Journeys in the Sciences, pp. 1–24; DOI 10.1007/978-3-030-37177-7_1. [Source](https://link.springer.com/chapter/10.1007/978-3-030-37177-7_1).
 
 **Reading focus:** Production, movement, and reuse across institutions.
 
@@ -16256,6 +16482,12 @@ Linkage and portability require infrastructure and contextual knowledge. The exi
 Ask what establishes an institutional category and what qualifies something for membership. A valid tariff can help constitute a debt while remaining open to moral criticism.
 
 **Access and scope:** Reference introduction and conceptual distinctions inspected; electricity example is an application.
+
+## T19. Realism and Human Kinds
+
+(Thomasson, 2003). *Philosophy and Phenomenological Research* 67(3), 580–609. [Publisher](https://doi.org/10.1111/j.1933-1592.2003.tb00309.x) | [Public reading copy](https://joelvelasco.net/teaching/5330%28spring2021%29/thomasson03-human_kinds.pdf).
+
+Read §§2–3, especially pp. 592–600. Intended features and the success of production help distinguish artifactual kinds. Apply this to the creation of a dataset, keeping accuracy of individual records and warrant for a broader claim separate. A schema's existence does not establish the truth of every entry or the adequacy of a welfare interpretation. The full-text sections were inspected; the dataset application is developed in M2 §§2.33–2.34 and M9 §§9.60–9.62.
 
 ---
 
@@ -16902,6 +17134,56 @@ A strong philosophical response states why its factual premises are credible and
 ## AI-Assisted Work
 
 Ask a coding assistant to explain the population denominator before changing a parameter. Require it to distinguish a posterior probability, p-value, power at a specified alternative, and expected loss. Verify one calculation independently. For the argument, ask for the strongest objection and evidence that would change a premise; assess the response against the cited sources rather than treating fluent wording as support.
+
+---
+
+## Source: 03_Data_and_Code/Data_Production/artifact_results/README.md
+
+# Subscription Records and Their Intended Uses
+
+The records are synthetic. All six accounts were subscribed at the start of January 2027. Four accounts submitted cancellation requests before the cutoff, 00:00 UTC on February 1. One request was completed; three remained pending. No new subscription or other closure occurs in this constructed history.
+
+| Quantity | Numerator | Denominator | Result |
+|---|---:|---:|---:|
+| Retained accounts | 5 | 6 initial accounts | 83.33% |
+| Pending requests | 3 | 4 submitted requests | 75% |
+| Retained accounts with pending requests | 3 | 5 retained accounts | 60% |
+
+`retention_v1.csv` contains subscription status. `assessment_v2.csv` adds submitted and completed request indicators. Projecting V2 onto the V1 columns reproduces V1 exactly. `assessment_v2_reordered.csv` changes only row order. Under the declared identity rule, the two V2 files contain the same records despite different byte hashes.
+
+`manifest.json` records the cutoff, population, unit, intended uses, release relationship, identity rule, and file hashes. `summary.json` records counts and fractions. A hash verifies a file's bytes against a reference; it supplies no evidence that the records describe real events. The synthetic example establishes coexistence of the two descriptive results. It identifies neither a causal effect of cancellation procedures nor the prevalence of obstructed cancellation in any company.
+
+Reproduce with `python3 03_Data_and_Code/Data_Production/data_artifacts.py` from the repository root. The program uses the Python standard library and overwrites only these generated example files.
+
+---
+
+## Source: 01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md
+
+# Confidentiality, Research Independence, and Public Claims
+
+The research decision concerns whether access to a valuable dataset justifies the conditions attached to it. Distinguish an agreement that protects records from one that governs permissible questions or publication. The actual terms and their implementation determine the constraint. The label NDA alone supplies little information about those terms.
+
+## Readings and Scope
+
+| Source | Reading Focus | Application |
+|---|---|---|
+| T20: (Mello et al., 2005), [Academic Medical Centers' Standards for Clinical-Trial Agreements with Industry](https://doi.org/10.1056/NEJMsa044115) | Survey of medical-school administrators responsible for agreements; sponsor participation and data-sharing provisions | Evidence that contracts allocate consequential control. The study's setting does not establish prevalence in marketing. Abstract and publisher results inspected; full-text access blocked. |
+| T21: (ICMJE, n.d.), [Disclosure of Financial and Non-Financial Relationships and Activities, and Conflicts of Interest](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/author-responsibilities--conflicts-of-interest.html) | Independent access, interpretation, and publication; disclosure of sponsor roles and restrictions | Professional benchmark for medical journals. The marketing application is a normative comparison. |
+| T22: (American Economic Association, 2026), [Data and Code Availability Policy](https://www.aeaweb.org/journals/data/data-code-policy) | Documented exceptions for nonpublic data, public code, preservation, source information, access statements, and editorial exceptions | AEA policy compliance and unrestricted independent verification are different assessments. |
+
+Policies checked November 27, 2026. These professional standards are distinct from the legal enforceability of a particular agreement. Catalog IDs refer to `45_Data_Truth_and_Norms/catalog.json`.
+
+## Artifactual Interpretation
+
+The file's schema and contents form one part of the research object. Its governed use concerns who may inspect it, which analyses are permitted, who can correct it, and which results can become public. Shared norms can help constitute recognized artifacts without making each object publicly accessible (Thomasson, 2014, §5.4). Applying this distinction to research asks how a contract and professional practice shape what the published paper represents.
+
+A restriction on identifiers can protect people. A restriction on questions can limit which burdens receive scrutiny. A discretionary publication right can select the visible literature after an otherwise valid analysis. These mechanisms differ, and an allegation that one operated in a named study requires evidence. Unknown restrictions leave uncertainty about the reporting process; they do not reveal an unpublished effect.
+
+## Teaching Application
+
+[M9 §§9.63–9.65](../../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) compares three hypothetical agreements using the same six-account synthetic history. Students distinguish confidentiality review, restricted research purpose, and discretionary sponsor approval. The [optional practice](../../../07_Labs/Data_Truth_and_Norms/README.md) asks whether NDA-governed research ought to exist, separating the decision to conduct a study from publication and public reliance.
+
+A defensible answer addresses affected people's reasons, privacy, the value of knowledge, the risk of selective reassurance, and feasible alternative terms. It identifies conditions for proceeding, renegotiating, or declining. A researcher can have a reason to forgo a publication when the governing arrangement prevents adequate justification to the people affected by its use.
 
 ---
 
@@ -19213,7 +19495,7 @@ Rights or Access: Citation and original summary only; full-text redistribution r
 
 Source: 01_Resources/00_Index/resource_catalog.json
 
-644 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
+726 entries. Overlap with other catalogs is possible. Recommendations are not assigned readings. Consult each source for full details.
 
 ---
 
@@ -23439,6 +23721,1176 @@ Rights or Access: open
 
 ---
 
+### additional:data-artifacts-t01 | Fiction and Metaphysics
+
+Source URL: https://www.cambridge.org/core/books/abs/fiction-and-metaphysics/fictional-characters-as-abstract-artifacts/CE4968D080D4B81C9DE76FF589C70017
+
+Modules: M2, M9, M8
+
+Priority: recommended
+
+Focus: Fictional characters depend on creative acts and literary practices. The course applies the questions of origin, persistence, and identity to datasets, while distinguishing records from the people and events they represent.
+
+Teaching Suggestion: Connect data creation and governed use to the reasons owed to affected people; compare confidentiality, publication independence, and refusal of unacceptable terms.
+
+Cautions: Detailed source record in 01_Resources/45_Data_Truth_and_Norms/catalog.json. Original source copies are excluded from publication.
+
+Rights or Access: linked; see source assessment
+
+---
+
+### additional:data-artifacts-t02 | Public Artifacts, Intentions and Norms
+
+Source URL: https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc
+
+Modules: M2, M9, M8
+
+Priority: recommended
+
+Focus: Public artifacts can involve structural, perceptual, receptive, and normative features. A billing record is designed for a practice whose purposes and recognized uses deserve examination.
+
+Teaching Suggestion: Connect data creation and governed use to the reasons owed to affected people; compare confidentiality, publication independence, and refusal of unacceptable terms.
+
+Cautions: Detailed source record in 01_Resources/45_Data_Truth_and_Norms/catalog.json. Original source copies are excluded from publication.
+
+Rights or Access: linked; see source assessment
+
+---
+
+### additional:data-artifacts-t19 | Realism and Human Kinds
+
+Source URL: https://doi.org/10.1111/j.1933-1592.2003.tb00309.x
+
+Modules: M2, M9, M8
+
+Priority: recommended
+
+Focus: Use origin, intended features, and success conditions to distinguish a created dataset from the truth of claims made with it.
+
+Teaching Suggestion: Connect data creation and governed use to the reasons owed to affected people; compare confidentiality, publication independence, and refusal of unacceptable terms.
+
+Cautions: Detailed source record in 01_Resources/45_Data_Truth_and_Norms/catalog.json. Original source copies are excluded from publication.
+
+Rights or Access: linked; see source assessment
+
+---
+
+### additional:data-artifacts-t20 | Academic Medical Centers’ Standards for Clinical-Trial Agreements with Industry
+
+Source URL: https://doi.org/10.1056/NEJMsa044115
+
+Modules: M2, M9, M8
+
+Priority: recommended
+
+Focus: Contracts can allocate control over research and publication; the clinical-research survey supplies no prevalence estimate for marketing NDAs.
+
+Teaching Suggestion: Connect data creation and governed use to the reasons owed to affected people; compare confidentiality, publication independence, and refusal of unacceptable terms.
+
+Cautions: Detailed source record in 01_Resources/45_Data_Truth_and_Norms/catalog.json. Original source copies are excluded from publication.
+
+Rights or Access: linked; see source assessment
+
+---
+
+### additional:data-artifacts-t21 | Disclosure of Financial and Non-Financial Relationships and Activities, and Conflicts of Interest
+
+Source URL: https://www.icmje.org/recommendations/browse/roles-and-responsibilities/author-responsibilities--conflicts-of-interest.html
+
+Modules: M2, M9, M8
+
+Priority: recommended
+
+Focus: A professional benchmark for assessing independence. Scope is medical-journal recommendations, with application to marketing presented as a normative comparison.
+
+Teaching Suggestion: Connect data creation and governed use to the reasons owed to affected people; compare confidentiality, publication independence, and refusal of unacceptable terms.
+
+Cautions: Detailed source record in 01_Resources/45_Data_Truth_and_Norms/catalog.json. Original source copies are excluded from publication.
+
+Rights or Access: linked; see source assessment
+
+---
+
+### additional:data-artifacts-t22 | Data and Code Availability Policy
+
+Source URL: https://www.aeaweb.org/journals/data/data-code-policy
+
+Modules: M2, M9, M8
+
+Priority: recommended
+
+Focus: Documented restricted access can coexist with publication; policy compliance and independent empirical verification remain different assessments.
+
+Teaching Suggestion: Connect data creation and governed use to the reasons owed to affected people; compare confidentiality, publication independence, and refusal of unacceptable terms.
+
+Cautions: Detailed source record in 01_Resources/45_Data_Truth_and_Norms/catalog.json. Original source copies are excluded from publication.
+
+Rights or Access: linked; see source assessment
+
+---
+
+### additional:badm534-ethics-law-crosswalk | Course note: marketing tactics, consumer harm, and the law (crosswalk for M1-M8)
+
+Source URL: https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/01_Resources/08_M8_Current_Topics_in_Marketing/ethics_and_law
+
+Modules: M8, M1, M2, M3, M4, M5, M6, M7
+
+Priority: core
+
+Focus: Twelve tactics (subscription traps, drip pricing, fake reviews, influencer disclosure, manufactured urgency, surveillance pricing, consent and privacy, children, AI claims, discriminatory delivery, green claims, experiments on customers), each mapped to the consumer harm, the US federal, Illinois, other-state, EU and UK law, enforcement cases with amounts and dates, research evidence and a discussion question. Statuses checked 2 Nov 2026. Includes a module-by-module 'ethics and law check', a 75-minute M8 session plan and a project risk-memo assignment; crosswalk.csv carries the table for the wiki.
+
+Teaching Suggestion: The hub for the ethics and regulation thread: link each module page's closing 'ethics and law check' here.
+
+Cautions: Teaching material, not legal advice. Pending items (NY One Fair Price Act, EU Digital Fairness Act, FTC negative-option rulemaking, FTC v. Uber, FTC v. Live Nation) need rechecking each term.
+
+Rights or Access: open
+
+---
+
+### additional:wu-2016-attention-merchants | The Attention Merchants: The Epic Scramble to Get Inside Our Heads
+
+Source URL: https://scholarship.law.columbia.edu/books/64/
+
+Modules: M8, M5, M6
+
+Priority: recommended
+
+Focus: History of the business model that captures attention with free content and resells it to advertisers, from the penny press to social media, including recurring public revolts when advertising overreaches.
+
+Teaching Suggestion: Opening reading for M8 (or M5); pairs with M6 ad-measurement papers: what exactly is being bought?
+
+Rights or Access: paid
+
+---
+
+### additional:wu-2019-blind-spot-attention-economy | Blind Spot: The Attention Economy and the Law
+
+Source URL: https://scholarship.law.columbia.edu/faculty_scholarship/2029/
+
+Modules: M8, M5
+
+Priority: core
+
+Focus: Attention is a scarce resource; 'attention brokers' offer free services and sell access to audiences, and antitrust and consumer-protection authorities have struggled to analyse these markets because users pay no money. Distinguishes voluntary exchange from captive exposure.
+
+Teaching Suggestion: Pre-reading for the M8 session; class point that ad load and interstitial questions are a price paid in time.
+
+Cautions: Reading available through the linked public source; original local copies are excluded from publication.
+
+Rights or Access: open
+
+---
+
+### additional:wu-2025-age-of-extraction | The Age of Extraction
+
+Source URL: https://www.penguinrandomhouse.com/books/691177/the-age-of-extraction-by-tim-wu/
+
+Modules: M8
+
+Priority: optional
+
+Focus: Argues that a handful of tech platforms, after offering convenience, extract money, data and attention from users and dependent businesses, and proposes ways to restore balance.
+
+Teaching Suggestion: Frame for the junk-fee, marketplace-fee and surveillance-pricing rows of the crosswalk.
+
+Rights or Access: paid
+
+---
+
+### additional:wu-2013-machine-speech | Machine Speech
+
+Source URL: https://scholarship.law.columbia.edu/faculty_scholarship/1833/
+
+Modules: M8, M7
+
+Priority: optional
+
+Focus: When is a computer's output the designer's protected speech and when is it a functional tool? Contrasts recommendations based on a user's recorded choices with those reflecting a programmer's judgments.
+
+Teaching Suggestion: Background for First Amendment arguments against algorithm regulation, e.g. retailers' challenge to New York's algorithmic-pricing disclosure law.
+
+Rights or Access: open
+
+---
+
+### additional:wu-2019-will-ai-eat-the-law | Will Artificial Intelligence Eat the Law? The Rise of Hybrid Social-Ordering Systems
+
+Source URL: https://columbialawreview.org/content/will-artificial-intelligence-eat-the-law-the-rise-of-hybrid-social-ordering-systems/
+
+Modules: M7, M8
+
+Priority: optional
+
+Focus: Argues that automated decision systems need mechanisms that bring hard cases to human judgment, and warns that a nominal human presence can coexist with disempowerment.
+
+Teaching Suggestion: M7: when a model or AI agent decides refunds, retention offers or prices, who can trigger human review?
+
+Rights or Access: open
+
+---
+
+### additional:wu-2017-attention-theft | The Crisis of Attention Theft: Ads That Steal Your Time for Nothing in Return
+
+Source URL: https://www.wired.com/2017/04/forcing-ads-captive-audience-attention-theft-crime/
+
+Modules: M8
+
+Priority: optional
+
+Focus: Short essay on ads forced on captive audiences without consent, a readable version of the voluntary-versus-captive distinction.
+
+Teaching Suggestion: Five-minute pre-reading alternative to Blind Spot.
+
+Rights or Access: open
+
+---
+
+### additional:eo-14036-competition | Executive Order 14036, Promoting Competition in the American Economy (2021; revoked 2025)
+
+Source URL: https://en.wikipedia.org/wiki/Executive_Order_14036
+
+Modules: M8
+
+Priority: optional
+
+Focus: Signed 9 July 2021; a whole-of-government competition agenda covering, among other things, right to repair, non-competes and telecom fees; Tim Wu helped draft and implement it at the National Economic Council. Revoked 13 August 2025 by Executive Order 14337.
+
+Teaching Suggestion: Policy-history example of how fast the federal map changes; links right to repair to the McBroken lab.
+
+Rights or Access: open
+
+---
+
+### additional:calo-2014-digital-market-manipulation | Digital Market Manipulation
+
+Source URL: https://www.gwlr.org/wp-content/uploads/2014/10/Calo_82_4.pdf
+
+Modules: M8, M7
+
+Priority: recommended
+
+Focus: Argues that firms' data about consumers and control over digital interfaces let them find and exploit each consumer's biases at the moment of decision, and asks how consumer-protection law should respond.
+
+Teaching Suggestion: Legal-theory reading linking data-driven marketing to manipulation.
+
+Rights or Access: open
+
+---
+
+### additional:susser-roessler-nissenbaum-2019-online-manipulation | Online Manipulation: Hidden Influences in a Digital World
+
+Source URL: https://georgetownlawtechreview.org/online-manipulation-hidden-influences-in-a-digital-world/GLTR-01-2020/
+
+Modules: M8
+
+Priority: recommended
+
+Focus: Defines manipulation as hidden influence that exploits vulnerabilities and argues it threatens autonomy, distinguishing it from persuasion and coercion.
+
+Teaching Suggestion: Ethics reading for defining what makes a tactic manipulative rather than persuasive.
+
+Cautions: URL pattern from the journal site; confirm before linking students.
+
+Rights or Access: open
+
+---
+
+### additional:sunstein-2022-sludge-audits | Sludge Audits
+
+Source URL: https://doi.org/10.1017/bpp.2019.32
+
+Modules: M8, M6
+
+Priority: recommended
+
+Focus: Proposes that firms and governments assess 'sludge', the frictions (forms, waits, steps) that make beneficial actions harder, and quantify its costs.
+
+Teaching Suggestion: Method for the M8 assessment exercise on a real cancellation flow.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-act-s5-deception-unfairness | FTC Act Section 5 (15 U.S.C. 45) and the FTC Policy Statement on Deception
+
+Source URL: https://www.ftc.gov/legal-library/browse/ftc-policy-statement-deception
+
+Modules: M8, M3
+
+Priority: core
+
+Focus: The general US prohibition of unfair or deceptive acts. Deception: a representation or omission likely to mislead a reasonable consumer that is material. Unfairness (15 U.S.C. 45(n)): substantial injury, not reasonably avoidable, not outweighed by benefits. Objective claims require prior substantiation. Since AMG Capital (2021) money comes mainly through rule violations (civil penalties up to $53,088 per violation at 2025 levels, unchanged for 2026).
+
+Teaching Suggestion: Legal backbone slide for M8; the substantiation point for M3 (claims built on regressions).
+
+Rights or Access: open
+
+---
+
+### additional:rosca-15-usc-8401 | Restore Online Shoppers' Confidence Act (ROSCA), 15 U.S.C. 8401-8405
+
+Source URL: https://www.law.cornell.edu/uscode/text/15/chapter-110
+
+Modules: M8, M4
+
+Priority: core
+
+Focus: For online negative-option offers: disclose all material terms before billing, obtain express informed consent, and provide a simple mechanism to stop recurring charges; violations are treated as rule violations with civil penalties.
+
+Teaching Suggestion: The statute behind the Amazon Prime and Uber One cases; M4 retention and subscription pricing.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-negative-option-anprm-2026 | FTC Negative Option Rule: 2024 amendments (vacated 2025) and advance notice of proposed rulemaking (13 March 2026)
+
+Source URL: https://www.govinfo.gov/content/pkg/FR-2026-03-13/pdf/2026-04952.pdf
+
+Modules: M8, M4, M6
+
+Priority: core
+
+Focus: The 2024 'click-to-cancel' amendments were vacated by the Eighth Circuit on 8 July 2025 (Custom Communications v. FTC) for skipping a required preliminary regulatory analysis. The March 2026 ANPRM restarts the process and asks whether save offers in place of honouring cancellation are unfair or deceptive, requesting data on acceptance rates, savings, delays and state laws.
+
+Teaching Suggestion: M8 group exercise: draft a comment answering the save-offer question using the consumer-agency assessment design.
+
+Cautions: 2024 final rule: Federal Register 89(221): 90476-90545 (govinfo FR-2024-11-15). Status pending as of Nov 2026.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-fees-rule-16cfr464 | FTC Rule on Unfair or Deceptive Fees, 16 CFR Part 464
+
+Source URL: https://www.ecfr.gov/current/title-16/part-464
+
+Modules: M8, M4
+
+Priority: recommended
+
+Focus: Requires total-price display for live-event tickets and short-term lodging and bars misrepresenting fees; effective 12 May 2025; civil penalties.
+
+Teaching Suggestion: M4 pricing: partitioned prices and what must be shown up front.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-reviews-rule-16cfr465 | FTC Consumer Reviews and Testimonials Rule, 16 CFR Part 465
+
+Source URL: https://www.ecfr.gov/current/title-16/part-465
+
+Modules: M8, M5
+
+Priority: core
+
+Focus: Bans fake or AI-fabricated reviews and testimonials, sentiment-conditioned incentives, undisclosed insider reviews, company-controlled 'independent' review sites, review suppression and fake social-media indicators; effective 21 October 2024; civil penalties per violation. Warning letters to ten companies on 22 December 2025.
+
+Teaching Suggestion: M5: the legal line around review mining, generation and moderation.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-endorsement-guides-16cfr255 | FTC Guides Concerning Endorsements and Testimonials, 16 CFR Part 255 (2023 revision)
+
+Source URL: https://www.ecfr.gov/current/title-16/part-255
+
+Modules: M8, M5
+
+Priority: recommended
+
+Focus: Material connections between endorsers and brands (payment, free products, employment) must be clearly disclosed; brands are responsible for their influencers' claims and disclosures.
+
+Teaching Suggestion: M5 influencer marketing.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-coppa-rule-2025 | COPPA Rule, 16 CFR Part 312 (amended 2025)
+
+Source URL: https://www.ecfr.gov/current/title-16/part-312
+
+Modules: M8, M2
+
+Priority: recommended
+
+Focus: Children under 13. The 2025 amendments (published 22 April 2025) require separate verifiable parental consent before disclosing children's data to third parties for targeted advertising, limit data retention and add biometric identifiers; compliance was due 22 April 2026.
+
+Teaching Suggestion: M8 children and vulnerable consumers; M2 data collection.
+
+Rights or Access: open
+
+---
+
+### additional:illinois-automatic-contract-renewal-act | Illinois Automatic Contract Renewal Act, 815 ILCS 601 (online cancellation since 2022, P.A. 102-0517)
+
+Source URL: https://ilga.gov/Legislation/publicacts/view/102-0517
+
+Modules: M8, M4
+
+Priority: recommended
+
+Focus: Requires clear disclosure of automatic-renewal terms and renewal notices for longer contracts, and since 1 January 2022 lets consumers who accept online cancel exclusively online.
+
+Teaching Suggestion: Home-state law for any subscription product students analyse.
+
+Rights or Access: open
+
+---
+
+### additional:illinois-bipa | Illinois Biometric Information Privacy Act (BIPA), 740 ILCS 14
+
+Source URL: https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57
+
+Modules: M2, M8
+
+Priority: recommended
+
+Focus: Written consent before collecting biometric identifiers; private right of action with $1,000 (negligent) or $5,000 (intentional or reckless) per violation; a 2024 amendment counts repeated collection from one person as a single violation.
+
+Teaching Suggestion: M2 data collection: why face, voice and fingerprint data are a litigation risk in Illinois.
+
+Cautions: Confirm the ILGA ActID link before publishing to students.
+
+Rights or Access: open
+
+---
+
+### additional:california-arl-ab2863 | California Automatic Renewal Law, Bus. & Prof. Code 17602 (AB 2863, operative 1 July 2025)
+
+Source URL: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2863
+
+Modules: M8, M4
+
+Priority: recommended
+
+Focus: Online retention offers are allowed only beside a prominent, continuously displayed cancellation control, and cancellation must be processed promptly when the control is used; also requires express consent and annual reminders.
+
+Teaching Suggestion: Contrast with Minnesota's permission-first rule in the M8 session.
+
+Rights or Access: open
+
+---
+
+### additional:minnesota-325g58 | Minnesota Statutes 325G.58 (permission before retention offers)
+
+Source URL: https://www.revisor.mn.gov/statutes/cite/325G.58
+
+Modules: M8, M4
+
+Priority: recommended
+
+Focus: After a consumer starts to cancel, the business must ask permission once before presenting retention offers; optional questions about reasons for leaving are allowed.
+
+Teaching Suggestion: The closest existing law to a right to refuse the retention conversation.
+
+Rights or Access: open
+
+---
+
+### additional:ny-349a-algorithmic-pricing-disclosure | New York Algorithmic Pricing Disclosure Act, Gen. Bus. Law 349-a
+
+Source URL: https://www.kelleydrye.com/viewpoints/blogs/ad-law-access/surveillance-pricing-key-concepts-the-current-legal-and-legislative-landscape-and-mounting-scrutiny.md
+
+Modules: M7, M8
+
+Priority: recommended
+
+Focus: In force since November 2025: prices set by an algorithm using a consumer's personal data must carry the notice 'THIS PRICE WAS SET BY AN ALGORITHM USING YOUR PERSONAL DATA'. A retailers' First Amendment challenge failed in district court; the appeal (NRF v. James) was argued in the Second Circuit on 19 October 2026, decision pending.
+
+Teaching Suggestion: M7 personalised pricing: what triggers the disclosure?
+
+Cautions: URL is a law-firm overview of the US landscape (April 2026).
+
+Rights or Access: open
+
+---
+
+### additional:state-surveillance-pricing-bans-2026 | State surveillance-pricing bans (Maryland, Connecticut, New Jersey; New York pending)
+
+Source URL: https://www.route-fifty.com/finance/2026/08/states-begin-banning-surveillance-pricing-uses-personal-data-charge-more/415219/
+
+Modules: M7, M8, M4
+
+Priority: core
+
+Focus: Enacted: Maryland HB 895 (grocery stores and delivery apps, in force since 1 October 2026), Connecticut PA 26-130 (retailers broadly, signed June 2026, effective 1 July 2027), New Jersey A4085 (grocery, signed July 2026, effective 1 August 2027). New York's One Fair Price Act (A9349/S8623) passed the legislature on 4 June 2026 and had not been delivered to the Governor by 2 November 2026. Most exempt loyalty programmes, coupons and cost-based differences.
+
+Teaching Suggestion: M7/M8 debate: where is the line between a discount and surveillance pricing?
+
+Cautions: Fast-moving; recheck each term.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-surveillance-pricing-6b-2025 | FTC surveillance pricing 6(b) study: initial findings (January 2025)
+
+Source URL: https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-surveillance-pricing-study-indicates-wide-range-personal-data-used-set-individualized-consumer
+
+Modules: M7, M8
+
+Priority: recommended
+
+Focus: Staff research summaries from orders to intermediaries that sell pricing tools, indicating that a wide range of personal data (location, demographics, browsing and purchase history) is used to set individualised prices.
+
+Teaching Suggestion: Evidence that the M7 pricing models students build are already in commercial use.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-dark-patterns-report-2022 | Bringing Dark Patterns to Light (FTC staff report)
+
+Source URL: https://www.ftc.gov/system/files/ftc_gov/pdf/P214800%20Dark%20Patterns%20Report%209.14.2022%20-%20FINAL.pdf
+
+Modules: M8, M6
+
+Priority: core
+
+Focus: Catalogues dark patterns (disguised ads, hard cancellation, buried terms, data-grabbing defaults, nagging) and the FTC and state cases brought against them.
+
+Teaching Suggestion: Taxonomy for the M8 assessment exercise.
+
+Rights or Access: open
+
+---
+
+### additional:eu-ucpd-2005-29 | EU Unfair Commercial Practices Directive 2005/29/EC (with Annex I blacklist)
+
+Source URL: https://eur-lex.europa.eu/eli/dir/2005/29/oj/eng
+
+Modules: M8
+
+Priority: recommended
+
+Focus: Bans misleading and aggressive commercial practices; Annex I lists practices always unfair, including point 7 (falsely claiming very limited availability to rush a decision) and disguised advertising. Amended by Directive 2024/825 (green claims, applies from 27 September 2026).
+
+Teaching Suggestion: European counterpart to FTC Act s5; the urgency row of the crosswalk.
+
+Rights or Access: open
+
+---
+
+### additional:eu-dsa-x-fine-2025 | European Commission fines X EUR 120 million under the Digital Services Act (5 December 2025)
+
+Source URL: https://digital-strategy.ec.europa.eu/en/news/commission-fines-x-eu120-million-under-digital-services-act
+
+Modules: M8
+
+Priority: recommended
+
+Focus: First DSA non-compliance decision: deceptive design of paid 'verified' blue checkmarks, an inadequate ad repository, and barriers to researcher data access.
+
+Teaching Suggestion: Deceptive interface design as a platform-law violation.
+
+Rights or Access: open
+
+---
+
+### additional:eu-ai-act-article5 | EU AI Act (Regulation 2024/1689), Article 5 prohibited practices
+
+Source URL: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+
+Modules: M7, M8
+
+Priority: recommended
+
+Focus: Since 2 February 2025 bans AI systems that deploy subliminal, manipulative or deceptive techniques, or exploit age, disability or socio-economic vulnerabilities, to materially distort behaviour causing significant harm; fines up to EUR 35 million or 7% of turnover.
+
+Teaching Suggestion: AI-powered persuasion limits for M7/M8.
+
+Rights or Access: open
+
+---
+
+### additional:eu-digital-fairness-act | EU Digital Fairness Act (proposal expected November 2026)
+
+Source URL: https://eurobytenews.com/article/digital-fairness-act-proposal-due/
+
+Modules: M8
+
+Priority: optional
+
+Focus: Planned EU law on dark patterns, addictive design, unfair personalisation, influencer marketing, price presentation and hard-to-cancel subscriptions, with a focus on minors; proposal expected mid-November 2026.
+
+Teaching Suggestion: Watch item for the M8 session.
+
+Cautions: Not yet published on 2 Nov 2026; replace with the Commission's proposal when available.
+
+Rights or Access: open
+
+---
+
+### additional:uk-cma-dmcc-enforcement-2026 | UK CMA direct consumer enforcement under the DMCC Act (first fines, 2025-2026)
+
+Source URL: https://www.mayerbrown.com/en/insights/publications/2026/08/were-just-getting-started-the-cmas-new-consumer-enforcement-powers-in-action
+
+Modules: M8, M4
+
+Priority: recommended
+
+Focus: Since April 2025 the CMA can fine up to 10% of global turnover. First consumer-law infringement decisions: AA and BSM driving schools GBP 4.2m (drip pricing), Marks Electrical GBP 720,000 (pre-ticked add-ons) and StubHub GBP 889,200 (hidden mandatory fees), with refunds.
+
+Teaching Suggestion: Comparative enforcement for the drip-pricing row.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-v-amazon-prime-2025 | FTC v. Amazon (Prime enrolment and cancellation): $2.5 billion settlement (25 September 2025)
+
+Source URL: https://www.khlaw.com/insights/amazon-pay-record-25-billion-settle-ftc-claims-deceptive-prime-membership-signup-and
+
+Modules: M8, M4, M6
+
+Priority: core
+
+Focus: ROSCA and FTC Act claims that Amazon enrolled consumers in Prime without consent and made cancellation deliberately hard; $1 billion civil penalty plus $1.5 billion refunds; requires a clear decline option and simple cancellation.
+
+Teaching Suggestion: Lead case for the M8 session: what A/B-test metric produced this flow?
+
+Rights or Access: open
+
+---
+
+### additional:ftc-v-uber-one-2025 | FTC and 21 states v. Uber (Uber One subscription), filed April 2025
+
+Source URL: https://www.courthousenews.com/judge-allows-most-ftc-claims-against-uber-to-survive/
+
+Modules: M8, M4
+
+Priority: recommended
+
+Focus: Alleges billing and a cancellation process requiring up to 32 actions; most ROSCA and FTC Act claims survived a motion to dismiss in the Northern District of California (Judge Tigar); 21 states joined in December 2025.
+
+Teaching Suggestion: Pending case to follow during the term.
+
+Cautions: Pending; check status.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-illinois-v-grubhub-2024 | FTC and Illinois Attorney General v. Grubhub: $140 million judgment (December 2024)
+
+Source URL: https://crowell.com/en/insights/client-alerts/lessons-for-e-commerce-and-retail-from-the-ftc-and-illinois-ags-proposed-dollar140-million-settlement-against-grubhub
+
+Modules: M8, M4
+
+Priority: recommended
+
+Focus: Hidden fees and other deceptive practices toward diners, restaurants and drivers; $140 million judgment, largely suspended, with $25 million paid; Illinois AG co-plaintiff.
+
+Teaching Suggestion: Illinois example for the drip-pricing row.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-v-live-nation-ticketmaster-2025 | FTC v. Live Nation and Ticketmaster (deceptive pricing and resale), C.D. Cal. 2:25-cv-08884
+
+Source URL: https://www.ticketnews.com/2026/10/ftc-live-nation-ticketmaster-jury-trial/
+
+Modules: M8, M4
+
+Priority: recommended
+
+Focus: Filed September 2025: advertised prices omitting mandatory fees and tolerance of brokers evading purchase limits (BOTS Act and consumer-protection claims). Motion to dismiss denied September 2026; trial dates proposed for 2028.
+
+Teaching Suggestion: Pending case for the drip-pricing row.
+
+Cautions: Pending; check status.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-v-epic-games-2022 | FTC v. Epic Games (Fortnite): $245 million refunds for billing dark patterns plus $275 million COPPA penalty (December 2022)
+
+Source URL: https://www.pbs.org/newshour/amp/nation/fortnite-maker-epic-games-to-settle-ftc-case-pay-520-million-in-penalties-and-refunds
+
+Modules: M8
+
+Priority: recommended
+
+Focus: Settlements over design tricks that led players, including children, into unintended purchases, and over children's privacy violations; $520 million in total.
+
+Teaching Suggestion: Dark patterns and children rows.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-fashion-nova-2022 | FTC v. Fashion Nova: $4.2 million for suppressing negative reviews (2022)
+
+Source URL: https://www.fox26houston.com/news/fashion-nova-to-pay-4-2m-to-settle-claims-it-blocked-negative-online-reviews
+
+Modules: M5, M8
+
+Priority: recommended
+
+Focus: Online retailer settled claims that it blocked lower-star reviews from its website.
+
+Teaching Suggestion: Review-suppression example for M5.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-hoyoverse-genshin-2025 | FTC v. HoYoverse (Genshin Impact): $20 million over loot boxes and children's privacy (January 2025)
+
+Source URL: https://androidauthority.com/genshin-impact-loot-box-fine-3517760
+
+Modules: M8
+
+Priority: recommended
+
+Focus: COPPA and deception claims about loot-box odds and virtual-currency pricing; bars selling loot boxes to under-16s without parental consent.
+
+Teaching Suggestion: Children and vulnerable consumers row.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-operation-ai-comply | FTC Operation AI Comply and later AI-claims cases (2024-2026)
+
+Source URL: https://www.beneschlaw.com/insight/one-year-in-ftcs-operation-ai-comply-continues-under-new-administration-signaling-enduring-enforcement-focus/
+
+Modules: M7, M8
+
+Priority: core
+
+Focus: Sweep against deceptive AI claims and AI tools for deception: DoNotPay ('robot lawyer'), Rytr (AI testimonials), AI income schemes (2024); Workado's AI-detector accuracy claims (98% claimed versus about 53% found) and Air AI (2025).
+
+Teaching Suggestion: M7/M8: substantiation applies to model-accuracy claims.
+
+Rights or Access: open
+
+---
+
+### additional:us-v-meta-housing-ads-2022 | United States v. Meta Platforms (housing-ad delivery), S.D.N.Y. settlement (June 2022)
+
+Source URL: https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
+
+Modules: M7, M8
+
+Priority: recommended
+
+Focus: Fair Housing Act case over ad targeting and delivery; Meta agreed to retire a lookalike tool for housing ads and build a system to reduce demographic skew in delivery.
+
+Teaching Suggestion: Discriminatory delivery row for M7.
+
+Rights or Access: open
+
+---
+
+### additional:ftc-v-rite-aid-2023 | FTC v. Rite Aid: five-year ban on facial recognition (December 2023)
+
+Source URL: https://www.mayerbrown.com/de/insights/publications/2023/12/more-than-a-ban-on-facial-recognition-use-the-us--ftcs-rite-aid-action-and-proposed-stipulated-order
+
+Modules: M7, M8
+
+Priority: recommended
+
+Focus: Unfair use of facial-recognition surveillance in stores that produced false matches; five-year ban and algorithmic-fairness obligations.
+
+Teaching Suggestion: M7: biased prediction as an unfair practice.
+
+Rights or Access: open
+
+---
+
+### additional:cppa-honda-2025 | California Privacy Protection Agency v. Honda: $632,500 (March 2025)
+
+Source URL: https://www.hunton.com/privacy-and-cybersecurity-law-blog/cppa-fines-honda-632-500-for-ccpa-violations
+
+Modules: M2, M8
+
+Priority: recommended
+
+Focus: First CPPA enforcement decision, including privacy choices not offered symmetrically (CCPA regulations 7004(a)(2)) and excessive verification for opt-outs.
+
+Teaching Suggestion: M2 consent design.
+
+Rights or Access: open
+
+---
+
+### additional:trump-v-slaughter-2026 | Trump v. Slaughter (U.S. Supreme Court, 29 June 2026)
+
+Source URL: https://www.venable.com/insights/publications/2026/06/supreme-court-overrules-humphreys-executor
+
+Modules: M8
+
+Priority: optional
+
+Focus: 6-3 decision overruling Humphrey's Executor: the President may remove FTC commissioners at will, putting federal enforcement priorities under presidential direction.
+
+Teaching Suggestion: Context for why state AGs and private plaintiffs matter more.
+
+Rights or Access: open
+
+---
+
+### additional:mathur-2019-dark-patterns-at-scale | Dark Patterns at Scale: Findings from a Crawl of 11K Shopping Websites
+
+Source URL: https://doi.org/10.1145/3359183
+
+Modules: M8, M2, M5
+
+Priority: core
+
+Focus: Automated crawl of about 11,000 shopping sites finding 1,818 dark-pattern instances, including fake countdown timers, fake scarcity and activity messages, and the third parties supplying them.
+
+Teaching Suggestion: Measurement method students can replicate on a small scale (M2 scraping, M5 text classification).
+
+Rights or Access: open
+
+---
+
+### additional:luguri-strahilevitz-2021-shining-light-dark-patterns | Shining a Light on Dark Patterns
+
+Source URL: https://academic.oup.com/jla/article/13/1/43/6180579
+
+Modules: M8, M6
+
+Priority: core
+
+Focus: Experiments on a national sample: mild dark patterns roughly doubled acceptance of a dubious data-protection subscription and aggressive ones nearly quadrupled it, with less-educated participants more affected; discusses how existing law applies.
+
+Teaching Suggestion: Effect sizes for the M8 session; experimental design example for M6.
+
+Rights or Access: open
+
+---
+
+### additional:blake-moshary-sweeney-tadelis-2021-price-salience | Price Salience and Product Choice
+
+Source URL: https://doi.org/10.1287/mksc.2020.1261
+
+Modules: M4, M6, M8
+
+Priority: core
+
+Focus: StubHub experiment: showing fees only at checkout ('back-end' fees) raised spending and the probability of purchase relative to all-in prices.
+
+Teaching Suggestion: Field-experiment evidence for the drip-pricing row (M4/M6).
+
+Rights or Access: open
+
+---
+
+### additional:santana-dallas-morwitz-2020-drip-pricing | Consumer Reactions to Drip Pricing
+
+Source URL: https://doi.org/10.1287/mksc.2019.1207
+
+Modules: M4, M8
+
+Priority: recommended
+
+Focus: Experiments showing drip pricing raises initial choice of the dripped option but can trigger feelings of deception and backlash once fees appear.
+
+Teaching Suggestion: Consumer-behaviour complement to Blake et al.
+
+Rights or Access: open
+
+---
+
+### additional:he-hollenbeck-proserpio-2022-fake-reviews-2 | The Market for Fake Reviews
+
+Source URL: https://doi.org/10.1287/mksc.2022.1353
+
+Modules: M5, M8
+
+Priority: core
+
+Focus: Documents the online market for buying fake Amazon reviews (organized via Facebook groups) and its effects on ratings, sales and product outcomes.
+
+Teaching Suggestion: Case for discussing review-data validity before running sentiment on reviews. Pairs with the FTC's 2024 fake-review rule.
+
+Cautions: DOI metadata confirmed via Crossref; summary is from general knowledge of the paper. Also see Luca & Zervas (2016), 'Fake It Till You Make It', Management Science 62(12):3412-3427, doi 10.1287/mnsc.2015.2304 (Crossref-verified).
+
+Rights or Access: library
+
+---
+
+### additional:luca-zervas-2016-yelp-review-fraud | Fake It Till You Make It: Reputation, Competition, and Yelp Review Fraud
+
+Source URL: https://doi.org/10.1287/mnsc.2015.2304
+
+Modules: M5, M8
+
+Priority: recommended
+
+Focus: Using Yelp's filtered reviews, finds restaurants commit more positive review fraud when their reputation is weak and more negative fraud against rivals when competition is close.
+
+Teaching Suggestion: M5 fake-review incentives.
+
+Rights or Access: open
+
+---
+
+### additional:mayzlin-dover-chevalier-2014-promotional-reviews | Promotional Reviews: An Empirical Investigation of Online Review Manipulation
+
+Source URL: https://doi.org/10.1257/aer.104.8.2421
+
+Modules: M5, M8
+
+Priority: recommended
+
+Focus: Compares TripAdvisor (anyone can post) with Expedia (verified stays): independent hotels near competitors show more suspicious positive reviews and their neighbours more negative ones.
+
+Teaching Suggestion: Classic identification strategy for M5.
+
+Rights or Access: open
+
+---
+
+### additional:einav-klopack-mahoney-2025-selling-subscriptions | Selling Subscriptions
+
+Source URL: https://doi.org/10.1257/aer.20231612
+
+Modules: M4, M8
+
+Priority: core
+
+Focus: Card-transaction data on subscription payments and a model of passive renewal: cancellation frictions roughly double seller revenue on average, holding initial subscribers fixed.
+
+Teaching Suggestion: Quantifies the subscription-trap row; pairs with Egan et al. in the genAI lab.
+
+Rights or Access: open
+
+---
+
+### additional:miller-sahni-strulov-shlain-sophisticated-inertia | Sophisticated Consumers with Inertia: Long-Term Implications from a Large-Scale Field Experiment
+
+Source URL: https://bfi.uchicago.edu/working-paper/sophisticated-consumers-with-inertia-long-term-implications-from-a-large-scale-field-experiment/
+
+Modules: M4, M6, M8
+
+Priority: core
+
+Focus: Large field experiment randomising auto-renewal: auto-renewal raises short-run revenue through inertia, but many consumers anticipate their inertia and decline auto-renewal offers or delay subscribing; after a year revenue is about equal and auto-renewal has fewer subscribers.
+
+Teaching Suggestion: Shows the business case against subscription traps (M4 CLV, M6).
+
+Rights or Access: open
+
+---
+
+### additional:dube-misra-2023-personalized-pricing | Personalized Pricing and Consumer Welfare
+
+Source URL: https://doi.org/10.1086/720793
+
+Modules: M7, M4, M8
+
+Priority: core
+
+Focus: Field experiments and machine learning at a digital firm: personalised pricing raises profit substantially versus uniform optimal pricing; most consumers face lower prices, though total consumer surplus falls modestly.
+
+Teaching Suggestion: Evidence base for the surveillance-pricing debate (M7).
+
+Rights or Access: open
+
+---
+
+### additional:assad-clark-ershov-xu-2024-algorithmic-pricing | Algorithmic Pricing and Competition: Empirical Evidence from the German Retail Gasoline Market
+
+Source URL: https://doi.org/10.1086/726906
+
+Modules: M7, M8
+
+Priority: recommended
+
+Focus: Adoption of algorithmic pricing software raised margins, mainly when both stations in a local duopoly adopted.
+
+Teaching Suggestion: Empirical counterpart to Calvano et al.
+
+Rights or Access: open
+
+---
+
+### additional:acquisti-taylor-wagman-2016-economics-of-privacy-2 | The Economics of Privacy
+
+Source URL: https://www.aeaweb.org/articles?id=10.1257/jel.54.2.442
+
+Modules: M2, M8
+
+Priority: recommended
+
+Focus: Survey of theory and evidence on the value of protecting versus disclosing personal data. It concludes there is no unified theory, that privacy protection can raise or lower welfare, and that consumers often cannot see how their data is used.
+
+Teaching Suggestion: Instructor background and an optional reading that frames privacy as a trade-off rather than a compliance checklist.
+
+Rights or Access: library
+
+---
+
+### additional:nouwens-et-al-2020-consent-popups | Dark Patterns after the GDPR: Scraping Consent Pop-ups and Demonstrating their Influence
+
+Source URL: https://doi.org/10.1145/3313831.3376321
+
+Modules: M2, M8
+
+Priority: recommended
+
+Focus: Scrapes consent banners on top UK sites (few meet minimum legal requirements) and shows experimentally that removing a reject button on the first page and adding granular options sharply changes consent rates.
+
+Teaching Suggestion: M2 consent design; replicable scraping exercise.
+
+Rights or Access: open
+
+---
+
+### additional:johnson-shriver-goldberg-2023-gdpr-concentration | Privacy and Market Concentration: Intended and Unintended Consequences of the GDPR
+
+Source URL: https://doi.org/10.1287/mnsc.2023.4709
+
+Modules: M8, M2
+
+Priority: recommended
+
+Focus: The GDPR reduced websites' use of web technology vendors and increased vendor market concentration, benefiting large vendors such as Google.
+
+Teaching Suggestion: Unintended effects of regulation (M8 debate balance).
+
+Rights or Access: open
+
+---
+
+### additional:aridor-che-salz-2023-gdpr-data-industry | The Effect of Privacy Regulation on the Data Industry: Empirical Evidence from GDPR
+
+Source URL: https://doi.org/10.1111/1756-2171.12455
+
+Modules: M2, M8
+
+Priority: recommended
+
+Focus: GDPR opt-outs cut recorded consumers by about 12.5%, while the remaining consumers became more trackable and more valuable to advertisers.
+
+Teaching Suggestion: Shows how consent rules change the data students will analyse.
+
+Rights or Access: open
+
+---
+
+### additional:ali-et-al-2019-discrimination-through-optimization | Discrimination through Optimization: How Facebook's Ad Delivery Can Lead to Biased Outcomes
+
+Source URL: https://doi.org/10.1145/3359301
+
+Modules: M7, M8
+
+Priority: recommended
+
+Focus: Controlled ad campaigns show Facebook's delivery skewed by gender and race based on ad content and images even with neutral targeting.
+
+Teaching Suggestion: M7 discriminatory delivery row.
+
+Rights or Access: open
+
+---
+
+### additional:ershov-mitchell-2020-influencer-disclosure | The Effects of Influencer Advertising Disclosure Regulations: Evidence from Instagram
+
+Source URL: https://doi.org/10.1145/3391403.3399477
+
+Modules: M5, M8
+
+Priority: recommended
+
+Focus: Uses a German disclosure regulation to study how mandated sponsorship labels change influencer posting and engagement.
+
+Teaching Suggestion: M5 influencer disclosure row.
+
+Rights or Access: open
+
+---
+
+### additional:gabaix-laibson-2006-shrouded-attributes | Shrouded Attributes, Consumer Myopia, and Information Suppression in Competitive Markets
+
+Source URL: https://doi.org/10.1162/qjec.2006.121.2.505
+
+Modules: M4, M8
+
+Priority: recommended
+
+Focus: Shows why firms may hide add-on prices even under competition when some consumers are myopic: unshrouding educates customers who then avoid the add-on.
+
+Teaching Suggestion: Theory for the drip-pricing row.
+
+Rights or Access: open
+
+---
+
+### additional:rao-wang-2017-false-claims-ftc | Demand for 'Healthy' Products: False Claims and FTC Regulation
+
+Source URL: https://doi.org/10.1509/jmr.15.0398
+
+Modules: M3, M8
+
+Priority: recommended
+
+Focus: Uses FTC actions against false health claims to estimate how much those claims had raised demand and what happened after correction.
+
+Teaching Suggestion: Quantitative-marketing model of regulation's effect on demand (M3/M8).
+
+Rights or Access: open
+
+---
+
+### additional:hmurovic-lamberton-goldsmith-2023-time-scarcity | Examining the Efficacy of Time Scarcity Marketing Promotions in Online Retail
+
+Source URL: https://doi.org/10.1177/00222437221118856
+
+Modules: M6, M8
+
+Priority: recommended
+
+Focus: Field and lab evidence that time-limited promotions online have mixed effects on sales, depending on how much time remains and how consumers interpret the deadline.
+
+Teaching Suggestion: Evidence for the manufactured-urgency row.
+
+Rights or Access: open
+
+---
+
+### additional:meyer-et-al-2019-objecting-to-experiments | Objecting to Experiments that Compare Two Unobjectionable Policies or Treatments
+
+Source URL: https://doi.org/10.1073/pnas.1820701116
+
+Modules: M6, M8
+
+Priority: recommended
+
+Focus: People often judge an A/B test comparing two acceptable policies as less appropriate than implementing either policy untested (the 'A/B effect').
+
+Teaching Suggestion: M6 ethics of experimenting on customers.
+
+Rights or Access: open
+
+---
+
+### additional:dellavigna-malmendier-2006-paying-not-to-go-to-gym | Paying Not to Go to the Gym
+
+Source URL: https://doi.org/10.1257/aer.96.3.694
+
+Modules: M4, M8
+
+Priority: recommended
+
+Focus: Gym members choosing flat-rate contracts pay more per visit than pay-per-visit would cost and are slow to cancel automatically renewing contracts, consistent with overconfidence about future attendance.
+
+Teaching Suggestion: Classic behavioural evidence behind subscription design.
+
+Rights or Access: open
+
+---
+
 ### additional:egan-russel-shi-yao-2026-competition-generative-ai | Competition in Generative AI: Evidence from Consumer Demand
 
 Source URL: https://www.nber.org/papers/w35953
@@ -23948,22 +25400,6 @@ Teaching Suggestion: Short reading for the 'where first-party data lives' lectur
 Cautions: Vendor-neutral industry body, but not academic. Definition labeled as the 2026 version.
 
 Rights or Access: open
-
----
-
-### additional:acquisti-taylor-wagman-2016-economics-of-privacy | The Economics of Privacy
-
-Source URL: https://www.aeaweb.org/articles?id=10.1257/jel.54.2.442
-
-Modules: M2, M8
-
-Priority: recommended
-
-Focus: Survey of theory and evidence on the value of protecting versus disclosing personal data. It concludes there is no unified theory, that privacy protection can raise or lower welfare, and that consumers often cannot see how their data is used.
-
-Teaching Suggestion: Instructor background and an optional reading that frames privacy as a trade-off rather than a compliance checklist.
-
-Rights or Access: library
 
 ---
 
@@ -26060,24 +27496,6 @@ Focus: Classic differences-in-differences comparison of Amazon and Barnes & Nobl
 Teaching Suggestion: Classic case linking review text and ratings to sales. A good bridge to M6 identification logic.
 
 Cautions: DOI metadata confirmed via Crossref.
-
-Rights or Access: library
-
----
-
-### additional:he-hollenbeck-proserpio-2022-fake-reviews | The Market for Fake Reviews
-
-Source URL: https://doi.org/10.1287/mksc.2022.1353
-
-Modules: M5, M8
-
-Priority: recommended
-
-Focus: Documents the online market for buying fake Amazon reviews (organized via Facebook groups) and its effects on ratings, sales and product outcomes.
-
-Teaching Suggestion: Case for discussing review-data validity before running sentiment on reviews. Pairs with the FTC's 2024 fake-review rule.
-
-Cautions: DOI metadata confirmed via Crossref; summary is from general knowledge of the paper. Also see Luca & Zervas (2016), 'Fake It Till You Make It', Management Science 62(12):3412-3427, doi 10.1287/mnsc.2015.2304 (Crossref-verified).
 
 Rights or Access: library
 
@@ -28191,24 +29609,6 @@ Rights or Access: library
 
 ---
 
-### additional:chintala-liaukonyte-yang-2024-browsing-aisles-app | Browsing the Aisles or Browsing the App? How Online Grocery Shopping is Changing What We Buy
-
-Source URL: https://pubsonline.informs.org/doi/10.1287/mksc.2022.0292
-
-Modules: M2, M6, M4
-
-Priority: core
-
-Focus: Household panel evidence on how the same shoppers' baskets differ when they buy groceries online versus in store: fewer impulse and unhealthy items and more repetition online, with implications for new-product introduction.
-
-Teaching Suggestion: Instructor's own paper; a natural M2/M6 case. Pairs with the synthetic Instacart vs. in-person grocery data used in MBA 542 Module 1.
-
-Cautions: Also on the MBA 542 Module 1 reading list. The summary is high-level; check the wording against the published abstract before quoting it on the wiki.
-
-Rights or Access: library
-
----
-
 ### additional:narang-shankar-2019-mobile-app | Mobile App Introduction and Online and Offline Purchases and Product Returns
 
 Source URL: https://pubsonline.informs.org/doi/10.1287/mksc.2019.1169
@@ -28389,21 +29789,75 @@ Rights or Access: open
 
 ---
 
-### additional:dube-cohen-yang-monla-2024-precision-retailing | Precision Retailing: Driving Results with Behavioral Insights and Data Analytics
+### additional:pricing-risk-earnings-calls | Dataset: retailer earnings-call mentions of dynamic, surge, personalized and AI pricing (Nov 2021 - Nov 2026)
 
-Source URL: https://utorontopress.com/9781487542719/precision-retailing
+Source URL: https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/03_Data_and_Code/Earnings_Calls
 
-Modules: M1, M8
+Modules: M5, M8, M6, M4, M7
+
+Priority: core
+
+Focus: A public teaching export contains 2,326 call records, 971 match records, a 123-firm roster, and 19 dictionary terms. Complete programs assess coverage, disclosure, interpretation, and event windows. Original transcript excerpts are excluded; seven interpretation cases use course-authored paraphrases. The supplied source collection is not a historical market census.
+
+Teaching Suggestion: Data for a PR / investor-relations risk-assessment exercise on dynamic and surveillance pricing, paired with the M8 ethics-and-law crosswalk; also an M5 dictionary-measurement exercise (precision, recall, LLM comparison) and an M6 event study around backlash dates.
+
+Cautions: Use the tested teaching export. Original collectors, excerpts, and provisional precision checks remain local reference material.
+
+Rights or Access: open
+
+---
+
+### additional:zcyeee-sp500-earnings-call-turns | S&P 500 Earnings Call Transcripts with Speaker Turns, Roles and SEC CIKs (2005-2025), Hugging Face
+
+Source URL: https://huggingface.co/datasets/zcyeee/sp500-earnings-call-turns
+
+Modules: M5, M7, M8
+
+Priority: recommended
+
+Focus: 33,362 S&P 500 earnings calls from October 2005 to 15 May 2025, with full text split into 2.8 million speaker turns. Each turn carries the speaker's name, affiliation, role (management, analyst, operator) and section, and each call carries a SEC CIK and Capital IQ id. Distributed as four Parquet files (~1.2 GB) with 64-row row groups, so students can read only the columns and rows they need.
+
+Teaching Suggestion: Bulk corpus for M5 text-analytics projects needing many calls before mid-2025; the speaker-role fields save the parsing heuristics used in the pricing-risk dataset.
+
+Cautions: Ends 15 May 2025. Hugging Face rate-limits anonymous downloads; use huggingface_hub with a free token for the full files.
+
+Rights or Access: open
+
+---
+
+### additional:motley-fool-earnings-call-transcripts | The Motley Fool: earnings call transcripts (free web pages, with monthly sitemaps)
+
+Source URL: https://www.fool.com/earnings-call-transcripts/
+
+Modules: M5, M2
 
 Priority: optional
 
-Focus: Edited volume on combining behavioral insight and data analytics in retail, co-edited by the instructor.
+Focus: Free transcripts with speaker names and titles, listed in monthly sitemaps at fool.com/sitemap/YYYY/MM. Coverage is broad in 2021 and again from late 2025 but thin from about April to December 2025: many large retailers' calls are missing.
 
-Teaching Suggestion: Optional instructor-authored background; individual chapters could anchor M1 framing or M8 retail topics.
+Teaching Suggestion: Quick source for single calls and an M2 example of discovering pages through sitemaps; check coverage before building a panel.
 
-Cautions: Also on the MBA 542 Module 1 reading list.
+Cautions: Copyrighted; quote briefly with attribution. robots.txt sets ai-train=no.
 
-Rights or Access: paid
+Rights or Access: open
+
+---
+
+### additional:roic-ai-earnings-call-transcripts | roic.ai: earnings call transcript pages by ticker and fiscal quarter
+
+Source URL: https://www.roic.ai/
+
+Modules: M5
+
+Priority: optional
+
+Focus: Server-rendered transcript pages at /quote/<TICKER>/transcripts/<FY>-year/<Q>-quarter with one heading per speaker turn and a per-ticker list of quarters; coverage was complete for nearly all S&P 1500 retailers in Nov 2021 - Nov 2026. Source for the course's pricing-risk dataset.
+
+Teaching Suggestion: Where to get a recent call when the bulk corpora stop in 2025; see the pricing-risk dataset's Python collector for a polite scraper.
+
+Cautions: Check the site's terms before large reruns; do not republish full transcripts.
+
+Rights or Access: open
 
 ---
 
@@ -29595,42 +31049,6 @@ Rights or Access: open
 
 ---
 
-### additional:ling-nie-nielsen-knauper-yang-dube-2022-goal-oriented-food-rec | Following Good Examples: Health Goal-Oriented Food Recommendation based on Behavior Data
-
-Source URL: https://dl.acm.org/doi/10.1145/3485447.3514193
-
-Modules: M7, M6
-
-Priority: core
-
-Focus: Develops a sequential food recommender combining general, BMI-specific, and goal-specific models learned from food logs. Evaluation compares held-out foods in periods associated with the intended weight outcome; it does not estimate the causal effect of deploying recommendations on weight.
-
-Teaching Suggestion: Instructor's own paper and the anchor case for the recommender unit: accuracy versus goal attainment, blending objectives, and an M6 caution that learning from 'successful' users builds selection into the training data. A good AI-assisted coding exercise is a goal-aware re-ranker on the synthetic viewing or grocery data.
-
-Cautions: Also on the MBA 542 Module 5 reading list. Local Sections 3.2 and 5 checked: selected active users, last-basket testing, and offline outcome-conditioned evaluation. M7 Section 7.12 distinguishes retrospective outcomes from inputs available at recommendation time.
-
-Rights or Access: library
-
----
-
-### additional:nielsen-yang-dube-knauper-ling-nie-2022-consumption-variety | Consumption Variety in Food Recommendation
-
-Source URL: https://www.journals.uchicago.edu/doi/10.1086/720453
-
-Modules: M7, M3, M2
-
-Priority: core
-
-Focus: Relates food-consumption variety to recorded calorie and food-composition changes in app logs, then conditions the FOODVAR sequential recommender on a variety-change indicator. Offline comparisons assess hit rate and NDCG; the study does not randomize users to a variety intervention.
-
-Teaching Suggestion: Instructor's own paper. It moves from a descriptive regression (M3) to a design change in the recommender (M7), the full analytics-to-action arc the course teaches. Use it to motivate multi-objective re-ranking and evaluation beyond accuracy.
-
-Cautions: Also on the MBA 542 Module 5 reading list. Empirical analysis, FOODVAR sections, and Tables 3–5 checked locally. Evaluation uses 30 history days, seven validation days, and a final test day. The M8 category-bonus calculation is a separate synthetic illustration.
-
-Rights or Access: library
-
----
-
 ### additional:wang-li-chen-2025-recpie-explanations | Can Explanations Improve Recommendations? Evidence from Prediction-Informed Explanations
 
 Source URL: https://arxiv.org/abs/2502.16759v3
@@ -29872,6 +31290,228 @@ Focus: Shows that LLM-based conversational recommenders can persuade users with 
 Teaching Suggestion: Counterpoint to RecPIE: LLM explanations can improve recommendations, but they can also mislead. Good for a class debate on AI shopping assistants (M8).
 
 Cautions: Authors, venue, and pages verified against ACL Anthology and supplied PDF. PC-CRS evaluates credibility and persuasion separately; M7 connects the distinction to attribute-level factual checks.
+
+Rights or Access: open
+
+---
+
+### additional:toddrjones-free-datasets-list | Free Datasets for Social Science Research (curated list)
+
+Source URL: https://github.com/toddrjones/datasets
+
+Modules: M2, M3
+
+Priority: optional
+
+Focus: A single README listing about 130 free datasets under 33 headings (time use, household surveys, businesses, shopping, names, real estate, social networks, sports, weather and more), each with years, access terms, unit of observation and often a sample paper. Mostly public US data; a few need free data agreements.
+
+Teaching Suggestion: Point students here when they need data for a term project; most entries are social-science rather than marketing, so pair it with the Datasets folder README, which lists the marketing-specific picks.
+
+Cautions: Screened 2026-10-27 at commit 4ba0bda. Marketing-relevant entries not already catalogued were added as separate items (Amazon purchase histories, BTOS AI use, Open-Meteo, Chicago business licenses, SSA names, Social Connectedness Index, Our World in Data, County Business Patterns, Zillow, ATUS).
+
+Rights or Access: open
+
+---
+
+### additional:berke-2024-open-ecommerce-amazon-purchases | Open e-commerce 1.0: five years of crowdsourced US Amazon purchase histories with user demographics
+
+Source URL: https://doi.org/10.7910/DVN/YGLYDY
+
+Modules: M2, M4, M7, M8
+
+Priority: core
+
+Focus: 1,850,717 Amazon.com orders from 5,027 consenting US users, January 2018 to early 2023 (order date, unit price, quantity, ASIN, title, category, shipping state), linked by respondent ID to a survey of demographics, household, Amazon use, lifestyle and health. Files: amazon-purchases.csv (313 MB), survey.csv (1.3 MB), fields.csv, survey instruments.
+
+Teaching Suggestion: The rare open individual-level purchase panel with demographics: RFM and cohort exercises (M2/M4), next-purchase and recommender exercises (M7), and an M8 privacy discussion (the authors also show which sensitive attributes can be inferred from purchases). Pair with Online Retail II, which has transactions but no demographics.
+
+Cautions: License and file sizes read from the Dataverse API on 2026-10-27. The authors ask that the data be used for research and never to re-identify participants. Sample skews female and under-represents older and high-income households (validated against Census in the paper). Not downloaded: 313 MB exceeds the library's local-copy cap; the survey file and an example purchase export (MIT) are small and on GitHub.
+
+Rights or Access: open
+
+---
+
+### additional:berke-2024-cscw-amazon-data-sharing-experiment | Insights from an experiment crowdsourcing data from thousands of US Amazon users: the importance of transparency, money, and data use
+
+Source URL: https://arxiv.org/abs/2404.13172
+
+Modules: M8, M6
+
+Priority: recommended
+
+Focus: Randomised experiment embedded in the data-collection tool behind Open e-commerce 1.0: showing people their own data raises willingness to share it, sharing rises linearly with the payment offered, real money moves people more than hypothetical money (a field test of the privacy paradox), and willingness differs by demographic group.
+
+Teaching Suggestion: M8 privacy session: a field experiment on what consumers' data is worth to them, from the same people whose purchases students can analyse. Also an M6 example of an experiment built into a product flow.
+
+Rights or Access: open
+
+---
+
+### additional:census-btos-ai-use | Census Business Trends and Outlook Survey (BTOS): biweekly AI use by US businesses
+
+Source URL: https://www.census.gov/hfp/btos/data
+
+Modules: M8, M2
+
+Priority: core
+
+Focus: Nationally representative biweekly survey of US employer businesses since September 2023, with a question on AI use (revised in November 2025 from 'in producing goods or services' to 'in any business function') and expected use in the next six months, by sector, state, the 25 largest metro areas and firm size. National AI use was 19.8% for the period ending 3 May 2026; 37% for firms with 250+ employees; 39.7% in Information, about 14% in Retail.
+
+Teaching Suggestion: The official counterpart to the Ramp AI Index in genai_demand_lab: compare a probability survey of firms with card-transaction adoption among Ramp customers, and discuss why the levels differ. The November 2025 wording change is a ready-made lesson in series breaks.
+
+Cautions: Figures from the Census story 'Large Firms With at Least 20 Employees Biggest AI Users' (26 May 2026); supplement documented in CES-WP-26-25. Download files from the BTOS data page.
+
+Rights or Access: open
+
+---
+
+### additional:allen-2026-feds-monitoring-ai-adoption | Monitoring AI Adoption in the US Economy
+
+Source URL: https://www.federalreserve.gov/econres/notes/feds-notes/monitoring-ai-adoption-in-the-u-s-economy-20260403.html
+
+Modules: M8
+
+Priority: recommended
+
+Focus: Compares three public measures of AI adoption: Census BTOS (about 18% of firms at year-end 2025), the Atlanta Fed's Survey of Business Uncertainty (about 78% employment-weighted firm adoption, 54% for LLMs) and the Real-Time Population Survey (about 41% of workers using generative AI at work, November 2025), and explains why they differ.
+
+Teaching Suggestion: Five-minute read for the M8 measurement discussion: three numbers that look contradictory until you ask who is counted, how, and whether paid or free use counts. Pairs with Egan et al. (consumers, paid) and the Ramp AI Index (businesses, paid).
+
+Rights or Access: open
+
+---
+
+### additional:open-meteo-historical-weather-api | Open-Meteo historical weather API (keyless, hourly and daily since 1940)
+
+Source URL: https://open-meteo.com/en/docs/historical-weather-api
+
+Modules: M2, M3, M6
+
+Priority: recommended
+
+Focus: GET https://archive-api.open-meteo.com/v1/archive with latitude, longitude, start_date, end_date and a list of hourly or daily variables (temperature, precipitation, snowfall, wind) returns JSON; no key for non-commercial use, reanalysis-based history back to 1940, plus a forecast API.
+
+Teaching Suggestion: The second API in the M2 sequence after McBroken: parameters, query strings and JSON arrays. Then join daily weather to sales (McBroken outages, Chicago business data, or any store-level series) for an M3 regression or as a weather instrument in M6.
+
+Cautions: Free for non-commercial use; commercial use needs a key. Cite Open-Meteo and the Copernicus/ERA5 source as the docs page requests.
+
+Rights or Access: freemium
+
+---
+
+### additional:chicago-business-licenses | City of Chicago Data Portal: Business Licenses (current active), via the Socrata (SODA) API
+
+Source URL: https://data.cityofchicago.org/Community-Economic-Development/Business-Licenses-Current-Active/uupf-x98q
+
+Modules: M2, M3
+
+Priority: optional
+
+Focus: Every active business license in Chicago with business name, license type and activity, address, ward, community area, latitude and longitude, and start and expiration dates; the portal serves it as CSV or through the SODA JSON API with SQL-like filters ($where, $select, $limit).
+
+Teaching Suggestion: A local, geocoded market map for trade-area and competitor-density exercises (how many coffee shops within 1 km of a site?), and a clean example of an API with query parameters. A companion dataset covers all historical licenses.
+
+Cautions: API endpoint by Socrata convention: https://data.cityofchicago.org/resource/uupf-x98q.json (not test-called from here; the portal blocked automated page loads on 2026-10-27). Anonymous calls are throttled; a free app token raises the limit.
+
+Rights or Access: open
+
+---
+
+### additional:ssa-baby-names | Social Security Administration baby names (national, state and territory files)
+
+Source URL: https://www.ssa.gov/oact/babynames/limits.html
+
+Modules: M2, M5
+
+Priority: optional
+
+Focus: Counts of first names by sex and birth year from Social Security card applications since 1880, nationally (names.zip, 7 MB) and by state (namesbystate.zip, 23 MB); names with fewer than five occurrences are suppressed.
+
+Teaching Suggestion: A classic first visualisation dataset that is also a diffusion and fashion-cycle dataset: names rise and fall like products, and brand names (Alexa, Siri, Khaleesi) leave visible marks. Good for M2 time-series charts and an M5 text-meets-culture discussion.
+
+Rights or Access: open
+
+---
+
+### additional:facebook-social-connectedness-index | Facebook Social Connectedness Index (SCI): friendship links between US counties, zip codes and countries
+
+Source URL: https://ai.meta.com/ai-for-good/datasets/social-connectedness-index/
+
+Modules: M5, M8, M3
+
+Priority: recommended
+
+Focus: Relative probability that a Facebook user in one area is friends with a user in another, for every pair of US counties and zip codes and of countries and many sub-national regions, built from aggregated Facebook friendships.
+
+Teaching Suggestion: Word of mouth has a geography: use the SCI to ask whether a product spreads along friendship links (housing beliefs, product adoption, political ads in the authors' papers). Join to county data for an M3 gravity-style regression.
+
+Cautions: Introduced in Bailey, Cao, Kuchler, Stroebel and Wong, 'Social Connectedness: Measurement, Determinants, and Effects', Journal of Economic Perspectives 32(3), 2018 (replication data on openICPSR 114016). Download terms are on the Meta / Humanitarian Data Exchange pages.
+
+Rights or Access: open
+
+---
+
+### additional:our-world-in-data | Our World in Data: charts and downloadable data, with a chart-level CSV API
+
+Source URL: https://ourworldindata.org/
+
+Modules: M2, M8
+
+Priority: recommended
+
+Focus: Thousands of interactive charts on health, economy, technology, energy and more, each downloadable as CSV with metadata; appending .csv to a chart URL returns its data, and the owidapi R package wraps the chart API.
+
+Teaching Suggestion: Model charts for the M2 critique activity alongside FlowingData and the FT Visual Vocabulary, and a one-line data source for the technology-adoption curves used when introducing AI diffusion in M8.
+
+Rights or Access: open
+
+---
+
+### additional:census-county-business-patterns | Census County Business Patterns (establishments, employment and payroll by industry and area)
+
+Source URL: https://www.census.gov/programs-surveys/cbp/data.html
+
+Modules: M2, M4
+
+Priority: optional
+
+Focus: Annual counts of establishments, employment and payroll by detailed NAICS industry for every US county, metro area, zip code (establishment counts) and state, with size-class breakdowns; available as files and through the Census API.
+
+Teaching Suggestion: Market-sizing and competitive-density inputs for segmentation and site-selection cases (how many gyms per 10,000 residents in each Illinois county?). Pairs with ACS demographics.
+
+Rights or Access: open
+
+---
+
+### additional:zillow-research-data | Zillow Research housing data (home values, rents, inventory, days on market)
+
+Source URL: https://www.zillow.com/research/data/
+
+Modules: M3
+
+Priority: optional
+
+Focus: Monthly CSV series for the Zillow Home Value Index, Observed Rent Index, inventory, new listings, price cuts and days on market at metro, county, city and zip level.
+
+Teaching Suggestion: Ready-made panel for M3 regression review (prices on local characteristics, before-and-after comparisons) when students want a non-retail example.
+
+Cautions: Page not fetched (blocked from the workspace on 2026-10-27); listed in the Jones directory. Check Zillow's terms of use before redistributing the files.
+
+Rights or Access: open
+
+---
+
+### additional:bls-american-time-use-survey | American Time Use Survey (ATUS): 24-hour time diaries, 2003 to present
+
+Source URL: https://www.bls.gov/tus/
+
+Modules: M4, M2
+
+Priority: optional
+
+Focus: Minute-by-minute diaries of what a sample of Americans did on one day, where and with whom, linked to the Current Population Survey; activity codes include shopping, consumer purchases, media use and eating and drinking. An IPUMS version (atusdata.org) makes extracts easy.
+
+Teaching Suggestion: Segmentation on behaviour rather than demographics (who shops when, who streams instead of shopping) for M4 clustering, and time-of-day patterns for M2 visualisation.
 
 Rights or Access: open
 

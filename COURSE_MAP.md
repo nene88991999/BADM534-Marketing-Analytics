@@ -229,3 +229,7 @@ M2 §§2.30–2.31 develop provenance and selective access; M6 §6.43 separates 
 ## Measurement and Standards of Evidence
 
 The [historical collection](01_Resources/46_Measurement_and_Disciplinary_History/README.md) supports M1 §1.23 and M9 §9.55. The [evidence-standards collection](01_Resources/47_Evidence_Standards_and_Error_Costs/README.md) connects M2 §2.32, M3 §3.22, M4 §4.30, M5 §5.28, M6 §§6.44–6.45, M7 §7.48, M8 §8.34, and M9 §§9.56–9.59. A [complete synthetic example](03_Data_and_Code/Evidence_Standards/README.md) compares error costs with fixed evidence; [optional practice](07_Labs/Evidence_Standards/README.md) develops the statistical and philosophical argument. The syllabus, ten session decks, and [electricity wiki pilot](08_Wiki/pilot/index.html#uncertainty) carry the same distinctions between inquiry, protection, and remedy.
+
+## Data, Artifacts, and Research Agreements
+
+M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical copies through a complete synthetic subscription program. M9 §§9.60–9.65 connects artifact creation, public norms, NDA restrictions, publication selection, and reasons owed to affected people. The discussion asks whether research under an NDA ought to exist and distinguishes conducting, publishing, and relying on a study. Sessions 2 and 14 use the same cases, with three editable TikZ diagrams and optional practice in `07_Labs/Data_Truth_and_Norms/`. Source annotations and professional-policy scope appear in `01_Resources/45_Data_Truth_and_Norms/`.

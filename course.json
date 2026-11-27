@@ -467,7 +467,9 @@
     "03_Data_and_Code/Evidence_Standards/README.md",
     "03_Data_and_Code/Evidence_Standards/VERIFICATION.md",
     "03_Data_and_Code/Evidence_Standards/results/README.md",
-    "07_Labs/Evidence_Standards/README.md"
+    "07_Labs/Evidence_Standards/README.md",
+    "03_Data_and_Code/Data_Production/artifact_results/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -516,12 +518,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-integrated-evidence-standards",
+    "revision": "2026-11-27-data-artifacts-and-research-independence",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 150,
-    "pages": 620,
+    "figures_count": 153,
+    "pages": 634,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -556,7 +558,7 @@
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
     "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
     "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
-    "python_source_blocks": 130
+    "python_source_blocks": 131
   },
   "datasets": [
     {
@@ -653,7 +655,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 536,
+    "slides": 541,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1229,7 +1231,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-27-integrated-evidence-standards",
+  "revision": "2026-11-27-data-artifacts-and-research-independence",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1693,26 +1695,31 @@
     "practice": "07_Labs/Data_Truth_and_Norms/README.md",
     "verification": "03_Data_and_Code/Data_Production/VERIFICATION.md",
     "sections": [
-      "M2 §§2.30–2.31",
+      "M2 §§2.30–2.31, 2.33–2.34",
       "M6 §6.43",
-      "M9 §§9.51–9.54"
+      "M9 §§9.51–9.54, 9.60–9.65"
     ],
     "sessions": [
       2,
       10,
       14
     ],
-    "philosophical_and_methodological_sources": 18,
-    "institutional_sources": 8,
+    "philosophical_and_methodological_sources": 20,
+    "institutional_sources": 10,
     "local_source_files": 14,
     "local_pdf_copies": 12,
     "local_word_manuscripts": 2,
-    "original_programs": 1,
-    "original_figures": 3,
-    "additional_slides": 6,
+    "original_programs": 2,
+    "original_figures": 6,
+    "additional_slides": 11,
     "scope": "Original synthetic disclosure comparison and verified source assessment; no empirical utility effect or suppression finding.",
-    "matching_python_blocks": 129,
-    "rendered_pages_checked": 53
+    "matching_python_blocks": 131,
+    "rendered_pages_checked": 43,
+    "updated_on": "2026-11-27",
+    "artifact_example": "03_Data_and_Code/Data_Production/data_artifacts.py",
+    "artifact_results": "03_Data_and_Code/Data_Production/artifact_results/README.md",
+    "restricted_research": "01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md",
+    "verification_date": "2026-11-27"
   },
   "measurement_and_evidence_standards": {
     "released_on": "2026-11-27",

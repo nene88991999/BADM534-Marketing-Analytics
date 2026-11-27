@@ -1,0 +1,1335 @@
+- id: badm534-ethics-law-crosswalk
+  category: M8
+  section: 'Ethics and law: course note and theory'
+  subtopic: 'Ethics and law: course note and theory'
+  title: 'Course note: marketing tactics, consumer harm, and the law (crosswalk for M1-M8)'
+  authors: Yang, N. (Marketing Analytics course materials)
+  year: 2026
+  type: tutorial
+  url: https://github.com/nene88991999/BADM534-Marketing-Analytics/tree/main/01_Resources/08_M8_Current_Topics_in_Marketing/ethics_and_law
+  access: open
+  level: intro
+  priority: core
+  modules:
+  - M8
+  - M1
+  - M2
+  - M3
+  - M4
+  - M5
+  - M6
+  - M7
+  summary: Twelve tactics (subscription traps, drip pricing, fake reviews, influencer disclosure, manufactured urgency, surveillance pricing, consent and privacy,
+    children, AI claims, discriminatory delivery, green claims, experiments on customers), each mapped to the consumer harm, the US federal, Illinois, other-state,
+    EU and UK law, enforcement cases with amounts and dates, research evidence and a discussion question. Statuses checked 2 Nov 2026. Includes a module-by-module
+    'ethics and law check', a 75-minute M8 session plan and a project risk-memo assignment; crosswalk.csv carries the table for the wiki.
+  wiki_use: 'The hub for the ethics and regulation thread: link each module page''s closing ''ethics and law check'' here.'
+  ai_angle: true
+  verified_via: fetch
+  notes: Teaching material, not legal advice. Pending items (NY One Fair Price Act, EU Digital Fairness Act, FTC negative-option rulemaking, FTC v. Uber, FTC v. Live
+    Nation) need rechecking each term.
+- id: wu-2016-attention-merchants
+  category: M8
+  section: 'Ethics and law: course note and theory'
+  subtopic: 'Ethics and law: course note and theory'
+  title: 'The Attention Merchants: The Epic Scramble to Get Inside Our Heads'
+  authors: Wu, T.
+  year: 2016
+  type: book
+  venue: Knopf
+  url: https://scholarship.law.columbia.edu/books/64/
+  access: paid
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M5
+  - M6
+  summary: History of the business model that captures attention with free content and resells it to advertisers, from the penny press to social media, including
+    recurring public revolts when advertising overreaches.
+  wiki_use: 'Opening reading for M8 (or M5); pairs with M6 ad-measurement papers: what exactly is being bought?'
+  ai_angle: false
+  verified_via: fetch
+- id: wu-2019-blind-spot-attention-economy
+  category: M8
+  section: 'Ethics and law: course note and theory'
+  subtopic: 'Ethics and law: course note and theory'
+  title: 'Blind Spot: The Attention Economy and the Law'
+  authors: Wu, T.
+  year: 2019
+  type: paper
+  venue: 'Antitrust Law Journal 82(3): 771'
+  url: https://scholarship.law.columbia.edu/faculty_scholarship/2029/
+  access: open
+  level: intermediate
+  priority: core
+  modules:
+  - M8
+  - M5
+  summary: Attention is a scarce resource; 'attention brokers' offer free services and sell access to audiences, and antitrust and consumer-protection authorities
+    have struggled to analyse these markets because users pay no money. Distinguishes voluntary exchange from captive exposure.
+  wiki_use: Pre-reading for the M8 session; class point that ad load and interstitial questions are a price paid in time.
+  ai_angle: false
+  verified_via: fetch
+  notes: Reading available through the linked public source; original local copies are excluded from publication.
+- id: wu-2025-age-of-extraction
+  category: M8
+  section: 'Ethics and law: course note and theory'
+  subtopic: 'Ethics and law: course note and theory'
+  title: The Age of Extraction
+  authors: Wu, T.
+  year: 2025
+  type: book
+  venue: Knopf
+  url: https://www.penguinrandomhouse.com/books/691177/the-age-of-extraction-by-tim-wu/
+  access: paid
+  level: intro
+  priority: optional
+  modules:
+  - M8
+  summary: Argues that a handful of tech platforms, after offering convenience, extract money, data and attention from users and dependent businesses, and proposes
+    ways to restore balance.
+  wiki_use: Frame for the junk-fee, marketplace-fee and surveillance-pricing rows of the crosswalk.
+  ai_angle: false
+  verified_via: fetch
+- id: wu-2013-machine-speech
+  category: M8
+  section: 'Ethics and law: course note and theory'
+  subtopic: 'Ethics and law: course note and theory'
+  title: Machine Speech
+  authors: Wu, T.
+  year: 2013
+  type: paper
+  venue: University of Pennsylvania Law Review 161
+  url: https://scholarship.law.columbia.edu/faculty_scholarship/1833/
+  access: open
+  level: advanced
+  priority: optional
+  modules:
+  - M8
+  - M7
+  summary: When is a computer's output the designer's protected speech and when is it a functional tool? Contrasts recommendations based on a user's recorded choices
+    with those reflecting a programmer's judgments.
+  wiki_use: Background for First Amendment arguments against algorithm regulation, e.g. retailers' challenge to New York's algorithmic-pricing disclosure law.
+  ai_angle: false
+  verified_via: fetch
+- id: wu-2019-will-ai-eat-the-law
+  category: M8
+  section: 'Ethics and law: course note and theory'
+  subtopic: 'Ethics and law: course note and theory'
+  title: Will Artificial Intelligence Eat the Law? The Rise of Hybrid Social-Ordering Systems
+  authors: Wu, T.
+  year: 2019
+  type: paper
+  venue: Columbia Law Review 119
+  url: https://columbialawreview.org/content/will-artificial-intelligence-eat-the-law-the-rise-of-hybrid-social-ordering-systems/
+  access: open
+  level: intermediate
+  priority: optional
+  modules:
+  - M7
+  - M8
+  summary: Argues that automated decision systems need mechanisms that bring hard cases to human judgment, and warns that a nominal human presence can coexist with
+    disempowerment.
+  wiki_use: 'M7: when a model or AI agent decides refunds, retention offers or prices, who can trigger human review?'
+  ai_angle: true
+  verified_via: fetch
+- id: wu-2017-attention-theft
+  category: M8
+  section: 'Ethics and law: course note and theory'
+  subtopic: 'Ethics and law: course note and theory'
+  title: 'The Crisis of Attention Theft: Ads That Steal Your Time for Nothing in Return'
+  authors: Wu, T.
+  year: 2017
+  type: blog
+  venue: WIRED
+  url: https://www.wired.com/2017/04/forcing-ads-captive-audience-attention-theft-crime/
+  access: open
+  level: intro
+  priority: optional
+  modules:
+  - M8
+  summary: Short essay on ads forced on captive audiences without consent, a readable version of the voluntary-versus-captive distinction.
+  wiki_use: Five-minute pre-reading alternative to Blind Spot.
+  ai_angle: false
+  verified_via: search
+- id: eo-14036-competition
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: Executive Order 14036, Promoting Competition in the American Economy (2021; revoked 2025)
+  authors: The White House
+  year: 2021
+  type: report
+  url: https://en.wikipedia.org/wiki/Executive_Order_14036
+  access: open
+  level: intro
+  priority: optional
+  modules:
+  - M8
+  summary: Signed 9 July 2021; a whole-of-government competition agenda covering, among other things, right to repair, non-competes and telecom fees; Tim Wu helped
+    draft and implement it at the National Economic Council. Revoked 13 August 2025 by Executive Order 14337.
+  wiki_use: Policy-history example of how fast the federal map changes; links right to repair to the McBroken lab.
+  ai_angle: false
+  verified_via: fetch
+- id: calo-2014-digital-market-manipulation
+  category: M8
+  section: 'Ethics and law: course note and theory'
+  subtopic: 'Ethics and law: course note and theory'
+  title: Digital Market Manipulation
+  authors: Calo, R.
+  year: 2014
+  type: paper
+  venue: 'George Washington Law Review 82(4): 995-1051'
+  url: https://www.gwlr.org/wp-content/uploads/2014/10/Calo_82_4.pdf
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M8
+  - M7
+  summary: Argues that firms' data about consumers and control over digital interfaces let them find and exploit each consumer's biases at the moment of decision,
+    and asks how consumer-protection law should respond.
+  wiki_use: Legal-theory reading linking data-driven marketing to manipulation.
+  ai_angle: false
+  verified_via: fetch
+- id: susser-roessler-nissenbaum-2019-online-manipulation
+  category: M8
+  section: 'Ethics and law: course note and theory'
+  subtopic: 'Ethics and law: course note and theory'
+  title: 'Online Manipulation: Hidden Influences in a Digital World'
+  authors: Susser, D.; Roessler, B.; Nissenbaum, H.
+  year: 2019
+  type: paper
+  venue: Georgetown Law Technology Review 4(1)
+  url: https://georgetownlawtechreview.org/online-manipulation-hidden-influences-in-a-digital-world/GLTR-01-2020/
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M8
+  summary: Defines manipulation as hidden influence that exploits vulnerabilities and argues it threatens autonomy, distinguishing it from persuasion and coercion.
+  wiki_use: Ethics reading for defining what makes a tactic manipulative rather than persuasive.
+  ai_angle: false
+  verified_via: search
+  notes: URL pattern from the journal site; confirm before linking students.
+- id: sunstein-2022-sludge-audits
+  category: M8
+  section: 'Ethics and law: course note and theory'
+  subtopic: 'Ethics and law: course note and theory'
+  title: Sludge Audits
+  authors: Sunstein, C. R.
+  year: 2022
+  type: paper
+  venue: 'Behavioural Public Policy 6(4): 654-673'
+  url: https://doi.org/10.1017/bpp.2019.32
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M6
+  summary: Proposes that firms and governments audit 'sludge', the frictions (forms, waits, steps) that make beneficial actions harder, and quantify its costs.
+  wiki_use: Method for the M8 audit exercise on a real cancellation flow.
+  ai_angle: false
+  verified_via: fetch
+- id: ftc-act-s5-deception-unfairness
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: FTC Act Section 5 (15 U.S.C. 45) and the FTC Policy Statement on Deception
+  authors: Federal Trade Commission
+  year: 1983
+  type: documentation
+  url: https://www.ftc.gov/legal-library/browse/ftc-policy-statement-deception
+  access: open
+  level: intro
+  priority: core
+  modules:
+  - M8
+  - M3
+  summary: 'The general US prohibition of unfair or deceptive acts. Deception: a representation or omission likely to mislead a reasonable consumer that is material.
+    Unfairness (15 U.S.C. 45(n)): substantial injury, not reasonably avoidable, not outweighed by benefits. Objective claims require prior substantiation. Since AMG
+    Capital (2021) money comes mainly through rule violations (civil penalties up to $53,088 per violation at 2025 levels, unchanged for 2026).'
+  wiki_use: Legal backbone slide for M8; the substantiation point for M3 (claims built on regressions).
+  ai_angle: false
+  verified_via: fetch
+- id: rosca-15-usc-8401
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: Restore Online Shoppers' Confidence Act (ROSCA), 15 U.S.C. 8401-8405
+  authors: U.S. Congress
+  year: 2010
+  type: documentation
+  url: https://www.law.cornell.edu/uscode/text/15/chapter-110
+  access: open
+  level: intro
+  priority: core
+  modules:
+  - M8
+  - M4
+  summary: 'For online negative-option offers: disclose all material terms before billing, obtain express informed consent, and provide a simple mechanism to stop
+    recurring charges; violations are treated as rule violations with civil penalties.'
+  wiki_use: The statute behind the Amazon Prime and Uber One cases; M4 retention and subscription pricing.
+  ai_angle: false
+  verified_via: fetch
+- id: ftc-negative-option-anprm-2026
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: 'FTC Negative Option Rule: 2024 amendments (vacated 2025) and advance notice of proposed rulemaking (13 March 2026)'
+  authors: Federal Trade Commission
+  year: 2026
+  type: report
+  venue: 'Federal Register 91(49): 12318-12325'
+  url: https://www.govinfo.gov/content/pkg/FR-2026-03-13/pdf/2026-04952.pdf
+  access: open
+  level: intermediate
+  priority: core
+  modules:
+  - M8
+  - M4
+  - M6
+  summary: The 2024 'click-to-cancel' amendments were vacated by the Eighth Circuit on 8 July 2025 (Custom Communications v. FTC) for skipping a required preliminary
+    regulatory analysis. The March 2026 ANPRM restarts the process and asks whether save offers in place of honouring cancellation are unfair or deceptive, requesting
+    data on acceptance rates, savings, delays and state laws.
+  wiki_use: 'M8 group exercise: draft a comment answering the save-offer question using the consumer-agency assessment design.'
+  ai_angle: false
+  verified_via: fetch
+  notes: '2024 final rule: Federal Register 89(221): 90476-90545 (govinfo FR-2024-11-15). Status pending as of Nov 2026.'
+- id: ftc-fees-rule-16cfr464
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: FTC Rule on Unfair or Deceptive Fees, 16 CFR Part 464
+  authors: Federal Trade Commission
+  year: 2025
+  type: documentation
+  url: https://www.ecfr.gov/current/title-16/part-464
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M4
+  summary: Requires total-price display for live-event tickets and short-term lodging and bars misrepresenting fees; effective 12 May 2025; civil penalties.
+  wiki_use: 'M4 pricing: partitioned prices and what must be shown up front.'
+  ai_angle: false
+  verified_via: fetch
+- id: ftc-reviews-rule-16cfr465
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: FTC Consumer Reviews and Testimonials Rule, 16 CFR Part 465
+  authors: Federal Trade Commission
+  year: 2024
+  type: documentation
+  url: https://www.ecfr.gov/current/title-16/part-465
+  access: open
+  level: intro
+  priority: core
+  modules:
+  - M8
+  - M5
+  summary: Bans fake or AI-fabricated reviews and testimonials, sentiment-conditioned incentives, undisclosed insider reviews, company-controlled 'independent' review
+    sites, review suppression and fake social-media indicators; effective 21 October 2024; civil penalties per violation. Warning letters to ten companies on 22 December
+    2025.
+  wiki_use: 'M5: the legal line around review mining, generation and moderation.'
+  ai_angle: true
+  verified_via: fetch
+- id: ftc-endorsement-guides-16cfr255
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: FTC Guides Concerning Endorsements and Testimonials, 16 CFR Part 255 (2023 revision)
+  authors: Federal Trade Commission
+  year: 2023
+  type: documentation
+  url: https://www.ecfr.gov/current/title-16/part-255
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M5
+  summary: Material connections between endorsers and brands (payment, free products, employment) must be clearly disclosed; brands are responsible for their influencers'
+    claims and disclosures.
+  wiki_use: M5 influencer marketing.
+  ai_angle: false
+  verified_via: fetch
+- id: ftc-coppa-rule-2025
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: COPPA Rule, 16 CFR Part 312 (amended 2025)
+  authors: Federal Trade Commission
+  year: 2025
+  type: documentation
+  url: https://www.ecfr.gov/current/title-16/part-312
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M2
+  summary: Children under 13. The 2025 amendments (published 22 April 2025) require separate verifiable parental consent before disclosing children's data to third
+    parties for targeted advertising, limit data retention and add biometric identifiers; compliance was due 22 April 2026.
+  wiki_use: M8 children and vulnerable consumers; M2 data collection.
+  ai_angle: false
+  verified_via: fetch
+- id: illinois-automatic-contract-renewal-act
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: Illinois Automatic Contract Renewal Act, 815 ILCS 601 (online cancellation since 2022, P.A. 102-0517)
+  authors: Illinois General Assembly
+  year: 2022
+  type: documentation
+  url: https://ilga.gov/Legislation/publicacts/view/102-0517
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M4
+  summary: Requires clear disclosure of automatic-renewal terms and renewal notices for longer contracts, and since 1 January 2022 lets consumers who accept online
+    cancel exclusively online.
+  wiki_use: Home-state law for any subscription product students analyse.
+  ai_angle: false
+  verified_via: fetch
+- id: illinois-bipa
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: Illinois Biometric Information Privacy Act (BIPA), 740 ILCS 14
+  authors: Illinois General Assembly
+  year: 2008
+  type: documentation
+  url: https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M2
+  - M8
+  summary: Written consent before collecting biometric identifiers; private right of action with $1,000 (negligent) or $5,000 (intentional or reckless) per violation;
+    a 2024 amendment counts repeated collection from one person as a single violation.
+  wiki_use: 'M2 data collection: why face, voice and fingerprint data are a litigation risk in Illinois.'
+  ai_angle: false
+  verified_via: fetch
+  notes: Confirm the ILGA ActID link before publishing to students.
+- id: california-arl-ab2863
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: California Automatic Renewal Law, Bus. & Prof. Code 17602 (AB 2863, operative 1 July 2025)
+  authors: California Legislature
+  year: 2024
+  type: documentation
+  url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2863
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M4
+  summary: Online retention offers are allowed only beside a prominent, continuously displayed cancellation control, and cancellation must be processed promptly when
+    the control is used; also requires express consent and annual reminders.
+  wiki_use: Contrast with Minnesota's permission-first rule in the M8 session.
+  ai_angle: false
+  verified_via: fetch
+- id: minnesota-325g58
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: Minnesota Statutes 325G.58 (permission before retention offers)
+  authors: Minnesota Legislature
+  year: 2025
+  type: documentation
+  url: https://www.revisor.mn.gov/statutes/cite/325G.58
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M4
+  summary: After a consumer starts to cancel, the business must ask permission once before presenting retention offers; optional questions about reasons for leaving
+    are allowed.
+  wiki_use: The closest existing law to a right to refuse the retention conversation.
+  ai_angle: false
+  verified_via: fetch
+- id: ny-349a-algorithmic-pricing-disclosure
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: New York Algorithmic Pricing Disclosure Act, Gen. Bus. Law 349-a
+  authors: New York Legislature
+  year: 2025
+  type: documentation
+  url: https://www.kelleydrye.com/viewpoints/blogs/ad-law-access/surveillance-pricing-key-concepts-the-current-legal-and-legislative-landscape-and-mounting-scrutiny.md
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M7
+  - M8
+  summary: 'In force since November 2025: prices set by an algorithm using a consumer''s personal data must carry the notice ''THIS PRICE WAS SET BY AN ALGORITHM
+    USING YOUR PERSONAL DATA''. A retailers'' First Amendment challenge failed in district court; the appeal (NRF v. James) was argued in the Second Circuit on 19
+    October 2026, decision pending.'
+  wiki_use: 'M7 personalised pricing: what triggers the disclosure?'
+  ai_angle: true
+  verified_via: fetch
+  notes: URL is a law-firm overview of the US landscape (April 2026).
+- id: state-surveillance-pricing-bans-2026
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: State surveillance-pricing bans (Maryland, Connecticut, New Jersey; New York pending)
+  authors: Route Fifty (overview)
+  year: 2026
+  type: report
+  url: https://www.route-fifty.com/finance/2026/08/states-begin-banning-surveillance-pricing-uses-personal-data-charge-more/415219/
+  access: open
+  level: intro
+  priority: core
+  modules:
+  - M7
+  - M8
+  - M4
+  summary: 'Enacted: Maryland HB 895 (grocery stores and delivery apps, in force since 1 October 2026), Connecticut PA 26-130 (retailers broadly, signed June 2026,
+    effective 1 July 2027), New Jersey A4085 (grocery, signed July 2026, effective 1 August 2027). New York''s One Fair Price Act (A9349/S8623) passed the legislature
+    on 4 June 2026 and had not been delivered to the Governor by 2 November 2026. Most exempt loyalty programmes, coupons and cost-based differences.'
+  wiki_use: 'M7/M8 debate: where is the line between a discount and surveillance pricing?'
+  ai_angle: true
+  verified_via: fetch
+  notes: Fast-moving; recheck each term.
+- id: ftc-surveillance-pricing-6b-2025
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: 'FTC surveillance pricing 6(b) study: initial findings (January 2025)'
+  authors: Federal Trade Commission
+  year: 2025
+  type: report
+  url: https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-surveillance-pricing-study-indicates-wide-range-personal-data-used-set-individualized-consumer
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M7
+  - M8
+  summary: Staff research summaries from orders to intermediaries that sell pricing tools, indicating that a wide range of personal data (location, demographics,
+    browsing and purchase history) is used to set individualised prices.
+  wiki_use: Evidence that the M7 pricing models students build are already in commercial use.
+  ai_angle: true
+  verified_via: search
+- id: ftc-dark-patterns-report-2022
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: Bringing Dark Patterns to Light (FTC staff report)
+  authors: Federal Trade Commission
+  year: 2022
+  type: report
+  url: https://www.ftc.gov/system/files/ftc_gov/pdf/P214800%20Dark%20Patterns%20Report%209.14.2022%20-%20FINAL.pdf
+  access: open
+  level: intro
+  priority: core
+  modules:
+  - M8
+  - M6
+  summary: Catalogues dark patterns (disguised ads, hard cancellation, buried terms, data-grabbing defaults, nagging) and the FTC and state cases brought against
+    them.
+  wiki_use: Taxonomy for the M8 audit exercise.
+  ai_angle: false
+  verified_via: search
+- id: eu-ucpd-2005-29
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: EU Unfair Commercial Practices Directive 2005/29/EC (with Annex I blacklist)
+  authors: European Parliament and Council
+  year: 2005
+  type: documentation
+  url: https://eur-lex.europa.eu/eli/dir/2005/29/oj/eng
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  summary: Bans misleading and aggressive commercial practices; Annex I lists practices always unfair, including point 7 (falsely claiming very limited availability
+    to rush a decision) and disguised advertising. Amended by Directive 2024/825 (green claims, applies from 27 September 2026).
+  wiki_use: European counterpart to FTC Act s5; the urgency row of the crosswalk.
+  ai_angle: false
+  verified_via: fetch
+- id: eu-dsa-x-fine-2025
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: European Commission fines X EUR 120 million under the Digital Services Act (5 December 2025)
+  authors: European Commission
+  year: 2025
+  type: report
+  url: https://digital-strategy.ec.europa.eu/en/news/commission-fines-x-eu120-million-under-digital-services-act
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  summary: 'First DSA non-compliance decision: deceptive design of paid ''verified'' blue checkmarks, an inadequate ad repository, and barriers to researcher data
+    access.'
+  wiki_use: Deceptive interface design as a platform-law violation.
+  ai_angle: false
+  verified_via: fetch
+- id: eu-ai-act-article5
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: EU AI Act (Regulation 2024/1689), Article 5 prohibited practices
+  authors: European Parliament and Council
+  year: 2024
+  type: documentation
+  url: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M7
+  - M8
+  summary: Since 2 February 2025 bans AI systems that deploy subliminal, manipulative or deceptive techniques, or exploit age, disability or socio-economic vulnerabilities,
+    to materially distort behaviour causing significant harm; fines up to EUR 35 million or 7% of turnover.
+  wiki_use: AI-powered persuasion limits for M7/M8.
+  ai_angle: true
+  verified_via: fetch
+- id: eu-digital-fairness-act
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: EU Digital Fairness Act (proposal expected November 2026)
+  authors: European Commission
+  year: 2026
+  type: report
+  url: https://eurobytenews.com/article/digital-fairness-act-proposal-due/
+  access: open
+  level: intro
+  priority: optional
+  modules:
+  - M8
+  summary: Planned EU law on dark patterns, addictive design, unfair personalisation, influencer marketing, price presentation and hard-to-cancel subscriptions, with
+    a focus on minors; proposal expected mid-November 2026.
+  wiki_use: Watch item for the M8 session.
+  ai_angle: false
+  verified_via: fetch
+  notes: Not yet published on 2 Nov 2026; replace with the Commission's proposal when available.
+- id: uk-cma-dmcc-enforcement-2026
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: UK CMA direct consumer enforcement under the DMCC Act (first fines, 2025-2026)
+  authors: Mayer Brown (overview)
+  year: 2026
+  type: report
+  url: https://www.mayerbrown.com/en/insights/publications/2026/08/were-just-getting-started-the-cmas-new-consumer-enforcement-powers-in-action
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M4
+  summary: 'Since April 2025 the CMA can fine up to 10% of global turnover. First consumer-law infringement decisions: AA and BSM driving schools GBP 4.2m (drip pricing),
+    Marks Electrical GBP 720,000 (pre-ticked add-ons) and StubHub GBP 889,200 (hidden mandatory fees), with refunds.'
+  wiki_use: Comparative enforcement for the drip-pricing row.
+  ai_angle: false
+  verified_via: fetch
+- id: ftc-v-amazon-prime-2025
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: 'FTC v. Amazon (Prime enrolment and cancellation): $2.5 billion settlement (25 September 2025)'
+  authors: Federal Trade Commission
+  year: 2025
+  type: case
+  url: https://www.khlaw.com/insights/amazon-pay-record-25-billion-settle-ftc-claims-deceptive-prime-membership-signup-and
+  access: open
+  level: intro
+  priority: core
+  modules:
+  - M8
+  - M4
+  - M6
+  summary: ROSCA and FTC Act claims that Amazon enrolled consumers in Prime without consent and made cancellation deliberately hard; $1 billion civil penalty plus
+    $1.5 billion refunds; requires a clear decline option and simple cancellation.
+  wiki_use: 'Lead case for the M8 session: what A/B-test metric produced this flow?'
+  ai_angle: false
+  verified_via: fetch
+- id: ftc-v-uber-one-2025
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: FTC and 21 states v. Uber (Uber One subscription), filed April 2025
+  authors: Courthouse News (report)
+  year: 2026
+  type: case
+  url: https://www.courthousenews.com/judge-allows-most-ftc-claims-against-uber-to-survive/
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M4
+  summary: Alleges billing and a cancellation process requiring up to 32 actions; most ROSCA and FTC Act claims survived a motion to dismiss in the Northern District
+    of California (Judge Tigar); 21 states joined in December 2025.
+  wiki_use: Pending case to follow during the term.
+  ai_angle: false
+  verified_via: fetch
+  notes: Pending; check status.
+- id: ftc-illinois-v-grubhub-2024
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: 'FTC and Illinois Attorney General v. Grubhub: $140 million judgment (December 2024)'
+  authors: Crowell & Moring (summary)
+  year: 2024
+  type: case
+  url: https://crowell.com/en/insights/client-alerts/lessons-for-e-commerce-and-retail-from-the-ftc-and-illinois-ags-proposed-dollar140-million-settlement-against-grubhub
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M4
+  summary: Hidden fees and other deceptive practices toward diners, restaurants and drivers; $140 million judgment, largely suspended, with $25 million paid; Illinois
+    AG co-plaintiff.
+  wiki_use: Illinois example for the drip-pricing row.
+  ai_angle: false
+  verified_via: fetch
+- id: ftc-v-live-nation-ticketmaster-2025
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: FTC v. Live Nation and Ticketmaster (deceptive pricing and resale), C.D. Cal. 2:25-cv-08884
+  authors: TicketNews (status report)
+  year: 2026
+  type: case
+  url: https://www.ticketnews.com/2026/10/ftc-live-nation-ticketmaster-jury-trial/
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  - M4
+  summary: 'Filed September 2025: advertised prices omitting mandatory fees and tolerance of brokers evading purchase limits (BOTS Act and consumer-protection claims).
+    Motion to dismiss denied September 2026; trial dates proposed for 2028.'
+  wiki_use: Pending case for the drip-pricing row.
+  ai_angle: false
+  verified_via: fetch
+  notes: Pending; check status.
+- id: ftc-v-epic-games-2022
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: 'FTC v. Epic Games (Fortnite): $245 million refunds for billing dark patterns plus $275 million COPPA penalty (December 2022)'
+  authors: PBS NewsHour (report)
+  year: 2022
+  type: case
+  url: https://www.pbs.org/newshour/amp/nation/fortnite-maker-epic-games-to-settle-ftc-case-pay-520-million-in-penalties-and-refunds
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  summary: Settlements over design tricks that led players, including children, into unintended purchases, and over children's privacy violations; $520 million in
+    total.
+  wiki_use: Dark patterns and children rows.
+  ai_angle: false
+  verified_via: fetch
+- id: ftc-fashion-nova-2022
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: 'FTC v. Fashion Nova: $4.2 million for suppressing negative reviews (2022)'
+  authors: FOX 26 Houston (report)
+  year: 2022
+  type: case
+  url: https://www.fox26houston.com/news/fashion-nova-to-pay-4-2m-to-settle-claims-it-blocked-negative-online-reviews
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M5
+  - M8
+  summary: Online retailer settled claims that it blocked lower-star reviews from its website.
+  wiki_use: Review-suppression example for M5.
+  ai_angle: false
+  verified_via: search
+- id: ftc-hoyoverse-genshin-2025
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: 'FTC v. HoYoverse (Genshin Impact): $20 million over loot boxes and children''s privacy (January 2025)'
+  authors: Android Authority (report)
+  year: 2025
+  type: case
+  url: https://androidauthority.com/genshin-impact-loot-box-fine-3517760
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M8
+  summary: COPPA and deception claims about loot-box odds and virtual-currency pricing; bars selling loot boxes to under-16s without parental consent.
+  wiki_use: Children and vulnerable consumers row.
+  ai_angle: false
+  verified_via: search
+- id: ftc-operation-ai-comply
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: FTC Operation AI Comply and later AI-claims cases (2024-2026)
+  authors: Benesch (summary)
+  year: 2025
+  type: report
+  url: https://www.beneschlaw.com/insight/one-year-in-ftcs-operation-ai-comply-continues-under-new-administration-signaling-enduring-enforcement-focus/
+  access: open
+  level: intro
+  priority: core
+  modules:
+  - M7
+  - M8
+  summary: 'Sweep against deceptive AI claims and AI tools for deception: DoNotPay (''robot lawyer''), Rytr (AI testimonials), AI income schemes (2024); Workado''s
+    AI-detector accuracy claims (98% claimed versus about 53% found) and Air AI (2025).'
+  wiki_use: 'M7/M8: substantiation applies to model-accuracy claims.'
+  ai_angle: true
+  verified_via: fetch
+- id: us-v-meta-housing-ads-2022
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: United States v. Meta Platforms (housing-ad delivery), S.D.N.Y. settlement (June 2022)
+  authors: U.S. Department of Justice
+  year: 2022
+  type: case
+  url: https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M7
+  - M8
+  summary: Fair Housing Act case over ad targeting and delivery; Meta agreed to retire a lookalike tool for housing ads and build a system to reduce demographic skew
+    in delivery.
+  wiki_use: Discriminatory delivery row for M7.
+  ai_angle: true
+  verified_via: search
+- id: ftc-v-rite-aid-2023
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: 'FTC v. Rite Aid: five-year ban on facial recognition (December 2023)'
+  authors: Mayer Brown (summary)
+  year: 2023
+  type: case
+  url: https://www.mayerbrown.com/de/insights/publications/2023/12/more-than-a-ban-on-facial-recognition-use-the-us--ftcs-rite-aid-action-and-proposed-stipulated-order
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M7
+  - M8
+  summary: Unfair use of facial-recognition surveillance in stores that produced false matches; five-year ban and algorithmic-fairness obligations.
+  wiki_use: 'M7: biased prediction as an unfair practice.'
+  ai_angle: true
+  verified_via: search
+- id: cppa-honda-2025
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: 'California Privacy Protection Agency v. Honda: $632,500 (March 2025)'
+  authors: Hunton (summary)
+  year: 2025
+  type: case
+  url: https://www.hunton.com/privacy-and-cybersecurity-law-blog/cppa-fines-honda-632-500-for-ccpa-violations
+  access: open
+  level: intro
+  priority: recommended
+  modules:
+  - M2
+  - M8
+  summary: First CPPA enforcement decision, including privacy choices not offered symmetrically (CCPA regulations 7004(a)(2)) and excessive verification for opt-outs.
+  wiki_use: M2 consent design.
+  ai_angle: false
+  verified_via: fetch
+- id: trump-v-slaughter-2026
+  category: M8
+  section: 'Ethics and law: rules and enforcement'
+  subtopic: 'Ethics and law: rules and enforcement'
+  title: Trump v. Slaughter (U.S. Supreme Court, 29 June 2026)
+  authors: Venable (summary)
+  year: 2026
+  type: case
+  url: https://www.venable.com/insights/publications/2026/06/supreme-court-overrules-humphreys-executor
+  access: open
+  level: intro
+  priority: optional
+  modules:
+  - M8
+  summary: '6-3 decision overruling Humphrey''s Executor: the President may remove FTC commissioners at will, putting federal enforcement priorities under presidential
+    direction.'
+  wiki_use: Context for why state AGs and private plaintiffs matter more.
+  ai_angle: false
+  verified_via: fetch
+- id: mathur-2019-dark-patterns-at-scale
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'Dark Patterns at Scale: Findings from a Crawl of 11K Shopping Websites'
+  authors: Mathur, A.; Acar, G.; Friedman, M. J.; Lucherini, E.; Mayer, J.; Chetty, M.; Narayanan, A.
+  year: 2019
+  type: paper
+  venue: Proceedings of the ACM on Human-Computer Interaction 3 (CSCW)
+  url: https://doi.org/10.1145/3359183
+  access: open
+  level: intermediate
+  priority: core
+  modules:
+  - M8
+  - M2
+  - M5
+  summary: Automated crawl of about 11,000 shopping sites finding 1,818 dark-pattern instances, including fake countdown timers, fake scarcity and activity messages,
+    and the third parties supplying them.
+  wiki_use: Measurement method students can replicate on a small scale (M2 scraping, M5 text classification).
+  ai_angle: false
+  verified_via: search
+- id: luguri-strahilevitz-2021-shining-light-dark-patterns
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: Shining a Light on Dark Patterns
+  authors: Luguri, J.; Strahilevitz, L. J.
+  year: 2021
+  type: paper
+  venue: 'Journal of Legal Analysis 13(1): 43-109'
+  url: https://academic.oup.com/jla/article/13/1/43/6180579
+  access: open
+  level: intermediate
+  priority: core
+  modules:
+  - M8
+  - M6
+  summary: 'Experiments on a national sample: mild dark patterns roughly doubled acceptance of a dubious data-protection subscription and aggressive ones nearly quadrupled
+    it, with less-educated participants more affected; discusses how existing law applies.'
+  wiki_use: Effect sizes for the M8 session; experimental design example for M6.
+  ai_angle: false
+  verified_via: search
+- id: blake-moshary-sweeney-tadelis-2021-price-salience
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: Price Salience and Product Choice
+  authors: Blake, T.; Moshary, S.; Sweeney, K.; Tadelis, S.
+  year: 2021
+  type: paper
+  venue: 'Marketing Science 40(4): 619-636'
+  url: https://doi.org/10.1287/mksc.2020.1261
+  access: open
+  level: intermediate
+  priority: core
+  modules:
+  - M4
+  - M6
+  - M8
+  summary: 'StubHub experiment: showing fees only at checkout (''back-end'' fees) raised spending and the probability of purchase relative to all-in prices.'
+  wiki_use: Field-experiment evidence for the drip-pricing row (M4/M6).
+  ai_angle: false
+  verified_via: search
+- id: santana-dallas-morwitz-2020-drip-pricing
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: Consumer Reactions to Drip Pricing
+  authors: Santana, S.; Dallas, S. K.; Morwitz, V. G.
+  year: 2020
+  type: paper
+  venue: 'Marketing Science 39(1): 188-210'
+  url: https://doi.org/10.1287/mksc.2019.1207
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M4
+  - M8
+  summary: Experiments showing drip pricing raises initial choice of the dripped option but can trigger feelings of deception and backlash once fees appear.
+  wiki_use: Consumer-behaviour complement to Blake et al.
+  ai_angle: false
+  verified_via: search
+- id: he-hollenbeck-proserpio-2022-fake-reviews
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: The Market for Fake Reviews
+  authors: He, S.; Hollenbeck, B.; Proserpio, D.
+  year: 2022
+  type: paper
+  venue: 'Marketing Science 41(5): 896-921'
+  url: https://doi.org/10.1287/mksc.2022.1353
+  access: open
+  level: intermediate
+  priority: core
+  modules:
+  - M5
+  - M8
+  summary: 'Studies Facebook groups where Amazon sellers buy reviews: purchases raise ratings and sales briefly, after which ratings fall and one-star reviews rise,
+    suggesting low-quality products buy reviews.'
+  wiki_use: M5 anchor for the fake-reviews row.
+  ai_angle: false
+  verified_via: search
+- id: luca-zervas-2016-yelp-review-fraud
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'Fake It Till You Make It: Reputation, Competition, and Yelp Review Fraud'
+  authors: Luca, M.; Zervas, G.
+  year: 2016
+  type: paper
+  venue: 'Management Science 62(12): 3412-3427'
+  url: https://doi.org/10.1287/mnsc.2015.2304
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M5
+  - M8
+  summary: Using Yelp's filtered reviews, finds restaurants commit more positive review fraud when their reputation is weak and more negative fraud against rivals
+    when competition is close.
+  wiki_use: M5 fake-review incentives.
+  ai_angle: false
+  verified_via: search
+- id: mayzlin-dover-chevalier-2014-promotional-reviews
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'Promotional Reviews: An Empirical Investigation of Online Review Manipulation'
+  authors: Mayzlin, D.; Dover, Y.; Chevalier, J.
+  year: 2014
+  type: paper
+  venue: 'American Economic Review 104(8): 2421-2455'
+  url: https://doi.org/10.1257/aer.104.8.2421
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M5
+  - M8
+  summary: 'Compares TripAdvisor (anyone can post) with Expedia (verified stays): independent hotels near competitors show more suspicious positive reviews and their
+    neighbours more negative ones.'
+  wiki_use: Classic identification strategy for M5.
+  ai_angle: false
+  verified_via: search
+- id: einav-klopack-mahoney-2025-selling-subscriptions
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: Selling Subscriptions
+  authors: Einav, L.; Klopack, B.; Mahoney, N.
+  year: 2025
+  type: paper
+  venue: 'American Economic Review 115(5): 1650-1671'
+  url: https://doi.org/10.1257/aer.20231612
+  access: open
+  level: intermediate
+  priority: core
+  modules:
+  - M4
+  - M8
+  summary: 'Card-transaction data on subscription payments and a model of passive renewal: cancellation frictions roughly double seller revenue on average, holding
+    initial subscribers fixed.'
+  wiki_use: Quantifies the subscription-trap row; pairs with Egan et al. in the genAI lab.
+  ai_angle: false
+  verified_via: fetch
+- id: miller-sahni-strulov-shlain-sophisticated-inertia
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'Sophisticated Consumers with Inertia: Long-Term Implications from a Large-Scale Field Experiment'
+  authors: Miller, K.; Sahni, N. S.; Strulov-Shlain, A.
+  year: 2023
+  type: paper
+  venue: Working paper (Becker Friedman Institute)
+  url: https://bfi.uchicago.edu/working-paper/sophisticated-consumers-with-inertia-long-term-implications-from-a-large-scale-field-experiment/
+  access: open
+  level: intermediate
+  priority: core
+  modules:
+  - M4
+  - M6
+  - M8
+  summary: 'Large field experiment randomising auto-renewal: auto-renewal raises short-run revenue through inertia, but many consumers anticipate their inertia and
+    decline auto-renewal offers or delay subscribing; after a year revenue is about equal and auto-renewal has fewer subscribers.'
+  wiki_use: Shows the business case against subscription traps (M4 CLV, M6).
+  ai_angle: false
+  verified_via: search
+- id: dube-misra-2023-personalized-pricing
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: Personalized Pricing and Consumer Welfare
+  authors: Dube, J.-P.; Misra, S.
+  year: 2023
+  type: paper
+  venue: 'Journal of Political Economy 131(1): 131-189'
+  url: https://doi.org/10.1086/720793
+  access: open
+  level: intermediate
+  priority: core
+  modules:
+  - M7
+  - M4
+  - M8
+  summary: 'Field experiments and machine learning at a digital firm: personalised pricing raises profit substantially versus uniform optimal pricing; most consumers
+    face lower prices, though total consumer surplus falls modestly.'
+  wiki_use: Evidence base for the surveillance-pricing debate (M7).
+  ai_angle: false
+  verified_via: search
+- id: assad-clark-ershov-xu-2024-algorithmic-pricing
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'Algorithmic Pricing and Competition: Empirical Evidence from the German Retail Gasoline Market'
+  authors: Assad, S.; Clark, R.; Ershov, D.; Xu, L.
+  year: 2024
+  type: paper
+  venue: 'Journal of Political Economy 132(3): 723-771'
+  url: https://doi.org/10.1086/726906
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M7
+  - M8
+  summary: Adoption of algorithmic pricing software raised margins, mainly when both stations in a local duopoly adopted.
+  wiki_use: Empirical counterpart to Calvano et al.
+  ai_angle: false
+  verified_via: search
+- id: acquisti-taylor-wagman-2016-economics-of-privacy
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: The Economics of Privacy
+  authors: Acquisti, A.; Taylor, C.; Wagman, L.
+  year: 2016
+  type: paper
+  venue: 'Journal of Economic Literature 54(2): 442-492'
+  url: https://doi.org/10.1257/jel.54.2.442
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M2
+  - M8
+  summary: 'Survey of theory and evidence on personal data: when privacy protection helps or hurts welfare, and why consumers'' privacy choices are hard to interpret.'
+  wiki_use: Background reading for M2/M8 privacy.
+  ai_angle: false
+  verified_via: search
+- id: nouwens-et-al-2020-consent-popups
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'Dark Patterns after the GDPR: Scraping Consent Pop-ups and Demonstrating their Influence'
+  authors: Nouwens, M.; Liccardi, I.; Veale, M.; Karger, D.; Kagal, L.
+  year: 2020
+  type: paper
+  venue: CHI 2020
+  url: https://doi.org/10.1145/3313831.3376321
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M2
+  - M8
+  summary: Scrapes consent banners on top UK sites (few meet minimum legal requirements) and shows experimentally that removing a reject button on the first page
+    and adding granular options sharply changes consent rates.
+  wiki_use: M2 consent design; replicable scraping exercise.
+  ai_angle: false
+  verified_via: search
+- id: johnson-shriver-goldberg-2023-gdpr-concentration
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'Privacy and Market Concentration: Intended and Unintended Consequences of the GDPR'
+  authors: Johnson, G. A.; Shriver, S. K.; Goldberg, S. G.
+  year: 2023
+  type: paper
+  venue: 'Management Science 69(10): 5695-5721'
+  url: https://doi.org/10.1287/mnsc.2023.4709
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M8
+  - M2
+  summary: The GDPR reduced websites' use of web technology vendors and increased vendor market concentration, benefiting large vendors such as Google.
+  wiki_use: Unintended effects of regulation (M8 debate balance).
+  ai_angle: false
+  verified_via: search
+- id: aridor-che-salz-2023-gdpr-data-industry
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'The Effect of Privacy Regulation on the Data Industry: Empirical Evidence from GDPR'
+  authors: Aridor, G.; Che, Y.-K.; Salz, T.
+  year: 2023
+  type: paper
+  venue: 'RAND Journal of Economics 54(4): 695-730'
+  url: https://doi.org/10.1111/1756-2171.12455
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M2
+  - M8
+  summary: GDPR opt-outs cut recorded consumers by about 12.5%, while the remaining consumers became more trackable and more valuable to advertisers.
+  wiki_use: Shows how consent rules change the data students will analyse.
+  ai_angle: false
+  verified_via: search
+- id: ali-et-al-2019-discrimination-through-optimization
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'Discrimination through Optimization: How Facebook''s Ad Delivery Can Lead to Biased Outcomes'
+  authors: Ali, M.; Sapiezynski, P.; Bogen, M.; Korolova, A.; Mislove, A.; Rieke, A.
+  year: 2019
+  type: paper
+  venue: Proceedings of the ACM on Human-Computer Interaction 3 (CSCW)
+  url: https://doi.org/10.1145/3359301
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M7
+  - M8
+  summary: Controlled ad campaigns show Facebook's delivery skewed by gender and race based on ad content and images even with neutral targeting.
+  wiki_use: M7 discriminatory delivery row.
+  ai_angle: false
+  verified_via: search
+- id: ershov-mitchell-2020-influencer-disclosure
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'The Effects of Influencer Advertising Disclosure Regulations: Evidence from Instagram'
+  authors: Ershov, D.; Mitchell, M.
+  year: 2020
+  type: paper
+  venue: 'EC ''20: Proceedings of the 21st ACM Conference on Economics and Computation'
+  url: https://doi.org/10.1145/3391403.3399477
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M5
+  - M8
+  summary: Uses a German disclosure regulation to study how mandated sponsorship labels change influencer posting and engagement.
+  wiki_use: M5 influencer disclosure row.
+  ai_angle: false
+  verified_via: search
+- id: gabaix-laibson-2006-shrouded-attributes
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: Shrouded Attributes, Consumer Myopia, and Information Suppression in Competitive Markets
+  authors: Gabaix, X.; Laibson, D.
+  year: 2006
+  type: paper
+  venue: 'Quarterly Journal of Economics 121(2): 505-540'
+  url: https://doi.org/10.1162/qjec.2006.121.2.505
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M4
+  - M8
+  summary: 'Shows why firms may hide add-on prices even under competition when some consumers are myopic: unshrouding educates customers who then avoid the add-on.'
+  wiki_use: Theory for the drip-pricing row.
+  ai_angle: false
+  verified_via: search
+- id: rao-wang-2017-false-claims-ftc
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: 'Demand for ''Healthy'' Products: False Claims and FTC Regulation'
+  authors: Rao, A.; Wang, E.
+  year: 2017
+  type: paper
+  venue: 'Journal of Marketing Research 54(6): 968-989'
+  url: https://doi.org/10.1509/jmr.15.0398
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M3
+  - M8
+  summary: Uses FTC actions against false health claims to estimate how much those claims had raised demand and what happened after correction.
+  wiki_use: Quantitative-marketing model of regulation's effect on demand (M3/M8).
+  ai_angle: false
+  verified_via: search
+- id: hmurovic-lamberton-goldsmith-2023-time-scarcity
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: Examining the Efficacy of Time Scarcity Marketing Promotions in Online Retail
+  authors: Hmurovic, J.; Lamberton, C.; Goldsmith, K.
+  year: 2023
+  type: paper
+  venue: 'Journal of Marketing Research 60(2): 299-328'
+  url: https://doi.org/10.1177/00222437221118856
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M6
+  - M8
+  summary: Field and lab evidence that time-limited promotions online have mixed effects on sales, depending on how much time remains and how consumers interpret
+    the deadline.
+  wiki_use: Evidence for the manufactured-urgency row.
+  ai_angle: false
+  verified_via: fetch
+- id: meyer-et-al-2019-objecting-to-experiments
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: Objecting to Experiments that Compare Two Unobjectionable Policies or Treatments
+  authors: Meyer, M. N.; Heck, P. R.; Holtzman, G. S.; et al.
+  year: 2019
+  type: paper
+  venue: 'Proceedings of the National Academy of Sciences 116(22): 10723-10728'
+  url: https://doi.org/10.1073/pnas.1820701116
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M6
+  - M8
+  summary: People often judge an A/B test comparing two acceptable policies as less appropriate than implementing either policy untested (the 'A/B effect').
+  wiki_use: M6 ethics of experimenting on customers.
+  ai_angle: false
+  verified_via: search
+- id: dellavigna-malmendier-2006-paying-not-to-go-to-gym
+  category: M8
+  section: 'Ethics and law: evidence on consumer harm'
+  subtopic: 'Ethics and law: evidence on consumer harm'
+  title: Paying Not to Go to the Gym
+  authors: DellaVigna, S.; Malmendier, U.
+  year: 2006
+  type: paper
+  venue: 'American Economic Review 96(3): 694-719'
+  url: https://doi.org/10.1257/aer.96.3.694
+  access: open
+  level: intermediate
+  priority: recommended
+  modules:
+  - M4
+  - M8
+  summary: Gym members choosing flat-rate contracts pay more per visit than pay-per-visit would cost and are slow to cancel automatically renewing contracts, consistent
+    with overconfidence about future attendance.
+  wiki_use: Classic behavioural evidence behind subscription design.
+  ai_angle: false
+  verified_via: search

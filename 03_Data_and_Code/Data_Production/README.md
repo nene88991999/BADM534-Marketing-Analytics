@@ -37,3 +37,11 @@ With restricted coverage of one half, an observed mean of -10, and an assumed mi
 The same public file is compatible with a population increase and a population decline. A more sophisticated estimator cannot distinguish observationally equivalent worlds without additional evidence or restrictions. All current bills exist internally in the construction; access is the changed mechanism. The oracle potential outcomes are supplied by the example's creator and are not claimed to be observed in an ordinary billing system.
 
 The [resource collection](../../01_Resources/45_Data_Truth_and_Norms/README.md) and [electricity assessment](../../01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) distinguish this logical example from documented institutional practices. The example estimates neither the data-center paper's coefficients nor the prevalence of selective release. [Optional practice](../../07_Labs/Data_Truth_and_Norms/README.md) connects the calculation to truth, norms, and household reasons.
+
+## Data as Artifacts
+
+The [subscription program](data_artifacts.py) constructs two releases of six synthetic accounts. Both preserve the same history, while the expanded release adds cancellation requests. Five accounts remain subscribed, and three have pending requests. Reordering the expanded file preserves its keyed records while changing its byte hash. The [results and manifest](artifact_results/README.md) distinguish events, schema, release, and physical copy. The complete code appears in M2 §2.34.
+
+Run `python3 03_Data_and_Code/Data_Production/data_artifacts.py`. Python 3.10 or later and the standard library are sufficient. No external data, API, or account is used. This deterministic example requires no random seed. The program checks identifiers, timing, counts, projection between releases, and equality under the stated identity rule. It makes no empirical claim about a company.
+
+M9 §§9.60–9.65 connects the artifact's production and governed use to reasons owed to the people represented. Three hypothetical agreements change access and publication rights while holding this synthetic history fixed. The [restricted-research guide](../../01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md) supplies the professional-policy sources and their scope.

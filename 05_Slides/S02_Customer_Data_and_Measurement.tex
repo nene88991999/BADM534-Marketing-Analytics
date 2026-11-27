@@ -409,6 +409,45 @@ M2 §§2.30–2.31. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visua
 
 M2 §§2.30–2.31. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
 \end{frame}
+\begin{frame}{Events, Records, and Dataset Versions}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.65\textheight}
+\input{../06_Lecture_Notes/figures/M02_artifact_identity.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Synthetic subscription history: changing the representation changes the available question.\par}
+\note{Artifact creation involves intended features and sufficient success in realizing them (Thomasson, 2003, 2014). A valid table can contain false entries; an accurate entry can support a narrow claim while leaving a broader interpretation unjustified. Row order is irrelevant under this example’s declared identity rule. A file hash checks bytes, while evidence about the event is needed to check the record. The complete Python program appears in M2 §2.34.
+
+M2 §§2.33–2.34. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
+\begin{frame}{Retention and Pending Cancellation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Synthetic Quantity & Count & Denominator \\
+\midrule
+Retained accounts & 5 & 6 initial accounts \\
+Pending requests & 3 & 4 submitted requests \\
+Pending among retained & 3 & 5 retained accounts \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Same events and cutoff; each denominator answers a different question.
+\vfill
+\note{All six synthetic accounts are initially subscribed. Four submit requests; one completes before February 1, 2027 at 00:00 UTC; three remain pending. No other opening or closure occurs. Retention is 83.33\%, pending among requests is 75\%, and pending among retained is 60\%. Administrative retention is compatible with unresolved requests. This does not identify the cause of delay or the causal effect of an interface. Compare the V1 and V2 files and explain why accurate status prediction cannot establish voluntary loyalty.
+
+M2 §§2.33–2.34. \url{../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md}}
+\end{frame}
 \begin{frame}{A Definition of Harm Selects Evidence}
 \usebeamercolor[fg]{normal text}
 \vfill

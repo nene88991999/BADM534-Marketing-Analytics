@@ -1,0 +1,12 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=2.8cm,minimum height=1.45cm] (data) at (1.55,0) {\textbf{Access}\\Which records, fields,\\and periods?};
+\node[box,text width=2.8cm,minimum height=1.45cm] (analysis) at (5.85,0) {\textbf{Permitted Analysis}\\Which questions, links,\\and comparisons?};
+\node[orangebox,text width=2.8cm,minimum height=1.45cm] (publication) at (10.15,0) {\textbf{Publication}\\Which outputs, timing,\\and explanations?};
+\draw[edge] (data) -- (analysis);
+\draw[edge] (analysis) -- (publication);
+\node[box,text width=4.9cm,minimum height=1.2cm] (privacy) at (2.65,-3.8) {\textbf{Confidentiality Review}\\Protect identities and defined secrets.\\Assess scope and duration.};
+\node[orangebox,text width=4.9cm,minimum height=1.2cm] (control) at (9.05,-3.8) {\textbf{Control of Conclusions}\\Restrict questions or approve results.\\Assess independence and selection.};
+\draw[edge,dashed] (publication.south) -- (10.15,-2.1) -- (2.65,-2.1) -- (privacy.north);
+\draw[accent,dashed] (publication.south) -- (10.15,-2.1) -- (9.05,-2.1) -- (control.north);
+\node[align=center,text width=12.8cm,font=\footnotesize] at (5.85,-5.6) {Identify the actual terms and their operation.\\An NDA label alone establishes neither a publication veto nor the absence of one.};
+\end{tikzpicture}

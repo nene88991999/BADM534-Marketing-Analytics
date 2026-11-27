@@ -14,7 +14,7 @@ Fictional characters depend on creative acts and literary practices. The course 
 
 ## T02. Public Artifacts, Intentions and Norms
 
-(Thomasson, 1999). 2014; Artefact Kinds, pp. 45–62. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc).
+(Thomasson, 2014). 2014; Artefact Kinds, pp. 45–62. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc).
 
 **Reading focus:** Intended features and public norms of treatment.
 
@@ -24,7 +24,7 @@ Public artifacts can involve structural, perceptual, receptive, and normative fe
 
 ## T04. If Models Were Fictions, Then What Would They Be?
 
-(Thomasson, 1999). 2020; The Scientific Imagination, pp. 50–73. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_793dccac983145af90b9e580203e5333.docx).
+(Thomasson, 2020). 2020; The Scientific Imagination, pp. 50–73. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_793dccac983145af90b9e580203e5333.docx).
 
 **Reading focus:** Model descriptions, model systems, and the conditional argument.
 
@@ -54,7 +54,7 @@ Reliable patterns are inferred from particular records using substantive reasoni
 
 ## T16. Learning from Data Journeys
 
-(Leonelli, 2015). 2020; Data Journeys in the Sciences, pp. 1–24; DOI 10.1007/978-3-030-37177-7_1. [Source](https://link.springer.com/chapter/10.1007/978-3-030-37177-7_1).
+(Leonelli and Tempini, 2020). 2020; Data Journeys in the Sciences, pp. 1–24; DOI 10.1007/978-3-030-37177-7_1. [Source](https://link.springer.com/chapter/10.1007/978-3-030-37177-7_1).
 
 **Reading focus:** Production, movement, and reuse across institutions.
 
@@ -71,3 +71,9 @@ Linkage and portability require infrastructure and contextual knowledge. The exi
 Ask what establishes an institutional category and what qualifies something for membership. A valid tariff can help constitute a debt while remaining open to moral criticism.
 
 **Access and scope:** Reference introduction and conceptual distinctions inspected; electricity example is an application.
+
+## T19. Realism and Human Kinds
+
+(Thomasson, 2003). *Philosophy and Phenomenological Research* 67(3), 580–609. [Publisher](https://doi.org/10.1111/j.1933-1592.2003.tb00309.x) | [Public reading copy](https://joelvelasco.net/teaching/5330%28spring2021%29/thomasson03-human_kinds.pdf).
+
+Read §§2–3, especially pp. 592–600. Intended features and the success of production help distinguish artifactual kinds. Apply this to the creation of a dataset, keeping accuracy of individual records and warrant for a broader claim separate. A schema's existence does not establish the truth of every entry or the adequacy of a welfare interpretation. The full-text sections were inspected; the dataset application is developed in M2 §§2.33–2.34 and M9 §§9.60–9.62.

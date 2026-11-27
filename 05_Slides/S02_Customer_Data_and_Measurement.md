@@ -14,6 +14,7 @@ Session 02. M2. 170 minutes.
 - Preserve requests, confirmations, unknown states, and the reporting cutoff.
 - Trace data production and identify the effect of selective access on population claims.
 - Distinguish an interest, its measure, and the standard for action.
+- Distinguish events, records, dataset versions, and copies; assess the meaning of an administrative outcome.
 
 ## Related Materials
 
@@ -28,6 +29,7 @@ Session 02. M2. 170 minutes.
 - ../07_Labs/AI_Augmented_Learning/README.md
 - [Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
+- [Artifact and NDA practice](../07_Labs/Data_Truth_and_Norms/README.md)
 
 ## Slide 1: Customer Data and Measurement
 
@@ -346,7 +348,33 @@ In both constructed worlds, all current bills are recorded internally and all ot
 
 Source: M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 29: A Definition of Harm Selects Evidence
+## Slide 29: Events, Records, and Dataset Versions
+
+Synthetic subscription history: changing the representation changes the available question.
+
+**Figure description:** An event becomes a record and then a dataset version. Two files can encode the same keyed records with different bytes. A subscription-status claim leaves consent unresolved.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M02_artifact_identity.tex)
+
+Artifact creation involves intended features and sufficient success in realizing them (Thomasson, 2003, 2014). A valid table can contain false entries; an accurate entry can support a narrow claim while leaving a broader interpretation unjustified. Row order is irrelevant under this example’s declared identity rule. A file hash checks bytes, while evidence about the event is needed to check the record. The complete Python program appears in M2 §2.34.
+
+Source: M2 §§2.33–2.34. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 30: Retention and Pending Cancellation
+
+| Synthetic Quantity | Count | Denominator |
+| --- | --- | --- |
+| Retained accounts | 5 | 6 initial accounts |
+| Pending requests | 3 | 4 submitted requests |
+| Pending among retained | 3 | 5 retained accounts |
+
+Same events and cutoff; each denominator answers a different question.
+
+All six synthetic accounts are initially subscribed. Four submit requests; one completes before February 1, 2027 at 00:00 UTC; three remain pending. No other opening or closure occurs. Retention is 83.33%, pending among requests is 75%, and pending among retained is 60%. Administrative retention is compatible with unresolved requests. This does not identify the cause of delay or the causal effect of an interface. Compare the V1 and V2 files and explain why accurate status prediction cannot establish voluntary loyalty.
+
+Source: M2 §§2.33–2.34. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 31: A Definition of Harm Selects Evidence
 
 - Name the interest: expenditure, access, dependence, or authority.
 - Define the record and population that represent that interest.
@@ -356,7 +384,7 @@ If only average revenue per kWh qualifies as evidence of electricity harm, conce
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 30: Measurement Discussion
+## Slide 32: Measurement Discussion
 
 - Could recorded activity rise because low-activity users disappear?
 - Would deleting unmatched days change the target population?

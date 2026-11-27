@@ -2329,3 +2329,173 @@ A household can face a serious electricity burden through a higher bill, reduced
 Separate the object, its empirical representation, and the decision criterion. The object might be household expenditure; its representation might require matched billing records with consistent account and time coverage; the criterion might concern an avoidable burden on households with limited alternatives. Missing access to a measure leaves an evidential gap. It does not erase the object or justify treating its value as zero. Bills are empirically observable quantities, distinct from the Kantian question of the person as a free moral agent.
 
 Apply the same distinction to targeted pricing. A purchase records acceptance under particular alternatives. It can support estimation of demand while leaving the customer's dependence, ability to switch, and authority over personal information unresolved. An adequate measurement plan names these interests and the records or testimony that could bear on them. It also states which normative judgments remain after those records are collected. M9 §§9.56–9.58 connects this choice of evidence to institutional responsibility.
+
+## 2.33 A Dataset is a Created Object
+
+An analyst asked to explain customer retention first needs to know what the firm counts as a retained customer. A subscription system may classify an account as retained whenever its cancellation has not been completed. That category can include customers who have already requested cancellation. The category has a defined administrative use, but a claim that these customers want to remain requires further evidence. The construction of the record shapes the distance between the recorded status and the managerial interpretation.
+
+An artifact is an intentionally produced object with relevant intended features. Those features can include structure and recognized treatment as well as function; the maker must achieve sufficient success in producing the relevant kind of object (Thomasson, 2003, pp. 592–600; 2014, §§5.2–5.4). Applying this account to an organized dataset directs attention to the schema, observation unit, encoding, and practices that make it the object it is. The intended purpose can explain why these features were chosen. In a large organization, design responsibilities can be distributed across software developers, reporting teams, regulators, and earlier systems.
+
+A dataset can be created successfully while containing inaccurate entries or providing poor evidence for a later question. Creating a table with account identifiers, timestamps, and defined fields establishes a representational object. Checking whether a particular request occurred requires comparison with the relevant event history. Establishing whether a cancellation procedure harms customers requires a further argument about their experience, alternatives, and the comparison being made. These are separate standards of success.
+
+### 2.33.1 Events, Records, Versions, and Copies
+
+Consider an actual cancellation request, its entry in a database, an exported dataset version, and two copies of that export. The request occurred at a particular time. The record represents that event through fields whose meaning depends on a schema. The version selects a population, cutoff, and set of fields. A physical file stores one encoding of those records. Each object has its own conditions for identity and correction.
+
+For a dataset defined as records keyed by unique account identifier, rearranging rows preserves its contents. Two resulting files can have different byte hashes. Changing the observation unit from account to household, revising a status definition, or changing the cutoff can alter the represented comparison even when the filename stays constant. The identity rule should therefore specify what matters: bytes, keyed values, schema, provenance, or a governed release. A hash checks byte identity against a reference. It does not check whether the underlying events occurred.
+
+![An event becomes a record through recording and a dataset version through field selection and definitions. Two files can encode the same keyed records in different row orders. The resulting subscription-status claim leaves customer consent unresolved. The synthetic example has six initial accounts, four requests, and one completed cancellation.](../figures/M02_artifact_identity.png)
+
+The analogy with created fictional characters concerns origin, dependence, and persistence (Thomasson, 1999, chapter 3). A dataset version may survive the deletion of one copy. Its people and transactions retain an existence distinct from that representation. Treating the dataset as an artifact gives no reason to treat those people as fictional or the truth of every statement about them as a matter of institutional choice.
+
+### 2.33.2 Prospective Evidence and Reuse
+
+A billing table can function as evidence for whether an invoice was issued, while a different inquiry uses the same table to study household burdens. A relational account of data makes this evidential role central: the objects acquire significance through the questions, practices, and contexts in which they are used (Leonelli, 2015). The second inquiry must establish its own observation unit, measurement relation, and comparison. Accurate accounting records need not contain a ready-made answer to a welfare question.
+
+For AI-assisted coding, specify both the requested output and the meaning of the inputs. A prompt asking for a retention model should state whether retention means an active contract, a completed payment, repeated use, or an expressed wish to continue. Inspect the generated transformations against that definition. A model can reproduce the supplied label with high accuracy while the label remains poorly suited to the decision.
+
+## 2.34 Worked Example: Retention and Pending Cancellation
+
+Suppose six synthetic accounts are subscribed at the start of January 2027. Four submit explicit cancellation requests during January. One request is completed before 00:00 UTC on February 1, while three remain pending at that cutoff. The other two accounts submit no request. No new subscription or other closure occurs. This constructed history holds events fixed and changes the fields made available for analysis.
+
+The first release contains account identifiers and subscription status. It reports five retained accounts out of six, or 83.33%. The second release also contains request and completion indicators. It reports three pending requests out of four submitted requests, or 75%. Among the five retained accounts, three have pending requests, or 60%. The denominators answer different questions. All three descriptions are correct for the constructed history.
+
+| Account | Retained at Cutoff | Request Submitted | Request Completed |
+|---|---:|---:|---:|
+| A | 1 | 0 | 0 |
+| B | 0 | 1 | 1 |
+| C | 1 | 1 | 0 |
+| D | 1 | 1 | 0 |
+| E | 1 | 1 | 0 |
+| F | 1 | 0 | 0 |
+
+The retention release measures an administrative status accurately. Interpreting it as evidence of voluntary loyalty overlooks the submitted requests. The expanded release makes those requests visible, but it still leaves their causes, the reason for delay, and subsequent customer choices unresolved. The three pending requests justify examining the completion process. Their presence alone does not identify a causal effect of a particular interface or establish a general rate of harmful cancellation practices.
+
+The program constructs both releases from the same history, checks their shared columns, and reverses the row order in a second copy of the expanded release. Comparing records by account confirms equality under the declared identity rule, while SHA-256 hashes differ. The manifest records the purpose, cutoff, population, release relationship, and identity rule. It makes the artifact easier to inspect; the truth of an empirical claim would still require evidence beyond a self-description.
+
+Python source: [data_artifacts.py](../../03_Data_and_Code/Data_Production/data_artifacts.py).
+
+Run `python3 03_Data_and_Code/Data_Production/data_artifacts.py` from the repository root. Python 3.10 or later and the standard library are sufficient. Outputs appear in `03_Data_and_Code/Data_Production/artifact_results/`.
+
+```python
+"""Construct two views of six synthetic subscription accounts.
+
+Run from any directory with Python 3.10 or later. Standard library only.
+Outputs are written beside this script in artifact_results/.
+"""
+import csv
+import hashlib
+import io
+import json
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent / "artifact_results"
+OUT.mkdir(exist_ok=True)
+AS_OF = "2027-02-01T00:00:00Z"
+ACCOUNTS = tuple("ABCDEF")
+# All six accounts were subscribed at the start of January.
+# These are explicit submitted requests, not inferred dissatisfaction.
+REQUESTS = [
+    {"account": "B", "requested": "2027-01-05T09:00:00Z",
+     "completed": "2027-01-05T09:01:00Z"},
+    {"account": "C", "requested": "2027-01-06T09:00:00Z",
+     "completed": ""},
+    {"account": "D", "requested": "2027-01-07T09:00:00Z",
+     "completed": ""},
+    {"account": "E", "requested": "2027-01-08T09:00:00Z",
+     "completed": ""},
+]
+assert len(set(ACCOUNTS)) == len(ACCOUNTS) == 6
+assert len({r["account"] for r in REQUESTS}) == len(REQUESTS)
+assert all(r["account"] in ACCOUNTS for r in REQUESTS)
+assert all(r["requested"] < AS_OF for r in REQUESTS)
+assert all(not r["completed"] or
+           r["requested"] <= r["completed"] < AS_OF for r in REQUESTS)
+
+by_account = {r["account"]: r for r in REQUESTS}
+retention_rows = []
+assessment_rows = []
+for account in ACCOUNTS:
+    request = by_account.get(account)
+    completed = bool(request and request["completed"])
+    retained = int(not completed)
+    retention_rows.append({"account": account, "retained": retained})
+    assessment_rows.append({
+        "account": account,
+        "retained": retained,
+        "request_submitted": int(request is not None),
+        "request_completed": int(completed),
+    })
+
+def csv_text(rows, fields):
+    buffer = io.StringIO(newline="")
+    writer = csv.DictWriter(buffer, fieldnames=fields, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    return buffer.getvalue()
+
+def write_text(name, value):
+    path = OUT / name
+    path.write_text(value, encoding="utf-8", newline="")
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+# V1 and V2 are different releases: V2 adds request information.
+v1 = csv_text(retention_rows, ["account", "retained"])
+v2 = csv_text(assessment_rows, list(assessment_rows[0]))
+# Same V2 records and schema, with only row order changed.
+v2_reordered = csv_text(list(reversed(assessment_rows)),
+                        list(assessment_rows[0]))
+hashes = {
+    "retention_v1.csv": write_text("retention_v1.csv", v1),
+    "assessment_v2.csv": write_text("assessment_v2.csv", v2),
+    "assessment_v2_reordered.csv": write_text(
+        "assessment_v2_reordered.csv", v2_reordered),
+}
+
+def keyed_records(text):
+    rows = list(csv.DictReader(io.StringIO(text)))
+    assert len({r["account"] for r in rows}) == len(rows)
+    return {r["account"]: r for r in rows}
+
+assert hashes["assessment_v2.csv"] != hashes["assessment_v2_reordered.csv"]
+assert keyed_records(v2) == keyed_records(v2_reordered)
+assert [{"account": r["account"], "retained": r["retained"]}
+        for r in assessment_rows] == retention_rows
+
+retained_count = sum(r["retained"] for r in retention_rows)
+request_count = sum(r["request_submitted"] for r in assessment_rows)
+completion_count = sum(r["request_completed"] for r in assessment_rows)
+pending_count = request_count - completion_count
+summary = {
+    "synthetic": True, "as_of_utc": AS_OF,
+    "initial_accounts": len(ACCOUNTS), "retained_accounts": retained_count,
+    "submitted_requests": request_count, "completed_requests": completion_count,
+    "pending_requests": pending_count,
+    "retention_fraction": retained_count / len(ACCOUNTS),
+    "pending_fraction_among_requests": pending_count / request_count,
+    "pending_fraction_among_retained": pending_count / retained_count,
+}
+assert (retained_count, request_count, completion_count, pending_count) == (5, 4, 1, 3)
+manifest = {
+    "dataset": "Synthetic Subscription Records",
+    "synthetic": True, "as_of_utc": AS_OF,
+    "population": "Six accounts subscribed at the start of January 2027",
+    "unit": "Account at the cutoff; one request at most per account",
+    "v1_purpose": "Describe subscription status at the cutoff",
+    "v2_purpose": "Also assess completion of submitted cancellation requests",
+    "retained_definition": "No completed cancellation before the cutoff",
+    "identity_rule": "Same schema and values by unique account; ignore row order",
+    "v2_parent": "V1 plus the synthetic request history defined in the program",
+    "files_sha256": hashes,
+    "interpretation": "Counts describe status and request completion. They do not measure consent, satisfaction, or causal effects.",
+}
+write_text("summary.json", json.dumps(summary, indent=2) + "\n")
+write_text("manifest.json", json.dumps(manifest, indent=2) + "\n")
+print(json.dumps(summary, indent=2))
+```
+
+Changing the cutoff requires a new assessment of which requests and completions fall within the window. An empty completion field means pending at the specified cutoff in this constructed history. In an empirical system, the same empty field could arise from an unrecorded completion, a failed join, or a genuinely pending request. The data dictionary and recording process determine which interpretation is warranted.
+
+### Further Reading
+
+(Thomasson, 2003), [Realism and Human Kinds](https://doi.org/10.1111/j.1933-1592.2003.tb00309.x), §§2–3; (Thomasson, 2014), [Public Artifacts, Intentions, and Norms](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc), §§5.2–5.4; (Thomasson, 1999), [Fiction and Metaphysics](https://www.cambridge.org/core/books/abs/fiction-and-metaphysics/fictional-characters-as-abstract-artifacts/CE4968D080D4B81C9DE76FF589C70017), chapter 3; (Leonelli, 2015), [What Counts as Scientific Data? A Relational Framework](https://pmc.ncbi.nlm.nih.gov/articles/PMC4747116/).
