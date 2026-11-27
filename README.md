@@ -164,3 +164,7 @@ The [electricity lesson](08_Wiki/pilot/README.md) asks students to predict a bil
 ## Conflicts of Interest and Consumer Control
 
 [Marketing Dialectics §§9.45–9.49](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) connects analyst incentives to duties, engagement design, and consumer authority. The [synthetic feed comparison](03_Data_and_Code/Conflicts_of_Interest/README.md), [source guide](01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md), and [optional practice](07_Labs/Conflicts_of_Interest/README.md) distinguish empirical evidence from a defended ought conclusion.
+
+## Bad Controls and Thoughtful Research Design
+
+The [reading collection](01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) covers causal adjustment, selection, treatment-affected covariates, anticipation, and exposed comparison groups. [Three original Python programs](03_Data_and_Code/Bad_Controls/README.md) connect these distinctions to phantom projects and the choice of a recent operating-facility sample. M3 §§3.20–3.21, M6 §§6.40–6.42, and M9 §9.50 develop the implications for household claims and research design.

@@ -160,6 +160,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Conflicts_of_Interest/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "bad-controls",
+      "path": "07_Labs/Bad_Controls/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -429,7 +435,19 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Conflicts_of_Interest/README.md",
     "03_Data_and_Code/Conflicts_of_Interest/VERIFICATION.md",
     "07_Labs/Conflicts_of_Interest/README.md",
-    "03_Data_and_Code/Conflicts_of_Interest/AGENTS.md"
+    "03_Data_and_Code/Conflicts_of_Interest/AGENTS.md",
+    "01_Resources/44_Bad_Controls_and_Project_Exposure/README.md",
+    "01_Resources/44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md",
+    "03_Data_and_Code/Bad_Controls/README.md",
+    "03_Data_and_Code/Bad_Controls/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Bad_Controls/VERIFICATION.md",
+    "03_Data_and_Code/Bad_Controls/results/README.md",
+    "07_Labs/Bad_Controls/README.md",
+    "01_Resources/44_Bad_Controls_and_Project_Exposure/01_Foundations/README.md",
+    "01_Resources/44_Bad_Controls_and_Project_Exposure/03_Longitudinal_Identification/README.md",
+    "01_Resources/44_Bad_Controls_and_Project_Exposure/05_Project_Exposure/README.md",
+    "01_Resources/44_Bad_Controls_and_Project_Exposure/02_Adjustment_and_Selection/README.md",
+    "01_Resources/44_Bad_Controls_and_Project_Exposure/04_Timing_and_Comparison_Groups/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -478,12 +496,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-preface",
+    "revision": "2026-11-26-bad-controls-and-project-exposure",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 140,
-    "pages": 580,
+    "figures_count": 144,
+    "pages": 593,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -514,7 +532,8 @@ Generated from course.json and the source files identified below. This file cont
     "coding_workflow_evidence": "03_Data_and_Code/Agent_Workflows/README.md",
     "analytical_arguments": "03_Data_and_Code/Analytical_Arguments/README.md",
     "learning_design": "03_Data_and_Code/Learning_Design/README.md",
-    "preface": "06_Lecture_Notes/Preface.md"
+    "preface": "06_Lecture_Notes/Preface.md",
+    "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md"
   },
   "datasets": [
     {
@@ -611,7 +630,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 505,
+    "slides": 514,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1184,7 +1203,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-analytical-arguments",
+  "revision": "2026-11-26-bad-controls-and-project-exposure",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1611,6 +1630,33 @@ Generated from course.json and the source files identified below. This file cont
     "additional_slides": 6,
     "matching_python_blocks": 125,
     "scope": "Original synthetic feed comparison and philosophical applications; no estimated platform harm, dopamine measurement, clinical diagnosis, or finding of misconduct."
+  },
+  "bad_controls_and_project_exposure": {
+    "implemented_on": "2026-11-26",
+    "resources": "01_Resources/44_Bad_Controls_and_Project_Exposure/README.md",
+    "catalog": "01_Resources/44_Bad_Controls_and_Project_Exposure/catalog.json",
+    "case_assessment": "01_Resources/44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md",
+    "examples": "03_Data_and_Code/Bad_Controls/README.md",
+    "practice": "07_Labs/Bad_Controls/README.md",
+    "verification": "03_Data_and_Code/Bad_Controls/VERIFICATION.md",
+    "sections": [
+      "M3 \u00a7\u00a73.20\u20133.21",
+      "M6 \u00a7\u00a76.40\u20136.42",
+      "M9 \u00a79.50"
+    ],
+    "sessions": [
+      4,
+      10,
+      14
+    ],
+    "methods_readings": 22,
+    "institutional_sources": 8,
+    "local_pdf_copies": 19,
+    "original_programs": 3,
+    "original_figures": 4,
+    "additional_slides": 9,
+    "matching_python_blocks": 128,
+    "scope": "Original synthetic examples and evidence assessment; no reestimated paper coefficient or established contamination of actual donors."
   }
 }
 ```
@@ -1785,6 +1831,10 @@ The [electricity lesson](08_Wiki/pilot/README.md) asks students to predict a bil
 ## Conflicts of Interest and Consumer Control
 
 [Marketing Dialectics §§9.45–9.49](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) connects analyst incentives to duties, engagement design, and consumer authority. The [synthetic feed comparison](03_Data_and_Code/Conflicts_of_Interest/README.md), [source guide](01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md), and [optional practice](07_Labs/Conflicts_of_Interest/README.md) distinguish empirical evidence from a defended ought conclusion.
+
+## Bad Controls and Thoughtful Research Design
+
+The [reading collection](01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) covers causal adjustment, selection, treatment-affected covariates, anticipation, and exposed comparison groups. [Three original Python programs](03_Data_and_Code/Bad_Controls/README.md) connect these distinctions to phantom projects and the choice of a recent operating-facility sample. M3 §§3.20–3.21, M6 §§6.40–6.42, and M9 §9.50 develop the implications for household claims and research design.
 
 ---
 
@@ -2168,6 +2218,10 @@ M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place t
 
 M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect the analyst’s incentives to question selection, interpretation, and responsibilities. Sessions 1, 11, and 14 use selected comparisons within existing time. [Sources](01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md); [complete synthetic Python](03_Data_and_Code/Conflicts_of_Interest/README.md); [optional practice](07_Labs/Conflicts_of_Interest/README.md). The feed case also connects to pricing, cancellation, mHealth targeting, and electricity reassurance.
 
+## Bad Controls, Project Exposure, and Sample Windows
+
+M3 §§3.20–3.21 explain causal adjustment; M6 §§6.40–6.42 compare treatment-affected covariates, project timelines, and selected populations; M9 §9.50 evaluates household reasons. The [30-source guide](01_Resources/44_Bad_Controls_and_Project_Exposure/README.md), [complete examples](03_Data_and_Code/Bad_Controls/README.md), and [optional practice](07_Labs/Bad_Controls/README.md) support Sessions 4, 10, and 14. Evidence within the later years of 2020–2025 motivates a donor-exposure assessment without establishing contamination of the paper’s actual donors.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2496,6 +2550,10 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 
 [Conflicts of Interest](Conflicts_of_Interest/README.md) contains eight synthetic policy-by-group rows, a standard-library Python program, saved aggregates, and independent checks. M9 §9.48 reproduces the complete code and separates contribution, goal completion, regret, disclosure, and a defended stopping requirement.
 
+## Bad Controls and Project Exposure
+
+[Three reproducible programs](Bad_Controls/README.md) enumerate causal structures, recover an untreated covariate trend under explicit conditions, and compare project windows and selected populations. Complete code appears in M3 §3.21 and M6 §§6.40.2 and 6.42.2. All observations are synthetic.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -2504,7 +2562,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 140 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 144 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2726,6 +2784,10 @@ M1 §1.21, M2 §2.29, M6 §6.39, and M9 §9.44 connect source fidelity, bill mea
 
 M9 §§9.45–9.49 examines responsibilities, disclosure, dependence, engagement evidence, and reasons for honoring stopping instructions. M1 §1.22, M7 §7.47, and M8 §8.33 carry the issue into question formulation, prediction, and integrated decisions. The [original comparison](../03_Data_and_Code/Conflicts_of_Interest/README.md) includes full matching Python and independent calculations; the [source guide](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) records what was reviewed. Two editable figures show conflicting pressures on judgment and the premises of an ought conclusion.
 
+## Bad Controls and Thoughtful Research Design
+
+M3 §§3.20–3.21, M6 §§6.40–6.42, and M9 §9.50 distinguish adjustment bias, exposed donors, anticipation, and selected populations. Three complete Python programs and four Illinois-color TikZ figures accompany the [readings](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) and [optional practice](../07_Labs/Bad_Controls/README.md).
+
 ---
 
 ## Source: 06_Lecture_Notes/Preface.md
@@ -2810,7 +2872,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 505 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 514 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -2988,6 +3050,10 @@ Six slides in Sessions 1, 2, 9, and 14 connect alternative representations, elec
 ## Conflicts of Interest and Consumer Control
 
 Sessions 1, 11, and 14 connect incentives and duties to question selection, engagement prediction, and an ought conclusion. Two new editable TikZ diagrams and the synthetic feed comparison support M9 §§9.45–9.49. The [optional lab](../07_Labs/Conflicts_of_Interest/README.md) contains extended practice; existing meeting durations are retained.
+
+## Bad Controls and Project Exposure
+
+Sessions 4, 10, and 14 connect causal adjustment, phantom projects, convenience sampling, and household justification. Nine slides and four editable diagrams accompany [M3 §§3.20–3.21 and M6 §§6.40–6.42](../06_Lecture_Notes/README.md), M9 §9.50, and the [complete programs](../03_Data_and_Code/Bad_Controls/README.md).
 
 ---
 
@@ -3573,6 +3639,10 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 
 The [nine-source supplement](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) supports M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49. The [synthetic feed program](../03_Data_and_Code/Conflicts_of_Interest/README.md) uses original totals and no borrowed empirical coefficients. Sessions 1, 11, and 14 use selected discussion slides; [optional practice](../07_Labs/Conflicts_of_Interest/README.md) supplies the extended exercise.
 
+## Bad Controls and Project Exposure
+
+The [categorized collection](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) connects M3 causal graphs to M6 panel identification and the phantom-project case. The examples separate a total effect from a conditioned coefficient and an operating-entry effect from the wider proposal population. M9 §9.50 asks which empirical premises justify reassurance to households. The 2020–2025 historical evidence supports particular scrutiny of later sample years; exact donor exposure requires project and payment records.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -3928,20 +3998,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 34 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 35 |
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 27 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
-| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 26 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 29 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 31 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 46 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 43 |
-| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 25 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 59 |
+| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 29 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 60 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 92 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 98 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -4026,7 +4096,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | --- | --- |
 | 0–15 | Managerial Case |
 | 15–45 | Concepts and Mechanisms |
-| 45–70 | Worked Comparison |
+| 45–70 | Worked Comparison: Causal Paths and Regression Controls |
 | 70–80 | Break |
 | 80–125 | Python Exercise and Paired Inference |
 | 125–135 | Response Coefficients and Source Bias |
@@ -4158,7 +4228,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–125 | Python Exercise |
 | 125–145 | Discount Response and Uncertainty |
-| 145–155 | Comparison Groups and Events |
+| 145–155 | Phantom Projects, Comparison Windows, and Donor Exposure |
 | 155–170 | Ethics and Decision Discussion |
 
 ### 11. Prediction, Validation, and Marketing Actions
@@ -4249,7 +4319,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–90 | Kantian, Confucian, and Scanlonian Evaluation |
 | 90–95 | Ontological Scope, Counterexamples, and an Ought Conclusion |
-| 95–100 | Stakeholder Reasons, Utility Disclosures, and Public Voice |
+| 95–100 | Household Reasons, Sample Selection, and Public Claims |
 | 100–110 | Pricing Burdens and Feasible Alternatives |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
@@ -4318,6 +4388,10 @@ The [electricity pilot and optional practice](../07_Labs/AI_Augmented_Learning/R
 ## Conflicts of Interest and Consumer Control
 
 Session 1 adds the analyst’s incentives and duties to the existing final discussion. Session 11 connects prediction to the choice of a defensible objective. Session 14 uses a selected feed comparison within the existing Marketing Dialectics block: identify the duty, distinguish reward learning from neural and clinical claims, compare reasonable objections, and defend a stopping requirement. The extended source review and code are optional practice in [Conflicts of Interest](../07_Labs/Conflicts_of_Interest/README.md). These selections retain all 15 meetings and their 170-minute allocations.
+
+## Bad Controls and Thoughtful Research Design
+
+Session 4 uses the existing worked-comparison block (minutes 45–70) to contrast causal paths and regression adjustment. Session 10 uses minutes 145–155 to compare project timing, donor exposure, and convenient sample windows. Session 14 uses minutes 95–100 to assess the reasons owed to households excluded from an operating-facility comparison. The extended treatment-affected-covariate derivation and full coding exercises remain [optional ungraded practice](../07_Labs/Bad_Controls/README.md). Selected slides fit these existing blocks; the 15 meeting dates, 170-minute durations, and breaks are retained.
 
 ---
 
@@ -4516,6 +4590,10 @@ Use the [electricity pilot](../08_Wiki/pilot/README.md) for prediction, alternat
 
 M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect commercial incentives to the choice of outcomes, professional judgment, and consumer authority. Sessions 1, 11, and 14 select the duty distinction, engagement comparison, and philosophical argument within existing discussion time. The [optional ungraded lab](../07_Labs/Conflicts_of_Interest/README.md) supplies extended practice without changing assessment requirements. A complete synthetic Python example separates score weights from a defended requirement to honor valid stopping instructions.
 
+## Bad Controls and Thoughtful Research Design
+
+Session 4 uses the existing worked-comparison block (minutes 45–70) to contrast causal paths and regression adjustment. Session 10 uses minutes 145–155 to compare project timing, donor exposure, and convenient sample windows. Session 14 uses minutes 95–100 to assess the reasons owed to households excluded from an operating-facility comparison. The extended treatment-affected-covariate derivation and full coding exercises remain [optional ungraded practice](../07_Labs/Bad_Controls/README.md). Selected slides fit these existing blocks; the 15 meeting dates, 170-minute durations, and breaks are retained.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -4660,6 +4738,10 @@ M9 §9.40 connects validity and premise support to the existing Scanlonian evalu
 ## Conflicts of Interest, Judgment, and Engagement
 
 M9 §§9.45–9.49 separates commercial adversity, a duty-based conflict, demonstrated bias, and wrongdoing. Valsan, the Institute of Medicine, Cain and coauthors, Lovett and Pettit, Balkin, and Khan and Pozen support distinct parts of the analysis; [the source guide](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) records scope. The fiduciary debate is normative and legal scholarship, not a statement of a universal current legal duty. The infinite-scroll case separates behavioral reward learning, neuroscience, economic self-control evidence, and clinical claims. The numerical comparison is entirely synthetic. Public-reassurance criticism does not assert an undocumented author motive or financial relationship.
+
+## Research Design and Household Exposure
+
+M9 §9.50 connects Scanlonian reasons to the population excluded by a convenient dataset. M6 §§6.41–6.42 distinguish zero operating additions from zero project exposure and preserve offsets and negative cases. The [source assessment](../01_Resources/44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) records the 2023 cancellation, 2025 risk discussion, and Ohio Power tariff approved July 9, 2025 and effective July 23, 2025. The tariff applies in that utility’s service territory. Its current operator page was checked November 26, 2026; no national rule or confirmed historical household loss is inferred.
 
 ---
 
@@ -4833,7 +4915,7 @@ Students use AI-assisted Python to specify questions, verify calculations, and i
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
 - Evaluate which ends deserve pursuit, who has authority to select them, and what obligations the decision creates, distinguishing empirical knowledge from practical justification.
 - Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
-- Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
+- Apply marketing analytics methods; distinguish descriptive patterns, prediction, and causal effects; justify controls, populations, and observation windows.
 - Evaluate AI-assisted workflows through independent calculations, statistical design, meaningful-effect bounds, silent-error detection, and interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
 - Reconstruct analytical arguments, distinguish model fit from identification and valuation, test counterexamples, and identify evidence or reasons that would change a conclusion.
@@ -4855,14 +4937,14 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 1 | January 20 | M1: Marketing decisions and AI-assisted Python |
 | 2 | January 27 | M2: Customer data, missingness, cancellation evidence, and earnings-call coverage |
 | 3 | February 3 | M2: Visualization, geographic usage, and nutrition-informed assessment |
-| 4 | February 10 | M3: Regression, geographic associations, and marketing interpretation |
+| 4 | February 10 | M3: Regression, causal controls, geographic associations, and interpretation |
 | 5 | February 17 | M4: Conjoint, concept screening, and research budgets |
 | 6 | February 24 | M4: Geographic and customer segmentation; customer lifetime value |
 | 7 | March 3 | M5: Text and pricing communication; network compression and retail access |
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
 | No Class | March 17 | Spring break |
 | 9 | March 24 | M6: Experiments, research design, and incremental value |
-| 10 | March 31 | M6: Causal comparisons, policy evaluation, and discount responses |
+| 10 | March 31 | M6: Causal comparisons, project exposure, policy evaluation, and discount responses |
 | 11 | April 7 | M7: Prediction, representation quality, training mixtures, and service outcomes |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |
@@ -7506,6 +7588,24 @@ Marketing Dialectics asks how an observed result acquires authority to settle a 
 
 A consumer's practical standing exceeds the variables used to predict their behavior. Unknown intentions and unmeasured burdens invite further empirical inquiry. Kant's noumenal limit concerns a different question about the reach of theoretical cognition (§9.41). Neither category permits an analyst to infer authority over the person from a successful forecast. A defensible recommendation states what the firm ought to do, whose objection it answers, and which evidence or reason would require revision.
 
+## 9.50 Thoughtful Research Design and Reasons Owed to Households
+
+\noindent A household asked to accept a data-center expansion has reasons to question who bears costs if the project fails. Those reasons remain relevant when the most accessible dataset records only facilities that reached operation. The choice of observable units does not determine the population to whom a decision requires justification. A narrow empirical result can inform that justification while leaving substantial premises unresolved.
+
+Consider the proposed principle that public authorities may reassure all affected households whenever an estimated operating-capacity effect is statistically insignificant. A resident can reasonably object that the comparison may omit preparatory costs, failed proposals, or later charges. The objection concerns a foreseeable burden and the evidential basis for imposing it. It does not require showing that every project produces harm. A defensible response would establish the relevant exposure history, financial protections, outcome measure, and uncertainty for the population addressed by the reassurance.
+
+![An argument proceeds from the household decision to the target population and causal comparison, then to evidence and a justified claim. A shortcut from convenient operating records to reassurance skips the exposure and population premises. Missing observations leave an evidential gap while affected households retain their standing to demand reasons.](../figures/M09_design_and_reasons.png)
+
+The empirical and normative premises should remain explicit. First, a completed facility and a canceled proposal can create different burdens. Second, a comparison that excludes those burdens has not assessed them. Third, a household has a reason to reject an assurance that treats an unexamined burden as absent. The third premise is a proposed Scanlonian application concerning justification to each affected person. Statistical evidence informs the burden comparison; statistical precision alone does not establish that the assurance is reasonable. See §§9.28–9.32 for contractualism and stakeholder standing.
+
+Kantian criticism likewise asks whether the analysis respects affected people as persons entitled to reasons. Selecting the easily observed outcome can become a practical exclusion when that selection determines whose burden counts. A measurement choice does not establish that unmeasured burdens are unreal. Nor should empirical unknowns be conflated with Kantian noumena: missing project histories and household charges are ordinarily investigable facts. The distinction in §§9.41–9.43 concerns the limits of empirical representation and the grounds of practical judgment.
+
+### 9.50.1 A Strong Critique Must Survive Its Own Counterexamples
+
+\noindent The 2023 cancellation and 2025 institutional records make project uncertainty a material concern within the electricity paper's period. They support a demand for a defensible project-level exposure assessment. They do not establish that its actual donors bore unrecovered costs. Enforceable developer payments, useful replacement demand, or disallowed recovery could defeat the proposed pass-through mechanism in particular cases. The critic must identify those possibilities and the records that decide them.
+
+The resulting criticism is forceful: a broad reassurance about household costs lacks support when its pivotal exposure and population premises remain unestablished. A convenient, precisely estimated comparison can be fundamentally inadequate for that claim. The appropriate response is to reconstruct the design, narrow the conclusion to the supported estimand, or acknowledge that the broader question remains unanswered. Analytical skill includes recognizing when the available dataset does not justify the intended public message.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -8287,6 +8387,10 @@ The [Philosophical Arguments practice](Philosophical_Arguments/README.md) includ
 ## Conflicts of Interest and Consumer Control
 
 [Optional ungraded practice](Conflicts_of_Interest/README.md) develops a duty-based conflict analysis, reproduces the synthetic feed comparison, and constructs a Kantian and Scanlonian argument with a feasible alternative. It also connects professional dissent to Confucian remonstrance.
+
+## Bad Controls and Thoughtful Research Design
+
+The [optional ungraded practice](Bad_Controls/README.md) asks students to defend controls and sample restrictions, reproduce the project-window comparisons, and evaluate whether the evidence justifies reassurance to households.
 
 ---
 
@@ -13463,6 +13567,10 @@ Full code and derivations appear in M6 §6.35; measurement is developed in M2 §
 
 The [utility-disclosure example](../../03_Data_and_Code/Utility_Cost_Recovery/README.md) traces investment recovery, proposed customer charges, and revenue offsets using public sources. It preserves verbatim excerpts in M5 §5.27 and distinguishes the household bill from wholesale capacity costs and utility construction recovery. The paper itself discusses these mechanisms; selected disclosures therefore challenge overbroad assurance without independently refuting the historical coefficient. Most selected disclosures occur after the 2020–2025 study window.
 
+## Bad Controls and the Observation Window
+
+The [project-exposure assessment](../44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) adds evidence inside 2020–2025, particularly its later years, and separates adjustment covariates from exposed donors, anticipation, and completion selection. M6 §§6.40–6.42 provide complete synthetic calculations. Thoughtful design requires a baseline preceding relevant commitments and a sample aligned with the affected population. An appealing fit or recent data alone does not establish those conditions.
+
 ---
 
 ## Source: 01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
@@ -14695,6 +14803,646 @@ Read [README.md](README.md), M9 §§9.45–9.49, and the course writing guide be
 - Reward-learning evidence does not measure dopamine release or establish a clinical diagnosis. Link factual claims to the selected primary sources.
 - Keep the complete lecture Python block synchronized with `evaluate_policies.py`. Run the calculation, independent verification, and root code-block checker after changes.
 - Keep private instructor notes outside public materials. The lab is optional ungraded practice and creates no assessment requirements or authorization to experiment on people.
+
+---
+
+## Source: 01_Resources/44_Bad_Controls_and_Project_Exposure/README.md
+
+# Bad Controls and Project Exposure
+
+A causal analysis must establish which comparison answers the decision maker's question. An extra covariate, a recent dataset, or a close pre-treatment fit can conceal a mismatch between that question and the estimated effect. The electricity case makes the distinction consequential: operating capacity, project commitments, and household cost exposure can begin at different times.
+
+The collection contains **22 methodological readings and 8 institutional sources**, checked November 26, 2026. Nineteen public PDFs are saved in categorized local reading folders. The public repository contains the annotated guides, source links, and original teaching materials. The [catalog](catalog.json) records versions, access status, inspection scope, and hashes for downloaded files. Link-only entries identify material that was not downloaded. This is a broad teaching collection rather than an exhaustive census of causal-inference research.
+
+| Category | Main Question |
+| --- | --- |
+| [Foundations and Causal Graphs](01_Foundations/README.md) | Which paths does adjustment close or open? |
+| [Adjustment and Selection](02_Adjustment_and_Selection/README.md) | What changes when analysis conditions on a response or completion? |
+| [Longitudinal Identification](03_Longitudinal_Identification/README.md) | How should treatment-affected covariates and histories enter a panel design? |
+| [Timing and Comparison Groups](04_Timing_and_Comparison_Groups/README.md) | When does exposure start, and who provides the counterfactual? |
+| [Project Exposure and the 2020–2025 Window](05_Project_Exposure/README.md) | Which requests, commitments, cancellations, and protections occurred within the study period? |
+
+## Suggested Reading Sequence
+
+1. Cinelli, Forney, and Pearl (BC02), followed by Wysocki, Lawson, and Rhemtulla (BC10): explain each covariate's role before fitting the regression.
+2. Rosenbaum (BC03), Elwert and Winship (BC04), and Montgomery, Nyhan, and Torres (BC05): compare adjustment with sample selection.
+3. Abadie (BC19), Malani and Reif (BC18), and Butts (BC20): establish the exposure date and the comparison boundary.
+4. Caetano, Callaway, Payne, and Sant’Anna (BC13): examine why inclusion and exclusion can both fail. Read its identifying assumptions before using the [authors' package](https://github.com/hugosantanna/badcontrols).
+5. Read the [case assessment](CASE_ASSESSMENT.md), then reproduce the [original Python comparisons](../../03_Data_and_Code/Bad_Controls/README.md).
+
+BC13 and BC14 replace the authors' earlier joint paper on time-varying covariates. They are recorded as the current complementary treatments; the earlier version is not counted as a separate contribution. Marginal structural models (BC22 and BC11) address sequential treatment histories under assumptions that differ from conditional parallel trends.
+
+## Course Connections
+
+- M3 §§3.20–3.21: adjustment, causal paths, and exact synthetic regressions.
+- M6 §§6.40–6.42: treatment-affected covariates, phantom projects, and sample-window design.
+- M9 §9.50: the reasons owed to households whose burdens are excluded from a convenient comparison.
+- Sessions 4, 10, and 14: selected explanations within existing meeting allocations.
+- [Optional ungraded practice](../../07_Labs/Bad_Controls/README.md): defend the estimand, test competing graphs, and reconstruct project exposure.
+
+## Reading Copies and Reuse
+
+Local PDF copies are under `readings/`, grouped by the five categories above. That folder is excluded from Git. Public availability does not by itself establish republication rights; original terms continue to apply. Source PDFs are unchanged. Figures, programs, and numerical constructions in the course are original. No downloaded program was executed to prepare the collection.
+
+---
+
+## Source: 01_Resources/44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md
+
+# Bad Controls, Phantom Projects, and Research Design
+
+## The Decision and the Target Effect
+
+Households and regulators need to know whether data-center development creates costs that households must bear, including costs incurred before a facility operates or after a proposal fails. An incremental operating-capacity effect and the total effect of the project pipeline answer different questions. A narrow result requires an explicit argument before it can support broad reassurance about household burdens.
+
+Rana, Kaps, and Netessine's saved September 30, 2026 paper uses operating additions to anchor treatment in 2020–2025. Its donor screen excludes positive additions of the selected operating-capacity measure during the relevant post-anchor horizon. Equations 15–20, pp. 17–18, describe this procedure. Equation 21 relates synthetic-control gaps to cumulative capacity with utility and quarter-of-year fixed effects. The paper explicitly discusses possible spillovers on p. 20. These are verified design features. The methods do not establish a separate screen for every donor's requests, canceled projects, or unrecovered preparatory commitments. [Paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
+
+The synthetic weights use 16 quarters preceding the operating-entry anchor, so early anchors can use outcome data from before 2020. The relevant assessment is whether these quarters precede the economic exposure, including project commitments. Calendar precedence relative to opening alone does not establish that condition.
+
+The phrase “bad controls” covers a covariate problem in its usual econometric use. Exposed donor units, anticipation, and selection into observed operating facilities are related design concerns with different mechanisms. The paper is not shown here to regress on post-entry infrastructure spending as a control. Its cost outcomes must not be misreported as adjustment covariates.
+
+## Why the Study Window Deserves Particular Scrutiny
+
+The concern has evidence inside 2020–2025, especially toward the end of the period. On July 20, 2023, the Port of Cascade Locks and Roundhouse announced cancellation after insufficient community support. In January 2025, LBNL discussed financial risks from underused large-load infrastructure. Ohio Power's data-center tariff was adopted in July 2025 and introduced financial commitments concerning project-related risks. These events make preparatory exposure and project failure material questions for the chosen window. They do not show that any named donor in the paper incurred residential costs. [Port announcement](https://www.portofcascadelocks.gov/july-20-2023-cascade-locks-port-and-roundhouse-inc-jointly-announce-decision-to-discontinue-datacenter-project), [LBNL](https://emp.lbl.gov/publications/electricity-rate-designs-large-loads), [tariff record](https://www.aepohio.com/company/about/rates/data-center-tariff/).
+
+Data Center Watch's first report describes $64 billion in blocked or delayed proposed investment; its Q2 2025 summary reports 20 affected projects and $98 billion. This is evidence of substantial disruption during the later part of the sample, collected from public records and reporting. The collection targets opposition, lacks a consistent all-project denominator across earlier years, and mixes blocked and delayed projects. These totals measure proposed investment, not utility expenditure, cancellations alone, or household losses. The reports have overlapping coverage and evolving records, so their totals should not be summed. [Initial report](https://www.datacenterwatch.org/report), [Q2 2025 summary](https://www.datacenterwatch.org/q22025).
+
+The strongest supported historical statement is that project opposition and uncertainty were conspicuous within the latter part of the authors' window. A claim that cancellation rates were uniformly higher throughout 2020–2025 than in an earlier period would require a consistent project census. In particular, later reporting from 2026 is subsequent institutional evidence and does not substitute for dated exposures in 2020–2025.
+
+## Four Distinct Routes to a Misleading Interpretation
+
+| Mechanism | Consequence | Evidence Needed |
+| --- | --- | --- |
+| Adjusting for treatment-induced investment | May remove a pathway from the total effect or open a collider path | Actual covariate definitions, causal graph, dates |
+| Matching on outcomes after project commitments | May absorb part of the project effect into the baseline | Request, commitment, expenditure, and recovery dates |
+| A donor with no new operating MW bears project costs | May shift the counterfactual away from no project exposure | Donor weights, project histories, contracts, recovered amounts |
+| Observing only completed facilities by the cutoff | Changes the represented project population and can create selection | Complete proposal cohort, completion determinants, pending statuses |
+
+A service request is not an infrastructure expenditure. An expenditure is not automatically recoverable from households. Establish the sequence from request to binding commitment, spending, authorized recovery, customer allocation, and actual payment. Collect enforceable developer contributions, asset reuse, and disallowed costs as potential offsets. Projects with no incurred cost or with complete developer coverage are informative negative cases.
+
+## Convenience and Identification
+
+A recent dataset can offer accurate records of operating facilities while omitting the states needed to define an unexposed comparison. A cutoff can also classify a delayed project as untreated simply because its opening occurs later. If commitments already affect prices, that project is exposed during the observed window. The issue is internal validity when the proposed counterfactual is wrong, and external validity when a valid effect for selected completed projects is generalized to all projects. These failures can coexist.
+
+The empirical defense must establish that the window contains a baseline preceding the relevant exposure, that its donors identify the specified counterfactual, and that its outcome measures the burden being discussed. A rationale for using recent data does not establish these conditions. More observations or a smaller standard error can increase confidence in a misaligned comparison. Thoughtful design begins with the intervention and affected population, then asks which records and time span are required.
+
+## A Feasible Reassessment
+
+1. Define separate estimands for operating additions and the full project pipeline, including the horizon and household-cost measure.
+2. Reconstruct dated proposal cohorts, including withdrawals, cancellations, postponements, and pending projects. Link duplicate requests and alternative sites.
+3. Map projects to utilities and shared transmission exposure. Preserve uncertainty in the mapping.
+4. Identify obligations and recovery under the contracts and regulations then in force. Preserve zero-cost and fully offset cases.
+5. Report how much synthetic-control weight rests on each exposure category. Refit under defensible alternative donor rules and earlier exposure dates; report loss of support and fit.
+6. Compare cohorts with a common follow-up horizon. A project still pending at the cutoff remains pending, rather than being coded as a confirmed cancellation.
+7. Present sensitivity ranges when the exposure history is incomplete. State which claim remains supported and which would require additional evidence.
+
+The [synthetic programs](../../03_Data_and_Code/Bad_Controls/README.md) isolate possible mechanisms. They do not reestimate the published coefficient, establish its bias direction, or demonstrate that a particular donor is contaminated.
+
+---
+
+## Source: 03_Data_and_Code/Bad_Controls/README.md
+
+# Bad Controls and Project Exposure
+
+Three original programs distinguish causal adjustment, treatment-affected covariates, and the selection of comparison populations. All observations and parameter values are synthetic. The exercises contain no household records and no replication of the electricity paper's estimates.
+
+## Run
+
+Python 3.10 or later and NumPy are required for the first two programs. The third uses the standard library. No network or API access is used.
+
+```sh
+python3 control_paths.py
+python3 panel_covariates.py
+python3 project_pipeline.py
+```
+
+Run from this folder, or prefix the commands with `03_Data_and_Code/Bad_Controls/` from the repository root. Outputs are saved beside the scripts under `results/`. Full matching code appears in M3 §3.21 and M6 §§6.40.2 and 6.42.2.
+
+## Inputs and Outputs
+
+| Program | Population and Question | Expected Result |
+| --- | --- | --- |
+| [control_paths.py](control_paths.py) | Five imposed causal structures, each with 16 equally weighted shock combinations | A total slope of 7 becomes 1 after mediator adjustment; a collider changes 0 to −1; an instrument-like control changes 13/11 to 2 |
+| [panel_covariates.py](panel_covariates.py) | Sixteen weighted population cells; the true ATT is 4 outcome units | Exclusion gives 5.5, observed post-treatment adjustment −2, valid baseline adjustment and linear imputation 4 |
+| [project_pipeline.py](project_pipeline.py) | Four utilities over three synthetic dates; all prices in dollars/MWh | Earlier unexposed comparison 10, mixed-donor comparison 7, opening-period comparison 4 |
+
+The panel exercise enumerates a finite probability distribution. Cell weights are population masses, not sample weights estimated from a survey. No standard errors or p-values are calculated. Its simple imputation works because the imposed conditional outcome trend is linear and the required baseline variable is observed. A nonlinear response generally requires integration over the untreated covariate distribution, rather than substitution of its mean.
+
+The project sensitivity file varies canceled-donor cost increments and weights. The population file compares the average imposed effect across three proposals with the effect among the one completed project. Different populations need not have the same effect; the exercise identifies the error in treating one average as if it answered the other question.
+
+## Provenance and Interpretation
+
+The [reading collection](../../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) supplies the methodological foundation. These constructions are original teaching examples. The panel program is inspired by the identification distinction in Caetano, Callaway, Payne, and Sant’Anna (2026); it does not implement their general doubly robust estimator or validate their R package.
+
+See the [data dictionary](DATA_DICTIONARY.md), [verification record](VERIFICATION.md), [output companion](results/README.md), and [optional practice](../../07_Labs/Bad_Controls/README.md).
+
+---
+
+## Source: 03_Data_and_Code/Bad_Controls/DATA_DICTIONARY.md
+
+# Data Dictionary
+
+All rows are generated by the named programs. No source data are required.
+
+| File | Observation Unit | Fields and Units |
+| --- | --- | --- |
+| `control_observations.csv` | Case × shock combination, 80 rows | `treatment`, `control`, and `outcome` are synthetic units; `weight=1/16` within each case |
+| `control_estimates.csv` | Causal structure, 5 rows | Slopes in outcome units per treatment unit; analytical values computed separately from OLS |
+| `panel_population.csv` | Weighted population cell, 16 rows | `w` is a binary baseline variable; `d` is treatment; `u,e` are independent ±1 shocks; `weight` sums to one; `x0=0`; `x1_untreated=w+u`; observed `x1=x1_untreated+2d`; `y0=100`, `y1=100+4d+3x1_untreated+e` |
+| `panel_estimates.csv` | Method, 4 rows | `estimate`, `true_att`, and `analytical` in outcome units; no sampling uncertainty |
+| `project_panel.csv` | Utility × synthetic date, 12 rows | Four utilities; dates 2023Q1, 2024Q1, 2025Q4; mutually exclusive project states; `operating` is 0/1; `price_usd_mwh` is dollars/MWh |
+| `window_comparisons.csv` | Baseline and donor choice, 3 rows | Treated and weighted-donor changes; difference in dollars/MWh |
+| `donor_sensitivity.csv` | Imposed canceled-donor increment × weight, 12 rows | Increment in dollars/MWh, weight in [0,1], `gap=10-weight*increment` |
+| `selected_populations.csv` | Imposed cost scenario, 2 rows | Equal-weight means across three proposed-project utilities or the single operating utility, dollars/MWh; status composition is fixed |
+
+The pending project has not opened by the synthetic cutoff. Its future status is unobserved. A cancellation is distinct from an unfulfilled request, a duplicate request, a postponement, and a pending project. None of these labels alone establishes a household charge.
+
+---
+
+## Source: 03_Data_and_Code/Bad_Controls/VERIFICATION.md
+
+# Verification
+
+Checked November 26, 2026, using Python 3.12.14 and NumPy 2.3.5.
+
+## Numerical Comparisons
+
+The three programs executed successfully. A second execution reproduced all eight CSV files byte for byte. Four independent checks passed:
+
+1. Adjustment results preserve the relevant transformations of observation order, control units, and outcome units.
+2. The finite populations have the stated probability masses and treatment probabilities.
+3. Potential-outcome calculations give a total treatment effect of 4 in every panel cell, and untreated covariate means agree across treatment groups conditional on the observed baseline variable.
+4. Project states distinguish commitment from operation, and the sensitivity and population comparisons preserve their stated denominators and counterexamples.
+
+Run the checks from this folder:
+
+```sh
+python3 verify_examples.py
+```
+
+The regression examples also check their exact analytical slopes during execution. The project example includes both a positive selected-project effect and a second construction in which the operating-project effect and proposal-population effect have opposite signs. These are imposed populations, not estimates of data-center effects.
+
+## Course Integration
+
+`scripts/check_lecture_code.py` confirmed 128 matching, syntactically valid Python blocks across the lecture notes, including the three new programs. The complete notes and the standalone Marketing Dialectics chapter compiled to 593 and 101 PDF pages. Sessions 4, 10, and 14 compiled to 29, 29, and 98 slides; the combined lectures contain 514 slides. The syllabus remains two pages.
+
+Visual review covered 57 rendered pages: revised sections and their boundaries, the affected contents pages, new slides and adjacent slides, the standalone chapter, and both syllabus pages. Four new analytical diagrams and the wide slide version of the causal-path diagram were inspected for labels, arrows, overlap, and readability. The final builds produced no overfull-box warnings.
+
+## Scope
+
+These checks establish reproducibility and agreement with the imposed constructions. They do not validate the electricity paper's design, reestimate its coefficients, or establish exposure among its actual donors. No downloaded third-party code was executed. The reading catalog records access and inspection separately for each source.
+
+---
+
+## Source: 03_Data_and_Code/Bad_Controls/results/README.md
+
+# Results and Interpretation
+
+All results are synthetic. The CSV files retain the complete generated populations and comparison definitions.
+
+| Comparison | Result | Interpretation |
+| --- | ---: | --- |
+| Total effect with a mediator | 7 | Direct effect 1 plus mediated effect 6 |
+| Mediator-adjusted slope | 1 | Direct path in the imposed unconfounded linear model |
+| Collider-adjusted slope | −1 | Created association despite zero total effect |
+| Pre-treatment collider slope | −1/3 | Timing alone does not justify adjustment |
+| Instrument-like adjustment | 2 | Residual confounding raises a true effect of 1 |
+| Adjustment for the measured confounder | 1 | Recovers the imposed effect |
+| Panel comparison omitting relevant information | 5.5 | Total effect 4 plus a 1.5 untreated-trend difference |
+| Panel adjustment for realized post-treatment covariate | −2 | Direct term, rather than the total effect of 4 |
+| Baseline adjustment or linear untreated-covariate imputation | 4 | Recovers the total effect under the imposed conditions |
+| Early-baseline unexposed-donor comparison | 10 | Completed-project total price increment |
+| Early-baseline mixed-donor comparison | 7 | Subtracts a weighted donor increment of 3 |
+| Opening-baseline mixed-donor comparison | 4 | Omits the earlier increment of 6 |
+
+The full proposal-population effects are 22/3 and 10/3 dollars/MWh under the two scenarios. Their completed-project effects are 10 and −2 respectively. These are equally weighted finite-population effects with no sampling uncertainty. Neither scenario estimates the incidence of actual data-center development.
+
+---
+
+## Source: 07_Labs/Bad_Controls/README.md
+
+# Bad Controls and Thoughtful Research Design
+
+This practice is optional and ungraded. Use the [programs](../../03_Data_and_Code/Bad_Controls/README.md), [readings](../../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md), M3 §§3.20–3.21, and M6 §§6.40–6.42.
+
+## Defend the Comparison
+
+A regulator is considering financial protections for households when a proposed data center fails. Write the intervention, outcome, population, and time horizon before examining the operating-facility dataset. Distinguish the effect of opening an operating facility from the effect of initiating a project that can later fail. Specify whether the outcome is average revenue per MWh, a standardized household bill, or actual household expenditure.
+
+## Predict, Calculate, and Explain
+
+1. Draw a confounder, mediator, and collider graph. Predict which paths conditioning changes. Run `control_paths.py`, then explain why adjusting for the measured confounder improves one comparison while adjusting for an instrument-like variable worsens it.
+2. Run `panel_covariates.py`. Derive the true ATT of 4. Explain why both 5.5 and −2 answer the target question incorrectly. Remove knowledge of the baseline variable W conceptually: identify which premise for the imputation would then lack support.
+3. Run `project_pipeline.py`. Derive the comparisons 10, 7, and 4 by hand. Name the baseline, donor exposure, and target effect represented by each. Explain why constant canceled-project costs after the opening baseline do not further change that particular difference-in-differences calculation.
+4. Compare the full proposal mean with the completed-project mean under both scenarios. Explain why selection can either conceal or exaggerate the burden of the full pipeline. Distinguish a different estimand from a biased estimator of a fixed estimand.
+5. In the real case, build an evidence table with event date, publication date, source, project status, utility link, commitment, recovery, and offsets. Use the 2023 cancellation and 2025 institutional sources as leads. Leave unsupported cost cells missing. Describe what the 2026 records can and cannot establish about the prior window.
+
+## Make a Philosophical Argument
+
+Evaluate the proposed principle: “A regulator may reassure households about the full development process whenever an operating-capacity estimate is statistically insignificant.” Identify the household's reason for objection, the required empirical premises, and the strongest defensible reply. State a narrower conclusion that the evidence could support. Explain why residents' missing records do not remove their standing to question the decision.
+
+## AI-Assisted Coding
+
+Ask an assistant to propose a causal graph and a competing graph that would change the adjustment decision. Require it to name the institutional evidence needed to distinguish them. Compare every generated numerical claim against the CSV outputs and your hand calculation. A working regression command, a larger sample, and a narrow interval each leave the identification argument to be defended.
+
+---
+
+## Source: 01_Resources/44_Bad_Controls_and_Project_Exposure/01_Foundations/README.md
+
+# Foundations and Causal Graphs
+
+[Collection Index](../README.md) | [Catalog](../catalog.json)
+
+## BC01: Mostly Harmless Econometrics
+
+Joshua D. Angrist; Jörn-Steffen Pischke. Princeton University Press, 2009; §3.2.3.
+
+[Original source](https://press.princeton.edu/books/paperback/9780691120355/mostly-harmless-econometrics)
+
+**Read:** §3.2.3, bad controls; book not downloaded.
+
+The occupation example makes the target effect decisive: schooling can alter occupation, so comparing workers within their realized occupation need not recover the overall effect of schooling. Use as a foundational reference alongside accessible graphical treatments.
+
+**Access and scope:** Book metadata and section reference verified; full chapter not inspected in this collection.
+
+## BC02: A Crash Course in Good and Bad Controls
+
+Carlos Cinelli; Andrew Forney; Judea Pearl. Author manuscript, March 21, 2022; published DOI 10.1177/00491241221099552.
+
+[Original source](https://doi.org/10.1177/00491241221099552) | [Public PDF](https://carloscinelli.com/files/Cinelli%20et%20al%20-%20A%20Crash%20Course%20in%20Good%20and%20Bad%20Controls.pdf)
+
+**Read:** Models 1–17; total versus direct effects.
+
+Classify adjustment by causal paths. A mediator can remove part of a total effect; a collider can create an association; some controls change precision without bias. Measurement before treatment is neither a complete justification nor a necessary condition for harmless adjustment.
+
+**Access and scope:** Selected full-text models and appendix inspected.
+
+## BC07: To Adjust or Not to Adjust? Sensitivity Analysis of M-Bias and Butterfly-Bias
+
+Peng Ding; Luke W. Miratrix. arXiv:1408.0324v1, August 2, 2014; related Journal of Causal Inference article, 2015.
+
+[Original source](https://arxiv.org/abs/1408.0324) | [Public PDF](https://arxiv.org/pdf/1408.0324)
+
+**Read:** M-structure, departures from the M-structure, butterfly structure.
+
+A pre-treatment collider can induce bias. The analysis also warns that plausible departures from a pure M-structure can make confounding more consequential than M-bias. Draw competing graphs and compare sensitivity rather than applying a universal ban on adjustment.
+
+**Access and scope:** Author preprint v1, August 2, 2014; abstract and setup inspected.
+
+## BC08: Invited Commentary: Understanding Bias Amplification
+
+Judea Pearl. American Journal of Epidemiology, 2011, 174(11), 1223–1227.
+
+[Original source](https://doi.org/10.1093/aje/kwr352) | [Public PDF](https://ftp.cs.ucla.edu/pub/stat_ser/r386.pdf)
+
+**Read:** Bias amplification and covariate comparisons.
+
+An instrument-like predictor can remove treatment variation unrelated to the omitted confounder and amplify the remaining confounding bias. Its strong prediction of treatment does not establish that conditioning on it improves causal identification.
+
+**Access and scope:** Author technical report R-386; opening argument inspected.
+
+## BC09: Principles of Confounder Selection
+
+Tyler J. VanderWeele. European Journal of Epidemiology, 2019, 34, 211–219.
+
+[Original source](https://doi.org/10.1007/s10654-019-00494-6) | [Public PDF](https://link.springer.com/content/pdf/10.1007/s10654-019-00494-6.pdf)
+
+**Read:** Modified disjunctive cause criterion.
+
+Use causal knowledge about exposure causes, outcome causes, instruments, and proxies to justify selection. Predictive strength and statistical significance do not determine which role a variable plays. The criterion carries causal and measurement premises.
+
+**Access and scope:** Springer copy, corrected publication 2021; selection discussion inspected.
+
+## BC10: Statistical Control Requires Causal Justification
+
+Anna C. Wysocki; Katherine M. Lawson; Mijke Rhemtulla. Advances in Methods and Practices in Psychological Science, 2022, 5(2).
+
+[Original source](https://doi.org/10.1177/25152459221095823) | [Public PDF](https://journals.sagepub.com/doi/pdf/10.1177/25152459221095823)
+
+**Read:** Causal justification and applied example.
+
+A partial coefficient receives its causal interpretation from a defended structure. Proxies, mediators, confounders, and colliders can produce different implications despite similar correlations. Prediction and causal explanation require different variable-selection arguments.
+
+**Access and scope:** Publisher HTML inspected; PDF request returned HTTP 403. Article carries CC BY-NC 4.0.
+
+## BC12: Making Sense of Sensitivity: Extending Omitted Variable Bias
+
+Carlos Cinelli; Chad Hazlett. JRSS B, 2020, 82(1), 39–67.
+
+[Original source](https://doi.org/10.1111/rssb.12348) | [Public PDF](https://escholarship.org/content/qt0pg6471b/qt0pg6471b.pdf?t=rhi25k)
+
+**Read:** Omitted-variable sensitivity and partial R-squared.
+
+Quantify how strong omitted confounding would need to be to alter an estimate. Choose a causally justified starting specification and credible benchmarks. Sensitivity analysis does not validate an inappropriate mediator adjustment or an incorrectly defined comparison population.
+
+**Access and scope:** Author copy; abstract and sensitivity setup inspected.
+
+---
+
+## Source: 01_Resources/44_Bad_Controls_and_Project_Exposure/03_Longitudinal_Identification/README.md
+
+# Longitudinal Identification
+
+[Collection Index](../README.md) | [Catalog](../catalog.json)
+
+## BC11: Causal Inference: What If
+
+Miguel A. Hernán; James M. Robins. Book, 2020; author update January 2, 2025.
+
+[Original source](https://miguelhernan.org/whatifbook) | [Public PDF](https://miguelhernan.org/s/hernanrobins_WhatIf_2jan25.pdf)
+
+**Read:** Chapters 6–8, 19–21, and 23.
+
+Treatment-confounder feedback requires methods appropriate to treatment histories. A variable can mediate an earlier treatment and confound a later one. Sequential exchangeability, positivity, and consistency support g-methods; ordinary adjustment does not inherit those properties automatically.
+
+**Access and scope:** January 2, 2025 book update; contents and relevant explanations inspected selectively.
+
+## BC13: Difference-in-Differences with “Bad Controls”
+
+Carolina Caetano; Brantly Callaway; Stroud Payne; Hugo Sant’Anna. arXiv:2608.03881v2, submitted September 2, 2026; PDF dated September 3, 2026.
+
+[Original source](https://arxiv.org/abs/2608.03881v2) | [Public PDF](https://arxiv.org/pdf/2608.03881v2)
+
+**Read:** Sections 2–4 and 6; Theorems 1–2.
+
+A treatment-affected covariate may also matter for untreated trends. Direct inclusion and wholesale exclusion can both fail. Additional assumptions recover its untreated evolution; baseline conditioning or nested imputation then targets the ATT. The course gives a linear finite-population illustration, not a replication of the full estimator.
+
+**Access and scope:** arXiv v2 submitted September 2, 2026; PDF dated September 3. Setup and identification assumptions inspected.
+
+## BC14: Difference-in-Differences when Parallel Trends Holds Conditional on Covariates
+
+Carolina Caetano; Brantly Callaway. arXiv:2406.15288v3, submitted June 1, 2026; PDF dated June 3, 2026.
+
+[Original source](https://arxiv.org/abs/2406.15288v3) | [Public PDF](https://arxiv.org/pdf/2406.15288v3)
+
+**Read:** Conditional parallel trends and hidden linearity bias.
+
+Transforming covariates in a fixed-effects regression can silently alter the identifying restriction. Conditional parallel trends must be linked to the actual estimator and covariate history. This issue differs from a covariate being affected by treatment.
+
+**Access and scope:** arXiv v3 submitted June 1, 2026; PDF dated June 3. Abstract and identification discussion inspected.
+
+## BC15: Difference-in-Differences with Multiple Time Periods
+
+Brantly Callaway; Pedro H. C. Sant’Anna. Journal of Econometrics, 2021, 225(2), 200–230; arXiv v4, December 2020.
+
+[Original source](https://arxiv.org/abs/1803.09015v4) | [Public PDF](https://arxiv.org/pdf/1803.09015v4)
+
+**Read:** Group-time ATT, conditional parallel trends, anticipation.
+
+Define which cohorts and periods supply each comparison. Not-yet-treated units qualify only over periods consistent with the assumed anticipation horizon. Aggregation choices determine the population and timing represented by the reported effect.
+
+**Access and scope:** arXiv v4, December 2020; abstract and assumptions inspected.
+
+## BC16: Doubly Robust Difference-in-Differences Estimators
+
+Pedro H. C. Sant’Anna; Jun B. Zhao. Journal of Econometrics, 2020; arXiv v3, May 5, 2020.
+
+[Original source](https://arxiv.org/abs/1812.01723v3) | [Public PDF](https://arxiv.org/pdf/1812.01723v3)
+
+**Read:** Panel ATT identification and doubly robust estimation.
+
+Double robustness concerns alternative nuisance-model specifications within an identified design. It does not mean robustness to an invalid control set, hidden anticipation, or exposed comparison units.
+
+**Access and scope:** arXiv v3, May 2020; abstract and identifying framework inspected.
+
+## BC21: Double/Debiased Machine Learning for Treatment and Structural Parameters
+
+Victor Chernozhukov; Denis Chetverikov; Mert Demirer; Esther Duflo; Christian Hansen; Whitney Newey; James Robins. arXiv:1608.00060v7, November 3, 2024; related Econometrics Journal article, 2018.
+
+[Original source](https://arxiv.org/abs/1608.00060v7) | [Public PDF](https://arxiv.org/pdf/1608.00060v7)
+
+**Read:** Orthogonal scores, cross-fitting, treatment-effect applications.
+
+Cross-fitting and orthogonal scores reduce sensitivity to nuisance estimation error under stated identification conditions. Flexible adjustment for the wrong variables can estimate the wrong causal object more precisely.
+
+**Access and scope:** arXiv v7, November 2024; PDF title uses Treatment and Structural Parameters; summary and setup inspected.
+
+## BC22: Marginal Structural Models and Causal Inference in Epidemiology
+
+James M. Robins; Miguel A. Hernán; Babette Brumback. Epidemiology, 2000, 11(5), 550–560.
+
+[Original source](https://doi.org/10.1097/00001648-200009000-00011)
+
+**Read:** Treatment-confounder feedback and inverse-probability weighting.
+
+Marginal structural models address treatment histories when a confounder is itself affected by earlier treatment. Validity still requires measured sequential confounding, positivity, and consistent interventions. Pair with Hernán and Robins Chapters 19–21.
+
+**Access and scope:** Bibliographic record and abstract verified; complete article not downloaded.
+
+---
+
+## Source: 01_Resources/44_Bad_Controls_and_Project_Exposure/05_Project_Exposure/README.md
+
+# Project Exposure and the 2020–2025 Window
+
+[Collection Index](../README.md) | [Catalog](../catalog.json)
+
+## DC01: Electricity Rate Designs for Large Loads: Evolving Practices and Opportunities
+
+Andrew Satchwell; Natalie Mims Frick; Peter Cappers; Sanem Sergici; Ryan Hledik; Goksin Kavlak; Glenda Oskar. Lawrence Berkeley National Laboratory, January 2025.
+
+[Original source](https://emp.lbl.gov/publications/electricity-rate-designs-large-loads) | [Public PDF](https://eta-publications.lbl.gov/sites/default/files/2025-01/electricity_rate_designs_for_large_loads_evolving_practices_and_opportunities_final.pdf)
+
+**Read:** Pages 2–3 and tariff design elements; status as of January 1, 2025.
+
+The brief identifies underused infrastructure and allocation of large-load costs as contemporary regulatory concerns. Contract commitments, security, and exit arrangements determine exposure. The discussion includes pending and approved arrangements, not one national rule.
+
+**Access and scope:** Full PDF; financial-risk discussion and date scope inspected.
+
+## DC02: Joint Announcement to Discontinue Datacenter Project
+
+Port of Cascade Locks; Roundhouse Inc.. Official release, July 20, 2023.
+
+[Original source](https://www.portofcascadelocks.gov/july-20-2023-cascade-locks-port-and-roundhouse-inc-jointly-announce-decision-to-discontinue-datacenter-project)
+
+**Read:** July 20, 2023 official announcement.
+
+The port and developer ended a proposed project after inadequate community support. This establishes a cancellation during the target window. It supplies no evidence of stranded utility expenditure or household pass-through.
+
+**Access and scope:** Official announcement inspected.
+
+## DC03: Concurrence on the ComEd and Aligned Data Centers Transmission Security Agreement
+
+Judy Chang, FERC Commissioner. Individual concurrence, February 17, 2026.
+
+[Original source](https://ferc.gov/news-events/news/commissioner-changs-concurrence-transmission-security-agreement-between)
+
+**Read:** February 17, 2026 concurrence.
+
+The commissioner questions whether transmission commitments adequately cover possible upgrade costs. This is an individual regulatory argument after the study period. It does not establish cost recovery for a particular historical donor.
+
+**Access and scope:** Full statement inspected; title and body show inconsistent docket numbers, so no docket inference is used.
+
+## DC04: ComEd Inks Deals to Keep Data Centers from Boosting Energy Bills
+
+Miranda Davis; Josh Saul. Bloomberg, January 6, 2026; authorized syndication.
+
+[Original source](https://www.energyconnects.com/news/utilities/2026/january/chicago-s-biggest-electricity-company-inks-deals-to-keep-data-centers-from-boosting-energy-bills/)
+
+**Read:** January 6, 2026 reporting.
+
+ComEd arrangements motivate investigation of projects that fail to materialize. Use as subsequent institutional context, keeping it separate from evidence available during 2020–2025.
+
+**Access and scope:** Accessible syndication; reporting is secondary to contracts and regulatory records.
+
+## DC05: Report on Blocked and Delayed Data Center Projects
+
+Data Center Watch / 10a Labs. Research timeline May 2024–March 2025; coverage described as the preceding two years.
+
+[Original source](https://www.datacenterwatch.org/report)
+
+**Read:** Research timeline May 2024–March 2025; coverage described as the preceding two years.
+
+The tracker reports $64 billion in blocked or delayed proposed investment. Its public-source collection targets opposition and is not a probability sample or a denominator for national cancellation rates. Proposed project value is not a utility loss.
+
+**Access and scope:** Public report and methodology inspected.
+
+## DC06: Q2 2025 Update
+
+Data Center Watch / 10a Labs. Research timeline late March–June 2025.
+
+[Original source](https://www.datacenterwatch.org/q22025)
+
+**Read:** Research timeline late March–June 2025.
+
+The current public summary reports 20 blocked or delayed projects involving $98 billion of potential investment. It supports concern about disruption late in the study window. Do not add overlapping report totals or treat delayed projects as permanently cancelled.
+
+**Access and scope:** Public summary inspected; underlying paid report not purchased. Counts may be revised.
+
+## DC07: Data Center Tariff
+
+Ohio Power Company / AEP Ohio. Approved July 9, 2025; effective July 23, 2025; current page checked November 26, 2026.
+
+[Original source](https://www.aepohio.com/company/about/rates/data-center-tariff/)
+
+**Read:** Approved July 9, 2025; effective July 23, 2025; current page checked November 26, 2026.
+
+A tariff adopted within the study window requires project commitments and specifies cancellation-related obligations. Current implementation details can change. Applicability is Ohio Power’s service territory; contract protections can prevent the hypothetical household cost mechanism.
+
+**Access and scope:** Operator page inspected, with links to the regulatory order and schedule. This is not a national legal rule.
+
+## DC08: Updates PUCO on Data Center Load
+
+AEP Ohio. February 13, 2026, describing earlier requests and subsequent commitments.
+
+[Original source](https://www.aepohio.com/company/news/view?releaseID=10753)
+
+**Read:** February 13, 2026, describing earlier requests and subsequent commitments.
+
+The utility distinguishes 30,000 MW of prior requests, 13,022.7 MW requesting studies, and 5,642 MW signing under the new tariff. Those contracts are additional to earlier contracts. Queue attrition measures neither local opposition nor realized household loss.
+
+**Access and scope:** Operator release inspected; subsequent confirmation of speculative requests, not a contemporaneous 2025 outcome observation.
+
+---
+
+## Source: 01_Resources/44_Bad_Controls_and_Project_Exposure/02_Adjustment_and_Selection/README.md
+
+# Adjustment and Selection
+
+[Collection Index](../README.md) | [Catalog](../catalog.json)
+
+## BC03: The Consequences of Adjustment for a Concomitant Variable that Has Been Affected by the Treatment
+
+Paul R. Rosenbaum. JRSS A, 1984, 147(5), 656–666.
+
+[Original source](https://doi.org/10.2307/2981697) | [Public PDF](https://faculty.washington.edu/peterg/Vaccine2006/articles/Rosenbaum1984.pdf)
+
+**Read:** Summary and introduction, printed p. 656.
+
+Treatment-affected covariates can bias adjustment even with randomized assignment. Separate the treatment-assignment problem from the distortion introduced by conditioning after assignment.
+
+**Access and scope:** Scanned PDF; opening substantive page visually inspected. No machine-readable full-text conversion supplied.
+
+## BC04: Endogenous Selection Bias: The Problem of Conditioning on a Collider Variable
+
+Felix Elwert; Christopher Winship. Annual Review of Sociology, 2014, 40, 31–53.
+
+[Original source](https://doi.org/10.1146/annurev-soc-071913-043455) | [Public PDF](https://users.ssc.wisc.edu/~elwert/causality/wp-content/uploads/2013/06/1-Elwert-Winship-2014.pdf)
+
+**Read:** Introduction, graphical explanations, selection examples.
+
+Selection can occur through regression adjustment, sample restrictions, or missing observations. Conditioning on a common consequence can associate its causes. Completion and inclusion deserve a causal argument as much as a named regression control.
+
+**Access and scope:** Author manuscript; introduction and collider discussion inspected.
+
+## BC05: How Conditioning on Posttreatment Variables Can Ruin Your Experiment and What to Do about It
+
+Jacob M. Montgomery; Brendan Nyhan; Michelle Torres. AJPS, 2018, 62(3), 760–775; author manuscript.
+
+[Original source](https://doi.org/10.1111/ajps.12357) | [Public PDF](https://cpb-us-e1.wpmucdn.com/sites.dartmouth.edu/dist/5/2293/files/2021/03/post-treatment-bias.pdf)
+
+**Read:** Introduction, conditioning, subsetting, recommendations.
+
+Randomization protects the assigned comparison. Dropping participants after assignment or restricting to responders can undo that protection. Marketing applications include completed purchases, retained subscribers, and experiment participants who opened a message.
+
+**Access and scope:** Author manuscript; abstract and post-assignment selection discussion inspected.
+
+## BC06: Overadjustment Bias and Unnecessary Adjustment in Epidemiologic Studies
+
+Enrique F. Schisterman; Stephen R. Cole; Robert W. Platt. Epidemiology, 2009, 20(4), 488–495.
+
+[Original source](https://pmc.ncbi.nlm.nih.gov/articles/PMC2744485/)
+
+**Read:** Overadjustment versus unnecessary adjustment.
+
+Removing a mediator from a total-effect pathway and adding a redundant predictor are different decisions. Bias and loss of precision require separate diagnoses. A changed coefficient alone establishes neither.
+
+**Access and scope:** Publisher/repository abstract and indexed text inspected; PDF not downloaded.
+
+---
+
+## Source: 01_Resources/44_Bad_Controls_and_Project_Exposure/04_Timing_and_Comparison_Groups/README.md
+
+# Timing and Comparison Groups
+
+[Collection Index](../README.md) | [Catalog](../catalog.json)
+
+## BC17: Difference-in-Differences with Variation in Treatment Timing
+
+Andrew Goodman-Bacon. Journal of Econometrics, 2021, 225(2), 254–277; NBER working paper 25018.
+
+[Original source](https://doi.org/10.1016/j.jeconom.2021.03.014) | [Public PDF](https://www.nber.org/system/files/working_papers/w25018/w25018.pdf)
+
+**Read:** Two-way fixed-effects decomposition.
+
+With staggered timing, already-treated units can enter comparisons and contaminate interpretation under changing effects. This is a treatment-timing comparison problem, distinct from conditioning on a mediator.
+
+**Access and scope:** NBER September 2018 working paper; abstract and decomposition inspected.
+
+## BC18: Interpreting Pre-Trends as Anticipation: Impact on Estimated Treatment Effects from Tort Reform
+
+Anup Malani; Julian Reif. Journal of Public Economics, 2015; author manuscript February 9, 2015.
+
+[Original source](https://julianreif.com/research/) | [Public PDF](https://julianreif.com/research/reif.jpube.2015.anticipation.pdf)
+
+**Read:** Anticipation and pre-treatment trends.
+
+Behavior can change before formal treatment. A lead coefficient may reflect anticipation or another source of differential trends. Establish institutional timing before choosing the baseline or interpreting a pre-trend test.
+
+**Access and scope:** Author manuscript dated February 9, 2015; abstract and setup inspected.
+
+## BC19: Using Synthetic Controls: Feasibility, Data Requirements, and Methodological Aspects
+
+Alberto Abadie. Journal of Economic Literature, 2021, 59(2), 391–425.
+
+[Original source](https://www.aeaweb.org/articles?id=10.1257/jel.20191450) | [Public PDF](https://economics.mit.edu/sites/default/files/publications/jel.20191450.pdf)
+
+**Read:** Contextual requirements; no interference; no anticipation.
+
+A good pre-treatment fit depends on a relevant donor pool and a period preceding exposure. Donors affected through spillovers and baselines after anticipatory responses can invalidate the counterfactual despite an appealing fit.
+
+**Access and scope:** Published JEL article; donor, interference, and anticipation sections inspected.
+
+## BC20: Difference-in-Differences with Spatial Spillovers
+
+Kyle Butts. arXiv:2105.03737v3, submitted June 10, 2023; PDF dated June 13, 2023.
+
+[Original source](https://arxiv.org/abs/2105.03737) | [Public PDF](https://arxiv.org/pdf/2105.03737)
+
+**Read:** Spillover framework and identification.
+
+Treatment elsewhere can change comparison outcomes and treated outcomes. The relevant neighborhood must follow the economic connection. Shared transmission systems can matter even where county boundaries or geographic distance suggest separation.
+
+**Access and scope:** arXiv v3 submitted June 10, 2023; PDF dated June 13; setup inspected.
 
 ---
 

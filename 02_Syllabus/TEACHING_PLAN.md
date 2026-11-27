@@ -190,3 +190,7 @@ Use the [electricity pilot](../08_Wiki/pilot/README.md) for prediction, alternat
 ## Conflicts of Interest and the Analyst’s Responsibility
 
 M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect commercial incentives to the choice of outcomes, professional judgment, and consumer authority. Sessions 1, 11, and 14 select the duty distinction, engagement comparison, and philosophical argument within existing discussion time. The [optional ungraded lab](../07_Labs/Conflicts_of_Interest/README.md) supplies extended practice without changing assessment requirements. A complete synthetic Python example separates score weights from a defended requirement to honor valid stopping instructions.
+
+## Bad Controls and Thoughtful Research Design
+
+Session 4 uses the existing worked-comparison block (minutes 45–70) to contrast causal paths and regression adjustment. Session 10 uses minutes 145–155 to compare project timing, donor exposure, and convenient sample windows. Session 14 uses minutes 95–100 to assess the reasons owed to households excluded from an operating-facility comparison. The extended treatment-affected-covariate derivation and full coding exercises remain [optional ungraded practice](../07_Labs/Bad_Controls/README.md). Selected slides fit these existing blocks; the 15 meeting dates, 170-minute durations, and breaks are retained.

@@ -2295,3 +2295,239 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 6.40 Treatment-Affected Covariates in a Panel
+
+\noindent A marketer evaluating an intervention may need to account for changing customer circumstances. Those circumstances can influence untreated outcome trends while also responding to the intervention. Including their realized post-treatment values can distort the target comparison, while excluding them can leave different untreated trends. The solution requires a defensible account of their untreated evolution. [Caetano, Callaway, Payne, and Sant’Anna, 2026, Sections 2–4](https://arxiv.org/abs/2608.03881v2).
+
+Let periods 0 and 1 denote a baseline and follow-up, with treatment $D=1$ beginning after the baseline. Let $X_1(0)$ be the follow-up covariate under no treatment and $X_1(1)$ its treated counterpart. For treated units only $X_1(1)$ is observed. Conditional parallel trends stated in terms of $X_1(0)$ cannot generally be implemented by substituting $X_1(1)$. Baseline covariates suffice only under further conditions. Otherwise, identifying the untreated covariate distribution requires additional observed information, overlap, and restrictions. These requirements precede the choice of regression or machine-learning estimator.
+
+### 6.40.1 A Counterfactual Covariate Calculation
+
+\noindent Consider an original synthetic population of customers with a binary baseline characteristic $W$. Half have $W=1$. Treatment probabilities are $1/4$ when $W=0$ and $3/4$ when $W=1$. Independent shocks $U,E$ each equal −1 or 1 with equal probability. The baseline outcome is 100, and the baseline covariate is constant at zero. Define
+
+$$
+X_1(0)=W+U,\qquad X_1=X_1(0)+2D,\qquad
+\Delta Y=-2D+3X_1+E=4D+3X_1(0)+E.
+$$
+
+The treatment raises the covariate by two units. The direct term is −2, while the mediated term is $3(2)=6$, giving a total effect of 4 for every customer. Untreated trends depend on $X_1(0)$. The treatment group has mean $W=3/4$ and the comparison group has mean $W=1/4$, so discarding the covariate information produces $4+3(3/4-1/4)=5.5$. Adjusting for observed $X_1$ returns −2. Neither coefficient recovers the total effect.
+
+The observed baseline variable $W$ supports a valid comparison in this construction. It balances the distribution of untreated $X_1(0)$ because $U$ is independent of assignment given $W$. An equivalent linear imputation first learns the untreated trend as $3X_1$ among controls, then learns the mean untreated covariate as $W$. Subtracting the predicted untreated trend $3W$ from treated outcome changes recovers 4. Replacing a random covariate by its conditional mean works here because the outcome-trend function is linear. Nonlinear cases require the relevant conditional distribution or an appropriate nested expectation.
+
+![The observed treated covariate contains both untreated evolution and a treatment-induced increase. A control-group outcome model and a control-group covariate model reconstruct the untreated trend using the observed baseline variable W. The synthetic total effect is 4; dropping relevant information gives 5.5 and conditioning on the realized post-treatment covariate gives minus 2.](../figures/M06_counterfactual_covariate.png)
+
+This construction makes the information requirement visible. If $W$ were unobserved, the code's conditional imputation would lose its justification. A constant baseline value $X_0$ would not replace it. More flexible prediction of $X_1$ would not restore the missing identifying information. Orthogonal scores and cross-fitting address nuisance-estimation error under a valid design; their precision does not validate an inappropriate adjustment set. [Chernozhukov et al., 2018, author version](https://arxiv.org/abs/1608.00060v7).
+
+Treatment-confounder feedback poses a further longitudinal problem when a covariate is affected by an earlier intervention and determines a later intervention. G-methods address treatment histories under sequential identification conditions. Those conditions differ from the conditional parallel-trends premise used above. [Hernán and Robins, Chapters 19–21](https://miguelhernan.org/whatifbook). Fixed effects and a long list of changing covariates do not automatically establish either premise.
+
+### 6.40.2 Reproducible Population Calculation
+
+\noindent Run `python3 03_Data_and_Code/Bad_Controls/panel_covariates.py` with NumPy installed. The program enumerates 16 population cells, using their known probabilities rather than drawing a sample. All covariate and trend models used for imputation are fit among untreated units. The outputs retain observed and counterfactual covariates, which are available because the population is synthetic.
+
+Python source: [panel_covariates.py](../../03_Data_and_Code/Bad_Controls/panel_covariates.py)
+
+```python
+"""A finite synthetic DiD population with a treatment-affected covariate."""
+import csv
+from itertools import product
+from pathlib import Path
+import numpy as np
+
+OUT = Path(__file__).resolve().parent / "results"
+
+
+def fit(y, columns, weights):
+    x = np.column_stack([np.ones(len(y)), *columns])
+    root = np.sqrt(weights)
+    assert np.linalg.matrix_rank(x * root[:, None]) == x.shape[1]
+    return np.linalg.lstsq(x * root[:, None], y * root, rcond=None)[0]
+
+
+def calculate():
+    rows = []
+    # W precedes treatment. X0 is constant and provides no extra information.
+    for w, d, u, e in product([0, 1], [0, 1], [-1, 1], [-1, 1]):
+        propensity = .25 + .5 * w
+        weight = .5 * (propensity if d else 1 - propensity) * .25
+        x_untreated = w + u
+        rows.append(dict(w=w, d=d, u=u, e=e, weight=weight, x0=0,
+                         x1_untreated=x_untreated,
+                         x1_observed=x_untreated + 2 * d,
+                         y0=100, y1=100 + 4 * d + 3 * x_untreated + e))
+    values = {k: np.array([r[k] for r in rows]) for k in rows[0]}
+    d, w, mass = values["d"], values["w"], values["weight"]
+    dy = values["y1"] - values["y0"]
+    x = values["x1_observed"]
+    treated, untreated = d == 1, d == 0
+    assert np.isclose(mass.sum(), 1) and np.isclose(mass[treated].sum(), .5)
+    assert np.isclose(np.average(w[treated], weights=mass[treated]), .75)
+    assert np.isclose(np.average(w[untreated], weights=mass[untreated]), .25)
+    # Learn the untreated outcome trend only among untreated units.
+    outcome_fit = fit(dy[untreated], [x[untreated]], mass[untreated])
+    # Learn untreated X1 conditional on W, again only among untreated units.
+    covariate_fit = fit(x[untreated], [w[untreated]], mass[untreated])
+    expected_x0 = covariate_fit[0] + covariate_fit[1] * w[treated]
+    expected_trend = outcome_fit[0] + outcome_fit[1] * expected_x0
+    imputation = np.average(dy[treated] - expected_trend,
+                            weights=mass[treated])
+    estimates = {
+        "omit_covariates_or_use_constant_baseline": fit(dy, [d], mass)[1],
+        "adjust_for_observed_post_treatment_x": fit(dy, [d, x], mass)[1],
+        "adjust_for_observed_pre_treatment_w": fit(dy, [d, w], mass)[1],
+        "untreated_covariate_imputation": imputation,
+    }
+    analytical = [5.5, -2, 4, 4]
+    result = []
+    for (name, estimate), expected in zip(estimates.items(), analytical):
+        assert np.isclose(estimate, expected)
+        result.append(dict(method=name, estimate=float(estimate),
+                           true_att=4, analytical=expected))
+    return rows, result
+
+
+if __name__ == "__main__":
+    OUT.mkdir(exist_ok=True)
+    for name, rows in zip(["panel_population.csv", "panel_estimates.csv"],
+                          calculate()):
+        with (OUT / name).open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+    for row in calculate()[1]:
+        print(row["method"], round(row["estimate"], 6))
+```
+
+
+## 6.41 Phantom Projects and the Meaning of a Control
+
+\noindent A regulator assessing household protection must follow the project before deciding which utility is untreated. A proposed facility can trigger studies, contractual commitments, or construction before operation. Some proposals are later withdrawn, canceled, or delayed. Whether households bear a cost depends on spending, authorized recovery, developer payments, and alternative uses of the assets. Zero operating capacity therefore fails to establish zero economic exposure.
+
+### 6.41.1 Evidence Within 2020–2025
+
+\noindent The concern is directly relevant to the latter part of the electricity paper's window. A July 2023 official announcement attributes the cancellation of the Cascade Locks project to inadequate community support. LBNL's January 2025 brief identifies underused large-load infrastructure as a financial risk. Ohio Power's data-center tariff took effect in July 2025, adding contractual protections concerning project commitments. These records establish that cancellation and uncertain demand were contemporary design issues. They do not establish residential cost recovery for the canceled Oregon project or any particular donor utility. [Port announcement](https://www.portofcascadelocks.gov/july-20-2023-cascade-locks-port-and-roundhouse-inc-jointly-announce-decision-to-discontinue-datacenter-project); [LBNL brief](https://emp.lbl.gov/publications/electricity-rate-designs-large-loads); [tariff record](https://www.aepohio.com/company/about/rates/data-center-tariff/).
+
+Data Center Watch documents substantial opposition-related disruption in 2025. Its public-source tracking supports heightened scrutiny of the later sample years. It supplies neither a consistent national cancellation-rate denominator nor a measure of stranded utility costs. Proposed investment, delayed projects, canceled projects, and household losses must remain distinct. A claim of an elevated cancellation rate throughout 2020–2025 requires a comparable earlier-period project census. [Initial report](https://www.datacenterwatch.org/report); [Q2 2025 update](https://www.datacenterwatch.org/q22025).
+
+### 6.41.2 Separate Covariates, Baselines, and Donor Units
+
+\noindent A bad covariate control can remove a causal pathway or open a collider path. An exposed donor unit creates a different problem: its observed outcome may fail to represent the no-exposure counterfactual. Matching on a baseline after commitments creates a timing problem. Conditioning on completed facilities creates a selection problem. These mechanisms require separate evidence and need not have the same bias direction.
+
+The electricity paper defines entry through operating capacity and screens donors for no positive additions of that measure during the post-anchor horizon. Its primary gap regression uses cumulative capacity, utility fixed effects, and quarter-of-year fixed effects. The paper acknowledges possible market spillovers. The specified screen does not independently establish the absence of preparatory or failed-project costs. It is therefore a concrete identification question whether heavily weighted donors had such exposure. There is no verified finding here that infrastructure spending was included as a post-treatment regression control. [Rana, Kaps, and Netessine, pp. 17–20, Equations 15–21](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7580459).
+
+Synthetic controls require relevant comparison units and a baseline preceding the intervention's effects. A small fitting error cannot establish those institutional conditions. Anticipation can begin with a credible commitment, while shared transmission or procurement systems can expose geographically separate utilities. [Abadie, 2021, contextual requirements](https://economics.mit.edu/sites/default/files/publications/jel.20191450.pdf); [Malani and Reif, 2015](https://julianreif.com/research/reif.jpube.2015.anticipation.pdf); [Butts, 2023](https://arxiv.org/abs/2105.03737).
+
+### 6.41.3 One Project History, Three Comparisons
+
+\noindent Consider four synthetic utilities, each with one project status at the end of 2025. All begin at $100/MWh. The completed and canceled projects each generate a $6/MWh price increment after commitments in 2024. Operation adds another $4/MWh for the completed project. The pending project generates its $6/MWh increment late in 2025 and has not opened by the cutoff. The unexposed utility remains at 100. Recovery and zero offsets are imposed for the example.
+
+| Utility Status at Cutoff | Before Requests | After Early Commitments | End of Window |
+| --- | ---: | ---: | ---: |
+| Completed | 100 | 106 | 110 |
+| Canceled | 100 | 106 | 106 |
+| Unexposed | 100 | 100 | 100 |
+| Pending | 100 | 100 | 106 |
+
+An early-baseline comparison with the unexposed donor recovers the imposed completed-project effect of 10. Giving equal weights to the canceled and unexposed donors produces $10-(0.5)(6)=7$. Starting from the postcommitment baseline yields a treated change of 4 and a donor change of zero. That last comparison measures only the additional change after the existing commitments. The canceled donor's price remains constant over that shorter interval, so it adds no further change to that particular difference-in-differences calculation.
+
+![A synthetic project timeline starts before requests, passes through commitments, and ends with completed, canceled, pending, or unexposed states. Three comparisons give 10, 7, and 4 dollars per MWh because the donor exposure and baseline differ. The same prices can therefore support different numerical contrasts without establishing the same causal effect.](../figures/M06_project_windows.png)
+
+For an early-baseline comparison, let $c$ be the canceled donor's price increment and $w$ its weight. Holding the treated effect at 10 and all other changes at zero gives the gap $10-wc$. Positive donor exposure reduces this gap; a sufficiently large increment reverses its sign. Other cost patterns can produce other directions. These are sensitivity calculations, not estimates of contamination in the paper.
+
+## 6.42 Thoughtful Design Before Convenient Data
+
+\noindent Recent operating-facility records can be accurate and still be inadequate for a question about the full development process. A convenient sample of completed facilities omits failed proposals and projects pending at the observation cutoff. A recent baseline can begin after costs are committed. An analysis may then answer a selected, late-stage question while its interpretation concerns the total consequences for households. The flaw lies in the unsupported comparison or generalization, rather than the age of the data itself.
+
+Thoughtful design specifies the intervention, population, outcome, and relevant horizon before choosing the available records. For an operating-entry effect, the design must justify the counterfactual path conditional on the existing project environment. For a project-pipeline effect, the proposal cohort must retain cancellations, postponements, and uncompleted projects. Earlier commitments require earlier records; longer-run recovery requires adequate follow-up. A stated reason for choosing 2020–2025 does not establish any of these identifying conditions.
+
+### 6.42.1 A Convenience Sample Can Reverse the Policy Message
+
+\noindent Retain the three synthetic proposed-project utilities: completed, canceled, and pending. Give them equal population weight. Under the first construction, their effects at the cutoff are 10, 6, and 6, so the proposal-population mean is $22/3$, approximately $7.33/MWh$. Observing only the completed facility gives 10. Now impose a second construction in which operation creates savings that make the completed project's net effect −2, while canceled and pending projects still impose 6 each. The proposal-population mean is then $10/3$, approximately $3.33/MWh$, while the operating-project mean is −2.
+
+Both conditional means can be computed correctly. They concern different populations. Using the operating-project mean to reassure the full proposal population produces an incorrect conclusion in the second construction. It would exaggerate the proposal mean in the first. Selection alone does not establish a universal direction of error. A causal selection argument additionally needs the determinants of completion and their links to exposure and outcomes.
+
+The same discipline applies to the historical record. Increased public scrutiny can alter which proposals reach operation and when. Its consequences for selection depend on whether opposition, viability, utility investment, and household burdens are related. Treat pending projects as right-censored histories, record the follow-up horizon, and compare cohorts with adequate common follow-up. Household charges may outlast the cutoff even when a cancellation occurs within it.
+
+### 6.42.2 Reconstruct the Design in Python
+
+\noindent Run `python3 03_Data_and_Code/Bad_Controls/project_pipeline.py` from the repository root. The program uses the standard library, saves the synthetic histories, and calculates the window, donor, and population comparisons. Dates are illustrative labels inside the study period; they are not observed dates from the paper's utilities.
+
+Python source: [project_pipeline.py](../../03_Data_and_Code/Bad_Controls/project_pipeline.py)
+
+```python
+"""Synthetic project histories, comparison windows, and donor sensitivity.
+
+Prices are dollars/MWh. Each project belongs to a distinct utility. No source
+observations or estimates from the electricity paper enter these calculations.
+"""
+import csv
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent / "results"
+
+
+def construct():
+    paths = {
+        "completed": ([100, 106, 110], ["no_request", "committed", "operating"]),
+        "cancelled": ([100, 106, 106], ["no_request", "committed", "cancelled"]),
+        "unexposed": ([100, 100, 100], ["no_request"] * 3),
+        "pending": ([100, 100, 106], ["no_request", "requested", "committed"]),
+    }
+    dates = ["2023Q1", "2024Q1", "2025Q4"]
+    panel = [dict(utility=unit, quarter=date, period=t, state=states[t],
+                  operating=int(states[t] == "operating"), price_usd_mwh=prices[t])
+             for unit, (prices, states) in paths.items()
+             for t, date in enumerate(dates)]
+    price = {(r["utility"], r["period"]): r["price_usd_mwh"] for r in panel}
+    def change(unit, baseline):
+        return price[unit, 2] - price[unit, baseline]
+    comparisons = []
+    for label, baseline, cancelled_weight in [
+        ("before_commitment_unexposed_donor", 0, 0),
+        ("before_commitment_mixed_donors", 0, .5),
+        ("before_opening_mixed_donors", 1, .5),
+    ]:
+        donor_change = (cancelled_weight * change("cancelled", baseline)
+                        + (1 - cancelled_weight) * change("unexposed", baseline))
+        comparisons.append(dict(comparison=label, baseline=dates[baseline],
+                                treated_change=change("completed", baseline),
+                                weighted_donor_change=donor_change,
+                                change_difference=change("completed", baseline)
+                                - donor_change))
+    assert [r["change_difference"] for r in comparisons] == [10, 7, 4]
+    sensitivity = [dict(cancelled_donor_increment=cost,
+                        cancelled_donor_weight=weight,
+                        gap=10 - weight * cost)
+                   for cost in [0, 6, 12, 24] for weight in [0, .5, 1]]
+    populations = []
+    # Fixed status composition; change the net effect for the completed project.
+    # These are means of imposed potential effects, not observational estimates.
+    for scenario, completed in [("all_positive", 10), ("operating_savings", -2)]:
+        populations.append(dict(scenario=scenario, proposal_units=3,
+                                operating_units=1, completed_effect=completed,
+                                cancelled_effect=6, pending_effect=6,
+                                proposal_mean=(completed + 6 + 6) / 3,
+                                operating_mean=completed))
+    assert populations[0]["proposal_mean"] == 22 / 3
+    assert populations[1]["proposal_mean"] == 10 / 3
+    return {"project_panel.csv": panel, "window_comparisons.csv": comparisons,
+            "donor_sensitivity.csv": sensitivity,
+            "selected_populations.csv": populations}
+
+
+if __name__ == "__main__":
+    OUT.mkdir(exist_ok=True)
+    for name, rows in construct().items():
+        with (OUT / name).open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+        print(name, len(rows), "rows")
+```
+
+
+### 6.42.3 Evidence That Could Resolve the Critique
+
+\noindent Reconstruct the request, commitment, expenditure, cancellation, energization, recovery, and payment dates for the proposed-project cohort. Link projects to the paper's donor utilities and weights. Assess whether assets were reused, developer guarantees were collectible, or regulators disallowed recovery. A canceled project with zero sunk spending or complete offsets supplies a negative case against household pass-through.
+
+Report donor-weight exposure shares, alternative plausible exposure dates, and the fit and support remaining after restrictions. A sensitivity analysis should preserve unresolved histories explicitly. If a different screen destroys overlap, the original causal question may remain unidentified with the available data. Selecting a convenient comparison to regain precision would not resolve that problem. The [source assessment](../../01_Resources/44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) distinguishes verified design features, historical evidence, and the records still required for a reanalysis.

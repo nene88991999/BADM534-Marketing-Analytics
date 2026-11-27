@@ -337,6 +337,59 @@ Pereira et al., Nature Communications (2026); original course calculations. \url
 
 Pereira et al., Nature Communications (2026); original course calculations. \url{../01_Resources/38_Digital_Usage_and_Inclusion/README.md}}
 \end{frame}
+\begin{frame}{Controls Need a Causal Role}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.75\textheight}
+\input{figures/bad_control_paths.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Adjustment can remove confounding, remove a mechanism, or create selection.\par}
+\note{The role is defined relative to an intervention and outcome. Timing and predictive power alone do not justify adjustment. Competing graphs require institutional evidence. The pre-treatment collider and instrument-like examples show why simply retaining every early covariate is insufficient.
+
+\url{../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md}}
+\end{frame}
+\begin{frame}{More Controls Can Change the Answer}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Synthetic Case & Unadjusted & Adjusted \\
+\midrule
+Mediator & 7 & 1 \\
+Collider & 0 & −1 \\
+Instrument-Like Control & 1.18 & 2 \\
+Measured Confounder & 1.18 & 1 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+Exact finite populations; slopes in outcome units per treatment unit.
+\vfill
+\note{The mediator model has total effect 7 and direct effect 1. The collider model has true effect zero. The final two rows share a true effect of 1: conditioning on the instrument-like variable amplifies residual confounding; observing the confounder removes it. Full code and all observations are in Bad\_Controls/control\_paths.py.
+
+\url{../03_Data_and_Code/Bad_Controls/README.md}}
+\end{frame}
+\begin{frame}{A Smaller Coefficient Needs an Explanation}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Define the total or direct effect before adjustment.
+\item Explain which paths the covariate closes or opens.
+\item Treat completion and response restrictions as conditioning.
+\end{slidebullets}
+\vfill
+\note{A realized mediator coefficient need not be a controlled direct effect. A direct-effect interpretation requires additional identification and support conditions. Restricting to completed projects may select on viability and opposition; the graph and links to the outcome need evidence.
+
+\url{../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md}}
+\end{frame}
 \begin{frame}{Regression Discussion}
 \usebeamercolor[fg]{normal text}
 \vfill

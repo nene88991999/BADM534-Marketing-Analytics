@@ -50,3 +50,7 @@ Full code and derivations appear in M6 §6.35; measurement is developed in M2 §
 ## Qualitative Corroboration and Its Scope
 
 The [utility-disclosure example](../../03_Data_and_Code/Utility_Cost_Recovery/README.md) traces investment recovery, proposed customer charges, and revenue offsets using public sources. It preserves verbatim excerpts in M5 §5.27 and distinguishes the household bill from wholesale capacity costs and utility construction recovery. The paper itself discusses these mechanisms; selected disclosures therefore challenge overbroad assurance without independently refuting the historical coefficient. Most selected disclosures occur after the 2020–2025 study window.
+
+## Bad Controls and the Observation Window
+
+The [project-exposure assessment](../44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) adds evidence inside 2020–2025, particularly its later years, and separates adjustment covariates from exposed donors, anticipation, and completion selection. M6 §§6.40–6.42 provide complete synthetic calculations. Thoughtful design requires a baseline preceding relevant commitments and a sample aligned with the affected population. An appealing fit or recent data alone does not establish those conditions.

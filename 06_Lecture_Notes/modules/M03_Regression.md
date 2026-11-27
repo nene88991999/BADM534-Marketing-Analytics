@@ -745,3 +745,112 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 3.20 A Control Variable Needs a Causal Role
+
+\noindent A firm assessing a promotion wants to know how offering it changes customer spending. Customers who redeem the promotion may differ in prior demand, attention, and ability to use the offer. Controlling for redemption can therefore change the question and introduce selection. The decision to include a variable requires a causal account of how the offer, the variable, and spending are related. Predictive strength alone does not supply that account. [Wysocki, Lawson, and Rhemtulla, 2022](https://doi.org/10.1177/25152459221095823).
+
+Let $D$ denote the intervention and $Y$ its outcome. A confounder affects both; a mediator carries an effect from $D$ to $Y$; a collider is a common consequence of two variables on a path. Conditioning can close a confounding path, remove a mediated pathway from a total-effect comparison, or open an otherwise closed collider path. The role is relative to the question and the assumed causal structure. The same variable name can play different roles under different interventions. [Cinelli, Forney, and Pearl, Models 1–17](https://carloscinelli.com/files/Cinelli%20et%20al%20-%20A%20Crash%20Course%20in%20Good%20and%20Bad%20Controls.pdf).
+
+![Four causal structures distinguish a common cause, an intervening mechanism, a common consequence, and an instrument-like predictor. Conditioning on the common cause can remove confounding. Conditioning on the mediator changes the total-effect comparison; conditioning on the collider opens a path. An instrument-like control can amplify residual confounding.](../figures/M03_bad_control_paths.png)
+
+A pre-treatment measurement can still be a collider. Conversely, a post-treatment variable is not harmful in every possible graph. The pertinent questions concern the paths opened and closed, the effect sought, and the remaining confounding. Ding and Miratrix show that conclusions based on a pure M-shaped graph can change under plausible departures from that structure. Competing graphs deserve substantive consideration. [Ding and Miratrix, 2014 author version](https://arxiv.org/abs/1408.0324).
+
+An instrument-like predictor creates another risk. If an unmeasured factor confounds treatment and outcome, removing treatment variation that is unrelated to that factor can increase the relative influence of the confounding. A variable's ability to predict treatment is therefore insufficient justification for adjustment. [Pearl, 2011](https://ftp.cs.ucla.edu/pub/stat_ser/r386.pdf). A practical selection argument identifies causes of treatment, causes of the outcome, known instruments, and proxies for common causes, using substantive information about the setting. [VanderWeele, 2019](https://doi.org/10.1007/s10654-019-00494-6).
+
+### 3.20.1 Total Effects and Direct Effects
+
+\noindent For customer $i$, the total effect compares $Y_i(1)$ with $Y_i(0)$, allowing the intervention's consequences to occur. A controlled direct effect compares $Y_i(1,m)$ with $Y_i(0,m)$ under an intervention fixing the mediator at $m$. Regressing on the realized mediator does not by itself identify that direct effect. Mediator–outcome confounding, treatment-induced confounding, interactions, and inadequate support can invalidate the interpretation. [Hernán and Robins, Chapter 23](https://miguelhernan.org/whatifbook).
+
+Infrastructure spending makes the distinction concrete. If a proposed project triggers utility investment and that investment raises household charges, controlling for the investment may remove precisely the pathway relevant to household protection. A narrowly defined direct effect can still be useful, provided its intervention and identifying conditions are defended. It does not answer the total-burden question merely because its coefficient is smaller.
+
+### 3.20.2 Selection Can Condition Without a Regression Control
+
+\noindent Restricting an experiment to purchasers, survey completers, or retained subscribers can condition on outcomes of assignment. Randomization then need not balance the selected groups. The same logic applies when an analysis includes only projects that reached completion. If completion depends on both economic viability and opposition, conditioning on completion can associate those determinants. The particular graph and their links to the outcome must be established. [Elwert and Winship, 2014](https://doi.org/10.1146/annurev-soc-071913-043455); [Montgomery, Nyhan, and Torres, 2018](https://doi.org/10.1111/ajps.12357).
+
+## 3.21 Exact Examples of Helpful and Harmful Adjustment
+
+\noindent Consider five synthetic linear structures. The units below are arbitrary analytical units. Each uses all 16 equally weighted combinations of four independent shocks, $Z,U,E,V\in\{-1,1\}$. Enumeration removes Monte Carlo variation and makes the regression coefficients hand-checkable. These are imposed causal models, not fitted explanations of observed customer behavior.
+
+For the first two structures, set the randomized binary treatment to $D=(Z+1)/2$. In the mediator example, $M=2D+U$ and $Y=D+3M+V$. Changing $D$ by one increases $M$ by two and $Y$ by $1+3(2)=7$. Regression on $D$ alone recovers 7; adjustment for $M$ returns 1. The smaller coefficient represents the direct path under this particular unconfounded linear construction.
+
+For the collider example, let $C=D+U$ and $Y=U+V$. Treatment has zero effect. Within a fixed value of $C$, a larger $D$ implies a smaller $U$, creating a negative conditional association with $Y$. Substituting $U=C-D$ gives $Y=C-D+V$, so the adjusted slope is −1 despite a total effect of zero.
+
+The pre-treatment collider example uses the continuous treatment $D=U+E$, the candidate control $C=U+V$, and the outcome $Y=V+Z$. The final two comparisons use $D=3Z+U+E$ and $Y=D+2U+V$, changing only whether adjustment includes $Z$ or $U$.
+
+| Synthetic Structure | Unadjusted Slope | Adjusted Slope |
+| --- | ---: | ---: |
+| Mediator $M$ | 7 | 1 |
+| Collider $C$ | 0 | −1 |
+| Pre-treatment collider $C$ | 0 | $-1/3$ |
+| Instrument-like control $Z$ | $13/11$ | 2 |
+| Measured confounder $U$ | $13/11$ | 1 |
+
+In the last two rows, the causal effect per unit of the continuous treatment is 1. Without adjustment, the omitted-variable contribution is $2\operatorname{Cov}(D,U)/\operatorname{Var}(D)=2/11$. Removing $Z$ leaves $U+E$ as treatment variation, increasing that contribution to $2/2=1$. Observing and adjusting for $U$ removes the imposed confounding. The comparison establishes the value of a justified control and the danger of treating all additional controls as improvements.
+
+Run `python3 03_Data_and_Code/Bad_Controls/control_paths.py` from the repository root with NumPy installed. The program exports every synthetic observation and compares each OLS slope with a separately derived analytical value. The finite population has no sampling uncertainty; p-values would add no evidence to this construction.
+
+Python source: [control_paths.py](../../03_Data_and_Code/Bad_Controls/control_paths.py)
+
+```python
+"""Exact balanced synthetic examples of adjustment. Python 3.10+, NumPy."""
+import csv
+from itertools import product
+from pathlib import Path
+import numpy as np
+
+OUT = Path(__file__).resolve().parent / "results"
+
+
+def slope(y, d, *controls):
+    design = np.column_stack([np.ones(len(d)), d, *controls])
+    assert np.linalg.matrix_rank(design) == design.shape[1]
+    return float(np.linalg.lstsq(design, y, rcond=None)[0][1])
+
+
+def examples():
+    # All 16 combinations have equal weight: independent, mean-zero shocks.
+    z, u, e, v = np.array(list(product([-1.0, 1.0], repeat=4))).T
+    d = (z + 1) / 2
+    mediator = 2 * d + u
+    collider = d + u
+    cases = [
+        ("mediator", d, d + 3 * mediator + v, mediator, 7, 1),
+        ("post_treatment_collider", d, u + v, collider, 0, -1),
+        ("pre_treatment_collider", u + e, v + z, u + v, 0, -1 / 3),
+        ("instrument_like_control", 3 * z + u + e,
+         3 * z + 3 * u + e + v, z, 13 / 11, 2),
+        ("measured_confounder", 3 * z + u + e,
+         3 * z + 3 * u + e + v, u, 13 / 11, 1),
+    ]
+    observations, results = [], []
+    for case, treatment, outcome, control, raw, adjusted in cases:
+        for index, (a, y, c) in enumerate(zip(treatment, outcome, control)):
+            observations.append(dict(case=case, row=index, treatment=a,
+                                     outcome=y, control=c, weight=1 / 16))
+        before = slope(outcome, treatment)
+        after = slope(outcome, treatment, control)
+        # Independent analytical slopes, not regressions reused as targets.
+        assert np.isclose(before, raw) and np.isclose(after, adjusted)
+        results.append(dict(case=case, unadjusted=before, adjusted=after,
+                            analytical_unadjusted=raw,
+                            analytical_adjusted=adjusted))
+    return observations, results
+
+
+def save(name, rows):
+    OUT.mkdir(exist_ok=True)
+    with (OUT / name).open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+if __name__ == "__main__":
+    observations, results = examples()
+    save("control_observations.csv", observations)
+    save("control_estimates.csv", results)
+    for row in results:
+        print(row["case"], round(row["unadjusted"], 6),
+              round(row["adjusted"], 6))
+```

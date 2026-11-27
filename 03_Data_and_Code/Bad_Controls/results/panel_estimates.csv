@@ -1,0 +1,5 @@
+method,estimate,true_att,analytical
+omit_covariates_or_use_constant_baseline,5.500000000000002,4,5.5
+adjust_for_observed_post_treatment_x,-2.000000000000001,4,-2
+adjust_for_observed_pre_treatment_w,4.000000000000002,4,4
+untreated_covariate_imputation,4.000000000000002,4,4

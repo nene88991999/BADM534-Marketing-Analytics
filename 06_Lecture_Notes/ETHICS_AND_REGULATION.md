@@ -138,3 +138,7 @@ M9 §9.40 connects validity and premise support to the existing Scanlonian evalu
 ## Conflicts of Interest, Judgment, and Engagement
 
 M9 §§9.45–9.49 separates commercial adversity, a duty-based conflict, demonstrated bias, and wrongdoing. Valsan, the Institute of Medicine, Cain and coauthors, Lovett and Pettit, Balkin, and Khan and Pozen support distinct parts of the analysis; [the source guide](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) records scope. The fiduciary debate is normative and legal scholarship, not a statement of a universal current legal duty. The infinite-scroll case separates behavioral reward learning, neuroscience, economic self-control evidence, and clinical claims. The numerical comparison is entirely synthetic. Public-reassurance criticism does not assert an undocumented author motive or financial relationship.
+
+## Research Design and Household Exposure
+
+M9 §9.50 connects Scanlonian reasons to the population excluded by a convenient dataset. M6 §§6.41–6.42 distinguish zero operating additions from zero project exposure and preserve offsets and negative cases. The [source assessment](../01_Resources/44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) records the 2023 cancellation, 2025 risk discussion, and Ohio Power tariff approved July 9, 2025 and effective July 23, 2025. The tariff applies in that utility’s service territory. Its current operator page was checked November 26, 2026; no national rule or confirmed historical household loss is inferred.

@@ -22,7 +22,7 @@ Students use AI-assisted Python to specify questions, verify calculations, and i
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
 - Evaluate which ends deserve pursuit, who has authority to select them, and what obligations the decision creates, distinguishing empirical knowledge from practical justification.
 - Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
-- Apply marketing analytics methods and distinguish descriptive patterns, predictive performance, and causal effects.
+- Apply marketing analytics methods; distinguish descriptive patterns, prediction, and causal effects; justify controls, populations, and observation windows.
 - Evaluate AI-assisted workflows through independent calculations, statistical design, meaningful-effect bounds, silent-error detection, and interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
 - Reconstruct analytical arguments, distinguish model fit from identification and valuation, test counterexamples, and identify evidence or reasons that would change a conclusion.
@@ -44,14 +44,14 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | 1 | January 20 | M1: Marketing decisions and AI-assisted Python |
 | 2 | January 27 | M2: Customer data, missingness, cancellation evidence, and earnings-call coverage |
 | 3 | February 3 | M2: Visualization, geographic usage, and nutrition-informed assessment |
-| 4 | February 10 | M3: Regression, geographic associations, and marketing interpretation |
+| 4 | February 10 | M3: Regression, causal controls, geographic associations, and interpretation |
 | 5 | February 17 | M4: Conjoint, concept screening, and research budgets |
 | 6 | February 24 | M4: Geographic and customer segmentation; customer lifetime value |
 | 7 | March 3 | M5: Text and pricing communication; network compression and retail access |
 | 8 | March 10 | M1-M5: Project evidence and midterm discussion/presentations |
 | No Class | March 17 | Spring break |
 | 9 | March 24 | M6: Experiments, research design, and incremental value |
-| 10 | March 31 | M6: Causal comparisons, policy evaluation, and discount responses |
+| 10 | March 31 | M6: Causal comparisons, project exposure, policy evaluation, and discount responses |
 | 11 | April 7 | M7: Prediction, representation quality, training mixtures, and service outcomes |
 | 12 | April 14 | M7: Recommendation systems and customer goals |
 | 13 | April 21 | M8: Adaptive recommendations and marketing budgets |

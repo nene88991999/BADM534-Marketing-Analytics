@@ -1064,7 +1064,8 @@
       "Interpret coefficients with units and conditioning.",
       "Diagnose omitted variables, interactions, and dependence.",
       "Reproduce an association while preserving its time and sample definitions.",
-      "Distinguish a primary response coefficient from source bias."
+      "Distinguish a primary response coefficient from source bias.",
+      "Justify controls and sample restrictions through a causal structure."
     ],
     "slides": [
       {
@@ -1331,6 +1332,61 @@
         "source": "Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
+        "kind": "figure",
+        "title": "Controls Need a Causal Role",
+        "figure": "figures/bad_control_paths.tex",
+        "caption": "Adjustment can remove confounding, remove a mechanism, or create selection.",
+        "description": "Four graphs compare a confounder, mediator, collider, and instrument-like predictor. Candidate controls are outlined in orange.",
+        "notes": "The role is defined relative to an intervention and outcome. Timing and predictive power alone do not justify adjustment. Competing graphs require institutional evidence. The pre-treatment collider and instrument-like examples show why simply retaining every early covariate is insufficient.",
+        "source": "../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md",
+        "figure_height": 0.75
+      },
+      {
+        "kind": "table",
+        "title": "More Controls Can Change the Answer",
+        "headers": [
+          "Synthetic Case",
+          "Unadjusted",
+          "Adjusted"
+        ],
+        "rows": [
+          [
+            "Mediator",
+            "7",
+            "1"
+          ],
+          [
+            "Collider",
+            "0",
+            "−1"
+          ],
+          [
+            "Instrument-Like Control",
+            "1.18",
+            "2"
+          ],
+          [
+            "Measured Confounder",
+            "1.18",
+            "1"
+          ]
+        ],
+        "caption": "Exact finite populations; slopes in outcome units per treatment unit.",
+        "notes": "The mediator model has total effect 7 and direct effect 1. The collider model has true effect zero. The final two rows share a true effect of 1: conditioning on the instrument-like variable amplifies residual confounding; observing the confounder removes it. Full code and all observations are in Bad_Controls/control_paths.py.",
+        "source": "../03_Data_and_Code/Bad_Controls/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "A Smaller Coefficient Needs an Explanation",
+        "bullets": [
+          "Define the total or direct effect before adjustment.",
+          "Explain which paths the covariate closes or opens.",
+          "Treat completion and response restrictions as conditioning."
+        ],
+        "notes": "A realized mediator coefficient need not be a controlled direct effect. A direct-effect interpretation requires additional identification and support conditions. Restricting to completed projects may select on viability and opposition; the graph and links to the outcome need evidence.",
+        "source": "../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "Regression Discussion",
         "bullets": [
@@ -1354,7 +1410,9 @@
       "[Statistical Evidence: Optional Practice](../07_Labs/Statistical_Inference/README.md)",
       "[Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)",
       "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
-      "../01_Resources/41_Statistical_Claims_and_Decisions/README.md"
+      "../01_Resources/41_Statistical_Claims_and_Decisions/README.md",
+      "[Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)",
+      "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)"
     ],
     "practice": "Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional statistical-claims and data-center case exercises.",
     "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price."
@@ -3251,7 +3309,8 @@
       "Explain the identifying comparison in difference-in-differences, RD, and IV.",
       "Evaluate a policy under selected exposure and support restrictions.",
       "Assess whether a comparison group is suitable for the McBroken policy question.",
-      "Estimate and assess a nonlinear discount response with explicit confounding and overlap conditions."
+      "Estimate and assess a nonlinear discount response with explicit confounding and overlap conditions.",
+      "Distinguish covariate adjustment, project exposure, and the population represented by a convenient sample."
     ],
     "slides": [
       {
@@ -3512,6 +3571,48 @@
         "source": "ETHICS_AND_REGULATION.md, M6."
       },
       {
+        "kind": "figure",
+        "title": "Inclusion and Exclusion Can Both Fail",
+        "figure": "../06_Lecture_Notes/figures/M06_counterfactual_covariate.tex",
+        "caption": "The treatment-affected covariate must be related to its untreated evolution.",
+        "description": "Synthetic treatment raises X by two. The true total effect is 4. Dropping information gives 5.5 and conditioning on the realized X gives minus 2. Baseline W supports reconstruction of the untreated trend.",
+        "notes": "The example is a linear population calculation, not an implementation of the general Caetano et al. estimator. The imposed overlap and observed baseline information justify imputation. Flexible fitting would not replace those assumptions. See M6 §6.40 for the complete program.",
+        "source": "../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md",
+        "figure_height": 0.73
+      },
+      {
+        "kind": "bullets",
+        "title": "Project Uncertainty Within 2020–2025",
+        "bullets": [
+          "2023: an official cancellation follows inadequate community support.",
+          "2025: large-load risks and project disruptions receive explicit attention.",
+          "Trace commitments and cost recovery before labeling donors unexposed."
+        ],
+        "notes": "The Cascade Locks announcement documents cancellation, not stranded utility costs. LBNL’s January 2025 brief and Ohio Power’s July 2025 tariff establish contemporary attention to financial exposure. Data Center Watch documents substantial disruption late in the period but lacks a consistent historical all-project denominator. The records do not establish contamination of actual donors.",
+        "source": "../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Opening Can Follow Economic Exposure",
+        "figure": "../06_Lecture_Notes/figures/M06_project_windows.tex",
+        "caption": "The baseline and donor population change the comparison.",
+        "description": "Four synthetic utility price histories yield comparisons of 10, 7, and 4 dollars per MWh under different baselines and donors.",
+        "notes": "Before commitments, the completed-project increment is 10. Equal canceled and unexposed donor weights subtract 3. Starting after commitments leaves the additional operating increment of 4. Canceled-project costs are constant over the shorter interval, so they add no change to that particular DiD. Actual donor weights and dated obligations are required for the paper-specific assessment.",
+        "source": "../03_Data_and_Code/Bad_Controls/README.md",
+        "figure_height": 0.73
+      },
+      {
+        "kind": "bullets",
+        "title": "Design the Study Before Selecting the Dataset",
+        "bullets": [
+          "Define the intervention, population, outcome, and horizon.",
+          "Retain canceled and pending proposals when the question concerns the pipeline.",
+          "Require an unexposed baseline and a defensible donor group."
+        ],
+        "notes": "Recent operating records may omit the stages that generate the burden of interest. Selection can cause an internal-validity problem when the counterfactual is wrong and an external-validity problem when a valid selected-population effect is generalized. A stated reason for a time window does not establish either validity condition. New data and precise estimation can coexist with a fundamentally inadequate comparison.",
+        "source": "../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "Causal-Design Discussion",
         "bullets": [
@@ -3530,7 +3631,9 @@
       "[Ethics and regulation](../06_Lecture_Notes/ETHICS_AND_REGULATION.md)",
       "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
       "[Discount response examples](../03_Data_and_Code/Dose_Response/README.md)",
-      "[Optional dose-response lab](../07_Labs/Dose_Response/README.md)"
+      "[Optional dose-response lab](../07_Labs/Dose_Response/README.md)",
+      "[Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)",
+      "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)"
     ],
     "practice": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
     "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation."
@@ -4902,7 +5005,8 @@
       "Assess validity, premise support, and reasonable justification symmetrically for a claim and its criticism.",
       "Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.",
       "Assess a case interpretation using ontological scope, empirical evidence, and philosophical reasons.",
-      "Assess conflicts of interest through duties, consumer purposes, and reasons for a feasible alternative."
+      "Assess conflicts of interest through duties, consumer purposes, and reasons for a feasible alternative.",
+      "Defend the empirical and moral premises behind reassurance to affected households."
     ],
     "slides": [
       {
@@ -6023,6 +6127,27 @@
         "source": "M9, Section 9.44, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
+        "kind": "figure",
+        "title": "Whose Burdens Survive the Sample Restriction?",
+        "figure": "../06_Lecture_Notes/figures/M09_design_and_reasons.tex",
+        "caption": "The affected population retains its standing when records are incomplete.",
+        "description": "The solid path runs from a household decision through the relevant population and causal comparison to a justified claim. A dashed shortcut from recent operating records leaves premises unresolved.",
+        "notes": "The proposed Scanlonian objection concerns an unexamined burden and the evidence used to justify it. The critic must also consider developer payments, asset reuse, and disallowed cost recovery. Phantom projects provide a concrete design concern; actual donor contamination remains an empirical question.",
+        "source": "../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md",
+        "figure_height": 0.73
+      },
+      {
+        "kind": "bullets",
+        "title": "Thoughtful Design Gives Reasons for the Comparison",
+        "bullets": [
+          "A precise selected-population result does not settle the full burden.",
+          "Identify the missing empirical premise and the household’s objection.",
+          "Reconstruct the design or narrow the public claim."
+        ],
+        "notes": "In the synthetic savings scenario, the operating-project effect is minus 2 dollars/MWh while the equal-weight mean over completed, canceled, and pending proposals is plus 3.33. Each describes its stated population. Using one to reassure the other is the unsupported step. Missing project data are investigable empirical unknowns and should not be equated with Kantian noumena.",
+        "source": "../03_Data_and_Code/Bad_Controls/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "A Decision with Consumer Outcomes",
         "bullets": [
@@ -6067,7 +6192,9 @@
       "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
       "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)",
       "../07_Labs/AI_Augmented_Learning/README.md",
-      "[Conflicts of Interest: Optional Practice](../07_Labs/Conflicts_of_Interest/README.md)"
+      "[Conflicts of Interest: Optional Practice](../07_Labs/Conflicts_of_Interest/README.md)",
+      "[Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)",
+      "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
     "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed."

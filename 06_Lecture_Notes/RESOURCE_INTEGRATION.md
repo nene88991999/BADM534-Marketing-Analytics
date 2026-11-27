@@ -255,3 +255,7 @@ M1 and [M9 §9.41](../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) plac
 ## Conflicts of Interest and Consumer Control
 
 The [nine-source supplement](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) supports M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49. The [synthetic feed program](../03_Data_and_Code/Conflicts_of_Interest/README.md) uses original totals and no borrowed empirical coefficients. Sessions 1, 11, and 14 use selected discussion slides; [optional practice](../07_Labs/Conflicts_of_Interest/README.md) supplies the extended exercise.
+
+## Bad Controls and Project Exposure
+
+The [categorized collection](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) connects M3 causal graphs to M6 panel identification and the phantom-project case. The examples separate a total effect from a conditioned coefficient and an operating-entry effect from the wider proposal population. M9 §9.50 asks which empirical premises justify reassurance to households. The 2020–2025 historical evidence supports particular scrutiny of later sample years; exact donor exposure requires project and payment records.

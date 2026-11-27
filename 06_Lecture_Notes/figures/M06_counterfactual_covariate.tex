@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+\node[font=\bfseries] at (6.1,.9) {Recover the Covariate's Untreated Evolution};
+\node[box,text width=3.2cm,minimum height=1.3cm] (w) at (0.5,-.5)
+ {Observed $W\in\{0,1\}$\\Assignment: $1/4$ or $3/4$};
+\node[orangebox,text width=3.4cm,minimum height=1.3cm] (x) at (5.9,-.5)
+ {Untreated Covariate\\$X_1(0)=W+U$};
+\node[box,text width=3.4cm,minimum height=1.3cm] (y) at (11.1,-.5)
+ {Untreated Trend\\$\Delta Y(0)=3X_1(0)+E$};
+\draw[edge] (w)--(x);\draw[edge] (x)--(y);
+\node[box,text width=4.7cm,minimum height=1.2cm] (obs) at (3.2,-2.7)
+ {Treatment Adds Two to $X$\\Observed $X_1=X_1(0)+2D$};
+\node[box,text width=4.7cm,minimum height=1.2cm] (pred) at (9.2,-2.7)
+ {Controls Identify the Mean Trend\\$E[\Delta Y(0)\mid W]=3W$};
+\draw[accent] (x.south)--(obs.north);
+\draw[edge] (y.south)--(pred.north);
+\node[box,text width=3.2cm,minimum height=1.25cm] at (.6,-5)
+ {Omit $W$ and $X$\\Estimated Effect: $5.5$};
+\node[box,text width=3.5cm,minimum height=1.25cm] at (6,-5)
+ {Adjust for Observed $X_1$\\Estimated Effect: $-2$};
+\node[orangebox,text width=3.2cm,minimum height=1.25cm] at (11.2,-5)
+ {Impute Untreated Trend\\Total Effect: $4$};
+\node[align=center,text width=13.8cm,font=\footnotesize] at (6.1,-6.4)
+ {Synthetic finite population. $W$ is observed; overlap holds; shocks are independent.\\The linear outcome trend permits mean imputation. Missing $W$ would remove its justification.};
+\end{tikzpicture}

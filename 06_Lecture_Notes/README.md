@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 140 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 144 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -223,3 +223,7 @@ M1 §1.21, M2 §2.29, M6 §6.39, and M9 §9.44 connect source fidelity, bill mea
 ## Conflicts of Interest and Consumer Control
 
 M9 §§9.45–9.49 examines responsibilities, disclosure, dependence, engagement evidence, and reasons for honoring stopping instructions. M1 §1.22, M7 §7.47, and M8 §8.33 carry the issue into question formulation, prediction, and integrated decisions. The [original comparison](../03_Data_and_Code/Conflicts_of_Interest/README.md) includes full matching Python and independent calculations; the [source guide](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) records what was reviewed. Two editable figures show conflicting pressures on judgment and the premises of an ought conclusion.
+
+## Bad Controls and Thoughtful Research Design
+
+M3 §§3.20–3.21, M6 §§6.40–6.42, and M9 §9.50 distinguish adjustment bias, exposed donors, anticipation, and selected populations. Three complete Python programs and four Illinois-color TikZ figures accompany the [readings](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) and [optional practice](../07_Labs/Bad_Controls/README.md).

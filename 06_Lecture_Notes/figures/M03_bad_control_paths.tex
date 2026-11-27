@@ -1,0 +1,36 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[font=\bfseries] at (6.1,1.0) {Adjustment Changes the Paths in the Comparison};
+\node[font=\bfseries] at (2.7,.25) {Common Cause};
+\node[orangebox] (c) at (2.7,-.55) {$C$};
+\node[box] (d) at (1,-1.65) {$D$};
+\node[box] (y) at (4.4,-1.65) {$Y$};
+\draw[accent] (c)--(d);\draw[accent] (c)--(y);\draw[edge] (d)--(y);
+\node[align=center,text width=5.9cm,font=\footnotesize] at (2.7,-2.7)
+ {Closes a confounding path\\when the control is sufficient.};
+\node[font=\bfseries] at (9.5,.25) {Mediator};
+\node[box] (dm) at (7.7,-1) {$D$};
+\node[orangebox] (m) at (9.5,-1) {$M$};
+\node[box] (ym) at (11.3,-1) {$Y$};
+\draw[accent] (dm)--(m);\draw[accent] (m)--(ym);
+\draw[edge] (dm) to[bend right=35] (ym);
+\node[align=center,text width=5.9cm,font=\footnotesize] at (9.5,-2.7)
+ {Holding the mechanism fixed\\removes part of the total effect.};
+\node[font=\bfseries] at (2.7,-3.8) {Collider};
+\node[box] (dc) at (.6,-4.7) {$D$};
+\node[orangebox] (cc) at (2.3,-4.7) {$C$};
+\node[box] (uc) at (4,-4.7) {$U$};
+\node[box] (yc) at (5.2,-5.7) {$Y$};
+\draw[accent] (dc)--(cc);\draw[accent] (uc)--(cc);\draw[edge] (uc)--(yc);
+\node[align=center,text width=5.9cm,font=\footnotesize] at (2.7,-6.7)
+ {A common consequence can\\create a conditional association.};
+\node[font=\bfseries] at (9.5,-3.8) {Instrument-Like Predictor};
+\node[orangebox] (z) at (7.7,-4.7) {$Z$};
+\node[box] (di) at (7.7,-5.7) {$D$};
+\node[box] (ui) at (11.3,-4.7) {$U$};
+\node[box] (yi) at (11.3,-5.7) {$Y$};
+\draw[accent] (z)--(di);\draw[edge] (ui)--(di);\draw[edge] (ui)--(yi);\draw[edge] (di)--(yi);
+\node[align=center,text width=5.9cm,font=\footnotesize] at (9.5,-6.7)
+ {Can amplify residual confounding\\by removing unrelated variation.};
+\node[align=center,text width=13cm,font=\footnotesize] at (6.1,-8)
+ {Orange boxes mark candidate controls. Arrows are imposed causal premises.\\$D$: treatment; $Y$: outcome. A variable's timing alone does not establish its role.};
+\end{tikzpicture}

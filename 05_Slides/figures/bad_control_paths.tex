@@ -1,0 +1,30 @@
+\begin{tikzpicture}[every node/.append style={font=\fontsize{11}{13}\selectfont}]
+\node[font=\bfseries] at (0,1.1) {Confounder};
+\node[orangebox] (c) at (0,.1) {$C$};
+\node[box] (d) at (-1,-1) {$D$};
+\node[box] (y) at (1,-1) {$Y$};
+\draw[accent] (c)--(d);\draw[accent] (c)--(y);\draw[edge] (d)--(y);
+\node[align=center,text width=3cm] at (0,-2.15) {Can Close\\Confounding};
+\node[font=\bfseries] at (3.7,1.1) {Mediator};
+\node[box] (dm) at (2.7,-1) {$D$};
+\node[orangebox] (m) at (3.7,.1) {$M$};
+\node[box] (ym) at (4.7,-1) {$Y$};
+\draw[accent] (dm)--(m);\draw[accent] (m)--(ym);\draw[edge] (dm)--(ym);
+\node[align=center,text width=3cm] at (3.7,-2.15) {Can Remove\\a Mechanism};
+\node[font=\bfseries] at (7.4,1.1) {Collider};
+\node[box] (dc) at (6.4,.1) {$D$};
+\node[orangebox] (cc) at (7.4,-1) {$C$};
+\node[box] (uc) at (8.4,.1) {$U$};
+\node[box] (yc) at (8.4,-1) {$Y$};
+\draw[accent] (dc)--(cc);\draw[accent] (uc)--(cc);\draw[edge] (uc)--(yc);
+\node[align=center,text width=3cm] at (7.4,-2.15) {Can Create\\Selection};
+\node[font=\bfseries] at (11.1,1.1) {Instrument-Like};
+\node[orangebox] (z) at (10.1,.1) {$Z$};
+\node[box] (di) at (10.1,-1) {$D$};
+\node[box] (ui) at (12.1,.1) {$U$};
+\node[box] (yi) at (12.1,-1) {$Y$};
+\draw[accent] (z)--(di);\draw[edge] (ui)--(di);\draw[edge] (ui)--(yi);\draw[edge] (di)--(yi);
+\node[align=center,text width=3cm] at (11.1,-2.15) {Can Amplify\\Residual Bias};
+\node[align=center,text width=14cm] at (5.55,-3.45)
+ {Orange boxes mark candidate controls. Arrows are causal premises.\\$D$: treatment; $Y$: outcome. The target effect determines the adjustment question.};
+\end{tikzpicture}

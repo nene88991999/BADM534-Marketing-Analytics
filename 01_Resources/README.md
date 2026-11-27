@@ -168,3 +168,7 @@ The [source review](43_AI_Augmented_Learning/README.md) connects alternative rep
 ## Conflicts of Interest and Engagement
 
 The [supplemental philosophy and evidence guide](15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) contains nine selected source records, including an unchanged CC BY 4.0 reward-learning article. It supports M9 §§9.45–9.49 and the synthetic feed example. Its count describes this supplement and must not be added to overlapping catalog counts as unique resources.
+
+## Bad Controls and Project Exposure
+
+[22 methods readings and 8 institutional sources](44_Bad_Controls_and_Project_Exposure/README.md) cover adjustment, selection, time-varying covariates, anticipation, synthetic controls, and phantom projects. The [case assessment](44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) distinguishes in-period evidence from subsequent reporting and identifies the records needed to assess actual donor exposure.

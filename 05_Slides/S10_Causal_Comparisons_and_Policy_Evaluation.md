@@ -12,6 +12,7 @@ Session 10. M6. 170 minutes.
 - Evaluate a policy under selected exposure and support restrictions.
 - Assess whether a comparison group is suitable for the McBroken policy question.
 - Estimate and assess a nonlinear discount response with explicit confounding and overlap conditions.
+- Distinguish covariate adjustment, project exposure, and the population represented by a convenient sample.
 
 ## Related Materials
 
@@ -22,6 +23,8 @@ Session 10. M6. 170 minutes.
 - [Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)
 - [Discount response examples](../03_Data_and_Code/Dose_Response/README.md)
 - [Optional dose-response lab](../07_Labs/Dose_Response/README.md)
+- [Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)
+- [Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)
 
 ## Slide 1: Causal Comparisons and Policy Evaluation
 
@@ -299,7 +302,51 @@ A valid causal effect on conversion does not identify the welfare effect without
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 25: Causal-Design Discussion
+## Slide 25: Inclusion and Exclusion Can Both Fail
+
+The treatment-affected covariate must be related to its untreated evolution.
+
+**Figure description:** Synthetic treatment raises X by two. The true total effect is 4. Dropping information gives 5.5 and conditioning on the realized X gives minus 2. Baseline W supports reconstruction of the untreated trend.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_counterfactual_covariate.tex)
+
+The example is a linear population calculation, not an implementation of the general Caetano et al. estimator. The imposed overlap and observed baseline information justify imputation. Flexible fitting would not replace those assumptions. See M6 §6.40 for the complete program.
+
+Source: ../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md
+
+## Slide 26: Project Uncertainty Within 2020–2025
+
+- 2023: an official cancellation follows inadequate community support.
+- 2025: large-load risks and project disruptions receive explicit attention.
+- Trace commitments and cost recovery before labeling donors unexposed.
+
+The Cascade Locks announcement documents cancellation, not stranded utility costs. LBNL’s January 2025 brief and Ohio Power’s July 2025 tariff establish contemporary attention to financial exposure. Data Center Watch documents substantial disruption late in the period but lacks a consistent historical all-project denominator. The records do not establish contamination of actual donors.
+
+Source: ../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md
+
+## Slide 27: Opening Can Follow Economic Exposure
+
+The baseline and donor population change the comparison.
+
+**Figure description:** Four synthetic utility price histories yield comparisons of 10, 7, and 4 dollars per MWh under different baselines and donors.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_project_windows.tex)
+
+Before commitments, the completed-project increment is 10. Equal canceled and unexposed donor weights subtract 3. Starting after commitments leaves the additional operating increment of 4. Canceled-project costs are constant over the shorter interval, so they add no change to that particular DiD. Actual donor weights and dated obligations are required for the paper-specific assessment.
+
+Source: ../03_Data_and_Code/Bad_Controls/README.md
+
+## Slide 28: Design the Study Before Selecting the Dataset
+
+- Define the intervention, population, outcome, and horizon.
+- Retain canceled and pending proposals when the question concerns the pipeline.
+- Require an unexposed baseline and a defensible donor group.
+
+Recent operating records may omit the stages that generate the burden of interest. Selection can cause an internal-validity problem when the counterfactual is wrong and an external-validity problem when a valid selected-population effect is generalized. A stated reason for a time window does not establish either validity condition. New data and precise estimation can coexist with a fundamentally inadequate comparison.
+
+Source: ../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md
+
+## Slide 29: Causal-Design Discussion
 
 - What would the treated group have experienced without the policy?
 - Which group or action lacks comparable support?

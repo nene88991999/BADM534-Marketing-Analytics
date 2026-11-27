@@ -106,3 +106,7 @@ The [Philosophical Arguments practice](Philosophical_Arguments/README.md) includ
 ## Conflicts of Interest and Consumer Control
 
 [Optional ungraded practice](Conflicts_of_Interest/README.md) develops a duty-based conflict analysis, reproduces the synthetic feed comparison, and constructs a Kantian and Scanlonian argument with a feasible alternative. It also connects professional dissent to Confucian remonstrance.
+
+## Bad Controls and Thoughtful Research Design
+
+The [optional ungraded practice](Bad_Controls/README.md) asks students to defend controls and sample restrictions, reproduce the project-window comparisons, and evaluate whether the evidence justifies reassurance to households.

@@ -217,3 +217,7 @@ M1 and [M9 §9.41](06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) place t
 ## Conflicts of Interest and Consumer Control
 
 M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect the analyst’s incentives to question selection, interpretation, and responsibilities. Sessions 1, 11, and 14 use selected comparisons within existing time. [Sources](01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md); [complete synthetic Python](03_Data_and_Code/Conflicts_of_Interest/README.md); [optional practice](07_Labs/Conflicts_of_Interest/README.md). The feed case also connects to pricing, cancellation, mHealth targeting, and electricity reassurance.
+
+## Bad Controls, Project Exposure, and Sample Windows
+
+M3 §§3.20–3.21 explain causal adjustment; M6 §§6.40–6.42 compare treatment-affected covariates, project timelines, and selected populations; M9 §9.50 evaluates household reasons. The [30-source guide](01_Resources/44_Bad_Controls_and_Project_Exposure/README.md), [complete examples](03_Data_and_Code/Bad_Controls/README.md), and [optional practice](07_Labs/Bad_Controls/README.md) support Sessions 4, 10, and 14. Evidence within the later years of 2020–2025 motivates a donor-exposure assessment without establishing contamination of the paper’s actual donors.

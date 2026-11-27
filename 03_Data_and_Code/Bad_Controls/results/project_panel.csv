@@ -1,0 +1,13 @@
+utility,quarter,period,state,operating,price_usd_mwh
+completed,2023Q1,0,no_request,0,100
+completed,2024Q1,1,committed,0,106
+completed,2025Q4,2,operating,1,110
+cancelled,2023Q1,0,no_request,0,100
+cancelled,2024Q1,1,committed,0,106
+cancelled,2025Q4,2,cancelled,0,106
+unexposed,2023Q1,0,no_request,0,100
+unexposed,2024Q1,1,no_request,0,100
+unexposed,2025Q4,2,no_request,0,100
+pending,2023Q1,0,no_request,0,100
+pending,2024Q1,1,requested,0,100
+pending,2025Q4,2,committed,0,106

@@ -25,6 +25,7 @@ Session 14. M8, M9. 170 minutes.
 - Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.
 - Assess a case interpretation using ontological scope, empirical evidence, and philosophical reasons.
 - Assess conflicts of interest through duties, consumer purposes, and reasons for a feasible alternative.
+- Defend the empirical and moral premises behind reassurance to affected households.
 
 ## Related Materials
 
@@ -61,6 +62,8 @@ Session 14. M8, M9. 170 minutes.
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
 - ../07_Labs/AI_Augmented_Learning/README.md
 - [Conflicts of Interest: Optional Practice](../07_Labs/Conflicts_of_Interest/README.md)
+- [Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)
+- [Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -1114,7 +1117,29 @@ A student can reasonably object to an explanation that hides the premise on whic
 
 Source: M9, Section 9.44, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 96: A Decision with Consumer Outcomes
+## Slide 96: Whose Burdens Survive the Sample Restriction?
+
+The affected population retains its standing when records are incomplete.
+
+**Figure description:** The solid path runs from a household decision through the relevant population and causal comparison to a justified claim. A dashed shortcut from recent operating records leaves premises unresolved.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_design_and_reasons.tex)
+
+The proposed Scanlonian objection concerns an unexamined burden and the evidence used to justify it. The critic must also consider developer payments, asset reuse, and disallowed cost recovery. Phantom projects provide a concrete design concern; actual donor contamination remains an empirical question.
+
+Source: ../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md
+
+## Slide 97: Thoughtful Design Gives Reasons for the Comparison
+
+- A precise selected-population result does not settle the full burden.
+- Identify the missing empirical premise and the household’s objection.
+- Reconstruct the design or narrow the public claim.
+
+In the synthetic savings scenario, the operating-project effect is minus 2 dollars/MWh while the equal-weight mean over completed, canceled, and pending proposals is plus 3.33. Each describes its stated population. Using one to reassure the other is the unsupported step. Missing project data are investigable empirical unknowns and should not be equated with Kantian noumena.
+
+Source: ../03_Data_and_Code/Bad_Controls/README.md
+
+## Slide 98: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

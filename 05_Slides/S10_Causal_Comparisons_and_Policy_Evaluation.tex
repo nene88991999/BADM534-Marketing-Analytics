@@ -335,6 +335,70 @@ M6, Section 6.10.1, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/
 
 ETHICS\_AND\_REGULATION.md, M6.}
 \end{frame}
+\begin{frame}{Inclusion and Exclusion Can Both Fail}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.73\textheight}
+\input{../06_Lecture_Notes/figures/M06_counterfactual_covariate.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small The treatment-affected covariate must be related to its untreated evolution.\par}
+\note{The example is a linear population calculation, not an implementation of the general Caetano et al. estimator. The imposed overlap and observed baseline information justify imputation. Flexible fitting would not replace those assumptions. See M6 §6.40 for the complete program.
+
+\url{../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md}}
+\end{frame}
+\begin{frame}{Project Uncertainty Within 2020–2025}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item 2023: an official cancellation follows inadequate community support.
+\item 2025: large-load risks and project disruptions receive explicit attention.
+\item Trace commitments and cost recovery before labeling donors unexposed.
+\end{slidebullets}
+\vfill
+\note{The Cascade Locks announcement documents cancellation, not stranded utility costs. LBNL’s January 2025 brief and Ohio Power’s July 2025 tariff establish contemporary attention to financial exposure. Data Center Watch documents substantial disruption late in the period but lacks a consistent historical all-project denominator. The records do not establish contamination of actual donors.
+
+\url{../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md}}
+\end{frame}
+\begin{frame}{Opening Can Follow Economic Exposure}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.73\textheight}
+\input{../06_Lecture_Notes/figures/M06_project_windows.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small The baseline and donor population change the comparison.\par}
+\note{Before commitments, the completed-project increment is 10. Equal canceled and unexposed donor weights subtract 3. Starting after commitments leaves the additional operating increment of 4. Canceled-project costs are constant over the shorter interval, so they add no change to that particular DiD. Actual donor weights and dated obligations are required for the paper-specific assessment.
+
+\url{../03_Data_and_Code/Bad_Controls/README.md}}
+\end{frame}
+\begin{frame}{Design the Study Before Selecting the Dataset}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Define the intervention, population, outcome, and horizon.
+\item Retain canceled and pending proposals when the question concerns the pipeline.
+\item Require an unexposed baseline and a defensible donor group.
+\end{slidebullets}
+\vfill
+\note{Recent operating records may omit the stages that generate the burden of interest. Selection can cause an internal-validity problem when the counterfactual is wrong and an external-validity problem when a valid selected-population effect is generalized. A stated reason for a time window does not establish either validity condition. New data and precise estimation can coexist with a fundamentally inadequate comparison.
+
+\url{../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md}}
+\end{frame}
 \begin{frame}{Causal-Design Discussion}
 \usebeamercolor[fg]{normal text}
 \vfill

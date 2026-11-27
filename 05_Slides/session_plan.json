@@ -233,11 +233,11 @@
       "modules": "M3",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 26,
+      "slides": 29,
       "companion": "S04_Regression_and_Marketing_Interpretation.md",
       "pdf": "S04_Regression_and_Marketing_Interpretation.pdf",
       "python_activity": "Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis. Reconstruct paired mHealth logging and compare user and day uncertainty. Check variance and sample construction separately from the coefficient.",
-      "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation. P-value distributions and utility-average versus household outcomes.",
+      "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation. P-value distributions and utility-average versus household outcomes. Bad controls, phantom-project exposure, and thoughtful sample design.",
       "ethics": "Substantiation and the distinction between association and benefit; measurement and household burdens",
       "timing": [
         {
@@ -256,7 +256,7 @@
           "start_minute": 45,
           "end_minute": 70,
           "minutes": 25,
-          "activity": "Worked Comparison"
+          "activity": "Worked Comparison: Causal Paths and Regression Controls"
         },
         {
           "start_minute": 70,
@@ -299,7 +299,8 @@
       "auxiliary_data_minutes": 10,
       "digital_usage_minutes": 10,
       "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
-      "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice."
+      "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice.",
+      "bad_controls_practice": "../07_Labs/Bad_Controls/README.md"
     },
     {
       "session": 5,
@@ -644,11 +645,11 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 25,
+      "slides": 29,
       "companion": "S10_Causal_Comparisons_and_Policy_Evaluation.md",
       "pdf": "S10_Causal_Comparisons_and_Policy_Evaluation.pdf",
       "python_activity": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
-      "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation.",
+      "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation. Bad controls, phantom-project exposure, and thoughtful sample design.",
       "ethics": "Treatment paths, comparison populations, and selection",
       "timing": [
         {
@@ -691,7 +692,7 @@
           "start_minute": 145,
           "end_minute": 155,
           "minutes": 10,
-          "activity": "Comparison Groups and Events"
+          "activity": "Phantom Projects, Comparison Windows, and Donor Exposure"
         },
         {
           "start_minute": 155,
@@ -700,7 +701,8 @@
           "activity": "Ethics and Decision Discussion"
         }
       ],
-      "date": "2027-03-31"
+      "date": "2027-03-31",
+      "bad_controls_practice": "../07_Labs/Bad_Controls/README.md"
     },
     {
       "session": 11,
@@ -936,11 +938,11 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 96,
+      "slides": 98,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
-      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice. Compare conflicts of interest, reward-learning evidence, and consumer control through the synthetic feed case and Kantian, Scanlonian, and Confucian arguments.",
+      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice. Compare conflicts of interest, reward-learning evidence, and consumer control through the synthetic feed case and Kantian, Scanlonian, and Confucian arguments. Bad controls, phantom-project exposure, and thoughtful sample design.",
       "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims. Reasonable rejection, pricing authority, antitrust evidence, and access to critical replication.; measurement quality, worthy objectives, and reasonableness across pricing and data-center claims",
       "timing": [
         {
@@ -995,7 +997,7 @@
           "start_minute": 95,
           "end_minute": 100,
           "minutes": 5,
-          "activity": "Stakeholder Reasons, Utility Disclosures, and Public Voice"
+          "activity": "Household Reasons, Sample Selection, and Public Claims"
         },
         {
           "start_minute": 100,
@@ -1068,7 +1070,8 @@
       "statistical_claims_coverage": "Selected arguments and figures within the existing ethics discussion; full numerical derivations, readings, and stakeholder exercises remain optional ungraded practice.",
       "qualitative_evidence": "M5 §5.27 and M9 §9.33; integrated into existing discussion; complete collection and independent coding are optional lab work",
       "pricing_reasons_coverage": "Select the demand-completion and burden comparison at 50–60, a Kantian or Scanlonian pricing case within 80–110, and antitrust evidence within the existing policy discussion. Other cases are alternative discussions; extended reconstruction remains optional.",
-      "ai_augmented_learning_coverage": "Use three minutes within the existing ethics discussion for learner authority and supported disagreement."
+      "ai_augmented_learning_coverage": "Use three minutes within the existing ethics discussion for learner authority and supported disagreement.",
+      "bad_controls_practice": "../07_Labs/Bad_Controls/README.md"
     },
     {
       "session": 15,

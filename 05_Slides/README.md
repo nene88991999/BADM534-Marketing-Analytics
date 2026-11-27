@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 505 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 514 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -182,3 +182,7 @@ Six slides in Sessions 1, 2, 9, and 14 connect alternative representations, elec
 ## Conflicts of Interest and Consumer Control
 
 Sessions 1, 11, and 14 connect incentives and duties to question selection, engagement prediction, and an ought conclusion. Two new editable TikZ diagrams and the synthetic feed comparison support M9 §§9.45–9.49. The [optional lab](../07_Labs/Conflicts_of_Interest/README.md) contains extended practice; existing meeting durations are retained.
+
+## Bad Controls and Project Exposure
+
+Sessions 4, 10, and 14 connect causal adjustment, phantom projects, convenience sampling, and household justification. Nine slides and four editable diagrams accompany [M3 §§3.20–3.21 and M6 §§6.40–6.42](../06_Lecture_Notes/README.md), M9 §9.50, and the [complete programs](../03_Data_and_Code/Bad_Controls/README.md).

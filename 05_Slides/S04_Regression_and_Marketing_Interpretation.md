@@ -12,6 +12,7 @@ Session 04. M3. 170 minutes.
 - Diagnose omitted variables, interactions, and dependence.
 - Reproduce an association while preserving its time and sample definitions.
 - Distinguish a primary response coefficient from source bias.
+- Justify controls and sample restrictions through a causal structure.
 
 ## Related Materials
 
@@ -27,6 +28,8 @@ Session 04. M3. 170 minutes.
 - [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
 - ../01_Resources/41_Statistical_Claims_and_Decisions/README.md
+- [Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)
+- [Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)
 
 ## Slide 1: Regression and Marketing Interpretation
 
@@ -310,7 +313,44 @@ Household estimates do not supply Windows device counts. State intercepts allow 
 
 Source: Pereira et al., Nature Communications (2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 26: Regression Discussion
+## Slide 26: Controls Need a Causal Role
+
+Adjustment can remove confounding, remove a mechanism, or create selection.
+
+**Figure description:** Four graphs compare a confounder, mediator, collider, and instrument-like predictor. Candidate controls are outlined in orange.
+
+[Editable TikZ](figures/bad_control_paths.tex)
+
+The role is defined relative to an intervention and outcome. Timing and predictive power alone do not justify adjustment. Competing graphs require institutional evidence. The pre-treatment collider and instrument-like examples show why simply retaining every early covariate is insufficient.
+
+Source: ../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md
+
+## Slide 27: More Controls Can Change the Answer
+
+| Synthetic Case | Unadjusted | Adjusted |
+| --- | --- | --- |
+| Mediator | 7 | 1 |
+| Collider | 0 | −1 |
+| Instrument-Like Control | 1.18 | 2 |
+| Measured Confounder | 1.18 | 1 |
+
+Exact finite populations; slopes in outcome units per treatment unit.
+
+The mediator model has total effect 7 and direct effect 1. The collider model has true effect zero. The final two rows share a true effect of 1: conditioning on the instrument-like variable amplifies residual confounding; observing the confounder removes it. Full code and all observations are in Bad_Controls/control_paths.py.
+
+Source: ../03_Data_and_Code/Bad_Controls/README.md
+
+## Slide 28: A Smaller Coefficient Needs an Explanation
+
+- Define the total or direct effect before adjustment.
+- Explain which paths the covariate closes or opens.
+- Treat completion and response restrictions as conditioning.
+
+A realized mediator coefficient need not be a controlled direct effect. A direct-effect interpretation requires additional identification and support conditions. Restricting to completed projects may select on viability and opposition; the graph and links to the outcome need evidence.
+
+Source: ../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md
+
+## Slide 29: Regression Discussion
 
 - Which comparison supports the coefficient?
 - What variable could reverse its interpretation?

@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+\node[font=\bfseries] at (6.2,.8) {The Population Owed Reasons Comes Before the Dataset};
+\node[orangebox,text width=3.4cm,minimum height=1.3cm] (decision) at (.7,-.7)
+ {Household Decision\\Who Bears a Failed Project's Costs?};
+\node[box,text width=3.6cm,minimum height=1.3cm] (population) at (6.2,-.7)
+ {Relevant Population\\Completed, Canceled, and Pending Projects};
+\node[box,text width=3.4cm,minimum height=1.3cm] (design) at (11.7,-.7)
+ {Causal Comparison\\Dates, Donors, Recovery, and Offsets};
+\draw[accent] (decision)--(population);\draw[edge] (population)--(design);
+\node[box,text width=3.4cm,minimum height=1.3cm] (data) at (.7,-3.4)
+ {Convenient Records\\Recent Operating Facilities};
+\node[orangebox,text width=3.6cm,minimum height=1.3cm] (gap) at (6.2,-3.4)
+ {Missing Premises\\No Operating MW Does Not Establish No Burden};
+\node[box,text width=3.4cm,minimum height=1.3cm] (claim) at (11.7,-3.4)
+ {Defensible Claim\\Evidence and Reasons for the Affected Population};
+\draw[edge] (design)--(claim);
+\draw[IlliniOrange,dashed,->,thick] (data)--(gap);
+\draw[IlliniOrange,dashed,->,thick] (gap)--(claim);
+\node[align=center,text width=13.8cm,font=\footnotesize] at (6.2,-5.15)
+ {Solid arrows trace the required argument. The dashed shortcut leaves premises unresolved.\\A missing observation is an evidential gap; it does not remove a person's standing to object.};
+\end{tikzpicture}

@@ -171,3 +171,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 ## Conflicts of Interest and Engagement
 
 [Conflicts of Interest](Conflicts_of_Interest/README.md) contains eight synthetic policy-by-group rows, a standard-library Python program, saved aggregates, and independent checks. M9 §9.48 reproduces the complete code and separates contribution, goal completion, regret, disclosure, and a defended stopping requirement.
+
+## Bad Controls and Project Exposure
+
+[Three reproducible programs](Bad_Controls/README.md) enumerate causal structures, recover an untreated covariate trend under explicit conditions, and compare project windows and selected populations. Complete code appears in M3 §3.21 and M6 §§6.40.2 and 6.42.2. All observations are synthetic.
