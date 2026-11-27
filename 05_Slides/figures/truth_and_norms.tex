@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\node[box,text width=3.5cm,minimum height=1.4cm] (record) at (0,0) {Record\\A Household Was Charged USD 140};
+\node[box,text width=3.5cm,minimum height=1.4cm] (claim) at (5.4,0) {Causal Claim\\The Project Raised the Charge};
+\node[orangebox,text width=3.5cm,minimum height=1.4cm] (action) at (10.8,0) {Recommendation\\The Institution Ought to Act};
+\draw[edge] (record)--(claim);\draw[accent] (claim)--(action);
+\node[align=center,text width=3.8cm] (semantic) at (0,-2.4) {Semantic and Legal Premises\\Meaning and Validity};
+\node[align=center,text width=3.8cm] (epistemic) at (5.4,-2.4) {Epistemic Premises\\Measurement and Counterfactual};
+\node[align=center,text width=3.8cm] (moral) at (10.8,-2.4) {Moral Premises\\Persons, Authority, Alternatives, Reasons};
+\draw[edge] (semantic)--(record);\draw[edge] (epistemic)--(claim);\draw[accent] (moral)--(action);
+\end{tikzpicture}

@@ -157,6 +157,12 @@
       "path": "07_Labs/Bad_Controls/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "data-truth-and-norms",
+      "path": "07_Labs/Data_Truth_and_Norms/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -438,7 +444,18 @@
     "01_Resources/44_Bad_Controls_and_Project_Exposure/03_Longitudinal_Identification/README.md",
     "01_Resources/44_Bad_Controls_and_Project_Exposure/05_Project_Exposure/README.md",
     "01_Resources/44_Bad_Controls_and_Project_Exposure/02_Adjustment_and_Selection/README.md",
-    "01_Resources/44_Bad_Controls_and_Project_Exposure/04_Timing_and_Comparison_Groups/README.md"
+    "01_Resources/44_Bad_Controls_and_Project_Exposure/04_Timing_and_Comparison_Groups/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md",
+    "03_Data_and_Code/Data_Production/README.md",
+    "03_Data_and_Code/Data_Production/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Data_Production/results/README.md",
+    "03_Data_and_Code/Data_Production/VERIFICATION.md",
+    "07_Labs/Data_Truth_and_Norms/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/02_Truth_and_Norms/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/01_Artifacts/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/03_Institutions_and_Ignorance/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/04_Electricity_Evidence/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -487,12 +504,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-bad-controls-and-project-exposure",
+    "revision": "2026-11-26-data-truth-and-norms",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 144,
-    "pages": 593,
+    "figures_count": 147,
+    "pages": 603,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -524,7 +541,8 @@
     "analytical_arguments": "03_Data_and_Code/Analytical_Arguments/README.md",
     "learning_design": "03_Data_and_Code/Learning_Design/README.md",
     "preface": "06_Lecture_Notes/Preface.md",
-    "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md"
+    "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
+    "data_production_examples": "03_Data_and_Code/Data_Production/README.md"
   },
   "datasets": [
     {
@@ -621,7 +639,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 514,
+    "slides": 520,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1194,7 +1212,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-bad-controls-and-project-exposure",
+  "revision": "2026-11-26-data-truth-and-norms",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1648,5 +1666,35 @@
     "additional_slides": 9,
     "matching_python_blocks": 128,
     "scope": "Original synthetic examples and evidence assessment; no reestimated paper coefficient or established contamination of actual donors."
+  },
+  "data_truth_and_norms": {
+    "implemented_on": "2026-11-26",
+    "resources": "01_Resources/45_Data_Truth_and_Norms/README.md",
+    "catalog": "01_Resources/45_Data_Truth_and_Norms/catalog.json",
+    "evidence_assessment": "01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md",
+    "examples": "03_Data_and_Code/Data_Production/README.md",
+    "practice": "07_Labs/Data_Truth_and_Norms/README.md",
+    "verification": "03_Data_and_Code/Data_Production/VERIFICATION.md",
+    "sections": [
+      "M2 §§2.30–2.31",
+      "M6 §6.43",
+      "M9 §§9.51–9.54"
+    ],
+    "sessions": [
+      2,
+      10,
+      14
+    ],
+    "philosophical_and_methodological_sources": 18,
+    "institutional_sources": 8,
+    "local_source_files": 14,
+    "local_pdf_copies": 12,
+    "local_word_manuscripts": 2,
+    "original_programs": 1,
+    "original_figures": 3,
+    "additional_slides": 6,
+    "scope": "Original synthetic disclosure comparison and verified source assessment; no empirical utility effect or suppression finding.",
+    "matching_python_blocks": 129,
+    "rendered_pages_checked": 53
   }
 }

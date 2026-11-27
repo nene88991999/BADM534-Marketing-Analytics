@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\node[font=\bfseries] at (6.4,.9) {Access to Evidence Has Several Institutional Gates};
+\node[box,text width=2.25cm,minimum height=2.2cm] (event) at (0,-.5) {Household Events\\Consumption and Charges};
+\node[box,text width=2.25cm,minimum height=2.2cm] (collect) at (3.2,-.5) {Collection\\Meters and Billing Systems};
+\node[box,text width=2.25cm,minimum height=2.2cm] (retain) at (6.4,-.5) {Retention\\Versions and Histories};
+\node[box,text width=2.25cm,minimum height=2.2cm] (link) at (9.6,-.5) {Linkage\\Projects, Costs, and Accounts};
+\node[orangebox,text width=2.25cm,minimum height=2.2cm] (access) at (12.8,-.5) {Access\\Released or Restricted Records};
+\draw[edge] (event)--(collect);\draw[edge] (collect)--(retain);
+\draw[edge] (retain)--(link);\draw[accent] (link)--(access);
+\node[align=center,text width=2.9cm,font=\footnotesize,execute at begin node=\hyphenpenalty10000\relax] at (3.2,-3.0) {Payment and Compliance};
+\node[align=center,text width=2.9cm,font=\footnotesize,execute at begin node=\hyphenpenalty10000\relax] at (6.4,-3.0) {Retention Duties and Capacity};
+\node[align=center,text width=2.9cm,font=\footnotesize,execute at begin node=\hyphenpenalty10000\relax] at (9.6,-3.0) {Identifiers and Cooperation};
+\node[align=center,text width=2.9cm,font=\footnotesize,execute at begin node=\hyphenpenalty10000\relax] at (12.8,-3.0) {Privacy,\\Accountability,\\Commercial Interests};
+\node[orangebox,text width=12.5cm] at (6.4,-5.0) {An Accurate Released Row Can Coexist with an Inadequate Comparison\\Coverage, Causal Identification, and Moral Justification Require Further Premises};
+\end{tikzpicture}

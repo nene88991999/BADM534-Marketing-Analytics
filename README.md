@@ -168,3 +168,7 @@ The [electricity lesson](08_Wiki/pilot/README.md) asks students to predict a bil
 ## Bad Controls and Thoughtful Research Design
 
 The [reading collection](01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) covers causal adjustment, selection, treatment-affected covariates, anticipation, and exposed comparison groups. [Three original Python programs](03_Data_and_Code/Bad_Controls/README.md) connect these distinctions to phantom projects and the choice of a recent operating-facility sample. M3 §§3.20–3.21, M6 §§6.40–6.42, and M9 §9.50 develop the implications for household claims and research design.
+
+## Data, Truth, and Norms
+
+The [reading collection](01_Resources/45_Data_Truth_and_Norms/README.md) connects Thomasson’s artifacts, truth and warrant, institutional research priorities, and reasons owed to households. An [original Python example](03_Data_and_Code/Data_Production/README.md) constructs identical public records with opposite population effects. M2, M6, and M9 distinguish existing billing data from the project-linked evidence and causal design needed for household claims.

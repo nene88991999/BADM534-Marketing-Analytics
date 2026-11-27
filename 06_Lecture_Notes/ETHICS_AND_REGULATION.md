@@ -142,3 +142,7 @@ M9 §§9.45–9.49 separates commercial adversity, a duty-based conflict, demons
 ## Research Design and Household Exposure
 
 M9 §9.50 connects Scanlonian reasons to the population excluded by a convenient dataset. M6 §§6.41–6.42 distinguish zero operating additions from zero project exposure and preserve offsets and negative cases. The [source assessment](../01_Resources/44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) records the 2023 cancellation, 2025 risk discussion, and Ohio Power tariff approved July 9, 2025 and effective July 23, 2025. The tariff applies in that utility’s service territory. Its current operator page was checked November 26, 2026; no national rule or confirmed historical household loss is inferred.
+
+## Disclosure, Truth, and Household Reasons
+
+M9 §§9.51–9.54 distinguish semantic, epistemic, procedural/legal, and moral norms. The [source assessment](../01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) records household expenditure data already published by EIA, restricted access, customer-authorized sharing, and contract confidentiality described in January 2026 correspondence. U.S. Senate S. 5640, introduced September 30, 2026, proposes federal electricity and household-cost reporting; only the introduced text was verified on November 26, 2026. No operative duty, enactment, or effective date is asserted. The course’s Scanlonian argument concerns proportionate scrutiny and qualified public claims, with privacy protections and feasible access alternatives.

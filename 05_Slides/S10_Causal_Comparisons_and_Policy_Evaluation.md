@@ -25,6 +25,7 @@ Session 10. M6. 170 minutes.
 - [Optional dose-response lab](../07_Labs/Dose_Response/README.md)
 - [Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)
 - [Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)
+- [Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)
 
 ## Slide 1: Causal Comparisons and Policy Evaluation
 
@@ -346,7 +347,17 @@ Recent operating records may omit the stages that generate the burden of interes
 
 Source: ../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md
 
-## Slide 29: Causal-Design Discussion
+## Slide 29: Household Bills Exist; the Causal Link Requires Work
+
+- EIA collects supplier billing data and publishes household expenditure microdata.
+- Project histories, cost recovery, offsets, and household records require defensible linkage.
+- Even complete realized bills reveal only one project history per household.
+
+The claim that actual household costs will never be collected is contradicted by RECS. Access restrictions can still obstruct project-level research. Separate the absence of a linked file from the absence of a causal counterfactual. January 2026 company correspondence documents confidentiality for some bespoke contracts and recognizes regulatory exceptions; it does not establish exposure of the paper’s 2020–2025 donors.
+
+Source: M6 §6.43. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md; https://www.eia.gov/consumption/residential/faqs.php
+
+## Slide 30: Causal-Design Discussion
 
 - What would the treated group have experienced without the policy?
 - Which group or action lacks comparable support?

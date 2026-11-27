@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\node[font=\bfseries] at (5.4,.9) {Different Premises Support Truth Claims and Recommendations};
+\node[box,text width=3.4cm,minimum height=1.4cm] (record) at (0,-.5) {Record\\A Specified Household Was Charged USD 140};
+\node[box,text width=3.4cm,minimum height=1.4cm] (claim) at (5.4,-.5) {Causal Claim\\The Project Raised This Household's Charge};
+\node[orangebox,text width=3.4cm,minimum height=1.4cm] (action) at (10.8,-.5) {Recommendation\\The Institution Ought to Adopt a Policy};
+\draw[edge] (record)--(claim);\draw[accent] (claim)--(action);
+\node[box,text width=3.4cm,minimum height=1.6cm] (semantic) at (0,-3.1) {Semantic and Legal Premises\\What Is a Charge?\\Which Record Is Valid?};
+\node[box,text width=3.4cm,minimum height=1.6cm] (epistemic) at (5.4,-3.1) {Epistemic Premises\\Measurement, Population, and Counterfactual};
+\node[orangebox,text width=3.4cm,minimum height=1.6cm] (moral) at (10.8,-3.1) {Moral Premises\\Affected Persons, Alternatives, Authority, and Reasons};
+\draw[edge] (semantic)--(record);\draw[edge] (epistemic)--(claim);\draw[accent] (moral)--(action);
+\node[align=center,text width=14cm,font=\footnotesize] at (5.4,-5) {A Correct Record Does Not Supply a Causal Counterfactual.\\A Causal Result Does Not Supply the Moral Premise Governing the Action.};
+\end{tikzpicture}

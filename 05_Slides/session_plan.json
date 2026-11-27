@@ -90,10 +90,10 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 27,
+      "slides": 29,
       "companion": "S02_Customer_Data_and_Measurement.md",
       "pdf": "S02_Customer_Data_and_Measurement.pdf",
-      "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator. Use the optional Digital Usage lab for the complete geographic analysis.",
+      "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator. Use the optional Digital Usage lab for the complete geographic analysis. Optional synthetic disclosure comparison and bounds in M2 §2.31.",
       "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states. Digital-usage comparisons distinguish geographic activity from individual service needs.",
       "ethics": "Missingness, sample exclusions, and customer representation",
       "timing": [
@@ -149,7 +149,7 @@
           "start_minute": 155,
           "end_minute": 170,
           "minutes": 15,
-          "activity": "Ethics and Decision Discussion"
+          "activity": "Data Production, Selective Access, and Household Claims"
         }
       ],
       "date": "2027-01-27",
@@ -645,11 +645,11 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 29,
+      "slides": 30,
       "companion": "S10_Causal_Comparisons_and_Policy_Evaluation.md",
       "pdf": "S10_Causal_Comparisons_and_Policy_Evaluation.pdf",
       "python_activity": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
-      "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation. Bad controls, phantom-project exposure, and thoughtful sample design.",
+      "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation. Bad controls, phantom-project exposure, and thoughtful sample design. Distinguish existing bills from project-linked causal evidence.",
       "ethics": "Treatment paths, comparison populations, and selection",
       "timing": [
         {
@@ -698,7 +698,7 @@
           "start_minute": 155,
           "end_minute": 170,
           "minutes": 15,
-          "activity": "Ethics and Decision Discussion"
+          "activity": "Household Cost Evidence, Access, and Counterfactuals"
         }
       ],
       "date": "2027-03-31",
@@ -938,11 +938,11 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 98,
+      "slides": 101,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
-      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice. Compare conflicts of interest, reward-learning evidence, and consumer control through the synthetic feed case and Kantian, Scanlonian, and Confucian arguments. Bad controls, phantom-project exposure, and thoughtful sample design.",
+      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice. Compare conflicts of interest, reward-learning evidence, and consumer control through the synthetic feed case and Kantian, Scanlonian, and Confucian arguments. Bad controls, phantom-project exposure, and thoughtful sample design. Evaluate data as artifacts, truth and norms, undone science, and institutional duties to produce evidence.",
       "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims. Reasonable rejection, pricing authority, antitrust evidence, and access to critical replication.; measurement quality, worthy objectives, and reasonableness across pricing and data-center claims",
       "timing": [
         {
@@ -997,7 +997,7 @@
           "start_minute": 95,
           "end_minute": 100,
           "minutes": 5,
-          "activity": "Household Reasons, Sample Selection, and Public Claims"
+          "activity": "Data, Truth, Norms, and Reasons Owed to Households"
         },
         {
           "start_minute": 100,

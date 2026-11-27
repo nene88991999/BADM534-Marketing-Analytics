@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\node[box,text width=2.35cm,minimum height=1.8cm] (event) at (0,0) {Household Events\\Consumption and Charges};
+\node[box,text width=2.35cm,minimum height=1.8cm] (collect) at (3.2,0) {Collection\\Meters and Billing};
+\node[box,text width=2.35cm,minimum height=1.8cm] (retain) at (6.4,0) {Retention\\Versions and Histories};
+\node[box,text width=2.35cm,minimum height=1.8cm] (link) at (9.6,0) {Linkage\\Projects, Costs, Accounts};
+\node[orangebox,text width=2.35cm,minimum height=1.8cm] (access) at (12.8,0) {Access\\Released or Restricted};
+\draw[edge] (event)--(collect);\draw[edge] (collect)--(retain);
+\draw[edge] (retain)--(link);\draw[accent] (link)--(access);
+\node[align=center,text width=2.7cm] at (3.2,-2.2) {Payment and Compliance};
+\node[align=center,text width=2.7cm] at (6.4,-2.2) {Duties and Capacity};
+\node[align=center,text width=2.7cm] at (9.6,-2.2) {Identifiers and Cooperation};
+\node[align=center,text width=2.7cm] at (12.8,-2.2) {Privacy, Public Scrutiny, Commercial Interests};
+\end{tikzpicture}

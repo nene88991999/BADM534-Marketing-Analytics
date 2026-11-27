@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 144 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 147 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -227,3 +227,7 @@ M9 §§9.45–9.49 examines responsibilities, disclosure, dependence, engagement
 ## Bad Controls and Thoughtful Research Design
 
 M3 §§3.20–3.21, M6 §§6.40–6.42, and M9 §9.50 distinguish adjustment bias, exposed donors, anticipation, and selected populations. Three complete Python programs and four Illinois-color TikZ figures accompany the [readings](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) and [optional practice](../07_Labs/Bad_Controls/README.md).
+
+## Data, Truth, and Institutional Responsibility
+
+M2 §§2.30–2.31, M6 §6.43, and M9 §§9.51–9.54 distinguish data artifacts, evidence, truth claims, and permissible action. Three TikZ diagrams and one complete Python program connect selective access to the data-center case. The [reading collection](../01_Resources/45_Data_Truth_and_Norms/README.md) and [evidence assessment](../01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) document existing household expenditure data and the more demanding project-level causal question.

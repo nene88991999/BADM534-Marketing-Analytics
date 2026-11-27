@@ -172,3 +172,7 @@ The [supplemental philosophy and evidence guide](15_Marketing_Dialectics/09_Conf
 ## Bad Controls and Project Exposure
 
 [22 methods readings and 8 institutional sources](44_Bad_Controls_and_Project_Exposure/README.md) cover adjustment, selection, time-varying covariates, anticipation, synthetic controls, and phantom projects. The [case assessment](44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) distinguishes in-period evidence from subsequent reporting and identifies the records needed to assess actual donor exposure.
+
+## Data, Truth, and Norms
+
+The [26-source collection](45_Data_Truth_and_Norms/README.md) covers Thomasson, data epistemology, truth, inductive risk, critical interaction, undone science, classification, and household electricity evidence. The [electricity assessment](45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) separates verified collection, selective access, missing linkage, causal identification, and proposed disclosure rules.

@@ -1,0 +1,7 @@
+world,policy,target_households,released_households,coverage,released_mean_change_usd,target_mean_effect_usd_oracle,weighted_mean_change_usd
+H,restricted,400,200,1/2,-10,10,undefined
+H,broader,400,300,3/4,10/3,10,10
+H,balanced,400,200,1/2,10,10,10
+L,restricted,400,200,1/2,-10,-10,undefined
+L,broader,400,300,3/4,-10,-10,-10
+L,balanced,400,200,1/2,-10,-10,-10

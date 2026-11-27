@@ -259,3 +259,7 @@ The [nine-source supplement](../01_Resources/15_Marketing_Dialectics/09_Conflict
 ## Bad Controls and Project Exposure
 
 The [categorized collection](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) connects M3 causal graphs to M6 panel identification and the phantom-project case. The examples separate a total effect from a conditioned coefficient and an operating-entry effect from the wider proposal population. M9 §9.50 asks which empirical premises justify reassurance to households. The 2020–2025 historical evidence supports particular scrutiny of later sample years; exact donor exposure requires project and payment records.
+
+## Data, Truth, and Norms
+
+The [collection](../01_Resources/45_Data_Truth_and_Norms/README.md) develops an explicit analogy from Thomasson’s created artifacts while preserving the distinction between datasets and represented people. Leonelli, Bogen and Woodward, Douglas, Longino, and research on undone science connect institutional production to evidence and public justification. M2 §§2.30–2.31 and M9 §§9.51–9.54 develop the conceptual and synthetic examples. M6 §6.43 uses EIA and specific institutional documents to correct a universal noncollection claim and identify the unresolved linkage and counterfactual requirements.

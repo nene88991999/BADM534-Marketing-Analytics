@@ -2168,3 +2168,156 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 2.30 Data Have a Production History
+
+\noindent A utility needs records to calculate charges, collect payments, and comply with reporting rules. A household needs to know why its bill changed and whether a proposed development shifts costs onto it. These purposes overlap incompletely. A database optimized for invoicing may contain accurate charges while omitting project histories, developer guarantees, regulatory decisions, or the resources available to the household. The existence of many records therefore leaves a substantive question about which decisions they can inform.
+
+Separate the event, its representation, and its evidential use. Electricity consumption occurs over time. A meter records a quantity under a technical convention. A billing system applies a tariff, credits, and adjustments. An analyst selects fields, reconciles account identities, and defines a comparison. Each stage creates an object with a provenance and a purpose. Accuracy at one stage does not establish that the final comparison represents the relevant population or answers the intended question.
+
+[Leonelli (2015)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4747116/) treats data relationally through their role as prospective evidence. [Bogen and Woodward (1988)](https://joelvelasco.net/teaching/5330/bogen_woodward88-saving_the_phenomena.pdf) distinguish particular data from the phenomena inferred through them. Their distinction concerns scientific reasoning and differs from Kant's phenomena–noumena distinction. A pattern in utility revenue per MWh may be well measured while its interpretation as a household cost effect remains unsupported.
+
+![Household events pass through collection, retention, linkage, and access before entering an analysis. Each gate has an institutional purpose and can exclude records. An accurate released row can coexist with incomplete evidence about the target population.](../figures/M02_data_production.png)
+
+Collection, retention, linkage, and release should be assessed separately. A required field may be recorded reliably because payment depends on it. A long-term burden may remain unstudied because it crosses administrative systems and budgets. Confidentiality may protect a household, preserve commercial bargaining power, or impede scrutiny; the relevant policy and its application determine which explanation is supported. Political attention can change these incentives in either direction, including by creating new reporting duties or public investigations. Trace the actual process before assigning a motive to a missing variable.
+
+## 2.31 Identical Public Records and Opposite Household Effects
+
+\noindent Consider 400 synthetic households in four strata of 100. Each household's previous monthly bill is between USD 120 and USD 124. The benchmark holds weather, usage, tariffs unrelated to the project, household composition, and other time effects fixed, so the previous bill equals the constructed no-project bill for the current month. The changed object is the project's effect on the current bill. This construction makes the causal effect known to the example's creator; an ordinary before-and-after comparison would require additional identification conditions.
+
+In world H, the project reduces each bill in strata A and B by USD 10 and increases each bill in C and D by USD 30. In world L, every bill falls by USD 10. The utility records every current bill in both worlds. Suppose the public release includes only A and B. These released records are identical across worlds, including account identifiers, prior bills, and current bills. They show a USD 10 mean decline, although the population effect is a USD 10 increase in H and a USD 10 decline in L. No method using only that release can distinguish the two worlds.
+
+![In two synthetic populations of 400 households, the same 200 released records show a USD 10 monthly decline. The 200 unreleased effects are plus USD 30 in H and minus USD 10 in L, yielding population means of plus USD 10 and minus USD 10. Identical released records do not identify the population effect.](../figures/M02_selected_evidence.png)
+
+For the finite target population, partitioning effects by release status gives the accounting identity
+
+$$
+\mu=\pi\mu_{\mathrm{released}}+(1-\pi)\mu_{\mathrm{unreleased}},
+$$
+
+where $\mu$ is the mean effect in USD per household-month, $\pi$ is the released share of the 400 households, and the two conditional means refer to the released and unreleased groups. Under the restricted release, $\pi=1/2$ and $\mu_{\mathrm{released}}=-10$. Suppose substantive information bounds every unreleased effect between USD $-20$ and USD $40$. The resulting population-mean interval is $[-15,15]$. These support limits are assumptions in the synthetic comparison. Without defensible finite limits, the release alone supplies no finite bound for the missing mean.
+
+A broader release includes all of A and B and a simple random sample of 50 households from each of C and D. In H, its unweighted mean is $10/3$, or approximately USD 3.33. Known inclusion probabilities recover the target mean of USD 10 through inverse-probability weighting. A balanced release of 50 households per stratum also gives USD 10. Exact recovery in every draw follows from the constant effect within each constructed stratum; real stratified samples generally have sampling uncertainty. Weighting cannot repair the restricted release's zero inclusion probability for C and D without further information or restrictions.
+
+Run `python3 03_Data_and_Code/Data_Production/data_availability.py` from the repository root. The program constructs both worlds, samples the releases with a fixed seed, and writes ledgers, public records, weighted comparisons, and support bounds to `03_Data_and_Code/Data_Production/results/`. Only the constructed ledgers contain both potential outcomes. The public releases omit the oracle fields. The [verification program](../../03_Data_and_Code/Data_Production/verify_example.py) checks independent population totals, identical public releases, weighting, row-order invariance, duplicate detection, and the error from treating unavailable effects as zero.
+
+Python source: [data_availability.py](../../03_Data_and_Code/Data_Production/data_availability.py).
+
+```python
+"""Exact synthetic billing populations and institutionally selected evidence.
+
+Run from any directory with Python 3.10+. No external data or dependencies.
+Both potential outcomes are known only because this program constructs them.
+"""
+import csv
+from fractions import Fraction
+from pathlib import Path
+from random import Random
+
+HERE = Path(__file__).resolve().parent
+OUT = HERE / "results"
+GROUPS = "ABCD"
+POLICIES = {"restricted": (100, 100, 0, 0),
+            "broader": (100, 100, 50, 50),
+            "balanced": (50, 50, 50, 50)}
+
+
+def population(world):
+    if world not in ("H", "L"):
+        raise ValueError("Unknown synthetic world")
+    rows = []
+    for group in GROUPS:
+        effect = 30 if world == "H" and group in "CD" else -10
+        for i in range(100):
+            previous = 120 + i % 5
+            rows.append({"household_id": f"{group}{i:03d}", "group": group,
+                         "previous_bill_usd": previous,
+                         "current_bill_usd": previous + effect,
+                         "no_project_bill_usd_oracle": previous,
+                         "effect_usd_oracle": effect})
+    return rows
+
+
+def release(rows, policy):
+    ids = [r["household_id"] for r in rows]
+    if len(set(ids)) != len(ids):
+        raise ValueError("Duplicate household")
+    rng = Random(20261126)
+    selected = []
+    for group, count in zip(GROUPS, POLICIES[policy]):
+        eligible = sorted((r for r in rows if r["group"] == group),
+                          key=lambda r: r["household_id"])
+        if len(eligible) != 100:
+            raise ValueError("Expected 100 households in each stratum")
+        inclusion = Fraction(count, len(eligible))
+        for row in rng.sample(eligible, count):
+            selected.append({k: row[k] for k in
+                             ("household_id", "group", "previous_bill_usd",
+                              "current_bill_usd")} | {"inclusion": inclusion})
+    return sorted(selected, key=lambda r: r["household_id"])
+
+
+def mean_change(rows):
+    if not rows:
+        raise ValueError("Empty observed sample")
+    return Fraction(sum(r["current_bill_usd"] - r["previous_bill_usd"]
+                        for r in rows), len(rows))
+
+
+def weighted_mean(rows, policy):
+    # The target is all 400 households, with equal population weights.
+    if any(n == 0 for n in POLICIES[policy]):
+        raise ValueError("Zero inclusion leaves target strata unsupported")
+    return sum((Fraction(r["current_bill_usd"] - r["previous_bill_usd"])
+                / r["inclusion"] for r in rows), Fraction(0)) / 400
+
+
+def effect_bounds(observed_mean, coverage, lower, upper):
+    if not (0 <= coverage <= 1 and lower <= upper):
+        raise ValueError("Invalid coverage or support")
+    return (coverage * observed_mean + (1 - coverage) * lower,
+            coverage * observed_mean + (1 - coverage) * upper)
+
+
+def construct():
+    files = {}
+    summaries = []
+    for world in ("H", "L"):
+        rows = population(world)
+        files[f"synthetic_ledger_{world}.csv"] = rows
+        target = Fraction(sum(r["effect_usd_oracle"] for r in rows), 400)
+        for policy in POLICIES:
+            observed = release(rows, policy)
+            files[f"released_{world}_{policy}.csv"] = observed
+            weighted = ("undefined" if policy == "restricted"
+                        else weighted_mean(observed, policy))
+            summaries.append({"world": world, "policy": policy,
+                              "target_households": 400,
+                              "released_households": len(observed),
+                              "coverage": Fraction(len(observed), 400),
+                              "released_mean_change_usd": mean_change(observed),
+                              "target_mean_effect_usd_oracle": target,
+                              "weighted_mean_change_usd": weighted})
+    lower, upper = effect_bounds(Fraction(-10), Fraction(1, 2), -20, 40)
+    files["bounds.csv"] = [{"observed_mean_usd": -10, "coverage": "1/2",
+                            "missing_lower_usd_assumed": -20,
+                            "missing_upper_usd_assumed": 40,
+                            "population_lower_usd": lower,
+                            "population_upper_usd": upper}]
+    files["selection_comparisons.csv"] = summaries
+    return files
+
+
+def main():
+    OUT.mkdir(exist_ok=True)
+    for name, rows in construct().items():
+        with (OUT / name).open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+        print(name, len(rows), "synthetic rows")
+
+
+if __name__ == "__main__":
+    main()
+```

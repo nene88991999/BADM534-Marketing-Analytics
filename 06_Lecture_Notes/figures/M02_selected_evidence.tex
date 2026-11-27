@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\node[font=\bfseries] at (6.2,.9) {Identical Public Records Can Leave the Sign Unidentified};
+\node[align=center,font=\footnotesize] at (6.2,.3) {Synthetic: 400 Households; Effects in USD per Household-Month};
+\node[font=\bfseries] at (-.4,-1.2) {H};
+\node[font=\bfseries] at (-.4,-4.0) {L};
+\node[box,text width=3cm,minimum height=1.3cm] (ah) at (2.2,-1.2) {Released A and B\\200 Households\\Effect: $-10$};
+\node[box,text width=3cm,minimum height=1.3cm] (al) at (2.2,-4.0) {Released A and B\\200 Households\\Effect: $-10$};
+\node[orangebox,text width=3cm,minimum height=1.3cm] (ch) at (6.8,-1.2) {Unreleased C and D\\200 Households\\Effect: $+30$};
+\node[orangebox,text width=3cm,minimum height=1.3cm] (cl) at (6.8,-4.0) {Unreleased C and D\\200 Households\\Effect: $-10$};
+\node[box,text width=2.6cm,minimum height=1.3cm] (mh) at (11.4,-1.2) {Population Mean\\$+10$};
+\node[box,text width=2.6cm,minimum height=1.3cm] (ml) at (11.4,-4.0) {Population Mean\\$-10$};
+\draw[edge] (ch)--(mh);\draw[edge] (cl)--(ml);
+\draw[<->,IlliniBlue,thick] (ah)--node[right,font=\footnotesize]{Same Release}(al);
+\node[align=center,text width=13.5cm,font=\footnotesize] at (6.2,-6.0) {Every Bill Is Recorded Internally in Both Worlds. Only the Released Half Is Visible.\\The Construction Holds All Other Causes of Bills Fixed; No Actual Utility Effects Are Estimated.};
+\end{tikzpicture}

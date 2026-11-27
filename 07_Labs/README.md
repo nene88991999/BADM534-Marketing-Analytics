@@ -110,3 +110,7 @@ The [Philosophical Arguments practice](Philosophical_Arguments/README.md) includ
 ## Bad Controls and Thoughtful Research Design
 
 The [optional ungraded practice](Bad_Controls/README.md) asks students to defend controls and sample restrictions, reproduce the project-window comparisons, and evaluate whether the evidence justifies reassurance to households.
+
+## Data, Truth, and Norms
+
+[Optional ungraded practice](Data_Truth_and_Norms/README.md) connects selected evidence and causal counterfactuals to the artifact analogy, distinct norms, and an argument about institutional duties to provide household evidence.

@@ -54,3 +54,7 @@ The [utility-disclosure example](../../03_Data_and_Code/Utility_Cost_Recovery/RE
 ## Bad Controls and the Observation Window
 
 The [project-exposure assessment](../44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) adds evidence inside 2020–2025, particularly its later years, and separates adjustment covariates from exposed donors, anticipation, and completion selection. M6 §§6.40–6.42 provide complete synthetic calculations. Thoughtful design requires a baseline preceding relevant commitments and a sample aligned with the affected population. An appealing fit or recent data alone does not establish those conditions.
+
+## Data Production and Availability
+
+The [household-evidence assessment](../45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) establishes that billing data and public expenditure microdata exist. The unresolved object is a sufficiently detailed, accessible, linked basis for project-level household causal inference. M6 §6.43 connects this distinction to exposure histories and cost recovery; M9 §§9.51–9.54 examine truth, norms, and responsibility for an adequate public claim.

@@ -5808,6 +5808,249 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M02-data-have-a-production-history}{%
+\section{Data Have a Production
+History}\label{M02-data-have-a-production-history}}
+
+\noindent \noindent A utility needs records to calculate charges, collect
+payments, and comply with reporting rules. A household needs to know why
+its bill changed and whether a proposed development shifts costs onto
+it. These purposes overlap incompletely. A database optimized for
+invoicing may contain accurate charges while omitting project histories,
+developer guarantees, regulatory decisions, or the resources available
+to the household. The existence of many records therefore leaves a
+substantive question about which decisions they can inform.
+
+Separate the event, its representation, and its evidential use.
+Electricity consumption occurs over time. A meter records a quantity
+under a technical convention. A billing system applies a tariff,
+credits, and adjustments. An analyst selects fields, reconciles account
+identities, and defines a comparison. Each stage creates an object with
+a provenance and a purpose. Accuracy at one stage does not establish
+that the final comparison represents the relevant population or answers
+the intended question.
+
+\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC4747116/}{Leonelli
+(2015)} treats data relationally through their role as prospective
+evidence.
+\href{https://joelvelasco.net/teaching/5330/bogen_woodward88-saving_the_phenomena.pdf}{Bogen
+and Woodward (1988)} distinguish particular data from the phenomena
+inferred through them. Their distinction concerns scientific reasoning
+and differs from Kant's phenomena--noumena distinction. A pattern in
+utility revenue per MWh may be well measured while its interpretation as
+a household cost effect remains unsupported.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_data_production.tex}
+\caption{Household events pass through collection, retention, linkage, and access before entering an analysis. Each gate has an institutional purpose and can exclude records. An accurate released row can coexist with incomplete evidence about the target population.}\label{fig:M02_data_production}
+\end{figure}
+
+Collection, retention, linkage, and release should be assessed
+separately. A required field may be recorded reliably because payment
+depends on it. A long-term burden may remain unstudied because it
+crosses administrative systems and budgets. Confidentiality may protect
+a household, preserve commercial bargaining power, or impede scrutiny;
+the relevant policy and its application determine which explanation is
+supported. Political attention can change these incentives in either
+direction, including by creating new reporting duties or public
+investigations. Trace the actual process before assigning a motive to a
+missing variable.
+
+\hypertarget{M02-identical-public-records-and-opposite-household-effects}{%
+\section{Identical Public Records and Opposite Household
+Effects}\label{M02-identical-public-records-and-opposite-household-effects}}
+
+\noindent \noindent Consider 400 synthetic households in four strata of 100. Each
+household's previous monthly bill is between USD 120 and USD 124. The
+benchmark holds weather, usage, tariffs unrelated to the project,
+household composition, and other time effects fixed, so the previous
+bill equals the constructed no-project bill for the current month. The
+changed object is the project's effect on the current bill. This
+construction makes the causal effect known to the example's creator; an
+ordinary before-and-after comparison would require additional
+identification conditions.
+
+In world H, the project reduces each bill in strata A and B by USD 10
+and increases each bill in C and D by USD 30. In world L, every bill
+falls by USD 10. The utility records every current bill in both worlds.
+Suppose the public release includes only A and B. These released records
+are identical across worlds, including account identifiers, prior bills,
+and current bills. They show a USD 10 mean decline, although the
+population effect is a USD 10 increase in H and a USD 10 decline in L.
+No method using only that release can distinguish the two worlds.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M02_selected_evidence.tex}
+\caption{In two synthetic populations of 400 households, the same 200 released records show a USD 10 monthly decline. The 200 unreleased effects are plus USD 30 in H and minus USD 10 in L, yielding population means of plus USD 10 and minus USD 10. Identical released records do not identify the population effect.}\label{fig:M02_selected_evidence}
+\end{figure}
+
+For the finite target population, partitioning effects by release status
+gives the accounting identity
+
+\[
+\mu=\pi\mu_{\mathrm{released}}+(1-\pi)\mu_{\mathrm{unreleased}},
+\]
+
+where \(\mu\) is the mean effect in USD per household-month, \(\pi\) is
+the released share of the 400 households, and the two conditional means
+refer to the released and unreleased groups. Under the restricted
+release, \(\pi=1/2\) and \(\mu_{\mathrm{released}}=-10\). Suppose
+substantive information bounds every unreleased effect between USD
+\(-20\) and USD \(40\). The resulting population-mean interval is
+\([-15,15]\). These support limits are assumptions in the synthetic
+comparison. Without defensible finite limits, the release alone supplies
+no finite bound for the missing mean.
+
+A broader release includes all of A and B and a simple random sample of
+50 households from each of C and D. In H, its unweighted mean is
+\(10/3\), or approximately USD 3.33. Known inclusion probabilities
+recover the target mean of USD 10 through inverse-probability weighting.
+A balanced release of 50 households per stratum also gives USD 10. Exact
+recovery in every draw follows from the constant effect within each
+constructed stratum; real stratified samples generally have sampling
+uncertainty. Weighting cannot repair the restricted release's zero
+inclusion probability for C and D without further information or
+restrictions.
+
+Run
+\texttt{python3\ 03\_Data\_and\_Code/Data\_Production/data\_availability.py}
+from the repository root. The program constructs both worlds, samples
+the releases with a fixed seed, and writes ledgers, public records,
+weighted comparisons, and support bounds to
+\texttt{03\_Data\_and\_Code/Data\_Production/results/}. Only the
+constructed ledgers contain both potential outcomes. The public releases
+omit the oracle fields. The
+\href{../03_Data_and_Code/Data_Production/verify_example.py}{verification
+program} checks independent population totals, identical public
+releases, weighting, row-order invariance, duplicate detection, and the
+error from treating unavailable effects as zero.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Data_Production/data_availability.py}{data\_availability.py}.
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Exact synthetic billing populations and institutionally selected evidence.
+
+Run from any directory with Python 3.10+. No external data or dependencies.
+Both potential outcomes are known only because this program constructs them.
+"""
+import csv
+from fractions import Fraction
+from pathlib import Path
+from random import Random
+
+HERE = Path(__file__).resolve().parent
+OUT = HERE / "results"
+GROUPS = "ABCD"
+POLICIES = {"restricted": (100, 100, 0, 0),
+            "broader": (100, 100, 50, 50),
+            "balanced": (50, 50, 50, 50)}
+
+
+def population(world):
+    if world not in ("H", "L"):
+        raise ValueError("Unknown synthetic world")
+    rows = []
+    for group in GROUPS:
+        effect = 30 if world == "H" and group in "CD" else -10
+        for i in range(100):
+            previous = 120 + i % 5
+            rows.append({"household_id": f"{group}{i:03d}", "group": group,
+                         "previous_bill_usd": previous,
+                         "current_bill_usd": previous + effect,
+                         "no_project_bill_usd_oracle": previous,
+                         "effect_usd_oracle": effect})
+    return rows
+
+
+def release(rows, policy):
+    ids = [r["household_id"] for r in rows]
+    if len(set(ids)) != len(ids):
+        raise ValueError("Duplicate household")
+    rng = Random(20261126)
+    selected = []
+    for group, count in zip(GROUPS, POLICIES[policy]):
+        eligible = sorted((r for r in rows if r["group"] == group),
+                          key=lambda r: r["household_id"])
+        if len(eligible) != 100:
+            raise ValueError("Expected 100 households in each stratum")
+        inclusion = Fraction(count, len(eligible))
+        for row in rng.sample(eligible, count):
+            selected.append({k: row[k] for k in
+                             ("household_id", "group", "previous_bill_usd",
+                              "current_bill_usd")} | {"inclusion": inclusion})
+    return sorted(selected, key=lambda r: r["household_id"])
+
+
+def mean_change(rows):
+    if not rows:
+        raise ValueError("Empty observed sample")
+    return Fraction(sum(r["current_bill_usd"] - r["previous_bill_usd"]
+                        for r in rows), len(rows))
+
+
+def weighted_mean(rows, policy):
+    # The target is all 400 households, with equal population weights.
+    if any(n == 0 for n in POLICIES[policy]):
+        raise ValueError("Zero inclusion leaves target strata unsupported")
+    return sum((Fraction(r["current_bill_usd"] - r["previous_bill_usd"])
+                / r["inclusion"] for r in rows), Fraction(0)) / 400
+
+
+def effect_bounds(observed_mean, coverage, lower, upper):
+    if not (0 <= coverage <= 1 and lower <= upper):
+        raise ValueError("Invalid coverage or support")
+    return (coverage * observed_mean + (1 - coverage) * lower,
+            coverage * observed_mean + (1 - coverage) * upper)
+
+
+def construct():
+    files = {}
+    summaries = []
+    for world in ("H", "L"):
+        rows = population(world)
+        files[f"synthetic_ledger_{world}.csv"] = rows
+        target = Fraction(sum(r["effect_usd_oracle"] for r in rows), 400)
+        for policy in POLICIES:
+            observed = release(rows, policy)
+            files[f"released_{world}_{policy}.csv"] = observed
+            weighted = ("undefined" if policy == "restricted"
+                        else weighted_mean(observed, policy))
+            summaries.append({"world": world, "policy": policy,
+                              "target_households": 400,
+                              "released_households": len(observed),
+                              "coverage": Fraction(len(observed), 400),
+                              "released_mean_change_usd": mean_change(observed),
+                              "target_mean_effect_usd_oracle": target,
+                              "weighted_mean_change_usd": weighted})
+    lower, upper = effect_bounds(Fraction(-10), Fraction(1, 2), -20, 40)
+    files["bounds.csv"] = [{"observed_mean_usd": -10, "coverage": "1/2",
+                            "missing_lower_usd_assumed": -20,
+                            "missing_upper_usd_assumed": 40,
+                            "population_lower_usd": lower,
+                            "population_upper_usd": upper}]
+    files["selection_comparisons.csv"] = summaries
+    return files
+
+
+def main():
+    OUT.mkdir(exist_ok=True)
+    for name, rows in construct().items():
+        with (OUT / name).open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+        print(name, len(rows), "synthetic rows")
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
 Decisions}\label{M03-m3.-regression-interpretation-and-marketing-decisions}}
@@ -18633,6 +18876,100 @@ comparison to regain precision would not resolve that problem. The
 \href{../01_Resources/44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md}{source
 assessment} distinguishes verified design features, historical evidence,
 and the records still required for a reanalysis.
+
+\hypertarget{M06-household-bills-access-and-causal-cost-incidence}{%
+\section{Household Bills, Access, and Causal Cost
+Incidence}\label{M06-household-bills-access-and-causal-cost-incidence}}
+
+\noindent \noindent A claim about household electricity costs requires
+distinguishing recorded charges from the costs attributable to a
+particular development. U.S. household billing data already exist. The
+\href{https://www.eia.gov/consumption/residential/faqs.php}{EIA
+Residential Energy Consumption Survey} collects supplier billing data
+following its household survey, and
+\href{https://www.eia.gov/consumption/residential/data/2020/index.php?view=microdata}{public
+2020 RECS microdata} include consumption and expenditure measures.
+Consequently, the proposition that household costs will never be
+collected or released is contradicted by existing evidence. The
+unresolved problem concerns the detail, linkage, timing, population, and
+access required for the causal question.
+
+The target must specify whose costs and which intervention. Let
+\(B_{ht}(d)\) denote the electricity charge in USD to household \(h\) in
+month \(t\) under project history \(d\). A history includes proposed
+development, preparatory investment, operation or cancellation, cost
+recovery, and contractual offsets. Comparing \(B_{ht}(d)\) with
+\(B_{ht}(d_0)\) defines an effect relative to a specified alternative
+history \(d_0\). Only one history is realized. Even complete billing
+records do not reveal both potential outcomes; identification still
+requires a credible comparison or structural restrictions.
+
+Charges, payments, arrears, assistance, usage, and affordability also
+answer different questions. A lower bill can accompany rationed heating
+or cooling. A legally collectible charge can be disputed on moral
+grounds. Utility revenue divided by sales has units of USD per MWh and
+can change differently from monthly household charges (§2.29). A precise
+estimate for that ratio cannot settle every question about who bears
+development costs.
+
+\hypertarget{M06-the-missing-link-may-lie-between-existing-systems}{%
+\subsection{The Missing Link May Lie Between Existing
+Systems}\label{M06-the-missing-link-may-lie-between-existing-systems}}
+
+\noindent \noindent A suitable design would connect project requests and
+cancellations to utility investments, recovery decisions, developer
+contributions, service territories, household bills, and a defensible
+comparison population. A file can exist inside one institution while
+lacking the identifiers or permissions needed for that linkage. Routine
+billing does not require recording every proposed project's contribution
+to a customer's counterfactual bill. Creating that evidence requires
+analytical work, institutional cooperation, and a design covering failed
+and delayed proposals as well as operating facilities.
+
+There is direct evidence of selective access to some relevant records.
+In its
+\href{https://www.warren.senate.gov/wp-content/uploads/media/doc/big_tech_responses.pdf}{January
+2026 response to senators}, Google describes bespoke electricity
+contract terms as generally confidential, subject to regulatory review
+and legal disclosure requirements. The senators'
+\href{https://www.warren.senate.gov/wp-content/uploads/2026/10/471703-ai-data-center-boom-cost-Digital-8.5x11.pdf}{October
+2026 report} discusses nondisclosure practices and differences among
+companies. These documents support examining contract access. They do
+not establish that household bills went unrecorded or that the
+data-center paper's particular comparison units bore unrecovered costs
+during 2020--2025.
+
+Public concern can also stimulate inquiry. Virginia's
+\href{https://jlarc.virginia.gov/pdfs/reports/Rpt598.pdf}{December 2024
+investigation} analyzes data-center infrastructure and electricity
+costs. The
+\href{https://www.govinfo.gov/content/pkg/BILLS-119s5640is/xhtml/BILLS-119s5640is.html}{September
+30, 2026 introduced text of S. 5640} proposes federal reporting on
+electricity use, grid buildout, and household bills and costs. This is
+proposed legislation, with no effective reporting duty inferred here.
+Political sensitivity therefore supplies a reason to examine access
+mechanisms, rather than a basis for predicting permanent unavailability.
+
+\hypertarget{M06-what-the-evidence-justifies}{%
+\subsection{What the Evidence
+Justifies}\label{M06-what-the-evidence-justifies}}
+
+\noindent \noindent An inaccessible project-linked panel leaves the household
+effect unresolved. The two worlds in §2.31 establish why accurate
+selected records alone can fail to identify even the sign of the
+population effect. They are a logical counterexample, with no estimate
+of how often actual utility releases follow that selection rule.
+Evidence of a particular selection mechanism would require release
+criteria, coverage counts, retention rules, denied requests, redaction
+grounds, and comparisons with records available under controlled access.
+
+The criticism of broad reassurance remains substantial. A study using an
+aggregate price outcome must establish the additional premises needed to
+interpret it as household cost incidence. Missing project histories and
+restricted access make those premises harder to assess; they do not make
+the burden disappear. A defensible response narrows the public claim,
+improves the design, or acknowledges the remaining uncertainty.
+Disclosure and causal identification are complementary requirements.
 
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
@@ -33587,5 +33924,291 @@ to reconstruct the design, narrow the conclusion to the supported
 estimand, or acknowledge that the broader question remains unanswered.
 Analytical skill includes recognizing when the available dataset does
 not justify the intended public message.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-data-as-artifacts-and-people-as-subjects-of-claims}{%
+\section{Data as Artifacts and People as Subjects of
+Claims}\label{M09-data-as-artifacts-and-people-as-subjects-of-claims}}
+
+\noindent \noindent A household asked to accept a new development may be told that
+the available data show little reason for concern. Before accepting that
+reassurance, ask why those data exist, what their categories mean, and
+whose question they were built to answer. An institution can collect
+information meticulously for billing, financing, or regulatory
+compliance while leaving the incidence of burdens poorly understood.
+Data abundance and adequacy for public justification are separate
+achievements.
+
+\href{https://www.cambridge.org/core/books/abs/fiction-and-metaphysics/fictional-characters-as-abstract-artifacts/CE4968D080D4B81C9DE76FF589C70017}{Thomasson's
+account of fictional characters} treats them as created, dependent
+artifacts. This suggests a disciplined analogy for datasets: examine
+their creation, identity, preservation, and dependence on human
+practices. A dataset version, a physical copy, and the households
+represented in it are distinct objects. Destroying one copy need not
+destroy the dataset; changing a category or linkage rule may change what
+a version represents. The analogy concerns these dependencies. An
+invoice's description of an actual charge remains answerable to the
+transaction and billing rules.
+
+The status of a record also differs from the status of what it records.
+A meter file is created through measurement. An amount legally owed
+depends partly on applicable tariffs, contracts, and valid
+administrative acts. Whether the debt is justified to the person who
+must pay it remains a further question.
+\href{https://plato.stanford.edu/entries/social-ontology/}{Social
+ontology} distinguishes what establishes an institutional category from
+what qualifies an instance for membership. Social dependence gives no
+reason to dismiss an enforceable obligation or material deprivation as
+unreal.
+
+Data provenance should therefore include purposes and authority
+alongside technical transformations. Who required the field? Who chose
+the unit and permitted categories? Who could correct a record, connect
+it to another system, or contest its use?
+\href{https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc}{Thomasson's
+analysis of public artifacts} makes room for normative and receptive
+features as well as function. In a contemporary application, a billing
+record's role includes expectations about payment, correction, and
+authorized access. Those expectations require evaluation alongside
+measurement accuracy.
+
+\hypertarget{M09-incentives-explain-production-without-settling-truth}{%
+\subsection{Incentives Explain Production Without Settling
+Truth}\label{M09-incentives-explain-production-without-settling-truth}}
+
+\noindent \noindent Revenue collection, compliance, reputation, privacy, technical
+capacity, and inherited administrative routines can influence what gets
+recorded. A firm's incentive to issue accurate invoices may improve
+measurement of charges. The same firm's incentive to limit disclosure
+may constrain access to contract terms. Neither observation alone
+establishes whether a causal estimate is correct. A criticism based
+solely on the originator's interests commits the same error as an
+endorsement based solely on institutional prestige: it substitutes a
+fact about the speaker for the missing evidential argument.
+
+The stronger criticism concerns the question that becomes answerable. If
+administrative systems record transaction prices but omit unsuccessful
+attempts to cancel, a firm can measure retained revenue more readily
+than refused withdrawal. If a utility records operating load but lacks a
+linked history of speculative projects and preparatory investment,
+operating-capacity analysis can overlook costs arising earlier.
+\href{https://link.springer.com/chapter/10.1007/978-3-030-37177-7_1}{Leonelli's
+data-journey approach} directs attention to the work required to move
+and reuse records across such settings. The analyst should explain the
+transformation from an institution's record to evidence about another
+person's burden.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-truth-warrant-and-the-different-force-of-norms}{%
+\section{Truth, Warrant, and the Different Force of
+Norms}\label{M09-truth-warrant-and-the-different-force-of-norms}}
+
+\noindent \noindent Consider the statement that a household was charged USD 140
+for a specified month. Its truth concerns whether the charge occurred
+under the stated interpretation. Its warrant concerns the evidence
+available for believing or asserting it. An accurate ledger can justify
+that statement while leaving a claim about the project's causal
+contribution unsupported. An institution's acceptance of the ledger
+provides another fact to assess; acceptance does not settle every truth
+claim made from it.
+
+Philosophical theories of truth differ. Correspondence approaches
+emphasize how claims relate to the way things are; coherence approaches
+examine systematic relations among beliefs; pragmatist approaches
+connect truth with inquiry; deflationary approaches question whether
+truth requires a substantial explanatory property.
+\href{https://plato.stanford.edu/entries/truth/}{Glanzberg's overview}
+provides the distinctions and their disputes. None of these labels
+licenses replacing evidence with what is commercially convenient. For
+the household case, the immediate task is to specify the proposition,
+its truth conditions, the evidence supporting it, and the scope of the
+assertion.
+
+Four kinds of norm can enter the same analysis. A semantic or
+constitutive rule specifies what a term or institutional category counts
+as. An epistemic norm governs evidence, inference, and revision. A
+procedural or legal rule governs access, authority, or permissible
+disclosure. A moral norm concerns what people owe one another. A rule
+can perform more than one role, but compliance with one kind does not
+automatically establish compliance with the others.
+
+For example, defining an account as active after a recorded transaction
+is a classification rule. Checking whether the transaction occurred is
+an evidential task. Establishing lawful access to the record is a
+procedural task. Deciding whether the firm ought to use that activity to
+target a vulnerable customer requires reasons about the person and the
+action. A precise prediction can satisfy the evidential task while
+leaving the moral question open.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_truth_and_norms.tex}
+\caption{An accurate record supports a narrowly specified claim only through measurement and evidence premises. A policy recommendation also needs premises about affected persons, alternatives, authority, and reasons. Semantic, epistemic, legal, and moral norms govern different steps; accuracy alone supplies no shortcut to permission.}\label{fig:M09_truth_and_norms}
+\end{figure}
+
+\href{https://johnmacfarlane.net/normative.pdf}{MacFarlane's discussion
+of logical normativity} clarifies why a relation among propositions and
+a prescription for a reasoner must be connected carefully. In the
+present application, moving from a descriptive result to what an
+institution ought to do requires an explicit normative premise.
+Likewise,
+\href{https://www.amiethomasson.org/_files/ugd/63fc8a_924e5fc0c3224895948994030f976cdb.pdf}{Thomasson's
+replies on modal normativism}, pp.~19--20, distinguish discourse's
+function from its subject matter. Her view does not make modal truths
+true by linguistic convention. Setting a category's rules does not
+remove the need for evidence when applying it.
+
+\hypertarget{M09-the-stakes-of-asserting-a-claim}{%
+\subsection{The Stakes of Asserting a
+Claim}\label{M09-the-stakes-of-asserting-a-claim}}
+
+\noindent \noindent The argument from inductive risk developed by
+\href{https://www.stephanieruphy.com/wp-content/uploads/2020/10/Douglas-2000.pdf}{Douglas
+(2000)} concerns the consequences of accepting or rejecting claims under
+uncertainty. Applied to electricity reassurance, an erroneous assurance
+may influence approvals, financial commitments, and a household's
+ability to contest costs. Those stakes support closer scrutiny and
+appropriately qualified communication. They supply no permission to
+fabricate harm or treat an adverse interpretation as established without
+evidence.
+
+The relevant response is proportional to the decision. A research
+estimate can be reported with its defined outcome and uncertainty while
+a broader assurance is withheld. An urgent approval decision may require
+enforceable protections, monitoring, or additional inquiry even though
+the current evidence does not establish realized harm. The factual
+judgment and the recommended precaution need their own premises. A
+critic should make both inspectable.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-undone-science-and-the-distribution-of-evidence}{%
+\section{Undone Science and the Distribution of
+Evidence}\label{M09-undone-science-and-the-distribution-of-evidence}}
+
+\noindent \noindent Some socially important questions lack evidence because no
+institution is required or funded to answer them.
+\href{https://www.researchgate.net/publication/249623643_Undone_Science_Charting_Social_Movement_and_Civil_Society_Challenges_to_Research_Agenda_Setting}{Frickel
+and colleagues (2010)} examine such challenges to research agendas
+through the concept of undone science. A linked study of household costs
+may require coordination among utilities, regulators, developers, and
+researchers even when each already holds useful records. The gap can
+arise through divided responsibilities and unequal priorities without an
+explicit agreement to conceal information.
+
+Strategic ignorance supplies a more specific hypothesis: an organization
+may benefit from limiting inquiry or preserving uncertainty.
+\href{https://repository.essex.ac.uk/5131/}{McGoey (2012)} treats
+ignorance as a potential organizational resource. To apply that
+hypothesis to a particular institution, identify choices about
+retention, access, research funding, or disclosure and the reasons given
+for them. An absent public dataset alone does not establish the
+deliberate production of ignorance. Public investigations, enforceable
+disclosure, customer-authorized access, and independent research provide
+possible countervailing mechanisms.
+
+The categories themselves also distribute visibility.
+\href{https://data-feminism.mitpress.mit.edu/pub/h1w0nbqp/release/3}{D'Ignazio
+and Klein's discussion of counting} asks whose experiences fit the
+available classification. A complaint coded only as resolved or
+unresolved can erase the difference between genuine resolution and
+withdrawal after prolonged effort. A project file limited to operating
+facilities can similarly omit residents affected by preparation for a
+failed proposal. The classification should follow the substantive
+question and preserve relevant cases for evaluation.
+
+\hypertarget{M09-evidence-about-electricity-already-exists}{%
+\subsection{Evidence About Electricity Already
+Exists}\label{M09-evidence-about-electricity-already-exists}}
+
+\noindent \noindent The household case requires an exact diagnosis of the gap. EIA
+already collects supplier billing data and publishes household
+expenditure microdata (§6.43). What remains difficult is obtaining
+sufficiently detailed, linkable records for a defensible causal design.
+Actual charges can be observed; the bill the same household would have
+faced under an alternative project history is a counterfactual requiring
+identification. Confusing these two obstacles can lead either to
+exaggerated pessimism about data collection or to exaggerated confidence
+once records are acquired.
+
+Political sensitivity supplies competing incentives. It can encourage
+secrecy over commercially sensitive contracts and also motivate
+legislative inquiry and reporting proposals. January 2026 company
+correspondence documents confidentiality for some bespoke contracts; it
+also recognizes regulatory access and legal exceptions. The October
+Senate investigation and the introduced S. 5640 show public pressure for
+additional evidence. The specific 2020--2025 research design requires
+evidence about its own units and periods. Later disputes cannot
+establish historical donor contamination by themselves.
+
+Missing linked records are ordinarily empirical unknowns. They differ
+from Kantian noumena and do not establish that the relevant facts are
+unknowable in principle. A household's standing to demand reasons
+likewise survives the absence of a convenient measurement. The failure
+to produce adequate evidence can itself warrant institutional criticism,
+with the responsibility assessed against capacity, duties, privacy,
+cost, and feasible alternatives.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-who-ought-to-bear-the-burden-of-producing-evidence}{%
+\section{Who Ought to Bear the Burden of Producing
+Evidence?}\label{M09-who-ought-to-bear-the-burden-of-producing-evidence}}
+
+\noindent \noindent Consider a proposed rule permitting an institution to reassure
+residents about costs using only the records it chooses to make
+accessible, while requiring residents to prove harm with unavailable
+records. A resident can reasonably reject that allocation of the
+evidential burden: the institution controls essential means of inquiry,
+while the resident bears a foreseeable financial consequence and has
+limited ability to challenge the assurance. This is a Scanlonian
+application concerning the terms of justification. It does not assume
+that every disputed project causes harm.
+
+The argument has four premises. First, the decision can impose a
+material burden on identifiable people. Second, particular institutions
+control information needed to assess that burden. Third, affected people
+have a reason to demand an answer that addresses their burden and a
+practical opportunity to contest it. Fourth, feasible information
+arrangements can improve that opportunity while protecting legitimate
+interests. Together, these premises support a duty to provide an
+adequate evidential basis, enable proportionate independent scrutiny, or
+narrow the claim. The strength and allocation of that duty depend on the
+institutions' actual authority and capacity.
+
+A privacy objection deserves an answer. Releasing household identities,
+addresses, and financial histories can expose people to serious harm.
+Controlled access, de-identified linkage, disclosure review, and
+publication of aggregate results can make scrutiny possible without
+indiscriminate public release. EIA's
+\href{https://www.eia.gov/about/cipsea_reporting.php}{restricted-data
+process} demonstrates one institutional route, with eligibility and
+approval conditions.
+\href{https://www.energy.gov/data/green-button}{Customer-authorized
+energy access} offers another route, subject to coverage and selection.
+Neither automatically produces the required causal design.
+
+\href{https://www.ugr.es/~zink/mono/Longino2004.pdf}{Longino's
+conditions for effective critical interaction} include venues, uptake,
+public standards, and tempered equality of intellectual authority.
+Applied here, residents need more than permission to object after a
+prestigious institution has announced a reassuring result. They need
+intelligible definitions, access to the evidence or an accountable
+representative, a response to substantive objections, and an opportunity
+for that response to change the decision. Expertise deserves
+consideration because of its reasons and methods; institutional prestige
+cannot supply a missing premise.
+
+For the data-center paper, the decisive criticism concerns the expansion
+of an empirical result into public authority. An aggregate price
+comparison does not establish actual household cost incidence without a
+defended connection between outcome, exposure history, comparison group,
+and affected population. Publicly unavailable evidence cannot silently
+complete those connections. Where the broader claim remains unsupported,
+the authors and institutions communicating it ought to state the
+narrower result and the unresolved burden question. A valid calculation
+can inform public discourse while still being inadequate to close it.
 
 \end{document}

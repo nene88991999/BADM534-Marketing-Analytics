@@ -432,7 +432,8 @@
       "Construct customer metrics with explicit populations and denominators.",
       "Separate missing observations, zeros, and unmatched keys.",
       "Assess changing coverage in mHealth, McBroken, and earnings-call records.",
-      "Preserve requests, confirmations, unknown states, and the reporting cutoff."
+      "Preserve requests, confirmations, unknown states, and the reporting cutoff.",
+      "Trace data production and identify the effect of selective access on population claims."
     ],
     "slides": [
       {
@@ -715,6 +716,24 @@
         "source": "M2, Section 2.29, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
       },
       {
+        "kind": "figure",
+        "title": "Data Have a Production History",
+        "figure": "figures/data_production.tex",
+        "caption": "Collection, retention, linkage, and access serve institutional purposes.",
+        "description": "Household events pass through four gates before becoming available evidence. Payment and compliance motivate collection; capacity and duties affect retention; identifiers enable linkage; privacy, accountability, and commercial interests shape access.",
+        "notes": "An accurate billing row can coexist with inadequate evidence about household cost incidence. Identify each decision maker and the actual access rule before attributing a motive to missing evidence. Thomasson motivates questions about created artifacts; Leonelli explains the relational use and movement of data.",
+        "source": "M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
+        "kind": "figure",
+        "title": "The Same Public File Can Support Opposite Worlds",
+        "figure": "figures/selected_evidence.tex",
+        "caption": "Synthetic: 400 households per world; monthly effects in USD.",
+        "description": "A and B are identical in both releases: 200 households with effects of minus 10. The unreleased 200 have effects of plus 30 in H and minus 10 in L. Full-population means are plus 10 and minus 10.",
+        "notes": "Hold all other causes of bills fixed so the prior bill equals the current no-project bill. All current bills are recorded internally in both worlds. The example isolates release selection and grants identification within each constructed population. Weighting cannot recover zero-inclusion strata. Full code, positive-inclusion comparisons, and support bounds appear in M2 §2.31.",
+        "source": "M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md"
+      },
+      {
         "kind": "bullets",
         "title": "Measurement Discussion",
         "bullets": [
@@ -735,9 +754,10 @@
       "[Earnings-call worked example](../03_Data_and_Code/Earnings_Calls/README.md)",
       "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)",
       "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)",
-      "../07_Labs/AI_Augmented_Learning/README.md"
+      "../07_Labs/AI_Augmented_Learning/README.md",
+      "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)"
     ],
-    "practice": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case.",
+    "practice": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Compare identical synthetic public releases with opposite population effects.",
     "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations."
   },
   {
@@ -3614,6 +3634,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Household Bills Exist; the Causal Link Requires Work",
+        "bullets": [
+          "EIA collects supplier billing data and publishes household expenditure microdata.",
+          "Project histories, cost recovery, offsets, and household records require defensible linkage.",
+          "Even complete realized bills reveal only one project history per household."
+        ],
+        "notes": "The claim that actual household costs will never be collected is contradicted by RECS. Access restrictions can still obstruct project-level research. Separate the absence of a linked file from the absence of a causal counterfactual. January 2026 company correspondence documents confidentiality for some bespoke contracts and recognizes regulatory exceptions; it does not establish exposure of the paper’s 2020–2025 donors.",
+        "source": "M6 §6.43. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md; https://www.eia.gov/consumption/residential/faqs.php"
+      },
+      {
+        "kind": "bullets",
         "title": "Causal-Design Discussion",
         "bullets": [
           "What would the treated group have experienced without the policy?",
@@ -3633,10 +3664,11 @@
       "[Discount response examples](../03_Data_and_Code/Dose_Response/README.md)",
       "[Optional dose-response lab](../07_Labs/Dose_Response/README.md)",
       "[Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)",
-      "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)"
+      "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)",
+      "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)"
     ],
     "practice": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
-    "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation."
+    "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation. Distinguish observed household bills, linked project evidence, and the causal counterfactual."
   },
   {
     "number": 11,
@@ -5006,7 +5038,8 @@
       "Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.",
       "Assess a case interpretation using ontological scope, empirical evidence, and philosophical reasons.",
       "Assess conflicts of interest through duties, consumer purposes, and reasons for a feasible alternative.",
-      "Defend the empirical and moral premises behind reassurance to affected households."
+      "Defend the empirical and moral premises behind reassurance to affected households.",
+      "Distinguish truth, evidential warrant, and the norms governing disclosure and public justification."
     ],
     "slides": [
       {
@@ -6149,6 +6182,37 @@
       },
       {
         "kind": "bullets",
+        "title": "A Dataset Has an Origin and an Intended Use",
+        "bullets": [
+          "Thomasson: created artifacts have histories and dependencies.",
+          "Distinguish a dataset version, a copy, and the people it represents.",
+          "Institutional production leaves accuracy open to evidence."
+        ],
+        "notes": "The artifact analogy concerns creation, identity, preservation, and recognized use. It does not make household bills fictional. Billing incentives can improve accuracy while classification and access rules exclude questions that matter to residents. A valid institutional charge remains open to moral criticism.",
+        "source": "M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Truth, Evidence, and Permission",
+        "figure": "figures/truth_and_norms.tex",
+        "caption": "A correct record supports neither a causal attribution nor a policy on its own.",
+        "description": "Three columns separate a recorded charge, a causal claim, and a recommendation. Semantic and legal premises establish the record’s meaning and status; epistemic premises concern measurement and counterfactuals; moral premises concern people, authority, alternatives, and reasons.",
+        "notes": "Ask students to supply the missing premise at each arrow. Logical validity does not make a premise true. Evidential warrant does not settle permissible action. Thomasson’s modal normativism does not claim that conventions make modal truths true. Douglas’s inductive risk concerns the stakes of error; it does not authorize inventing adverse evidence.",
+        "source": "M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Who Ought to Produce the Evidence?",
+        "bullets": [
+          "Residents may bear a burden while institutions control the relevant records.",
+          "A reasonable principle provides proportionate scrutiny and privacy protection.",
+          "An unsupported broad reassurance should be narrowed."
+        ],
+        "notes": "Develop the Scanlonian premises: material burden, informational control, standing to contest, and feasible alternatives. Test a privacy objection and propose controlled linkage with aggregate public results. Undone science concerns institutional research priorities; deliberate suppression requires additional evidence. Political sensitivity can motivate disclosure as well as secrecy. The introduced S. 5640 is a reporting proposal, not an effective duty. Longino adds effective criticism, uptake, public standards, and tempered equality of intellectual authority.",
+        "source": "M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
+      },
+      {
+        "kind": "bullets",
         "title": "A Decision with Consumer Outcomes",
         "bullets": [
           "State the decision, affected people, and evidence.",
@@ -6194,7 +6258,8 @@
       "../07_Labs/AI_Augmented_Learning/README.md",
       "[Conflicts of Interest: Optional Practice](../07_Labs/Conflicts_of_Interest/README.md)",
       "[Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)",
-      "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)"
+      "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)",
+      "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
     "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed."

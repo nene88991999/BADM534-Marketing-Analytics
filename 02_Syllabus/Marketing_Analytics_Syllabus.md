@@ -21,7 +21,7 @@ Students use AI-assisted Python to specify questions, verify calculations, and i
 
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
 - Evaluate which ends deserve pursuit, who has authority to select them, and what obligations the decision creates, distinguishing empirical knowledge from practical justification.
-- Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
+- Assess how data are produced and accessed; define observation units, denominators, missing values, and reproducible transformations.
 - Apply marketing analytics methods; distinguish descriptive patterns, prediction, and causal effects; justify controls, populations, and observation windows.
 - Evaluate AI-assisted workflows through independent calculations, statistical design, meaningful-effect bounds, silent-error detection, and interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
@@ -42,7 +42,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | Meeting | Date | Topics |
 | --- | --- | --- |
 | 1 | January 20 | M1: Marketing decisions and AI-assisted Python |
-| 2 | January 27 | M2: Customer data, missingness, cancellation evidence, and earnings-call coverage |
+| 2 | January 27 | M2: Data production, missingness, cancellation evidence, and earnings-call coverage |
 | 3 | February 3 | M2: Visualization, geographic usage, and nutrition-informed assessment |
 | 4 | February 10 | M3: Regression, causal controls, geographic associations, and interpretation |
 | 5 | February 17 | M4: Conjoint, concept screening, and research budgets |

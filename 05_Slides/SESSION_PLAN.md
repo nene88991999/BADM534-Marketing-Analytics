@@ -11,7 +11,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 35 |
-| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 27 |
+| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 29 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 29 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 31 |
@@ -19,11 +19,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 46 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 43 |
-| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 29 |
+| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 30 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 60 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 98 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 101 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -70,7 +70,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 125–140 | Cancellation Records and the Review Queue |
 | 140–148 | Digital Usage, Measurement, and Index Verification |
 | 148–155 | Application and Interpretation |
-| 155–170 | Ethics and Decision Discussion |
+| 155–170 | Data Production, Selective Access, and Household Claims |
 
 ### 03. Visualization and Data Quality
 
@@ -241,7 +241,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 80–125 | Python Exercise |
 | 125–145 | Discount Response and Uncertainty |
 | 145–155 | Phantom Projects, Comparison Windows, and Donor Exposure |
-| 155–170 | Ethics and Decision Discussion |
+| 155–170 | Household Cost Evidence, Access, and Counterfactuals |
 
 ### 11. Prediction, Validation, and Marketing Actions
 
@@ -331,7 +331,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–90 | Kantian, Confucian, and Scanlonian Evaluation |
 | 90–95 | Ontological Scope, Counterexamples, and an Ought Conclusion |
-| 95–100 | Household Reasons, Sample Selection, and Public Claims |
+| 95–100 | Data, Truth, Norms, and Reasons Owed to Households |
 | 100–110 | Pricing Burdens and Feasible Alternatives |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
@@ -404,3 +404,9 @@ Session 1 adds the analyst’s incentives and duties to the existing final discu
 ## Bad Controls and Thoughtful Research Design
 
 Session 4 uses the existing worked-comparison block (minutes 45–70) to contrast causal paths and regression adjustment. Session 10 uses minutes 145–155 to compare project timing, donor exposure, and convenient sample windows. Session 14 uses minutes 95–100 to assess the reasons owed to households excluded from an operating-facility comparison. The extended treatment-affected-covariate derivation and full coding exercises remain [optional ungraded practice](../07_Labs/Bad_Controls/README.md). Selected slides fit these existing blocks; the 15 meeting dates, 170-minute durations, and breaks are retained.
+
+## Data, Truth, and Institutional Evidence
+
+M2 §§2.30–2.31 trace data production and compare identical public records with opposite synthetic population effects. Use the Session 2 discussion block at minutes 155–170 for the two diagrams and the interpretation; the complete code and weighting extension are optional practice. Session 10 uses its existing minutes 155–170 for billing records, project linkage, and causal counterfactuals. Session 14 uses minutes 95–100 for the artifact analogy, distinct norms, and a Scanlonian argument about evidential responsibility, with the fuller reading and exercise outside that short comparison. The six added slides are selected discussion aids within the existing schedule; the 15 meetings remain 170 minutes each.
+
+The [26-source guide](../01_Resources/45_Data_Truth_and_Norms/README.md), [program](../03_Data_and_Code/Data_Production/README.md), and [optional ungraded practice](../07_Labs/Data_Truth_and_Norms/README.md) distinguish accurate records, representative evidence, causal identification, and permissible recommendations. Existing household billing and public expenditure data correct the claim that such information is never collected or released. The research problem concerns adequate linkage, access, and counterfactual design.

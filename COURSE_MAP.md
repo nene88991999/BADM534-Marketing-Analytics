@@ -221,3 +221,7 @@ M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect the analyst’s 
 ## Bad Controls, Project Exposure, and Sample Windows
 
 M3 §§3.20–3.21 explain causal adjustment; M6 §§6.40–6.42 compare treatment-affected covariates, project timelines, and selected populations; M9 §9.50 evaluates household reasons. The [30-source guide](01_Resources/44_Bad_Controls_and_Project_Exposure/README.md), [complete examples](03_Data_and_Code/Bad_Controls/README.md), and [optional practice](07_Labs/Bad_Controls/README.md) support Sessions 4, 10, and 14. Evidence within the later years of 2020–2025 motivates a donor-exposure assessment without establishing contamination of the paper’s actual donors.
+
+## Data Production and Public Justification
+
+M2 §§2.30–2.31 develop provenance and selective access; M6 §6.43 separates actual bills from causal cost incidence; M9 §§9.51–9.54 connect artifacts, truth, norms, undone science, and Scanlonian responsibility. The [26-source collection](01_Resources/45_Data_Truth_and_Norms/README.md), [synthetic example](03_Data_and_Code/Data_Production/README.md), and [optional practice](07_Labs/Data_Truth_and_Norms/README.md) accompany Sessions 2, 10, and 14.

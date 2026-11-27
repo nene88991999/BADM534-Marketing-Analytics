@@ -175,3 +175,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 ## Bad Controls and Project Exposure
 
 [Three reproducible programs](Bad_Controls/README.md) enumerate causal structures, recover an untreated covariate trend under explicit conditions, and compare project windows and selected populations. Complete code appears in M3 §3.21 and M6 §§6.40.2 and 6.42.2. All observations are synthetic.
+
+## Data Production and Access
+
+The [complete synthetic program](Data_Production/README.md) constructs two populations with identical restricted releases and opposite household effects. Known inclusion probabilities recover the target under positive coverage; support bounds describe what follows from explicit missing-effect restrictions. Full code appears in M2 §2.31.

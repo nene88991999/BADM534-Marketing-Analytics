@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 514 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 520 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -186,3 +186,7 @@ Sessions 1, 11, and 14 connect incentives and duties to question selection, enga
 ## Bad Controls and Project Exposure
 
 Sessions 4, 10, and 14 connect causal adjustment, phantom projects, convenience sampling, and household justification. Nine slides and four editable diagrams accompany [M3 §§3.20–3.21 and M6 §§6.40–6.42](../06_Lecture_Notes/README.md), M9 §9.50, and the [complete programs](../03_Data_and_Code/Bad_Controls/README.md).
+
+## Data, Truth, and Norms
+
+Six slides in Sessions 2, 10, and 14 connect data production, selected evidence, existing billing data, causal counterfactuals, and reasons owed to households. Three editable diagrams accompany [M2 §§2.30–2.31, M6 §6.43, and M9 §§9.51–9.54](../06_Lecture_Notes/README.md). The [source guide](../01_Resources/45_Data_Truth_and_Norms/README.md) records the inspected philosophical and institutional evidence.

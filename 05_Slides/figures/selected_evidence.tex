@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\node[font=\bfseries] at (-.5,-.6) {H};
+\node[font=\bfseries] at (-.5,-3.0) {L};
+\node[box,text width=3.4cm,minimum height=1.5cm] (ah) at (2.2,-.6) {Released A/B\\200 Households\\Effect: $-10$};
+\node[box,text width=3.4cm,minimum height=1.5cm] (al) at (2.2,-3.0) {Released A/B\\200 Households\\Effect: $-10$};
+\node[orangebox,text width=3.4cm,minimum height=1.5cm] (ch) at (6.9,-.6) {Unreleased C/D\\200 Households\\Effect: $+30$};
+\node[orangebox,text width=3.4cm,minimum height=1.5cm] (cl) at (6.9,-3.0) {Unreleased C/D\\200 Households\\Effect: $-10$};
+\node[box,text width=2.8cm,minimum height=1.5cm] (mh) at (11.5,-.6) {Population Mean\\$+10$};
+\node[box,text width=2.8cm,minimum height=1.5cm] (ml) at (11.5,-3.0) {Population Mean\\$-10$};
+\draw[edge] (ch)--(mh);\draw[edge] (cl)--(ml);
+\draw[<->,IlliniBlue,thick] (ah)--node[right]{Same Release}(al);
+\end{tikzpicture}

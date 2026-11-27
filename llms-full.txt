@@ -166,6 +166,12 @@ Generated from course.json and the source files identified below. This file cont
       "path": "07_Labs/Bad_Controls/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "data-truth-and-norms",
+      "path": "07_Labs/Data_Truth_and_Norms/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -447,7 +453,18 @@ Generated from course.json and the source files identified below. This file cont
     "01_Resources/44_Bad_Controls_and_Project_Exposure/03_Longitudinal_Identification/README.md",
     "01_Resources/44_Bad_Controls_and_Project_Exposure/05_Project_Exposure/README.md",
     "01_Resources/44_Bad_Controls_and_Project_Exposure/02_Adjustment_and_Selection/README.md",
-    "01_Resources/44_Bad_Controls_and_Project_Exposure/04_Timing_and_Comparison_Groups/README.md"
+    "01_Resources/44_Bad_Controls_and_Project_Exposure/04_Timing_and_Comparison_Groups/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md",
+    "03_Data_and_Code/Data_Production/README.md",
+    "03_Data_and_Code/Data_Production/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Data_Production/results/README.md",
+    "03_Data_and_Code/Data_Production/VERIFICATION.md",
+    "07_Labs/Data_Truth_and_Norms/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/02_Truth_and_Norms/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/01_Artifacts/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/03_Institutions_and_Ignorance/README.md",
+    "01_Resources/45_Data_Truth_and_Norms/04_Electricity_Evidence/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -496,12 +513,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-bad-controls-and-project-exposure",
+    "revision": "2026-11-26-data-truth-and-norms",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 144,
-    "pages": 593,
+    "figures_count": 147,
+    "pages": 603,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -533,7 +550,8 @@ Generated from course.json and the source files identified below. This file cont
     "analytical_arguments": "03_Data_and_Code/Analytical_Arguments/README.md",
     "learning_design": "03_Data_and_Code/Learning_Design/README.md",
     "preface": "06_Lecture_Notes/Preface.md",
-    "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md"
+    "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
+    "data_production_examples": "03_Data_and_Code/Data_Production/README.md"
   },
   "datasets": [
     {
@@ -630,7 +648,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 514,
+    "slides": 520,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -1203,7 +1221,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-26-bad-controls-and-project-exposure",
+  "revision": "2026-11-26-data-truth-and-norms",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1657,6 +1675,36 @@ Generated from course.json and the source files identified below. This file cont
     "additional_slides": 9,
     "matching_python_blocks": 128,
     "scope": "Original synthetic examples and evidence assessment; no reestimated paper coefficient or established contamination of actual donors."
+  },
+  "data_truth_and_norms": {
+    "implemented_on": "2026-11-26",
+    "resources": "01_Resources/45_Data_Truth_and_Norms/README.md",
+    "catalog": "01_Resources/45_Data_Truth_and_Norms/catalog.json",
+    "evidence_assessment": "01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md",
+    "examples": "03_Data_and_Code/Data_Production/README.md",
+    "practice": "07_Labs/Data_Truth_and_Norms/README.md",
+    "verification": "03_Data_and_Code/Data_Production/VERIFICATION.md",
+    "sections": [
+      "M2 \u00a7\u00a72.30\u20132.31",
+      "M6 \u00a76.43",
+      "M9 \u00a7\u00a79.51\u20139.54"
+    ],
+    "sessions": [
+      2,
+      10,
+      14
+    ],
+    "philosophical_and_methodological_sources": 18,
+    "institutional_sources": 8,
+    "local_source_files": 14,
+    "local_pdf_copies": 12,
+    "local_word_manuscripts": 2,
+    "original_programs": 1,
+    "original_figures": 3,
+    "additional_slides": 6,
+    "scope": "Original synthetic disclosure comparison and verified source assessment; no empirical utility effect or suppression finding.",
+    "matching_python_blocks": 129,
+    "rendered_pages_checked": 53
   }
 }
 ```
@@ -1835,6 +1883,10 @@ The [electricity lesson](08_Wiki/pilot/README.md) asks students to predict a bil
 ## Bad Controls and Thoughtful Research Design
 
 The [reading collection](01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) covers causal adjustment, selection, treatment-affected covariates, anticipation, and exposed comparison groups. [Three original Python programs](03_Data_and_Code/Bad_Controls/README.md) connect these distinctions to phantom projects and the choice of a recent operating-facility sample. M3 §§3.20–3.21, M6 §§6.40–6.42, and M9 §9.50 develop the implications for household claims and research design.
+
+## Data, Truth, and Norms
+
+The [reading collection](01_Resources/45_Data_Truth_and_Norms/README.md) connects Thomasson’s artifacts, truth and warrant, institutional research priorities, and reasons owed to households. An [original Python example](03_Data_and_Code/Data_Production/README.md) constructs identical public records with opposite population effects. M2, M6, and M9 distinguish existing billing data from the project-linked evidence and causal design needed for household claims.
 
 ---
 
@@ -2222,6 +2274,10 @@ M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect the analyst’s 
 
 M3 §§3.20–3.21 explain causal adjustment; M6 §§6.40–6.42 compare treatment-affected covariates, project timelines, and selected populations; M9 §9.50 evaluates household reasons. The [30-source guide](01_Resources/44_Bad_Controls_and_Project_Exposure/README.md), [complete examples](03_Data_and_Code/Bad_Controls/README.md), and [optional practice](07_Labs/Bad_Controls/README.md) support Sessions 4, 10, and 14. Evidence within the later years of 2020–2025 motivates a donor-exposure assessment without establishing contamination of the paper’s actual donors.
 
+## Data Production and Public Justification
+
+M2 §§2.30–2.31 develop provenance and selective access; M6 §6.43 separates actual bills from causal cost incidence; M9 §§9.51–9.54 connect artifacts, truth, norms, undone science, and Scanlonian responsibility. The [26-source collection](01_Resources/45_Data_Truth_and_Norms/README.md), [synthetic example](03_Data_and_Code/Data_Production/README.md), and [optional practice](07_Labs/Data_Truth_and_Norms/README.md) accompany Sessions 2, 10, and 14.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2554,6 +2610,10 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 
 [Three reproducible programs](Bad_Controls/README.md) enumerate causal structures, recover an untreated covariate trend under explicit conditions, and compare project windows and selected populations. Complete code appears in M3 §3.21 and M6 §§6.40.2 and 6.42.2. All observations are synthetic.
 
+## Data Production and Access
+
+The [complete synthetic program](Data_Production/README.md) constructs two populations with identical restricted releases and opposite household effects. Known inclusion probabilities recover the target under positive coverage; support bounds describe what follows from explicit missing-effect restrictions. Full code appears in M2 §2.31.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -2562,7 +2622,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 144 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 147 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2788,6 +2848,10 @@ M9 §§9.45–9.49 examines responsibilities, disclosure, dependence, engagement
 
 M3 §§3.20–3.21, M6 §§6.40–6.42, and M9 §9.50 distinguish adjustment bias, exposed donors, anticipation, and selected populations. Three complete Python programs and four Illinois-color TikZ figures accompany the [readings](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) and [optional practice](../07_Labs/Bad_Controls/README.md).
 
+## Data, Truth, and Institutional Responsibility
+
+M2 §§2.30–2.31, M6 §6.43, and M9 §§9.51–9.54 distinguish data artifacts, evidence, truth claims, and permissible action. Three TikZ diagrams and one complete Python program connect selective access to the data-center case. The [reading collection](../01_Resources/45_Data_Truth_and_Norms/README.md) and [evidence assessment](../01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) document existing household expenditure data and the more demanding project-level causal question.
+
 ---
 
 ## Source: 06_Lecture_Notes/Preface.md
@@ -2872,7 +2936,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 514 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 520 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -3054,6 +3118,10 @@ Sessions 1, 11, and 14 connect incentives and duties to question selection, enga
 ## Bad Controls and Project Exposure
 
 Sessions 4, 10, and 14 connect causal adjustment, phantom projects, convenience sampling, and household justification. Nine slides and four editable diagrams accompany [M3 §§3.20–3.21 and M6 §§6.40–6.42](../06_Lecture_Notes/README.md), M9 §9.50, and the [complete programs](../03_Data_and_Code/Bad_Controls/README.md).
+
+## Data, Truth, and Norms
+
+Six slides in Sessions 2, 10, and 14 connect data production, selected evidence, existing billing data, causal counterfactuals, and reasons owed to households. Three editable diagrams accompany [M2 §§2.30–2.31, M6 §6.43, and M9 §§9.51–9.54](../06_Lecture_Notes/README.md). The [source guide](../01_Resources/45_Data_Truth_and_Norms/README.md) records the inspected philosophical and institutional evidence.
 
 ---
 
@@ -3643,6 +3711,10 @@ The [nine-source supplement](../01_Resources/15_Marketing_Dialectics/09_Conflict
 
 The [categorized collection](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md) connects M3 causal graphs to M6 panel identification and the phantom-project case. The examples separate a total effect from a conditioned coefficient and an operating-entry effect from the wider proposal population. M9 §9.50 asks which empirical premises justify reassurance to households. The 2020–2025 historical evidence supports particular scrutiny of later sample years; exact donor exposure requires project and payment records.
 
+## Data, Truth, and Norms
+
+The [collection](../01_Resources/45_Data_Truth_and_Norms/README.md) develops an explicit analogy from Thomasson’s created artifacts while preserving the distinction between datasets and represented people. Leonelli, Bogen and Woodward, Douglas, Longino, and research on undone science connect institutional production to evidence and public justification. M2 §§2.30–2.31 and M9 §§9.51–9.54 develop the conceptual and synthetic examples. M6 §6.43 uses EIA and specific institutional documents to correct a universal noncollection claim and identify the unresolved linkage and counterfactual requirements.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -3999,7 +4071,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
 | 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 35 |
-| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 27 |
+| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 29 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 29 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 31 |
@@ -4007,11 +4079,11 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 46 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 43 |
-| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 29 |
+| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 30 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 60 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 98 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 101 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -4058,7 +4130,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 125–140 | Cancellation Records and the Review Queue |
 | 140–148 | Digital Usage, Measurement, and Index Verification |
 | 148–155 | Application and Interpretation |
-| 155–170 | Ethics and Decision Discussion |
+| 155–170 | Data Production, Selective Access, and Household Claims |
 
 ### 03. Visualization and Data Quality
 
@@ -4229,7 +4301,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 80–125 | Python Exercise |
 | 125–145 | Discount Response and Uncertainty |
 | 145–155 | Phantom Projects, Comparison Windows, and Donor Exposure |
-| 155–170 | Ethics and Decision Discussion |
+| 155–170 | Household Cost Evidence, Access, and Counterfactuals |
 
 ### 11. Prediction, Validation, and Marketing Actions
 
@@ -4319,7 +4391,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 70–80 | Break |
 | 80–90 | Kantian, Confucian, and Scanlonian Evaluation |
 | 90–95 | Ontological Scope, Counterexamples, and an Ought Conclusion |
-| 95–100 | Household Reasons, Sample Selection, and Public Claims |
+| 95–100 | Data, Truth, Norms, and Reasons Owed to Households |
 | 100–110 | Pricing Burdens and Feasible Alternatives |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
@@ -4392,6 +4464,12 @@ Session 1 adds the analyst’s incentives and duties to the existing final discu
 ## Bad Controls and Thoughtful Research Design
 
 Session 4 uses the existing worked-comparison block (minutes 45–70) to contrast causal paths and regression adjustment. Session 10 uses minutes 145–155 to compare project timing, donor exposure, and convenient sample windows. Session 14 uses minutes 95–100 to assess the reasons owed to households excluded from an operating-facility comparison. The extended treatment-affected-covariate derivation and full coding exercises remain [optional ungraded practice](../07_Labs/Bad_Controls/README.md). Selected slides fit these existing blocks; the 15 meeting dates, 170-minute durations, and breaks are retained.
+
+## Data, Truth, and Institutional Evidence
+
+M2 §§2.30–2.31 trace data production and compare identical public records with opposite synthetic population effects. Use the Session 2 discussion block at minutes 155–170 for the two diagrams and the interpretation; the complete code and weighting extension are optional practice. Session 10 uses its existing minutes 155–170 for billing records, project linkage, and causal counterfactuals. Session 14 uses minutes 95–100 for the artifact analogy, distinct norms, and a Scanlonian argument about evidential responsibility, with the fuller reading and exercise outside that short comparison. The six added slides are selected discussion aids within the existing schedule; the 15 meetings remain 170 minutes each.
+
+The [26-source guide](../01_Resources/45_Data_Truth_and_Norms/README.md), [program](../03_Data_and_Code/Data_Production/README.md), and [optional ungraded practice](../07_Labs/Data_Truth_and_Norms/README.md) distinguish accurate records, representative evidence, causal identification, and permissible recommendations. Existing household billing and public expenditure data correct the claim that such information is never collected or released. The research problem concerns adequate linkage, access, and counterfactual design.
 
 ---
 
@@ -4594,6 +4672,12 @@ M1 §1.22, M7 §7.47, M8 §8.33, and M9 §§9.45–9.49 connect commercial incen
 
 Session 4 uses the existing worked-comparison block (minutes 45–70) to contrast causal paths and regression adjustment. Session 10 uses minutes 145–155 to compare project timing, donor exposure, and convenient sample windows. Session 14 uses minutes 95–100 to assess the reasons owed to households excluded from an operating-facility comparison. The extended treatment-affected-covariate derivation and full coding exercises remain [optional ungraded practice](../07_Labs/Bad_Controls/README.md). Selected slides fit these existing blocks; the 15 meeting dates, 170-minute durations, and breaks are retained.
 
+## Data, Truth, and Institutional Evidence
+
+M2 §§2.30–2.31 trace data production and compare identical public records with opposite synthetic population effects. Use the Session 2 discussion block at minutes 155–170 for the two diagrams and the interpretation; the complete code and weighting extension are optional practice. Session 10 uses its existing minutes 155–170 for billing records, project linkage, and causal counterfactuals. Session 14 uses minutes 95–100 for the artifact analogy, distinct norms, and a Scanlonian argument about evidential responsibility, with the fuller reading and exercise outside that short comparison. The six added slides are selected discussion aids within the existing schedule; the 15 meetings remain 170 minutes each.
+
+The [26-source guide](../01_Resources/45_Data_Truth_and_Norms/README.md), [program](../03_Data_and_Code/Data_Production/README.md), and [optional ungraded practice](../07_Labs/Data_Truth_and_Norms/README.md) distinguish accurate records, representative evidence, causal identification, and permissible recommendations. Existing household billing and public expenditure data correct the claim that such information is never collected or released. The research problem concerns adequate linkage, access, and counterfactual design.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -4742,6 +4826,10 @@ M9 §§9.45–9.49 separates commercial adversity, a duty-based conflict, demons
 ## Research Design and Household Exposure
 
 M9 §9.50 connects Scanlonian reasons to the population excluded by a convenient dataset. M6 §§6.41–6.42 distinguish zero operating additions from zero project exposure and preserve offsets and negative cases. The [source assessment](../01_Resources/44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) records the 2023 cancellation, 2025 risk discussion, and Ohio Power tariff approved July 9, 2025 and effective July 23, 2025. The tariff applies in that utility’s service territory. Its current operator page was checked November 26, 2026; no national rule or confirmed historical household loss is inferred.
+
+## Disclosure, Truth, and Household Reasons
+
+M9 §§9.51–9.54 distinguish semantic, epistemic, procedural/legal, and moral norms. The [source assessment](../01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) records household expenditure data already published by EIA, restricted access, customer-authorized sharing, and contract confidentiality described in January 2026 correspondence. U.S. Senate S. 5640, introduced September 30, 2026, proposes federal electricity and household-cost reporting; only the introduced text was verified on November 26, 2026. No operative duty, enactment, or effective date is asserted. The course’s Scanlonian argument concerns proportionate scrutiny and qualified public claims, with privacy protections and feasible access alternatives.
 
 ---
 
@@ -4914,7 +5002,7 @@ Students use AI-assisted Python to specify questions, verify calculations, and i
 
 - Define a managerial decision, the relevant population, and the evidence needed to inform it.
 - Evaluate which ends deserve pursuit, who has authority to select them, and what obligations the decision creates, distinguishing empirical knowledge from practical justification.
-- Construct and assess data, with explicit observation units, denominators, missing values, and reproducible transformations.
+- Assess how data are produced and accessed; define observation units, denominators, missing values, and reproducible transformations.
 - Apply marketing analytics methods; distinguish descriptive patterns, prediction, and causal effects; justify controls, populations, and observation windows.
 - Evaluate AI-assisted workflows through independent calculations, statistical design, meaningful-effect bounds, silent-error detection, and interpretation.
 - Justify recommendations using evidence, clear figures, customer consequences, and critical examination of ethical premises.
@@ -4935,7 +5023,7 @@ All meetings are on Wednesdays, 15:30-18:20, in Wohlers Hall, Room 243.
 | Meeting | Date | Topics |
 | --- | --- | --- |
 | 1 | January 20 | M1: Marketing decisions and AI-assisted Python |
-| 2 | January 27 | M2: Customer data, missingness, cancellation evidence, and earnings-call coverage |
+| 2 | January 27 | M2: Data production, missingness, cancellation evidence, and earnings-call coverage |
 | 3 | February 3 | M2: Visualization, geographic usage, and nutrition-informed assessment |
 | 4 | February 10 | M3: Regression, causal controls, geographic associations, and interpretation |
 | 5 | February 17 | M4: Conjoint, concept screening, and research budgets |
@@ -7606,6 +7694,70 @@ Kantian criticism likewise asks whether the analysis respects affected people as
 
 The resulting criticism is forceful: a broad reassurance about household costs lacks support when its pivotal exposure and population premises remain unestablished. A convenient, precisely estimated comparison can be fundamentally inadequate for that claim. The appropriate response is to reconstruct the design, narrow the conclusion to the supported estimand, or acknowledge that the broader question remains unanswered. Analytical skill includes recognizing when the available dataset does not justify the intended public message.
 
+## 9.51 Data as Artifacts and People as Subjects of Claims
+
+\noindent A household asked to accept a new development may be told that the available data show little reason for concern. Before accepting that reassurance, ask why those data exist, what their categories mean, and whose question they were built to answer. An institution can collect information meticulously for billing, financing, or regulatory compliance while leaving the incidence of burdens poorly understood. Data abundance and adequacy for public justification are separate achievements.
+
+[Thomasson's account of fictional characters](https://www.cambridge.org/core/books/abs/fiction-and-metaphysics/fictional-characters-as-abstract-artifacts/CE4968D080D4B81C9DE76FF589C70017) treats them as created, dependent artifacts. This suggests a disciplined analogy for datasets: examine their creation, identity, preservation, and dependence on human practices. A dataset version, a physical copy, and the households represented in it are distinct objects. Destroying one copy need not destroy the dataset; changing a category or linkage rule may change what a version represents. The analogy concerns these dependencies. An invoice's description of an actual charge remains answerable to the transaction and billing rules.
+
+The status of a record also differs from the status of what it records. A meter file is created through measurement. An amount legally owed depends partly on applicable tariffs, contracts, and valid administrative acts. Whether the debt is justified to the person who must pay it remains a further question. [Social ontology](https://plato.stanford.edu/entries/social-ontology/) distinguishes what establishes an institutional category from what qualifies an instance for membership. Social dependence gives no reason to dismiss an enforceable obligation or material deprivation as unreal.
+
+Data provenance should therefore include purposes and authority alongside technical transformations. Who required the field? Who chose the unit and permitted categories? Who could correct a record, connect it to another system, or contest its use? [Thomasson's analysis of public artifacts](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc) makes room for normative and receptive features as well as function. In a contemporary application, a billing record's role includes expectations about payment, correction, and authorized access. Those expectations require evaluation alongside measurement accuracy.
+
+### 9.51.1 Incentives Explain Production Without Settling Truth
+
+\noindent Revenue collection, compliance, reputation, privacy, technical capacity, and inherited administrative routines can influence what gets recorded. A firm's incentive to issue accurate invoices may improve measurement of charges. The same firm's incentive to limit disclosure may constrain access to contract terms. Neither observation alone establishes whether a causal estimate is correct. A criticism based solely on the originator's interests commits the same error as an endorsement based solely on institutional prestige: it substitutes a fact about the speaker for the missing evidential argument.
+
+The stronger criticism concerns the question that becomes answerable. If administrative systems record transaction prices but omit unsuccessful attempts to cancel, a firm can measure retained revenue more readily than refused withdrawal. If a utility records operating load but lacks a linked history of speculative projects and preparatory investment, operating-capacity analysis can overlook costs arising earlier. [Leonelli's data-journey approach](https://link.springer.com/chapter/10.1007/978-3-030-37177-7_1) directs attention to the work required to move and reuse records across such settings. The analyst should explain the transformation from an institution's record to evidence about another person's burden.
+
+## 9.52 Truth, Warrant, and the Different Force of Norms
+
+\noindent Consider the statement that a household was charged USD 140 for a specified month. Its truth concerns whether the charge occurred under the stated interpretation. Its warrant concerns the evidence available for believing or asserting it. An accurate ledger can justify that statement while leaving a claim about the project's causal contribution unsupported. An institution's acceptance of the ledger provides another fact to assess; acceptance does not settle every truth claim made from it.
+
+Philosophical theories of truth differ. Correspondence approaches emphasize how claims relate to the way things are; coherence approaches examine systematic relations among beliefs; pragmatist approaches connect truth with inquiry; deflationary approaches question whether truth requires a substantial explanatory property. [Glanzberg's overview](https://plato.stanford.edu/entries/truth/) provides the distinctions and their disputes. None of these labels licenses replacing evidence with what is commercially convenient. For the household case, the immediate task is to specify the proposition, its truth conditions, the evidence supporting it, and the scope of the assertion.
+
+Four kinds of norm can enter the same analysis. A semantic or constitutive rule specifies what a term or institutional category counts as. An epistemic norm governs evidence, inference, and revision. A procedural or legal rule governs access, authority, or permissible disclosure. A moral norm concerns what people owe one another. A rule can perform more than one role, but compliance with one kind does not automatically establish compliance with the others.
+
+For example, defining an account as active after a recorded transaction is a classification rule. Checking whether the transaction occurred is an evidential task. Establishing lawful access to the record is a procedural task. Deciding whether the firm ought to use that activity to target a vulnerable customer requires reasons about the person and the action. A precise prediction can satisfy the evidential task while leaving the moral question open.
+
+![An accurate record supports a narrowly specified claim only through measurement and evidence premises. A policy recommendation also needs premises about affected persons, alternatives, authority, and reasons. Semantic, epistemic, legal, and moral norms govern different steps; accuracy alone supplies no shortcut to permission.](../figures/M09_truth_and_norms.png)
+
+[MacFarlane's discussion of logical normativity](https://johnmacfarlane.net/normative.pdf) clarifies why a relation among propositions and a prescription for a reasoner must be connected carefully. In the present application, moving from a descriptive result to what an institution ought to do requires an explicit normative premise. Likewise, [Thomasson's replies on modal normativism](https://www.amiethomasson.org/_files/ugd/63fc8a_924e5fc0c3224895948994030f976cdb.pdf), pp. 19–20, distinguish discourse's function from its subject matter. Her view does not make modal truths true by linguistic convention. Setting a category's rules does not remove the need for evidence when applying it.
+
+### 9.52.1 The Stakes of Asserting a Claim
+
+\noindent The argument from inductive risk developed by [Douglas (2000)](https://www.stephanieruphy.com/wp-content/uploads/2020/10/Douglas-2000.pdf) concerns the consequences of accepting or rejecting claims under uncertainty. Applied to electricity reassurance, an erroneous assurance may influence approvals, financial commitments, and a household's ability to contest costs. Those stakes support closer scrutiny and appropriately qualified communication. They supply no permission to fabricate harm or treat an adverse interpretation as established without evidence.
+
+The relevant response is proportional to the decision. A research estimate can be reported with its defined outcome and uncertainty while a broader assurance is withheld. An urgent approval decision may require enforceable protections, monitoring, or additional inquiry even though the current evidence does not establish realized harm. The factual judgment and the recommended precaution need their own premises. A critic should make both inspectable.
+
+## 9.53 Undone Science and the Distribution of Evidence
+
+\noindent Some socially important questions lack evidence because no institution is required or funded to answer them. [Frickel and colleagues (2010)](https://www.researchgate.net/publication/249623643_Undone_Science_Charting_Social_Movement_and_Civil_Society_Challenges_to_Research_Agenda_Setting) examine such challenges to research agendas through the concept of undone science. A linked study of household costs may require coordination among utilities, regulators, developers, and researchers even when each already holds useful records. The gap can arise through divided responsibilities and unequal priorities without an explicit agreement to conceal information.
+
+Strategic ignorance supplies a more specific hypothesis: an organization may benefit from limiting inquiry or preserving uncertainty. [McGoey (2012)](https://repository.essex.ac.uk/5131/) treats ignorance as a potential organizational resource. To apply that hypothesis to a particular institution, identify choices about retention, access, research funding, or disclosure and the reasons given for them. An absent public dataset alone does not establish the deliberate production of ignorance. Public investigations, enforceable disclosure, customer-authorized access, and independent research provide possible countervailing mechanisms.
+
+The categories themselves also distribute visibility. [D'Ignazio and Klein's discussion of counting](https://data-feminism.mitpress.mit.edu/pub/h1w0nbqp/release/3) asks whose experiences fit the available classification. A complaint coded only as resolved or unresolved can erase the difference between genuine resolution and withdrawal after prolonged effort. A project file limited to operating facilities can similarly omit residents affected by preparation for a failed proposal. The classification should follow the substantive question and preserve relevant cases for evaluation.
+
+### 9.53.1 Evidence About Electricity Already Exists
+
+\noindent The household case requires an exact diagnosis of the gap. EIA already collects supplier billing data and publishes household expenditure microdata (§6.43). What remains difficult is obtaining sufficiently detailed, linkable records for a defensible causal design. Actual charges can be observed; the bill the same household would have faced under an alternative project history is a counterfactual requiring identification. Confusing these two obstacles can lead either to exaggerated pessimism about data collection or to exaggerated confidence once records are acquired.
+
+Political sensitivity supplies competing incentives. It can encourage secrecy over commercially sensitive contracts and also motivate legislative inquiry and reporting proposals. January 2026 company correspondence documents confidentiality for some bespoke contracts; it also recognizes regulatory access and legal exceptions. The October Senate investigation and the introduced S. 5640 show public pressure for additional evidence. The specific 2020–2025 research design requires evidence about its own units and periods. Later disputes cannot establish historical donor contamination by themselves.
+
+Missing linked records are ordinarily empirical unknowns. They differ from Kantian noumena and do not establish that the relevant facts are unknowable in principle. A household's standing to demand reasons likewise survives the absence of a convenient measurement. The failure to produce adequate evidence can itself warrant institutional criticism, with the responsibility assessed against capacity, duties, privacy, cost, and feasible alternatives.
+
+## 9.54 Who Ought to Bear the Burden of Producing Evidence?
+
+\noindent Consider a proposed rule permitting an institution to reassure residents about costs using only the records it chooses to make accessible, while requiring residents to prove harm with unavailable records. A resident can reasonably reject that allocation of the evidential burden: the institution controls essential means of inquiry, while the resident bears a foreseeable financial consequence and has limited ability to challenge the assurance. This is a Scanlonian application concerning the terms of justification. It does not assume that every disputed project causes harm.
+
+The argument has four premises. First, the decision can impose a material burden on identifiable people. Second, particular institutions control information needed to assess that burden. Third, affected people have a reason to demand an answer that addresses their burden and a practical opportunity to contest it. Fourth, feasible information arrangements can improve that opportunity while protecting legitimate interests. Together, these premises support a duty to provide an adequate evidential basis, enable proportionate independent scrutiny, or narrow the claim. The strength and allocation of that duty depend on the institutions' actual authority and capacity.
+
+A privacy objection deserves an answer. Releasing household identities, addresses, and financial histories can expose people to serious harm. Controlled access, de-identified linkage, disclosure review, and publication of aggregate results can make scrutiny possible without indiscriminate public release. EIA's [restricted-data process](https://www.eia.gov/about/cipsea_reporting.php) demonstrates one institutional route, with eligibility and approval conditions. [Customer-authorized energy access](https://www.energy.gov/data/green-button) offers another route, subject to coverage and selection. Neither automatically produces the required causal design.
+
+[Longino's conditions for effective critical interaction](https://www.ugr.es/~zink/mono/Longino2004.pdf) include venues, uptake, public standards, and tempered equality of intellectual authority. Applied here, residents need more than permission to object after a prestigious institution has announced a reassuring result. They need intelligible definitions, access to the evidence or an accountable representative, a response to substantive objections, and an opportunity for that response to change the decision. Expertise deserves consideration because of its reasons and methods; institutional prestige cannot supply a missing premise.
+
+For the data-center paper, the decisive criticism concerns the expansion of an empirical result into public authority. An aggregate price comparison does not establish actual household cost incidence without a defended connection between outcome, exposure history, comparison group, and affected population. Publicly unavailable evidence cannot silently complete those connections. Where the broader claim remains unsupported, the authors and institutions communicating it ought to state the narrower result and the unresolved burden question. A valid calculation can inform public discourse while still being inadequate to close it.
+
 ---
 
 ## Source: 01_Resources/16_AI_Experimentation_and_Pricing/README.md
@@ -8391,6 +8543,10 @@ The [Philosophical Arguments practice](Philosophical_Arguments/README.md) includ
 ## Bad Controls and Thoughtful Research Design
 
 The [optional ungraded practice](Bad_Controls/README.md) asks students to defend controls and sample restrictions, reproduce the project-window comparisons, and evaluate whether the evidence justifies reassurance to households.
+
+## Data, Truth, and Norms
+
+[Optional ungraded practice](Data_Truth_and_Norms/README.md) connects selected evidence and causal counterfactuals to the artifact analogy, distinct norms, and an argument about institutional duties to provide household evidence.
 
 ---
 
@@ -13571,6 +13727,10 @@ The [utility-disclosure example](../../03_Data_and_Code/Utility_Cost_Recovery/RE
 
 The [project-exposure assessment](../44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md) adds evidence inside 2020–2025, particularly its later years, and separates adjustment covariates from exposed donors, anticipation, and completion selection. M6 §§6.40–6.42 provide complete synthetic calculations. Thoughtful design requires a baseline preceding relevant commitments and a sample aligned with the affected population. An appealing fit or recent data alone does not establish those conditions.
 
+## Data Production and Availability
+
+The [household-evidence assessment](../45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) establishes that billing data and public expenditure microdata exist. The unresolved object is a sufficiently detailed, accessible, linked basis for project-level household causal inference. M6 §6.43 connects this distinction to exposure histories and cost recovery; M9 §§9.51–9.54 examine truth, norms, and responsibility for an adequate public claim.
+
 ---
 
 ## Source: 01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
@@ -15443,6 +15603,521 @@ Kyle Butts. arXiv:2105.03737v3, submitted June 10, 2023; PDF dated June 13, 2023
 Treatment elsewhere can change comparison outcomes and treated outcomes. The relevant neighborhood must follow the economic connection. Shared transmission systems can matter even where county boundaries or geographic distance suggest separation.
 
 **Access and scope:** arXiv v3 submitted June 10, 2023; PDF dated June 13; setup inspected.
+
+---
+
+## Source: 01_Resources/45_Data_Truth_and_Norms/README.md
+
+# Data, Truth, and Norms
+
+A household needs evidence about the burdens of a proposed development. A utility, developer, regulator, and researcher may each produce records for different purposes. The relevant question is how those records become evidence for the household's decision, and which further reasons justify an institution's recommendation.
+
+The collection contains 26 sources: 18 philosophical and methodological readings and eight institutional sources. Fourteen source files are saved locally in categorized `readings/` subfolders: 12 PDFs and two author manuscripts in Word formats. Public guides and original teaching materials are synchronized with GitHub; the source originals remain in Dropbox. The [catalog](catalog.json) records URLs, versions, inspected passages, availability, and local-copy checksums. Access to an original does not establish a general right to redistribute it.
+
+## Reading Routes
+
+| Question | Readings | Course Application |
+| --- | --- | --- |
+| What kind of object is a dataset? | [Artifacts and representation](01_Artifacts/README.md): Thomasson, Leonelli, Bogen and Woodward, Epstein | M2 §2.30; M9 §9.51 |
+| What connects a record, a true claim, and a justified action? | [Truth and norms](02_Truth_and_Norms/README.md): Thomasson, Glanzberg, MacFarlane, Douglas, Longino, Steel | M9 §9.52 |
+| Why are some questions easier to answer than others? | [Institutions and ignorance](03_Institutions_and_Ignorance/README.md): Frickel and colleagues, Hess, McGoey, D'Ignazio and Klein | M9 §9.53 |
+| Which household electricity evidence actually exists? | [Electricity evidence](04_Electricity_Evidence/README.md): EIA, DOE, Virginia, Senate documents, company correspondence | M6 §6.43; M9 §§9.53–9.54 |
+
+Begin with Thomasson T01, Leonelli T05, Douglas T08, Longino T09, Frickel and colleagues T15, and EIA E01–E03. The recommended sequence is background reading, with no new graded requirement. Gitelman and Jackson T07 is an unavailable full-text lead; McGoey T13 and Steel T14 are abstract-based entries. Their inspection limits are explicit in the catalog.
+
+## The Argument
+
+Data have histories of creation, classification, retention, linkage, and access. Institutional purposes influence those histories. They can improve accuracy, exclude relevant cases, or constrain reuse. Establishing that a record was institutionally produced therefore begins an inquiry into its evidential role; it does not refute its contents.
+
+Thomasson's account of created, dependent artifacts provides an analogy for provenance and identity. A dataset version, a copy of that version, and the persons it represents are distinct. Some recorded facts, including legally owed charges, partly depend on institutional rules. Other claims concern physical events or causal relationships. A rule's existence, a proposition's truth, the warrant for asserting it, and the permissibility of acting on it require distinct arguments.
+
+The electricity case supplies a consequential correction: household billing data have already been collected, and household expenditure microdata are public. The difficult object is an adequately linked and accessible body of evidence for project-level household cost incidence, including canceled proposals, cost recovery, offsets, and counterfactual outcomes. Political sensitivity can encourage restricted access and also disclosure or public investigation. Permanent unavailability and deliberate suppression require evidence beyond controversy itself.
+
+## Teaching Materials
+
+- [Evidence assessment](ELECTRICITY_ASSESSMENT.md): verified facts, disputed inferences, and a feasible research design.
+- [Complete Python example](../../03_Data_and_Code/Data_Production/README.md): identical public releases with opposite population effects, selection weighting, and support bounds.
+- [Optional ungraded practice](../../07_Labs/Data_Truth_and_Norms/README.md): premises, counterexamples, access, and reasons owed to affected households.
+- [M2](../../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md) §§2.30–2.31, [M6](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) §6.43, and [M9](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) §§9.51–9.54.
+
+The original figures and code do not replicate the data-center paper or estimate actual household harms. They identify premises that a broader reassurance would need to establish. They connect to the existing [project-exposure assessment](../44_Bad_Controls_and_Project_Exposure/CASE_ASSESSMENT.md), [institutional assessment](../41_Statistical_Claims_and_Decisions/INSTITUTIONAL_ASSESSMENT.md), and [utility cost-recovery evidence](../../03_Data_and_Code/Utility_Cost_Recovery/README.md).
+
+---
+
+## Source: 01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md
+
+# Household Costs, Public Evidence, and Institutional Responsibility
+
+The decision is whether a development and its financing arrangements can be justified to households that may bear costs. The evidence must connect the relevant project history to household consequences and a defensible alternative. An analysis of an aggregate price measure may inform this question while leaving essential premises unestablished.
+
+## What is Established
+
+EIA's [RECS documentation](https://www.eia.gov/consumption/residential/faqs.php) states that it collects energy-supplier billing data after surveying sampled households. Its [2020 public microdata](https://www.eia.gov/consumption/residential/data/2020/index.php?view=microdata) include household consumption and expenditure measures. The target population is occupied primary residences; survey weights, complex-design uncertainty, imputation, and modeled end-use quantities require their documented treatment. These are decisive counterexamples to a claim that actual household costs are never collected or released. Public geography and survey timing still constrain local project research.
+
+The [restricted-data process](https://www.eia.gov/about/cipsea_reporting.php) provides a potential route to additional statistical access, subject to approval and safeguards. The [Green Button program](https://www.energy.gov/data/green-button) describes customer access and authorized sharing. Neither route promises every bill component, universal participation, or the identifiers needed for a project-linked longitudinal design. A confidentiality restriction may protect households and should be evaluated on its actual scope.
+
+In the [January 2026 company-response bundle](https://www.warren.senate.gov/wp-content/uploads/media/doc/big_tech_responses.pdf), Google's letter, pp. 2–3, describes bespoke contract terms as generally confidential and recognizes regulatory review and legal disclosure exceptions. This is evidence about particular contractual access practices. The [October 2026 Senate investigation](https://www.warren.senate.gov/wp-content/uploads/2026/10/471703-ai-data-center-boom-cost-Digital-8.5x11.pdf), pp. 8–9, interprets companies' nondisclosure practices; attribute those conclusions to the investigating senators and examine underlying responses. Neither source establishes the target paper's donor exposure during 2020–2025.
+
+Virginia's [December 2024 report](https://jlarc.virginia.gov/pdfs/reports/Rpt598.pdf) is an example of public inquiry into infrastructure and electricity costs. Scenario-based projections are distinct from observed causal household effects. Section 2(c) of [S. 5640 as introduced September 30, 2026](https://www.govinfo.gov/content/pkg/BILLS-119s5640is/xhtml/BILLS-119s5640is.html) proposes federal collection and public reporting about data-center electricity use, grid buildout, and household bills and costs. The reviewed document is introduced legislation, with no enactment or effective date established. Its existence shows that controversy can generate demand for disclosure.
+
+## Claims and Their Required Premises
+
+| Claim | Assessment | Evidence Needed |
+| --- | --- | --- |
+| Household billing data do not exist | Contradicted by supplier collection and RECS | No inference from limited public access can rescue this universal claim |
+| A complete public project-linked household panel is available | Not established by the inspected sources | Inventory, fields, identifiers, coverage, dates, permissions, and linkage validation |
+| Relevant access is selective | Documented for some bespoke contract terms | Establish the particular record holder, restriction, exception, and research consequence |
+| Political sensitivity guarantees permanent nonrelease | Unsupported forecast | Specific retention and disclosure mechanisms; countervailing reporting and access possibilities |
+| Missing public evidence proves intentional suppression | Unsupported without additional evidence | Decisions, requests, denials, legal grounds, internal policies, and alternative explanations |
+| An accurate aggregate price estimate establishes no household burden | Requires additional substantive and causal premises | Matched outcomes, project exposure, financial offsets, comparison design, uncertainty, and distribution of effects |
+
+## A Feasible Evidential Design
+
+Specify the population of households potentially exposed through a utility's service and financing arrangements. Include project proposals that fail after investments are committed. Obtain project requests, construction and cancellation histories, assets and costs, developer payments or guarantees, recovery orders, tariffs, customer bills, usage, credits, arrears, and assistance where relevant and authorized. Preserve the distinction between a billed amount, a payment, a cost caused by the project, and affordability.
+
+Evaluate a design that links records within a controlled environment and releases disclosure-reviewed aggregates, uncertainty, code, and metadata. Establish who may inspect the linkage, how residents can challenge classifications, and how disagreements are resolved. Record requested fields, availability, denials and grounds, retention periods, linkage failures, and coverage by population and time. Household identities and sensitive financial histories need not become publicly downloadable to permit credible scrutiny.
+
+Even a complete realized ledger supplies only one project history for each household. Select a defensible counterfactual comparison and assess anticipation, spillovers, changing composition, treatment-affected controls, and cost-recovery lags. No algorithm can obtain the unobserved potential outcome simply by acquiring a larger file. The synthetic example in M2 §2.31 isolates disclosure selection while granting identification within its constructed world.
+
+## The Philosophical Conclusion
+
+Institutions should not demand that households refute a reassurance using evidence that those institutions alone control. This proposed Scanlonian argument depends on the material burden, control over information, the person's opportunity to contest, and feasible safeguards. Privacy, administrative cost, and other affected parties supply competing reasons that must be addressed. The duty can be met through appropriate access, independent scrutiny, narrower claims, and protections proportionate to unresolved risks.
+
+The supported critique is a failure of justification when a narrow estimand acquires authority to settle a broader household question without its bridge premises. This critique does not depend on asserting unverified author motives or inevitable data suppression. The [catalog](catalog.json) records source versions and inspection scopes as of November 26, 2026.
+
+---
+
+## Source: 03_Data_and_Code/Data_Production/README.md
+
+# Data Production and Access
+
+An institution can produce accurate bills while releasing a selected view of household consequences. This original synthetic example constructs two populations with identical restricted public records and opposite population effects. It connects data provenance to identification, inverse-probability weighting, and the responsibility to justify public claims.
+
+## Inputs and Run Commands
+
+The program constructs 400 households in each of two alternative worlds, with four strata of 100. All values are synthetic. The previous bill equals the current no-project bill by construction; no other factor changes. This restriction makes the bill change equal the causal effect within the example. No actual utility records, company code, or external services are used.
+
+Python 3.10 or later and the standard library are sufficient. Run from the repository root:
+
+```sh
+python3 03_Data_and_Code/Data_Production/data_availability.py
+python3 03_Data_and_Code/Data_Production/verify_example.py
+```
+
+The seed is `20261126`. The script resolves its output directory relative to its own path, so it also runs from other working directories. Read [the dictionary](DATA_DICTIONARY.md), [results](results/README.md), and [verification record](VERIFICATION.md). The maintained [program](data_availability.py) appears in full in M2 §2.31.
+
+## Comparisons
+
+All means below use USD per household-month. The target denominator is 400; the released denominator depends on the policy.
+
+| World | Release Policy | Released Households | Released Mean | Target Mean | Weighted Mean |
+| --- | --- | --- | --- | --- | --- |
+| H | A and B only | 200 | -10 | +10 | Undefined |
+| H | All A and B; half of C and D | 300 | 10/3 | +10 | +10 |
+| H | Half of every stratum | 200 | +10 | +10 | +10 |
+| L | A and B only | 200 | -10 | -10 | Undefined |
+| L | All A and B; half of C and D | 300 | -10 | -10 | -10 |
+| L | Half of every stratum | 200 | -10 | -10 | -10 |
+
+Half-stratum samples are simple random draws of 50 out of 100, without replacement. Effects are constant within each stratum, so weighted recovery is exact for every draw with positive inclusion in every stratum. This exactness does not generalize to arbitrary outcomes. Under restricted release, missing strata have zero inclusion; weighting alone cannot identify their contribution.
+
+With restricted coverage of one half, an observed mean of -10, and an assumed missing-effect range of [-20, 40], the population mean lies in [-15, 15]. Both constructed worlds fit these limits. The limits are illustrative substantive restrictions, not estimates from actual electricity data.
+
+## Interpretation and Provenance
+
+The same public file is compatible with a population increase and a population decline. A more sophisticated estimator cannot distinguish observationally equivalent worlds without additional evidence or restrictions. All current bills exist internally in the construction; access is the changed mechanism. The oracle potential outcomes are supplied by the example's creator and are not claimed to be observed in an ordinary billing system.
+
+The [resource collection](../../01_Resources/45_Data_Truth_and_Norms/README.md) and [electricity assessment](../../01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md) distinguish this logical example from documented institutional practices. The example estimates neither the data-center paper's coefficients nor the prevalence of selective release. [Optional practice](../../07_Labs/Data_Truth_and_Norms/README.md) connects the calculation to truth, norms, and household reasons.
+
+---
+
+## Source: 03_Data_and_Code/Data_Production/DATA_DICTIONARY.md
+
+# Data Dictionary
+
+Every row and amount is synthetic. The observation unit in the ledgers and releases is one household for one current monthly billing comparison. H and L are alternative worlds, each with a target of 400 households; their counts must not be added as an empirical sample. All amounts use USD per household-month. The previous bill equals the current no-project potential bill only under the construction's fixed-background restriction.
+
+| Field | Definition |
+| --- | --- |
+| `household_id` | Artificial identifier A000–D099, reused across alternative worlds |
+| `group` | Stratum A, B, C, or D; 100 households each |
+| `previous_bill_usd` | Constructed prior bill, 120–124 |
+| `current_bill_usd` | Constructed realized bill after the project |
+| `no_project_bill_usd_oracle` | Unobserved potential outcome supplied by the simulation, equal to prior bill |
+| `effect_usd_oracle` | Current bill minus oracle no-project bill; H has -10 in A/B and +30 in C/D; L has -10 throughout |
+| `inclusion` | Known stratum inclusion probability under the specified random release design; stored as an exact fraction |
+
+The released files omit both oracle fields. A household missing from a release is unobserved in that file. Its effect is not zero.
+
+`selection_comparisons.csv` has one row per world-policy pair. `coverage` divides released households by 400. `released_mean_change_usd` uses the selected denominator. `weighted_mean_change_usd` is the Horvitz–Thompson total of changes divided by the known target size, 400. It is `undefined` when any target stratum has zero inclusion probability. `target_mean_effect_usd_oracle` uses all constructed effects.
+
+`bounds.csv` records the observed mean, coverage, assumed bounds on unreleased effects, and the resulting population-mean endpoints. Fractions such as `10/3` are exact rational values. They can be parsed with Python's `fractions.Fraction`; treating them as dates or text categories changes their meaning.
+
+---
+
+## Source: 03_Data_and_Code/Data_Production/results/README.md
+
+# Synthetic Availability Results
+
+`synthetic_ledger_H.csv` and `synthetic_ledger_L.csv` contain the full constructed populations, including oracle potential outcomes. Six `released_*.csv` files contain the records visible under three disclosure policies in each world. The two restricted releases are identical. `selection_comparisons.csv` reports six comparisons, and `bounds.csv` records one support calculation.
+
+In H, the full effect total is USD 4,000 over 400 household-months; the target mean is USD 10. In L, the total is USD -4,000 and the target mean is USD -10. The restricted release in either world totals USD -2,000 over 200 household-months. Dividing that subtotal by 400 would implicitly assign zero effects to the unavailable half and incorrectly report -5 in H.
+
+The broader H release has 200 declines of 10 and 100 increases of 30, giving an unweighted mean of 10/3. Inverse inclusion weighting doubles the contributions of the half-sampled C/D strata and recovers 10. Exact recovery follows from constant effects within strata. The bounds [-15, 15] use an imposed range [-20, 40] for the missing half.
+
+These are logical illustrations, with no estimate of actual utility effects or disclosure behavior. See [inputs and commands](../README.md) and [field definitions](../DATA_DICTIONARY.md).
+
+---
+
+## Source: 03_Data_and_Code/Data_Production/VERIFICATION.md
+
+# Verification
+
+Verified November 26, 2026 with Python 3.12.14. The original example uses the standard library. It makes no network requests and executes no downloaded source code.
+
+## Numerical Checks
+
+`data_availability.py` generated two 400-row synthetic ledgers, six releases, six comparison rows, and one bounds row. `verify_example.py` passed independent checks of the full-population effect totals (+4,000 and -4,000), exact identity of the restricted public releases, the broader-release mean (10/3), positive-inclusion weighting, the [-15, 15] support interval, and row-order invariance. Duplicate household identifiers and zero-inclusion weighting fail explicitly. Assigning zero to unreleased effects is shown to produce the incorrect mean -5 in world H.
+
+The weighting calculation is the Horvitz–Thompson total divided by the known population size. Its exact recovery in the constructed examples follows from constant effects within strata. The synthetic prior bill equals the current no-project bill by construction; this is not an empirical identification result.
+
+The course checker verified 129 matching, syntactically valid Python source blocks, including the full program in M2 §2.31. The existing small lecture-example checks also passed. Their generated CSV values agree with the committed inputs.
+
+## Sources and Teaching Scope
+
+The [catalog](../../01_Resources/45_Data_Truth_and_Norms/catalog.json) records 26 sources and the inspection scope for each. Checksums match all 14 local source copies. Unavailable full texts and abstract-only entries are identified. No original source file from this collection is included in the public Git package.
+
+The source assessment verifies existing EIA household billing collection and public expenditure microdata. Contract correspondence documents particular confidentiality practices and exceptions. The introduced text of S. 5640 is treated as proposed federal legislation; no enactment or effective reporting duty is inferred. The course does not estimate actual utility harms, identify the target paper's donor contamination, or establish intentional suppression.
+
+## Document Checks
+
+The complete notes and standalone Marketing Dialectics chapter were rebuilt from Markdown and TikZ. The syllabus and Sessions 2, 10, and 14 were rebuilt from maintained sources, and the combined deck was regenerated from all 15 session PDFs. The complete notes contain 603 pages and 147 original note figures; Marketing Dialectics contains 105 pages; the combined deck contains 520 slides. Sessions 2, 10, and 14 contain 29, 30, and 101 pages, respectively. The syllabus remains two pages.
+
+Visual review covered the changed material and neighboring page breaks, the table of contents, all three new diagram previews, the changed slides, and both syllabus pages. Slide-specific diagram layouts preserve the comparisons with larger projected labels. Complete notes, standalone notes, and the syllabus contain no replacement characters in extracted text. The final note builds have no overfull boxes or unresolved references.
+
+---
+
+## Source: 07_Labs/Data_Truth_and_Norms/README.md
+
+# Data, Truth, and Reasons Owed to Households
+
+This is optional ungraded practice. The decision concerns whether a household should accept a public reassurance about electricity development costs, and what evidence the institution communicating it ought to provide.
+
+## Preparation
+
+Read M2 §§2.30–2.31, M6 §6.43, and M9 §§9.51–9.54 in the [notes](../../06_Lecture_Notes/README.md). Use the [categorized readings](../../01_Resources/45_Data_Truth_and_Norms/README.md) and [electricity evidence assessment](../../01_Resources/45_Data_Truth_and_Norms/ELECTRICITY_ASSESSMENT.md). Run the [synthetic example](../../03_Data_and_Code/Data_Production/README.md) before interpreting its outputs.
+
+## Measurement and Identification
+
+1. Predict whether identical released billing records can coexist with opposite target effects. Reconcile your answer with both restricted releases and the full ledgers. State the target population and units.
+2. Derive the broader-release mean in H by hand. Explain why positive inclusion permits weighting and why restricted release does not. Identify the special feature that makes recovery exact for every draw.
+3. Replace the illustrative missing-effect bounds with [-10, 10], then [0, 50]. Calculate the population intervals using `effect_bounds`. State which constructed worlds each restriction excludes and what external evidence would justify that exclusion.
+4. Relax the condition equating prior bills with current no-project bills. Explain why an observed change then combines a project effect with other changes even if disclosure is complete. Separate this identification problem from release selection.
+
+## Philosophical Argument
+
+5. Distinguish a dataset version, a physical file, a recorded charge, an actual payment, and a claim about household harm. Apply Thomasson's artifact analogy to the first two without treating the household as a fictional character.
+6. Identify a semantic, epistemic, legal, and moral norm relevant to the case. Construct an example in which an accurate and lawfully accessed record supports a narrow statement but leaves a proposed action unjustified.
+7. Reconstruct the proposed Scanlonian argument in §9.54. Identify the resident's reason, the institution's informational control, feasible safeguards, and the conclusion. Then give the strongest privacy or resource objection and revise the principle to address it.
+8. Assess the proposition that controversy makes household costs permanently unavailable. Use the existing RECS collection, contract correspondence, and introduced disclosure bill. Distinguish a verified access restriction from a prediction of secrecy and an allegation of intentional suppression.
+
+## An Evidential Proposal
+
+Specify a project-linked study covering proposed, canceled, delayed, and operating facilities. State the household outcome, counterfactual, dates, financing links, sample restrictions, and required records. Design controlled access and public aggregates that permit criticism while protecting identities. Identify whose question each data holder's system was designed to answer and where additional collection or linkage is needed.
+
+End with a supported public statement and a separate recommendation. Explain which evidence could reverse the factual judgment and which reason could change the recommendation. Do not infer a favorable or adverse causal effect merely from the availability of records.
+
+---
+
+## Source: 01_Resources/45_Data_Truth_and_Norms/02_Truth_and_Norms/README.md
+
+# Truth, Evidence, and Norms
+
+[Collection Guide](../README.md) | [Catalog](../catalog.json)
+
+## T03. Replies to Authors
+
+Amie L. Thomasson. Undated author manuscript; saved November 26, 2026. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_924e5fc0c3224895948994030f976cdb.pdf).
+
+**Reading focus:** Manuscript pp. 15–20, especially modal normativism on pp. 19–20.
+
+Distinguish the function of a discourse from its subject matter and truth conditions. Rules governing modal vocabulary do not imply that modal truths are made true by linguistic conventions.
+
+**Access and scope:** Author manuscript downloaded; fiction, fact-talk, and modal-normativism passages inspected. Empirical knowledge remains necessary for many applications of concepts.
+
+## T08. Inductive Risk and Values in Science
+
+Heather Douglas. 2000; Philosophy of Science 67(4), 559–579. [Source](https://www.stephanieruphy.com/wp-content/uploads/2020/10/Douglas-2000.pdf).
+
+**Reading focus:** Consequences of error and direct versus indirect roles for values.
+
+Consequences of mistaken acceptance or rejection can matter to evidentiary judgment. This supports examining the cost of public reassurance under uncertainty; it does not permit inventing an adverse result.
+
+**Access and scope:** Full paper downloaded; inductive-risk argument and values discussion inspected.
+
+## T09. How Values Can Be Good for Science
+
+Helen E. Longino. 2004; Science, Values, and Objectivity, pp. 127–142. [Source](https://www.ugr.es/~zink/mono/Longino2004.pdf).
+
+**Reading focus:** Critical interaction, pp. 134–135.
+
+Objectivity requires effective criticism: venues, uptake, public standards, and tempered equality of intellectual authority. Merely permitting comments does little when residents cannot obtain evidence or influence the response.
+
+**Access and scope:** Full chapter downloaded; opening and critical-interaction conditions inspected. The electricity application is the course’s argument.
+
+## T12. Is Logic a Normative Discipline?
+
+John MacFarlane. Author manuscript saved November 26, 2026; originally presented 2017. [Source](https://johnmacfarlane.net/normative.pdf).
+
+**Reading focus:** Normative principles and the bridge to prescriptions.
+
+An inference’s logical relation and the prescription governing a reasoner require careful articulation. In the course application, a valid statistical calculation does not supply the moral premise needed for a decision.
+
+**Access and scope:** Full author manuscript downloaded; opening argument inspected. The course does not attribute a blanket denial of logical normativity to MacFarlane.
+
+## T14. Epistemic Values and the Argument from Inductive Risk
+
+Daniel Steel. 2010; Philosophy of Science 77(1), 14–34; DOI 10.1086/650206. [Source](https://doi.org/10.1086/650206).
+
+**Reading focus:** Epistemic values and legitimate value influence.
+
+Assess how values can guide inquiry without replacing evidence. Pair with Douglas when distinguishing the stakes of an error from reasons to believe a factual claim.
+
+**Access and scope:** Publisher abstract inspected; full text not downloaded.
+
+## T17. Truth
+
+Michael Glanzberg. Stanford Encyclopedia of Philosophy; revision June 27, 2025. [Source](https://plato.stanford.edu/entries/truth/).
+
+**Reading focus:** Sections 1, 4–6: truth, evidence, language, and assertion.
+
+Compare correspondence, coherence, pragmatist, and deflationary approaches without equating truth with convenience, consensus, or institutional approval. These theories differ; none is established merely by possessing a dataset.
+
+**Access and scope:** Reference overview and correspondence discussion inspected; entry supplies routes to primary philosophical debates.
+
+---
+
+## Source: 01_Resources/45_Data_Truth_and_Norms/01_Artifacts/README.md
+
+# Data, Artifacts, and Representation
+
+[Collection Guide](../README.md) | [Catalog](../catalog.json)
+
+## T01. Fiction and Metaphysics
+
+Amie L. Thomasson. 1999 author bibliography; publisher chapter metadata also lists 1998. [Source](https://www.cambridge.org/core/books/abs/fiction-and-metaphysics/fictional-characters-as-abstract-artifacts/CE4968D080D4B81C9DE76FF589C70017).
+
+**Reading focus:** Chapter 3, pp. 35–42; creation, dependence, and identity.
+
+Fictional characters depend on creative acts and literary practices. The course applies the questions of origin, persistence, and identity to datasets, while distinguishing records from the people and events they represent.
+
+**Access and scope:** Whole book downloaded; Chapter 3 dependency account inspected. The analogy does not establish that household bills are fictional or that every data object is an abstract entity.
+
+## T02. Public Artifacts, Intentions and Norms
+
+Amie L. Thomasson. 2014; Artefact Kinds, pp. 45–62. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_840cc91860474dfa99802928543989fb.doc).
+
+**Reading focus:** Intended features and public norms of treatment.
+
+Public artifacts can involve structural, perceptual, receptive, and normative features. A billing record is designed for a practice whose purposes and recognized uses deserve examination.
+
+**Access and scope:** Author manuscript; opening and public-norm discussion inspected. An artifact’s intended purpose does not guarantee accuracy or legitimate every later use.
+
+## T04. If Models Were Fictions, Then What Would They Be?
+
+Amie L. Thomasson. 2020; The Scientific Imagination, pp. 50–73. [Source](https://www.amiethomasson.org/_files/ugd/63fc8a_793dccac983145af90b9e580203e5333.docx).
+
+**Reading focus:** Model descriptions, model systems, and the conditional argument.
+
+Keep the description, the constructed model, and its target distinct. A synthetic billing population can demonstrate a logical possibility without measuring its prevalence in the world.
+
+**Access and scope:** Author manuscript downloaded; introduction and distinctions inspected. The conditional exploration does not assert that all models are fictions.
+
+## T05. What Counts as Scientific Data? A Relational Framework
+
+Sabina Leonelli. 2015; Philosophy of Science 82(5), 810–821; DOI 10.1086/684083. [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC4747116/).
+
+**Reading focus:** Relational account of data and prospective evidence.
+
+Whether an object functions as data depends on its role in inquiry and movement across settings. A ledger becomes evidence for a new claim through an evidential argument, with context and provenance retained.
+
+**Access and scope:** Full public HTML inspected. PDF endpoint returned a verification page; no local PDF. Leonelli’s account should not be reduced to the claim that every data object is itself a true or false proposition.
+
+## T06. Saving the Phenomena
+
+James Bogen and James Woodward. 1988; The Philosophical Review 97(3), 303–352. [Source](https://joelvelasco.net/teaching/5330/bogen_woodward88-saving_the_phenomena.pdf).
+
+**Reading focus:** Opening distinction between particular observations and phenomena.
+
+Reliable patterns are inferred from particular records using substantive reasoning. A stable pattern in aggregate prices and a household burden mechanism are different evidential targets.
+
+**Access and scope:** Full paper downloaded; opening distinction inspected. Their data–phenomena distinction is separate from Kant’s phenomena–noumena distinction.
+
+## T16. Learning from Data Journeys
+
+Sabina Leonelli. 2020; Data Journeys in the Sciences, pp. 1–24; DOI 10.1007/978-3-030-37177-7_1. [Source](https://link.springer.com/chapter/10.1007/978-3-030-37177-7_1).
+
+**Reading focus:** Production, movement, and reuse across institutions.
+
+Linkage and portability require infrastructure and contextual knowledge. The existence of separate billing, investment, and project files does not establish that a defensible linked analysis is available.
+
+**Access and scope:** Open chapter downloaded; introduction and data-movement argument inspected.
+
+## T18. Social Ontology
+
+Brian Epstein. Stanford Encyclopedia of Philosophy; revision March 4, 2024. [Source](https://plato.stanford.edu/entries/social-ontology/).
+
+**Reading focus:** Introduction and distinctions between construction and membership conditions.
+
+Ask what establishes an institutional category and what qualifies something for membership. A valid tariff can help constitute a debt while remaining open to moral criticism.
+
+**Access and scope:** Reference introduction and conceptual distinctions inspected; electricity example is an application.
+
+---
+
+## Source: 01_Resources/45_Data_Truth_and_Norms/03_Institutions_and_Ignorance/README.md
+
+# Institutions, Classification, and Ignorance
+
+[Collection Guide](../README.md) | [Catalog](../catalog.json)
+
+## T07. Introduction to “Raw Data” Is an Oxymoron
+
+Lisa Gitelman and Virginia Jackson. 2013; edited by Lisa Gitelman. [Source](https://dsl.lsu.edu/nehtextualdata/wp-content/uploads/2017/11/RawData.pdf).
+
+**Reading focus:** Background reading on selection and preparation of data.
+
+The title provides a useful question: which decisions preceded the supposedly raw file? Use the fully inspected Leonelli readings for the developed account of data practices.
+
+**Access and scope:** Bibliographic lead only; download timed out twice. No chapter-level summary or full-text reading claim.
+
+## T10. The Problem of Undone Science: Values, Interests, and the Selection of Research Programs
+
+David J. Hess. 1998 unpublished conference paper. [Source](https://www.davidjhess.net/uploads/3/4/8/1/34811322/problemundone19984s.formatted.pdf).
+
+**Reading focus:** Historical formulation of undone science.
+
+Research agendas can omit questions important to less powerful constituencies. Pair this historical statement with Frickel and colleagues’ later analysis of agenda setting.
+
+**Access and scope:** Author copy downloaded; opening and agenda-selection argument inspected. Historical medical examples are outside the course application and are not endorsed.
+
+## T11. What Gets Counted Counts
+
+Catherine D’Ignazio and Lauren F. Klein. 2020; Data Feminism, Chapter 4. [Source](https://data-feminism.mitpress.mit.edu/pub/h1w0nbqp/release/3).
+
+**Reading focus:** Classification, exclusions, and the power to define categories.
+
+A schema can impose categories that misrepresent the people recorded. Assess who chose the categories and whose experiences disappear; counting can also support accountability and collective claims.
+
+**Access and scope:** Public chapter HTML and opening examples inspected; MIT-hosted 34-page PDF downloaded. PDF states CC BY 4.0.
+
+## T13. The Logic of Strategic Ignorance
+
+Linsey McGoey. 2012; British Journal of Sociology; DOI 10.1111/j.1468-4446.2012.01424.x. [Source](https://repository.essex.ac.uk/5131/).
+
+**Reading focus:** Ignorance as an organizational resource.
+
+Investigate when not knowing, or being able to claim not to know, benefits an institution. A missing public field is insufficient to establish intentional suppression.
+
+**Access and scope:** Repository abstract inspected; repository reports full text unavailable. No local full-text copy.
+
+## T15. Undone Science: Charting Social Movement and Civil Society Challenges to Research Agenda Setting
+
+Scott Frickel, Sahra Gibbon, Jeff Howard, Joanna Kempner, Gwen Ottinger, and David J. Hess. 2010; Science, Technology, & Human Values 35(4), 444–473; DOI 10.1177/0162243909345836. [Source](https://www.researchgate.net/publication/249623643_Undone_Science_Charting_Social_Movement_and_Civil_Society_Challenges_to_Research_Agenda_Setting).
+
+**Reading focus:** Civil-society challenges to research priorities.
+
+Questions can remain unasked, unfunded, or incomplete through institutional priorities. Household cost incidence may require research infrastructure that routine commercial accounting does not provide.
+
+**Access and scope:** Author-uploaded article HTML; abstract and introductory argument inspected. No local PDF.
+
+---
+
+## Source: 01_Resources/45_Data_Truth_and_Norms/04_Electricity_Evidence/README.md
+
+# Household Electricity Evidence and Access
+
+[Collection Guide](../README.md) | [Catalog](../catalog.json)
+
+## E01. 2020 RECS Microdata
+
+U.S. Energy Information Administration. Expenditure release June 2023; file update January 2024. [Source](https://www.eia.gov/consumption/residential/data/2020/index.php?view=microdata).
+
+**Reading focus:** Public household consumption and expenditure files and documentation.
+
+Public household expenditure microdata already exist. They do not supply the longitudinal project-to-household linkage or counterfactual needed to identify a particular data center’s cost incidence.
+
+**Access and scope:** Official page and release information inspected. No RECS estimates are calculated in the synthetic exercise.
+
+## E02. Residential Energy Consumption Survey: Frequently Asked Questions
+
+U.S. Energy Information Administration. Current page checked November 26, 2026. [Source](https://www.eia.gov/consumption/residential/faqs.php).
+
+**Reading focus:** Population, supplier billing data, modeling, and weights.
+
+EIA collects energy-supplier billing data after the household survey. Its target is occupied primary residences; some outputs involve modeling and calibration. The complex survey design governs estimation.
+
+**Access and scope:** Official FAQ inspected. Separate observed bills, modeled end uses, and public-file disclosure restrictions.
+
+## E03. CIPSEA Statistical Data Access
+
+U.S. Energy Information Administration. Current page checked November 26, 2026. [Source](https://www.eia.gov/about/cipsea_reporting.php).
+
+**Reading focus:** Confidentiality and the restricted-data application process.
+
+Restricted research access is an institutional alternative to open release. Privacy protections and application requirements constrain what can be studied and by whom.
+
+**Access and scope:** Official access page inspected. Eligibility, approval, and available files must be established for a specific project; no access was requested.
+
+## E04. Green Button
+
+U.S. Department of Energy. Program page checked November 26, 2026. [Source](https://www.energy.gov/data/green-button).
+
+**Reading focus:** Customer access and authorized sharing of energy data.
+
+Customer-authorized access offers one route to evidence. Availability and detail vary; consent-based samples can still select unusually concerned or well-resourced households.
+
+**Access and scope:** Official program description inspected. Historical adoption figures are not treated as current counts or universal access.
+
+## E05. Data Centers in Virginia
+
+Virginia Joint Legislative Audit and Review Commission. December 9, 2024. [Source](https://jlarc.virginia.gov/pdfs/reports/Rpt598.pdf).
+
+**Reading focus:** Public investigation of data-center infrastructure and electricity costs.
+
+Political concern can generate official inquiry and public analysis. Forecasts and cost-allocation analysis must retain their scenario assumptions and differ from realized household causal effects.
+
+**Access and scope:** Full official report downloaded; scope and electricity-cost discussion inspected. No forecast is presented as an observed household treatment effect.
+
+## E06. Power and Profits: How the AI Data Center Boom Costs Households and Communities
+
+Offices of Senators Elizabeth Warren, Chris Van Hollen, and Richard Blumenthal. October 2026. [Source](https://www.warren.senate.gov/wp-content/uploads/2026/10/471703-ai-data-center-boom-cost-Digital-8.5x11.pdf).
+
+**Reading focus:** Report pp. 8–9: nondisclosure practices and differences among respondents.
+
+A Senate investigation describes contractual secrecy and disagreement over cost responsibilities. Compare its interpretation with the underlying company responses and regulatory records.
+
+**Access and scope:** Full report downloaded; nondisclosure discussion inspected. Attribute claims to the investigating senators. This later document does not establish exposure of particular 2020–2025 sample units.
+
+## E07. Responses to Senators on Data-Center Costs
+
+Responding data-center companies. January 2026 correspondence. [Source](https://www.warren.senate.gov/wp-content/uploads/media/doc/big_tech_responses.pdf).
+
+**Reading focus:** Google letter, pp. 2–3 of the bundle; confidentiality and regulatory exceptions.
+
+The company describes bespoke contract terms as generally confidential while recognizing regulatory review and legally required disclosure. This directly documents selective access to particular contracts; it does not show that household bills are unrecorded.
+
+**Access and scope:** Full 35-page bundle downloaded; specified letter passages inspected. Company assurances about protections require independent evaluation.
+
+## E08. S. 5640: Data Center Transparency Act of 2026
+
+U.S. Senate. Introduced September 30, 2026; introduced text checked November 26, 2026. [Source](https://www.govinfo.gov/content/pkg/BILLS-119s5640is/xhtml/BILLS-119s5640is.html).
+
+**Reading focus:** Section 2(c): collection and public electricity reports.
+
+The introduced federal bill proposes reporting on data-center electricity use, grid buildout, and household energy bills and costs. It demonstrates a demand for disclosure; reported changes would still require causal interpretation.
+
+**Access and scope:** Official introduced text inspected. A proposal is not an operative reporting duty. No enactment or effective date is inferred; later legislative action was not verified.
 
 ---
 

@@ -26,6 +26,7 @@ Session 14. M8, M9. 170 minutes.
 - Assess a case interpretation using ontological scope, empirical evidence, and philosophical reasons.
 - Assess conflicts of interest through duties, consumer purposes, and reasons for a feasible alternative.
 - Defend the empirical and moral premises behind reassurance to affected households.
+- Distinguish truth, evidential warrant, and the norms governing disclosure and public justification.
 
 ## Related Materials
 
@@ -64,6 +65,7 @@ Session 14. M8, M9. 170 minutes.
 - [Conflicts of Interest: Optional Practice](../07_Labs/Conflicts_of_Interest/README.md)
 - [Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)
 - [Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)
+- [Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -1139,7 +1141,39 @@ In the synthetic savings scenario, the operating-project effect is minus 2 dolla
 
 Source: ../03_Data_and_Code/Bad_Controls/README.md
 
-## Slide 98: A Decision with Consumer Outcomes
+## Slide 98: A Dataset Has an Origin and an Intended Use
+
+- Thomasson: created artifacts have histories and dependencies.
+- Distinguish a dataset version, a copy, and the people it represents.
+- Institutional production leaves accuracy open to evidence.
+
+The artifact analogy concerns creation, identity, preservation, and recognized use. It does not make household bills fictional. Billing incentives can improve accuracy while classification and access rules exclude questions that matter to residents. A valid institutional charge remains open to moral criticism.
+
+Source: M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 99: Truth, Evidence, and Permission
+
+A correct record supports neither a causal attribution nor a policy on its own.
+
+**Figure description:** Three columns separate a recorded charge, a causal claim, and a recommendation. Semantic and legal premises establish the record’s meaning and status; epistemic premises concern measurement and counterfactuals; moral premises concern people, authority, alternatives, and reasons.
+
+[Editable TikZ](figures/truth_and_norms.tex)
+
+Ask students to supply the missing premise at each arrow. Logical validity does not make a premise true. Evidential warrant does not settle permissible action. Thomasson’s modal normativism does not claim that conventions make modal truths true. Douglas’s inductive risk concerns the stakes of error; it does not authorize inventing adverse evidence.
+
+Source: M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 100: Who Ought to Produce the Evidence?
+
+- Residents may bear a burden while institutions control the relevant records.
+- A reasonable principle provides proportionate scrutiny and privacy protection.
+- An unsupported broad reassurance should be narrowed.
+
+Develop the Scanlonian premises: material burden, informational control, standing to contest, and feasible alternatives. Test a privacy objection and propose controlled linkage with aggregate public results. Undone science concerns institutional research priorities; deliberate suppression requires additional evidence. Political sensitivity can motivate disclosure as well as secrecy. The introduced S. 5640 is a reporting proposal, not an effective duty. Longino adds effective criticism, uptake, public standards, and tempered equality of intellectual authority.
+
+Source: M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+
+## Slide 101: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

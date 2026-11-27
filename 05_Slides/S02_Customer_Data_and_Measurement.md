@@ -12,6 +12,7 @@ Session 02. M2. 170 minutes.
 - Separate missing observations, zeros, and unmatched keys.
 - Assess changing coverage in mHealth, McBroken, and earnings-call records.
 - Preserve requests, confirmations, unknown states, and the reporting cutoff.
+- Trace data production and identify the effect of selective access on population claims.
 
 ## Related Materials
 
@@ -24,6 +25,7 @@ Session 02. M2. 170 minutes.
 - [Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)
 - [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
 - ../07_Labs/AI_Augmented_Learning/README.md
+- [Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)
 
 ## Slide 1: Customer Data and Measurement
 
@@ -318,7 +320,31 @@ The Google announcement uses percentage points in its opening and percent in a l
 
 Source: M2, Section 2.29, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 27: Measurement Discussion
+## Slide 27: Data Have a Production History
+
+Collection, retention, linkage, and access serve institutional purposes.
+
+**Figure description:** Household events pass through four gates before becoming available evidence. Payment and compliance motivate collection; capacity and duties affect retention; identifiers enable linkage; privacy, accountability, and commercial interests shape access.
+
+[Editable TikZ](figures/data_production.tex)
+
+An accurate billing row can coexist with inadequate evidence about household cost incidence. Identify each decision maker and the actual access rule before attributing a motive to missing evidence. Thomasson motivates questions about created artifacts; Leonelli explains the relational use and movement of data.
+
+Source: M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 28: The Same Public File Can Support Opposite Worlds
+
+Synthetic: 400 households per world; monthly effects in USD.
+
+**Figure description:** A and B are identical in both releases: 200 households with effects of minus 10. The unreleased 200 have effects of plus 30 in H and minus 10 in L. Full-population means are plus 10 and minus 10.
+
+[Editable TikZ](figures/selected_evidence.tex)
+
+Hold all other causes of bills fixed so the prior bill equals the current no-project bill. All current bills are recorded internally in both worlds. The example isolates release selection and grants identification within each constructed population. Weighting cannot recover zero-inclusion strata. Full code, positive-inclusion comparisons, and support bounds appear in M2 §2.31.
+
+Source: M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
+
+## Slide 29: Measurement Discussion
 
 - Could recorded activity rise because low-activity users disappear?
 - Would deleting unmatched days change the target population?
