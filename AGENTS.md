@@ -56,6 +56,7 @@ Store course datasets, data dictionaries, short scripts, notebook examples, and 
 - Add a Markdown companion for PDFs, slides, and complex datasets. Identify omissions from conversions and describe figures in text.
 - Keep originals and transformations traceable. Record source, license, version/date, sample restrictions, variables, and units for data.
 - Do not place credentials, identifiable student records, grades, submissions, or private answer keys in this repository. A folder name such as `instructor_only` does not create an access boundary.
+- Keep private conversation transcripts, dialogue notes, conversation screenshots, and assistant handoff records out of published files and `llms-full.txt`. Publish the finished teaching material. The ignored `Instructor_Private/` folder can hold local collaboration records; verify that none are tracked before publishing.
 - Do not install dependencies or execute downloaded code merely to summarize it. Inspect the requirements and commands before a requested execution.
 - Update the relevant folder README and `course.json` when a document is released. Regenerate `llms-full.txt` with `python3 scripts/build_llm_context.py`.
 - Keep prose in plain Markdown with relative links, meaningful headings, stable module IDs (M1-M8, with M9 for Marketing Dialectics), and descriptive filenames. Avoid embedding essential explanations only in images.

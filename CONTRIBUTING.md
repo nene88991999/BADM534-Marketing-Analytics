@@ -21,6 +21,8 @@ Use a stable module prefix, for example `M03_Regression_Notes.md`. For an assign
 
 Replace placeholders explicitly before release. The instructor's `00_Sample_Materials/` and `09_Templates/` folders stay in Dropbox and are ignored by Git.
 
+Keep private conversations, dialogue notes, conversation screenshots, and assistant handoff records outside published course files and the generated LLM context. Local collaboration records may be kept in the ignored `Instructor_Private/` folder. Before publishing, inspect the staged files and confirm that only finished teaching material and its necessary source, provenance, and replication documentation are included. Git ignores do not remove files already tracked.
+
 ## Publish an Update
 
 Dropbox synchronization saves files to Dropbox. GitHub changes require a reviewed Git commit and push. From a local Git checkout authenticated to this repository:

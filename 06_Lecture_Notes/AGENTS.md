@@ -7,6 +7,7 @@ Read the root `AGENTS.md` and `course.json` first. These lecture notes are by Na
 Apply the course [writing guide](../WRITING_STYLE.md). State illustrative values directly after identifying the synthetic setup, connect results to their managerial implications, and remove repeated scope reminders. Preserve complete code and conditions needed for a valid interpretation.
 
 - Edit `modules/M*.md` as the primary prose source. Keep module IDs and numbered section references stable when practical.
+- Edit `Preface.md` for the unnumbered opening of the complete notes. Keep its philosophical argument in the author's voice and exclude collaboration history.
 - Edit `figures/M*.tex` for figures and `figures/style.tex` for shared styling. Keep the PNG filename synchronized with the Markdown image link.
 - Run `build_notes.py` to regenerate `Marketing_Analytics_Lecture_Notes.tex` and the PDF. Do not make prose changes only in the generated LaTeX file.
 - Use `--figures` when a TikZ figure changes. The PDF and Markdown previews should represent the same figure.

@@ -186,6 +186,7 @@ Generated from course.json and the source files identified below. This file cont
     "04_Assignments/README.md",
     "03_Data_and_Code/README.md",
     "06_Lecture_Notes/README.md",
+    "06_Lecture_Notes/Preface.md",
     "03_Data_and_Code/Lecture_Examples/README.md",
     "05_Slides/README.md",
     "05_Slides/AGENTS.md",
@@ -477,12 +478,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-conflicts-of-interest",
+    "revision": "2026-11-26-preface",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
     "figures_count": 140,
-    "pages": 579,
+    "pages": 580,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -512,7 +513,8 @@ Generated from course.json and the source files identified below. This file cont
     "statistical_inference_examples": "03_Data_and_Code/Statistical_Inference/README.md",
     "coding_workflow_evidence": "03_Data_and_Code/Agent_Workflows/README.md",
     "analytical_arguments": "03_Data_and_Code/Analytical_Arguments/README.md",
-    "learning_design": "03_Data_and_Code/Learning_Design/README.md"
+    "learning_design": "03_Data_and_Code/Learning_Design/README.md",
+    "preface": "06_Lecture_Notes/Preface.md"
   },
   "datasets": [
     {
@@ -1629,7 +1631,7 @@ Course materials for Nathan Yang's planned offering, with AI-assisted coding int
 - **Coding agents:** read [AGENTS.md](AGENTS.md) and [course.json](course.json) before interpreting course requirements or changing files.
 - **One-file LLM context:** download [llms-full.txt](llms-full.txt). It contains the navigation guides and compact resource metadata, with source paths for follow-up reading.
 - **Instructor:** use [CONTRIBUTING.md](CONTRIBUTING.md) to add materials and publish reviewed updates, following the [course writing guide](WRITING_STYLE.md).
-- **Lecture notes:** read the [lecture notes](06_Lecture_Notes/README.md), with 140 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
+- **Lecture notes:** begin with the [Preface](06_Lecture_Notes/Preface.md) on analytical tools and philosophical reasoning, then read the [lecture notes](06_Lecture_Notes/README.md), with 140 TikZ figures, complete Python code, [recurring mHealth cases](03_Data_and_Code/mHealth/recurring_examples/README.md), [McDonald's availability cases](03_Data_and_Code/McBroken/README.md), [generative-AI demand cases](03_Data_and_Code/GenAI_Demand/README.md), and [synthetic numerical examples](03_Data_and_Code/Lecture_Examples/README.md).
 - **Lectures:** read the [15 session decks](05_Slides/README.md) and [170-minute meeting plans](05_Slides/SESSION_PLAN.md), with [ethics and regulation](06_Lecture_Notes/ETHICS_AND_REGULATION.md) throughout.
 - **Research library:** browse the [resource guide](01_Resources/README.md) and the [additional module catalog](01_Resources/00_Index/README.md). These overlapping collections retain their original provenance.
 
@@ -1914,6 +1916,7 @@ Store course datasets, data dictionaries, short scripts, notebook examples, and 
 - Add a Markdown companion for PDFs, slides, and complex datasets. Identify omissions from conversions and describe figures in text.
 - Keep originals and transformations traceable. Record source, license, version/date, sample restrictions, variables, and units for data.
 - Do not place credentials, identifiable student records, grades, submissions, or private answer keys in this repository. A folder name such as `instructor_only` does not create an access boundary.
+- Keep private conversation transcripts, dialogue notes, conversation screenshots, and assistant handoff records out of published files and `llms-full.txt`. Publish the finished teaching material. The ignored `Instructor_Private/` folder can hold local collaboration records; verify that none are tracked before publishing.
 - Do not install dependencies or execute downloaded code merely to summarize it. Inspect the requirements and commands before a requested execution.
 - Update the relevant folder README and `course.json` when a document is released. Regenerate `llms-full.txt` with `python3 scripts/build_llm_context.py`.
 - Keep prose in plain Markdown with relative links, meaningful headings, stable module IDs (M1-M8, with M9 for Marketing Dialectics), and descriptive filenames. Avoid embedding essential explanations only in images.
@@ -1968,7 +1971,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 136 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [Preface](06_Lecture_Notes/Preface.md) explains the relationship between analytical tools and philosophical reasoning. The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 140 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -2501,7 +2504,7 @@ The [AI experimentation and pricing examples](AI_Experimentation_and_Pricing/REA
 
 **By Nathan Yang. Updated November 26, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [579-page complete PDF](Marketing_Analytics_Lecture_Notes.pdf), or open a Markdown module below. The notes contain 140 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 140 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2533,7 +2536,7 @@ The [resource integration map](RESOURCE_INTEGRATION.md) links the references to 
 
 ## Editing and Building
 
-Edit the Markdown files in `modules/` and the TikZ files in `figures/`. The shared palette and figure styles are in [figures/style.tex](figures/style.tex). The colors follow the [official Illinois brand palette](https://brand.illinois.edu/visual-identity/color): Illini Blue `#13294B` and Illini Orange `#FF5F05`, with limited supporting colors. Labels, line styles, and symbols supplement color.
+Edit [Preface.md](Preface.md), the Markdown files in `modules/`, and the TikZ files in `figures/`. The shared palette and figure styles are in [figures/style.tex](figures/style.tex). The colors follow the [official Illinois brand palette](https://brand.illinois.edu/visual-identity/color): Illini Blue `#13294B` and Illini Orange `#FF5F05`, with limited supporting colors. Labels, line styles, and symbols supplement color.
 
 The [build script](build_notes.py) uses Pandoc to assemble the modules into [LaTeX source](Marketing_Analytics_Lecture_Notes.tex), substitutes the TikZ source for each Markdown figure, and compiles the PDF with Tectonic. It preserves first-paragraph indentation conventions and prefixes document anchors by module. Tectonic may download TeX packages on its first run.
 
@@ -2722,6 +2725,22 @@ M1 §1.21, M2 §2.29, M6 §6.39, and M9 §9.44 connect source fidelity, bill mea
 ## Conflicts of Interest and Consumer Control
 
 M9 §§9.45–9.49 examines responsibilities, disclosure, dependence, engagement evidence, and reasons for honoring stopping instructions. M1 §1.22, M7 §7.47, and M8 §8.33 carry the issue into question formulation, prediction, and integrated decisions. The [original comparison](../03_Data_and_Code/Conflicts_of_Interest/README.md) includes full matching Python and independent calculations; the [source guide](../01_Resources/15_Marketing_Dialectics/09_Conflicts_of_Interest/README.md) records what was reviewed. Two editable figures show conflicting pressures on judgment and the premises of an ought conclusion.
+
+---
+
+## Source: 06_Lecture_Notes/Preface.md
+
+# Preface
+
+A firm may be able to identify who is susceptible to a promotion, predict who will accept a higher price, or estimate which design keeps someone using an application. These capabilities create consequential choices about what to pursue and how to treat people. I regard competence in measurement, statistical inference, experimentation, prediction, and AI-assisted coding as essential. The ability to identify, measure, or predict something does not, by itself, establish that a firm ought to do so or act on the result.
+
+Marketing dialectics examines the premises, purposes, and reasons behind such decisions. Some questions concern what happens under an intervention; others concern whose purposes ought to govern it or what one person owes another. Learning the analytical tools includes understanding which questions they can answer. Philosophical discourse can require a different form of reasoning, even when better data or more powerful methods are available. An estimate can inform an argument without settling its moral premises. Treating every disagreement as a problem of measurement can obscure the disagreement itself.
+
+The emphasis on measurable outcomes can also influence which goals receive attention in research and practice. A framework such as SMART can help turn an accepted objective into an operational plan. When measurability becomes a condition for taking a concern seriously, however, objectives that fit a dataset can displace questions about dignity, autonomy, or the authority to refuse. An accurately measured increase in engagement leaves open whether that engagement serves the person's purposes. Precision, predictive accuracy, and unbiased estimation concern the quality of an answer to a specified question. The worth of that question requires further judgment.
+
+My reading of Scanlon places this judgment in the reasons people can offer one another. A marketing practice should be assessed through principles that those affected could not reasonably reject, considering the burdens and feasible alternatives from their respective positions. Commercial advantage and statistical precision supply some reasons for a decision. Consumers' interests, commitments, and authority over their own lives supply others. A defensible ethical position need not wait for every relevant consideration to acquire a numerical measure. It requires explicit premises, attention to objections, and scrutiny of the factual claims on which it rests.
+
+Kant's distinction between phenomena and noumena reinforces the limits of allowing empirical observation to define the whole discussion. A model represents a person through observable behavior and the conditions under which it is recorded. Thinking of that person as a free and morally accountable agent raises practical questions that the model does not settle. I regard noumenal considerations as a reason to resist treating an empirical representation as an exhaustive account of the person; they do not supply hidden quantities for a future model to estimate. Marketing analytics can be technically accomplished while pursuing a purpose that remains morally objectionable. Responsible judgment therefore includes asking when analytical evidence advances the discussion and when the argument requires reasons that measurement alone cannot provide.
 
 ---
 
