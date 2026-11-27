@@ -29,6 +29,7 @@ Session 14. M8, M9. 170 minutes.
 - Distinguish truth, evidential warrant, and the norms governing disclosure and public justification.
 - Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections.
 - Evaluate whether restricted research ought to be conducted, published, or used to justify public action.
+- Explain when statistical insignificance supplies no substantive conclusion about harm, using a public claim and its underlying uncertainty.
 
 ## Related Materials
 
@@ -70,6 +71,7 @@ Session 14. M8, M9. 170 minutes.
 - [Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 - [Confidentiality and research independence](../01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md)
+- [Public Claims, Overstatement, and Uncertainty](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -601,15 +603,15 @@ Two one-sided tests at 5% require the 90% t interval within both bounds. A six-s
 
 Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 48: Public Reassurance Exceeds the Reported Evidence
+## Slide 48: HBS Coverage: An Example of Overstatement
 
-- HBS coverage states that the four large firms have not raised consumer electricity costs.
-- The reported cloud-owner coefficient is positive and imprecise.
-- Categorical harmlessness requires evidence that excludes consequential harm.
+- HBS attributes no consumer price increase to four large developers (Kost, 2026).
+- Table 4 reports a positive, imprecise estimate (Rana et al., 2026).
+- Statistical insignificance alone supplies no conclusion of harmlessness.
 
-The verified communication is HBS Working Knowledge, November 12, 2026, and company dissemination remains unverified. It also acknowledges future uncertainty. Table 4 permits positive price effects and reports p=0.101 for the direct developer contrast. Misleading reassurance could weaken safeguards or scrutiny; attributing actual policy changes or losses to the paper requires separate evidence. The paper has positive findings in other specifications, so calling the entire paper a null result is inaccurate.
+The preferred residential specification uses 627 observations from 41 treated utilities. The four-developer slope is 0.158 with clustered standard error 0.160, in dollars per MWh per percentage point of cumulative data-center capacity relative to utility peak demand. Its normal-approximation 95% interval is [-0.156, 0.472]. The direct developer-equality test has p=0.101. A small-harm claim needs a justified threshold, an appropriate uncertainty bound, and a defensible design. The future-price qualification in the HBS article does not repair its categorical historical inference. Nonrejection also leaves proof of harm unsupported. TheEnergyMag preserves the distinction between nonrejection and absence (Zhao, 2026).
 
-Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
+Source: (Kost, 2026): https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple ; (Rana et al., 2026, Table 4); (Zhao, 2026): https://www.theenergymag.com/news/market-news/data-center-add-little-home-power-cost-study ; M8 §8.31.1 and M9 §9.26. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
 
 ## Slide 49: The Same Average Can Conceal Unequal Burdens
 
@@ -765,13 +767,13 @@ Source: M9 §§9.30–9.32; selected readings on reasons and stakeholder obligat
 
 ## Slide 63: Whose Voice Can Challenge a Prestigious Claim?
 
-- Hypothetical headline: “Harvard/Wharton study shows no harm.”
-- Compare its reach with residents' access to records and technical help.
-- Require evidence for reassurance and a substantive answer to material objections.
+- What justification does a university owe residents before reassuring them?
+- Trace the HBS claim to its estimate, uncertainty, and missing premise.
+- State what the institution ought to disclose and why residents could accept it.
 
-The headline is a discussion construction, not a verified quotation or institutional endorsement. The HBS Working Knowledge article is the documented public communication. A prejudice-based credibility deficit requires evidence beyond unequal credentials (Fricker, 2007). Institutions that gather and assess testimony also require scrutiny (Anderson, 2012). Distinguish nearby residents, utility customers, and people bearing costs. Local experience can identify an outcome; causal attribution requires a comparison. Institutional prestige supplies no missing premise. Verify actual use of a claim in a proceeding before alleging that it silenced objections.
+Use the verified HBS article (Kost, 2026) and the bounds in M8 §8.31.1. Ask for the strongest reasonable objection to a rule that treats an insignificant estimate as sufficient reassurance about household burdens. A household has a reason to request the measured outcome, unresolved cost range, and conditions for correction. Compare that objection with the institution’s reasons for timely communication and open inquiry. Institutional prestige supplies no missing premise. A prejudice-based credibility deficit requires evidence beyond unequal credentials (Fricker, 2007); institutions that assess testimony also require scrutiny (Anderson, 2012). Verify actual use in a proceeding before alleging that the article silenced objections.
 
-Source: M9 §§9.30–9.32; selected readings on reasons and stakeholder obligations. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
+Source: (Kost, 2026): https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple ; M9 §§9.30–9.32. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
 ## Slide 64: Mechanism Evidence and Public Reassurance
 
@@ -809,7 +811,7 @@ Source: M9 §§9.28–9.30. ../01_Resources/41_Statistical_Claims_and_Decisions/
 - Research coverage may emphasize reassurance about consumer costs.
 - Trace the selected comparison and beneficiary to supporting evidence.
 
-The verified Wendy's February 27, 2024 statement describes intended digital-board uses and rejects plans to raise prices at the busiest times. The HBS article interprets an empirical study. The comparison concerns framing and the reasons for acceptance; it establishes no common campaign or motive. Assess actual offers, outcomes, uncertainty, and omitted conditions. A persuasive message needs a further justification when it affects public choices.
+The verified Wendy's February 27, 2024 statement describes intended digital-board uses and rejects plans to raise prices at the busiest times. The HBS article interprets an empirical study. The comparison concerns framing and the reasons for acceptance; it establishes no common campaign or motive. Assess actual offers, outcomes, uncertainty, and omitted conditions. A persuasive message needs a further justification when it affects public choices. The public-communication guide compares the HBS overstatement (Kost, 2026) with coverage preserving uncertainty (Zhao, 2026) and a third newspaper reading. Assess each inference independently.
 
 Source: M9 §9.31. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
 

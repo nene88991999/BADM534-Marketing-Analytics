@@ -28591,17 +28591,17 @@ concerns a particular sample and historical comparison. A statement that
 a class of facilities has caused no consumer cost increase adds a claim
 about absence that requires adequate bounds and a defensible scope.
 
-Assess the communication by tracing its factual claims back to the exact
-table, coefficient, sample, and units. Then identify the inference added
-by the wording. In the verified HBS coverage, the categorical developer
-comparison is stronger than Table 4's uncertain estimates and
-\(p=0.101\) difference test. The relevant distinction is between the
-paper's findings, its interpretive claims, and the public article's
-language. Company dissemination must be established with a specific
-dated company statement; affiliation, interest, or repetition by an
-academic institution is insufficient.
-\href{https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple}{HBS
-Working Knowledge}.
+The HBS Working Knowledge article provides a concrete example of
+overstatement: it attributes no consumer electricity-cost increase to
+the four large developers
+\href{https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple}{(Kost,
+2026)}. That categorical historical claim exceeds Table 4's uncertain
+estimates and its direct developer-difference test, \(p=0.101\)
+\href{../01_Resources/41_Statistical_Claims_and_Decisions/RanaKapsNetessine_WorkingPaper2026.pdf}{(Rana
+et al., 2026, Table 4)}. The article's discussion of future uncertainty
+does not repair the inference about the observed period. Trace each
+public claim to its coefficient, sample, units, and uncertainty before
+accepting the reassurance.
 
 A responsible recommendation states which positive effects remain
 compatible with the evidence, which people and outcomes it covers, and
@@ -28628,6 +28628,54 @@ planned recovery and customer allocation. The public-disclosure
 comparison in §5.27 preserves forecasts, requests, regulatory evidence,
 and offsetting claims. Its connection to the household's claim to
 reasons appears in §9.33.
+
+\hypertarget{M08-when-statistical-insignificance-supplies-no-substantive-conclusion}{%
+\subsection{When Statistical Insignificance Supplies No Substantive
+Conclusion}\label{M08-when-statistical-insignificance-supplies-no-substantive-conclusion}}
+
+\noindent \noindent A regulator deciding whether households need protection
+requires evidence about the magnitude and incidence of possible costs.
+The label ``statistically insignificant'' alone supplies no conclusion
+that those costs are absent, negligible, or acceptable. It records
+nonrejection of a specified null under a particular test and
+significance level. Its substantive interpretation depends on the effect
+estimate, precision, economically relevant alternatives, measurement,
+and research design. A precise estimate near zero and an imprecise
+estimate compatible with substantial harm can receive the same label.
+
+In the preferred residential specification, Table 4 uses 627
+observations from 41 treated utilities. The outcome is the quarterly
+average residential electricity price in dollars per MWh; exposure is
+cumulative data-center capacity relative to utility peak demand,
+measured in percentage points. The four-developer slope is \(0.158\)
+with clustered standard error \(0.160\). The normal-approximation 95\%
+interval is \([-0.156,0.472]\) dollars per MWh per percentage point of
+exposure. Positive effects remain compatible with this calculation. The
+complete Python reconstruction in §6.33 preserves these units and
+distinguishes the slope from an effect evaluated at a particular
+exposure.
+
+To justify a claim that any increase is small, first specify a
+consequential-harm threshold in the same units and explain whose
+interests it represents. Then examine whether an appropriate upper
+confidence bound excludes that threshold under a defensible design.
+Nonrejection of a zero null performs neither step. The developer
+comparison requires its own test; a significant estimate for one group
+and an insignificant estimate for another do not establish a group
+difference. The reported \(p=0.101\) also leaves equality unproved.
+These distinctions identify the overstatement without converting
+uncertainty into proof that the developers caused harm.
+
+Compare that inference with coverage that explicitly preserves the
+distinction between nonrejection and absence
+\href{https://www.theenergymag.com/news/market-news/data-center-add-little-home-power-cost-study}{(Zhao,
+2026)}. The
+\href{../07_Labs/Statistical_Inference/README.md\#evaluate-public-reassurance-and-household-agency}{communication
+exercise} asks for the missing premise, a supported replacement
+statement, and a reason that affected households could accept. The
+evaluative question is concrete: what justification does a university
+owe residents before using its authority to reassure them about costs
+that its evidence leaves unresolved?
 
 \hypertarget{M08-pricing-evidence-customer-reasons-and-competition}{%
 \section{Pricing Evidence, Customer Reasons, and
@@ -31061,17 +31109,18 @@ potential consequences of misleading reassurance; attributing an actual
 approval or household loss to this paper would require evidence
 connecting the communication to the decision and its outcomes.
 
-HBS Working Knowledge's November 12, 2026 coverage of the electricity
-study (Rana et al., 2026) states that, unlike colocated centers,
-``centers built by the `Big Four' tech companies have not'' raised
-consumer electricity costs. This is academic public communication. Table
-4 reports an uncertain positive coefficient for the four named firms and
-a direct developer-difference test with \(p=0.101\). The categorical
-wording is stronger than those results support. The article also
-acknowledges uncertainty about future prices, which belongs beside any
-account of its claims.
-\href{https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple}{HBS
-Working Knowledge}.
+The HBS Working Knowledge coverage supplies an example of overstatement
+by attributing no consumer electricity-cost increase to four large
+developers
+\href{https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple}{(Kost,
+2026)}. Table 4 reports an uncertain positive coefficient for those
+firms and a direct developer-difference test with \(p=0.101\)
+\href{../01_Resources/41_Statistical_Claims_and_Decisions/RanaKapsNetessine_WorkingPaper2026.pdf}{(Rana
+et al., 2026)}. Nonrejection alone supplies no substantive conclusion of
+harmlessness. The article acknowledges future uncertainty, while its
+categorical historical claim still exceeds the reported evidence. The
+bounds and missing-premise exercise in §8.31.1 identify the inferential
+failure precisely.
 
 \hypertarget{M09-what-exists-in-the-analysis-and-what-the-claim-requires}{%
 \subsection{What Exists in the Analysis and What the Claim
@@ -32021,9 +32070,11 @@ message. The documented communication comes from an academic
 institution's publication; establishing a coordinated corporate campaign
 or a company post making the same claim would require additional
 evidence.
-\href{https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple}{HBS
-Working Knowledge, \emph{Blaming Data Centers for Higher Electric Bills?
-It's Not That Simple}}.
+\href{https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple}{(Kost,
+2026)}. The
+\href{../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md}{comparative
+communication exercise} traces each interpretation to its required
+premise.
 
 The useful connection is the selection of the reference point and the
 beneficiary. Off-peak discounts direct attention to favorable purchase

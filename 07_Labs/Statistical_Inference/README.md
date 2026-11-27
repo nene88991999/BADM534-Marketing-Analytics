@@ -49,7 +49,16 @@ Use the [electricity paper and companion](../../01_Resources/41_Statistical_Clai
 
 ## Evaluate Public Reassurance and Household Agency
 
-Compare the verified HBS article with the reported bounds. Identify the speaker, exact claim, date, population, and uncertainty. A corporate dissemination claim requires a specific verified corporate statement. Distinguish the harm a misleading inference could cause from observed consequences established by a causal study.
+Assess the HBS example of overstatement [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) using M8 §8.31.1 and the [public-communication guide](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md). The central question is when the label “statistically insignificant” supplies no substantive conclusion about harm.
+
+1. Record the exact reassurance, speaker, date, population, and period. Locate the future-price qualification and explain whether it resolves the historical claim.
+2. Reconstruct Table 4's four-developer interval with `data_center_claims.py`. State its units and explain why a positive estimate with this uncertainty supports neither categorical harmlessness nor proof of harm. Use the direct equality test to assess the developer contrast.
+3. Supply the missing premise for a small-harm claim: a justified threshold, adequate precision, and a research design that measures the relevant burden. Explain why a precise estimate near zero and an imprecise estimate can both be insignificant while supporting different decisions. Distinguish a test's size, power against a specified alternative, and its realized p-value.
+4. Compare the HBS interpretation with the other two linked readings. Separate headline, body, and qualifications. Identify which wording preserves the distinction between nonrejection and absence, and justify any criticism using the original table.
+5. Write a replacement statement that preserves the estimate, uncertainty, and scope. A supported starting point is: “The reported four-developer estimate is positive and imprecise; the analysis leaves positive price effects unresolved.” Explain the remaining distinction between average residential prices and household bills.
+6. State a principle for university research communication and a household's strongest reasonable objection to it. Answer: “What justification does a university owe residents before using its authority to reassure them about costs that its evidence leaves unresolved?” Explain what the institution ought to disclose or correct and why that response addresses the objection.
+
+A corporate dissemination claim requires a specific verified corporate statement. Distinguish the harm a misleading inference could cause from observed consequences established by evidence of the communication's use.
 
 Use the synthetic household allocations to explain why equal mean prices leave distribution unresolved. Then specify evidence about access to reasons, challenge, review, and remedy. Distinguish payment, compliance, endorsement, and authorization. Evaluate a rule that permits interested firms to call an insensitive non-rejection harmless using Kantian universalization, respect for persons, and Confucian trustworthiness. State a defensible approval recommendation, a justified harm threshold, the unresolved risks, and which party should substantiate or bear them.
 

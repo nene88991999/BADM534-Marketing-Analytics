@@ -527,12 +527,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-data-artifacts-and-research-independence",
+    "revision": "2026-11-27-public-claims-and-statistical-insignificance",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
     "figures_count": 153,
-    "pages": 634,
+    "pages": 635,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -1455,7 +1455,9 @@ Generated from course.json and the source files identified below. This file cont
     "upstream_execution": false,
     "scope": "Original synthetic experiments and decision examples; reported-table normal-approximation calculations; philosophical critique. No utility-panel replication, verified corporate X post, or established downstream harm.",
     "public_communication": "01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md",
-    "related_philosophical_arguments": "philosophical_arguments"
+    "related_philosophical_arguments": "philosophical_arguments",
+    "public_communication_updated_on": "2026-11-27",
+    "public_communication_focus": "HBS coverage as an example of overstatement; nonrejection, uncertainty, a justified harm threshold, and reasons owed to affected households."
   },
   "logic_and_inverse_power": {
     "implemented_on": "2026-11-26",
@@ -2933,7 +2935,7 @@ M1 §1.19 reconstructs published success and failure counts; M6 §6.31 compares 
 
 ## Statistical Claims and the Ethics of Public Reassurance
 
-The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
+The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences. M8 §8.31.1 and Session 14 explicitly assess the HBS overstatement (Kost, 2026). The communication exercise compares three public readings and asks when insignificance supplies no substantive conclusion about harm.
 
 ## Logical Assessment and Inverse Power
 
@@ -3214,7 +3216,7 @@ Sessions 1, 4, 9, 11, and 14 include six additional slides on published workflow
 
 ## Statistical Claims and the Ethics of Public Reassurance
 
-The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences.
+The [resource and claim assessment](../01_Resources/41_Statistical_Claims_and_Decisions/README.md) connects Lakens’s inference guidance with the data-center electricity paper. M2 §2.28 distinguishes average prices, household incidence, and ownership categories. M3 §3.19 simulates repeated p-values; M6 §§6.32–6.33 compare detection with profit and reconstruct power, bounds, subgroup tests, sales mechanisms, and residual arithmetic. M8 §8.31 evaluates public communication. M9 §§9.25–9.26 develop equivalence, ontology, reasons, authority, Kantian duties, and Confucian trustworthiness. Four full Python listings and five editable Illinois-color figures accompany the notes. Sessions 4, 9, and 14 add eleven slides within existing allocations. The case distinguishes verified academic coverage from unverified company dissemination, demonstrated interpretation problems from replication questions, and possible harm from established consequences. M8 §8.31.1 and Session 14 explicitly assess the HBS overstatement (Kost, 2026). The communication exercise compares three public readings and asks when insignificance supplies no substantive conclusion about harm.
 
 ## Logical Assessment and Inverse Power
 
@@ -4528,7 +4530,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.
 
-**Application:** Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, mobile targeting (Dubé et al., 2017), and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice.
+**Application:** Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, mobile targeting (Dubé et al., 2017), and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold.
 
 **Ethics and Regulation:** Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims.
 
@@ -4548,6 +4550,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–165 | Digital Channels and Meaningful Customer Choice |
 | 165–170 | Revised Conclusion and Conditions for Revision |
+
+The three-reading communication comparison is optional ungraded practice. Use the existing research-reassurance discussion for nonrejection and a household objection.
 
 ### 15. Integrated Decisions and Final Presentations
 
@@ -6622,7 +6626,7 @@ if __name__ == "__main__":
 
 \noindent A public authority deciding whether to approve a data-center connection must determine who bears its costs, which risks remain unresolved, and which safeguards protect affected households. A research result can influence that decision through its public interpretation. Calling an uncertain effect harmless can weaken the case for financial guarantees, transparent cost allocation, or subsequent review. These are potential consequences of misleading reassurance; attributing an actual approval or household loss to this paper would require evidence connecting the communication to the decision and its outcomes.
 
-HBS Working Knowledge's November 12, 2026 coverage of the electricity study (Rana et al., 2026) states that, unlike colocated centers, “centers built by the ‘Big Four’ tech companies have not” raised consumer electricity costs. This is academic public communication. Table 4 reports an uncertain positive coefficient for the four named firms and a direct developer-difference test with $p=0.101$. The categorical wording is stronger than those results support. The article also acknowledges uncertainty about future prices, which belongs beside any account of its claims. [HBS Working Knowledge](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple).
+The HBS Working Knowledge coverage supplies an example of overstatement by attributing no consumer electricity-cost increase to four large developers [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple). Table 4 reports an uncertain positive coefficient for those firms and a direct developer-difference test with $p=0.101$ [(Rana et al., 2026)](../../01_Resources/41_Statistical_Claims_and_Decisions/RanaKapsNetessine_WorkingPaper2026.pdf). Nonrejection alone supplies no substantive conclusion of harmlessness. The article acknowledges future uncertainty, while its categorical historical claim still exceeds the reported evidence. The bounds and missing-premise exercise in §8.31.1 identify the inferential failure precisely.
 
 ### 9.26.1 What Exists in the Analysis and What the Claim Requires
 
@@ -6914,7 +6918,7 @@ For the data-center communication, a defensible conclusion is that authors and p
 
 \noindent Wendy's February 27, 2024 statement described digital menu boards, slower-period discounts, and value offers, while stating that the company had no plans to raise prices at its busiest times. This is evidence of its stated policy and public framing. Implementation and customer outcomes require separate evidence. The statement could accurately correct a misunderstanding; the commercial interest in a favorable interpretation alone does not establish deception. [Wendy's, *Digital News Update*](https://www.wendys.com/blog/wendys-digital-news-update).
 
-The November 12, 2026 HBS coverage presents the electricity research through a reassuring comparison involving four large technology firms, extending beyond what the reported subgroup nonrejection establishes (§6.33). The article also discusses possible future increases and contractual protection, which matter when assessing the scope of its message. The documented communication comes from an academic institution's publication; establishing a coordinated corporate campaign or a company post making the same claim would require additional evidence. [HBS Working Knowledge, *Blaming Data Centers for Higher Electric Bills? It's Not That Simple*](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple).
+The November 12, 2026 HBS coverage presents the electricity research through a reassuring comparison involving four large technology firms, extending beyond what the reported subgroup nonrejection establishes (§6.33). The article also discusses possible future increases and contractual protection, which matter when assessing the scope of its message. The documented communication comes from an academic institution's publication; establishing a coordinated corporate campaign or a company post making the same claim would require additional evidence. [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple). The [comparative communication exercise](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md) traces each interpretation to its required premise.
 
 The useful connection is the selection of the reference point and the beneficiary. Off-peak discounts direct attention to favorable purchase occasions; a reassuring subgroup comparison directs attention to selected developers. Examine whether the listener is also given the relevant peak-period benchmark, household outcome, uncertainty, and institutional conditions. Distinguish a change in language, a change in the actual policy, and evidence of a change in people's welfare.
 
@@ -13775,7 +13779,16 @@ Use the [electricity paper and companion](../../01_Resources/41_Statistical_Clai
 
 ## Evaluate Public Reassurance and Household Agency
 
-Compare the verified HBS article with the reported bounds. Identify the speaker, exact claim, date, population, and uncertainty. A corporate dissemination claim requires a specific verified corporate statement. Distinguish the harm a misleading inference could cause from observed consequences established by a causal study.
+Assess the HBS example of overstatement [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) using M8 §8.31.1 and the [public-communication guide](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md). The central question is when the label “statistically insignificant” supplies no substantive conclusion about harm.
+
+1. Record the exact reassurance, speaker, date, population, and period. Locate the future-price qualification and explain whether it resolves the historical claim.
+2. Reconstruct Table 4's four-developer interval with `data_center_claims.py`. State its units and explain why a positive estimate with this uncertainty supports neither categorical harmlessness nor proof of harm. Use the direct equality test to assess the developer contrast.
+3. Supply the missing premise for a small-harm claim: a justified threshold, adequate precision, and a research design that measures the relevant burden. Explain why a precise estimate near zero and an imprecise estimate can both be insignificant while supporting different decisions. Distinguish a test's size, power against a specified alternative, and its realized p-value.
+4. Compare the HBS interpretation with the other two linked readings. Separate headline, body, and qualifications. Identify which wording preserves the distinction between nonrejection and absence, and justify any criticism using the original table.
+5. Write a replacement statement that preserves the estimate, uncertainty, and scope. A supported starting point is: “The reported four-developer estimate is positive and imprecise; the analysis leaves positive price effects unresolved.” Explain the remaining distinction between average residential prices and household bills.
+6. State a principle for university research communication and a household's strongest reasonable objection to it. Answer: “What justification does a university owe residents before using its authority to reassure them about costs that its evidence leaves unresolved?” Explain what the institution ought to disclose or correct and why that response addresses the objection.
+
+A corporate dissemination claim requires a specific verified corporate statement. Distinguish the harm a misleading inference could cause from observed consequences established by evidence of the communication's use.
 
 Use the synthetic household allocations to explain why equal mean prices leave distribution unresolved. Then specify evidence about access to reasons, challenge, review, and remedy. Distinguish payment, compliance, endorsement, and authorization. Evaluate a rule that permits interested firms to call an insensitive non-rejection harmless using Kantian universalization, respect for persons, and Confucian trustworthiness. State a defensible approval recommendation, a justified harm threshold, the unresolved risks, and which party should substantiate or bear them.
 
@@ -13892,7 +13905,7 @@ A decision requires an effect, uncertainty, an economically meaningful compariso
 - [(Lakens, 2022, Chapter 1)](https://lakens.github.io/statistical_inferences/01-pvalue.html): definitions and interpretation of p-values. M3 §3.19 uses original store simulations; M6 §6.32 separates detection from campaign profit.
 - [(Lakens, 2022, Chapter 9)](https://lakens.github.io/statistical_inferences/09-equivalencetest.html): interval hypotheses and equivalence. M9 §9.25 uses hypothetical cancellation-time summaries with full Python.
 - [(Rana et al., 2026)](RanaKapsNetessine_WorkingPaper2026.pdf), *The Cost of Intelligence: Impacts of AI Data Centers on US Electricity Prices*: recurring case in M2 §2.28, M3 §3.19, M6 §6.33, M8 §8.31, and M9 §9.26. Read the [paper companion](PAPER_COMPANION.md) and [claim assessment](CLAIM_ASSESSMENT.md).
-- [HBS Working Knowledge, November 12, 2026](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple): verified public interpretation, distinguished from the paper's estimates and from unverified company dissemination.
+- [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple): HBS public interpretation, used as an example of overstatement assessed against Table 4. The [communication guide](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) provides two further readings and a premise-by-premise comparison.
 - [(Thomasson, 2025)](https://doi.org/10.1093/9780197787830.003.0011) and [Norms and Necessity](https://academic.oup.com/book/33564): concepts, rules, and their functions. Contemporary applications distinguish measurements, household burdens, and authority.
 - [(Kant, 1785)](https://www.gutenberg.org/files/5682/5682-h/5682-h.htm): universal law and humanity formulations; the course's public-reassurance application is an analytical argument.
 
@@ -13908,7 +13921,7 @@ The [institutional assessment](INSTITUTIONAL_ASSESSMENT.md) connects the project
 
 ## Public Claims and Affected People
 
-[Public Communication and Publication](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the verified HBS coverage, the hypothetical university-branded headline, pricing communication, and the decision to revise or publish a claim. [Stakeholders and Reasons](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md) supplies the philosophical reading guide.
+[Public Communication and Publication](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the HBS overstatement, statistical insignificance, pricing communication, and the decision to revise or publish a claim. M8 §8.31.1 and the optional lab distinguish nonrejection from a justified conclusion about harm. [Stakeholders and Reasons](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md) supplies the philosophical reading guide.
 
 ## Measurement Validity and Ontological Scope
 
@@ -13960,6 +13973,12 @@ Read the full syndicated Bloomberg report of January 6, 2026, the Ohio Power ser
 
 The hypothetical Harvard/Wharton headline is a course construction. The verified HBS article is separate evidence. Actual use of the paper to dismiss residents in a specific proceeding remains unverified.
 
+## Public Coverage Comparison: November 27, 2026
+
+The linked HBS (Kost, 2026), TheEnergyMag (Zhao, 2026), and Washington Post (Osaka, 2026) pages were read directly, including their body text and qualifications. Bibliographic dates and authors are recorded in `catalog.json`. The HBS historical developer claim is assessed as overstatement against Table 4. TheEnergyMag explicitly preserves the distinction between nonrejection and absence. The third article is linked for student comparison. The pages are not mirrored in the course repository; new annotations and exercises are original course material.
+
+Table 4, printed/PDF page 26 of the existing reading copy, was extracted and visually rechecked. The teaching calculation uses the preferred residential column: coefficient 0.158, clustered SE 0.160, 627 observations, 41 treated utilities, and direct equality-test p=0.101. Its interval is a normal approximation from reported summaries. The comparison does not re-estimate the utility panel or establish downstream policy effects. Prior company-dissemination searches remain inconclusive; the three news pages are evidence of public coverage.
+
 ---
 
 ## Source: 01_Resources/41_Statistical_Claims_and_Decisions/CLAIM_ASSESSMENT.md
@@ -13999,7 +14018,7 @@ The synthetic incidence example preserves total revenue and use while changing w
 
 ## Communication and Potential Harm
 
-The verified HBS article makes a categorical claim about the four large technology firms, while Table 4 leaves positive effects unresolved. It also acknowledges uncertainty about future prices. It is academic coverage. Company circulation on X has not been verified: public web searches did not produce a confirmed company post, and direct X search required a login on November 26, 2026. Absence of a verified post is an access and evidence limit, not proof that no such post exists.
+The HBS article provides an example of overstatement: its categorical developer claim exceeds the uncertain Table 4 estimates [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple). Its future-price qualification leaves the historical inference unresolved. Statistical insignificance alone supplies no substantive conclusion about harmlessness; the [communication exercise](../../07_Labs/Statistical_Inference/README.md#evaluate-public-reassurance-and-household-agency) requires an estimate, uncertainty, a justified harm threshold, and the missing premise. This is academic coverage. Company circulation on X has not been verified: public web searches did not produce a confirmed company post, and direct X search required a login on November 26, 2026. Absence of a verified post is an access and evidence limit, not proof that no such post exists.
 
 Overstated reassurance could weaken scrutiny of cost allocation, guarantees, and review, leaving households exposed to risks that the study has not ruled out. Demonstrating that this paper caused an approval, a weakened safeguard, or a household loss requires additional evidence. A rigorous classroom criticism identifies the unsupported inference and its possible decision consequences without inventing intention, corporate dissemination, or observed harm.
 
@@ -14345,11 +14364,23 @@ Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.
 
 A research finding can influence policy through the public interpretation attached to it. The relevant decision is whether the evidence justifies publishing that interpretation and using it to allocate burdens or close a dispute. [M9 §§9.28–9.32](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) develops the philosophical argument; [M8 §8.31](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) examines research as public reassurance.
 
-## Verified Statements and Illustrative Claims
+## HBS Coverage as an Example of Overstatement
 
-The [HBS Working Knowledge article](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple), published November 12, 2026, presents the electricity paper to a broad audience. Its reassurance concerning the four named developers requires comparison with the reported estimates, precision, subgroup comparison, and measured outcomes. The article also includes qualifications about future demand and contractual protections. The course retains those qualifications and the paper's positive findings.
+The HBS Working Knowledge article gives an example of overstatement when it attributes no consumer electricity-cost increase to the four large developers [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple). Its future-price qualification leaves the historical inference unresolved. The defect can be established by comparing that inference with the paper's own reported uncertainty.
 
-“Harvard/Wharton study shows data centers do no harm” is a hypothetical headline constructed for discussion. It is neither a verified quotation nor an institutional endorsement. A corporate post on X promoting this paper as proof of no harm remains unverified. The public academic article establishes a communication case without establishing a coordinated corporate campaign.
+Table 4's preferred residential specification reports a four-developer coefficient of 0.158 with clustered standard error 0.160. It uses 627 observations from 41 treated utilities. The coefficient measures dollars per MWh of average residential electricity price per percentage point of cumulative capacity relative to utility peak demand. A normal-approximation 95% interval is approximately [-0.156, 0.472] in those units. The direct developer-equality test has p=0.101 [(Rana et al., 2026, Table 4)](RanaKapsNetessine_WorkingPaper2026.pdf). The [complete calculation](../../03_Data_and_Code/Statistical_Inference/data_center_claims.py) and [M6 §6.33](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) preserve the estimand and units.
+
+For the question of whether harm is absent or negligible, statistical insignificance alone has no determinate substantive interpretation. The same label can accompany very different intervals and economically consequential alternatives. A small-effect conclusion requires a justified margin and evidence excluding larger effects under an adequate design. Different subgroup significance levels do not establish a group difference. The evidence also leaves the opposite categorical claim, that these developers necessarily caused harm, unsupported.
+
+## Compare Public Interpretations
+
+TheEnergyMag explicitly distinguishes nonrejection from absence and treats the developer contrast as uncertain [(Zhao, 2026)](https://www.theenergymag.com/news/market-news/data-center-add-little-home-power-cost-study). This provides a useful comparison for evaluating whether a public interpretation preserves the inference available from the results. The [Washington Post coverage (Osaka, 2026)](https://www.washingtonpost.com/climate-environment/2026/11/06/data-centers-may-not-be-raising-americans-electricity-bills-that-much/) supplies a third reading for the same exercise.
+
+For each article, record the speaker, date, exact claim, population, time horizon, and uncertainty. Distinguish the headline, the body, and any qualification. Reconstruct the premise needed to move from the reported test to the asserted conclusion. Retain qualifications beside the claims they constrain, then determine whether they address the same outcome and period. The [optional practice](../../07_Labs/Statistical_Inference/README.md#evaluate-public-reassurance-and-household-agency) connects that assessment to a household's reason for challenging public reassurance.
+
+The three articles establish public communication about the study. Corporate dissemination, a coordinated campaign, and actual reliance in a policy decision require separate evidence. The hypothetical university-branded headline elsewhere in the philosophical discussion remains a constructed example.
+
+## Pricing Language and Research Reassurance
 
 The [February 27, 2024 Wendy's statement](https://www.wendys.com/blog/wendys-digital-news-update) emphasizes flexibility and discounts in explaining digital menu boards. It states company intentions. The HBS article interprets a study. Compare how each communication selects a reference point and beneficiary, then ask what evidence supports the resulting impression. The connection concerns interpretation and justification; it establishes no common authorship, motive, or campaign.
 

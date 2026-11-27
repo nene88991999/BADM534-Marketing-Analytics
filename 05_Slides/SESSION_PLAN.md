@@ -317,7 +317,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 **Python and Evidence:** Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.
 
-**Application:** Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, mobile targeting (Dubé et al., 2017), and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice.
+**Application:** Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, mobile targeting (Dubé et al., 2017), and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold.
 
 **Ethics and Regulation:** Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims.
 
@@ -337,6 +337,8 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–165 | Digital Channels and Meaningful Customer Choice |
 | 165–170 | Revised Conclusion and Conditions for Revision |
+
+The three-reading communication comparison is optional ungraded practice. Use the existing research-reassurance discussion for nonrejection and a household objection.
 
 ### 15. Integrated Decisions and Final Presentations
 

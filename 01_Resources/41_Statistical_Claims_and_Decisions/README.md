@@ -7,7 +7,7 @@ A decision requires an effect, uncertainty, an economically meaningful compariso
 - [(Lakens, 2022, Chapter 1)](https://lakens.github.io/statistical_inferences/01-pvalue.html): definitions and interpretation of p-values. M3 §3.19 uses original store simulations; M6 §6.32 separates detection from campaign profit.
 - [(Lakens, 2022, Chapter 9)](https://lakens.github.io/statistical_inferences/09-equivalencetest.html): interval hypotheses and equivalence. M9 §9.25 uses hypothetical cancellation-time summaries with full Python.
 - [(Rana et al., 2026)](RanaKapsNetessine_WorkingPaper2026.pdf), *The Cost of Intelligence: Impacts of AI Data Centers on US Electricity Prices*: recurring case in M2 §2.28, M3 §3.19, M6 §6.33, M8 §8.31, and M9 §9.26. Read the [paper companion](PAPER_COMPANION.md) and [claim assessment](CLAIM_ASSESSMENT.md).
-- [HBS Working Knowledge, November 12, 2026](https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple): verified public interpretation, distinguished from the paper's estimates and from unverified company dissemination.
+- [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple): HBS public interpretation, used as an example of overstatement assessed against Table 4. The [communication guide](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) provides two further readings and a premise-by-premise comparison.
 - [(Thomasson, 2025)](https://doi.org/10.1093/9780197787830.003.0011) and [Norms and Necessity](https://academic.oup.com/book/33564): concepts, rules, and their functions. Contemporary applications distinguish measurements, household burdens, and authority.
 - [(Kant, 1785)](https://www.gutenberg.org/files/5682/5682-h/5682-h.htm): universal law and humanity formulations; the course's public-reassurance application is an analytical argument.
 
@@ -23,7 +23,7 @@ The [institutional assessment](INSTITUTIONAL_ASSESSMENT.md) connects the project
 
 ## Public Claims and Affected People
 
-[Public Communication and Publication](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the verified HBS coverage, the hypothetical university-branded headline, pricing communication, and the decision to revise or publish a claim. [Stakeholders and Reasons](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md) supplies the philosophical reading guide.
+[Public Communication and Publication](PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the HBS overstatement, statistical insignificance, pricing communication, and the decision to revise or publish a claim. M8 §8.31.1 and the optional lab distinguish nonrejection from a justified conclusion about harm. [Stakeholders and Reasons](../15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md) supplies the philosophical reading guide.
 
 ## Measurement Validity and Ontological Scope
 

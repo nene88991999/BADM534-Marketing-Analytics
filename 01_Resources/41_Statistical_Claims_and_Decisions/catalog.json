@@ -27,11 +27,19 @@
   },
   {
     "id": "hbs_public_interpretation",
-    "url": "https://www2.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple",
+    "url": "https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple",
     "modules": [
       "M8",
       "M9"
-    ]
+    ],
+    "authors": [
+      "Danielle Kost"
+    ],
+    "year": 2026,
+    "published": "2026-11-12",
+    "checked": "2026-11-27",
+    "course_use": "Example of overstatement assessed against Table 4; retain future-price qualification.",
+    "local_copy": null
   },
   {
     "id": "donald_andrews_inverse_power",
@@ -135,5 +143,37 @@
     ],
     "local_copy": null,
     "checked": "2026-11-26"
+  },
+  {
+    "id": "energymag_public_interpretation",
+    "url": "https://www.theenergymag.com/news/market-news/data-center-add-little-home-power-cost-study",
+    "authors": [
+      "Wolfie Zhao"
+    ],
+    "year": 2026,
+    "published": "2026-11-08",
+    "checked": "2026-11-27",
+    "modules": [
+      "M8",
+      "M9"
+    ],
+    "course_use": "Comparison preserving the distinction between nonrejection and absence.",
+    "local_copy": null
+  },
+  {
+    "id": "washington_post_public_interpretation",
+    "url": "https://www.washingtonpost.com/climate-environment/2026/11/06/data-centers-may-not-be-raising-americans-electricity-bills-that-much/",
+    "authors": [
+      "Shannon Osaka"
+    ],
+    "year": 2026,
+    "published": "2026-11-06",
+    "checked": "2026-11-27",
+    "modules": [
+      "M8",
+      "M9"
+    ],
+    "course_use": "Third reading for comparison of headline, body, and qualifications.",
+    "local_copy": null
   }
 ]
