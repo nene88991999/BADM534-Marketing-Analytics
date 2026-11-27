@@ -1,0 +1,10 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=4.7cm,minimum height=1.8cm] (rules) at (2.7,3.2) {\textbf{Market Setting}\\Budgets, alternatives,\\rights, and information};
+\node[box,text width=4.7cm,minimum height=1.8cm] (prediction) at (10.1,3.2) {\textbf{Predicted Consequences}\\Purchases, prices,\\profits, and incidence};
+\draw[edge] (rules) -- node[above,font=\footnotesize,align=center,text width=1.9cm] {Economic\\model} (prediction);
+\node[orangebox,text width=4.7cm,minimum height=1.8cm] (reasons) at (2.7,0) {\textbf{Persons and Reasons}\\Agency, burdens,\\and authority to object};
+\node[orangebox,text width=4.7cm,minimum height=1.8cm] (decision) at (10.1,0) {\textbf{Justified Principle}\\Compare feasible rules\\from affected positions};
+\draw[accent] (reasons) -- node[above,font=\footnotesize,align=center,text width=1.9cm] {Normative\\argument} (decision);
+\draw[edge] (prediction) -- node[left,font=\footnotesize,align=center,text width=2.8cm] {Compare\\consequences} (decision);
+\draw[edge,dashed] (rules) -- node[right,font=\footnotesize,align=center,text width=2.8cm] {Evaluate\\terms of choice} (reasons);
+\end{tikzpicture}

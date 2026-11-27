@@ -66,3 +66,7 @@ The [supplemental guide](09_Conflicts_of_Interest/README.md) distinguishes oppos
 ## Online Engagement and the Authority to Stop
 
 The [publication guide](../49_Online_Engagement_and_Agency/README.md) adds experimental mechanisms, documented company applications, and an explicit industry citation of streak research. M9 §§9.70–9.75 applies Kantian respect, value capture, and Scanlonian justification while preserving beneficial uses and evidentiary limits. The existing feed-policy program supplies the synthetic worked comparison.
+
+## Price Theory and the Terms of Choice
+
+[Chicago Price Theory and Moral Justification](../50_Chicago_Price_Theory_and_Moral_Justification/README.md) connects market explanations to Kantian authority, Scanlonian reasonable rejection, the distinction between choice and welfare, and the limits of monetary valuation. M9 §§9.76–9.82 includes original budget and compensation calculations and the strongest economic replies.

@@ -474,7 +474,9 @@
     "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/DATA_DICTIONARY.md",
     "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md",
     "01_Resources/48_Statistical_Virtues_and_Ontology/README.md",
-    "01_Resources/49_Online_Engagement_and_Agency/README.md"
+    "01_Resources/49_Online_Engagement_and_Agency/README.md",
+    "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md",
+    "03_Data_and_Code/Price_Theory_and_Justification/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -523,12 +525,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-marketing-research-online-engagement-and-agency",
+    "revision": "2026-11-27-chicago-price-theory-and-moral-justification",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 158,
-    "pages": 662,
+    "figures_count": 159,
+    "pages": 671,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -563,7 +565,7 @@
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
     "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
     "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
-    "python_source_blocks": 133
+    "python_source_blocks": 134
   },
   "datasets": [
     {
@@ -660,7 +662,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 559,
+    "slides": 569,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -748,13 +750,13 @@
     "resources": "01_Resources/15_Marketing_Dialectics/README.md",
     "catalog": "01_Resources/15_Marketing_Dialectics/catalog.json",
     "example": "03_Data_and_Code/Marketing_Dialectics/README.md",
-    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty; marketing research, online engagement mechanisms, documented industry applications, and authority to stop",
+    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty; marketing research, online engagement mechanisms, documented industry applications, and authority to stop; Chicago price theory, monetary valuation, rational addiction, compensation, and the moral justification of market institutions",
     "source_records": 41,
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06",
-    "pages": 133,
-    "figures_count": 31,
+    "pages": 141,
+    "figures_count": 32,
     "updated_on": "2026-11-27"
   },
   "ai_experimentation_pricing": {
@@ -1236,7 +1238,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-27-marketing-research-online-engagement-and-agency",
+  "revision": "2026-11-27-chicago-price-theory-and-moral-justification",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1843,5 +1845,25 @@
     "existing_code": "03_Data_and_Code/Conflicts_of_Interest/README.md",
     "figure": "06_Lecture_Notes/figures/M09_engagement_evidence.tex",
     "scope": "Distinguishes published mechanisms, deployed practices, explicit industry citations, user consequences, clinical claims, and normative justification. Includes beneficial habit-research applications and dated preliminary EU findings. Reuses existing synthetic feed-policy code."
+  },
+  "chicago_price_theory_and_moral_justification": {
+    "updated_on": "2026-11-27",
+    "guide": "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md",
+    "catalog": "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/catalog.json",
+    "verification": "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/VERIFICATION.md",
+    "source_records": 13,
+    "new_local_pdfs": 7,
+    "sections": [
+      "M4 §4.32",
+      "M9 §§9.76–9.82"
+    ],
+    "sessions": [
+      5,
+      14
+    ],
+    "example": "03_Data_and_Code/Price_Theory_and_Justification/README.md",
+    "practice": "07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission",
+    "figure": "06_Lecture_Notes/figures/M09_price_theory_and_justification.tex",
+    "scope": "Conditional economic and philosophical arguments with synthetic budget and compensation calculations; no empirical finding of author intention, consumer injury, or legal violation."
   }
 }

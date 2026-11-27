@@ -189,3 +189,7 @@ The full derivation and program appear in M6 §6.44. [Optional practice](../07_L
 ## Heterogeneity, Precision, and Consumer Protection
 
 The [released-data reanalysis](Heterogeneity_and_Consumer_Protection/README.md) uses 5,555 rows across 88 accounts. A separate exact synthetic example shows lower average MSE and narrower posterior intervals alongside fewer detected harms under a specified decision rule. Complete Python, provenance, error rates, and the precision elasticity appear in M4 §4.31 and M6 §6.46.
+
+## Prices, Budgets, and Compensation
+
+The [synthetic valuation examples](Price_Theory_and_Justification/README.md) calculate reservation payments under exchanged budgets and reconcile project gains with actual compensation. Standard-library Python, saved results, and independent verification accompany the full listing in M9 §9.77. These examples supply no estimated consumer harm.

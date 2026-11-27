@@ -32,6 +32,7 @@ Session 14. M8, M9. 170 minutes.
 - Explain when statistical insignificance supplies no substantive conclusion about harm, using a public claim and its underlying uncertainty.
 - Evaluate how hierarchical pooling and a protection rule can reduce detection of a minority burden.
 - Evaluate marketing mechanisms and documented engagement practices through user purposes, evidence scope, and reasonable alternatives.
+- Distinguish price-theory predictions, monetary welfare comparisons, and moral justification of the terms of choice.
 
 ## Related Materials
 
@@ -77,6 +78,8 @@ Session 14. M8, M9. 170 minutes.
 - [Precision, Detection, and the Method Crosswalk](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md)
 - [Marketing Research and Online Engagement](../01_Resources/49_Online_Engagement_and_Agency/README.md)
 - [Engagement and Reasonable Alternatives](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation)
+- [Chicago Price Theory and Moral Justification](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md)
+- [Prices, Budgets, and Compensation](../03_Data_and_Code/Price_Theory_and_Justification/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -1402,7 +1405,89 @@ Every model abstracts, and rigorous estimation can protect people from arbitrary
 
 Source: ../01_Resources/48_Statistical_Virtues_and_Ontology/README.md
 
-## Slide 120: A Decision with Consumer Outcomes
+## Slide 120: Price Theory and the Moral Premise
+
+- Explain behavior under specified budgets and institutions.
+- Trace price, output, and cost incidence beyond the immediate transaction.
+- State the additional principle that permits the practice.
+
+The introductory account emphasizes applied market analysis (Jaffe et al., 2018). The positive-economics distinction expressly permits agreement on consequences and disagreement on desirability (Friedman, 1953, section I). The critique concerns a transition from a conditional explanation to a broader justification. It does not attribute one moral doctrine to everyone associated with the school. M9 §9.76.
+
+Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+## Slide 121: From Predicted Conduct to a Justified Principle
+
+The terms of choice also require justification.
+
+**Figure description:** Four boxes separate the institutional market setting, predicted consequences, affected persons and their reasons, and a justified principle. Economic predictions and normative argument both enter the comparison of feasible rules.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_price_theory_and_justification.tex)
+
+Budgets, information, and rights influence observed behavior. The same institutions are objects of moral assessment. An observed purchase can be compatible with a reasonable objection to the terms of access. Trace both paths before recommending a rule. The arrows represent argumentative dependencies, with no numerical moral score. M9 §§9.76–9.82.
+
+Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+## Slide 122: Rational Addiction and the Authority to Stop
+
+- Intertemporal consistency defines rationality within the model.
+- Predictable continuation can coexist with an objection to the design.
+- Establish purpose, stopping instructions, and feasible user control.
+
+Dynamic complementarity can explain persistence and quitting (Becker and Murphy, 1988). That explanatory result supplies neither a clinical diagnosis nor moral permission to defeat an informed stopping instruction. A Kantian assessment examines the firm’s maxim and the person’s practical authority; a beneficial reminder can serve a user-endorsed commitment (Kant, 1785, 4:429). Compare the engagement cases and synthetic feed policies in §§9.70–9.75. M9 §9.78.
+
+Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+## Slide 123: Potential Compensation Leaves Actual Losses
+
+- Synthetic project: firm gains USD 140; 100 residents each lose USD 1.
+- Paying each resident USD 1 leaves the firm with USD 40.
+- Both policies gain USD 40 in aggregate; only one removes resident losses.
+
+These are one-period dollar changes with zero transfer cost and no other consequence. They are not interpersonal utility totals. Potential compensation and actual payment give residents different positions. The common-law defense of wealth maximization appeals to ex ante compensation in specified settings (Posner, 1980, pp. 492–493). Inspect whether an asserted offset actually reaches this person. Full Python is in M9 §9.77; interpretation in §9.79.
+
+Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+## Slide 124: Acceptance Under Dependency Leaves an Objection
+
+- An available deal can be the person’s best option.
+- The rule creating those options can still be reasonably rejected.
+- Compare individual reasons and feasible alternatives.
+
+The water-rights argument separates strategic acceptance from reasonable justification (Scanlon, 1998, pp. 192–196). Applied to targeted pricing, essential services, and online attention, the question concerns the terms under which choice occurs. Actual agreement, a majority of beneficiaries, and hypothetical compensation are different from a principle that answers the relevant objections. M9 §§9.78–9.79.
+
+Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+## Slide 125: Who Can Bargain Over Infrastructure Exposure?
+
+- Identify rights, records, negotiating costs, and enforcement.
+- Trace canceled-project commitments and actual recovery decisions.
+- Compare developer guarantees and resident participation.
+
+The social-cost analysis explicitly examines positive transaction costs and calls for broader evaluation of institutional arrangements (Coase, 1960, pp. 15–19, 43–44). A utility-developer bargain may omit affected households. A canceled project may leave commitments, but realized pass-through needs project, accounting, and regulatory evidence. The existing conference-call excerpts describe recovery mechanisms rather than identifying final household charges. M9 §9.80.
+
+Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+## Slide 126: Who Bears the Cost of Waiting?
+
+- Assess entry barriers and the expected duration of exposure.
+- Distinguish a records request, a safeguard, and a final penalty.
+- Compare mistaken intervention with tolerated consumer harm.
+
+The historical error-cost argument contrasts persistent legal errors with market correction, while recognizing interim losses and beneficial anticartel enforcement (Easterbrook, 1984, pp. 2–3). These premises require assessment in the actual setting. Connect the conditional pooling example in §9.57 and the electricity reassurance case to the institutional threshold that turns uncertain evidence into permission or delay. This is a normative comparison, not a statement of current liability. M9 §9.81.
+
+Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+## Slide 127: Grant the Estimate and Examine the Ought Claim
+
+- Assume the prediction or aggregate gain is exactly right.
+- Identify the person whose agency or burden remains unaddressed.
+- Answer the strongest defense of the feasible alternative.
+
+Effectiveness at inducing activity leaves the worth of the activity open (Knight, 1923, publisher summary). Different goods and relationships can require different exchange norms (Anderson, 1990, author abstract). A sound criticism identifies the missing premise and supports it with reasons; economic incidence can also defeat a criticism with mistaken factual assumptions. The conclusion concerns a specified argument or practice. M9 §9.82.
+
+Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+## Slide 128: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

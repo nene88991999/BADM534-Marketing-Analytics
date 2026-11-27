@@ -22,3 +22,15 @@ AI assistance can help trace code, inspect denominators, and propose counterexam
 ## Evidence and the Proposed Action
 
 Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.
+
+## Price Theory and Moral Permission
+
+Read [M9 §§9.76–9.82](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) and select an argument from the [13-source guide](../../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md).
+
+1. Run the [budget and compensation program](../../03_Data_and_Code/Price_Theory_and_Justification/README.md) and its verification. Explain why the willingness-to-pay ranking reverses and why the compensation policies have equal dollar totals but different resident burdens. State the units and the role of the synthetic assumptions.
+2. Choose personalized pricing, online engagement, or infrastructure cost allocation. Write a conditional economic prediction and the additional premise needed for an ought conclusion. Distinguish profit, consumer surplus, total surplus, and actual compensation where relevant.
+3. Grant the prediction for the sake of argument. Formulate the strongest objection from an affected person, including someone excluded from the transaction. Compare a feasible alternative and state the relevant Kantian duty or Scanlonian reason.
+4. Present the strongest economic defense. Consider supply incentives, resource costs, information, interim losses, and unintended incidence. Explain which evidence could defeat your own criticism.
+5. Distinguish a moral violation under established premises from an unverified empirical allegation and from a legal violation. Do not infer any of them from school affiliation or a method's name.
+
+For the electricity case, identify the project commitment, the possible recovery path, the household outcome, and the resident's opportunity to participate. For engagement, distinguish intertemporal consistency from authority over a stopping purpose. For enforcement, compare an information request with a final penalty before defending the evidentiary threshold. These remain optional, ungraded activities.

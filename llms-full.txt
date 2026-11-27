@@ -483,7 +483,9 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/DATA_DICTIONARY.md",
     "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md",
     "01_Resources/48_Statistical_Virtues_and_Ontology/README.md",
-    "01_Resources/49_Online_Engagement_and_Agency/README.md"
+    "01_Resources/49_Online_Engagement_and_Agency/README.md",
+    "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md",
+    "03_Data_and_Code/Price_Theory_and_Justification/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -532,12 +534,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-marketing-research-online-engagement-and-agency",
+    "revision": "2026-11-27-chicago-price-theory-and-moral-justification",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 158,
-    "pages": 662,
+    "figures_count": 159,
+    "pages": 671,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -572,7 +574,7 @@ Generated from course.json and the source files identified below. This file cont
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
     "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
     "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
-    "python_source_blocks": 133
+    "python_source_blocks": 134
   },
   "datasets": [
     {
@@ -669,7 +671,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 559,
+    "slides": 569,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -757,13 +759,13 @@ Generated from course.json and the source files identified below. This file cont
     "resources": "01_Resources/15_Marketing_Dialectics/README.md",
     "catalog": "01_Resources/15_Marketing_Dialectics/catalog.json",
     "example": "03_Data_and_Code/Marketing_Dialectics/README.md",
-    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty; marketing research, online engagement mechanisms, documented industry applications, and authority to stop",
+    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty; marketing research, online engagement mechanisms, documented industry applications, and authority to stop; Chicago price theory, monetary valuation, rational addiction, compensation, and the moral justification of market institutions",
     "source_records": 41,
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06",
-    "pages": 133,
-    "figures_count": 31,
+    "pages": 141,
+    "figures_count": 32,
     "updated_on": "2026-11-27"
   },
   "ai_experimentation_pricing": {
@@ -1245,7 +1247,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-27-marketing-research-online-engagement-and-agency",
+  "revision": "2026-11-27-chicago-price-theory-and-moral-justification",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1852,6 +1854,26 @@ Generated from course.json and the source files identified below. This file cont
     "existing_code": "03_Data_and_Code/Conflicts_of_Interest/README.md",
     "figure": "06_Lecture_Notes/figures/M09_engagement_evidence.tex",
     "scope": "Distinguishes published mechanisms, deployed practices, explicit industry citations, user consequences, clinical claims, and normative justification. Includes beneficial habit-research applications and dated preliminary EU findings. Reuses existing synthetic feed-policy code."
+  },
+  "chicago_price_theory_and_moral_justification": {
+    "updated_on": "2026-11-27",
+    "guide": "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md",
+    "catalog": "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/catalog.json",
+    "verification": "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/VERIFICATION.md",
+    "source_records": 13,
+    "new_local_pdfs": 7,
+    "sections": [
+      "M4 \u00a74.32",
+      "M9 \u00a7\u00a79.76\u20139.82"
+    ],
+    "sessions": [
+      5,
+      14
+    ],
+    "example": "03_Data_and_Code/Price_Theory_and_Justification/README.md",
+    "practice": "07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission",
+    "figure": "06_Lecture_Notes/figures/M09_price_theory_and_justification.tex",
+    "scope": "Conditional economic and philosophical arguments with synthetic budget and compensation calculations; no empirical finding of author intention, consumer injury, or legal violation."
   }
 }
 ```
@@ -2469,6 +2491,10 @@ M1 §1.24 introduces the object behind an AI-assisted analysis. M6 §6.46.6 dist
 
 M5 §5.29 distinguishes engagement labels, endorsement, and selected qualitative accounts. M9 §§9.70–9.75 examines content sequences, streaks, uncertain rewards, gamification, binge viewing, and user authority through [15 sources](01_Resources/49_Online_Engagement_and_Agency/README.md). Sessions 7 and 14 select these cases within their existing discussions. The [optional exercise](07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) reuses the complete synthetic feed-policy program in §9.48; it makes no new platform-harm estimate.
 
+## Chicago Price Theory and Market Justification
+
+M4 §4.32 and M9 §§9.76–9.82 connect monetary valuation, rational addiction, compensation, institutional bargaining, and enforcement errors to the moral premises behind market recommendations. [Thirteen readings](01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md), [reproducible synthetic examples](03_Data_and_Code/Price_Theory_and_Justification/README.md), and [optional argument practice](07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) support selected discussion in Sessions 5 and 14.
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2614,6 +2640,10 @@ Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thres
 ## Measurement Traditions and Evidence for Action
 
 The syllabus includes disciplinary history, heterogeneous demand, unequal error costs, and evidentiary standards within the existing meetings. The [teaching plan](TEACHING_PLAN.md#measurement-error-costs-and-reasonable-protection) identifies the selected discussions; the [new practice](../07_Labs/Evidence_Standards/README.md) remains optional and ungraded.
+
+## Price Theory and Moral Justification
+
+The course description includes willingness to pay, rational addiction, compensation, and market justification. Sessions 5 and 14 select these comparisons within their existing allocations. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) connects the economic arguments to Kantian and Scanlonian assessments; the [teaching plan](TEACHING_PLAN.md#chicago-price-theory-and-moral-justification) identifies the corresponding notes, code, and optional practice.
 
 ---
 
@@ -2823,6 +2853,10 @@ The full derivation and program appear in M6 §6.44. [Optional practice](../07_L
 
 The [released-data reanalysis](Heterogeneity_and_Consumer_Protection/README.md) uses 5,555 rows across 88 accounts. A separate exact synthetic example shows lower average MSE and narrower posterior intervals alongside fewer detected harms under a specified decision rule. Complete Python, provenance, error rates, and the precision elasticity appear in M4 §4.31 and M6 §6.46.
 
+## Prices, Budgets, and Compensation
+
+The [synthetic valuation examples](Price_Theory_and_Justification/README.md) calculate reservation payments under exchanged budgets and reconcile project gains with actual compensation. Standard-library Python, saved results, and independent verification accompany the full listing in M9 §9.77. These examples supply no estimated consumer harm.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -2831,7 +2865,7 @@ The [released-data reanalysis](Heterogeneity_and_Consumer_Protection/README.md) 
 
 **By Nathan Yang. Updated November 27, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 158 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 159 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2845,7 +2879,7 @@ Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with t
 | M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content assessments and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
-| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 31 editable TikZ figures |
+| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 32 editable TikZ figures |
 
 The sequence follows the historical syllabus’s topic families, with current dates and requirements supplied by the released syllabus. Published research motivates selected cases, while empirical mHealth results, simulations, and synthetic examples retain their own assumptions and interpretations.
 
@@ -3081,6 +3115,10 @@ M1 §1.24, M6 §6.46.6, and M9 §§9.66–9.69 examine when technical success su
 
 M5 §5.29 and M9 §§9.70–9.75 connect marketing publications with documented company practices and the authority to stop. A TikZ diagram distinguishes mechanisms, deployment, unwanted continuation, and justified action. The [reading guide](../01_Resources/49_Online_Engagement_and_Agency/README.md) and [optional practice](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) preserve source scope and beneficial applications. The existing complete Python in §9.48 provides the synthetic worked assessment.
 
+## Price Theory and Moral Justification
+
+M4 §4.32 and M9 §§9.76–9.82 assess the transition from market prediction to moral permission. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) records 13 sources. Complete Python in §9.77 reproduces synthetic budget rankings and actual compensation, with an editable TikZ argument diagram and connections to engagement, electricity exposure, and evidence standards.
+
 ---
 
 ## Source: 06_Lecture_Notes/Preface.md
@@ -3167,7 +3205,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 559 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 569 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -3373,6 +3411,10 @@ Sessions 1 and 14 distinguish accuracy for a recorded variable from adequacy for
 ## Online Engagement and the Authority to Stop
 
 Sessions 7 and 14 connect marketing publications with documented industry practices, consumer purposes, and reasonable alternatives. The [15-source guide](../01_Resources/49_Online_Engagement_and_Agency/README.md) and [optional practice](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) distinguish engagement effects from harmful consequences and clinical claims. The EU example retains the preliminary status of the February 6, 2026 notice.
+
+## Price Theory and the Justification of Market Terms
+
+Sessions 5 and 14 select the budget comparison, argument diagram, compensation example, and institutional cases from M4 §4.32 and M9 §§9.76–9.82. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) preserves the differences between analytical explanation and moral judgment. Extended cases and the complete Python comparison are optional practice.
 
 ---
 
@@ -3986,6 +4028,10 @@ Sixteen annotated philosophical sources support M1 §1.24, M6 §6.46.6, and M9 �
 
 The 15-source collection in `01_Resources/49_Online_Engagement_and_Agency/` supports M5 §5.29 and M9 §§9.70–9.75. Ten marketing and consumer-research papers cover mechanisms and a protective application; supporting economics, company, and regulatory records establish different forms of evidence. Sessions 7 and 14 add selected cases and an editable evidence diagram. Optional practice reuses the existing synthetic feed program without changing its calculations. Full-text access and inspection limits are recorded source by source.
 
+## Chicago Price Theory and Moral Justification
+
+M4 §4.32 and M9 §§9.76–9.82 use the [13-source guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) to distinguish economic prediction, monetary welfare, and a justified principle. The complete program in §9.77 matches [compare_valuations.py](../03_Data_and_Code/Price_Theory_and_Justification/compare_valuations.py). The figure `M09_price_theory_and_justification` separates empirical consequences from the reasons of affected people. The electricity and hierarchical-detection applications retain their existing evidentiary scope.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -4345,16 +4391,16 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 32 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 30 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 33 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 35 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 31 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 47 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 49 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 46 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 31 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 61 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 23 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 114 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 128 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -4777,6 +4823,10 @@ Session 1 selects the target-and-claim comparison within the existing definition
 
 Session 7 selects the engagement and evidence-classification discussion within minutes 155–170. Session 14 selects the evidence diagram and one company case within minutes 80–110, using the existing feed example when a numerical comparison is helpful. These are alternatives within existing blocks; the full Session 14 deck remains a case library. The [extended reading and argument exercise](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) is optional practice. Meeting lengths and course requirements are unchanged.
 
+## Price Theory Within Existing Discussion Blocks
+
+Session 5 can use its final 15-minute discussion for the budget comparison in M9 §9.77. Session 14 selects the argument diagram and one pricing, engagement, or infrastructure case within the existing 75-minute ethics block. Its extended deck is a case library; the full set of examples is available as optional follow-up. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) and [argument practice](../07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) support that selection. Dates, durations, and assessment rules retain their released status.
+
 ---
 
 ## Source: 02_Syllabus/TEACHING_PLAN.md
@@ -5002,6 +5052,10 @@ Use M1 §1.24 in Session 1's existing definitions and argument discussion. In Se
 
 M5 §5.29 and M9 §§9.70–9.75 connect marketing insights with content sequences, streaks, rewards, and commercial engagement practices. Sessions 7 and 14 select an evidence assessment and a company case within existing discussion blocks. Students distinguish user goals from platform outcomes and defend a feasible alternative through Kantian and Scanlonian reasoning. The [source guide](../01_Resources/49_Online_Engagement_and_Agency/README.md) and [optional ungraded exercise](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) preserve beneficial applications and the scope of the evidence. This coverage introduces no new graded requirement.
 
+## Chicago Price Theory and Moral Justification
+
+Use the synthetic budget comparison in Session 5's final discussion. In Session 14's existing 75-minute ethics block, select the diagram and one case connecting predicted behavior to a justified principle. M9 §§9.76–9.82 covers rational addiction, actual compensation, costly participation, and unequal enforcement-error burdens. The [optional pricing practice](../07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) develops the full argument. The additional slides provide a case library within the existing schedule.
+
 ---
 
 ## Source: 06_Lecture_Notes/ETHICS_AND_REGULATION.md
@@ -5166,6 +5220,10 @@ United States merger guidance considers the totality of evidence, including docu
 The [European Commission notice of February 6, 2026](https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act), checked November 27, 2026, records preliminary DSA findings concerning TikTok's design and risk mitigation. Its scope includes infinite scroll, autoplay, notifications, and recommendations, with attention to minors and vulnerable adults in the EU. The notice expressly leaves the investigation's outcome open. It is not a final liability determination, a new generally applicable ban, or an instrument establishing a new effective date.
 
 M9 §§9.70–9.75 and Sessions 7 and 14 connect this dated record to [marketing mechanisms and industry cases](../01_Resources/49_Online_Engagement_and_Agency/README.md). Research findings, company disclosures, clinical claims, legal status, and philosophical justification retain distinct evidentiary roles. No claim links the regulatory finding causally to one of the selected academic papers.
+
+## Price Theory, Rights, and Error Costs
+
+M9 §§9.76–9.82 examines the moral premises connecting demand, monetary valuation, and institutional decisions. The [source guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) includes historical common-law and antitrust arguments (Posner, 1980; Easterbrook, 1984). These sources explain normative positions and supply no new statement of current law. Moral judgment, an investigation threshold, and a legal violation require distinct premises. The current U.S. legal scope remains in the [antitrust record](../01_Resources/16_AI_Experimentation_and_Pricing/ANTITRUST_AND_REASONS.md).
 
 ---
 
@@ -5332,7 +5390,7 @@ Executed November 2, 2026 using the supplied snapshot. Four analysis programs an
 
 Marketing decisions require evidence about customer preferences, behavior, and responses to a firm's actions. The course applies measurement, visualization, regression, conjoint analysis, segmentation, lifetime value, text and network analysis, experiments, causal inference, prediction, and recommendation to product design, acquisition, retention, pricing, and budgets.
 
-Students use AI-assisted Python to specify questions, verify calculations, and interpret results. Marketing Dialectics applies Kantian, Confucian, and Scanlonian philosophy to consumer agency, conflicts of interest, and regulation. Students examine worthy objectives and test claims and criticisms against the same evidential standards. Disciplinary history and the phenomena–noumena distinction (Kant, 1781/1787) connect measurement to persons and obligations. Students assess how evidentiary standards allocate false alarms and missed harm. Recommendations require reasons beyond commercial effectiveness and statistical precision.
+Students use AI-assisted Python to specify questions, verify calculations, and interpret results. Marketing Dialectics applies Kantian, Confucian, and Scanlonian philosophy to agency, conflicts of interest, and regulation. Disciplinary history and the phenomena–noumena distinction (Kant, 1781/1787) connect measurement to persons and obligations. Chicago price theory supplies cases on willingness to pay, rational addiction, compensation, and market justification. Students assess objectives, evidentiary standards, false alarms, and missed harm, applying the same standards to claims and criticisms.
 
 ## Learning Objectives
 
@@ -5958,6 +6016,10 @@ The [supplemental guide](09_Conflicts_of_Interest/README.md) distinguishes oppos
 ## Online Engagement and the Authority to Stop
 
 The [publication guide](../49_Online_Engagement_and_Agency/README.md) adds experimental mechanisms, documented company applications, and an explicit industry citation of streak research. M9 §§9.70–9.75 applies Kantian respect, value capture, and Scanlonian justification while preserving beneficial uses and evidentiary limits. The existing feed-policy program supplies the synthetic worked comparison.
+
+## Price Theory and the Terms of Choice
+
+[Chicago Price Theory and Moral Justification](../50_Chicago_Price_Theory_and_Moral_Justification/README.md) connects market explanations to Kantian authority, Scanlonian reasonable rejection, the distinction between choice and welfare, and the limits of monetary valuation. M9 §§9.76–9.82 includes original budget and compensation calculations and the strongest economic replies.
 
 ---
 
@@ -8569,6 +8631,192 @@ The policy discussion also requires an exact status. On February 6, 2026, the Eu
 First write the strongest recommendation justified by the commercial outcome alone. Then identify the additional premise required to call it beneficial to users. Connect that premise to one publication above and classify its support: a behavioral mechanism, an observed commercial application, an explicit research citation, or evidence about the consequence of interest. Neither a publication nor an industry citation supplies every link in the argument.
 
 Next use the group results to formulate the objection of the person whose stopping purpose is frustrated. Compare the alternative's effects on that person, the person who wants extended use, and the service provider. Explain which empirical findings would alter the recommendation and which moral premise remains necessary even if all effects were estimated precisely. The [optional practice](../../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) includes an evidence-classification exercise and a claim-revision task. The [reading guide](../../01_Resources/49_Online_Engagement_and_Agency/README.md) records source scope, commercial connections, and the limits of each inference.
+
+## 9.76 Chicago Price Theory and the Moral Authority of Markets
+
+\noindent A firm observes that customers continue buying after a price increase and that a recommendation system increases repeat use. The manager concludes that both practices serve customers because the behavior is voluntary and the business is profitable. The economic findings leave a consequential question unresolved: which principle permits the firm to impose these terms, and what reasons support that principle from the customer's position?
+
+Chicago price theory studies how prices, constraints, technology, and market interactions shape behavior. Its introductory account emphasizes applied prediction and incidence, including consequences outside the market immediately affected by an intervention. Competition is a prominent benchmark, with price-setting models used where the question requires them [(Jaffe et al., 2018, introduction)](https://home.uchicago.edu/~cbm4/cpt/Introduction.pdf). The choice of benchmark matters. A platform with costly exit or a utility with exclusive service territory requires evidence about those institutions before a competitive approximation can support its policy interpretation.
+
+The methodological distinction between prediction and prescription is explicit in the positive-economics tradition. Agreement about a policy's consequences can coexist with disagreement about its desirability [(Friedman, 1953, section I)](https://edisciplinas.usp.br/pluginfile.php/8853288/mod_resource/content/1/FriedmanEssaysonPositiveEconomics%20%281%29.pdf). An economic model can therefore expose a harmful consequence without supplying a complete moral criterion. Its descriptive success becomes ethically consequential when an institution treats it as sufficient permission to act.
+
+Different claims require different premises. Profit maximization concerns the firm's return. Consumer surplus expresses a demand-based monetary comparison under specified preferences and circumstances. Total surplus adds producer surplus. A Pareto improvement makes someone better off while making no one worse off; a potential-compensation criterion allows losses when gains could finance compensation. Wealth maximization assigns normative importance to monetary valuations. These objects may disagree about the same action. Describing every one as efficiency conceals that disagreement [(Posner, 1980, pp. 488–492)](https://laws21.classes.ryansafner.com/readings/Posner-1980a.pdf).
+
+![Market predictions enter a comparison of feasible principles. Budgets and institutions shape behavior; affected people's agency, burdens, and authority supply further reasons for evaluating the terms under which that behavior occurs. No numerical moral score is assigned.](../figures/M09_price_theory_and_justification.png)
+
+The central moral risk is allowing an institution's own distribution of alternatives to validate that institution. A firm creates costly exit, observes continued use, and calls the outcome consumer endorsement. A powerful buyer limits alternatives, observes acceptance, and calls the terms fair. The missing premise concerns whether the conditions of choice are themselves defensible. More accurate demand prediction leaves that premise unresolved.
+
+## 9.77 Willingness to Pay and Equal Moral Standing
+
+\noindent Suppose a service provider compares two people with different budgets. The relevant marketing quantity is the largest payment each would accept for the service. To isolate the role of resources, give both people the same specified utility increment from access and the same utility function for remaining money. This construction addresses the interpretation of a monetary ranking; it imposes no empirical measure of equal need or moral worth.
+
+\begin{assumption}[Synthetic Valuation and Incidence]\label{ass:price-theory-valuation}
+The valuation example has one period, a binary service indicator $x_i$, a budget $b_i>0$ dollars, and utility $u_i(m_i,x_i)=\log(m_i)+v x_i$, with $m_i>0$ and common increment $v=0.2$. Budgets are $100$ and $1{,}000$ dollars. The separate project example has one firm gaining $140$ and 100 residents each losing $1$, relative to no project. Transfers have zero resource cost, and the example includes no uncertainty or other consequence.
+\end{assumption}
+
+The reservation payment $w_i$ leaves person $i$ indifferent between access and retaining the full budget. Under Assumption \ref{ass:price-theory-valuation},
+
+$$\log(b_i-w_i)+v=\log(b_i),\qquad
+w_i=b_i(1-e^{-v}).$$
+
+Here $w_i$ and $b_i$ are dollars for the same period, while $v$ is a dimensionless utility increment. The willingness-to-pay ranking changes with the budget even though the service increment remains fixed. Exchanging the budgets reverses the ranking without changing that increment.
+
+| Person | Baseline Budget | Baseline Reservation Payment | Reservation Payment After Exchanging Budgets |
+| --- | ---: | ---: | ---: |
+| A | $100 | $18.13 | $181.27 |
+| B | $1,000 | $181.27 | $18.13 |
+
+A ranking of monetary valuations incorporates access to resources. Treating its winner as the person whose claim deserves priority adds a distributive judgment. The philosophical question is whether greater wealth, valued in this way, is itself a social improvement or is an instrument whose worth depends on further consequences and institutions [(Dworkin, 1980, pp. 191–197)](https://doi.org/10.1086/467636). Scarce resources still need allocation, and price rationing may have advantages. A defense must explain why those advantages justify the resulting exclusion and how a feasible subsidy, service guarantee, or different allocation rule would compare.
+
+### 9.77.1 Complete Python Comparison
+
+\noindent In the `Price_Theory_and_Justification` example folder, run `python3 compare_valuations.py`. It saves `results.json` beside its source. The first calculation evaluates reservation payments. The second compares a project with and without actual compensation, used in §9.79. All values are synthetic.
+
+Python source: [compare_valuations.py](../../03_Data_and_Code/Price_Theory_and_Justification/compare_valuations.py)
+
+```python
+"""Synthetic budgets, willingness to pay, and actual compensation.
+
+Run with Python 3; only the standard library is required.
+All inputs are constructed teaching values, with no estimated parameters.
+"""
+import json
+import math
+from pathlib import Path
+
+
+def willingness_to_pay(budget, service_increment):
+    """Solve log(budget - payment) + increment = log(budget)."""
+    if budget <= 0 or service_increment < 0:
+        raise ValueError("Use a positive budget and nonnegative increment.")
+    return budget * (-math.expm1(-service_increment))
+
+
+def compare():
+    increment = 0.2
+    rows = []
+    for scenario, budgets in (
+        ("baseline", {"A": 100.0, "B": 1000.0}),
+        ("budgets_exchanged", {"A": 1000.0, "B": 100.0}),
+    ):
+        for person, budget in budgets.items():
+            payment = willingness_to_pay(budget, increment)
+            rows.append(dict(scenario=scenario, person=person,
+                             budget_dollars=budget, service_increment=increment,
+                             willingness_to_pay_dollars=payment))
+
+    # A separate one-period project: the firm gains $140 and 100 residents
+    # each lose $1 relative to no project. Transfers have zero resource cost.
+    firm_gain = 140.0
+    residents = 100
+    loss_per_resident = 1.0
+    policies = []
+    for policy, payment in (("no_compensation", 0.0),
+                            ("actual_compensation", loss_per_resident)):
+        transfer = residents * payment
+        firm_change = firm_gain - transfer
+        resident_change = payment - loss_per_resident
+        policies.append(dict(
+            policy=policy, residents=residents,
+            transfer_per_resident_dollars=payment,
+            firm_change_dollars=firm_change,
+            each_resident_change_dollars=resident_change,
+            aggregate_dollar_change=firm_change + residents * resident_change,
+            people_with_dollar_losses=residents if resident_change < 0 else 0,
+        ))
+    return dict(setup="Synthetic one-period comparisons; dollars and dimensionless utility",
+                willingness_to_pay=rows, compensation=policies)
+
+
+def main():
+    results = compare()
+    output = Path(__file__).resolve().parent / "results.json"
+    output.write_text(json.dumps(results, indent=2) + "\n")
+    for row in results["willingness_to_pay"]:
+        print(f"{row['scenario']}: {row['person']}, budget "
+              f"${row['budget_dollars']:.0f}, reservation price "
+              f"${row['willingness_to_pay_dollars']:.2f}")
+    for row in results["compensation"]:
+        print(f"{row['policy']}: firm ${row['firm_change_dollars']:.0f}, "
+              f"each resident ${row['each_resident_change_dollars']:.0f}, "
+              f"aggregate ${row['aggregate_dollar_change']:.0f}, "
+              f"{row['people_with_dollar_losses']} residents lose")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+The independent verification substitutes each payment into the utility equation and checks affordability, budget reversal, the zero-benefit case, and transfer accounting. Run `python3 verify_comparisons.py` from the same folder. Equality of a specified utility increment is part of this construction; no cross-person moral comparison is inferred from the fitted or constructed scale.
+
+## 9.78 Rational Addiction and the Authority to Refuse
+
+\noindent A platform can forecast continued consumption by treating past use as a state that affects the value of present use. The rational-addiction model defines rationality through a consistent, forward-looking plan with stable preferences. Its dynamic complementarities can generate persistent consumption, abrupt quitting, and different responses to temporary and permanent price changes [(Becker and Murphy, 1988, pp. 675–677)](https://doi.org/10.1086/261558). That definition concerns intertemporal optimization. It supplies no clinical diagnosis and no independent account of whether a platform respects a person's authority over attention.
+
+A related advertising model treats advertisements and advertised goods as complements in a stable metautility function. Its welfare assessment depends on utility effects, competition, prices, output, and the form of advertising provision [(Becker and Murphy, 1993, abstract)](https://doi.org/10.2307/2118455). The distinction matters for the engagement studies in §§9.70–9.75. A model may represent the benefit of a reminder or the cost of an interruption, while a separate argument is needed to justify exploiting a susceptibility or overriding a stopping instruction.
+
+Choice can also express a commitment that differs from maximizing the chooser's own welfare. Treating every observed act as evidence that it best serves the person's interests removes this distinction by definition [(Sen, 1977, pp. 323–329)](https://www.jstor.org/stable/2264946). A user who pays to maintain contact with a dependent relative may accept intrusive conditions while objecting to the rule imposing them. A customer who returns after unsuccessfully trying to stop supplies a different reason for scrutiny from one who deliberately chooses a long session. Both may be highly predictable.
+
+A Kantian assessment asks whether the firm's maxim respects the person as an end, including the practical authority to choose purposes [(Kant, 1785, 4:429)](https://www.gutenberg.org/ebooks/5682). Consider the maxim, “I will defeat an informed stopping instruction whenever doing so increases advertising revenue.” On the stipulated facts, the commercial goal directs the use of the person's susceptibility against an expressly chosen boundary. A profitable prediction cannot discharge that objection. The empirical investigation must establish the instruction, the design's operation, and the feasible alternative before applying the judgment to a real product.
+
+The strongest reply is that repeated use can support a commitment the person values. A user-controlled reminder or deliberate extension can serve that purpose. The normative distinction concerns authority over the commitment and the terms of assistance. Kantian practical standing also exceeds a behavioral representation; an unobserved preference or clinical outcome remains an empirical object, distinct from the noumenal limit discussed in §9.41.
+
+## 9.79 Wealth Maximization and Hypothetical Consent
+
+\noindent A project sponsor may defend a household burden by showing that gains elsewhere exceed it. The compensation calculation in §9.77 has a $140 firm gain and a $100 total resident loss. Its aggregate dollar gain is $40. Paying each resident $1 preserves that aggregate gain and leaves the firm with $40. The number of residents with dollar losses falls from 100 to zero.
+
+| Synthetic Policy | Firm's Dollar Change | Each Resident's Dollar Change | Aggregate Dollar Change | Residents with a Dollar Loss |
+| --- | ---: | ---: | ---: | ---: |
+| No compensation | $140 | -$1 | $40 | 100 |
+| Actual compensation | $40 | $0 | $40 | 0 |
+
+The ability to compensate and the decision to compensate have different consequences for each resident. The table measures dollar incidence under Assumption \ref{ass:price-theory-valuation}; it establishes no interpersonal utility sum. A real project also requires costs of administering transfers, affected people outside the counted population, and consequences that money may not repair.
+
+One defense of wealth maximization connects consent to ex ante compensation: risks may be reflected in an asset's purchase price or in the benefits of an institutional arrangement. Its common-law argument explicitly distinguishes this justification from actual compensation after a loss [(Posner, 1980, pp. 492–493)](https://laws21.classes.ryansafner.com/readings/Posner-1980a.pdf). The defense creates empirical and moral questions. Did this person receive the alleged offset, understand the exposure, have a viable alternative, and possess authority to accept it? An assertion that a risk must already have been priced cannot answer those questions for tenants, future residents, or people excluded from the transaction.
+
+A Scanlonian assessment asks whether a principle permitting the burden could be reasonably rejected in comparison with feasible alternatives. Actual acceptance under dependency can coexist with a reasonable objection to the governing terms [(Scanlon, 1998, pp. 192–196)](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf). In the synthetic project, the firm can retain a positive dollar gain while avoiding every resident's dollar loss. That alternative weakens a defense based solely on aggregate benefit. A real judgment must still compare the relevant individual reasons, including consequences of any threat to service viability.
+
+The moral defect is clearest when an institution treats a hypothetical transfer as if the affected person had received it, or treats a person's weak bargaining position as sufficient reason to dismiss the person's objection. These are specified failures of justification. Neither a monetary gain nor the use of price theory independently establishes them.
+
+## 9.80 Social Costs, Rights, and Electricity Infrastructure
+
+\noindent A utility and a data-center developer may agree on an expansion that changes residents' financial exposure. The residents may have no place in that negotiation. A claim that bargaining will resolve any harm requires institutions that let the affected people identify the exposure, organize, obtain relevant records, negotiate, and enforce the agreement. Those activities consume resources and may be infeasible for dispersed households.
+
+The social-cost analysis explicitly examines positive transaction costs and the effects of legal rights on production. Its conclusion calls for comparing feasible institutional arrangements and considering effects beyond market-valued production [(Coase, 1960, pp. 15–19, 43–44)](https://doi.org/10.1086/466560). This supports a close examination of cost-allocation rules, information access, and project failure. Invoking costless bargaining while omitting those features abandons conditions central to the argument.
+
+Apply that reasoning to the phantom-project case in §9.50. A canceled project could leave investment commitments and recovery disputes even when operating capacity never appears in the treatment measure. Establishing that exposure requires project histories, contractual guarantees, regulatory decisions, and accounting evidence. The qualitative call assessment in §9.33 supplies statements about proposed recovery mechanisms; it does not by itself establish realized household charges. Economic incidence analysis should trace who bears a cost over time, including customers outside the developer's transaction.
+
+A moral assessment then asks who authorized the exposure and who can contest its allocation. Where residents lack an effective opportunity to challenge a substantial burden, a principle allowing the firm to proceed solely because aggregate gains are positive demands justification. Feasible alternatives include an enforceable developer guarantee, independent review of the allocation, and participation before commitments become difficult to reverse. Their actual costs and coverage matter. A credible price-theory analysis can reveal these effects; a market-valued total cannot by itself settle whose objection deserves an answer.
+
+## 9.81 Enforcement Errors and Unequal Exposure
+
+\noindent An institution deciding whether to investigate a pricing practice faces costs from both mistaken intervention and tolerated harm. An influential antitrust argument gives particular weight to enduring errors in legal precedent and to the possibility that competition corrects monopoly losses [(Easterbrook, 1984, pp. 2–3)](https://chicagounbound.uchicago.edu/journal_articles/1153/). The same opening recognizes losses while entry is delayed and benefits from anticartel enforcement. These are substantive institutional premises. Their relevance depends on entry barriers, switching costs, the duration of exposure, and the reversibility of the proposed action.
+
+For a dependent consumer, waiting for entry can mean continuing to pay a burdensome price. For a firm, an erroneous restriction can interrupt a valuable service or impose substantial expense. A philosophical assessment must specify both positions and compare actual responses. A request for records, a reversible safeguard, and a final penalty have different consequences. Evidence insufficient for the last action may still support the first.
+
+The hierarchical illustration in §9.57 makes this connection precise under its stated construction. Shrinkage and a fixed credibility rule reduce detection of a minority burden while improving an aggregate statistical criterion. The moral question concerns the rule that makes detection the sole condition for protection. The result supplies no general theorem that flexible heterogeneity favors firms. It identifies a mechanism through which a method and an institutional threshold can jointly shift the burden of uncertainty.
+
+The same argument bears on public reassurance about electricity costs. A failure to reject a narrow price effect cannot justify asking residents to accept a broader exposure as harmless. The consequential step is from incomplete evidence to permission, reassurance, or continued delay. A principle that requires exposed people to supply inaccessible proof before even a proportionate inquiry can be reasonably rejected when the competing burdens are materially smaller. That is a conditional application of contractualist reasons, with empirical premises that remain open to challenge (Scanlon, 1998, chapter 5).
+
+## 9.82 A Dialectical Assessment of Market Permission
+
+\noindent Consider a recommendation to charge more to customers who have few alternatives. The argument begins with predicted demand and ends with an ought conclusion. Its strength depends on what connects those two claims. A manager may defend cost recovery, investment, or expanded access. An affected customer may object to exploitation of dependency, exclusion from an essential service, or a use of personal information the customer did not authorize. Specifying both arguments reveals the dispute that a demand curve alone leaves unresolved.
+
+The tradition also contains a direct ethical challenge to competition as a sufficient guide. The distinction between competition's effectiveness at inducing activity and the worth of the activity appears in the original account of the ethics of competition [(Knight, 1923, article summary and section III)](https://doi.org/10.2307/1884053). Its presence cautions against treating an institutional label as a single moral doctrine. The critical target is the particular argument that grants market success authority over other reasons.
+
+Different goods and relations may require different norms of production and exchange [(Anderson, 1990, author abstract)](https://websites.umich.edu/eandersn/abstracts.htm). Applied to marketing, a purchased service, a person's capacity to revise a purpose, and a resident's standing to contest a public claim have different roles. Adding all three to an undifferentiated willingness-to-pay score assumes that they can be governed by the same valuation rule. That assumption itself needs defense.
+
+| Step | Claim to Defend | Question That Can Change the Conclusion |
+| --- | --- | --- |
+| Economic mechanism | The practice changes demand, costs, or supply under specified institutions. | Does the model represent actual alternatives, information, and market power? |
+| Welfare interpretation | The measured outcome bears on the affected person's interests. | Could the same behavior reflect dependency, commitment, or frustrated exit? |
+| Normative principle | The proposed terms can be justified to affected people. | Which individual objection survives aggregate gains or actual acceptance? |
+| Institutional choice | This feasible response addresses the concern proportionately. | Would a guarantee, user control, disclosure, inquiry, or different price rule reduce the burden? |
+| Revision | Evidence or reasons could warrant changing the decision. | Which fact or premise would defeat the recommendation and its criticism? |
+
+A strong criticism grants the economic result for the sake of argument and identifies the remaining moral defect. Suppose targeting predicts demand perfectly. A practice that deliberately defeats an informed refusal still confronts the person's authority over that refusal. Suppose aggregate gains are measured exactly. A resident who bears an avoidable burden still has a claim to reasons. Suppose intervention is costly. The institution must compare that cost with the exposure created by waiting.
+
+The corresponding strongest reply is that economic analysis can reveal shortages, exclusion, unintended incidence, and the costs of a proposed safeguard. Those findings can defeat an ethical recommendation whose factual premises are wrong. Marketing Dialectics requires both forms of scrutiny: reliable accounts of consequences and a defensible principle governing their imposition. A moral violation follows when the relevant factual premises and defended duties establish it. School affiliation, mathematical sophistication, and commercial success each leave that argument to be made.
 
 ---
 
@@ -15212,6 +15460,18 @@ AI assistance can help trace code, inspect denominators, and propose counterexam
 
 Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.
 
+## Price Theory and Moral Permission
+
+Read [M9 §§9.76–9.82](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) and select an argument from the [13-source guide](../../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md).
+
+1. Run the [budget and compensation program](../../03_Data_and_Code/Price_Theory_and_Justification/README.md) and its verification. Explain why the willingness-to-pay ranking reverses and why the compensation policies have equal dollar totals but different resident burdens. State the units and the role of the synthetic assumptions.
+2. Choose personalized pricing, online engagement, or infrastructure cost allocation. Write a conditional economic prediction and the additional premise needed for an ought conclusion. Distinguish profit, consumer surplus, total surplus, and actual compensation where relevant.
+3. Grant the prediction for the sake of argument. Formulate the strongest objection from an affected person, including someone excluded from the transaction. Compare a feasible alternative and state the relevant Kantian duty or Scanlonian reason.
+4. Present the strongest economic defense. Consider supply incentives, resource costs, information, interim losses, and unintended incidence. Explain which evidence could defeat your own criticism.
+5. Distinguish a moral violation under established premises from an unverified empirical allegation and from a legal violation. Do not infer any of them from school affiliation or a method's name.
+
+For the electricity case, identify the project commitment, the possible recovery path, the household outcome, and the resident's opportunity to participate. For engagement, distinguish intertemporal consistency from authority over a stopping purpose. For enforcement, compare an information request with a final penalty before defending the evidentiary threshold. These remain optional, ungraded activities.
+
 ---
 
 ## Source: 01_Resources/15_Marketing_Dialectics/08_Logic_and_Analytical_Arguments/README.md
@@ -18094,6 +18354,85 @@ Kantian respect concerns the person's authority to set ends. Contractualist reas
 - Sessions 7 and 14 select the cases within existing meeting allocations. The broader [journal census](../13_Consumer_Agency_and_Recent_Research/README.md) covers a different selection purpose; collection counts overlap.
 
 Eight reference copies are saved under the ignored `readings/` directory in Dropbox. GitHub contains the guide, catalog, and original teaching material. Full-text gaps and inspection limits appear in the catalog and [verification record](VERIFICATION.md).
+
+## Rational Addiction and Moral Permission
+
+[M9 §9.78](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) connects engagement mechanisms to intertemporal optimization and advertising complementarity. The [price-theory collection](../50_Chicago_Price_Theory_and_Moral_Justification/README.md) asks which further premises would justify the terms of a design. A model of continued use leaves the person's authority to stop open to assessment.
+
+---
+
+## Source: 01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+# Chicago Price Theory and Moral Justification
+
+A price-theory model can explain how people respond to constraints and how costs move through markets. A recommendation also requires a principle governing the terms imposed on the people affected. The critical question is where a conditional economic result receives more moral authority than its premises support.
+
+The [13-record catalog](catalog.json) separates analytical price theory, normative law-and-economics arguments, and philosophical criticism. Seven newly downloaded PDFs remain local to Dropbox. Three primary texts are reused from existing collections. The advertising paper, market-limits article, and competition essay are annotated from their inspected abstracts or summaries; full texts were not obtained. No unique-resource total should be calculated by adding these records to overlapping course collections.
+
+## Reading Sequence
+
+| ID | Source and Inspected Passage | Question |
+| --- | --- | --- |
+| C01 | [Chicago Price Theory: An Introduction](https://home.uchicago.edu/~cbm4/cpt/Introduction.pdf), April 2018 introduction (Jaffe et al., 2018) | Which institutions and competitive conditions make the model appropriate? |
+| C02 | [The Methodology of Positive Economics](https://edisciplinas.usp.br/pluginfile.php/8853288/mod_resource/content/1/FriedmanEssaysonPositiveEconomics%20%281%29.pdf), section I (Friedman, 1953) | Why can common predictions leave disagreement about what ought to be done? |
+| C03 | [A Theory of Rational Addiction](https://doi.org/10.1086/261558), pp. 675–677 (Becker and Murphy, 1988) | Does consistency over time answer whether the firm respects a person's stopping purpose? |
+| C04 | [A Simple Theory of Advertising as a Good or Bad](https://doi.org/10.2307/2118455), publisher abstract (Becker and Murphy, 1993) | Which utility and market conditions enter the welfare interpretation? |
+| C05 | [The Problem of Social Cost](https://doi.org/10.1086/466560), pp. 15–19, 43–44 (Coase, 1960) | Who can negotiate, enforce rights, or participate in an alternative institution? |
+| C06 | [The Ethical and Political Basis of the Efficiency Norm in Common Law Adjudication](https://laws21.classes.ryansafner.com/readings/Posner-1980a.pdf), pp. 487–493 (Posner, 1980) | What supports an assertion of ex ante compensation or consent? |
+| C07 | [The Limits of Antitrust](https://chicagounbound.uchicago.edu/journal_articles/1153/), pp. 2–3 (Easterbrook, 1984) | How long will entry take, who loses while waiting, and how reversible is the proposed response? |
+| C08 | [Is Wealth a Value?](https://doi.org/10.1086/467636), pp. 191–197 (Dworkin, 1980) | Is monetary wealth the end, a useful means, or a proxy whose validity needs evidence? |
+| C09 | [Rational Fools](https://www.jstor.org/stable/2264946), pp. 323–329 (Sen, 1977) | Can a person's reason for choosing differ from personal welfare? |
+| C10 | [The Ethical Limitations of the Market](https://websites.umich.edu/eandersn/abstracts.htm), author abstract (Anderson, 1990) | Which goods or relations require different norms of exchange? |
+| C11 | [The Ethics of Competition](https://doi.org/10.2307/1884053), publisher summary, section III (Knight, 1923) | What distinguishes effectiveness at inducing activity from the worth of that activity? |
+| C12 | [Fundamental Principles of the Metaphysic of Morals](https://www.gutenberg.org/ebooks/5682), 4:429 (Kant, 1785) | Does the maxim respect a person's practical authority over purposes? |
+| C13 | [What We Owe to Each Other](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf), pp. 192–196 (Scanlon, 1998) | Why can strategic acceptance coexist with reasonable rejection of the governing principle? |
+
+## Moral Objections and Required Premises
+
+| Proposed Inference | Consequential Missing Premise | Course Application |
+| --- | --- | --- |
+| Higher willingness to pay gives priority | Purchasing power provides a defensible basis for this allocation | Synthetic budget exchange; M4 §4.32 and M9 §9.77 |
+| Predictable continued use proves endorsement | The user can understand, refuse, and revise the purpose | Engagement research and stopping controls; §9.78 |
+| Aggregate gains justify uncompensated losses | The affected person's objection is answered, or a justified alternative is unavailable | Synthetic compensation; §9.79 |
+| Bargaining will resolve the household burden | Affected people possess workable information, rights, and negotiating capacity | Electricity commitments and canceled projects; §9.80 |
+| Uncertain harm warrants waiting | The cost and duration of waiting are defensible relative to a feasible response | Hierarchical detection example and antitrust error costs; §9.81 |
+
+These are conditional criticisms of arguments and actions. The readings contain important disagreements: positive prediction is expressly distinguished from normative judgment; transaction-cost analysis considers institutional alternatives; the antitrust argument recognizes interim losses and beneficial anticartel enforcement. School affiliation supplies no evidence of a particular author's intention or a firm's violation. The course's moral conclusions require supported factual premises, a defended principle, and comparison with a feasible alternative.
+
+## Course Connections
+
+[M9 §§9.76–9.82](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) includes the detailed argument, complete Python, and an Illinois-color TikZ diagram. [The reproducible examples](../../03_Data_and_Code/Price_Theory_and_Justification/README.md) use constructed budgets and dollar incidence; they estimate no real misconduct. [Optional practice](../../07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) asks students to defend both the recommendation and its strongest criticism.
+
+Sessions 5 and 14 select examples within their existing discussion blocks. The [statistical-virtues guide](../48_Statistical_Virtues_and_Ontology/README.md), [engagement readings](../49_Online_Engagement_and_Agency/README.md), and [evidence-standards collection](../47_Evidence_Standards_and_Error_Costs/README.md) provide related cases. Historical antitrust arguments are distinguished from the separately maintained record of current legal scope. [Verification](VERIFICATION.md) records retrieval, numerical checks, and rendered outputs.
+
+---
+
+## Source: 03_Data_and_Code/Price_Theory_and_Justification/README.md
+
+# Prices, Budgets, and Justification
+
+A manager ranks customers by willingness to pay. A project sponsor argues that aggregate gains justify an uncompensated loss. These synthetic comparisons separate the numerical calculation from the principle needed to justify the action.
+
+## Inputs and Units
+
+The first comparison has two people, A and B, with one-period budgets of $100 and $1,000 and the same specified service increment of 0.2 in logarithmic utility. Exchanging budgets holds that increment and the functional form fixed. Reservation prices solve the indifference equation in M9 §9.77. These are constructed preferences, with no estimate of actual need, autonomy, or interpersonal welfare.
+
+The separate project comparison has one firm gaining $140 and 100 residents each losing $1 over the same period. The alternative pays each resident $1. Transfers have zero resource cost in this illustration; no uncertainty, other affected party, or nonfinancial consequence is included. Aggregate dollar changes are accounting sums, with no interpersonal utility interpretation.
+
+## Reproduction
+
+Run from the repository root with Python 3 and its standard library:
+
+```sh
+python3 03_Data_and_Code/Price_Theory_and_Justification/compare_valuations.py
+python3 03_Data_and_Code/Price_Theory_and_Justification/verify_comparisons.py
+```
+
+The program saves [results.json](results.json) beside its source. Expected reservation prices are $18.13 and $181.27; exchanging budgets reverses their owners. Both project policies have a $40 aggregate dollar gain, while the number of residents with dollar losses changes from 100 to zero. The verification evaluates the utility equation directly, checks the budget reversal, and reconciles firm and household changes with the saved file. There is no seed or network dependency.
+
+## Interpretation and Provenance
+
+The calculations are original teaching examples. They implement no particular author's estimated model and use no replication microdata. The [reading guide](../../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) links the valuation, compensation, and moral arguments. [M9 §§9.76–9.82](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) includes the complete program and explains why these calculations leave the choice of principle open. [Optional practice](../../07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) asks students to defend that principle and answer its strongest objection.
 
 ---
 

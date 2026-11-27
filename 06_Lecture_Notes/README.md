@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 27, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 158 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 159 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -16,7 +16,7 @@ Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with t
 | M6 | [Causal Effects and Marketing Experiments](modules/M06_Causal_Inference_and_Experiments.md): estimands, selection, randomization, confidence intervals, power, adjustment, DiD, RD, IV, spillovers, recommendation policy evaluation | Email assignment and profit uncertainty; counterfactual trends; exposure-adjusted recommendation values; MovieLens information effects |
 | M7 | [Prediction, Machine Learning, and Marketing Actions](modules/M07_Prediction_and_Machine_Learning.md): targets, regularization, trees, ensembles, validation, leakage, metrics, calibration, thresholds, recommender models, ranking, LLM explanations | Rare purchases; coupon targeting; NDCG; food variety and customer goals; goal-weight switches; explanation credibility |
 | M8 | [Current Topics and Integrated Marketing Decisions](modules/M08_Current_Topics_and_Integrated_Decisions.md): adaptive recommendation, customer goals and platform incentives, media carryover and saturation, budget allocation, generative AI evaluation | Sleep-reminder campaign; Netflix personalization; content assessments and attitude experiments; relevance versus variety; marginal returns; AI workflow time |
-| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 31 editable TikZ figures |
+| M9 | [Marketing Dialectics](modules/M09_Marketing_Dialectics.md): Kantian critique, respect for persons, conflicting interests, and Confucian conduct | Renewal and intent; advertising effects; personalization; environmental claims; 32 editable TikZ figures |
 
 The sequence follows the historical syllabus’s topic families, with current dates and requirements supplied by the released syllabus. Published research motivates selected cases, while empirical mHealth results, simulations, and synthetic examples retain their own assumptions and interpretations.
 
@@ -251,3 +251,7 @@ M1 §1.24, M6 §6.46.6, and M9 §§9.66–9.69 examine when technical success su
 ## Online Engagement, Research, and Agency
 
 M5 §5.29 and M9 §§9.70–9.75 connect marketing publications with documented company practices and the authority to stop. A TikZ diagram distinguishes mechanisms, deployment, unwanted continuation, and justified action. The [reading guide](../01_Resources/49_Online_Engagement_and_Agency/README.md) and [optional practice](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) preserve source scope and beneficial applications. The existing complete Python in §9.48 provides the synthetic worked assessment.
+
+## Price Theory and Moral Justification
+
+M4 §4.32 and M9 §§9.76–9.82 assess the transition from market prediction to moral permission. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) records 13 sources. Complete Python in §9.77 reproduces synthetic budget rankings and actual compensation, with an editable TikZ argument diagram and connections to engagement, electricity exposure, and evidence standards.

@@ -313,11 +313,11 @@
       "modules": "M4",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 33,
+      "slides": 35,
       "companion": "S05_Conjoint_and_Product_Design.md",
       "pdf": "S05_Conjoint_and_Product_Design.pdf",
       "python_activity": "Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.",
-      "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus. Compare fixed purchase laws under two ordered monetary value systems; distinguish ranking from welfare. Assess demand restrictions without assuming a direction of markup bias from integration.",
+      "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus. Use the final discussion to compare budget-dependent willingness to pay with justified access.",
       "ethics": "Price completeness and the attributes customers actually evaluate",
       "timing": [
         {
@@ -377,7 +377,16 @@
       ],
       "date": "2027-02-17",
       "auxiliary_data_minutes": 15,
-      "evidence_standards_coverage": "Use ten minutes of the existing product-design discussion for heterogeneous demand, markups, and customer reasons; extended sensitivity is optional practice."
+      "evidence_standards_coverage": "Use ten minutes of the existing product-design discussion for heterogeneous demand, markups, and customer reasons; extended sensitivity is optional practice.",
+      "price_theory_coverage": {
+        "sections": [
+          "M4 §4.32",
+          "M9 §§9.76–9.82"
+        ],
+        "resources": "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md",
+        "practice": "07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission",
+        "selection": "Select the budget comparison within 155–170; full code and further argument are optional practice."
+      }
     },
     {
       "session": 6,
@@ -959,11 +968,11 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 120,
+      "slides": 128,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
-      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, mobile targeting (Dubé et al., 2017), and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice. Compare conflicts of interest, reward-learning evidence, and consumer control through the synthetic feed case and Kantian, Scanlonian, and Confucian arguments. Bad controls, phantom-project exposure, and thoughtful sample design. Evaluate data as artifacts, truth and norms, undone science, and institutional duties to produce evidence. Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold. Distinguish retention from user benefit and defend a feasible stopping alternative.",
+      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold. Compare engagement mechanisms and documented industry uses through authority to stop and reasonable alternatives. Examine market permission through compensation, constrained consent, agency, transaction costs, and unequal error burdens.",
       "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims. Reasonable rejection, pricing authority, antitrust evidence, and access to critical replication.; measurement quality, worthy objectives, and reasonableness across pricing and data-center claims Assess whether research under an NDA ought to exist, separating conduct, publication, and public reliance.",
       "timing": [
         {
@@ -1106,6 +1115,15 @@
         "selection": "Select the evidence diagram and one engagement case within 80–110; extended cases are optional practice. The deck remains a case library.",
         "resources": "01_Resources/49_Online_Engagement_and_Agency/README.md",
         "practice": "07_Labs/Conflicts_of_Interest/README.md"
+      },
+      "price_theory_coverage": {
+        "sections": [
+          "M4 §4.32",
+          "M9 §§9.76–9.82"
+        ],
+        "resources": "01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md",
+        "practice": "07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission",
+        "selection": "Select the argument diagram and one case within the existing 75-minute ethics block. Remaining slides are a case library for optional practice."
       }
     },
     {

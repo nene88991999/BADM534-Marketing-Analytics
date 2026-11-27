@@ -1,0 +1,53 @@
+{
+  "setup": "Synthetic one-period comparisons; dollars and dimensionless utility",
+  "willingness_to_pay": [
+    {
+      "scenario": "baseline",
+      "person": "A",
+      "budget_dollars": 100.0,
+      "service_increment": 0.2,
+      "willingness_to_pay_dollars": 18.126924692201815
+    },
+    {
+      "scenario": "baseline",
+      "person": "B",
+      "budget_dollars": 1000.0,
+      "service_increment": 0.2,
+      "willingness_to_pay_dollars": 181.26924692201814
+    },
+    {
+      "scenario": "budgets_exchanged",
+      "person": "A",
+      "budget_dollars": 1000.0,
+      "service_increment": 0.2,
+      "willingness_to_pay_dollars": 181.26924692201814
+    },
+    {
+      "scenario": "budgets_exchanged",
+      "person": "B",
+      "budget_dollars": 100.0,
+      "service_increment": 0.2,
+      "willingness_to_pay_dollars": 18.126924692201815
+    }
+  ],
+  "compensation": [
+    {
+      "policy": "no_compensation",
+      "residents": 100,
+      "transfer_per_resident_dollars": 0.0,
+      "firm_change_dollars": 140.0,
+      "each_resident_change_dollars": -1.0,
+      "aggregate_dollar_change": 40.0,
+      "people_with_dollar_losses": 100
+    },
+    {
+      "policy": "actual_compensation",
+      "residents": 100,
+      "transfer_per_resident_dollars": 1.0,
+      "firm_change_dollars": 40.0,
+      "each_resident_change_dollars": 0.0,
+      "aggregate_dollar_change": 40.0,
+      "people_with_dollar_losses": 0
+    }
+  ]
+}

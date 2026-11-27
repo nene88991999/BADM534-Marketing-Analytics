@@ -1540,7 +1540,8 @@
       "Allocate human and synthetic responses at a common accuracy target.",
       "Separate better demand information from joint pricing when evaluating customer surplus.",
       "Explain why identical product rankings can leave the sign of a welfare change unresolved.",
-      "Assess demand restrictions without assuming a direction of markup bias from integration."
+      "Assess demand restrictions without assuming a direction of markup bias from integration.",
+      "Distinguish price-theory predictions, monetary welfare comparisons, and moral justification of the terms of choice."
     ],
     "slides": [
       {
@@ -1924,6 +1925,28 @@
       },
       {
         "kind": "bullets",
+        "title": "A Reservation Price Includes Purchasing Power",
+        "bullets": [
+          "Synthetic budgets: USD 100 and USD 1,000; identical service increment.",
+          "Reservation payments: USD 18.13 and USD 181.27.",
+          "Exchanging budgets reverses the ranking."
+        ],
+        "notes": "The one-period example uses u(m,x)=log(m)+0.2x, where x indicates service access and m is remaining money. Indifference gives w=b(1-exp(-0.2)). The same functional form and service increment are held fixed while budgets change. The comparison isolates purchasing power, with no measured claim about equal need or moral worth. Full Python and checks are in M9 §9.77; M4 §4.32 connects the result to product decisions.",
+        "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Which Principle Gives the Higher Bid Priority?",
+        "bullets": [
+          "Explain cost recovery, scarce capacity, and the outside option.",
+          "Include excluded people and feasible allocation alternatives.",
+          "Defend the distributive premise behind the recommendation."
+        ],
+        "notes": "Monetary valuation combines willingness and ability to pay (Dworkin, 1980, pp. 191–197). A demand estimate may be useful even when the resulting allocation raises an ethical objection. A price mechanism can also support supply or reduce arbitrary rationing. Compare actual alternatives and justify the principle through affected persons’ reasons (Scanlon, 1998). M4 §4.32 and M9 §§9.77, 9.82.",
+        "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Product-Design Discussion",
         "bullets": [
           "How much of C's demand comes from existing products?",
@@ -1945,10 +1968,12 @@
       "[Pricing Information and Competition](../03_Data_and_Code/Pricing_Competition/README.md)",
       "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
       "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)",
-      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)",
+      "[Chicago Price Theory and Moral Justification](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md)",
+      "[Prices, Budgets, and Compensation](../03_Data_and_Code/Price_Theory_and_Justification/README.md)"
     ],
     "practice": "Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.",
-    "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus."
+    "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus. Use the final discussion to compare budget-dependent willingness to pay with justified access."
   },
   {
     "number": 6,
@@ -5310,7 +5335,8 @@
       "Evaluate whether restricted research ought to be conducted, published, or used to justify public action.",
       "Explain when statistical insignificance supplies no substantive conclusion about harm, using a public claim and its underlying uncertainty.",
       "Evaluate how hierarchical pooling and a protection rule can reduce detection of a minority burden.",
-      "Evaluate marketing mechanisms and documented engagement practices through user purposes, evidence scope, and reasonable alternatives."
+      "Evaluate marketing mechanisms and documented engagement practices through user purposes, evidence scope, and reasonable alternatives.",
+      "Distinguish price-theory predictions, monetary welfare comparisons, and moral justification of the terms of choice."
     ],
     "slides": [
       {
@@ -6730,6 +6756,93 @@
       },
       {
         "kind": "bullets",
+        "title": "Price Theory and the Moral Premise",
+        "bullets": [
+          "Explain behavior under specified budgets and institutions.",
+          "Trace price, output, and cost incidence beyond the immediate transaction.",
+          "State the additional principle that permits the practice."
+        ],
+        "notes": "The introductory account emphasizes applied market analysis (Jaffe et al., 2018). The positive-economics distinction expressly permits agreement on consequences and disagreement on desirability (Friedman, 1953, section I). The critique concerns a transition from a conditional explanation to a broader justification. It does not attribute one moral doctrine to everyone associated with the school. M9 §9.76.",
+        "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "From Predicted Conduct to a Justified Principle",
+        "figure": "../06_Lecture_Notes/figures/M09_price_theory_and_justification.tex",
+        "caption": "The terms of choice also require justification.",
+        "description": "Four boxes separate the institutional market setting, predicted consequences, affected persons and their reasons, and a justified principle. Economic predictions and normative argument both enter the comparison of feasible rules.",
+        "notes": "Budgets, information, and rights influence observed behavior. The same institutions are objects of moral assessment. An observed purchase can be compatible with a reasonable objection to the terms of access. Trace both paths before recommending a rule. The arrows represent argumentative dependencies, with no numerical moral score. M9 §§9.76–9.82.",
+        "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md",
+        "figure_height": 0.75
+      },
+      {
+        "kind": "bullets",
+        "title": "Rational Addiction and the Authority to Stop",
+        "bullets": [
+          "Intertemporal consistency defines rationality within the model.",
+          "Predictable continuation can coexist with an objection to the design.",
+          "Establish purpose, stopping instructions, and feasible user control."
+        ],
+        "notes": "Dynamic complementarity can explain persistence and quitting (Becker and Murphy, 1988). That explanatory result supplies neither a clinical diagnosis nor moral permission to defeat an informed stopping instruction. A Kantian assessment examines the firm’s maxim and the person’s practical authority; a beneficial reminder can serve a user-endorsed commitment (Kant, 1785, 4:429). Compare the engagement cases and synthetic feed policies in §§9.70–9.75. M9 §9.78.",
+        "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Potential Compensation Leaves Actual Losses",
+        "bullets": [
+          "Synthetic project: firm gains USD 140; 100 residents each lose USD 1.",
+          "Paying each resident USD 1 leaves the firm with USD 40.",
+          "Both policies gain USD 40 in aggregate; only one removes resident losses."
+        ],
+        "notes": "These are one-period dollar changes with zero transfer cost and no other consequence. They are not interpersonal utility totals. Potential compensation and actual payment give residents different positions. The common-law defense of wealth maximization appeals to ex ante compensation in specified settings (Posner, 1980, pp. 492–493). Inspect whether an asserted offset actually reaches this person. Full Python is in M9 §9.77; interpretation in §9.79.",
+        "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Acceptance Under Dependency Leaves an Objection",
+        "bullets": [
+          "An available deal can be the person’s best option.",
+          "The rule creating those options can still be reasonably rejected.",
+          "Compare individual reasons and feasible alternatives."
+        ],
+        "notes": "The water-rights argument separates strategic acceptance from reasonable justification (Scanlon, 1998, pp. 192–196). Applied to targeted pricing, essential services, and online attention, the question concerns the terms under which choice occurs. Actual agreement, a majority of beneficiaries, and hypothetical compensation are different from a principle that answers the relevant objections. M9 §§9.78–9.79.",
+        "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Who Can Bargain Over Infrastructure Exposure?",
+        "bullets": [
+          "Identify rights, records, negotiating costs, and enforcement.",
+          "Trace canceled-project commitments and actual recovery decisions.",
+          "Compare developer guarantees and resident participation."
+        ],
+        "notes": "The social-cost analysis explicitly examines positive transaction costs and calls for broader evaluation of institutional arrangements (Coase, 1960, pp. 15–19, 43–44). A utility-developer bargain may omit affected households. A canceled project may leave commitments, but realized pass-through needs project, accounting, and regulatory evidence. The existing conference-call excerpts describe recovery mechanisms rather than identifying final household charges. M9 §9.80.",
+        "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Who Bears the Cost of Waiting?",
+        "bullets": [
+          "Assess entry barriers and the expected duration of exposure.",
+          "Distinguish a records request, a safeguard, and a final penalty.",
+          "Compare mistaken intervention with tolerated consumer harm."
+        ],
+        "notes": "The historical error-cost argument contrasts persistent legal errors with market correction, while recognizing interim losses and beneficial anticartel enforcement (Easterbrook, 1984, pp. 2–3). These premises require assessment in the actual setting. Connect the conditional pooling example in §9.57 and the electricity reassurance case to the institutional threshold that turns uncertain evidence into permission or delay. This is a normative comparison, not a statement of current liability. M9 §9.81.",
+        "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md"
+      },
+      {
+        "kind": "bullets",
+        "title": "Grant the Estimate and Examine the Ought Claim",
+        "bullets": [
+          "Assume the prediction or aggregate gain is exactly right.",
+          "Identify the person whose agency or burden remains unaddressed.",
+          "Answer the strongest defense of the feasible alternative."
+        ],
+        "notes": "Effectiveness at inducing activity leaves the worth of the activity open (Knight, 1923, publisher summary). Different goods and relationships can require different exchange norms (Anderson, 1990, author abstract). A sound criticism identifies the missing premise and supports it with reasons; economic incidence can also defeat a criticism with mistaken factual assumptions. The conclusion concerns a specified argument or practice. M9 §9.82.",
+        "source": "../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "A Decision with Consumer Outcomes",
         "bullets": [
           "State the decision, affected people, and evidence.",
@@ -6782,10 +6895,12 @@
       "[Public Claims, Overstatement, and Uncertainty](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md)",
       "[Precision, Detection, and the Method Crosswalk](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md)",
       "[Marketing Research and Online Engagement](../01_Resources/49_Online_Engagement_and_Agency/README.md)",
-      "[Engagement and Reasonable Alternatives](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation)"
+      "[Engagement and Reasonable Alternatives](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation)",
+      "[Chicago Price Theory and Moral Justification](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md)",
+      "[Prices, Budgets, and Compensation](../03_Data_and_Code/Price_Theory_and_Justification/README.md)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
-    "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold. Compare engagement mechanisms and documented industry uses through authority to stop and reasonable alternatives."
+    "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold. Compare engagement mechanisms and documented industry uses through authority to stop and reasonable alternatives. Examine market permission through compensation, constrained consent, agency, transaction costs, and unequal error burdens."
   },
   {
     "number": 15,

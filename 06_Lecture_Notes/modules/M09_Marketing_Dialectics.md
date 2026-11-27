@@ -2566,3 +2566,189 @@ The policy discussion also requires an exact status. On February 6, 2026, the Eu
 First write the strongest recommendation justified by the commercial outcome alone. Then identify the additional premise required to call it beneficial to users. Connect that premise to one publication above and classify its support: a behavioral mechanism, an observed commercial application, an explicit research citation, or evidence about the consequence of interest. Neither a publication nor an industry citation supplies every link in the argument.
 
 Next use the group results to formulate the objection of the person whose stopping purpose is frustrated. Compare the alternative's effects on that person, the person who wants extended use, and the service provider. Explain which empirical findings would alter the recommendation and which moral premise remains necessary even if all effects were estimated precisely. The [optional practice](../../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) includes an evidence-classification exercise and a claim-revision task. The [reading guide](../../01_Resources/49_Online_Engagement_and_Agency/README.md) records source scope, commercial connections, and the limits of each inference.
+
+## 9.76 Chicago Price Theory and the Moral Authority of Markets
+
+\noindent A firm observes that customers continue buying after a price increase and that a recommendation system increases repeat use. The manager concludes that both practices serve customers because the behavior is voluntary and the business is profitable. The economic findings leave a consequential question unresolved: which principle permits the firm to impose these terms, and what reasons support that principle from the customer's position?
+
+Chicago price theory studies how prices, constraints, technology, and market interactions shape behavior. Its introductory account emphasizes applied prediction and incidence, including consequences outside the market immediately affected by an intervention. Competition is a prominent benchmark, with price-setting models used where the question requires them [(Jaffe et al., 2018, introduction)](https://home.uchicago.edu/~cbm4/cpt/Introduction.pdf). The choice of benchmark matters. A platform with costly exit or a utility with exclusive service territory requires evidence about those institutions before a competitive approximation can support its policy interpretation.
+
+The methodological distinction between prediction and prescription is explicit in the positive-economics tradition. Agreement about a policy's consequences can coexist with disagreement about its desirability [(Friedman, 1953, section I)](https://edisciplinas.usp.br/pluginfile.php/8853288/mod_resource/content/1/FriedmanEssaysonPositiveEconomics%20%281%29.pdf). An economic model can therefore expose a harmful consequence without supplying a complete moral criterion. Its descriptive success becomes ethically consequential when an institution treats it as sufficient permission to act.
+
+Different claims require different premises. Profit maximization concerns the firm's return. Consumer surplus expresses a demand-based monetary comparison under specified preferences and circumstances. Total surplus adds producer surplus. A Pareto improvement makes someone better off while making no one worse off; a potential-compensation criterion allows losses when gains could finance compensation. Wealth maximization assigns normative importance to monetary valuations. These objects may disagree about the same action. Describing every one as efficiency conceals that disagreement [(Posner, 1980, pp. 488–492)](https://laws21.classes.ryansafner.com/readings/Posner-1980a.pdf).
+
+![Market predictions enter a comparison of feasible principles. Budgets and institutions shape behavior; affected people's agency, burdens, and authority supply further reasons for evaluating the terms under which that behavior occurs. No numerical moral score is assigned.](../figures/M09_price_theory_and_justification.png)
+
+The central moral risk is allowing an institution's own distribution of alternatives to validate that institution. A firm creates costly exit, observes continued use, and calls the outcome consumer endorsement. A powerful buyer limits alternatives, observes acceptance, and calls the terms fair. The missing premise concerns whether the conditions of choice are themselves defensible. More accurate demand prediction leaves that premise unresolved.
+
+## 9.77 Willingness to Pay and Equal Moral Standing
+
+\noindent Suppose a service provider compares two people with different budgets. The relevant marketing quantity is the largest payment each would accept for the service. To isolate the role of resources, give both people the same specified utility increment from access and the same utility function for remaining money. This construction addresses the interpretation of a monetary ranking; it imposes no empirical measure of equal need or moral worth.
+
+\begin{assumption}[Synthetic Valuation and Incidence]\label{ass:price-theory-valuation}
+The valuation example has one period, a binary service indicator $x_i$, a budget $b_i>0$ dollars, and utility $u_i(m_i,x_i)=\log(m_i)+v x_i$, with $m_i>0$ and common increment $v=0.2$. Budgets are $100$ and $1{,}000$ dollars. The separate project example has one firm gaining $140$ and 100 residents each losing $1$, relative to no project. Transfers have zero resource cost, and the example includes no uncertainty or other consequence.
+\end{assumption}
+
+The reservation payment $w_i$ leaves person $i$ indifferent between access and retaining the full budget. Under Assumption \ref{ass:price-theory-valuation},
+
+$$\log(b_i-w_i)+v=\log(b_i),\qquad
+w_i=b_i(1-e^{-v}).$$
+
+Here $w_i$ and $b_i$ are dollars for the same period, while $v$ is a dimensionless utility increment. The willingness-to-pay ranking changes with the budget even though the service increment remains fixed. Exchanging the budgets reverses the ranking without changing that increment.
+
+| Person | Baseline Budget | Baseline Reservation Payment | Reservation Payment After Exchanging Budgets |
+| --- | ---: | ---: | ---: |
+| A | $100 | $18.13 | $181.27 |
+| B | $1,000 | $181.27 | $18.13 |
+
+A ranking of monetary valuations incorporates access to resources. Treating its winner as the person whose claim deserves priority adds a distributive judgment. The philosophical question is whether greater wealth, valued in this way, is itself a social improvement or is an instrument whose worth depends on further consequences and institutions [(Dworkin, 1980, pp. 191–197)](https://doi.org/10.1086/467636). Scarce resources still need allocation, and price rationing may have advantages. A defense must explain why those advantages justify the resulting exclusion and how a feasible subsidy, service guarantee, or different allocation rule would compare.
+
+### 9.77.1 Complete Python Comparison
+
+\noindent In the `Price_Theory_and_Justification` example folder, run `python3 compare_valuations.py`. It saves `results.json` beside its source. The first calculation evaluates reservation payments. The second compares a project with and without actual compensation, used in §9.79. All values are synthetic.
+
+Python source: [compare_valuations.py](../../03_Data_and_Code/Price_Theory_and_Justification/compare_valuations.py)
+
+```python
+"""Synthetic budgets, willingness to pay, and actual compensation.
+
+Run with Python 3; only the standard library is required.
+All inputs are constructed teaching values, with no estimated parameters.
+"""
+import json
+import math
+from pathlib import Path
+
+
+def willingness_to_pay(budget, service_increment):
+    """Solve log(budget - payment) + increment = log(budget)."""
+    if budget <= 0 or service_increment < 0:
+        raise ValueError("Use a positive budget and nonnegative increment.")
+    return budget * (-math.expm1(-service_increment))
+
+
+def compare():
+    increment = 0.2
+    rows = []
+    for scenario, budgets in (
+        ("baseline", {"A": 100.0, "B": 1000.0}),
+        ("budgets_exchanged", {"A": 1000.0, "B": 100.0}),
+    ):
+        for person, budget in budgets.items():
+            payment = willingness_to_pay(budget, increment)
+            rows.append(dict(scenario=scenario, person=person,
+                             budget_dollars=budget, service_increment=increment,
+                             willingness_to_pay_dollars=payment))
+
+    # A separate one-period project: the firm gains $140 and 100 residents
+    # each lose $1 relative to no project. Transfers have zero resource cost.
+    firm_gain = 140.0
+    residents = 100
+    loss_per_resident = 1.0
+    policies = []
+    for policy, payment in (("no_compensation", 0.0),
+                            ("actual_compensation", loss_per_resident)):
+        transfer = residents * payment
+        firm_change = firm_gain - transfer
+        resident_change = payment - loss_per_resident
+        policies.append(dict(
+            policy=policy, residents=residents,
+            transfer_per_resident_dollars=payment,
+            firm_change_dollars=firm_change,
+            each_resident_change_dollars=resident_change,
+            aggregate_dollar_change=firm_change + residents * resident_change,
+            people_with_dollar_losses=residents if resident_change < 0 else 0,
+        ))
+    return dict(setup="Synthetic one-period comparisons; dollars and dimensionless utility",
+                willingness_to_pay=rows, compensation=policies)
+
+
+def main():
+    results = compare()
+    output = Path(__file__).resolve().parent / "results.json"
+    output.write_text(json.dumps(results, indent=2) + "\n")
+    for row in results["willingness_to_pay"]:
+        print(f"{row['scenario']}: {row['person']}, budget "
+              f"${row['budget_dollars']:.0f}, reservation price "
+              f"${row['willingness_to_pay_dollars']:.2f}")
+    for row in results["compensation"]:
+        print(f"{row['policy']}: firm ${row['firm_change_dollars']:.0f}, "
+              f"each resident ${row['each_resident_change_dollars']:.0f}, "
+              f"aggregate ${row['aggregate_dollar_change']:.0f}, "
+              f"{row['people_with_dollar_losses']} residents lose")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+The independent verification substitutes each payment into the utility equation and checks affordability, budget reversal, the zero-benefit case, and transfer accounting. Run `python3 verify_comparisons.py` from the same folder. Equality of a specified utility increment is part of this construction; no cross-person moral comparison is inferred from the fitted or constructed scale.
+
+## 9.78 Rational Addiction and the Authority to Refuse
+
+\noindent A platform can forecast continued consumption by treating past use as a state that affects the value of present use. The rational-addiction model defines rationality through a consistent, forward-looking plan with stable preferences. Its dynamic complementarities can generate persistent consumption, abrupt quitting, and different responses to temporary and permanent price changes [(Becker and Murphy, 1988, pp. 675–677)](https://doi.org/10.1086/261558). That definition concerns intertemporal optimization. It supplies no clinical diagnosis and no independent account of whether a platform respects a person's authority over attention.
+
+A related advertising model treats advertisements and advertised goods as complements in a stable metautility function. Its welfare assessment depends on utility effects, competition, prices, output, and the form of advertising provision [(Becker and Murphy, 1993, abstract)](https://doi.org/10.2307/2118455). The distinction matters for the engagement studies in §§9.70–9.75. A model may represent the benefit of a reminder or the cost of an interruption, while a separate argument is needed to justify exploiting a susceptibility or overriding a stopping instruction.
+
+Choice can also express a commitment that differs from maximizing the chooser's own welfare. Treating every observed act as evidence that it best serves the person's interests removes this distinction by definition [(Sen, 1977, pp. 323–329)](https://www.jstor.org/stable/2264946). A user who pays to maintain contact with a dependent relative may accept intrusive conditions while objecting to the rule imposing them. A customer who returns after unsuccessfully trying to stop supplies a different reason for scrutiny from one who deliberately chooses a long session. Both may be highly predictable.
+
+A Kantian assessment asks whether the firm's maxim respects the person as an end, including the practical authority to choose purposes [(Kant, 1785, 4:429)](https://www.gutenberg.org/ebooks/5682). Consider the maxim, “I will defeat an informed stopping instruction whenever doing so increases advertising revenue.” On the stipulated facts, the commercial goal directs the use of the person's susceptibility against an expressly chosen boundary. A profitable prediction cannot discharge that objection. The empirical investigation must establish the instruction, the design's operation, and the feasible alternative before applying the judgment to a real product.
+
+The strongest reply is that repeated use can support a commitment the person values. A user-controlled reminder or deliberate extension can serve that purpose. The normative distinction concerns authority over the commitment and the terms of assistance. Kantian practical standing also exceeds a behavioral representation; an unobserved preference or clinical outcome remains an empirical object, distinct from the noumenal limit discussed in §9.41.
+
+## 9.79 Wealth Maximization and Hypothetical Consent
+
+\noindent A project sponsor may defend a household burden by showing that gains elsewhere exceed it. The compensation calculation in §9.77 has a $140 firm gain and a $100 total resident loss. Its aggregate dollar gain is $40. Paying each resident $1 preserves that aggregate gain and leaves the firm with $40. The number of residents with dollar losses falls from 100 to zero.
+
+| Synthetic Policy | Firm's Dollar Change | Each Resident's Dollar Change | Aggregate Dollar Change | Residents with a Dollar Loss |
+| --- | ---: | ---: | ---: | ---: |
+| No compensation | $140 | -$1 | $40 | 100 |
+| Actual compensation | $40 | $0 | $40 | 0 |
+
+The ability to compensate and the decision to compensate have different consequences for each resident. The table measures dollar incidence under Assumption \ref{ass:price-theory-valuation}; it establishes no interpersonal utility sum. A real project also requires costs of administering transfers, affected people outside the counted population, and consequences that money may not repair.
+
+One defense of wealth maximization connects consent to ex ante compensation: risks may be reflected in an asset's purchase price or in the benefits of an institutional arrangement. Its common-law argument explicitly distinguishes this justification from actual compensation after a loss [(Posner, 1980, pp. 492–493)](https://laws21.classes.ryansafner.com/readings/Posner-1980a.pdf). The defense creates empirical and moral questions. Did this person receive the alleged offset, understand the exposure, have a viable alternative, and possess authority to accept it? An assertion that a risk must already have been priced cannot answer those questions for tenants, future residents, or people excluded from the transaction.
+
+A Scanlonian assessment asks whether a principle permitting the burden could be reasonably rejected in comparison with feasible alternatives. Actual acceptance under dependency can coexist with a reasonable objection to the governing terms [(Scanlon, 1998, pp. 192–196)](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf). In the synthetic project, the firm can retain a positive dollar gain while avoiding every resident's dollar loss. That alternative weakens a defense based solely on aggregate benefit. A real judgment must still compare the relevant individual reasons, including consequences of any threat to service viability.
+
+The moral defect is clearest when an institution treats a hypothetical transfer as if the affected person had received it, or treats a person's weak bargaining position as sufficient reason to dismiss the person's objection. These are specified failures of justification. Neither a monetary gain nor the use of price theory independently establishes them.
+
+## 9.80 Social Costs, Rights, and Electricity Infrastructure
+
+\noindent A utility and a data-center developer may agree on an expansion that changes residents' financial exposure. The residents may have no place in that negotiation. A claim that bargaining will resolve any harm requires institutions that let the affected people identify the exposure, organize, obtain relevant records, negotiate, and enforce the agreement. Those activities consume resources and may be infeasible for dispersed households.
+
+The social-cost analysis explicitly examines positive transaction costs and the effects of legal rights on production. Its conclusion calls for comparing feasible institutional arrangements and considering effects beyond market-valued production [(Coase, 1960, pp. 15–19, 43–44)](https://doi.org/10.1086/466560). This supports a close examination of cost-allocation rules, information access, and project failure. Invoking costless bargaining while omitting those features abandons conditions central to the argument.
+
+Apply that reasoning to the phantom-project case in §9.50. A canceled project could leave investment commitments and recovery disputes even when operating capacity never appears in the treatment measure. Establishing that exposure requires project histories, contractual guarantees, regulatory decisions, and accounting evidence. The qualitative call assessment in §9.33 supplies statements about proposed recovery mechanisms; it does not by itself establish realized household charges. Economic incidence analysis should trace who bears a cost over time, including customers outside the developer's transaction.
+
+A moral assessment then asks who authorized the exposure and who can contest its allocation. Where residents lack an effective opportunity to challenge a substantial burden, a principle allowing the firm to proceed solely because aggregate gains are positive demands justification. Feasible alternatives include an enforceable developer guarantee, independent review of the allocation, and participation before commitments become difficult to reverse. Their actual costs and coverage matter. A credible price-theory analysis can reveal these effects; a market-valued total cannot by itself settle whose objection deserves an answer.
+
+## 9.81 Enforcement Errors and Unequal Exposure
+
+\noindent An institution deciding whether to investigate a pricing practice faces costs from both mistaken intervention and tolerated harm. An influential antitrust argument gives particular weight to enduring errors in legal precedent and to the possibility that competition corrects monopoly losses [(Easterbrook, 1984, pp. 2–3)](https://chicagounbound.uchicago.edu/journal_articles/1153/). The same opening recognizes losses while entry is delayed and benefits from anticartel enforcement. These are substantive institutional premises. Their relevance depends on entry barriers, switching costs, the duration of exposure, and the reversibility of the proposed action.
+
+For a dependent consumer, waiting for entry can mean continuing to pay a burdensome price. For a firm, an erroneous restriction can interrupt a valuable service or impose substantial expense. A philosophical assessment must specify both positions and compare actual responses. A request for records, a reversible safeguard, and a final penalty have different consequences. Evidence insufficient for the last action may still support the first.
+
+The hierarchical illustration in §9.57 makes this connection precise under its stated construction. Shrinkage and a fixed credibility rule reduce detection of a minority burden while improving an aggregate statistical criterion. The moral question concerns the rule that makes detection the sole condition for protection. The result supplies no general theorem that flexible heterogeneity favors firms. It identifies a mechanism through which a method and an institutional threshold can jointly shift the burden of uncertainty.
+
+The same argument bears on public reassurance about electricity costs. A failure to reject a narrow price effect cannot justify asking residents to accept a broader exposure as harmless. The consequential step is from incomplete evidence to permission, reassurance, or continued delay. A principle that requires exposed people to supply inaccessible proof before even a proportionate inquiry can be reasonably rejected when the competing burdens are materially smaller. That is a conditional application of contractualist reasons, with empirical premises that remain open to challenge (Scanlon, 1998, chapter 5).
+
+## 9.82 A Dialectical Assessment of Market Permission
+
+\noindent Consider a recommendation to charge more to customers who have few alternatives. The argument begins with predicted demand and ends with an ought conclusion. Its strength depends on what connects those two claims. A manager may defend cost recovery, investment, or expanded access. An affected customer may object to exploitation of dependency, exclusion from an essential service, or a use of personal information the customer did not authorize. Specifying both arguments reveals the dispute that a demand curve alone leaves unresolved.
+
+The tradition also contains a direct ethical challenge to competition as a sufficient guide. The distinction between competition's effectiveness at inducing activity and the worth of the activity appears in the original account of the ethics of competition [(Knight, 1923, article summary and section III)](https://doi.org/10.2307/1884053). Its presence cautions against treating an institutional label as a single moral doctrine. The critical target is the particular argument that grants market success authority over other reasons.
+
+Different goods and relations may require different norms of production and exchange [(Anderson, 1990, author abstract)](https://websites.umich.edu/eandersn/abstracts.htm). Applied to marketing, a purchased service, a person's capacity to revise a purpose, and a resident's standing to contest a public claim have different roles. Adding all three to an undifferentiated willingness-to-pay score assumes that they can be governed by the same valuation rule. That assumption itself needs defense.
+
+| Step | Claim to Defend | Question That Can Change the Conclusion |
+| --- | --- | --- |
+| Economic mechanism | The practice changes demand, costs, or supply under specified institutions. | Does the model represent actual alternatives, information, and market power? |
+| Welfare interpretation | The measured outcome bears on the affected person's interests. | Could the same behavior reflect dependency, commitment, or frustrated exit? |
+| Normative principle | The proposed terms can be justified to affected people. | Which individual objection survives aggregate gains or actual acceptance? |
+| Institutional choice | This feasible response addresses the concern proportionately. | Would a guarantee, user control, disclosure, inquiry, or different price rule reduce the burden? |
+| Revision | Evidence or reasons could warrant changing the decision. | Which fact or premise would defeat the recommendation and its criticism? |
+
+A strong criticism grants the economic result for the sake of argument and identifies the remaining moral defect. Suppose targeting predicts demand perfectly. A practice that deliberately defeats an informed refusal still confronts the person's authority over that refusal. Suppose aggregate gains are measured exactly. A resident who bears an avoidable burden still has a claim to reasons. Suppose intervention is costly. The institution must compare that cost with the exposure created by waiting.
+
+The corresponding strongest reply is that economic analysis can reveal shortages, exclusion, unintended incidence, and the costs of a proposed safeguard. Those findings can defeat an ethical recommendation whose factual premises are wrong. Marketing Dialectics requires both forms of scrutiny: reliable accounts of consequences and a defensible principle governing their imposition. A moral violation follows when the relevant factual premises and defended duties establish it. School affiliation, mathematical sophistication, and commercial success each leave that argument to be made.

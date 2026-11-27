@@ -218,3 +218,7 @@ Use M1 §1.24 in Session 1's existing definitions and argument discussion. In Se
 ## Online Engagement and Marketing Dialectics
 
 M5 §5.29 and M9 §§9.70–9.75 connect marketing insights with content sequences, streaks, rewards, and commercial engagement practices. Sessions 7 and 14 select an evidence assessment and a company case within existing discussion blocks. Students distinguish user goals from platform outcomes and defend a feasible alternative through Kantian and Scanlonian reasoning. The [source guide](../01_Resources/49_Online_Engagement_and_Agency/README.md) and [optional ungraded exercise](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) preserve beneficial applications and the scope of the evidence. This coverage introduces no new graded requirement.
+
+## Chicago Price Theory and Moral Justification
+
+Use the synthetic budget comparison in Session 5's final discussion. In Session 14's existing 75-minute ethics block, select the diagram and one case connecting predicted behavior to a justified principle. M9 §§9.76–9.82 covers rational addiction, actual compensation, costly participation, and unequal enforcement-error burdens. The [optional pricing practice](../07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) develops the full argument. The additional slides provide a case library within the existing schedule.

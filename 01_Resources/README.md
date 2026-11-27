@@ -188,3 +188,7 @@ The [16-source philosophical guide](48_Statistical_Virtues_and_Ontology/README.m
 ## Marketing Publications and Online Engagement
 
 The [15-source guide](49_Online_Engagement_and_Agency/README.md) covers ten marketing and consumer-research papers, supporting economics evidence, three company documents, and a preliminary regulatory notice. It connects streaks, content sequences, uncertain rewards, gamification, and binge viewing to M5 §5.29 and M9 §§9.70–9.75. Eight reference copies remain local to Dropbox; public annotations distinguish mechanisms, actual practice, explicit research citations, and evidence of harm.
+
+## Chicago Price Theory and Moral Justification
+
+The [13-source reading guide](50_Chicago_Price_Theory_and_Moral_Justification/README.md) connects price theory to willingness to pay, rational addiction, compensation, transaction costs, and enforcement errors. It distinguishes economic explanation from the premises required for a moral judgment. Seven newly retrieved PDFs remain local to Dropbox. M4 §4.32 and M9 §§9.76–9.82 provide the course applications.

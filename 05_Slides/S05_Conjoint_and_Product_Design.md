@@ -16,6 +16,7 @@ Session 05. M4. 170 minutes.
 - Separate better demand information from joint pricing when evaluating customer surplus.
 - Explain why identical product rankings can leave the sign of a welfare change unresolved.
 - Assess demand restrictions without assuming a direction of markup bias from integration.
+- Distinguish price-theory predictions, monetary welfare comparisons, and moral justification of the terms of choice.
 
 ## Related Materials
 
@@ -30,6 +31,8 @@ Session 05. M4. 170 minutes.
 - [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
+- [Chicago Price Theory and Moral Justification](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md)
+- [Prices, Budgets, and Compensation](../03_Data_and_Code/Price_Theory_and_Justification/README.md)
 
 ## Slide 1: Conjoint and Product Design
 
@@ -404,7 +407,27 @@ Here p is price, c is constant marginal cost, and epsilon is the own-price elast
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 33: Product-Design Discussion
+## Slide 33: A Reservation Price Includes Purchasing Power
+
+- Synthetic budgets: USD 100 and USD 1,000; identical service increment.
+- Reservation payments: USD 18.13 and USD 181.27.
+- Exchanging budgets reverses the ranking.
+
+The one-period example uses u(m,x)=log(m)+0.2x, where x indicates service access and m is remaining money. Indifference gives w=b(1-exp(-0.2)). The same functional form and service increment are held fixed while budgets change. The comparison isolates purchasing power, with no measured claim about equal need or moral worth. Full Python and checks are in M9 §9.77; M4 §4.32 connects the result to product decisions.
+
+Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+## Slide 34: Which Principle Gives the Higher Bid Priority?
+
+- Explain cost recovery, scarce capacity, and the outside option.
+- Include excluded people and feasible allocation alternatives.
+- Defend the distributive premise behind the recommendation.
+
+Monetary valuation combines willingness and ability to pay (Dworkin, 1980, pp. 191–197). A demand estimate may be useful even when the resulting allocation raises an ethical objection. A price mechanism can also support supply or reduce arbitrary rationing. Compare actual alternatives and justify the principle through affected persons’ reasons (Scanlon, 1998). M4 §4.32 and M9 §§9.77, 9.82.
+
+Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
+
+## Slide 35: Product-Design Discussion
 
 - How much of C's demand comes from existing products?
 - Which design change would identify the price tradeoff?

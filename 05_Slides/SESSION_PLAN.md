@@ -14,16 +14,16 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 32 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 30 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 33 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 35 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 31 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 47 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 49 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 46 |
 | 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 31 |
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 61 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 23 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 114 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 128 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -445,3 +445,7 @@ Session 1 selects the target-and-claim comparison within the existing definition
 ## Marketing Publications and Online Engagement
 
 Session 7 selects the engagement and evidence-classification discussion within minutes 155–170. Session 14 selects the evidence diagram and one company case within minutes 80–110, using the existing feed example when a numerical comparison is helpful. These are alternatives within existing blocks; the full Session 14 deck remains a case library. The [extended reading and argument exercise](../07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) is optional practice. Meeting lengths and course requirements are unchanged.
+
+## Price Theory Within Existing Discussion Blocks
+
+Session 5 can use its final 15-minute discussion for the budget comparison in M9 §9.77. Session 14 selects the argument diagram and one pricing, engagement, or infrastructure case within the existing 75-minute ethics block. Its extended deck is a case library; the full set of examples is available as optional follow-up. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) and [argument practice](../07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) support that selection. Dates, durations, and assessment rules retain their released status.

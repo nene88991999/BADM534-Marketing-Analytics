@@ -65,3 +65,7 @@ Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thres
 ## Measurement Traditions and Evidence for Action
 
 The syllabus includes disciplinary history, heterogeneous demand, unequal error costs, and evidentiary standards within the existing meetings. The [teaching plan](TEACHING_PLAN.md#measurement-error-costs-and-reasonable-protection) identifies the selected discussions; the [new practice](../07_Labs/Evidence_Standards/README.md) remains optional and ungraded.
+
+## Price Theory and Moral Justification
+
+The course description includes willingness to pay, rational addiction, compensation, and market justification. Sessions 5 and 14 select these comparisons within their existing allocations. The [reading guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) connects the economic arguments to Kantian and Scanlonian assessments; the [teaching plan](TEACHING_PLAN.md#chicago-price-theory-and-moral-justification) identifies the corresponding notes, code, and optional practice.

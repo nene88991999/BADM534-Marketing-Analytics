@@ -58,3 +58,7 @@ Kantian respect concerns the person's authority to set ends. Contractualist reas
 - Sessions 7 and 14 select the cases within existing meeting allocations. The broader [journal census](../13_Consumer_Agency_and_Recent_Research/README.md) covers a different selection purpose; collection counts overlap.
 
 Eight reference copies are saved under the ignored `readings/` directory in Dropbox. GitHub contains the guide, catalog, and original teaching material. Full-text gaps and inspection limits appear in the catalog and [verification record](VERIFICATION.md).
+
+## Rational Addiction and Moral Permission
+
+[M9 §9.78](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) connects engagement mechanisms to intertemporal optimization and advertising complementarity. The [price-theory collection](../50_Chicago_Price_Theory_and_Moral_Justification/README.md) asks which further premises would justify the terms of a design. A model of continued use leaves the person's authority to stop open to assessment.

@@ -245,3 +245,7 @@ M1 §1.24 introduces the object behind an AI-assisted analysis. M6 §6.46.6 dist
 ## Marketing Research and Compulsive Online Engagement
 
 M5 §5.29 distinguishes engagement labels, endorsement, and selected qualitative accounts. M9 §§9.70–9.75 examines content sequences, streaks, uncertain rewards, gamification, binge viewing, and user authority through [15 sources](01_Resources/49_Online_Engagement_and_Agency/README.md). Sessions 7 and 14 select these cases within their existing discussions. The [optional exercise](07_Labs/Conflicts_of_Interest/README.md#marketing-publications-and-unwanted-continuation) reuses the complete synthetic feed-policy program in §9.48; it makes no new platform-harm estimate.
+
+## Chicago Price Theory and Market Justification
+
+M4 §4.32 and M9 §§9.76–9.82 connect monetary valuation, rational addiction, compensation, institutional bargaining, and enforcement errors to the moral premises behind market recommendations. [Thirteen readings](01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md), [reproducible synthetic examples](03_Data_and_Code/Price_Theory_and_Justification/README.md), and [optional argument practice](07_Labs/Scanlon_Pricing/README.md#price-theory-and-moral-permission) support selected discussion in Sessions 5 and 14.

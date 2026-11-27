@@ -283,3 +283,7 @@ Sixteen annotated philosophical sources support M1 §1.24, M6 §6.46.6, and M9 �
 ## Marketing Research and Online Engagement
 
 The 15-source collection in `01_Resources/49_Online_Engagement_and_Agency/` supports M5 §5.29 and M9 §§9.70–9.75. Ten marketing and consumer-research papers cover mechanisms and a protective application; supporting economics, company, and regulatory records establish different forms of evidence. Sessions 7 and 14 add selected cases and an editable evidence diagram. Optional practice reuses the existing synthetic feed program without changing its calculations. Full-text access and inspection limits are recorded source by source.
+
+## Chicago Price Theory and Moral Justification
+
+M4 §4.32 and M9 §§9.76–9.82 use the [13-source guide](../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md) to distinguish economic prediction, monetary welfare, and a justified principle. The complete program in §9.77 matches [compare_valuations.py](../03_Data_and_Code/Price_Theory_and_Justification/compare_valuations.py). The figure `M09_price_theory_and_justification` separates empirical consequences from the reasons of affected people. The electricity and hierarchical-detection applications retain their existing evidentiary scope.
