@@ -86,3 +86,32 @@ A strong philosophical response states why its factual premises are credible and
 ## AI-Assisted Work
 
 Ask a coding assistant to explain the population denominator before changing a parameter. Require it to distinguish a posterior probability, p-value, power at a specified alternative, and expected loss. Verify one calculation independently. For the argument, ask for the strongest objection and evidence that would change a premise; assess the response against the cited sources rather than treating fluent wording as support.
+
+## Reanalyze Released Accounts
+
+Read M4 §4.31 and the [data and code](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md). Run both commands:
+
+```sh
+python3 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/heterogeneity_reanalysis.py
+python3 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/test_reanalysis.py
+```
+
+14. Reconcile the 5,555 observations and 88 accounts with the upstream documentation. Explain why the 77-account preprint prevents a claim to reproduce its tables from this file alone.
+15. Compare likelihood and BIC for one and two mixing components. Explain why more in-sample fit leaves the simpler model preferred by BIC.
+16. Derive the normal convolution. Verify that shifting each latent mean by minus the imposed restriction leaves every account likelihood unchanged. State which institutional record could distinguish the mechanisms.
+17. Give the missing premise in each move from a possible taste explanation, to no harmful restriction, to permission to continue. Defend a proportionate response using the strongest reasons of affected people.
+
+## Greater Precision and Fewer Detected Harms
+
+Read M6 §6.46 and M9 §9.57.5, then run:
+
+```sh
+python3 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/harm_elasticity.py
+```
+
+18. Explain how average MSE can fall by 71.43% while harmed-group MSE more than doubles. State the population weights before making either claim.
+19. Derive the raw-signal threshold under the one-sided posterior rule. Reproduce detection of 63.88% versus 14.07% and the accompanying actual false-flag rates. Explain why nominal 95% posterior credibility does not hold frequentist size fixed.
+20. Verify the precision elasticity 0.3999 at the pooled endpoint. State the consumer population, monthly burden, and horizon. Explain why calling this a bias-reduction elasticity would be incorrect.
+21. Explain the matched-calibration result. Identify what is preserved in the data and what changes in the rule governing protection.
+22. Compare the proposed interpretation with the HBS overstatement. Identify the shared inference from no detected effect to reassurance, and the different statistical designs. State the evidence needed before claiming that shrinkage explains the actual data-center estimates.
+23. Assess a rule that accepts smaller average estimation error as sufficient reason to withhold protection. Compare the harmed group's objection with the costs of false flags and a reversible safeguard. Cite (Scanlon, 1998, pp. 195–196) and distinguish the source principle from its application.

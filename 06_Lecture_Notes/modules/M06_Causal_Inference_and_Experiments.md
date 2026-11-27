@@ -2747,3 +2747,206 @@ An investigation, a temporary protection, and a punitive remedy impose different
 For electricity infrastructure, relevant next steps include linking project commitments, cancellations, investments, tariff proceedings, and household bills. Phantom projects could create exposure before operation or after cancellation; determining contamination of a particular control group requires those records. An imprecise average-price estimate leaves this inquiry unresolved. It also supplies no evidence by itself that a project harmed households.
 
 For targeted pricing, records about available alternatives, switching frictions, targeting criteria, and costs can bear on a complaint before a complete demand model is estimated. The governing legal question remains specific to the alleged conduct. United States merger guidance considers documents, testimony, economic evidence, and structural presumptions in assessing prospective threats to competition ([DOJ and FTC, 2023, §4.1](https://www.justice.gov/atr/merger-guidelines/tools/sources-of-evidence)). This agency guidance is nonbinding and does not replace the elements of other claims. M9 §§9.56–9.59 compares such institutional standards with the reasons affected people can demand.
+
+
+
+## 6.46 Greater Precision and Fewer Detected Harms
+
+\noindent A consumer-protection agency screens customer groups for a harmful pricing practice. Most groups experience no harm, while a small group faces a substantial burden. A pooled estimator can improve average accuracy and produce narrower posterior intervals while detecting that harmed group less often. The relevant comparison must identify whose estimation error falls, whose burden remains undetected, and which rule turns an estimate into action.
+
+Partial pooling moves estimates toward a common mean. Their standard deviations can decrease more slowly than the estimates themselves, reducing the standardized evidence for a departure from that mean. This mechanism is developed in the algebra of multilevel comparisons [(Gelman et al., 2012, pp. 196–198)](https://doi.org/10.1080/19345747.2011.618213). Its application to consumer protection requires evaluating missed harms alongside false flags. Fewer reported effects cannot establish that fewer people are harmed.
+
+The pooling operation is the scalar conditional update in the hierarchical regression documented with the released retail example [(Rossi, 2025, `bayesm` 3.1-7)](https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/man/rhierLinearModel.Rd). Section 4.31.4 derives the matrix update and its scalar specialization. The consumer-harm calculation holds that step's hyperparameters fixed, making the mechanism transparent while preserving the distinction from full posterior sampling.
+
+### 6.46.1 A Known Harmed Group
+
+\noindent The unit is a customer group. Set one outcome unit equal to $\$10$ in monthly burden per person. Suppose 90% of groups have true burden $\theta=0$ and 10% have $\theta=2$, or $\$20$ per person-month. Group sizes are equal. The two-point population is synthetic, making both aggregate accuracy and detection among harmed groups observable to the analyst.
+
+\begin{assumption}[Signals and the Working Pooling Model]\label{ass:precision-pooling}
+Conditional on a group's true burden, $Y\mid\theta\sim N(\theta,\sigma^2)$ with $\sigma=1$. The working prior is $\theta\sim N(0,\tau^2)$ with fixed $\tau^2$. This normal prior is an approximation to the stated two-point population. Its parameters are held fixed when computing posterior intervals.
+\end{assumption}
+
+Under Assumption \ref{ass:precision-pooling}, write $w=\tau^2/(\tau^2+\sigma^2)$ for the fraction of the unpooled estimate retained. The conditional posterior is
+
+$$\theta\mid Y\sim N(wY,w\sigma^2).$$
+
+The posterior mean is $wY$ and posterior standard deviation is $\sigma\sqrt{w}$. Smaller $w$ means stronger pooling toward zero and higher reported posterior precision $P=1/(w\sigma^2)$. The mean falls proportionally with $w$, while its reported standard deviation falls with $\sqrt{w}$. The ratio of the mean to its posterior standard deviation consequently falls with $\sqrt{w}$. These posterior uncertainty statements are conditional on the working model; they are not guarantees of repeated-sample coverage for the harmed subgroup.
+
+### 6.46.2 Better Average Accuracy, Worse Harm Detection
+
+\noindent Suppose the agency acts only when the one-sided 95% posterior lower bound exceeds zero. Write $z=\Phi^{-1}(0.95)=1.644854$, where $\Phi$ is the standard normal distribution function. The operational rule is
+
+$$wY-z\sigma\sqrt{w}>0
+\quad\Longleftrightarrow\quad Y>\frac{z\sigma}{\sqrt{w}}.$$
+
+The required raw signal rises as pooling strengthens, despite the narrower posterior interval. At true burden $\theta=2$, the detection probability is $1-\Phi(z/\sqrt{w}-2)$; at $\theta=0$, the actual false-flag probability is $1-\Phi(z/\sqrt{w})$. The same nominal posterior credibility requirement therefore induces different repeated-sample error rates.
+
+For the stated population, the average mean squared error of $wY$ is
+
+$$R(w)=w^2\sigma^2+(1-w)^2(0.1)(2^2).$$
+
+The first term is sampling variance and the second is squared bias averaged over groups. The risk-minimizing weight within this linear family is $w=0.4/1.4=2/7$. The harmed-group risk is instead $R_H(w)=w^2\sigma^2+(1-w)^2(2^2)$ because its bias receives full weight.
+
+| Quantity | Unpooled, $w=1$ | Pooled, $w=2/7$ |
+| --- | ---: | ---: |
+| Reported posterior standard deviation | 1.0000 | 0.5345 |
+| Average MSE across all groups | 1.0000 | 0.2857 |
+| MSE within the harmed group | 1.0000 | 2.1224 |
+| Detection among harmed groups | 63.88% | 14.07% |
+| Actual false-flag rate among harmless groups | 5.00% | 0.1045% |
+
+Average MSE falls by 71.43%, while detection falls by 49.81 percentage points. The majority's improvement in estimation dominates the average even as the harmed group's estimate becomes less accurate. The policy also produces fewer false flags. Whether that tradeoff justifies withholding protection depends on the consequences of each error and on alternative responses. A narrower interval and better average accuracy supply no complete answer.
+
+![Greater posterior precision accompanies lower average mean squared error and sharply lower detection of the harmed group under a fixed posterior-credibility rule. All population and signal inputs are synthetic.](../figures/M06_harm_elasticity.png)
+
+**Figure interpretation.** Precision rises from 1 to 3.5 as the data weight falls from 1 to 2/7. The left panel reports mean squared error across the specified population; the right reports detection conditional on a true burden of two units. Both decline. The figure compares a fixed posterior-credibility rule, with the changing actual false-flag rates reported in the table.
+
+The information in $Y$ is unchanged: multiplication by a positive constant is invertible. Calibrating the rule on $wY$ to an actual five-percent false-flag rate would use threshold $wz\sigma$, recovering the unpooled detection probability. The comparison therefore identifies the consequences of pooling combined with the selected decision rule. The result is not a claim that a reversible rescaling destroys information, that every adjustment lowers power, or that the two rules have matched Type I error.
+
+### 6.46.3 A Consumer-Harm Elasticity for Reported Precision
+
+\noindent Consider 10,000 equally represented consumers, with the same ten-percent harmful share. Each missed harmful case leaves a $\$20$ monthly burden for 12 months; a detected case removes that burden. There is no research delay in this example. Expected consumer loss is
+
+$$H(P)=10{,}000(0.1)(20)(12)\,
+\Phi\!\left(z\sigma\sqrt{P}-2\right).$$
+
+Here $P=1/(w\sigma^2)$ indexes the reported posterior precision and $\sigma=1$. Define the consumer-harm elasticity with respect to reported precision by
+
+$$\eta_{H,P}=\frac{d\log H}{d\log P}
+=\frac{z\sigma\sqrt{P}}{2}\,
+\frac{\phi(z\sigma\sqrt{P}-2)}{\Phi(z\sigma\sqrt{P}-2)}.$$
+
+The elasticity is positive along this pooling and decision-rule path. At $w=2/7$, it is 0.3999: a one-percent increase in reported precision raises expected consumer loss by approximately 0.40% locally. Expected loss rises from $\$86{,}698$ at $w=1$ to $\$206{,}235$ at $w=2/7$. These are imposed consumer burdens, not estimates from the retail dataset. They exclude losses from false flags, enforcement costs, and other affected people.
+
+A bias-reduction elasticity answers a different question. If $b>0$ is remaining absolute bias and $H(b)>0$ is loss along a specified design policy, define $\eta^{\mathrm{red}}_{H,b}=-d\log H/d\log b$. A positive value means that reducing bias raises consumer loss along that policy. Pooling in the example above increases bias within the harmed subgroup, so its calculated elasticity must be described as a *precision elasticity*. Calling it a bias-reduction effect would misstate the mechanism.
+
+The societal criticism concerns treating statistical precision as an overriding virtue. Consumers bear a cost when the institution accepts a more demanding evidentiary threshold without evaluating the resulting missed harms. A lower threshold for investigation or a reversible safeguard can preserve careful estimation while changing who bears uncertainty. The judgment must address the burdens of false flags and the relevant reasons of all affected people [(Douglas, 2000)](https://doi.org/10.1086/392855); [(Scanlon, 1998, pp. 195–196)](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf).
+
+### 6.46.4 Heterogeneity and the Meaning of No Evidence
+
+\noindent Stronger pooling around a low mean can make evidence of subgroup harm harder to obtain under the posterior rule. Increasing the prior variance $\tau^2$ weakens that pooling. More flexible heterogeneity, more controls, and stronger pooling are distinct changes. A critique must identify which change moved the estimate, uncertainty, or estimand, rather than infer an enforcement bias from the label *heterogeneity*.
+
+The data-center case raises the related interpretive issue: an insignificant result leaves the proposed harm unresolved unless the estimate, uncertainty, outcome, and design support an informative bound. The HBS coverage in §8.31.1 overstates what the reported uncertainty establishes. The partial-pooling example supplies a separate mechanism for fewer detected harms; it does not establish that this mechanism generated the data-center paper's results. In both cases, moving from no detected effect to public reassurance requires a premise that statistical nonrejection does not supply.
+
+### 6.46.5 Complete Python Calculation
+
+\noindent The program calculates the risks, conditional detection rates, false-flag rates, monetary losses, and precision elasticity exactly under the synthetic normal signals. Independent numerical integration verifies risk and detection; finite differences verify the derivative; a matched-calibration check verifies that rescaling preserves the underlying information. NumPy, pandas, and SciPy are required.
+
+Python source: [harm_elasticity.py](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/harm_elasticity.py)
+
+```python
+"""Synthetic partial pooling: greater precision, fewer detected harms.
+
+Normal working-prior posterior intervals; repeated-sample risk is evaluated
+under an explicit two-point population. No consumer harms are estimated
+from the released retail data.
+"""
+from pathlib import Path
+import json
+import numpy as np
+import pandas as pd
+from scipy.integrate import quad
+from scipy.stats import norm
+
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / "results"
+HARM_SHARE = 0.1
+HARM = 2.0             # Standardized harm: one unit is $10 per person-month.
+SIGMA = 1.0
+ALPHA = 0.05
+POPULATION = 10_000
+MONTHS = 12
+DOLLARS_PER_UNIT = 10
+
+
+def conditional_update(xtx, xty, error_variance, prior_mean, prior_covariance):
+    """Normal coefficient update used inside hierarchical regression, no RNG."""
+    prior_precision = np.linalg.inv(prior_covariance)
+    precision = xtx/error_variance+prior_precision
+    covariance = np.linalg.inv(precision)
+    mean = np.linalg.solve(precision, xty/error_variance+prior_precision@prior_mean)
+    return mean, covariance
+
+
+def evaluate(weight):
+    """weight is the fraction of the unpooled estimate retained, 0 < w <= 1."""
+    if not 0 < weight <= 1:
+        raise ValueError("Use 0 < weight <= 1.")
+    z = norm.isf(ALPHA)
+    posterior_sd = SIGMA*np.sqrt(weight)
+    # Flag when posterior mean minus z times posterior SD exceeds zero.
+    threshold = z*SIGMA/np.sqrt(weight)
+    u = threshold/SIGMA-HARM/SIGMA
+    missed = norm.cdf(u)
+    false_flag = norm.sf(threshold/SIGMA)
+    mean_mse = weight**2*SIGMA**2+(1-weight)**2*HARM_SHARE*HARM**2
+    harmed_mse = weight**2*SIGMA**2+(1-weight)**2*HARM**2
+    dollars = POPULATION*HARM_SHARE*HARM*DOLLARS_PER_UNIT*MONTHS*missed
+    # Precision P=1/(w*sigma^2); d log H / d log P.
+    elasticity = z/(2*np.sqrt(weight))*norm.pdf(u)/missed
+    # Recalibrating to the same actual 5% false-positive rate changes the rule.
+    matched_threshold = weight*z*SIGMA
+    matched_detection = norm.sf(matched_threshold/(weight*SIGMA)-HARM/SIGMA)
+    return dict(data_weight=weight, posterior_precision=1/posterior_sd**2,
+                posterior_sd=posterior_sd, average_mse=mean_mse,
+                harmed_group_mse=harmed_mse, detection_probability=1-missed,
+                false_flag_probability=false_flag,
+                missed_harm_probability=missed, consumer_loss_usd=dollars,
+                harm_precision_elasticity=elasticity,
+                matched_false_positive_detection=matched_detection)
+
+
+def verify():
+    """Numerical integration, derivative, denominator, and calibration checks."""
+    # Scalar special case of the matrix update in bayesm's runiregG.
+    mean, covariance = conditional_update(np.array([[1.0]]), np.array([2.0]),
+                                         1.0, np.array([0.0]), np.array([[0.4]]))
+    assert np.isclose(mean[0], 4/7)
+    assert np.isclose(covariance[0, 0], 2/7)
+    for w in (1.0, .75, .5, 2/7):
+        row = evaluate(w)
+        conditional = []
+        for theta in (0.0, HARM):
+            risk = quad(lambda y: (w*y-theta)**2*norm.pdf(y,theta,SIGMA),
+                        -np.inf, np.inf)[0]
+            conditional.append(risk)
+        assert np.isclose((1-HARM_SHARE)*conditional[0]+HARM_SHARE*conditional[1],
+                          row["average_mse"])
+        assert np.isclose(conditional[1], row["harmed_group_mse"])
+        threshold = norm.isf(ALPHA)*SIGMA/np.sqrt(w)
+        detection = quad(lambda y: norm.pdf(y,HARM,SIGMA), threshold, np.inf)[0]
+        assert np.isclose(detection, row["detection_probability"])
+        if w < 1:
+            step = 1e-5
+            derivative = (np.log(evaluate(w+step)["consumer_loss_usd"])
+                          -np.log(evaluate(w-step)["consumer_loss_usd"]))/(2*step)
+            assert np.isclose(-w*derivative, row["harm_precision_elasticity"], rtol=1e-7)
+        assert np.isclose(row["matched_false_positive_detection"], evaluate(1)["detection_probability"])
+    pooled, raw = evaluate(2/7), evaluate(1)
+    assert pooled["average_mse"] < raw["average_mse"]
+    assert pooled["posterior_sd"] < raw["posterior_sd"]
+    assert pooled["detection_probability"] < raw["detection_probability"]
+    assert pooled["harmed_group_mse"] > raw["harmed_group_mse"]
+
+
+def main():
+    OUT.mkdir(exist_ok=True)
+    verify()
+    rows = [evaluate(w) for w in (1.0, .75, .5, 2/7)]
+    pd.DataFrame(rows).to_csv(OUT / "precision_detection_scenarios.csv", index=False)
+    curve = [evaluate(float(w)) for w in np.linspace(1, 2/7, 101)]
+    pd.DataFrame(curve).to_csv(OUT / "precision_detection_curve.csv", index=False)
+    setup = dict(harm_share=HARM_SHARE, harm_standard_units=HARM, sampling_sd=SIGMA,
+                 population=POPULATION, months=MONTHS, dollars_per_unit=DOLLARS_PER_UNIT,
+                 signal="Y conditional on theta is Normal(theta,1); theta is 0 with probability .9 and 2 with probability .1.",
+                 working_prior="Normal(0,tau^2), where w=tau^2/(tau^2+1); w=1 is the unpooled limit.",
+                 decision="One-sided 95% posterior lower bound exceeds zero. Actual false-positive rates differ.",
+                 interpretation="Synthetic loss from missed harm; no real-data consumer effect, no bias reduction claim, no universal claim about heterogeneity adjustment.")
+    (OUT / "precision_detection_setup.json").write_text(json.dumps(setup, indent=2)+"\n")
+    print(pd.DataFrame(rows).to_string(index=False))
+    print("Quadrature, finite differences, group risks, and matched-calibration checks passed.")
+
+
+if __name__ == "__main__":
+    main()
+```

@@ -1,0 +1,78 @@
+{
+  "source_package": "bayesm",
+  "version": "3.1-7",
+  "commit": "453ae30857cf09a0c537f4deab64ed193493c8c9",
+  "accessed_on": "2026-11-27",
+  "package_license": "GPL (>= 2)",
+  "data_attribution": "Boatwright, Peter; McCulloch, Robert; Rossi, Peter (1999). Account-Level Modeling for Trade Promotion. Journal of the American Statistical Association 94:1063–1073.",
+  "paper_url": "https://doi.org/10.1080/01621459.1999.10473859",
+  "scope": "Reanalysis of the public package dataset attributed to the study; no claim to reproduce published tables. The public release has 88 accounts and Borden sales, while the linked January 1999 preprint describes 77 accounts and a Kraft application. The mapping and omitted regressors are unresolved.",
+  "files": [
+    {
+      "path": "upstream/cheese.rda",
+      "url": "https://raw.githubusercontent.com/cran/bayesm/453ae30857cf09a0c537f4deab64ed193493c8c9/data/cheese.rda",
+      "bytes": 63908,
+      "sha256": "8e24f962b47a00845510735f7427d4c97f7f34388caa9724efc517beecb57e00"
+    },
+    {
+      "path": "upstream/cheese.Rd",
+      "url": "https://raw.githubusercontent.com/cran/bayesm/453ae30857cf09a0c537f4deab64ed193493c8c9/man/cheese.Rd",
+      "bytes": 2268,
+      "sha256": "7dedacef04743932b4246fcc20c97448a243ddaa824f831c116700d92a03f672"
+    },
+    {
+      "path": "upstream/DESCRIPTION",
+      "url": "https://raw.githubusercontent.com/cran/bayesm/453ae30857cf09a0c537f4deab64ed193493c8c9/DESCRIPTION",
+      "bytes": 2410,
+      "sha256": "42e4081926e71778bbde1a90e786a75e86767c168d745b96c022fcb0f09ecff8"
+    },
+    {
+      "path": "data/cheese.csv",
+      "transformation": "R 4.5.3 load of upstream/cheese.rda followed by write.csv with row.names=FALSE; all four released columns and row order retained.",
+      "sha256": "3db94921a2d2e73a6f6b57227188a162d3d79a38e60b3f4febc078096f13d315",
+      "bytes": 260519
+    },
+    {
+      "path": "upstream/rhierLinearModel_rcpp.R",
+      "url": "https://raw.githubusercontent.com/cran/bayesm/453ae30857cf09a0c537f4deab64ed193493c8c9/R/rhierLinearModel_rcpp.R",
+      "bytes": 7040,
+      "sha256": "66362b52a2eb5bd3e1c2a205fb2b2ba6b61dfabf2af33516a60902cde106dcc8"
+    },
+    {
+      "path": "upstream/rhierLinearModel.Rd",
+      "url": "https://raw.githubusercontent.com/cran/bayesm/453ae30857cf09a0c537f4deab64ed193493c8c9/man/rhierLinearModel.Rd",
+      "bytes": 4759,
+      "sha256": "aad47df473a9d2c96b365189db328a769eda799c656f06129602ad609ee54cd7"
+    },
+    {
+      "path": "upstream/rhierLinearModel_rcpp_loop.cpp",
+      "url": "https://raw.githubusercontent.com/cran/bayesm/453ae30857cf09a0c537f4deab64ed193493c8c9/src/rhierLinearModel_rcpp_loop.cpp",
+      "bytes": 4718,
+      "sha256": "fdbcbe372ba87edcbf64c056e0adf9ecdc97404b694ac851f05083050ffaa53c"
+    },
+    {
+      "path": "upstream/breg_rcpp.cpp",
+      "url": "https://raw.githubusercontent.com/cran/bayesm/453ae30857cf09a0c537f4deab64ed193493c8c9/src/breg_rcpp.cpp",
+      "bytes": 649,
+      "sha256": "868bd785801025aba8f4a0182ee2fc5f4add77818194cba7da983f06bca9c35e"
+    },
+    {
+      "path": "upstream/runiregGibbs_rcpp_loop.cpp",
+      "url": "https://raw.githubusercontent.com/cran/bayesm/453ae30857cf09a0c537f4deab64ed193493c8c9/src/runiregGibbs_rcpp_loop.cpp",
+      "bytes": 2019,
+      "sha256": "2483ffa453a9a2c1d98d575973369da5ccf46573e67b4da4368c154ca2ddb0c5"
+    },
+    {
+      "path": "upstream/runireg_rcpp_loop.cpp",
+      "url": "https://raw.githubusercontent.com/cran/bayesm/453ae30857cf09a0c537f4deab64ed193493c8c9/src/runireg_rcpp_loop.cpp",
+      "bytes": 2148,
+      "sha256": "d345f03b0ff53d5236771318b4bb141c44112b8b6ff5814797c0fc19011d50db"
+    },
+    {
+      "path": "upstream/utilityFunctions.cpp",
+      "url": "https://raw.githubusercontent.com/cran/bayesm/453ae30857cf09a0c537f4deab64ed193493c8c9/src/utilityFunctions.cpp",
+      "bytes": 25115,
+      "sha256": "18f585ccd401aa965aad87fcff0f073dd0848e0adc63debaff033a64ea5c92a3"
+    }
+  ]
+}

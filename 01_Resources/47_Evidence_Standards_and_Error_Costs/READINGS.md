@@ -135,3 +135,33 @@ T. M. Scanlon (1998). Chapter 5, §§1–3, especially pp. 189–196.
 [Source](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf). Compare the reasons individuals have to reject alternative principles. Expected aggregate losses do not exhaust the justification owed to a person who bears a serious burden.
 
 **Inspected:** Existing course excerpt and associated source assessment; no new download. **Copy:** existing local copy.
+
+### E17: Sliced Cheese Data and Account-Level Modeling for Trade Promotion
+
+Peter Boatwright; Robert McCulloch; Peter Rossi; bayesm package maintainers (1999; package 2025). bayesm 3.1-7, commit 453ae30857cf09a0c537f4deab64ed193493c8c9.
+
+[Source](https://search.r-project.org/CRAN/refmans/bayesm/html/cheese.html). Reanalysis of released data with exact mixture integration; fit, mechanism attribution, and permission remain distinct.
+
+**Inspected:** Public R object, package documentation and license, and January 1999 preprint data/model description inspected. Public file has 88 accounts; preprint describes 77. **Copy:** public data downloaded.
+
+### E18: Why We (Usually) Don't Have to Worry About Multiple Comparisons
+
+Andrew Gelman; Jennifer Hill; Masanao Yajima (2012). Journal of Research on Educational Effectiveness 5:189–211.
+
+[Source](https://doi.org/10.1080/19345747.2011.618213). Posterior means can shrink faster than their standard deviations, reducing standardized comparisons. Evaluate both missed harms and false flags.
+
+**Inspected:** Abstract and algebra, pp. 196–198, inspected in full text; source supports the partial-pooling mechanism, not the course consumer-harm scenario. **Copy:** downloaded; Dropbox only.
+
+### E19: Contractualism and Intuitionism
+
+T. M. Scanlon (2025). Circulated NYU colloquium paper, 2025.
+
+[Source](https://www.law.nyu.edu/sites/default/files/2025-09/T.%20M.%20Scanlon%2C%20Contractualism%20and%20Intuitionism.pdf). The relevant personal reasons of affected parties and reconsidered aggregation qualify a strictly bilateral objection comparison.
+
+**Inspected:** Opening and printed pp. 40–43 inspected; circulated version, not a claim of final book publication. **Copy:** downloaded; Dropbox only.
+
+### E20: Hierarchical Normal Regression in bayesm
+
+(Rossi, 2025), bayesm 3.1-7. The [pinned documentation](https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/man/rhierLinearModel.Rd) and implementation identify the exact conditional normal update. The [method crosswalk](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) maps its matrix moments to the scalar precision example. Full hierarchical sampling also updates hyperparameters.
+
+**Inspected:** Model documentation, hierarchical loop, and `runiregG` source. **Copy:** GPL source retained with attribution; no upstream sampler executed.

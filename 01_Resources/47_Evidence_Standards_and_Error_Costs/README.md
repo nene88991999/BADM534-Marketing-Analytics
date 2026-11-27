@@ -76,3 +76,15 @@ The [annotated readings](READINGS.md) and [catalog](catalog.json) record 16 sour
 ## Teaching Integration
 
 [The lecture notes](../../06_Lecture_Notes/README.md#measurement-traditions-and-evidence-for-protection) integrate the argument across M1–M9, with full Python in M6 §6.44 and extended philosophy in M9 §§9.55–9.59. [Selected session discussions](../../05_Slides/SESSION_PLAN.md#evidence-standards-and-unequal-error-costs), the syllabus, and [optional practice](../../07_Labs/Evidence_Standards/README.md) connect the readings to pricing, household electricity, and prediction thresholds.
+
+## Released Data, Precision, and the Burden of Proof
+
+The [retail reanalysis](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md) uses public data attributed to a hierarchical trade-promotion study (Boatwright et al., 1999). It preserves the difference between the package and preprint samples. Exact mixture integration changes fitted coefficients while leaving a constructed taste-versus-restriction decomposition unidentified. M4 §4.31 contains the complete program.
+
+The separate synthetic comparison in M6 §6.46 shows narrower posterior intervals and lower average MSE alongside fewer detected harms under a fixed posterior-credibility rule. The group suffering the burden has greater MSE. Actual false-positive rates and a matched-calibration check identify the decision-rule tradeoff. The algebra of pooling supports the mechanism (Gelman et al., 2012, pp. 196–198); the consumer losses and precision elasticity are original constructions.
+
+M9 §§9.57.1–9.57.6 connects the missing empirical and normative premises to criticism of the Given, the distinction between ontology and knowledge, modal discourse, and reasonable rejection. An inability to rule out every preference explanation can impose an unreasonable burden before proportionate protection. The later circulated discussion considers relevant personal reasons across affected parties and revises a strictly bilateral treatment of aggregation (Scanlon, 2025, pp. 41–43). The argument supplies no general theorem that more heterogeneity lowers detection or that prior precision establishes harmlessness.
+
+Catalog records E17–E20 identify the public dataset and the newly inspected readings. Restricted source PDFs remain in Dropbox; the public repository contains annotations, links, licensed package data, and original teaching materials.
+
+The [method crosswalk](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) establishes the exact conditional correspondence with the hierarchical regression (Rossi, 2025), while separating full posterior sampling from the fixed-hyperparameter calculation.

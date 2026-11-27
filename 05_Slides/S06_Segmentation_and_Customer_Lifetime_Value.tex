@@ -370,6 +370,57 @@ M8, Section 8.14, Marketing Analytics Lecture Notes. \url{../06_Lecture_Notes/mo
 
 (Pereira et al., 2026); original course calculations. \url{../01_Resources/38_Digital_Usage_and_Inclusion/README.md}}
 \end{frame}
+\begin{frame}{Released Accounts and Integrated Heterogeneity}
+\usebeamercolor[fg]{normal text}
+\vfill
+\centering
+{\small\begin{tabular}{lrr}
+\toprule
+Mixing Distribution & Log Likelihood & BIC \\
+\midrule
+One normal & −128.629 & 266.213 \\
+Two normals & −124.520 & 271.427 \\
+\bottomrule
+\end{tabular}}
+\par\medskip
+5,555 observations; 88 accounts. Lower BIC favors the simpler model.
+\vfill
+\note{All released rows enter. Each account contributes one coefficient and working-model standard error to the second-stage likelihood. Two-stage empirical Bayes fixes the fitted hyperparameters and omits temporal dependence. The public package differs from the 77-account preprint, so this is a dataset reanalysis, not a published-table reproduction. The coefficients are conditional price-sales associations. Preserve the contrary BIC finding (Boatwright et al., 1999; bayesm, 2025).
+
+M4 §4.31. \url{../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md}}
+\end{frame}
+\begin{frame}{A Fitted Response Leaves Its Mechanism Open}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.69\textheight}
+\input{../06_Lecture_Notes/figures/M04_heterogeneity_equivalence.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small An imposed restriction shift is offset by the latent taste distribution.\par}
+\note{The account data establish the fitted distribution. The taste-versus-restriction shifts are constructed. They show non-identification under this observation equation. Contracts, alternatives, or new variation could distinguish the mechanisms. A hypothetical harmful and harmless state with the same data distribution also have the same flagging probability under any data-only rule. No misconduct is measured in these accounts.
+
+M4 §4.31.2. \url{../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md}}
+\end{frame}
+\begin{frame}{The Hierarchical Update Pools Coefficients}
+\usebeamercolor[fg]{normal text}
+\noindent Conditional on the group mean, covariance, and error variance:
+\medskip
+\[
+\begin{aligned}C_j&=(X_j^{\prime}X_j/v_j+V^{-1})^{-1},\\m_j&=C_j(X_j^{\prime}y_j/v_j+V^{-1}\mu_j).\end{aligned}
+\]
+\medskip
+\noindent Data precision and prior precision jointly determine each group’s estimate.
+\note{This is the normal coefficient update in the hierarchical regression documented in bayesm (Rossi, 2025). The loop constructs Vbeta inverse and Z Delta, then calls runiregG. The scalar case X transpose X=1, X transpose y=2, error variance=1, prior mean=0, and prior variance=.4 gives mean 4/7 and variance 2/7. Those are exactly the conditional moments in the known-harm example in M6 §6.46. The full sampler also updates the hyperparameters; the conditional illustration does not reproduce that full uncertainty.
+
+M4 §4.31.4. \url{../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md}}
+\end{frame}
 \begin{frame}{Retention Discussion}
 \usebeamercolor[fg]{normal text}
 \vfill

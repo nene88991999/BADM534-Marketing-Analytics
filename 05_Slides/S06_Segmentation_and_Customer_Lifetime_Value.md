@@ -12,6 +12,7 @@ Session 06. M4. 170 minutes.
 - Evaluate segment stability and future outcomes.
 - Calculate lifetime value with consistent timing and distinguish retention concepts.
 - Compare clustering cost and final-center consistency with a common evaluation population.
+- Separate integrated response estimates, conditional pooling, and evidence about consumer burdens.
 
 ## Related Materials
 
@@ -24,6 +25,7 @@ Session 06. M4. 170 minutes.
 - [Clustering Optimization and Sources](../01_Resources/23_Clustering_Optimization/README.md)
 - [Optional Clustering Practice](../07_Labs/Clustering_Optimization/README.md)
 - [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
+- [Released Data and Method Correspondence](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md)
 
 ## Slide 1: Segmentation and Customer Lifetime Value
 
@@ -346,7 +348,46 @@ Adjusted Rand agreement compares co-membership and is not a percentage of identi
 
 Source: (Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md
 
-## Slide 28: Retention Discussion
+## Slide 28: Released Accounts and Integrated Heterogeneity
+
+| Mixing Distribution | Log Likelihood | BIC |
+| --- | --- | --- |
+| One normal | −128.629 | 266.213 |
+| Two normals | −124.520 | 271.427 |
+
+5,555 observations; 88 accounts. Lower BIC favors the simpler model.
+
+All released rows enter. Each account contributes one coefficient and working-model standard error to the second-stage likelihood. Two-stage empirical Bayes fixes the fitted hyperparameters and omits temporal dependence. The public package differs from the 77-account preprint, so this is a dataset reanalysis, not a published-table reproduction. The coefficients are conditional price-sales associations. Preserve the contrary BIC finding (Boatwright et al., 1999; bayesm, 2025).
+
+Source: M4 §4.31. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md
+
+## Slide 29: A Fitted Response Leaves Its Mechanism Open
+
+An imposed restriction shift is offset by the latent taste distribution.
+
+**Figure description:** Two decompositions preserve the mean observed response and every likelihood contribution. Both have log likelihood −124.520; neither supplies a measured restriction.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M04_heterogeneity_equivalence.tex)
+
+The account data establish the fitted distribution. The taste-versus-restriction shifts are constructed. They show non-identification under this observation equation. Contracts, alternatives, or new variation could distinguish the mechanisms. A hypothetical harmful and harmless state with the same data distribution also have the same flagging probability under any data-only rule. No misconduct is measured in these accounts.
+
+Source: M4 §4.31.2. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md
+
+## Slide 30: The Hierarchical Update Pools Coefficients
+
+Conditional on the group mean, covariance, and error variance:
+
+$$
+\begin{aligned}C_j&=(X_j^{\prime}X_j/v_j+V^{-1})^{-1},\\m_j&=C_j(X_j^{\prime}y_j/v_j+V^{-1}\mu_j).\end{aligned}
+$$
+
+Data precision and prior precision jointly determine each group’s estimate.
+
+This is the normal coefficient update in the hierarchical regression documented in bayesm (Rossi, 2025). The loop constructs Vbeta inverse and Z Delta, then calls runiregG. The scalar case X transpose X=1, X transpose y=2, error variance=1, prior mean=0, and prior variance=.4 gives mean 4/7 and variance 2/7. Those are exactly the conditional moments in the known-harm example in M6 §6.46. The full sampler also updates the hyperparameters; the conditional illustration does not reproduce that full uncertainty.
+
+Source: M4 §4.31.4. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md
+
+## Slide 31: Retention Discussion
 
 - What action differs across the proposed segments?
 - Does a customer's absence represent churn or censoring?

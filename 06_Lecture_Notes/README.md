@@ -2,7 +2,7 @@
 
 **By Nathan Yang. Updated November 27, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 153 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 156 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -78,7 +78,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 131 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 133 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -239,3 +239,7 @@ M1 §1.23, M2 §2.32, M3 §3.22, M4 §4.30, M5 §5.28, M6 §§6.44–6.45, M7 §
 ## Data as Artifacts and Restricted Research
 
 M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical copies through a complete synthetic subscription program. M9 §§9.60–9.65 connects artifact creation, public norms, NDA restrictions, publication selection, and reasons owed to affected people. The discussion asks whether research under an NDA ought to exist and distinguishes conducting, publishing, and relying on a study. Sessions 2 and 14 use the same cases, with three editable TikZ diagrams and optional practice in `07_Labs/Data_Truth_and_Norms/`. Source annotations and professional-policy scope appear in `01_Resources/45_Data_Truth_and_Norms/`.
+
+## Heterogeneity, Precision, and Reasonable Protection
+
+M4 §4.31 reanalyzes licensed public retail data and maps the hierarchical coefficient update to the source implementation. M6 §6.46 derives the synthetic precision–detection comparison and consumer-harm elasticity. M9 §§9.57.1–9.57.6 connects the results to modal premises and reasonable protection. Three editable TikZ figures and two complete Python programs accompany the [data and code](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md) and [optional practice](../07_Labs/Evidence_Standards/README.md).

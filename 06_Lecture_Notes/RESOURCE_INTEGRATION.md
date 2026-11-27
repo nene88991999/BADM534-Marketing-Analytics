@@ -271,3 +271,7 @@ The [historical readings](../01_Resources/46_Measurement_and_Disciplinary_Histor
 ## Data as Artifacts and Research Independence
 
 M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical copies through a complete synthetic subscription program. M9 §§9.60–9.65 connects artifact creation, public norms, NDA restrictions, publication selection, and reasons owed to affected people. The discussion asks whether research under an NDA ought to exist and distinguishes conducting, publishing, and relying on a study. Sessions 2 and 14 use the same cases, with three editable TikZ diagrams and optional practice in `07_Labs/Data_Truth_and_Norms/`. Source annotations and professional-policy scope appear in `01_Resources/45_Data_Truth_and_Norms/`.
+
+## Hierarchical Pooling, Detection, and Reasonable Protection
+
+M4 §4.31 reanalyzes the licensed public retail file and maps the normal conditional update to the documented method (Rossi, 2025). M6 §6.46 compares greater posterior precision with missed harm in a synthetic population. M8 §8.34.1 and M9 §§9.57.1–9.57.6 connect the interpretation to HBS overstatement, modal premises, and reasonable protection. The [method crosswalk](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) states the exact correspondence and the additional assumptions. Sessions 6 and 14 select these comparisons within existing blocks; the full derivations are optional practice.

@@ -1880,3 +1880,238 @@ Identification asks which variation separates tastes, common shocks, endogenous 
 A demanding assessment instead compares the likelihood, prior, identified set, and decision. In partially identified settings, posterior concentration within an identified set can continue to depend on the prior even in large samples ([Moon and Schorfheide, 2012](https://doi.org/10.3982/ECTA8360)). Report which conclusions follow from observations and which depend on restrictions. Relaxing an instrument's exclusion restriction can reveal whether a decision remains supported under plausible departures from exact exogeneity ([Conley et al., 2012](https://doi.org/10.1162/REST_a_00139)).
 
 For a targeted-price recommendation, compare the outside option, switching costs, ownership, marginal costs, and available products with institutional records. Evaluate how alternative assumptions change the recommended action and the burdens on each customer group. A policy can remain ethically objectionable even if its demand estimates are accurate. A legal allegation additionally requires the conduct and other elements specified by the applicable law. M9 §§9.56–9.59 examines when an institution's demand for precision itself imposes an unjustified burden on those seeking protection.
+
+
+## 4.31 Released Retail Data, Integrated Heterogeneity, and Competing Explanations
+
+\noindent An investigator wants to know whether a weak response to price reflects product value or restricted alternatives. Weekly sales and prices can describe a response without resolving that distinction. The released `bayesm` cheese dataset contains 5,555 observations from 88 retailer–market accounts, with unit sales, price in dollars, and the fraction of all-commodity volume associated with display. All rows enter the calculation. Accounts contribute 52–68 observations; each account receives equal weight in the reported mean coefficient. These are conditional sales associations because the release supplies no instrument or assignment process identifying the price effect.
+
+The package attributes the data to a hierarchical trade-promotion study (Boatwright et al., 1999). Its January 1999 author preprint describes a 77-account Kraft application with additional promotion variables; the package documents 88 accounts and Borden sliced cheese. The mapping between those releases is unresolved. The calculation below reanalyzes the documented public dataset with an original two-stage model. It does not reproduce a published table or the paper's constrained hierarchical sampler. [Package documentation](https://search.r-project.org/CRAN/refmans/bayesm/html/cheese.html) and the [source record](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/PROVENANCE.json) preserve that distinction.
+
+### 4.31.1 Separate the Response Estimate from Its Interpretation
+
+\noindent For account $g$ and its recorded week $t$, regress log unit sales on log price and display:
+
+$$\log Q_{gt}=a_g+\theta_g\log P_{gt}+d_gD_{gt}+e_{gt}.$$
+
+Here $P_{gt}$ is price in dollars, $D_{gt}$ is the fraction of all-commodity volume associated with display, and $\theta_g$ is the account's conditional log-price coefficient. The two accounts with constant display retain their observations and omit that collinear regressor. First-stage standard errors $s_g$ use independent, homoskedastic Gaussian working errors within accounts. The release has no explicit calendar variable; serial dependence remains outside this calculation. Calendar reconstruction or a justified dependence model would be needed for stronger uncertainty claims.
+
+Integrating a mixing distribution distinguishes noisy account estimates from variation across accounts. Let $\hat\theta_g$ denote the first-stage coefficient and use the working measurement model
+
+$$\hat\theta_g\mid\theta_g\sim N(\theta_g,s_g^2),\qquad
+\theta_g\sim\sum_{k=1}^{K}w_kN(\mu_k,\tau_k^2).$$
+
+The weights $w_k$ are positive and sum to one. Means $\mu_k$ and standard deviations $\tau_k$ describe the distribution of account coefficients. Integrating $\theta_g$ gives the exact marginal density
+
+$$f(\hat\theta_g\mid s_g)=\sum_{k=1}^{K}w_k\,
+\phi\!\left(\hat\theta_g;\mu_k,s_g^2+\tau_k^2\right),$$
+
+where $\phi(x;m,v)$ is the normal density with mean $m$ and variance $v$. Maximize the sum of log densities across 88 accounts for $K=1$ and $K=2$. This is empirical Bayes: the conditional posterior calculations fix the estimated mixing parameters and first-stage standard errors. They omit uncertainty in those quantities. Treating the working Gaussian measurement model as exact is an additional approximation to the first-stage estimates.
+
+| Mixing Distribution | Log Likelihood | BIC | Mean Conditional Posterior Coefficient |
+| --- | ---: | ---: | ---: |
+| One normal component | −128.629 | 266.213 | −2.138 |
+| Two normal components | −124.520 | 271.427 | −2.151 |
+
+The two-component distribution increases in-sample fit. BIC penalizes its five parameters, compared with two for the simpler distribution, using 88 independent account contributions in the working model. Lower BIC favors one component here. The modest change in the mean response supplies no empirical finding of concealed harm. Two positive unpooled coefficients become negative conditional posterior means under either fitted distribution, illustrating the consequence of pooling noisy estimates.
+
+### 4.31.2 The Same Likelihood Can Accommodate Different Mechanisms
+
+\noindent Suppose the observed response is the sum of an intrinsic response $\beta_g$ and a common shift $\gamma$ associated with restricted alternatives. A positive $\gamma$ makes a negative response less negative. This is a constructed mechanism; the retail file contains no measure of the proposed restriction. The decomposition obeys
+
+$$\theta_g=\beta_g+\gamma.$$
+
+For any imposed $\gamma$, replace each mixing mean for $\beta_g$ by $\mu_k-\gamma$ and add $\gamma$ back in the observation equation. Every marginal density remains identical. With two components, $\gamma=0$ gives mean intrinsic response −2.151; $\gamma=0.5$ gives −2.651. Both yield the same mean observed response and log likelihood −124.520. Integration can be exact while the mechanism remains unidentified.
+
+![Two constructed decompositions preserve the same mean observed response and every likelihood contribution. The restriction shift is imposed, while the fitted response distribution comes from 88 released accounts.](../figures/M04_heterogeneity_equivalence.png)
+
+**Figure interpretation.** The upper row attributes the fitted response entirely to tastes. The lower row assigns an imposed part to restricted alternatives and shifts the taste distribution by the opposite amount. The equality holds for each account's density, beyond the equality of the displayed averages. Contracts, alternatives, switching constraints, costs, or new variation would be needed to distinguish the proposed mechanisms.
+
+Suppose further that the first constructed state is harmless and the second involves the specified harmful restriction. Any rule based solely on these observations has the same flagging probability in both states. If that probability is five percent under the harmless state, it is also five percent under the harmful state, giving a 95% missed-harm rate in this construction. This is an identification result under the stipulated states. It is not estimated power or evidence of misconduct in the observed accounts. M9 §§9.57.1–9.57.4 asks whether requiring this data-only rule before proportionate protection is reasonable to those exposed.
+
+### 4.31.3 Reproduce the Calculation
+
+\noindent Run the program from any directory with NumPy, pandas, and SciPy available. The path to the input is relative to the program. Saved outputs include every account estimate, mixture parameters, model comparisons, and eight equivalent decompositions. Independent checks compare the integration with numerical quadrature and the account coefficients with a separate residualization calculation.
+
+Python source: [heterogeneity_reanalysis.py](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/heterogeneity_reanalysis.py)
+
+```python
+"""Reanalyze released retail data; separate fitted responses from conduct.
+
+Two-stage empirical Bayes with exact normal-mixture integration. This is a
+teaching adaptation, not a replication of the paper's constrained sampler.
+"""
+from pathlib import Path
+import json
+import numpy as np
+import pandas as pd
+from scipy.optimize import minimize
+from scipy.special import logsumexp
+from scipy.stats import norm
+
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / "results"
+
+
+def account_estimates(frame):
+    """OLS price associations, conditioning on available display variation."""
+    rows = []
+    for account, group in frame.groupby("RETAILER", sort=True):
+        y = np.log(group.VOLUME.to_numpy(float))
+        price = np.log(group.PRICE.to_numpy(float))
+        display = group.DISP.to_numpy(float)
+        # Constant display is collinear with the account intercept.
+        varying = np.ptp(display) > 1e-12
+        columns = [np.ones(len(y)), price]
+        if varying:
+            columns.append(display)
+        x = np.column_stack(columns)
+        assert np.linalg.matrix_rank(x) == x.shape[1]
+        coef = np.linalg.lstsq(x, y, rcond=None)[0]
+        residual = y - x @ coef
+        variance = (residual @ residual) / (len(y) - x.shape[1])
+        se = np.sqrt(variance * np.linalg.inv(x.T @ x)[1, 1])
+        assert np.isfinite(se) and se > 0
+        rows.append(dict(account=account, observations=len(y),
+                         display_varies=bool(varying), price_slope=coef[1],
+                         model_se=se, residual_variance=variance))
+    return pd.DataFrame(rows)
+
+
+def unpack(parameters, components):
+    if components == 1:
+        return np.ones(1), parameters[:1], np.exp(parameters[1:2])
+    weight = parameters[0]
+    return (np.array([weight, 1-weight]), parameters[1:3],
+            np.exp(parameters[3:5]))
+
+
+def marginal_log_density(b, se, weights, means, scales):
+    total_sd = np.sqrt(se[:, None]**2 + scales[None, :]**2)
+    terms = np.log(weights) + norm.logpdf(b[:, None], means, total_sd)
+    return logsumexp(terms, axis=1)
+
+
+def fit_mixture(b, se, components):
+    """Integrate account coefficients before maximizing the marginal likelihood."""
+    center, spread = float(np.mean(b)), max(float(np.std(b)), 0.2)
+    if components == 1:
+        starts = [np.array([center, np.log(spread)]), np.array([center, -2.0])]
+        bounds = [(-30, 10), (-7, 4)]
+    else:
+        starts = [np.array([w, center-d*spread, center+d*spread,
+                            np.log(spread/2), np.log(spread/2)])
+                  for w in (0.25, 0.5, 0.75) for d in (0.4, 1.0, 1.8)]
+        bounds = [(0.02, 0.98), (-30, 10), (-30, 10), (-7, 4), (-7, 4)]
+
+    def objective(parameters):
+        return -marginal_log_density(b, se, *unpack(parameters, components)).sum()
+
+    fits = [minimize(objective, start, method="L-BFGS-B", bounds=bounds,
+                     options={"maxiter": 3000, "ftol": 1e-12, "gtol": 1e-6})
+            for start in starts]
+    converged = [fit for fit in fits if fit.success and np.isfinite(fit.fun)]
+    assert converged, "No converged marginal-likelihood fit"
+    best = min(converged, key=lambda fit: fit.fun)
+    weights, means, scales = unpack(best.x, components)
+    order = np.argsort(means)
+    return dict(weights=weights[order], means=means[order], scales=scales[order],
+                log_likelihood=float(-best.fun), starts=len(starts),
+                converged_starts=len(converged))
+
+
+def posterior(b, se, fit):
+    """Conditional on fitted hyperparameters and fixed first-stage standard errors."""
+    weights, means, scales = (fit[k] for k in ("weights", "means", "scales"))
+    prior_var, sampling_var = scales[None, :]**2, se[:, None]**2
+    variance = 1 / (1 / prior_var + 1 / sampling_var)
+    location = variance * (means / prior_var + b[:, None] / sampling_var)
+    log_weights = (np.log(weights)
+                   + norm.logpdf(b[:, None], means, np.sqrt(prior_var+sampling_var)))
+    probabilities = np.exp(log_weights-logsumexp(log_weights, axis=1)[:, None])
+    average = np.sum(probabilities*location, axis=1)
+    positive = np.sum(probabilities*norm.sf(0, location, np.sqrt(variance)), axis=1)
+    return average, positive
+
+
+def main():
+    OUT.mkdir(exist_ok=True)
+    frame = pd.read_csv(ROOT / "data/cheese.csv")
+    assert list(frame.columns) == ["RETAILER", "VOLUME", "DISP", "PRICE"]
+    assert len(frame) == 5555 and frame.RETAILER.nunique() == 88
+    assert frame.notna().all().all()
+    assert (frame.VOLUME > 0).all() and (frame.PRICE > 0).all()
+    assert frame.DISP.between(0, 1).all()
+    estimates = account_estimates(frame)
+    b, se = estimates.price_slope.to_numpy(), estimates.model_se.to_numpy()
+    summaries, parameters, equivalence, profiles = [], [], [], []
+    grid = np.linspace(-12, 5, 341)
+    for components in (1, 2):
+        fit = fit_mixture(b, se, components)
+        mean, prob_positive = posterior(b, se, fit)
+        estimates[f"posterior_mean_k{components}"] = mean
+        estimates[f"posterior_positive_k{components}"] = prob_positive
+        k_parameters = 2 if components == 1 else 5
+        summaries.append(dict(components=components, accounts=len(b),
+                              log_likelihood=fit["log_likelihood"],
+                              bic=k_parameters*np.log(len(b))-2*fit["log_likelihood"],
+                              mean_account_slope=float(mean.mean()),
+                              positive_posterior_means=int((mean > 0).sum()),
+                              starts=fit["starts"], converged_starts=fit["converged_starts"]))
+        for k, (w, mu, sd) in enumerate(zip(fit["weights"], fit["means"], fit["scales"]), 1):
+            parameters.append(dict(components=components, component=k,
+                                   weight=w, mean=mu, sd=sd))
+        base = marginal_log_density(b, se, fit["weights"], fit["means"], fit["scales"])
+        # Constructed decomposition: observed response theta = beta + gamma.
+        # Shift the taste distribution by -gamma and add gamma in the likelihood.
+        # gamma is an imposed mechanism, not a measured feature of these accounts.
+        for gamma in (0.0, 0.25, 0.5, 1.0):
+            beta_means = fit["means"] - gamma
+            observed = marginal_log_density(b, se, fit["weights"],
+                                            beta_means + gamma, fit["scales"])
+            maximum_gap = float(np.max(np.abs(base-observed)))
+            assert maximum_gap < 1e-10
+            equivalence.append(dict(components=components, imposed_gamma=gamma,
+                                    log_likelihood=float(observed.sum()),
+                                    maximum_log_density_gap=maximum_gap,
+                                    mean_observed_response=float(mean.mean()),
+                                    mean_latent_taste=float(mean.mean()-gamma)))
+        for x in grid:
+            density = np.sum(fit["weights"]*norm.pdf(x, fit["means"], fit["scales"]))
+            profiles.append(dict(components=components, slope=x, density=density))
+    estimates.to_csv(OUT / "account_estimates.csv", index=False)
+    pd.DataFrame(summaries).to_csv(OUT / "model_comparison.csv", index=False)
+    pd.DataFrame(parameters).to_csv(OUT / "mixture_parameters.csv", index=False)
+    pd.DataFrame(equivalence).to_csv(OUT / "observational_equivalence.csv", index=False)
+    pd.DataFrame(profiles).to_csv(OUT / "density_grid.csv", index=False)
+    # Exact implication under observational equivalence, not estimated power.
+    pd.DataFrame([dict(false_flag_rate=a, constructed_harm_miss_rate=1-a)
+                  for a in (0.01, 0.05, 0.10)]).to_csv(
+                      OUT / "equivalent_state_errors.csv", index=False)
+    record = dict(observations=len(frame), accounts=len(estimates),
+                  observations_min=int(estimates.observations.min()),
+                  observations_max=int(estimates.observations.max()),
+                  constant_display_accounts=int((~estimates.display_varies).sum()),
+                  positive_ols_slopes=int((b > 0).sum()),
+                  sample_restrictions="All released rows retained; no date or household outcomes supplied.",
+                  uncertainty="First-stage iid Gaussian working errors; fixed estimated SEs and empirical-Bayes hyperparameters. Temporal dependence and hyperparameter uncertainty are unmodeled.",
+                  interpretation="Conditional price-sales associations; no identified causal elasticities, markups, wrongdoing, or consumer welfare effects.")
+    (OUT / "summary.json").write_text(json.dumps(record, indent=2)+"\n")
+    print(pd.DataFrame(summaries).to_string(index=False))
+    print(json.dumps(record, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### 4.31.4 The Conditional Update in Hierarchical Regression
+
+\noindent The package's released-data example constructs account regressions for the hierarchical normal model (Rossi, 2025, `bayesm` 3.1-7). Write $y_j=X_j\beta_j+e_j$, with $e_j\sim N(0,v_jI)$ and $\beta_j\sim N(\mu_j,V)$, where $\mu_j=Z_j\Delta$. Conditional on the error variance $v_j$, prior mean $\mu_j$, and prior covariance $V$, the coefficient covariance and mean are
+
+$$C_j=(X_j'X_j/v_j+V^{-1})^{-1},\qquad
+m_j=C_j(X_j'y_j/v_j+V^{-1}\mu_j).$$
+
+Data precision and prior precision jointly determine the update. The hierarchical loop computes $V^{-1}$ and $Z\Delta$, then calls the conditional normal-regression step [`runiregG`](https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/src/utilityFunctions.cpp). With one coefficient, $X'X=1$, $X'y=2$, $v=1$, $\mu=0$, and $V=0.4$, this gives posterior mean $4/7$ and variance $2/7$. Those are exactly the pooled moments in §6.46.
+
+The connection to missed harm is methodological. A group-specific effect can be pulled toward a low pooled mean strongly enough that a fixed posterior-credibility rule ceases to flag it. In §6.46, the same update increases missed-harm losses under explicit synthetic consumer burdens. The working model and protection rule determine that result. The full hierarchical sampler also updates means and variances; uncertainty in those quantities must be integrated before describing its full posterior. The [method crosswalk](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) distinguishes the exact conditional identity, the original course assumptions, and the empirical reanalysis.

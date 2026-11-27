@@ -478,7 +478,10 @@ Generated from course.json and the source files identified below. This file cont
     "03_Data_and_Code/Evidence_Standards/results/README.md",
     "07_Labs/Evidence_Standards/README.md",
     "03_Data_and_Code/Data_Production/artifact_results/README.md",
-    "01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md"
+    "01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md",
+    "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md",
+    "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -527,12 +530,12 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-public-claims-and-statistical-insignificance",
+    "revision": "2026-11-27-hierarchical-pooling-and-missed-harm",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 153,
-    "pages": 635,
+    "figures_count": 156,
+    "pages": 650,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -567,7 +570,7 @@ Generated from course.json and the source files identified below. This file cont
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
     "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
     "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
-    "python_source_blocks": 131
+    "python_source_blocks": 133
   },
   "datasets": [
     {
@@ -664,7 +667,7 @@ Generated from course.json and the source files identified below. This file cont
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 541,
+    "slides": 547,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -757,8 +760,8 @@ Generated from course.json and the source files identified below. This file cont
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06",
-    "pages": 110,
-    "figures_count": 26,
+    "pages": 123,
+    "figures_count": 29,
     "updated_on": "2026-11-27"
   },
   "ai_experimentation_pricing": {
@@ -1753,7 +1756,7 @@ Generated from course.json and the source files identified below. This file cont
       "M9"
     ],
     "historical_source_records": 18,
-    "evidence_source_records": 16,
+    "evidence_source_records": 20,
     "new_local_pdf_copies": 17,
     "original_programs": 1,
     "original_tikz_figures": 4,
@@ -1786,6 +1789,27 @@ Generated from course.json and the source files identified below. This file cont
     "wiki": "08_Wiki/pilot/index.html#uncertainty",
     "shared_tikz_figures": 3,
     "worked_example_tikz_figures": 1
+  },
+  "heterogeneity_and_consumer_protection": {
+    "updated_on": "2026-11-27",
+    "data_and_code": "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md",
+    "method_crosswalk": "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md",
+    "verification": "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/VERIFICATION.md",
+    "sections": [
+      "M4 \u00a74.31",
+      "M6 \u00a76.46",
+      "M8 \u00a78.34.1",
+      "M9 \u00a7\u00a79.57.1\u20139.57.6"
+    ],
+    "sessions": [
+      6,
+      14
+    ],
+    "released_observations": 5555,
+    "released_accounts": 88,
+    "original_programs": 2,
+    "new_tikz_figures": 3,
+    "scope": "Released-data reanalysis and exact conditional method correspondence; synthetic missed-harm comparison and precision elasticity. No empirical consumer injury or general enforcement direction from heterogeneity adjustment."
   }
 }
 ```
@@ -2391,6 +2415,10 @@ The [historical collection](01_Resources/46_Measurement_and_Disciplinary_History
 
 M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical copies through a complete synthetic subscription program. M9 §§9.60–9.65 connects artifact creation, public norms, NDA restrictions, publication selection, and reasons owed to affected people. The discussion asks whether research under an NDA ought to exist and distinguishes conducting, publishing, and relying on a study. Sessions 2 and 14 use the same cases, with three editable TikZ diagrams and optional practice in `07_Labs/Data_Truth_and_Norms/`. Source annotations and professional-policy scope appear in `01_Resources/45_Data_Truth_and_Norms/`.
 
+## Precision and Missed Consumer Harm
+
+Use M4 §4.31 for released retail data and exact mixture integration, M6 §6.46 for the synthetic precision–detection calculation, and M9 §§9.57.1–9.57.5 for modal claims and reasonable protection. [Data, code, and provenance](03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md); [optional practice](07_Labs/Evidence_Standards/README.md).
+
 ---
 
 ## Source: LLM_GUIDE.md
@@ -2741,6 +2769,10 @@ The [synthetic decision example](Evidence_Standards/README.md) holds signal dist
 
 The full derivation and program appear in M6 §6.44. [Optional practice](../07_Labs/Evidence_Standards/README.md) varies prevalence and develops an argument for investigation, protection, or remedy. M4 §4.30 assesses heterogeneous demand, while M9 §§9.55–9.59 supplies the historical and philosophical connections.
 
+## Heterogeneity, Precision, and Consumer Protection
+
+The [released-data reanalysis](Heterogeneity_and_Consumer_Protection/README.md) uses 5,555 rows across 88 accounts. A separate exact synthetic example shows lower average MSE and narrower posterior intervals alongside fewer detected harms under a specified decision rule. Complete Python, provenance, error rates, and the precision elasticity appear in M4 §4.31 and M6 §6.46.
+
 ---
 
 ## Source: 06_Lecture_Notes/README.md
@@ -2749,7 +2781,7 @@ The full derivation and program appear in M6 §6.44. [Optional practice](../07_L
 
 **By Nathan Yang. Updated November 27, 2026.** These notes cover all eight topic families in the supplied Spring 2026 sample syllabus and integrate AI-assisted coding throughout. The [syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and Spring 2027 meeting calendar are available. Assessment rules and course-wide AI policy remain pending.
 
-Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 153 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
+Read the [complete PDF](Marketing_Analytics_Lecture_Notes.pdf), beginning with the [Preface](Preface.md), or open a Markdown module below. The preface connects competence in analytical tools to philosophical reasoning about purposes, obligations, and the limits of measurement. The notes contain 156 original TikZ figures, recurring mHealth cases across M1–M8, worked synthetic cases, complete Python programs, practice questions, and source links. Markdown files provide searchable text and figure descriptions for students and LLMs. The PDF contains vector figures; the Markdown pages display PNG previews generated from the same TikZ sources.
 
 ## Modules and Syllabus Coverage
 
@@ -2825,7 +2857,7 @@ The [GenAI demand cases](../03_Data_and_Code/GenAI_Demand/README.md) add public-
 
 The [15 session decks](../05_Slides/README.md) cover the eight core modules and Marketing Dialectics with a 170-minute plan for each meeting. Ethics and regulation are integrated in M1 §1.11, M2 §2.18, M3 §3.13, M4 §4.15, M5 §5.13, M6 §6.17, M7 §7.19, and M8 §§8.14–8.15. The [primary-source guide](ETHICS_AND_REGULATION.md) records the legal scope and status checked on November 2, 2026.
 
-The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 131 matching Python source blocks.
+The retention-procedure example separates firm profit, customer value, and combined surplus under stated fixed stakes. Its complete Python program generates the figure's aggregate table and independently checks expected monetary changes. The notes contain 133 matching Python source blocks.
 
 ## Earnings-Call Pricing Communication
 
@@ -2987,6 +3019,10 @@ M1 §1.23, M2 §2.32, M3 §3.22, M4 §4.30, M5 §5.28, M6 §§6.44–6.45, M7 §
 
 M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical copies through a complete synthetic subscription program. M9 §§9.60–9.65 connects artifact creation, public norms, NDA restrictions, publication selection, and reasons owed to affected people. The discussion asks whether research under an NDA ought to exist and distinguishes conducting, publishing, and relying on a study. Sessions 2 and 14 use the same cases, with three editable TikZ diagrams and optional practice in `07_Labs/Data_Truth_and_Norms/`. Source annotations and professional-policy scope appear in `01_Resources/45_Data_Truth_and_Norms/`.
 
+## Heterogeneity, Precision, and Reasonable Protection
+
+M4 §4.31 reanalyzes licensed public retail data and maps the hierarchical coefficient update to the source implementation. M6 §6.46 derives the synthetic precision–detection comparison and consumer-harm elasticity. M9 §§9.57.1–9.57.6 connects the results to modal premises and reasonable protection. Three editable TikZ figures and two complete Python programs accompany the [data and code](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md) and [optional practice](../07_Labs/Evidence_Standards/README.md).
+
 ---
 
 ## Source: 06_Lecture_Notes/Preface.md
@@ -3073,7 +3109,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 541 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 547 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -3267,6 +3303,10 @@ Sessions 1, 2, 4, 5, 7, 9, 10, 11, 13, and 14 connect institutional history, the
 ## Data Artifacts and Restricted Research
 
 Session 2 uses minutes 155–170 to compare events, records, versions, and copies through synthetic retention and pending-request counts. Session 14 selects the artifact and NDA comparison within minutes 95–110: should the study be conducted, published, and used for public decisions? The extended agreement comparison and complete Python are optional practice in [Data, Truth, and Norms](../07_Labs/Data_Truth_and_Norms/README.md). These choices fit the existing 170-minute meetings; the full Session 14 deck remains a case library.
+
+## Hierarchical Pooling, Precision, and Missed Harm
+
+Sessions 6 and 14 connect released-data integration to the documented conditional regression update, then evaluate a synthetic case with greater precision and less detection of a minority burden. Three editable diagrams accompany [M4 §4.31, M6 §6.46, and M9 §9.57](../06_Lecture_Notes/README.md). Actual false-flag rates, group risks, and the precision elasticity remain explicit.
 
 ---
 
@@ -3868,6 +3908,10 @@ The [historical readings](../01_Resources/46_Measurement_and_Disciplinary_Histor
 
 M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical copies through a complete synthetic subscription program. M9 §§9.60–9.65 connects artifact creation, public norms, NDA restrictions, publication selection, and reasons owed to affected people. The discussion asks whether research under an NDA ought to exist and distinguishes conducting, publishing, and relying on a study. Sessions 2 and 14 use the same cases, with three editable TikZ diagrams and optional practice in `07_Labs/Data_Truth_and_Norms/`. Source annotations and professional-policy scope appear in `01_Resources/45_Data_Truth_and_Norms/`.
 
+## Hierarchical Pooling, Detection, and Reasonable Protection
+
+M4 §4.31 reanalyzes the licensed public retail file and maps the normal conditional update to the documented method (Rossi, 2025). M6 §6.46 compares greater posterior precision with missed harm in a synthetic population. M8 §8.34.1 and M9 §§9.57.1–9.57.6 connect the interpretation to HBS overstatement, modal premises, and reasonable protection. The [method crosswalk](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) states the exact correspondence and the additional assumptions. Sessions 6 and 14 select these comparisons within existing blocks; the full derivations are optional practice.
+
 ---
 
 ## Source: 03_Data_and_Code/mHealth/recurring_examples/results/VISUALIZATION.md
@@ -4228,7 +4272,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 30 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 33 |
-| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
+| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 31 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 47 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 46 |
@@ -4236,7 +4280,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 61 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 23 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 108 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 111 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -4647,6 +4691,10 @@ These allocations select among the existing examples within each 170-minute meet
 
 Session 2 uses minutes 155–170 to compare events, records, versions, and copies through synthetic retention and pending-request counts. Session 14 selects the artifact and NDA comparison within minutes 95–110: should the study be conducted, published, and used for public decisions? The extended agreement comparison and complete Python are optional practice in [Data, Truth, and Norms](../07_Labs/Data_Truth_and_Norms/README.md). These choices fit the existing 170-minute meetings; the full Session 14 deck remains a case library.
 
+## Hierarchical Pooling and Consumer Protection
+
+Session 6 selects the released-account comparison and conditional update within minutes 45–70. Session 14 selects the precision, detection, and reasonable-protection comparison within minutes 90–110. These are alternatives within existing blocks; the full deck is a case library. Complete programs and philosophical exercises remain [optional practice](../07_Labs/Evidence_Standards/README.md).
+
 ---
 
 ## Source: 02_Syllabus/TEACHING_PLAN.md
@@ -4859,6 +4907,10 @@ The [26-source guide](../01_Resources/45_Data_Truth_and_Norms/README.md), [progr
 Use the [integrated notes and optional lab](../07_Labs/Evidence_Standards/README.md) across Sessions 1, 2, 4, 5, 7, 9, 10, 11, 13, and 14. Session 9 uses ten minutes of its existing worked comparison and fifteen minutes of its Python block for exact Type I and Type II errors under opposing cost specifications. Session 14 uses minutes 90–110 for premises, institutional standards, pricing burdens, and the strongest reply. The [detailed allocations](../05_Slides/SESSION_PLAN.md#evidence-standards-and-unequal-error-costs) select among the existing case library. Extended cases remain optional practice.
 
 The history begins with the managerial choice and the institutions that gave measurement authority. The critique then distinguishes demand estimation, conduct, and moral permission. A reasonable recommendation matches evidence to investigation, protection, or remedy and identifies who bears both errors. It preserves the role of identification in detecting market power and avoids assuming a direction of bias from Bayesian integration. The dated meetings and assessment status remain governed by the syllabus.
+
+## Heterogeneity and the Interpretation of No Evidence
+
+Session 6 can select the released-account comparison within its worked-example block. Session 14 can select the precision and detection comparison within minutes 90–110, alongside the HBS reassurance case. Full calculations and the three additional diagrams are optional ungraded practice. Existing 170-minute allocations and assessment requirements remain unchanged.
 
 ---
 
@@ -7995,6 +8047,66 @@ A pricing model can represent a constrained customer as someone with a high will
 Three judgments remain distinct. The statistical judgment asks whether the model estimates response under its assumptions. The economic judgment asks what mechanisms and conduct generate that response. The moral judgment asks whether the firm may use the information in the proposed way. Flexibility in the first judgment does not settle the other two. M4 §4.30 explains why integrating tastes has no inherent direction of bias for inferred markups and why identification can support an enforcement case.
 
 The critique becomes empirically assessable when it names the suppressed mechanism or restriction. Compare alternative outside options, switching costs, priors, instruments, and conduct assumptions against institutional evidence. Report uncertainty that survives these comparisons. Then assess whether the decision rule gives consumers a reasonable opportunity to obtain protection under that uncertainty. Treating every imperfectly identified harm as negligible would convert a limit of evidence into a substantive presumption favoring continued exposure.
+
+### 9.57.1 Statistical Rigor and Unequal Protection
+
+\noindent A firm can benefit from an evidentiary rule that treats every unresolved explanation based on consumer differences as a reason to continue a practice. Flexible integration gives the analyst many ways to represent observed responses through a distribution of tastes. If an institution then requires consumers to eliminate every such explanation before obtaining protection, additional flexibility raises the burden of proof without necessarily adding information that distinguishes the mechanisms. The firm retains the benefit of continued operation while exposed consumers bear the consequences of delay. This is a substantive allocation of protection disguised as a purely technical demand.
+
+The social value of that rule requires justification. Statistical rigor can improve an estimate while an institution uses it to defend an unreasonable standard for action. A model's numerical accuracy establishes no general social benefit from postponing investigation, disclosure, or a reversible safeguard. The criticism concerns the joint use of the model and the institutional rule: flexible heterogeneity becomes a means of discounting a complaint when a possible preference explanation is treated as sufficient reassurance. Model flexibility can also reveal concentrated burdens. The comparison must therefore examine which mechanisms enter, what distinguishes them, and how unresolved evidence affects the decision [(Jiang et al., 2009)](https://doi.org/10.1016/j.jeconom.2008.12.010); [(Douglas, 2000)](https://doi.org/10.1086/392855).
+
+The released-data reanalysis in §4.31 makes this distinction concrete. A richer mixing distribution improves the in-sample likelihood, while BIC favors the simpler distribution. Under either distribution, a constructed shift between intrinsic tastes and a restriction on alternatives preserves every observed likelihood contribution. A conclusion that the restriction is absent would come from the chosen representation. Additional integration of the same observations supplies no independent evidence for that conclusion. The empirical result concerns fit; the exact equivalence is a constructed identification example. Neither establishes wrongdoing by the retailers represented in the data.
+
+### 9.57.2 Model Possibility, Evidential Support, and Permission
+
+\noindent A statement that a model *can* explain behavior through tastes asserts a representational possibility. A statement that firms *may* continue the practice asserts permission. The second conclusion needs a justified principle governing the consequences imposed on affected people. It does not follow from the first statement or from an unresolved causal attribution. Modal language makes this transition easy to conceal because possibility, ability, requirements, and permission can use similar words. An account of modal discourse that examines the norms expressed by those words helps identify the missing premise [(Thomasson, 2020b, chapter 2)](https://academic.oup.com/book/33564/chapter-abstract/288025599).
+
+| Statement | Kind of Claim | Further Support Needed |
+| --- | --- | --- |
+| A taste distribution can fit these responses | Model-relative possibility | Specified model, data, and calculation |
+| The evidence establishes that tastes explain the responses | Empirical attribution | Evidence separating competing mechanisms |
+| These consumers face no harmful restriction | Claim about their situation | Relevant options, terms, exposure, and consequences |
+| The firm may continue while uncertainty remains | Normative permission | A principle justifiable to affected people |
+
+Observations do not supply their own unqualified interpretive authority. Calling a fitted coefficient a preference already locates it within a structure of concepts and reasons. The criticism of the Given requires scrutiny of that structure [(Sellars, 1956, §§32–38)](https://www.ditext.com/sellars/epm8.html). Reducing the existence of harm to what a selected model identifies also confuses an ontological question with a question about knowledge [(Bhaskar, 2007, pp. 192–194)](https://internationalcentreforcriticalrealism.wordpress.com/wp-content/uploads/2013/04/07-1-bhaskar-theorising-ontology-2007.pdf). These critiques motivate investigation of institutions and omitted mechanisms. Unobserved response parameters remain empirical objects; the Kantian distinction between phenomena and noumena does not turn a proposed hidden mechanism into an established fact.
+
+![A fitted distribution supports a conditional description. Distinguishing the mechanism requires institutional evidence, and permission requires reasons owed to affected people. An unsupported shortcut from model fit to permission transfers unresolved risk to consumers.](../figures/M09_heterogeneity_modality.png)
+
+**Figure interpretation.** The upper path moves from computation to empirical attribution and then to a proposed action. Each transition requires additional support. The lower path represents a rule that treats a possible taste explanation as sufficient permission. Its consequence is an allocation of unresolved risk that must itself be justified.
+
+### 9.57.3 A Lower Burden Before Proportionate Protection
+
+\noindent A consumer facing a credible prospect of serious harm can reasonably object to a rule that withholds even modest protection until every unobserved difference has been identified. The objection concerns the burden imposed by waiting and the person's limited access to the firm's records. Compare it with the burdens of obtaining relevant information, restricting a specific practice temporarily, and correcting the response if the concern proves unfounded. Where those alternative burdens are smaller and proportionate, the consumer has a strong reason to reject the requirement of exhaustive heterogeneity adjustment before protection [(Scanlon, 1998, pp. 195–196)](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf).
+
+The corresponding principle lowers the evidentiary threshold for a specified protective action: credible evidence of serious exposure can justify inquiry or a reversible safeguard while the heterogeneity decomposition remains unsettled. It places a burden on the firm seeking unrestricted continuation to substantiate its reassurance and facilitate access to discriminating evidence. The strength of the concern, duration of exposure, effectiveness of the safeguard, and burdens on other affected people determine the recommendation. This is an application of reasonable rejection to an institutional evidentiary rule. It supplies no numerical significance level or instruction to omit a confounder from an estimator presented as causal.
+
+Reasonableness also differs from acceptance under the choices a powerful party supplies. A dependent person may rationally accept unfavorable terms while retaining a reasonable objection to the principle that permits those terms. The water-rights example makes that difference explicit [(Scanlon, 1998, pp. 192–194)](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf). A fitted willingness-to-pay distribution describes behavior under available options. It cannot by itself justify the institution that determines those options. Later reconsideration of contractualism emphasizes the relevant personal reasons of all affected parties and rejects a strictly bilateral comparison limited to one opposing reason [(Scanlon, 2025, circulated version, pp. 41–43)](https://www.law.nyu.edu/sites/default/files/2025-09/T.%20M.%20Scanlon%2C%20Contractualism%20and%20Intuitionism.pdf).
+
+### 9.57.4 Missed Harm and the Cost of an Unanswerable Demand
+
+\noindent Suppose a constructed harmful state and a harmless state generate exactly the same distribution of the recorded observations, as in §4.31. A data-only rule that flags five percent of cases in the harmless state also flags five percent in the harmful state. Its missed-harm rate in that construction is 95%. More precise integration leaves this equality unchanged. Restricting every response to such a rule makes protection depend on evidence the chosen records cannot supply.
+
+The normative response is to reconsider the action and its evidentiary requirements. Contract terms, available alternatives, cost records, testimony, or an intervention may distinguish the mechanisms. A proportionate interim response can address credible exposure while those records are obtained. An accusation, a liability finding, and damages require their own factual and legal predicates. Statistical rigor has an instrumental value when it helps answer a justified question; treating it as an overriding virtue without examining the burdens of the rule can protect firms at consumers' expense.
+
+The electricity case presents a related inference. A heterogeneous utility-price model can leave household costs and recovery mechanisms unresolved. The HBS overstatement in §8.31 then converts uncertainty into reassurance. In both settings, the institution ought to explain why its evidence supports the public claim and why those exposed should accept the proposed allocation of risk.
+
+
+### 9.57.5 The Societal Cost of Precision as an Overriding Virtue
+
+\noindent Greater precision can accompany less protection. In the synthetic partial-pooling comparison in §6.46, posterior standard deviation falls from 1 to 0.5345 and average estimation error falls by 71.43%. Detection of the group with a known substantial burden falls from 63.88% to 14.07% under the fixed posterior-credibility rule. Its estimate becomes less accurate even as population average accuracy improves. The small harmed group's losses can disappear from the institutional evaluation when only the overall accuracy metric receives standing.
+
+The consumer-harm elasticity with respect to reported precision makes that cost explicit. At the pooled endpoint, a one-percent increase in precision raises expected consumer loss by approximately 0.40% locally under the specified rule. The example also reports the reduction in false flags. Its moral significance depends on the severity of the burdens, the response under consideration, and the feasible alternatives. The elasticity measures a consequence; it does not itself establish a complete social ranking.
+
+The false virtue lies in treating a narrower interval or smaller average estimation error as sufficient justification for leaving people exposed. Consumers can reasonably reject an avoidable burden when a feasible, proportionate response addresses credible risk. The institution owes an account of why it chose a demanding rule for protection, whose errors improved, and whose harms became less visible. Relevant personal reasons extend to all affected parties [(Scanlon, 1998, pp. 195–196)](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf); [(Scanlon, 2025, circulated version, pp. 41–43)](https://www.law.nyu.edu/sites/default/files/2025-09/T.%20M.%20Scanlon%2C%20Contractualism%20and%20Intuitionism.pdf).
+
+The electricity case requires the same scrutiny of the inference from fewer detected effects to reassurance. Household burdens, recovery timing, and informative bounds must support a claim of little harm. HBS's overstatement supplies no such comparison. The partial-pooling mechanism is a separate constructed example; the actual electricity estimates require their own design and power assessment. A criticism can identify the unsupported reassurance without manufacturing a numerical harm estimate or attributing an unverified model failure.
+
+### 9.57.6 How the Hierarchical Update Can Increase Missed-Harm Losses
+
+\noindent The conditional normal coefficient update in the hierarchical regression (Rossi, 2025) supplies the same pooling operation used in §6.46. Section 4.31.4 maps the source implementation to the posterior covariance and mean. This gives a direct methodological connection: stronger prior precision can pull a harmful group effect toward a low pooled mean, while a fixed posterior lower-bound rule requires a larger raw signal before protection is triggered.
+
+The constructed comparison changes that update and its implied evidence threshold while holding the signals, consumer population, and horizon fixed. Expected missed-harm loss increases by $\$119{,}538$, despite lower average MSE and narrower conditional intervals. The additional loss is a consequence of the method as used in that decision, under the specified synthetic assumptions. It is not a measured loss in the released retail data. The full hierarchical sampler's uncertainty and an actual firm's decisions require separate evidence.
+
+A reasonable institutional standard must therefore evaluate who is harmed by treating the pooled posterior as the sole gatekeeper for protection. An exposed group can object to a standard that improves majority-weighted accuracy while making its own substantial burden less visible. The reply must explain the value of fewer false flags, the burden of a feasible safeguard, and why the group should bear the remaining risk. A claim of improved statistical performance leaves those reasons to be supplied [(Scanlon, 1998, pp. 195–196)](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf).
 
 ## 9.58 A Reasonable Principle for Acting Under Uncertainty
 
@@ -16803,6 +16915,18 @@ The [annotated readings](READINGS.md) and [catalog](catalog.json) record 16 sour
 
 [The lecture notes](../../06_Lecture_Notes/README.md#measurement-traditions-and-evidence-for-protection) integrate the argument across M1–M9, with full Python in M6 §6.44 and extended philosophy in M9 §§9.55–9.59. [Selected session discussions](../../05_Slides/SESSION_PLAN.md#evidence-standards-and-unequal-error-costs), the syllabus, and [optional practice](../../07_Labs/Evidence_Standards/README.md) connect the readings to pricing, household electricity, and prediction thresholds.
 
+## Released Data, Precision, and the Burden of Proof
+
+The [retail reanalysis](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md) uses public data attributed to a hierarchical trade-promotion study (Boatwright et al., 1999). It preserves the difference between the package and preprint samples. Exact mixture integration changes fitted coefficients while leaving a constructed taste-versus-restriction decomposition unidentified. M4 §4.31 contains the complete program.
+
+The separate synthetic comparison in M6 §6.46 shows narrower posterior intervals and lower average MSE alongside fewer detected harms under a fixed posterior-credibility rule. The group suffering the burden has greater MSE. Actual false-positive rates and a matched-calibration check identify the decision-rule tradeoff. The algebra of pooling supports the mechanism (Gelman et al., 2012, pp. 196–198); the consumer losses and precision elasticity are original constructions.
+
+M9 §§9.57.1–9.57.6 connects the missing empirical and normative premises to criticism of the Given, the distinction between ontology and knowledge, modal discourse, and reasonable rejection. An inability to rule out every preference explanation can impose an unreasonable burden before proportionate protection. The later circulated discussion considers relevant personal reasons across affected parties and revises a strictly bilateral treatment of aggregation (Scanlon, 2025, pp. 41–43). The argument supplies no general theorem that more heterogeneity lowers detection or that prior precision establishes harmlessness.
+
+Catalog records E17–E20 identify the public dataset and the newly inspected readings. Restricted source PDFs remain in Dropbox; the public repository contains annotations, links, licensed package data, and original teaching materials.
+
+The [method crosswalk](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md) establishes the exact conditional correspondence with the hierarchical regression (Rossi, 2025), while separating full posterior sampling from the fixed-hyperparameter calculation.
+
 ---
 
 ## Source: 03_Data_and_Code/Evidence_Standards/README.md
@@ -17166,6 +17290,35 @@ A strong philosophical response states why its factual premises are credible and
 
 Ask a coding assistant to explain the population denominator before changing a parameter. Require it to distinguish a posterior probability, p-value, power at a specified alternative, and expected loss. Verify one calculation independently. For the argument, ask for the strongest objection and evidence that would change a premise; assess the response against the cited sources rather than treating fluent wording as support.
 
+## Reanalyze Released Accounts
+
+Read M4 §4.31 and the [data and code](../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md). Run both commands:
+
+```sh
+python3 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/heterogeneity_reanalysis.py
+python3 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/test_reanalysis.py
+```
+
+14. Reconcile the 5,555 observations and 88 accounts with the upstream documentation. Explain why the 77-account preprint prevents a claim to reproduce its tables from this file alone.
+15. Compare likelihood and BIC for one and two mixing components. Explain why more in-sample fit leaves the simpler model preferred by BIC.
+16. Derive the normal convolution. Verify that shifting each latent mean by minus the imposed restriction leaves every account likelihood unchanged. State which institutional record could distinguish the mechanisms.
+17. Give the missing premise in each move from a possible taste explanation, to no harmful restriction, to permission to continue. Defend a proportionate response using the strongest reasons of affected people.
+
+## Greater Precision and Fewer Detected Harms
+
+Read M6 §6.46 and M9 §9.57.5, then run:
+
+```sh
+python3 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/harm_elasticity.py
+```
+
+18. Explain how average MSE can fall by 71.43% while harmed-group MSE more than doubles. State the population weights before making either claim.
+19. Derive the raw-signal threshold under the one-sided posterior rule. Reproduce detection of 63.88% versus 14.07% and the accompanying actual false-flag rates. Explain why nominal 95% posterior credibility does not hold frequentist size fixed.
+20. Verify the precision elasticity 0.3999 at the pooled endpoint. State the consumer population, monthly burden, and horizon. Explain why calling this a bias-reduction elasticity would be incorrect.
+21. Explain the matched-calibration result. Identify what is preserved in the data and what changes in the rule governing protection.
+22. Compare the proposed interpretation with the HBS overstatement. Identify the shared inference from no detected effect to reassurance, and the different statistical designs. State the evidence needed before claiming that shrinkage explains the actual data-center estimates.
+23. Assess a rule that accepts smaller average estimation error as sufficient reason to withhold protection. Compare the harmed group's objection with the costs of false flags and a reversible safeguard. Cite (Scanlon, 1998, pp. 195–196) and distinguish the source principle from its application.
+
 ---
 
 ## Source: 03_Data_and_Code/Data_Production/artifact_results/README.md
@@ -17215,6 +17368,118 @@ A restriction on identifiers can protect people. A restriction on questions can 
 [M9 §§9.63–9.65](../../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) compares three hypothetical agreements using the same six-account synthetic history. Students distinguish confidentiality review, restricted research purpose, and discretionary sponsor approval. The [optional practice](../../../07_Labs/Data_Truth_and_Norms/README.md) asks whether NDA-governed research ought to exist, separating the decision to conduct a study from publication and public reliance.
 
 A defensible answer addresses affected people's reasons, privacy, the value of knowledge, the risk of selective reassurance, and feasible alternative terms. It identifies conditions for proceeding, renegotiating, or declining. A researcher can have a reason to forgo a publication when the governing arrangement prevents adequate justification to the people affected by its use.
+
+---
+
+## Source: 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md
+
+# Heterogeneity and Consumer Protection
+
+A firm can fit heterogeneous responses accurately while leaving the source of those responses unresolved. This example reanalyzes released retail-account data and constructs two explanations with exactly the same likelihood. It connects model fit to the evidence and reasons required before a consumer complaint can be dismissed.
+
+## Data and Provenance
+
+The `bayesm` 3.1-7 package attributes its `cheese` dataset to the trade-promotion study (Boatwright et al., 1999). The released file has 5,555 weekly observations for 88 retailer–market accounts, with Borden unit sales, price in US dollars, and display activity. All released rows and columns are retained. The upstream R object, documentation, package description, GPL license, conversion script, pinned commit, and hashes accompany the CSV. See [PROVENANCE.json](PROVENANCE.json) and the [data dictionary](DATA_DICTIONARY.md).
+
+This is a reanalysis of a public dataset attributed to the study. The January 1999 preprint describes 77 accounts and a Kraft application with additional variables; the public package describes 88 accounts and Borden sales. The mapping is unresolved. The exercise therefore makes no claim to reproduce a published table or the paper's constrained hierarchical sampler. The package provides a concrete research-data example with an explicit replication boundary.
+
+## Run the Example
+
+Python 3 with NumPy, pandas, and SciPy is required. The provided CSV permits execution without R. To reproduce the extraction from the original object, run `Rscript 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/convert_data.R` from the repository root.
+
+```sh
+python3 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/heterogeneity_reanalysis.py
+python3 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/test_reanalysis.py
+```
+
+The program runs account regressions of log unit sales on log price, an intercept, and display where display varies. It then integrates account coefficients under one- and two-component normal distributions, fitting their parameters by marginal maximum likelihood. The resulting conditional distributions are empirical Bayes. First-stage standard errors use an iid Gaussian working model; temporal dependence and uncertainty in fitted hyperparameters remain outside this calculation. These restrictions preclude using the reported precision as a validated measure of uncertainty about causal demand or conduct.
+
+## Results and Interpretation
+
+The one-component and two-component log likelihoods are -128.629 and -124.520. Their BIC values are 266.213 and 271.427, respectively, so BIC favors the simpler model despite the extra in-sample fit. Mean conditional account slopes are -2.138 and -2.151. The two positive OLS slopes become negative conditional means in both integrated models. This shrinkage illustrates how a distributional model changes the interpretation of noisy account estimates; it establishes no consumer benefit or injury.
+
+The constructed mechanism decomposes the observed response as a latent taste component plus an imposed restriction component. Shifting the latent distribution offsets the imposed restriction exactly. Every account's marginal likelihood remains unchanged at restriction values 0, 0.25, 0.5, and 1. These values are synthetic explanatory scenarios applied to the fitted response distribution. They are not measured switching costs or findings of misconduct.
+
+If a constructed harmless and harmful state generate the same observed-data distribution, any rule with a five-percent false-flag rate under the harmless state also flags only five percent under the harmful state. Its missed-harm rate is 95% in that construction. This is an identification result, not an estimated error rate for these retailers or a general property of Bayesian models. Additional observations capable of distinguishing the mechanisms can change the result.
+
+## Decision and Philosophical Questions
+
+The public record supports a comparison of response models. A conclusion about price discrimination, wrongdoing, or permissible conduct requires further economic and normative premises. Consumers with credible concerns about serious exposure may reasonably demand records or proportionate protection before investigators identify every aspect of heterogeneity. The argument compares their reasons with the burdens of the proposed response, including those of other customers and affected workers [(Scanlon, 1998, pp. 191–196)](https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf).
+
+[M4 §4.31](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) contains the derivation and complete Python. [M9 §§9.57.1–9.57.4](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) distinguishes model-relative possibility, evidential support, and permission. [Optional practice](../../07_Labs/Evidence_Standards/README.md) asks students to defend a lower threshold for a specified protective action while preserving the assumptions needed for a factual allegation.
+
+## Outputs and Verification
+
+The [results guide](results/README.md) identifies each table and denominator. [VERIFICATION.md](VERIFICATION.md) records numerical checks, source fidelity, and the replication boundary. No upstream estimation code is executed. The course program is an original adaptation; source data and documentation retain the package's license and attribution.
+
+## Precision and Missed Harm
+
+Run `python3 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/harm_elasticity.py` for the separate synthetic example in M6 §6.46. Partial pooling narrows posterior standard deviation from 1 to 0.5345 and lowers population-average MSE from 1 to 0.2857, while detection of the harmed group falls from 63.88% to 14.07% under a fixed one-sided posterior-credibility rule. Actual false-flag rates fall from 5% to 0.1045%. The harmed subgroup's MSE increases to 2.1224.
+
+This is a precision comparison, with a population that includes ten percent harmed groups and a normal working prior. It is not bias reduction within the harmed group or an empirical harm finding in the retail data. The positive precision elasticity is 0.3999 at the pooled endpoint. Matching the actual false-positive rates recovers the same detection because the score transformation preserves information. These checks identify the joint role of pooling and the institutional decision rule.
+
+The source algebra is (Gelman et al., 2012, pp. 196–198), [DOI](https://doi.org/10.1080/19345747.2011.618213). The consumer population, harms, loss function, and elasticity are original course constructions. M9 §9.57.5 connects the result to reasonable protection and the data-center reassurance critique.
+
+## Method Correspondence
+
+The [method crosswalk](METHOD_CROSSWALK.md) traces the hierarchical loop to `runiregG`, derives the matrix posterior, and verifies the scalar conditional identity numerically. Source files and hashes are retained; no upstream sampler was executed. The known-harm example changes this conditional update and the associated decision threshold, with full hyperparameter uncertainty outside its scope.
+
+---
+
+## Source: 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/DATA_DICTIONARY.md
+
+# Released Retail-Account Data
+
+The unit is a released weekly observation for a retailer–market account. There are 5,555 rows across 88 accounts. The file supplies neither a date column nor household identifiers, purchases, incomes, contract terms, marginal costs, or welfare outcomes. Row order is preserved without assigning calendar dates.
+
+| Field | Meaning and Units |
+| --- | --- |
+| `RETAILER` | Public retailer–market account label; grouping unit |
+| `VOLUME` | Unit sales of the released Borden sliced-cheese product |
+| `DISP` | Released display measure in [0,1], described as percent ACV in the upstream documentation; retained in its fractional scale |
+| `PRICE` | Average price in US dollars |
+
+`log(VOLUME)` and `log(PRICE)` use natural logarithms. The price coefficient is a conditional log-sales/log-price association. Display enters in its released scale. Two accounts have constant display and therefore use an intercept and log price only. Every account remains in the analysis; no observations are removed. Each account receives one contribution to the second-stage likelihood, with its own first-stage sampling variance. The reported mean account coefficient gives accounts equal weight.
+
+The independent-error assumption is a working model. Missing dates limit assessment of temporal dependence; prices and promotions can also respond to demand conditions. The exercise makes conditional comparisons under these restrictions and does not treat the fitted coefficients as identified causal elasticities.
+
+## Synthetic Precision Inputs
+
+The precision calculation uses no rows from `cheese.csv`. It specifies independent normal group signals with SD one, zero burden for 90% of equal-sized groups, and burden two for 10%. One burden unit is $10 per person-month. The normal working prior is centered on zero; its variance determines the retained data weight. Monetary loss uses 10,000 consumers, the ten-percent harmful share, and 12 months of $20 burden when harm is missed. These inputs define an illustration rather than observations.
+
+---
+
+## Source: 03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md
+
+# Hierarchical Regression, Pooling, and Missed Harm
+
+## The Documented Method
+
+The `cheese.Rd` example prepares account-specific regressions for `rhierLinearModel`. The package documentation identifies the hierarchical regression model and its author (Rossi, 2025, bayesm 3.1-7). The maintained source separates the hierarchical loop from the conditional coefficient draw. The file `rhierLinearModel_rcpp_loop.cpp` forms the prior precision from `Vbeta`, constructs the prior mean `Z * Delta`, and calls `runiregG` in `utilityFunctions.cpp`. The latter adds data precision and prior precision before drawing each regression coefficient vector. These GPL source files are saved under `upstream/`, with pinned hashes in `PROVENANCE.json`. They were inspected, not executed.
+
+## The Exact Conditional Update
+
+For regression $j$, let $y_j=X_j\beta_j+e_j$, with $e_j\sim N(0,v_jI)$, and let $\beta_j\sim N(\mu_j,V)$, where $\mu_j=Z_j\Delta$. Conditional on $v_j$, $V$, and $\Delta$, the posterior covariance and mean are
+
+$$C_j=(X_j'X_j/v_j+V^{-1})^{-1},\qquad
+m_j=C_j(X_j'y_j/v_j+V^{-1}\mu_j).$$
+
+The source computes this covariance through a Cholesky factor and this mean through the precision-weighted right-hand side. The course's `conditional_update` computes the same normal conditional moments without drawing random values. Setting $X'X=1$, $X'y=2$, $v=1$, $\mu=0$, and $V=0.4$ gives $C=2/7$ and $m=4/7$. These equal $w\sigma^2$ and $wY$ in the precision example. The connection is an exact scalar conditional specialization of the documented update, rather than a verbal analogy.
+
+## The Decision That Produces the Loss
+
+The known-harm simulation holds the population, raw observations, and follow-up horizon fixed. It substitutes the pooled conditional posterior for the unpooled estimate and applies a one-sided 95% posterior lower-bound rule. Relative to the unpooled benchmark, detection falls by 49.81 percentage points and synthetic missed-harm loss increases by $119,538 across the specified 10,000 consumers and 12 months. This difference is caused by the estimator-and-decision-rule change in the constructed experiment. Average MSE nevertheless falls by 71.43%, and reported posterior SD falls by 46.55%.
+
+The source implementation supplies the pooling mechanism. The synthetic harmful population, fixed hyperparameters, centered prior, protection rule, and dollar losses are additional course assumptions. The normal working prior approximates the two-point population. The result does not establish an observed injury in the cheese data or the published trade-promotion application. Full hierarchical sampling also updates the mean, covariance, and residual variances. Integrating uncertainty in those quantities can change intervals and decisions, so conditional precision must not be reported as the full sampler's uncertainty.
+
+The mechanism matters when a low pooled mean, weak group-specific information, and a demanding posterior rule make a minority burden difficult to flag. More heterogeneous prior dispersion weakens the pooling; unrestricted claims that adding heterogeneity always suppresses harm are unsupported. The criticism instead identifies a particular operation in the method and the institutional use that makes its missed detections costly.
+
+## Sources
+
+- (Rossi, 2025), [hierarchical model documentation at the pinned version](https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/man/rhierLinearModel.Rd).
+- (Kim, 2014; bayesm 3.1-7), [hierarchical loop](https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/src/rhierLinearModel_rcpp_loop.cpp) and [conditional update](https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/src/utilityFunctions.cpp). Preserve the implementation contributor's attribution separately from the package author's model documentation.
+- (Boatwright et al., 1999), [study attributed by the public data documentation](https://doi.org/10.1080/01621459.1999.10473859). The public package and preprint sample differ.
+- (Gelman et al., 2012, pp. 196–198), [partial-pooling algebra](https://doi.org/10.1080/19345747.2011.618213).
 
 ---
 

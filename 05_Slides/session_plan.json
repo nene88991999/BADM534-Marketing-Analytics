@@ -384,7 +384,7 @@
       "modules": "M4",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 28,
+      "slides": 31,
       "companion": "S06_Segmentation_and_Customer_Lifetime_Value.md",
       "pdf": "S06_Segmentation_and_Customer_Lifetime_Value.pdf",
       "python_activity": "Fit customer segments or research-mechanism clusters; assess stability and reproduce lifetime value. CPU algorithm comparison is optional follow-up practice. Use the optional Digital Usage lab for the complete geographic analysis.",
@@ -447,7 +447,8 @@
         }
       ],
       "date": "2027-02-24",
-      "digital_usage_minutes": 10
+      "digital_usage_minutes": 10,
+      "heterogeneity_coverage": "Select the account comparison and conditional update within minutes 45–70; complete reanalysis is optional practice."
     },
     {
       "session": 7,
@@ -948,7 +949,7 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 108,
+      "slides": 111,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
@@ -1084,7 +1085,8 @@
       "bad_controls_practice": "../07_Labs/Bad_Controls/README.md",
       "evidence_standards_coverage": "Use 90–95 for the premises of protection under uncertainty, 95–100 for evidentiary standards, and 100–110 for pricing burdens and the strongest reply. Select these slides within existing discussion; the full deck is a case library, and extended comparisons are optional practice.",
       "artifact_coverage": "Select the artifact and NDA comparison within minutes 95–110; extended contract assessment is optional practice. The deck remains a case library.",
-      "public_communication_coverage": "Use the existing research-reassurance discussion for the HBS claim, nonrejection, and a household objection. The three-reading comparison is optional ungraded practice; the 170-minute allocation is unchanged."
+      "public_communication_coverage": "Use the existing research-reassurance discussion for the HBS claim, nonrejection, and a household objection. The three-reading comparison is optional ungraded practice; the 170-minute allocation is unchanged.",
+      "precision_coverage": "Select the pooling, detection, and reasons comparison within minutes 90–110. The deck is a case library; complete calculations remain optional practice."
     },
     {
       "session": 15,

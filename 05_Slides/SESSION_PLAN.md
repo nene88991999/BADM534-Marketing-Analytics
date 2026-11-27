@@ -15,7 +15,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
 | 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 30 |
 | 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 33 |
-| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
+| 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 31 |
 | 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 47 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
 | 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 46 |
@@ -23,7 +23,7 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 61 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
 | 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 23 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 108 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 111 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -433,3 +433,7 @@ These allocations select among the existing examples within each 170-minute meet
 ## Data Artifacts and Restricted Research
 
 Session 2 uses minutes 155–170 to compare events, records, versions, and copies through synthetic retention and pending-request counts. Session 14 selects the artifact and NDA comparison within minutes 95–110: should the study be conducted, published, and used for public decisions? The extended agreement comparison and complete Python are optional practice in [Data, Truth, and Norms](../07_Labs/Data_Truth_and_Norms/README.md). These choices fit the existing 170-minute meetings; the full Session 14 deck remains a case library.
+
+## Hierarchical Pooling and Consumer Protection
+
+Session 6 selects the released-account comparison and conditional update within minutes 45–70. Session 14 selects the precision, detection, and reasonable-protection comparison within minutes 90–110. These are alternatives within existing blocks; the full deck is a case library. Complete programs and philosophical exercises remain [optional practice](../07_Labs/Evidence_Standards/README.md).

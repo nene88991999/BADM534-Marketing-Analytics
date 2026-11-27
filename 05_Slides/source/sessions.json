@@ -1948,7 +1948,8 @@
       "Define similarity using economically meaningful customer features.",
       "Evaluate segment stability and future outcomes.",
       "Calculate lifetime value with consistent timing and distinguish retention concepts.",
-      "Compare clustering cost and final-center consistency with a common evaluation population."
+      "Compare clustering cost and final-center consistency with a common evaluation population.",
+      "Separate integrated response estimates, conditional pooling, and evidence about consumer burdens."
     ],
     "slides": [
       {
@@ -2231,6 +2232,49 @@
         "source": "(Pereira et al., 2026); original course calculations. ../01_Resources/38_Digital_Usage_and_Inclusion/README.md"
       },
       {
+        "kind": "table",
+        "title": "Released Accounts and Integrated Heterogeneity",
+        "headers": [
+          "Mixing Distribution",
+          "Log Likelihood",
+          "BIC"
+        ],
+        "rows": [
+          [
+            "One normal",
+            "−128.629",
+            "266.213"
+          ],
+          [
+            "Two normals",
+            "−124.520",
+            "271.427"
+          ]
+        ],
+        "caption": "5,555 observations; 88 accounts. Lower BIC favors the simpler model.",
+        "notes": "All released rows enter. Each account contributes one coefficient and working-model standard error to the second-stage likelihood. Two-stage empirical Bayes fixes the fitted hyperparameters and omits temporal dependence. The public package differs from the 77-account preprint, so this is a dataset reanalysis, not a published-table reproduction. The coefficients are conditional price-sales associations. Preserve the contrary BIC finding (Boatwright et al., 1999; bayesm, 2025).",
+        "source": "M4 §4.31. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "A Fitted Response Leaves Its Mechanism Open",
+        "figure": "../06_Lecture_Notes/figures/M04_heterogeneity_equivalence.tex",
+        "caption": "An imposed restriction shift is offset by the latent taste distribution.",
+        "description": "Two decompositions preserve the mean observed response and every likelihood contribution. Both have log likelihood −124.520; neither supplies a measured restriction.",
+        "notes": "The account data establish the fitted distribution. The taste-versus-restriction shifts are constructed. They show non-identification under this observation equation. Contracts, alternatives, or new variation could distinguish the mechanisms. A hypothetical harmful and harmless state with the same data distribution also have the same flagging probability under any data-only rule. No misconduct is measured in these accounts.",
+        "source": "M4 §4.31.2. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md",
+        "figure_height": 0.69
+      },
+      {
+        "kind": "equation",
+        "title": "The Hierarchical Update Pools Coefficients",
+        "intro": "Conditional on the group mean, covariance, and error variance:",
+        "equation": "\\begin{aligned}C_j&=(X_j^{\\prime}X_j/v_j+V^{-1})^{-1},\\\\m_j&=C_j(X_j^{\\prime}y_j/v_j+V^{-1}\\mu_j).\\end{aligned}",
+        "interpretation": "Data precision and prior precision jointly determine each group’s estimate.",
+        "notes": "This is the normal coefficient update in the hierarchical regression documented in bayesm (Rossi, 2025). The loop constructs Vbeta inverse and Z Delta, then calls runiregG. The scalar case X transpose X=1, X transpose y=2, error variance=1, prior mean=0, and prior variance=.4 gives mean 4/7 and variance 2/7. Those are exactly the conditional moments in the known-harm example in M6 §6.46. The full sampler also updates the hyperparameters; the conditional illustration does not reproduce that full uncertainty.",
+        "source": "M4 §4.31.4. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md"
+      },
+      {
         "kind": "bullets",
         "title": "Retention Discussion",
         "bullets": [
@@ -2251,7 +2295,8 @@
       "[Consumer Agency Literature and Clustering](../03_Data_and_Code/Consumer_Agency_Literature/README.md)",
       "[Clustering Optimization and Sources](../01_Resources/23_Clustering_Optimization/README.md)",
       "[Optional Clustering Practice](../07_Labs/Clustering_Optimization/README.md)",
-      "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)"
+      "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)",
+      "[Released Data and Method Correspondence](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md)"
     ],
     "practice": "Fit earlier-period segments and independently reproduce lifetime value; optional CPU clustering comparison and final-label checks.",
     "application": "Use 15 minutes for weighted centers, final labels, and computational comparisons; retain 15 minutes for customer retention definitions."
@@ -5228,7 +5273,8 @@
       "Distinguish truth, evidential warrant, and the norms governing disclosure and public justification.",
       "Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections.",
       "Evaluate whether restricted research ought to be conducted, published, or used to justify public action.",
-      "Explain when statistical insignificance supplies no substantive conclusion about harm, using a public claim and its underlying uncertainty."
+      "Explain when statistical insignificance supplies no substantive conclusion about harm, using a public claim and its underlying uncertainty.",
+      "Evaluate how hierarchical pooling and a protection rule can reduce detection of a minority burden."
     ],
     "slides": [
       {
@@ -6470,6 +6516,65 @@
       },
       {
         "kind": "figure",
+        "title": "A Possible Explanation Does Not Grant Permission",
+        "figure": "../06_Lecture_Notes/figures/M09_heterogeneity_modality.tex",
+        "caption": "Model fit, empirical attribution, and permissible action require different premises.",
+        "description": "The upper path requires institutional evidence and normative reasons. The lower shortcut treats a possible taste explanation as permission to continue, allocating unresolved risk to consumers.",
+        "notes": "The modal analysis distinguishes model-relative possibility from an empirical claim and normative permission (Thomasson, 2020b). A plausible taste explanation leaves its factual attribution unresolved. Critics of the Given and the reduction of ontology to knowledge motivate scrutiny of the interpretation (Sellars, 1956; Bhaskar, 2007). A credible serious burden can support records or proportionate protection before exhaustive decomposition, after considering competing reasons (Scanlon, 1998, 2025). These philosophical sources do not prescribe an estimator or numerical threshold.",
+        "source": "M9 §§9.57.1–9.57.3. ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md",
+        "figure_height": 0.68
+      },
+      {
+        "kind": "table",
+        "title": "Greater Precision Can Conceal a Minority Burden",
+        "headers": [
+          "Synthetic Comparison",
+          "Unpooled",
+          "Pooled"
+        ],
+        "rows": [
+          [
+            "Posterior SD",
+            "1.0000",
+            "0.5345"
+          ],
+          [
+            "Average MSE",
+            "1.0000",
+            "0.2857"
+          ],
+          [
+            "Harmed-group MSE",
+            "1.0000",
+            "2.1224"
+          ],
+          [
+            "Harm detected",
+            "63.88%",
+            "14.07%"
+          ],
+          [
+            "Actual false flags",
+            "5.00%",
+            "0.1045%"
+          ]
+        ],
+        "caption": "Fixed one-sided 95% posterior rule; ten percent of groups face a true burden of two units.",
+        "notes": "The scalar conditional update is exactly the hierarchical normal-regression step documented in bayesm (Rossi, 2025); M4 §4.31.4 maps it to the source. The working prior is centered on zero with variance .4, giving weight 2/7. Signal variance is one. The two-point synthetic population differs from the normal working prior. Average MSE improves even as the harmed group has worse MSE and less detection. Actual false-positive rates differ; matched-size recalibration restores the same detection because scaling the score preserves information. This identifies a methodological and institutional failure mode, not an empirical loss in the retail study or a universal effect of adding heterogeneity. Partial-pooling algebra: (Gelman et al., 2012, pp. 196–198).",
+        "source": "M6 §6.46. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Who Pays for the More Precise Rule?",
+        "figure": "../06_Lecture_Notes/figures/M06_harm_elasticity.tex",
+        "caption": "At the pooled endpoint, a 1% precision increase raises synthetic missed-harm loss by about 0.40% locally.",
+        "description": "The first panel shows declining population-average MSE as posterior precision rises. The second shows declining detection of the harmed group under the fixed posterior rule.",
+        "notes": "The precision elasticity is .3999 at weight 2/7. Among 10,000 consumers, ten percent face $20 per month for 12 months if harm is missed. Expected loss rises from $86,698 to $206,235. The $119,538 difference is caused by changing the conditional update and its implied raw-signal threshold in this constructed comparison. It excludes false-flag costs and other parties. This is increased precision, not reduced bias for the harmed group. The data-center connection concerns the unsupported inference from no detected effect to reassurance; its actual estimator must be assessed separately. A reasonable action compares serious exposure, alternative safeguards, and the reasons of all affected people (Scanlon, 1998, 2025).",
+        "source": "M6 §6.46; M9 §§9.57.5–9.57.6. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md",
+        "figure_height": 0.66
+      },
+      {
+        "kind": "figure",
         "title": "Build an Argument for Action Under Uncertainty",
         "figure": "../06_Lecture_Notes/figures/M09_reasons_under_uncertainty.tex",
         "caption": "An ought conclusion requires supported factual premises and a defended principle.",
@@ -6540,7 +6645,8 @@
       "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)",
       "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)",
       "[Confidentiality and research independence](../01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md)",
-      "[Public Claims, Overstatement, and Uncertainty](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md)"
+      "[Public Claims, Overstatement, and Uncertainty](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md)",
+      "[Precision, Detection, and the Method Crosswalk](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
     "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Evaluate the HBS overstatement by reconstructing Table 4 uncertainty and a justified harm threshold."

@@ -1,0 +1,12 @@
+{
+  "harm_share": 0.1,
+  "harm_standard_units": 2.0,
+  "sampling_sd": 1.0,
+  "population": 10000,
+  "months": 12,
+  "dollars_per_unit": 10,
+  "signal": "Y conditional on theta is Normal(theta,1); theta is 0 with probability .9 and 2 with probability .1.",
+  "working_prior": "Normal(0,tau^2), where w=tau^2/(tau^2+1); w=1 is the unpooled limit.",
+  "decision": "One-sided 95% posterior lower bound exceeds zero. Actual false-positive rates differ.",
+  "interpretation": "Synthetic loss from missed harm; no real-data consumer effect, no bias reduction claim, no universal claim about heterogeneity adjustment."
+}

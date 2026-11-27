@@ -1328,3 +1328,9 @@ Separate three actions. Investigation seeks information through relevant records
 For a pricing rollout, compare a limited pilot with disclosure and review against unrestricted deployment and complete prohibition. For electricity, compare obtaining project and cost-allocation records with making a public claim of harmlessness or assigning a particular loss to a project. State what would change the recommendation and who can contest the evidence. Where the customer has little control over exposure, the firm's access to relevant information supplies a reason for placing some evidence-production burden on the firm.
 
 The action must remain proportionate to the concern and open to revision. Expected-loss calculations in M6 §6.44 clarify the assumed costs of mistakes. The argument in M9 §9.58 adds the person's standing, the factual grounds for concern, and the normative premise needed for an ought conclusion. Accuracy and identification contribute to that judgment while leaving these further reasons to be defended.
+
+### 8.34.1 Precision and the Interpretation of No Evidence
+
+\noindent A more precise model can produce fewer flagged harms under a particular decision rule. In the synthetic partial-pooling comparison in §6.46, average estimation error falls while the small harmed group's estimate becomes less accurate and its burden is detected less often. The actual false-flag rate also falls. Those consequences require evaluation before treating the model's precision as a social benefit.
+
+The HBS overstatement concerns a related transition from no detected effect to reassurance. Its interpretation needs support from the measured outcome, uncertainty bounds, household exposure, and study design. The partial-pooling mechanism remains a separate example; determining whether it explains an empirical result requires inspecting that result's estimator. M9 §9.57 connects the evidentiary question to the reasons owed to people left exposed.

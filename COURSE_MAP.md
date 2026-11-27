@@ -233,3 +233,7 @@ The [historical collection](01_Resources/46_Measurement_and_Disciplinary_History
 ## Data, Artifacts, and Research Agreements
 
 M2 §§2.33–2.34 distinguishes events, records, dataset versions, and physical copies through a complete synthetic subscription program. M9 §§9.60–9.65 connects artifact creation, public norms, NDA restrictions, publication selection, and reasons owed to affected people. The discussion asks whether research under an NDA ought to exist and distinguishes conducting, publishing, and relying on a study. Sessions 2 and 14 use the same cases, with three editable TikZ diagrams and optional practice in `07_Labs/Data_Truth_and_Norms/`. Source annotations and professional-policy scope appear in `01_Resources/45_Data_Truth_and_Norms/`.
+
+## Precision and Missed Consumer Harm
+
+Use M4 §4.31 for released retail data and exact mixture integration, M6 §6.46 for the synthetic precision–detection calculation, and M9 §§9.57.1–9.57.5 for modal claims and reasonable protection. [Data, code, and provenance](03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md); [optional practice](07_Labs/Evidence_Standards/README.md).

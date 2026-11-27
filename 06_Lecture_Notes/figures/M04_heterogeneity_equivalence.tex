@@ -1,0 +1,14 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.1cm,minimum height=1.1cm] (a) at (1.7,0) {\textbf{Intrinsic Response}\\Mean $-2.151$};
+\node[box,text width=3.1cm,minimum height=1.1cm] (b) at (6.2,0) {\textbf{Imposed Restriction}\\$\gamma=0$};
+\node[orangebox,text width=3.3cm,minimum height=1.1cm] (c) at (10.8,0) {\textbf{Observed Response}\\Mean $-2.151$};
+\node at (3.95,0) {$+$}; \node at (8.5,0) {$=$};
+\node[box,text width=3.1cm,minimum height=1.1cm] (d) at (1.7,-2.2) {\textbf{Intrinsic Response}\\Mean $-2.651$};
+\node[box,text width=3.1cm,minimum height=1.1cm] (e) at (6.2,-2.2) {\textbf{Imposed Restriction}\\$\gamma=0.5$};
+\node[orangebox,text width=3.3cm,minimum height=1.1cm] (f) at (10.8,-2.2) {\textbf{Observed Response}\\Mean $-2.151$};
+\node at (3.95,-2.2) {$+$}; \node at (8.5,-2.2) {$=$};
+\draw[edge,dashed] (a) -- node[left,font=\footnotesize] {Shift by $-0.5$} (d);
+\draw[accent] (c) -- node[right,font=\footnotesize] {Identical density} (f);
+\node[align=center,text width=13cm] at (6.3,-3.8) {Two-component fit to 88 accounts: log likelihood $-124.520$ in both rows.\\All component means shift; weights and variances remain fixed.};
+\node[align=center,text width=13cm,font=\footnotesize] at (6.3,-4.9) {Conditional log-price coefficients; equal account weights.\\Restriction scenarios are constructed, with no observed measure of restricted alternatives.};
+\end{tikzpicture}

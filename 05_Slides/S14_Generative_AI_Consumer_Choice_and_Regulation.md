@@ -30,6 +30,7 @@ Session 14. M8, M9. 170 minutes.
 - Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections.
 - Evaluate whether restricted research ought to be conducted, published, or used to justify public action.
 - Explain when statistical insignificance supplies no substantive conclusion about harm, using a public claim and its underlying uncertainty.
+- Evaluate how hierarchical pooling and a protection rule can reduce detection of a minority burden.
 
 ## Related Materials
 
@@ -72,6 +73,7 @@ Session 14. M8, M9. 170 minutes.
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 - [Confidentiality and research independence](../01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md)
 - [Public Claims, Overstatement, and Uncertainty](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md)
+- [Precision, Detection, and the Method Crosswalk](../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -1239,7 +1241,47 @@ The criticism is strongest when it specifies the rule, the action, access to evi
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 106: Build an Argument for Action Under Uncertainty
+## Slide 106: A Possible Explanation Does Not Grant Permission
+
+Model fit, empirical attribution, and permissible action require different premises.
+
+**Figure description:** The upper path requires institutional evidence and normative reasons. The lower shortcut treats a possible taste explanation as permission to continue, allocating unresolved risk to consumers.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_heterogeneity_modality.tex)
+
+The modal analysis distinguishes model-relative possibility from an empirical claim and normative permission (Thomasson, 2020b). A plausible taste explanation leaves its factual attribution unresolved. Critics of the Given and the reduction of ontology to knowledge motivate scrutiny of the interpretation (Sellars, 1956; Bhaskar, 2007). A credible serious burden can support records or proportionate protection before exhaustive decomposition, after considering competing reasons (Scanlon, 1998, 2025). These philosophical sources do not prescribe an estimator or numerical threshold.
+
+Source: M9 §§9.57.1–9.57.3. ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 107: Greater Precision Can Conceal a Minority Burden
+
+| Synthetic Comparison | Unpooled | Pooled |
+| --- | --- | --- |
+| Posterior SD | 1.0000 | 0.5345 |
+| Average MSE | 1.0000 | 0.2857 |
+| Harmed-group MSE | 1.0000 | 2.1224 |
+| Harm detected | 63.88% | 14.07% |
+| Actual false flags | 5.00% | 0.1045% |
+
+Fixed one-sided 95% posterior rule; ten percent of groups face a true burden of two units.
+
+The scalar conditional update is exactly the hierarchical normal-regression step documented in bayesm (Rossi, 2025); M4 §4.31.4 maps it to the source. The working prior is centered on zero with variance .4, giving weight 2/7. Signal variance is one. The two-point synthetic population differs from the normal working prior. Average MSE improves even as the harmed group has worse MSE and less detection. Actual false-positive rates differ; matched-size recalibration restores the same detection because scaling the score preserves information. This identifies a methodological and institutional failure mode, not an empirical loss in the retail study or a universal effect of adding heterogeneity. Partial-pooling algebra: (Gelman et al., 2012, pp. 196–198).
+
+Source: M6 §6.46. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md
+
+## Slide 108: Who Pays for the More Precise Rule?
+
+At the pooled endpoint, a 1% precision increase raises synthetic missed-harm loss by about 0.40% locally.
+
+**Figure description:** The first panel shows declining population-average MSE as posterior precision rises. The second shows declining detection of the harmed group under the fixed posterior rule.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_harm_elasticity.tex)
+
+The precision elasticity is .3999 at weight 2/7. Among 10,000 consumers, ten percent face $20 per month for 12 months if harm is missed. Expected loss rises from $86,698 to $206,235. The $119,538 difference is caused by changing the conditional update and its implied raw-signal threshold in this constructed comparison. It excludes false-flag costs and other parties. This is increased precision, not reduced bias for the harmed group. The data-center connection concerns the unsupported inference from no detected effect to reassurance; its actual estimator must be assessed separately. A reasonable action compares serious exposure, alternative safeguards, and the reasons of all affected people (Scanlon, 1998, 2025).
+
+Source: M6 §6.46; M9 §§9.57.5–9.57.6. ../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md
+
+## Slide 109: Build an Argument for Action Under Uncertainty
 
 An ought conclusion requires supported factual premises and a defended principle.
 
@@ -1251,7 +1293,7 @@ A person’s interests extend beyond a dataset. Credible institutional evidence 
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 107: Evaluate the Strongest Reply
+## Slide 110: Evaluate the Strongest Reply
 
 - False condemnation can harm livelihood, useful services, and fair procedures.
 - Missed harm can persist when entry, exit, or public challenge is difficult.
@@ -1261,7 +1303,7 @@ The influential argument that precedent makes false positives persistent while e
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 108: A Decision with Consumer Outcomes
+## Slide 111: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

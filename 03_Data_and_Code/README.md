@@ -185,3 +185,7 @@ The [complete synthetic program](Data_Production/README.md) constructs two popul
 The [synthetic decision example](Evidence_Standards/README.md) holds signal distributions fixed and changes the costs of mistaken intervention and missed harm. Complete standard-library Python calculates two cost scenarios, checks the analytical thresholds against a dense grid, and generates the tables underlying an editable TikZ figure. The comparison separates statistical error probabilities, population expected loss, posterior probability, and the justification of institutional action.
 
 The full derivation and program appear in M6 §6.44. [Optional practice](../07_Labs/Evidence_Standards/README.md) varies prevalence and develops an argument for investigation, protection, or remedy. M4 §4.30 assesses heterogeneous demand, while M9 §§9.55–9.59 supplies the historical and philosophical connections.
+
+## Heterogeneity, Precision, and Consumer Protection
+
+The [released-data reanalysis](Heterogeneity_and_Consumer_Protection/README.md) uses 5,555 rows across 88 accounts. A separate exact synthetic example shows lower average MSE and narrower posterior intervals alongside fewer detected harms under a specified decision rule. Complete Python, provenance, error rates, and the precision elasticity appear in M4 §4.31 and M6 §6.46.

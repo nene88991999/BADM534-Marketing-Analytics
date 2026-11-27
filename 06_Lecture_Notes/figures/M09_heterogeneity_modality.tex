@@ -1,0 +1,15 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.15cm,minimum height=1.35cm] (fit) at (1.7,0) {\textbf{A Model Can Fit}\\Recorded responses};
+\node[box,text width=3.15cm,minimum height=1.35cm] (why) at (6.3,0) {\textbf{A Mechanism is Supported}\\Competing accounts\\are distinguished};
+\node[orangebox,text width=3.15cm,minimum height=1.35cm] (may) at (10.9,0) {\textbf{A Practice May Proceed}\\Reasons owed to\\affected people};
+\draw[edge] (fit) -- (why);
+\node[align=center,font=\footnotesize] (evidence) at (4.0,1.5) {Institutional\\evidence};
+\draw[IlliniBlue,thin,dotted] (evidence.south) -- (4.0,0.25);
+\draw[edge] (why) -- (may);
+\node[align=center,font=\footnotesize] (reasons) at (8.6,1.5) {Normative\\reasons};
+\draw[IlliniBlue,thin,dotted] (reasons.south) -- (8.6,0.25);
+\node[orangebox,text width=9.7cm,minimum height=1.1cm] (shortcut) at (6.3,-2.0) {\textbf{Unsupported Shortcut}\\A possible taste explanation is treated as permission to continue.};
+\draw[accent,dashed] (fit.south) |- (shortcut.west);
+\draw[accent,dashed] (shortcut.east) -| (may.south);
+\node[align=center,text width=12.5cm] at (6.3,-3.1) {Who bears unresolved risk, and what reasons justify that burden?};
+\end{tikzpicture}

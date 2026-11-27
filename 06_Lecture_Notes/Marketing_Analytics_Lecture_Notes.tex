@@ -11291,6 +11291,368 @@ elements specified by the applicable law. M9 §§9.56--9.59 examines when
 an institution's demand for precision itself imposes an unjustified
 burden on those seeking protection.
 
+\hypertarget{M04-released-retail-data-integrated-heterogeneity-and-competing-explanations}{%
+\section{Released Retail Data, Integrated Heterogeneity, and Competing
+Explanations}\label{M04-released-retail-data-integrated-heterogeneity-and-competing-explanations}}
+
+\noindent \noindent An investigator wants to know whether a weak response to price
+reflects product value or restricted alternatives. Weekly sales and
+prices can describe a response without resolving that distinction. The
+released \texttt{bayesm} cheese dataset contains 5,555 observations from
+88 retailer--market accounts, with unit sales, price in dollars, and the
+fraction of all-commodity volume associated with display. All rows enter
+the calculation. Accounts contribute 52--68 observations; each account
+receives equal weight in the reported mean coefficient. These are
+conditional sales associations because the release supplies no
+instrument or assignment process identifying the price effect.
+
+The package attributes the data to a hierarchical trade-promotion study
+(Boatwright et al., 1999). Its January 1999 author preprint describes a
+77-account Kraft application with additional promotion variables; the
+package documents 88 accounts and Borden sliced cheese. The mapping
+between those releases is unresolved. The calculation below reanalyzes
+the documented public dataset with an original two-stage model. It does
+not reproduce a published table or the paper's constrained hierarchical
+sampler.
+\href{https://search.r-project.org/CRAN/refmans/bayesm/html/cheese.html}{Package
+documentation} and the
+\href{../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/PROVENANCE.json}{source
+record} preserve that distinction.
+
+\hypertarget{M04-separate-the-response-estimate-from-its-interpretation}{%
+\subsection{Separate the Response Estimate from Its
+Interpretation}\label{M04-separate-the-response-estimate-from-its-interpretation}}
+
+\noindent \noindent For account \(g\) and its recorded week \(t\), regress log
+unit sales on log price and display:
+
+\[\log Q_{gt}=a_g+\theta_g\log P_{gt}+d_gD_{gt}+e_{gt}.\]
+
+Here \(P_{gt}\) is price in dollars, \(D_{gt}\) is the fraction of
+all-commodity volume associated with display, and \(\theta_g\) is the
+account's conditional log-price coefficient. The two accounts with
+constant display retain their observations and omit that collinear
+regressor. First-stage standard errors \(s_g\) use independent,
+homoskedastic Gaussian working errors within accounts. The release has
+no explicit calendar variable; serial dependence remains outside this
+calculation. Calendar reconstruction or a justified dependence model
+would be needed for stronger uncertainty claims.
+
+Integrating a mixing distribution distinguishes noisy account estimates
+from variation across accounts. Let \(\hat\theta_g\) denote the
+first-stage coefficient and use the working measurement model
+
+\[\hat\theta_g\mid\theta_g\sim N(\theta_g,s_g^2),\qquad
+\theta_g\sim\sum_{k=1}^{K}w_kN(\mu_k,\tau_k^2).\]
+
+The weights \(w_k\) are positive and sum to one. Means \(\mu_k\) and
+standard deviations \(\tau_k\) describe the distribution of account
+coefficients. Integrating \(\theta_g\) gives the exact marginal density
+
+\[f(\hat\theta_g\mid s_g)=\sum_{k=1}^{K}w_k\,
+\phi\!\left(\hat\theta_g;\mu_k,s_g^2+\tau_k^2\right),\]
+
+where \(\phi(x;m,v)\) is the normal density with mean \(m\) and variance
+\(v\). Maximize the sum of log densities across 88 accounts for \(K=1\)
+and \(K=2\). This is empirical Bayes: the conditional posterior
+calculations fix the estimated mixing parameters and first-stage
+standard errors. They omit uncertainty in those quantities. Treating the
+working Gaussian measurement model as exact is an additional
+approximation to the first-stage estimates.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.20}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.26}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.26}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.28}}@{}}
+\toprule
+Mixing Distribution & Log Likelihood & BIC & Mean Conditional Posterior
+Coefficient \\
+\midrule
+
+One normal component & −128.629 & 266.213 & −2.138 \\
+Two normal components & −124.520 & 271.427 & −2.151 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The two-component distribution increases in-sample fit. BIC penalizes
+its five parameters, compared with two for the simpler distribution,
+using 88 independent account contributions in the working model. Lower
+BIC favors one component here. The modest change in the mean response
+supplies no empirical finding of concealed harm. Two positive unpooled
+coefficients become negative conditional posterior means under either
+fitted distribution, illustrating the consequence of pooling noisy
+estimates.
+
+\hypertarget{M04-the-same-likelihood-can-accommodate-different-mechanisms}{%
+\subsection{The Same Likelihood Can Accommodate Different
+Mechanisms}\label{M04-the-same-likelihood-can-accommodate-different-mechanisms}}
+
+\noindent \noindent Suppose the observed response is the sum of an intrinsic
+response \(\beta_g\) and a common shift \(\gamma\) associated with
+restricted alternatives. A positive \(\gamma\) makes a negative response
+less negative. This is a constructed mechanism; the retail file contains
+no measure of the proposed restriction. The decomposition obeys
+
+\[\theta_g=\beta_g+\gamma.\]
+
+For any imposed \(\gamma\), replace each mixing mean for \(\beta_g\) by
+\(\mu_k-\gamma\) and add \(\gamma\) back in the observation equation.
+Every marginal density remains identical. With two components,
+\(\gamma=0\) gives mean intrinsic response −2.151; \(\gamma=0.5\) gives
+−2.651. Both yield the same mean observed response and log likelihood
+−124.520. Integration can be exact while the mechanism remains
+unidentified.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M04_heterogeneity_equivalence.tex}
+\caption{Two constructed decompositions preserve the same mean observed response and every likelihood contribution. The restriction shift is imposed, while the fitted response distribution comes from 88 released accounts.}\label{fig:M04_heterogeneity_equivalence}
+\end{figure}
+
+\textbf{Figure interpretation.} The upper row attributes the fitted
+response entirely to tastes. The lower row assigns an imposed part to
+restricted alternatives and shifts the taste distribution by the
+opposite amount. The equality holds for each account's density, beyond
+the equality of the displayed averages. Contracts, alternatives,
+switching constraints, costs, or new variation would be needed to
+distinguish the proposed mechanisms.
+
+Suppose further that the first constructed state is harmless and the
+second involves the specified harmful restriction. Any rule based solely
+on these observations has the same flagging probability in both states.
+If that probability is five percent under the harmless state, it is also
+five percent under the harmful state, giving a 95\% missed-harm rate in
+this construction. This is an identification result under the stipulated
+states. It is not estimated power or evidence of misconduct in the
+observed accounts. M9 §§9.57.1--9.57.4 asks whether requiring this
+data-only rule before proportionate protection is reasonable to those
+exposed.
+
+\hypertarget{M04-reproduce-the-calculation}{%
+\subsection{Reproduce the
+Calculation}\label{M04-reproduce-the-calculation}}
+
+\noindent \noindent Run the program from any directory with NumPy, pandas, and
+SciPy available. The path to the input is relative to the program. Saved
+outputs include every account estimate, mixture parameters, model
+comparisons, and eight equivalent decompositions. Independent checks
+compare the integration with numerical quadrature and the account
+coefficients with a separate residualization calculation.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/heterogeneity_reanalysis.py}{heterogeneity\_reanalysis.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Reanalyze released retail data; separate fitted responses from conduct.
+
+Two-stage empirical Bayes with exact normal-mixture integration. This is a
+teaching adaptation, not a replication of the paper's constrained sampler.
+"""
+from pathlib import Path
+import json
+import numpy as np
+import pandas as pd
+from scipy.optimize import minimize
+from scipy.special import logsumexp
+from scipy.stats import norm
+
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / "results"
+
+
+def account_estimates(frame):
+    """OLS price associations, conditioning on available display variation."""
+    rows = []
+    for account, group in frame.groupby("RETAILER", sort=True):
+        y = np.log(group.VOLUME.to_numpy(float))
+        price = np.log(group.PRICE.to_numpy(float))
+        display = group.DISP.to_numpy(float)
+        # Constant display is collinear with the account intercept.
+        varying = np.ptp(display) > 1e-12
+        columns = [np.ones(len(y)), price]
+        if varying:
+            columns.append(display)
+        x = np.column_stack(columns)
+        assert np.linalg.matrix_rank(x) == x.shape[1]
+        coef = np.linalg.lstsq(x, y, rcond=None)[0]
+        residual = y - x @ coef
+        variance = (residual @ residual) / (len(y) - x.shape[1])
+        se = np.sqrt(variance * np.linalg.inv(x.T @ x)[1, 1])
+        assert np.isfinite(se) and se > 0
+        rows.append(dict(account=account, observations=len(y),
+                         display_varies=bool(varying), price_slope=coef[1],
+                         model_se=se, residual_variance=variance))
+    return pd.DataFrame(rows)
+
+
+def unpack(parameters, components):
+    if components == 1:
+        return np.ones(1), parameters[:1], np.exp(parameters[1:2])
+    weight = parameters[0]
+    return (np.array([weight, 1-weight]), parameters[1:3],
+            np.exp(parameters[3:5]))
+
+
+def marginal_log_density(b, se, weights, means, scales):
+    total_sd = np.sqrt(se[:, None]**2 + scales[None, :]**2)
+    terms = np.log(weights) + norm.logpdf(b[:, None], means, total_sd)
+    return logsumexp(terms, axis=1)
+
+
+def fit_mixture(b, se, components):
+    """Integrate account coefficients before maximizing the marginal likelihood."""
+    center, spread = float(np.mean(b)), max(float(np.std(b)), 0.2)
+    if components == 1:
+        starts = [np.array([center, np.log(spread)]), np.array([center, -2.0])]
+        bounds = [(-30, 10), (-7, 4)]
+    else:
+        starts = [np.array([w, center-d*spread, center+d*spread,
+                            np.log(spread/2), np.log(spread/2)])
+                  for w in (0.25, 0.5, 0.75) for d in (0.4, 1.0, 1.8)]
+        bounds = [(0.02, 0.98), (-30, 10), (-30, 10), (-7, 4), (-7, 4)]
+
+    def objective(parameters):
+        return -marginal_log_density(b, se, *unpack(parameters, components)).sum()
+
+    fits = [minimize(objective, start, method="L-BFGS-B", bounds=bounds,
+                     options={"maxiter": 3000, "ftol": 1e-12, "gtol": 1e-6})
+            for start in starts]
+    converged = [fit for fit in fits if fit.success and np.isfinite(fit.fun)]
+    assert converged, "No converged marginal-likelihood fit"
+    best = min(converged, key=lambda fit: fit.fun)
+    weights, means, scales = unpack(best.x, components)
+    order = np.argsort(means)
+    return dict(weights=weights[order], means=means[order], scales=scales[order],
+                log_likelihood=float(-best.fun), starts=len(starts),
+                converged_starts=len(converged))
+
+
+def posterior(b, se, fit):
+    """Conditional on fitted hyperparameters and fixed first-stage standard errors."""
+    weights, means, scales = (fit[k] for k in ("weights", "means", "scales"))
+    prior_var, sampling_var = scales[None, :]**2, se[:, None]**2
+    variance = 1 / (1 / prior_var + 1 / sampling_var)
+    location = variance * (means / prior_var + b[:, None] / sampling_var)
+    log_weights = (np.log(weights)
+                   + norm.logpdf(b[:, None], means, np.sqrt(prior_var+sampling_var)))
+    probabilities = np.exp(log_weights-logsumexp(log_weights, axis=1)[:, None])
+    average = np.sum(probabilities*location, axis=1)
+    positive = np.sum(probabilities*norm.sf(0, location, np.sqrt(variance)), axis=1)
+    return average, positive
+
+
+def main():
+    OUT.mkdir(exist_ok=True)
+    frame = pd.read_csv(ROOT / "data/cheese.csv")
+    assert list(frame.columns) == ["RETAILER", "VOLUME", "DISP", "PRICE"]
+    assert len(frame) == 5555 and frame.RETAILER.nunique() == 88
+    assert frame.notna().all().all()
+    assert (frame.VOLUME > 0).all() and (frame.PRICE > 0).all()
+    assert frame.DISP.between(0, 1).all()
+    estimates = account_estimates(frame)
+    b, se = estimates.price_slope.to_numpy(), estimates.model_se.to_numpy()
+    summaries, parameters, equivalence, profiles = [], [], [], []
+    grid = np.linspace(-12, 5, 341)
+    for components in (1, 2):
+        fit = fit_mixture(b, se, components)
+        mean, prob_positive = posterior(b, se, fit)
+        estimates[f"posterior_mean_k{components}"] = mean
+        estimates[f"posterior_positive_k{components}"] = prob_positive
+        k_parameters = 2 if components == 1 else 5
+        summaries.append(dict(components=components, accounts=len(b),
+                              log_likelihood=fit["log_likelihood"],
+                              bic=k_parameters*np.log(len(b))-2*fit["log_likelihood"],
+                              mean_account_slope=float(mean.mean()),
+                              positive_posterior_means=int((mean > 0).sum()),
+                              starts=fit["starts"], converged_starts=fit["converged_starts"]))
+        for k, (w, mu, sd) in enumerate(zip(fit["weights"], fit["means"], fit["scales"]), 1):
+            parameters.append(dict(components=components, component=k,
+                                   weight=w, mean=mu, sd=sd))
+        base = marginal_log_density(b, se, fit["weights"], fit["means"], fit["scales"])
+        # Constructed decomposition: observed response theta = beta + gamma.
+        # Shift the taste distribution by -gamma and add gamma in the likelihood.
+        # gamma is an imposed mechanism, not a measured feature of these accounts.
+        for gamma in (0.0, 0.25, 0.5, 1.0):
+            beta_means = fit["means"] - gamma
+            observed = marginal_log_density(b, se, fit["weights"],
+                                            beta_means + gamma, fit["scales"])
+            maximum_gap = float(np.max(np.abs(base-observed)))
+            assert maximum_gap < 1e-10
+            equivalence.append(dict(components=components, imposed_gamma=gamma,
+                                    log_likelihood=float(observed.sum()),
+                                    maximum_log_density_gap=maximum_gap,
+                                    mean_observed_response=float(mean.mean()),
+                                    mean_latent_taste=float(mean.mean()-gamma)))
+        for x in grid:
+            density = np.sum(fit["weights"]*norm.pdf(x, fit["means"], fit["scales"]))
+            profiles.append(dict(components=components, slope=x, density=density))
+    estimates.to_csv(OUT / "account_estimates.csv", index=False)
+    pd.DataFrame(summaries).to_csv(OUT / "model_comparison.csv", index=False)
+    pd.DataFrame(parameters).to_csv(OUT / "mixture_parameters.csv", index=False)
+    pd.DataFrame(equivalence).to_csv(OUT / "observational_equivalence.csv", index=False)
+    pd.DataFrame(profiles).to_csv(OUT / "density_grid.csv", index=False)
+    # Exact implication under observational equivalence, not estimated power.
+    pd.DataFrame([dict(false_flag_rate=a, constructed_harm_miss_rate=1-a)
+                  for a in (0.01, 0.05, 0.10)]).to_csv(
+                      OUT / "equivalent_state_errors.csv", index=False)
+    record = dict(observations=len(frame), accounts=len(estimates),
+                  observations_min=int(estimates.observations.min()),
+                  observations_max=int(estimates.observations.max()),
+                  constant_display_accounts=int((~estimates.display_varies).sum()),
+                  positive_ols_slopes=int((b > 0).sum()),
+                  sample_restrictions="All released rows retained; no date or household outcomes supplied.",
+                  uncertainty="First-stage iid Gaussian working errors; fixed estimated SEs and empirical-Bayes hyperparameters. Temporal dependence and hyperparameter uncertainty are unmodeled.",
+                  interpretation="Conditional price-sales associations; no identified causal elasticities, markups, wrongdoing, or consumer welfare effects.")
+    (OUT / "summary.json").write_text(json.dumps(record, indent=2)+"\n")
+    print(pd.DataFrame(summaries).to_string(index=False))
+    print(json.dumps(record, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M04-the-conditional-update-in-hierarchical-regression}{%
+\subsection{The Conditional Update in Hierarchical
+Regression}\label{M04-the-conditional-update-in-hierarchical-regression}}
+
+\noindent \noindent The package's released-data example constructs account
+regressions for the hierarchical normal model (Rossi, 2025,
+\texttt{bayesm} 3.1-7). Write \(y_j=X_j\beta_j+e_j\), with
+\(e_j\sim N(0,v_jI)\) and \(\beta_j\sim N(\mu_j,V)\), where
+\(\mu_j=Z_j\Delta\). Conditional on the error variance \(v_j\), prior
+mean \(\mu_j\), and prior covariance \(V\), the coefficient covariance
+and mean are
+
+\[C_j=(X_j'X_j/v_j+V^{-1})^{-1},\qquad
+m_j=C_j(X_j'y_j/v_j+V^{-1}\mu_j).\]
+
+Data precision and prior precision jointly determine the update. The
+hierarchical loop computes \(V^{-1}\) and \(Z\Delta\), then calls the
+conditional normal-regression step
+\href{https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/src/utilityFunctions.cpp}{\texttt{runiregG}}.
+With one coefficient, \(X'X=1\), \(X'y=2\), \(v=1\), \(\mu=0\), and
+\(V=0.4\), this gives posterior mean \(4/7\) and variance \(2/7\). Those
+are exactly the pooled moments in §6.46.
+
+The connection to missed harm is methodological. A group-specific effect
+can be pulled toward a low pooled mean strongly enough that a fixed
+posterior-credibility rule ceases to flag it. In §6.46, the same update
+increases missed-harm losses under explicit synthetic consumer burdens.
+The working model and protection rule determine that result. The full
+hierarchical sampler also updates means and variances; uncertainty in
+those quantities must be integrated before describing its full
+posterior. The
+\href{../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md}{method
+crosswalk} distinguishes the exact conditional identity, the original
+course assumptions, and the empirical reanalysis.
+
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
 Networks}\label{M05-m5.-text-social-media-and-customer-networks}}
@@ -19822,6 +20184,342 @@ presumptions in assessing prospective threats to competition
 and FTC, 2023, §4.1}). This agency guidance is nonbinding and does not
 replace the elements of other claims. M9 §§9.56--9.59 compares such
 institutional standards with the reasons affected people can demand.
+
+\hypertarget{M06-greater-precision-and-fewer-detected-harms}{%
+\section{Greater Precision and Fewer Detected
+Harms}\label{M06-greater-precision-and-fewer-detected-harms}}
+
+\noindent \noindent A consumer-protection agency screens customer groups for a
+harmful pricing practice. Most groups experience no harm, while a small
+group faces a substantial burden. A pooled estimator can improve average
+accuracy and produce narrower posterior intervals while detecting that
+harmed group less often. The relevant comparison must identify whose
+estimation error falls, whose burden remains undetected, and which rule
+turns an estimate into action.
+
+Partial pooling moves estimates toward a common mean. Their standard
+deviations can decrease more slowly than the estimates themselves,
+reducing the standardized evidence for a departure from that mean. This
+mechanism is developed in the algebra of multilevel comparisons
+\href{https://doi.org/10.1080/19345747.2011.618213}{(Gelman et al.,
+2012, pp.~196--198)}. Its application to consumer protection requires
+evaluating missed harms alongside false flags. Fewer reported effects
+cannot establish that fewer people are harmed.
+
+The pooling operation is the scalar conditional update in the
+hierarchical regression documented with the released retail example
+\href{https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/man/rhierLinearModel.Rd}{(Rossi,
+2025, \texttt{bayesm} 3.1-7)}. Section 4.31.4 derives the matrix update
+and its scalar specialization. The consumer-harm calculation holds that
+step's hyperparameters fixed, making the mechanism transparent while
+preserving the distinction from full posterior sampling.
+
+\hypertarget{M06-a-known-harmed-group}{%
+\subsection{A Known Harmed Group}\label{M06-a-known-harmed-group}}
+
+\noindent \noindent The unit is a customer group. Set one outcome unit equal to
+\(\$10\) in monthly burden per person. Suppose 90\% of groups have true
+burden \(\theta=0\) and 10\% have \(\theta=2\), or \(\$20\) per
+person-month. Group sizes are equal. The two-point population is
+synthetic, making both aggregate accuracy and detection among harmed
+groups observable to the analyst.
+
+\begin{assumption}[Signals and the Working Pooling Model]\label{ass:precision-pooling}
+Conditional on a group's true burden, $Y\mid\theta\sim N(\theta,\sigma^2)$ with $\sigma=1$. The working prior is $\theta\sim N(0,\tau^2)$ with fixed $\tau^2$. This normal prior is an approximation to the stated two-point population. Its parameters are held fixed when computing posterior intervals.
+\end{assumption}
+
+Under Assumption \ref{ass:precision-pooling}, write
+\(w=\tau^2/(\tau^2+\sigma^2)\) for the fraction of the unpooled estimate
+retained. The conditional posterior is
+
+\[\theta\mid Y\sim N(wY,w\sigma^2).\]
+
+The posterior mean is \(wY\) and posterior standard deviation is
+\(\sigma\sqrt{w}\). Smaller \(w\) means stronger pooling toward zero and
+higher reported posterior precision \(P=1/(w\sigma^2)\). The mean falls
+proportionally with \(w\), while its reported standard deviation falls
+with \(\sqrt{w}\). The ratio of the mean to its posterior standard
+deviation consequently falls with \(\sqrt{w}\). These posterior
+uncertainty statements are conditional on the working model; they are
+not guarantees of repeated-sample coverage for the harmed subgroup.
+
+\hypertarget{M06-better-average-accuracy-worse-harm-detection}{%
+\subsection{Better Average Accuracy, Worse Harm
+Detection}\label{M06-better-average-accuracy-worse-harm-detection}}
+
+\noindent \noindent Suppose the agency acts only when the one-sided 95\% posterior
+lower bound exceeds zero. Write \(z=\Phi^{-1}(0.95)=1.644854\), where
+\(\Phi\) is the standard normal distribution function. The operational
+rule is
+
+\[wY-z\sigma\sqrt{w}>0
+\quad\Longleftrightarrow\quad Y>\frac{z\sigma}{\sqrt{w}}.\]
+
+The required raw signal rises as pooling strengthens, despite the
+narrower posterior interval. At true burden \(\theta=2\), the detection
+probability is \(1-\Phi(z/\sqrt{w}-2)\); at \(\theta=0\), the actual
+false-flag probability is \(1-\Phi(z/\sqrt{w})\). The same nominal
+posterior credibility requirement therefore induces different
+repeated-sample error rates.
+
+For the stated population, the average mean squared error of \(wY\) is
+
+\[R(w)=w^2\sigma^2+(1-w)^2(0.1)(2^2).\]
+
+The first term is sampling variance and the second is squared bias
+averaged over groups. The risk-minimizing weight within this linear
+family is \(w=0.4/1.4=2/7\). The harmed-group risk is instead
+\(R_H(w)=w^2\sigma^2+(1-w)^2(2^2)\) because its bias receives full
+weight.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Quantity & Unpooled, \(w=1\) & Pooled, \(w=2/7\) \\
+\midrule
+
+Reported posterior standard deviation & 1.0000 & 0.5345 \\
+Average MSE across all groups & 1.0000 & 0.2857 \\
+MSE within the harmed group & 1.0000 & 2.1224 \\
+Detection among harmed groups & 63.88\% & 14.07\% \\
+Actual false-flag rate among harmless groups & 5.00\% & 0.1045\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Average MSE falls by 71.43\%, while detection falls by 49.81 percentage
+points. The majority's improvement in estimation dominates the average
+even as the harmed group's estimate becomes less accurate. The policy
+also produces fewer false flags. Whether that tradeoff justifies
+withholding protection depends on the consequences of each error and on
+alternative responses. A narrower interval and better average accuracy
+supply no complete answer.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_harm_elasticity.tex}
+\caption{Greater posterior precision accompanies lower average mean squared error and sharply lower detection of the harmed group under a fixed posterior-credibility rule. All population and signal inputs are synthetic.}\label{fig:M06_harm_elasticity}
+\end{figure}
+
+\textbf{Figure interpretation.} Precision rises from 1 to 3.5 as the
+data weight falls from 1 to 2/7. The left panel reports mean squared
+error across the specified population; the right reports detection
+conditional on a true burden of two units. Both decline. The figure
+compares a fixed posterior-credibility rule, with the changing actual
+false-flag rates reported in the table.
+
+The information in \(Y\) is unchanged: multiplication by a positive
+constant is invertible. Calibrating the rule on \(wY\) to an actual
+five-percent false-flag rate would use threshold \(wz\sigma\),
+recovering the unpooled detection probability. The comparison therefore
+identifies the consequences of pooling combined with the selected
+decision rule. The result is not a claim that a reversible rescaling
+destroys information, that every adjustment lowers power, or that the
+two rules have matched Type I error.
+
+\hypertarget{M06-a-consumer-harm-elasticity-for-reported-precision}{%
+\subsection{A Consumer-Harm Elasticity for Reported
+Precision}\label{M06-a-consumer-harm-elasticity-for-reported-precision}}
+
+\noindent \noindent Consider 10,000 equally represented consumers, with the same
+ten-percent harmful share. Each missed harmful case leaves a \(\$20\)
+monthly burden for 12 months; a detected case removes that burden. There
+is no research delay in this example. Expected consumer loss is
+
+\[H(P)=10{,}000(0.1)(20)(12)\,
+\Phi\!\left(z\sigma\sqrt{P}-2\right).\]
+
+Here \(P=1/(w\sigma^2)\) indexes the reported posterior precision and
+\(\sigma=1\). Define the consumer-harm elasticity with respect to
+reported precision by
+
+\[\eta_{H,P}=\frac{d\log H}{d\log P}
+=\frac{z\sigma\sqrt{P}}{2}\,
+\frac{\phi(z\sigma\sqrt{P}-2)}{\Phi(z\sigma\sqrt{P}-2)}.\]
+
+The elasticity is positive along this pooling and decision-rule path. At
+\(w=2/7\), it is 0.3999: a one-percent increase in reported precision
+raises expected consumer loss by approximately 0.40\% locally. Expected
+loss rises from \(\$86{,}698\) at \(w=1\) to \(\$206{,}235\) at
+\(w=2/7\). These are imposed consumer burdens, not estimates from the
+retail dataset. They exclude losses from false flags, enforcement costs,
+and other affected people.
+
+A bias-reduction elasticity answers a different question. If \(b>0\) is
+remaining absolute bias and \(H(b)>0\) is loss along a specified design
+policy, define \(\eta^{\mathrm{red}}_{H,b}=-d\log H/d\log b\). A
+positive value means that reducing bias raises consumer loss along that
+policy. Pooling in the example above increases bias within the harmed
+subgroup, so its calculated elasticity must be described as a
+\emph{precision elasticity}. Calling it a bias-reduction effect would
+misstate the mechanism.
+
+The societal criticism concerns treating statistical precision as an
+overriding virtue. Consumers bear a cost when the institution accepts a
+more demanding evidentiary threshold without evaluating the resulting
+missed harms. A lower threshold for investigation or a reversible
+safeguard can preserve careful estimation while changing who bears
+uncertainty. The judgment must address the burdens of false flags and
+the relevant reasons of all affected people
+\href{https://doi.org/10.1086/392855}{(Douglas, 2000)};
+\href{https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf}{(Scanlon,
+1998, pp.~195--196)}.
+
+\hypertarget{M06-heterogeneity-and-the-meaning-of-no-evidence}{%
+\subsection{Heterogeneity and the Meaning of No
+Evidence}\label{M06-heterogeneity-and-the-meaning-of-no-evidence}}
+
+\noindent \noindent Stronger pooling around a low mean can make evidence of
+subgroup harm harder to obtain under the posterior rule. Increasing the
+prior variance \(\tau^2\) weakens that pooling. More flexible
+heterogeneity, more controls, and stronger pooling are distinct changes.
+A critique must identify which change moved the estimate, uncertainty,
+or estimand, rather than infer an enforcement bias from the label
+\emph{heterogeneity}.
+
+The data-center case raises the related interpretive issue: an
+insignificant result leaves the proposed harm unresolved unless the
+estimate, uncertainty, outcome, and design support an informative bound.
+The HBS coverage in §8.31.1 overstates what the reported uncertainty
+establishes. The partial-pooling example supplies a separate mechanism
+for fewer detected harms; it does not establish that this mechanism
+generated the data-center paper's results. In both cases, moving from no
+detected effect to public reassurance requires a premise that
+statistical nonrejection does not supply.
+
+\hypertarget{M06-complete-python-calculation}{%
+\subsection{Complete Python
+Calculation}\label{M06-complete-python-calculation}}
+
+\noindent \noindent The program calculates the risks, conditional detection rates,
+false-flag rates, monetary losses, and precision elasticity exactly
+under the synthetic normal signals. Independent numerical integration
+verifies risk and detection; finite differences verify the derivative; a
+matched-calibration check verifies that rescaling preserves the
+underlying information. NumPy, pandas, and SciPy are required.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/harm_elasticity.py}{harm\_elasticity.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Synthetic partial pooling: greater precision, fewer detected harms.
+
+Normal working-prior posterior intervals; repeated-sample risk is evaluated
+under an explicit two-point population. No consumer harms are estimated
+from the released retail data.
+"""
+from pathlib import Path
+import json
+import numpy as np
+import pandas as pd
+from scipy.integrate import quad
+from scipy.stats import norm
+
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / "results"
+HARM_SHARE = 0.1
+HARM = 2.0             # Standardized harm: one unit is $10 per person-month.
+SIGMA = 1.0
+ALPHA = 0.05
+POPULATION = 10_000
+MONTHS = 12
+DOLLARS_PER_UNIT = 10
+
+
+def conditional_update(xtx, xty, error_variance, prior_mean, prior_covariance):
+    """Normal coefficient update used inside hierarchical regression, no RNG."""
+    prior_precision = np.linalg.inv(prior_covariance)
+    precision = xtx/error_variance+prior_precision
+    covariance = np.linalg.inv(precision)
+    mean = np.linalg.solve(precision, xty/error_variance+prior_precision@prior_mean)
+    return mean, covariance
+
+
+def evaluate(weight):
+    """weight is the fraction of the unpooled estimate retained, 0 < w <= 1."""
+    if not 0 < weight <= 1:
+        raise ValueError("Use 0 < weight <= 1.")
+    z = norm.isf(ALPHA)
+    posterior_sd = SIGMA*np.sqrt(weight)
+    # Flag when posterior mean minus z times posterior SD exceeds zero.
+    threshold = z*SIGMA/np.sqrt(weight)
+    u = threshold/SIGMA-HARM/SIGMA
+    missed = norm.cdf(u)
+    false_flag = norm.sf(threshold/SIGMA)
+    mean_mse = weight**2*SIGMA**2+(1-weight)**2*HARM_SHARE*HARM**2
+    harmed_mse = weight**2*SIGMA**2+(1-weight)**2*HARM**2
+    dollars = POPULATION*HARM_SHARE*HARM*DOLLARS_PER_UNIT*MONTHS*missed
+    # Precision P=1/(w*sigma^2); d log H / d log P.
+    elasticity = z/(2*np.sqrt(weight))*norm.pdf(u)/missed
+    # Recalibrating to the same actual 5% false-positive rate changes the rule.
+    matched_threshold = weight*z*SIGMA
+    matched_detection = norm.sf(matched_threshold/(weight*SIGMA)-HARM/SIGMA)
+    return dict(data_weight=weight, posterior_precision=1/posterior_sd**2,
+                posterior_sd=posterior_sd, average_mse=mean_mse,
+                harmed_group_mse=harmed_mse, detection_probability=1-missed,
+                false_flag_probability=false_flag,
+                missed_harm_probability=missed, consumer_loss_usd=dollars,
+                harm_precision_elasticity=elasticity,
+                matched_false_positive_detection=matched_detection)
+
+
+def verify():
+    """Numerical integration, derivative, denominator, and calibration checks."""
+    # Scalar special case of the matrix update in bayesm's runiregG.
+    mean, covariance = conditional_update(np.array([[1.0]]), np.array([2.0]),
+                                         1.0, np.array([0.0]), np.array([[0.4]]))
+    assert np.isclose(mean[0], 4/7)
+    assert np.isclose(covariance[0, 0], 2/7)
+    for w in (1.0, .75, .5, 2/7):
+        row = evaluate(w)
+        conditional = []
+        for theta in (0.0, HARM):
+            risk = quad(lambda y: (w*y-theta)**2*norm.pdf(y,theta,SIGMA),
+                        -np.inf, np.inf)[0]
+            conditional.append(risk)
+        assert np.isclose((1-HARM_SHARE)*conditional[0]+HARM_SHARE*conditional[1],
+                          row["average_mse"])
+        assert np.isclose(conditional[1], row["harmed_group_mse"])
+        threshold = norm.isf(ALPHA)*SIGMA/np.sqrt(w)
+        detection = quad(lambda y: norm.pdf(y,HARM,SIGMA), threshold, np.inf)[0]
+        assert np.isclose(detection, row["detection_probability"])
+        if w < 1:
+            step = 1e-5
+            derivative = (np.log(evaluate(w+step)["consumer_loss_usd"])
+                          -np.log(evaluate(w-step)["consumer_loss_usd"]))/(2*step)
+            assert np.isclose(-w*derivative, row["harm_precision_elasticity"], rtol=1e-7)
+        assert np.isclose(row["matched_false_positive_detection"], evaluate(1)["detection_probability"])
+    pooled, raw = evaluate(2/7), evaluate(1)
+    assert pooled["average_mse"] < raw["average_mse"]
+    assert pooled["posterior_sd"] < raw["posterior_sd"]
+    assert pooled["detection_probability"] < raw["detection_probability"]
+    assert pooled["harmed_group_mse"] > raw["harmed_group_mse"]
+
+
+def main():
+    OUT.mkdir(exist_ok=True)
+    verify()
+    rows = [evaluate(w) for w in (1.0, .75, .5, 2/7)]
+    pd.DataFrame(rows).to_csv(OUT / "precision_detection_scenarios.csv", index=False)
+    curve = [evaluate(float(w)) for w in np.linspace(1, 2/7, 101)]
+    pd.DataFrame(curve).to_csv(OUT / "precision_detection_curve.csv", index=False)
+    setup = dict(harm_share=HARM_SHARE, harm_standard_units=HARM, sampling_sd=SIGMA,
+                 population=POPULATION, months=MONTHS, dollars_per_unit=DOLLARS_PER_UNIT,
+                 signal="Y conditional on theta is Normal(theta,1); theta is 0 with probability .9 and 2 with probability .1.",
+                 working_prior="Normal(0,tau^2), where w=tau^2/(tau^2+1); w=1 is the unpooled limit.",
+                 decision="One-sided 95% posterior lower bound exceeds zero. Actual false-positive rates differ.",
+                 interpretation="Synthetic loss from missed harm; no real-data consumer effect, no bias reduction claim, no universal claim about heterogeneity adjustment.")
+    (OUT / "precision_detection_setup.json").write_text(json.dumps(setup, indent=2)+"\n")
+    print(pd.DataFrame(rows).to_string(index=False))
+    print("Quadrature, finite differences, group risks, and matched-calibration checks passed.")
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
 
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
@@ -28765,6 +29463,25 @@ the factual grounds for concern, and the normative premise needed for an
 ought conclusion. Accuracy and identification contribute to that
 judgment while leaving these further reasons to be defended.
 
+\hypertarget{M08-precision-and-the-interpretation-of-no-evidence}{%
+\subsection{Precision and the Interpretation of No
+Evidence}\label{M08-precision-and-the-interpretation-of-no-evidence}}
+
+\noindent \noindent A more precise model can produce fewer flagged harms under a
+particular decision rule. In the synthetic partial-pooling comparison in
+§6.46, average estimation error falls while the small harmed group's
+estimate becomes less accurate and its burden is detected less often.
+The actual false-flag rate also falls. Those consequences require
+evaluation before treating the model's precision as a social benefit.
+
+The HBS overstatement concerns a related transition from no detected
+effect to reassurance. Its interpretation needs support from the
+measured outcome, uncertainty bounds, household exposure, and study
+design. The partial-pooling mechanism remains a separate example;
+determining whether it explains an empirical result requires inspecting
+that result's estimator. M9 §9.57 connects the evidentiary question to
+the reasons owed to people left exposed.
+
 \hypertarget{M09-marketing-dialectics}{%
 \chapter{Marketing Dialectics}\label{M09-marketing-dialectics}}
 
@@ -35381,6 +36098,264 @@ reasonable opportunity to obtain protection under that uncertainty.
 Treating every imperfectly identified harm as negligible would convert a
 limit of evidence into a substantive presumption favoring continued
 exposure.
+
+\hypertarget{M09-statistical-rigor-and-unequal-protection}{%
+\subsection{Statistical Rigor and Unequal
+Protection}\label{M09-statistical-rigor-and-unequal-protection}}
+
+\noindent \noindent A firm can benefit from an evidentiary rule that treats every
+unresolved explanation based on consumer differences as a reason to
+continue a practice. Flexible integration gives the analyst many ways to
+represent observed responses through a distribution of tastes. If an
+institution then requires consumers to eliminate every such explanation
+before obtaining protection, additional flexibility raises the burden of
+proof without necessarily adding information that distinguishes the
+mechanisms. The firm retains the benefit of continued operation while
+exposed consumers bear the consequences of delay. This is a substantive
+allocation of protection disguised as a purely technical demand.
+
+The social value of that rule requires justification. Statistical rigor
+can improve an estimate while an institution uses it to defend an
+unreasonable standard for action. A model's numerical accuracy
+establishes no general social benefit from postponing investigation,
+disclosure, or a reversible safeguard. The criticism concerns the joint
+use of the model and the institutional rule: flexible heterogeneity
+becomes a means of discounting a complaint when a possible preference
+explanation is treated as sufficient reassurance. Model flexibility can
+also reveal concentrated burdens. The comparison must therefore examine
+which mechanisms enter, what distinguishes them, and how unresolved
+evidence affects the decision
+\href{https://doi.org/10.1016/j.jeconom.2008.12.010}{(Jiang et al.,
+2009)}; \href{https://doi.org/10.1086/392855}{(Douglas, 2000)}.
+
+The released-data reanalysis in §4.31 makes this distinction concrete. A
+richer mixing distribution improves the in-sample likelihood, while BIC
+favors the simpler distribution. Under either distribution, a
+constructed shift between intrinsic tastes and a restriction on
+alternatives preserves every observed likelihood contribution. A
+conclusion that the restriction is absent would come from the chosen
+representation. Additional integration of the same observations supplies
+no independent evidence for that conclusion. The empirical result
+concerns fit; the exact equivalence is a constructed identification
+example. Neither establishes wrongdoing by the retailers represented in
+the data.
+
+\hypertarget{M09-model-possibility-evidential-support-and-permission}{%
+\subsection{Model Possibility, Evidential Support, and
+Permission}\label{M09-model-possibility-evidential-support-and-permission}}
+
+\noindent \noindent A statement that a model \emph{can} explain behavior through
+tastes asserts a representational possibility. A statement that firms
+\emph{may} continue the practice asserts permission. The second
+conclusion needs a justified principle governing the consequences
+imposed on affected people. It does not follow from the first statement
+or from an unresolved causal attribution. Modal language makes this
+transition easy to conceal because possibility, ability, requirements,
+and permission can use similar words. An account of modal discourse that
+examines the norms expressed by those words helps identify the missing
+premise
+\href{https://academic.oup.com/book/33564/chapter-abstract/288025599}{(Thomasson,
+2020b, chapter 2)}.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.34}}@{}}
+\toprule
+Statement & Kind of Claim & Further Support Needed \\
+\midrule
+
+A taste distribution can fit these responses & Model-relative
+possibility & Specified model, data, and calculation \\
+The evidence establishes that tastes explain the responses & Empirical
+attribution & Evidence separating competing mechanisms \\
+These consumers face no harmful restriction & Claim about their
+situation & Relevant options, terms, exposure, and consequences \\
+The firm may continue while uncertainty remains & Normative permission &
+A principle justifiable to affected people \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Observations do not supply their own unqualified interpretive authority.
+Calling a fitted coefficient a preference already locates it within a
+structure of concepts and reasons. The criticism of the Given requires
+scrutiny of that structure
+\href{https://www.ditext.com/sellars/epm8.html}{(Sellars, 1956,
+§§32--38)}. Reducing the existence of harm to what a selected model
+identifies also confuses an ontological question with a question about
+knowledge
+\href{https://internationalcentreforcriticalrealism.wordpress.com/wp-content/uploads/2013/04/07-1-bhaskar-theorising-ontology-2007.pdf}{(Bhaskar,
+2007, pp.~192--194)}. These critiques motivate investigation of
+institutions and omitted mechanisms. Unobserved response parameters
+remain empirical objects; the Kantian distinction between phenomena and
+noumena does not turn a proposed hidden mechanism into an established
+fact.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_heterogeneity_modality.tex}
+\caption{A fitted distribution supports a conditional description. Distinguishing the mechanism requires institutional evidence, and permission requires reasons owed to affected people. An unsupported shortcut from model fit to permission transfers unresolved risk to consumers.}\label{fig:M09_heterogeneity_modality}
+\end{figure}
+
+\textbf{Figure interpretation.} The upper path moves from computation to
+empirical attribution and then to a proposed action. Each transition
+requires additional support. The lower path represents a rule that
+treats a possible taste explanation as sufficient permission. Its
+consequence is an allocation of unresolved risk that must itself be
+justified.
+
+\hypertarget{M09-a-lower-burden-before-proportionate-protection}{%
+\subsection{A Lower Burden Before Proportionate
+Protection}\label{M09-a-lower-burden-before-proportionate-protection}}
+
+\noindent \noindent A consumer facing a credible prospect of serious harm can
+reasonably object to a rule that withholds even modest protection until
+every unobserved difference has been identified. The objection concerns
+the burden imposed by waiting and the person's limited access to the
+firm's records. Compare it with the burdens of obtaining relevant
+information, restricting a specific practice temporarily, and correcting
+the response if the concern proves unfounded. Where those alternative
+burdens are smaller and proportionate, the consumer has a strong reason
+to reject the requirement of exhaustive heterogeneity adjustment before
+protection
+\href{https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf}{(Scanlon,
+1998, pp.~195--196)}.
+
+The corresponding principle lowers the evidentiary threshold for a
+specified protective action: credible evidence of serious exposure can
+justify inquiry or a reversible safeguard while the heterogeneity
+decomposition remains unsettled. It places a burden on the firm seeking
+unrestricted continuation to substantiate its reassurance and facilitate
+access to discriminating evidence. The strength of the concern, duration
+of exposure, effectiveness of the safeguard, and burdens on other
+affected people determine the recommendation. This is an application of
+reasonable rejection to an institutional evidentiary rule. It supplies
+no numerical significance level or instruction to omit a confounder from
+an estimator presented as causal.
+
+Reasonableness also differs from acceptance under the choices a powerful
+party supplies. A dependent person may rationally accept unfavorable
+terms while retaining a reasonable objection to the principle that
+permits those terms. The water-rights example makes that difference
+explicit
+\href{https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf}{(Scanlon,
+1998, pp.~192--194)}. A fitted willingness-to-pay distribution describes
+behavior under available options. It cannot by itself justify the
+institution that determines those options. Later reconsideration of
+contractualism emphasizes the relevant personal reasons of all affected
+parties and rejects a strictly bilateral comparison limited to one
+opposing reason
+\href{https://www.law.nyu.edu/sites/default/files/2025-09/T.\%20M.\%20Scanlon\%2C\%20Contractualism\%20and\%20Intuitionism.pdf}{(Scanlon,
+2025, circulated version, pp.~41--43)}.
+
+\hypertarget{M09-missed-harm-and-the-cost-of-an-unanswerable-demand}{%
+\subsection{Missed Harm and the Cost of an Unanswerable
+Demand}\label{M09-missed-harm-and-the-cost-of-an-unanswerable-demand}}
+
+\noindent \noindent Suppose a constructed harmful state and a harmless state
+generate exactly the same distribution of the recorded observations, as
+in §4.31. A data-only rule that flags five percent of cases in the
+harmless state also flags five percent in the harmful state. Its
+missed-harm rate in that construction is 95\%. More precise integration
+leaves this equality unchanged. Restricting every response to such a
+rule makes protection depend on evidence the chosen records cannot
+supply.
+
+The normative response is to reconsider the action and its evidentiary
+requirements. Contract terms, available alternatives, cost records,
+testimony, or an intervention may distinguish the mechanisms. A
+proportionate interim response can address credible exposure while those
+records are obtained. An accusation, a liability finding, and damages
+require their own factual and legal predicates. Statistical rigor has an
+instrumental value when it helps answer a justified question; treating
+it as an overriding virtue without examining the burdens of the rule can
+protect firms at consumers' expense.
+
+The electricity case presents a related inference. A heterogeneous
+utility-price model can leave household costs and recovery mechanisms
+unresolved. The HBS overstatement in §8.31 then converts uncertainty
+into reassurance. In both settings, the institution ought to explain why
+its evidence supports the public claim and why those exposed should
+accept the proposed allocation of risk.
+
+\hypertarget{M09-the-societal-cost-of-precision-as-an-overriding-virtue}{%
+\subsection{The Societal Cost of Precision as an Overriding
+Virtue}\label{M09-the-societal-cost-of-precision-as-an-overriding-virtue}}
+
+\noindent \noindent Greater precision can accompany less protection. In the
+synthetic partial-pooling comparison in §6.46, posterior standard
+deviation falls from 1 to 0.5345 and average estimation error falls by
+71.43\%. Detection of the group with a known substantial burden falls
+from 63.88\% to 14.07\% under the fixed posterior-credibility rule. Its
+estimate becomes less accurate even as population average accuracy
+improves. The small harmed group's losses can disappear from the
+institutional evaluation when only the overall accuracy metric receives
+standing.
+
+The consumer-harm elasticity with respect to reported precision makes
+that cost explicit. At the pooled endpoint, a one-percent increase in
+precision raises expected consumer loss by approximately 0.40\% locally
+under the specified rule. The example also reports the reduction in
+false flags. Its moral significance depends on the severity of the
+burdens, the response under consideration, and the feasible
+alternatives. The elasticity measures a consequence; it does not itself
+establish a complete social ranking.
+
+The false virtue lies in treating a narrower interval or smaller average
+estimation error as sufficient justification for leaving people exposed.
+Consumers can reasonably reject an avoidable burden when a feasible,
+proportionate response addresses credible risk. The institution owes an
+account of why it chose a demanding rule for protection, whose errors
+improved, and whose harms became less visible. Relevant personal reasons
+extend to all affected parties
+\href{https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf}{(Scanlon,
+1998, pp.~195--196)};
+\href{https://www.law.nyu.edu/sites/default/files/2025-09/T.\%20M.\%20Scanlon\%2C\%20Contractualism\%20and\%20Intuitionism.pdf}{(Scanlon,
+2025, circulated version, pp.~41--43)}.
+
+The electricity case requires the same scrutiny of the inference from
+fewer detected effects to reassurance. Household burdens, recovery
+timing, and informative bounds must support a claim of little harm.
+HBS's overstatement supplies no such comparison. The partial-pooling
+mechanism is a separate constructed example; the actual electricity
+estimates require their own design and power assessment. A criticism can
+identify the unsupported reassurance without manufacturing a numerical
+harm estimate or attributing an unverified model failure.
+
+\hypertarget{M09-how-the-hierarchical-update-can-increase-missed-harm-losses}{%
+\subsection{How the Hierarchical Update Can Increase Missed-Harm
+Losses}\label{M09-how-the-hierarchical-update-can-increase-missed-harm-losses}}
+
+\noindent \noindent The conditional normal coefficient update in the hierarchical
+regression (Rossi, 2025) supplies the same pooling operation used in
+§6.46. Section 4.31.4 maps the source implementation to the posterior
+covariance and mean. This gives a direct methodological connection:
+stronger prior precision can pull a harmful group effect toward a low
+pooled mean, while a fixed posterior lower-bound rule requires a larger
+raw signal before protection is triggered.
+
+The constructed comparison changes that update and its implied evidence
+threshold while holding the signals, consumer population, and horizon
+fixed. Expected missed-harm loss increases by \(\$119{,}538\), despite
+lower average MSE and narrower conditional intervals. The additional
+loss is a consequence of the method as used in that decision, under the
+specified synthetic assumptions. It is not a measured loss in the
+released retail data. The full hierarchical sampler's uncertainty and an
+actual firm's decisions require separate evidence.
+
+A reasonable institutional standard must therefore evaluate who is
+harmed by treating the pooled posterior as the sole gatekeeper for
+protection. An exposed group can object to a standard that improves
+majority-weighted accuracy while making its own substantial burden less
+visible. The reply must explain the value of fewer false flags, the
+burden of a feasible safeguard, and why the group should bear the
+remaining risk. A claim of improved statistical performance leaves those
+reasons to be supplied
+\href{https://e-edu.nbu.bg/pluginfile.php/314831/mod_resource/content/0/scanlon_5.1-3.pdf}{(Scanlon,
+1998, pp.~195--196)}.
 
 \Needspace{8\baselineskip}
 

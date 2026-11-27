@@ -320,5 +320,82 @@
     ],
     "download_status": "linked",
     "rights": "Original source rights retained. No new public redistribution permission established."
+  },
+  {
+    "id": "E17",
+    "category": "01_Demand_and_Identification",
+    "authors": "Peter Boatwright; Robert McCulloch; Peter Rossi; bayesm package maintainers",
+    "year": "1999; package 2025",
+    "title": "Sliced Cheese Data and Account-Level Modeling for Trade Promotion",
+    "url": "https://search.r-project.org/CRAN/refmans/bayesm/html/cheese.html",
+    "version": "bayesm 3.1-7, commit 453ae30857cf09a0c537f4deab64ed193493c8c9",
+    "inspection_scope": "Public R object, package documentation and license, and January 1999 preprint data/model description inspected. Public file has 88 accounts; preprint describes 77.",
+    "teaching_insight": "Reanalysis of released data with exact mixture integration; fit, mechanism attribution, and permission remain distinct.",
+    "download_status": "public data downloaded",
+    "rights": "Package GPL (>=2); data and metadata retained with attribution.",
+    "local_path": "../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md",
+    "modules": [
+      "M4",
+      "M9"
+    ],
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "E18",
+    "category": "01_Demand_and_Identification",
+    "authors": "Andrew Gelman; Jennifer Hill; Masanao Yajima",
+    "year": "2012",
+    "title": "Why We (Usually) Don't Have to Worry About Multiple Comparisons",
+    "url": "https://doi.org/10.1080/19345747.2011.618213",
+    "download_url": "https://pages.stat.wisc.edu/~larget/Stat998/Fall2013/GelmanMultipleComparisons.pdf",
+    "version": "Journal of Research on Educational Effectiveness 5:189–211",
+    "inspection_scope": "Abstract and algebra, pp. 196–198, inspected in full text; source supports the partial-pooling mechanism, not the course consumer-harm scenario.",
+    "teaching_insight": "Posterior means can shrink faster than their standard deviations, reducing standardized comparisons. Evaluate both missed harms and false flags.",
+    "download_status": "downloaded; Dropbox only",
+    "rights": "No public redistribution permission established.",
+    "local_path": "readings/01_Demand_and_Identification/GelmanHillYajima_JournalOfResearchOnEducationalEffectiveness2012.pdf",
+    "modules": [
+      "M6",
+      "M9"
+    ],
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "E19",
+    "category": "03_Philosophy_and_Concepts",
+    "authors": "T. M. Scanlon",
+    "year": "2025",
+    "title": "Contractualism and Intuitionism",
+    "url": "https://www.law.nyu.edu/sites/default/files/2025-09/T.%20M.%20Scanlon%2C%20Contractualism%20and%20Intuitionism.pdf",
+    "version": "Circulated NYU colloquium paper, 2025",
+    "inspection_scope": "Opening and printed pp. 40–43 inspected; circulated version, not a claim of final book publication.",
+    "teaching_insight": "The relevant personal reasons of affected parties and reconsidered aggregation qualify a strictly bilateral objection comparison.",
+    "download_status": "downloaded; Dropbox only",
+    "rights": "No public redistribution permission established.",
+    "local_path": "readings/03_Philosophy_and_Concepts/Scanlon_WorkingPaper2025.pdf",
+    "modules": [
+      "M9"
+    ],
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "E20",
+    "category": "01_Demand_and_Identification",
+    "authors": "Peter Rossi; implementation contributions by Keunwoo Kim",
+    "year": "2025",
+    "title": "Hierarchical Normal Regression in bayesm",
+    "url": "https://github.com/cran/bayesm/blob/453ae30857cf09a0c537f4deab64ed193493c8c9/man/rhierLinearModel.Rd",
+    "version": "bayesm 3.1-7; source at pinned commit 453ae30857cf09a0c537f4deab64ed193493c8c9",
+    "checked_on": "2026-11-27",
+    "inspection_scope": "Model documentation, hierarchical loop, and runiregG conditional update inspected; upstream sampler not executed.",
+    "teaching_insight": "The precision example is an exact scalar specialization of the conditional coefficient update. Fixed hyperparameters and the synthetic decision rule are additional assumptions.",
+    "download_status": "licensed source downloaded",
+    "rights": "GPL (>=2), retained with package attribution and license.",
+    "local_path": "../../03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md",
+    "modules": [
+      "M4",
+      "M6",
+      "M9"
+    ]
   }
 ]

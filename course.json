@@ -469,7 +469,10 @@
     "03_Data_and_Code/Evidence_Standards/results/README.md",
     "07_Labs/Evidence_Standards/README.md",
     "03_Data_and_Code/Data_Production/artifact_results/README.md",
-    "01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md"
+    "01_Resources/45_Data_Truth_and_Norms/05_Restricted_Research/README.md",
+    "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md",
+    "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/DATA_DICTIONARY.md",
+    "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -518,12 +521,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-public-claims-and-statistical-insignificance",
+    "revision": "2026-11-27-hierarchical-pooling-and-missed-harm",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 153,
-    "pages": 635,
+    "figures_count": 156,
+    "pages": 650,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -558,7 +561,7 @@
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
     "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
     "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
-    "python_source_blocks": 131
+    "python_source_blocks": 133
   },
   "datasets": [
     {
@@ -655,7 +658,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 541,
+    "slides": 547,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -748,8 +751,8 @@
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06",
-    "pages": 110,
-    "figures_count": 26,
+    "pages": 123,
+    "figures_count": 29,
     "updated_on": "2026-11-27"
   },
   "ai_experimentation_pricing": {
@@ -1744,7 +1747,7 @@
       "M9"
     ],
     "historical_source_records": 18,
-    "evidence_source_records": 16,
+    "evidence_source_records": 20,
     "new_local_pdf_copies": 17,
     "original_programs": 1,
     "original_tikz_figures": 4,
@@ -1777,5 +1780,26 @@
     "wiki": "08_Wiki/pilot/index.html#uncertainty",
     "shared_tikz_figures": 3,
     "worked_example_tikz_figures": 1
+  },
+  "heterogeneity_and_consumer_protection": {
+    "updated_on": "2026-11-27",
+    "data_and_code": "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/README.md",
+    "method_crosswalk": "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/METHOD_CROSSWALK.md",
+    "verification": "03_Data_and_Code/Heterogeneity_and_Consumer_Protection/VERIFICATION.md",
+    "sections": [
+      "M4 §4.31",
+      "M6 §6.46",
+      "M8 §8.34.1",
+      "M9 §§9.57.1–9.57.6"
+    ],
+    "sessions": [
+      6,
+      14
+    ],
+    "released_observations": 5555,
+    "released_accounts": 88,
+    "original_programs": 2,
+    "new_tikz_figures": 3,
+    "scope": "Released-data reanalysis and exact conditional method correspondence; synthetic missed-harm comparison and precision elasticity. No empirical consumer injury or general enforcement direction from heterogeneity adjustment."
   }
 }

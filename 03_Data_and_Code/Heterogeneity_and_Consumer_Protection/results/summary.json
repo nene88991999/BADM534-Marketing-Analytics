@@ -1,0 +1,11 @@
+{
+  "observations": 5555,
+  "accounts": 88,
+  "observations_min": 52,
+  "observations_max": 68,
+  "constant_display_accounts": 2,
+  "positive_ols_slopes": 2,
+  "sample_restrictions": "All released rows retained; no date or household outcomes supplied.",
+  "uncertainty": "First-stage iid Gaussian working errors; fixed estimated SEs and empirical-Bayes hyperparameters. Temporal dependence and hyperparameter uncertainty are unmodeled.",
+  "interpretation": "Conditional price-sales associations; no identified causal elasticities, markups, wrongdoing, or consumer welfare effects."
+}

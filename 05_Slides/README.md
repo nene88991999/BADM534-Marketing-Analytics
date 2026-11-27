@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 541 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 547 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -198,3 +198,7 @@ Sessions 1, 2, 4, 5, 7, 9, 10, 11, 13, and 14 connect institutional history, the
 ## Data Artifacts and Restricted Research
 
 Session 2 uses minutes 155–170 to compare events, records, versions, and copies through synthetic retention and pending-request counts. Session 14 selects the artifact and NDA comparison within minutes 95–110: should the study be conducted, published, and used for public decisions? The extended agreement comparison and complete Python are optional practice in [Data, Truth, and Norms](../07_Labs/Data_Truth_and_Norms/README.md). These choices fit the existing 170-minute meetings; the full Session 14 deck remains a case library.
+
+## Hierarchical Pooling, Precision, and Missed Harm
+
+Sessions 6 and 14 connect released-data integration to the documented conditional regression update, then evaluate a synthetic case with greater precision and less detection of a minority burden. Three editable diagrams accompany [M4 §4.31, M6 §6.46, and M9 §9.57](../06_Lecture_Notes/README.md). Actual false-flag rates, group risks, and the precision elasticity remain explicit.
