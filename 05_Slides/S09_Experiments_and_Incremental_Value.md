@@ -14,6 +14,7 @@ Session 09. M6. 170 minutes.
 - Explain the information conditions supporting a fixed research allocation.
 - Separate correct weighting of a pricing experiment from a justified allocation of customer exposure.
 - Distinguish historical model fit from identification and specify evidence that separates competing mechanisms.
+- Compare Type I and Type II errors under explicit, asymmetric loss specifications.
 
 ## Related Materials
 
@@ -36,6 +37,7 @@ Session 09. M6. 170 minutes.
 - [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
 - ../07_Labs/AI_Augmented_Learning/README.md
+- [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 
 ## Slide 1: Experiments and Incremental Value
 
@@ -234,7 +236,43 @@ The joint test has two restrictions and size 5%. Every point on the boundary giv
 
 Source: M6 §6.34. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 18: A Cancelled Project Can Affect the Control Group
+## Slide 18: The Consequences of Two Statistical Errors
+
+Fix the null as absence of specified harm; act when the signal exceeds a threshold.
+
+$$
+R=(1-\pi)\alpha C_{FP}+\pi\beta C_{FN}
+$$
+
+Prevalence, conditional errors, and losses jointly determine expected loss per case.
+
+Pi is the harmful share before observing a signal. Alpha is the false-positive rate in harmless cases; beta is missed harm under a specified harmful alternative. Costs are in comparable illustrative loss units, and correct decisions have zero loss. A significance level specifies alpha without specifying the other terms. This simplified decision model supplies no legal burden of proof. M6 §6.44 and the complete standard-library program retain the exact calculation.
+
+Source: ../03_Data_and_Code/Evidence_Standards/README.md
+
+## Slide 19: Fixed Evidence, Unequal Error Costs
+
+Fixed signals and prevalence; only the action threshold changes.
+
+**Figure description:** The expected-loss curve reaches its minimum at signal cutoff 0.601 with loss 0.408. The five-percent cutoff gives loss 0.767 and the one-percent cutoff 1.265. Ten percent of cases are harmful; signals are normal with means zero and two and unit variance.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M06_error_costs.tex)
+
+Only the action threshold changes along the curve. The minimum accepts a 27.4 percent false-positive rate and misses 8.1 percent of harmful cases because missed harm is twenty times as costly. The result is conditional on this artificial population and loss specification; it is not a recommendation for a legal threshold. The plotted curve and labels come directly from the saved Python outputs. Ask who bears each mistake and whether the proposed action is reversible.
+
+Source: ../03_Data_and_Code/Evidence_Standards/README.md
+
+## Slide 20: Reverse the Costs and Reconsider the Action
+
+- Keep the same signals and ten-percent harmful share.
+- Mistaken intervention now costs 20; missed harm costs 1.
+- The minimum-loss cutoff rises from 0.601 to 3.596.
+
+Under reversed costs, expected loss is 0.936 for the five-percent rule, 0.243 for the one-percent rule, and 0.097 for the minimum-loss rule. An intervention with severe irreversible consequences can warrant a higher threshold. Opening an inquiry and imposing a severe sanction need different justification. A posterior probability of harm is distinct from a p-value. The complete program checks the analytic optimum against a separate grid. M6 §§6.44–6.45.
+
+Source: ../03_Data_and_Code/Evidence_Standards/README.md
+
+## Slide 21: A Cancelled Project Can Affect the Control Group
 
 Operating capacity and project-related cost exposure have different timelines.
 
@@ -246,7 +284,7 @@ The paper anchors treatment to operating capacity and excludes donors with speci
 
 Source: M6 §6.35. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 19: Fixed and Adaptive Research Designs
+## Slide 22: Fixed and Adaptive Research Designs
 
 - Known features and variances determine information at each profile.
 - A fixed allocation attains the leading minimum cost at high accuracy in the linear model.
@@ -256,7 +294,7 @@ Theorem 1 concerns worst-case coefficient MSE under the stated linear Gaussian m
 
 Source: (Jasin et al., 2026). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7734298
 
-## Slide 20: Implementation Checks
+## Slide 23: Implementation Checks
 
 - Reconcile assigned counts and intended allocation.
 - Check missing outcomes and tracking by assignment.
@@ -267,7 +305,7 @@ A randomization protocol does not prevent differential tracking failures. Sample
 
 Source: M6, Section 6.6, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 21: Prior Outcomes and Precision
+## Slide 24: Prior Outcomes and Precision
 
 Adjust the outcome using a pre-treatment measure $X$.
 
@@ -281,7 +319,7 @@ CUPED uses a pre-treatment covariate and an appropriately specified adjustment. 
 
 Source: M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 22: mHealth Baseline Activity Improves Precision
+## Slide 25: mHealth Baseline Activity Improves Precision
 
 Planning calculation uses historical user-level variance and a five-point target.
 
@@ -293,7 +331,7 @@ These are power-planning implications of observed historical variances, not a re
 
 Source: M6, Section 6.15, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 23: Model and Library Contributions
+## Slide 26: Model and Library Contributions
 
 Synthetic counts: 100 assigned tasks per condition; common rubric and resource limits.
 
@@ -305,7 +343,7 @@ The interaction is ten percentage points. Moving from the initial condition to t
 
 Source: Marketing Analytics Lecture Notes, M6 §6.19.
 
-## Slide 24: An Interaction Calculation
+## Slide 27: An Interaction Calculation
 
 The four rates are imposed teaching inputs.
 
@@ -324,7 +362,7 @@ Run factorial.py to reproduce both paths to the joint change using exact rationa
 
 Source: M6 §6.19. ../03_Data_and_Code/AI_Workflows/factorial.py
 
-## Slide 25: A Fixed Model and Four Workflows
+## Slide 28: A Fixed Model and Four Workflows
 
 - Cross explicit information with independent development feedback.
 - Reset each run and randomize cell order within repetitions.
@@ -335,7 +373,7 @@ M6 §6.29 defines q_cf as the probability of a valid output for a fixed task and
 
 Source: (Li et al., 2026, §§8–9). Original course applications: ../01_Resources/35_Agent_Workflow_Evaluation/README.md ../03_Data_and_Code/Agent_Workflows/README.md
 
-## Slide 26: Prompt Gains Depend on the Outcome Scale
+## Slide 29: Prompt Gains Depend on the Outcome Scale
 
 | Workflow | Gain (pp) | Baseline Failures Removed |
 | --- | --- | --- |
@@ -349,7 +387,7 @@ The no-example success rates are 81.49%, 92.40%, and 96.97%, leaving different a
 
 Source: (Galiani et al., 2026). ../01_Resources/40_Econometric_Coding_Workflows/README.md
 
-## Slide 27: Coding Exercise: An Experiment Plan
+## Slide 30: Coding Exercise: An Experiment Plan
 
 - Compute the factorial contrasts alongside the email effect.
 - Change contribution, delivery cost, and the target effect.
@@ -359,7 +397,7 @@ Run session_examples.py in the Lecture Examples folder S09. The mHealth experime
 
 Source: M6, Section 6.13, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 28: Interference and Assignment Units
+## Slide 31: Interference and Assignment Units
 
 - Customers can share offers or affect one another.
 - Stores can divert purchases from nearby locations.
@@ -369,7 +407,7 @@ If one treated store gains by taking business from a comparison store, the store
 
 Source: M6, Section 6.10, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 29: Assign Stores, Observe Customers
+## Slide 32: Assign Stores, Observe Customers
 
 Synthetic promotion: balanced store assignment and equal store sizes.
 
@@ -381,7 +419,7 @@ The effect is zero for every customer. Store shocks are independent across store
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 30: A Zero-Effect Promotion
+## Slide 33: A Zero-Effect Promotion
 
 | Calculation | Estimate (Dollars) | p-Value |
 | --- | --- | --- |
@@ -394,7 +432,7 @@ This is repetition zero from seed 20261125, retained without selecting a favorab
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 31: Dependence Changes False Discoveries
+## Slide 34: Dependence Changes False Discoveries
 
 Store means retain rejection rates near the nominal 5% level in this simulation.
 
@@ -406,7 +444,7 @@ Each correlation uses 4,000 newly generated experiments, 40 stores, 20 customers
 
 Source: M6 §6.30. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 32: A Treatment Arm Needs a Defensible Design
+## Slide 35: A Treatment Arm Needs a Defensible Design
 
 - Random assignment identifies a comparison.
 - The content of each treatment still affects the customers who receive it.
@@ -416,7 +454,7 @@ Randomization does not establish that a deceptive or harmful interface is accept
 
 Source: ETHICS_AND_REGULATION.md, M6.
 
-## Slide 33: Follow Purchases Through Returns
+## Slide 36: Follow Purchases Through Returns
 
 - Pressure and self-assurance can produce different purchase and return patterns.
 - Prespecify the eligible population and both outcome horizons.
@@ -426,7 +464,7 @@ The verified abstract of the randomized online-retailing study reports stronger 
 
 Source: https://doi.org/10.1177/00222437231180494
 
-## Slide 34: From Experiments to Generative Decisions
+## Slide 37: From Experiments to Generative Decisions
 
 - Within-campaign comparisons can supervise a model that proposes new messages.
 - The learned ranking inherits the outcome used to define success.
@@ -436,7 +474,7 @@ Historical experimental comparisons train a language-model improver (Angelopoulo
 
 Source: https://leekevin.io/caLM.pdf
 
-## Slide 35: Human Review and Customer Evidence
+## Slide 38: Human Review and Customer Evidence
 
 - Check factual claims and consequential terms before deployment.
 - Record customer understanding and the ability to refuse.
@@ -446,7 +484,7 @@ The Causal Alignment approach (Angelopoulos et al., 2026) includes human selecti
 
 Source: https://leekevin.io/caLM.pdf https://arxiv.org/abs/2609.07633
 
-## Slide 36: Correct Estimation and Unequal Exposure
+## Slide 39: Correct Estimation and Unequal Exposure
 
 | Synthetic Allocation | Revenue Effect | H Expected Loss |
 | --- | --- | --- |
@@ -459,7 +497,7 @@ M6 §6.37 uses the synthetic uniform-valuation population from M9 §9.17. Random
 
 Source: ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 37: Who Ought to Bear Experimental Risk?
+## Slide 40: Who Ought to Bear Experimental Risk?
 
 - Unbiased estimation supplies part of the justification for a decision.
 - Exposure, severity, and feasible alternatives shape each person’s objection.
@@ -469,7 +507,7 @@ Expected loss helps describe exposure. Scanlonian justification requires a princ
 
 Source: https://doi.org/10.1007/s10892-019-09282-6 ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 38: Equal Historical Fit, Different Price Effects
+## Slide 41: Equal Historical Fit, Different Price Effects
 
 Identical observed cells; assigning a common price gives different effects.
 
@@ -481,7 +519,7 @@ Both synthetic models reproduce the complete historical joint law of group, pric
 
 Source: M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 39: Which Observation Would Distinguish the Models?
+## Slide 42: Which Observation Would Distinguish the Models?
 
 - Randomize both prices within both groups.
 - At USD 20, group A purchases with probability 0.4 or 0.8.
@@ -492,7 +530,7 @@ The probabilities are imposed population predictions, not estimates. Within-grou
 
 Source: M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 40: A Criticism Also Needs Evidence
+## Slide 43: A Criticism Also Needs Evidence
 
 - Nonrejection leaves a meaningful effect possible.
 - It does not identify the realized effect.
@@ -503,7 +541,7 @@ Apply the same reasoning to the electricity case. Low sensitivity does not prove
 
 Source: M6 §6.38. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md M9 §9.40.4. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 41: Identify the Effects of Each Learning Feature
+## Slide 44: Identify the Effects of Each Learning Feature
 
 Original synthetic population means; equal allocation and a common assessment.
 
@@ -515,7 +553,7 @@ The package changes two features simultaneously and gains 17 points. Alternative
 
 Source: M6 §6.39. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 42: Define Learning Before Evaluating the Tool
+## Slide 45: Define Learning Before Evaluating the Tool
 
 - Separate immediate comprehension, delayed retention, and transfer.
 - Treat study time and selected formats as possible responses to assignment.
@@ -525,7 +563,7 @@ The published trial randomizes a learning package. A total-effect comparison all
 
 Source: M6, Section 6.39, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md
 
-## Slide 43: Experiment Discussion
+## Slide 46: Experiment Discussion
 
 - Would a conversion gain cover the campaign cost?
 - What changes if only email openers enter the analysis?

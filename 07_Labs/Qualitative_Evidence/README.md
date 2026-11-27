@@ -34,3 +34,7 @@ Prepare a short evidence table containing a supported statement, its strongest c
 Use M9 §9.33 to formulate a recommendation. State a factual premise, a normative principle concerning burdens imposed on households, a feasible alternative, and the strongest objection. Explain why new costs and claimed offsets require transparent substantiation. Then consider the firm's objection that premature criticism could obstruct beneficial investment. Specify what evidence would justify modifying either recommendation.
 
 The household advocate may criticize an overbroad assurance while accepting that the historical paper estimates a small average effect. A final answer must distinguish empirical contradiction, a competing mechanism, a scope problem, and a normative objection. It must also state whose experience the documents leave unrepresented.
+
+## Evidence and the Proposed Action
+
+Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.

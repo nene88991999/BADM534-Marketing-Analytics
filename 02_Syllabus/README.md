@@ -61,3 +61,7 @@ The learning objectives and class-format description include output completeness
 ## Evidence and the Recurring Electricity Case
 
 Sessions 4, 9, and 14 connect p-values, meaningful-effect bounds, economic thresholds, and household agency within existing worked-comparison and ethics blocks. The data-center case recurs in measurement, inference, public communication, and Marketing Dialectics. The [complete optional lab](../07_Labs/Statistical_Inference/README.md) supplies longer calculations and a table-based critique.
+
+## Measurement Traditions and Evidence for Action
+
+The syllabus includes disciplinary history, heterogeneous demand, unequal error costs, and evidentiary standards within the existing meetings. The [teaching plan](TEACHING_PLAN.md#measurement-error-costs-and-reasonable-protection) identifies the selected discussions; the [new practice](../07_Labs/Evidence_Standards/README.md) remains optional and ungraded.

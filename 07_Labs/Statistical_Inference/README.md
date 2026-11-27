@@ -78,3 +78,7 @@ Use the original `institutional_exposure.py` program and M6 §6.35. This practic
 5. Compare full and partial developer payment, disallowed recovery, and asset reuse. Keep all cost inputs in annual dollars before dividing by annual MWh.
 6. Propose a dated project panel and a donor screen using information available at the comparison date. Explain why selecting only eventual successes or failures could introduce further selection.
 7. State the additional evidence needed to distinguish an institutional risk from a demonstrated error in the published estimate. Separate price, expenditure, affordability, and authority to allocate costs.
+
+## Evidence and the Proposed Action
+
+Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.

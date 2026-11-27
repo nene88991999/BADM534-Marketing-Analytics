@@ -854,3 +854,11 @@ if __name__ == "__main__":
         print(row["case"], round(row["unadjusted"], 6),
               round(row["adjusted"], 6))
 ```
+
+## 3.22 Unbiased Estimation and the Consequences of Error
+
+A regulator considering an inquiry needs evidence about harm and a reason for acting on that evidence. Unbiasedness describes the repeated-sampling expectation of an estimator under a specified model: $E[\widehat\theta]=\theta$. It does not determine how the regulator should respond to an uncertain estimate. Two unbiased estimators can have different variances; two decision rules using the same estimator can expose different people to different losses.
+
+Suppose a fixed null states that the specified harmful effect is absent. A Type I error flags harm under that null. A Type II error misses a specified harmful alternative. A significance level controls the first probability under the testing assumptions. It leaves the severity, duration, distribution, and reversibility of the two mistakes unstated. Increasing the evidentiary threshold can reduce mistaken intervention while leaving more harmful cases unaddressed. Treating that change as an unconditional improvement requires a further judgment about consequences.
+
+Decision-focused econometrics evaluates the mapping from evidence to action against the losses in relevant states of the world ([Manski, 2021](https://doi.org/10.3982/ECTA17985)). Its demands include accurate statistical calculations and an explicit account of the decision. In M6 §6.44, the signal distributions remain fixed while the costs assigned to the two errors change. The preferred threshold changes even though the quality of the evidence does not. A claim of statistical rigor therefore needs an accompanying explanation of whose errors the decision rule seeks to avoid.

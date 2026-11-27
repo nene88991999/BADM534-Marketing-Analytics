@@ -229,6 +229,51 @@ M6 §6.34. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments
 
 M6 §6.34. \url{../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md}}
 \end{frame}
+\begin{frame}{The Consequences of Two Statistical Errors}
+\usebeamercolor[fg]{normal text}
+\noindent Fix the null as absence of specified harm; act when the signal exceeds a threshold.
+\medskip
+\[
+R=(1-\pi)\alpha C_{FP}+\pi\beta C_{FN}
+\]
+\medskip
+\noindent Prevalence, conditional errors, and losses jointly determine expected loss per case.
+\note{Pi is the harmful share before observing a signal. Alpha is the false-positive rate in harmless cases; beta is missed harm under a specified harmful alternative. Costs are in comparable illustrative loss units, and correct decisions have zero loss. A significance level specifies alpha without specifying the other terms. This simplified decision model supplies no legal burden of proof. M6 §6.44 and the complete standard-library program retain the exact calculation.
+
+\url{../03_Data_and_Code/Evidence_Standards/README.md}}
+\end{frame}
+\begin{frame}{Fixed Evidence, Unequal Error Costs}
+\usebeamercolor[fg]{normal text}
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont
+\def\small{\fontsize{10}{12}\selectfont}
+\def\footnotesize{\fontsize{9}{11}\selectfont}
+\def\scriptsize{\fontsize{8}{9.5}\selectfont}
+\hyphenpenalty=10000
+\begin{adjustbox}{max width=0.98\textwidth,max totalheight=0.74\textheight}
+\input{../06_Lecture_Notes/figures/M06_error_costs.tex}
+\end{adjustbox}
+\endgroup
+\par\medskip
+{\small Fixed signals and prevalence; only the action threshold changes.\par}
+\note{Only the action threshold changes along the curve. The minimum accepts a 27.4 percent false-positive rate and misses 8.1 percent of harmful cases because missed harm is twenty times as costly. The result is conditional on this artificial population and loss specification; it is not a recommendation for a legal threshold. The plotted curve and labels come directly from the saved Python outputs. Ask who bears each mistake and whether the proposed action is reversible.
+
+\url{../03_Data_and_Code/Evidence_Standards/README.md}}
+\end{frame}
+\begin{frame}{Reverse the Costs and Reconsider the Action}
+\usebeamercolor[fg]{normal text}
+\vfill
+\begin{slidebullets}
+\item Keep the same signals and ten-percent harmful share.
+\item Mistaken intervention now costs 20; missed harm costs 1.
+\item The minimum-loss cutoff rises from 0.601 to 3.596.
+\end{slidebullets}
+\vfill
+\note{Under reversed costs, expected loss is 0.936 for the five-percent rule, 0.243 for the one-percent rule, and 0.097 for the minimum-loss rule. An intervention with severe irreversible consequences can warrant a higher threshold. Opening an inquiry and imposing a severe sanction need different justification. A posterior probability of harm is distinct from a p-value. The complete program checks the analytic optimum against a separate grid. M6 §§6.44–6.45.
+
+\url{../03_Data_and_Code/Evidence_Standards/README.md}}
+\end{frame}
 \begin{frame}{A Cancelled Project Can Affect the Control Group}
 \usebeamercolor[fg]{normal text}
 \centering

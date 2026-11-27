@@ -2321,3 +2321,11 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 2.32 Defining Harm Before Choosing Its Measure
+
+A household can face a serious electricity burden through a higher bill, reduced essential consumption, disconnection risk, or an obligation to finance infrastructure. A dataset containing revenue per kWh represents one part of this situation. If an institution recognizes harm only through that variable, other interests lose standing before statistical analysis begins. The definition of the outcome therefore helps determine whose concerns the analysis can address.
+
+Separate the object, its empirical representation, and the decision criterion. The object might be household expenditure; its representation might require matched billing records with consistent account and time coverage; the criterion might concern an avoidable burden on households with limited alternatives. Missing access to a measure leaves an evidential gap. It does not erase the object or justify treating its value as zero. Bills are empirically observable quantities, distinct from the Kantian question of the person as a free moral agent.
+
+Apply the same distinction to targeted pricing. A purchase records acceptance under particular alternatives. It can support estimation of demand while leaving the customer's dependence, ability to switch, and authority over personal information unresolved. An adequate measurement plan names these interests and the records or testimony that could bear on them. It also states which normative judgments remain after those records are collected. M9 §§9.56–9.58 connects this choice of evidence to institutional responsibility.

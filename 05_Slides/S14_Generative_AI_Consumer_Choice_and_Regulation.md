@@ -27,6 +27,7 @@ Session 14. M8, M9. 170 minutes.
 - Assess conflicts of interest through duties, consumer purposes, and reasons for a feasible alternative.
 - Defend the empirical and moral premises behind reassurance to affected households.
 - Distinguish truth, evidential warrant, and the norms governing disclosure and public justification.
+- Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections.
 
 ## Related Materials
 
@@ -66,6 +67,7 @@ Session 14. M8, M9. 170 minutes.
 - [Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)
 - [Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)
 - [Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)
+- [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -1173,7 +1175,51 @@ Develop the contractualist premises (Scanlon, 1998): material burden, informatio
 
 Source: M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 101: A Decision with Consumer Outcomes
+## Slide 101: Evidentiary Standards Allocate Uncertainty
+
+A definition of harm and a decision rule determine which concerns receive a response.
+
+**Figure description:** The upper path connects the definition of harm, eligible evidence, the decision rule, and action. The lower path shows that excluded concerns remain borne by people; justification and review feed back into the decision rule.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_evidence_standards.tex)
+
+Conceptual engineering asks how concepts organize attention and responses (Haslanger, 2022). Applied here, a standard that admits only a precisely identified average price effect can exclude access, dependence, or decision authority. If uncertainty always requires nonintervention, the standard allocates exposure to consumers. This can benefit harmful conduct even when calculations are correct. Whether an actual institution operates this way requires evidence; deliberate manipulation is a separate claim. M9 §9.56.
+
+Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 102: The Critical Claim Must Name the Asymmetry
+
+- Can a firm act on forecasts while customers need precise causal proof for protection?
+- Who bears the consequences while that proof remains unavailable?
+- Would a feasible safeguard impose a smaller, reversible burden?
+
+The criticism is strongest when it specifies the rule, the action, access to evidence, and the people bearing each error. Inductive risk makes the consequences of uncertain inference relevant to scrutiny and interpretation (Douglas, 2000). Values do not supply missing facts. A blanket claim that identification or Bayesian integration prevents enforcement is inconsistent with applications that identify market power. M9 §§9.56–9.57.
+
+Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 103: Build an Argument for Action Under Uncertainty
+
+An ought conclusion requires supported factual premises and a defended principle.
+
+**Figure description:** Ontological, epistemic, and normative premises enter a proposed proportionate action. The strongest objection and feasible alternatives form a review path back to the premises.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_reasons_under_uncertainty.tex)
+
+A person’s interests extend beyond a dataset. Credible institutional evidence can support serious concern without an exact causal magnitude. A principle must compare the individual burdens of exposure and mistaken restriction (Scanlon, 1998). Together these premises can justify records or reversible protection, with review and legal authority. Their conclusion is conditional; a factual or moral objection can defeat it. M9 §9.58.
+
+Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 104: Evaluate the Strongest Reply
+
+- False condemnation can harm livelihood, useful services, and fair procedures.
+- Missed harm can persist when entry, exit, or public challenge is difficult.
+- Compare both mechanisms and the burdens of the particular proposed action.
+
+The influential argument that precedent makes false positives persistent while entry corrects false negatives rests on contestable institutional assumptions (Easterbrook, 1984; Baker, 2015). The synthetic threshold reverses when the relative costs reverse. Expected-loss aggregation clarifies consequences, while a contractualist assessment also asks whether serious individual burdens are reasonably justifiable. Electricity reassurance and targeted pricing require that same examination of who can obtain evidence and who can contest the rule. M9 §§9.58–9.59.
+
+Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 105: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

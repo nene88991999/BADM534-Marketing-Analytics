@@ -172,3 +172,7 @@ The [reading collection](01_Resources/44_Bad_Controls_and_Project_Exposure/READM
 ## Data, Truth, and Norms
 
 The [reading collection](01_Resources/45_Data_Truth_and_Norms/README.md) connects created artifacts (Thomasson, 1999, 2014), truth and warrant, institutional research priorities, and reasons owed to households. An [original Python example](03_Data_and_Code/Data_Production/README.md) constructs identical public records with opposite population effects. M2, M6, and M9 distinguish existing billing data from the project-linked evidence and causal design needed for household claims.
+
+## Measurement Traditions and Evidence for Protection
+
+The [integrated notes](06_Lecture_Notes/README.md#measurement-traditions-and-evidence-for-protection) connect measurement history, heterogeneous demand, error costs, and reasonable protection across M1–M9. A [complete synthetic calculation](03_Data_and_Code/Evidence_Standards/README.md) holds evidence fixed and changes the consequences of mistakes. [Optional practice](07_Labs/Evidence_Standards/README.md), selected slides, and the [electricity lesson](08_Wiki/pilot/index.html#uncertainty) connect the argument to pricing, household bills, and AI decisions.

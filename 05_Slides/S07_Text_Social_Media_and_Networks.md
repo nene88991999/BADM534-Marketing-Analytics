@@ -16,6 +16,7 @@ Session 07. M5. 170 minutes.
 - Compare feature preservation, group weighting, and access at original network origins.
 - Distinguish recorded-category agreement from the compatibility of a replacement text representation.
 - Use contextual coding, negative cases, and source comparison to assess utility cost-recovery claims.
+- Use credible qualitative mechanisms to justify proportionate inquiry.
 
 ## Related Materials
 
@@ -36,6 +37,7 @@ Session 07. M5. 170 minutes.
 - [Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)
 - [Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)
 - [Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)
+- [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -557,7 +559,17 @@ The FTC review rule addresses business conduct involving fake or false reviews. 
 
 Source: FTC Consumer Reviews and Testimonials Rule Q&A. https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers
 
-## Slide 46: Text-Analysis Discussion
+## Slide 46: Mechanism Evidence Can Justify an Inquiry
+
+- Preserve source role, timing, exact wording, and contrary passages.
+- Use cost-recovery statements to identify the records an inquiry needs.
+- Distinguish a credible mechanism from an estimated historical bill effect.
+
+Most selected utility-call material concerns 2026, after the study’s 2020–2025 period. The study also discusses cost recovery and reports some positive residential spillovers. These facts constrain a claim of contradiction. Contextual coding can support inquiry into commitments, canceled projects, tariff cases, and customer classes without establishing the magnitude of pass-through. The evidence for requesting records differs from the evidence for assigning liability. M5 §§5.27–5.28.
+
+Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 47: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

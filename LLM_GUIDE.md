@@ -63,3 +63,7 @@ Use the [electricity lesson companion](08_Wiki/pilot/LESSON.md) when explaining 
 ## Conflicts of Interest and Engagement
 
 Use M9 §§9.45–9.49 and the [worked example](03_Data_and_Code/Conflicts_of_Interest/README.md). Identify the duty that an interest threatens before calling a situation a professional conflict. Preserve the synthetic data labels and distinguish behavioral reward learning from dopamine measurements and clinical diagnoses. A score weight is not a Scanlonian criterion. Require factual premises, a defended normative principle, objections to feasible alternatives, and reasons for revision. Treat the optional lab as ungraded practice.
+
+## Evidence Standards and Moral Reasons
+
+For questions about statistical rigor, read M6 §§6.44–6.45 and M9 §§9.55–9.59. State the null, alternative, action, affected people, and consequences before comparing errors. Keep p-values distinct from posterior probabilities. Explain why flexible heterogeneity has no inherent direction of markup bias, and why model fit leaves conduct and justification to be assessed. Support an ought conclusion with explicit factual and normative premises, a feasible alternative, the strongest objection, and conditions for revision. The [optional lab](07_Labs/Evidence_Standards/README.md) permits differing recommendations supported by reasons.

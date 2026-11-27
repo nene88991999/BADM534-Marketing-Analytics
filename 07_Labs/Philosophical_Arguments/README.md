@@ -130,3 +130,7 @@ Develop one criticism using a philosophical account of cognition, observational 
 For the publication-incentive question, distinguish selection by statistical result from selection by method or question. Propose a sampling frame that includes unpublished or unsubmitted work and identify the comparisons needed. Treat the preference for computational tractability as a hypothesis until that comparison supplies evidence.
 
 For the electricity case, complete the measurement table in M9 §9.42.4. State the claimed construct, recorded variable, unit, denominator, population, and timing. Give a validation argument or a counterexample that preserves the observation while changing the claimed object. Use the existing bill program in M6 §6.35 for the accounting comparison, then state separately what would identify a causal change.
+
+## Evidence and the Proposed Action
+
+Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.

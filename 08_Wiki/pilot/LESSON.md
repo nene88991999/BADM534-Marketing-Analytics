@@ -48,6 +48,20 @@ Suppose someone says, “The average price did not rise, so households experienc
 
 A defensible revision preserves the reported outcome, design, and uncertainty, then states what further evidence broader reassurance requires. The paper explicitly defines its realized-revenue measure. The criticism concerns extensions beyond the supported inference. Actual harm, contaminated controls, and deliberate deception each require separate evidence.
 
+## Action While Evidence is Incomplete
+
+A household representative may have credible evidence of a cost-recovery mechanism without a precise causal estimate of the bill effect. Seeking relevant records, using a temporary safeguard, and imposing a remedy are different actions. Their burdens and evidentiary requirements differ. Continued exposure also has consequences.
+
+The following comparison uses hypothetical cases, with ten percent harmful and normal signals of means zero and two and variance one. Correct decisions have zero loss. When missed harm costs twenty comparable units and mistaken intervention costs one, the five-percent test gives expected loss 0.767 per case. The minimum-loss threshold gives 0.408. Reversing these costs changes the preferred signal cutoff from 0.601 to 3.596. These synthetic results describe a decision model; they estimate no actual household harm and supply no legal proof threshold.
+
+![For fixed synthetic signals, expected loss changes with the action threshold. With missed harm twenty times as costly, the minimum lies below the conventional five-percent threshold.](../../06_Lecture_Notes/figures/M06_error_costs.png)
+
+[Open figure at full size](../../06_Lecture_Notes/figures/M06_error_costs.png) or inspect its [editable TikZ](../../06_Lecture_Notes/figures/M06_error_costs.tex).
+
+Explain which electricity records would justify an inquiry and what would justify a more restrictive action. State whose burdens enter the comparison, which normative premise supports protection, and what would change the conclusion. A p-value cannot be read as a posterior probability of harm. A sum of losses also leaves open whether a person's serious burden is reasonably justifiable.
+
+The [complete Python example](../../03_Data_and_Code/Evidence_Standards/README.md), [M6 §§6.44–6.45](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md), [M9 §§9.56–9.59](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md), and [optional practice](../../07_Labs/Evidence_Standards/README.md) supply the derivation, sources, and opposing cost specification.
+
 ## Transfer the Argument
 
 Consider an unchanged advertised subscription rate with payment for more months or services. Identify price, quantity, expenditure, and decision rights. State which accounting relations transfer and which contractual facts require new investigation.

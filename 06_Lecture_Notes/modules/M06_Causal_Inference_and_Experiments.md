@@ -2553,3 +2553,197 @@ Public concern can also stimulate inquiry. Virginia's [December 2024 investigati
 \noindent An inaccessible project-linked panel leaves the household effect unresolved. The two worlds in §2.31 establish why accurate selected records alone can fail to identify even the sign of the population effect. They are a logical counterexample, with no estimate of how often actual utility releases follow that selection rule. Evidence of a particular selection mechanism would require release criteria, coverage counts, retention rules, denied requests, redaction grounds, and comparisons with records available under controlled access.
 
 The criticism of broad reassurance remains substantial. A study using an aggregate price outcome must establish the additional premises needed to interpret it as household cost incidence. Missing project histories and restricted access make those premises harder to assess; they do not make the burden disappear. A defensible response narrows the public claim, improves the design, or acknowledges the remaining uncertainty. Disclosure and causal identification are complementary requirements.
+
+## 6.44 Type I and Type II Errors Under Unequal Costs
+
+An agency deciding whether to investigate possible consumer harm faces two mistakes: an unnecessary intervention and a harmful practice left unaddressed. A one-sided test can control false alarms without selecting an appropriate action. The choice also depends on how often harm occurs, who bears each error, and what the intervention does. Decision theory makes these judgments explicit ([Manski, 2021](https://doi.org/10.3982/ECTA17985)).
+
+### 6.44.1 A Synthetic Decision With Known Signals
+
+Consider a population of hypothetical cases before their signals are observed. Ten percent involve the specified harm. A standardized signal $Z$ has distribution $N(0,1)$ in harmless cases and $N(d,1)$ in harmful cases, with $d=2$. A rule takes protective action when $Z>c$. Correct actions have zero loss; a false positive costs $C_{FP}$ and a false negative costs $C_{FN}$ in illustrative comparable loss units per case. These inputs define a two-state illustration. They are unrelated to an estimated prevalence or effect in an actual pricing or electricity market.
+
+The null is the absence of the specified harm. The false-positive probability is $\alpha(c)=1-\Phi(c)$, where $\Phi$ is the standard normal cumulative distribution function. At the specified alternative, the false-negative probability is $\beta(c)=\Phi(c-d)$, and power is $1-\beta(c)$. Averaging losses over the population, with harmful share $\pi=0.10$, gives
+
+$$R(c)=(1-\pi)\alpha(c)C_{FP}+\pi\beta(c)C_{FN}.$$
+
+The first term weights unnecessary interventions among harmless cases. The second weights missed harm among harmful cases. Both are losses per case in the full population, so a comparison must preserve the denominator and the same loss units. A composite harmful alternative would require a distribution over effects or separate evaluation across them.
+
+To find the least costly threshold, equate the marginal reduction in false-positive losses with the marginal increase in false-negative losses. The normal-density ratio is $\phi(c-d)/\phi(c)=\exp(dc-d^2/2)$. For positive costs, $0<\pi<1$, and $d>0$, the minimizing threshold is
+
+$$c^*=\frac{d}{2}+\frac{1}{d}\log\left(\frac{(1-\pi)C_{FP}}{\pi C_{FN}}\right).$$
+
+Raising the cost of missed harm lowers this threshold; raising the cost of mistaken intervention increases it. These comparative effects hold the signal distributions and harmful share fixed. The expression is an optimal rule for the specified illustration. It does not establish a legal burden of proof or a universally acceptable error rate.
+
+### 6.44.2 The Same Evidence, Different Consequences
+
+First set $C_{FP}=1$ and $C_{FN}=20$. The results below use the exact normal probabilities, with rounding only for presentation.
+
+| Rule | Signal Cutoff | False Positive | Missed Harm | Loss per Case |
+| --- | --- | --- | --- | --- |
+| One-percent test | 2.326 | 1.0% | 62.8% | 1.265 |
+| Five-percent test | 1.645 | 5.0% | 36.1% | 0.767 |
+| Minimum expected loss | 0.601 | 27.4% | 8.1% | 0.408 |
+
+The one-percent rule produces fewer false alarms and much more missed harm. Under these illustrative costs, its expected loss exceeds that of the five-percent rule. The loss-minimizing rule accepts a substantial false-positive rate because each missed harm costs twenty times as much. The comparison makes that tradeoff visible; judging it requires examining what the proposed protective action actually imposes on each person.
+
+![With ten percent harmful cases and fixed normal signal distributions, expected loss reaches its minimum near a signal cutoff of 0.601 when missed harm costs twenty units and mistaken intervention costs one. The five-percent and one-percent test thresholds lie to the right and produce higher expected loss.](../figures/M06_error_costs.png)
+
+**Figure interpretation.** The horizontal axis changes the action threshold while holding evidence quality fixed. The blue curve averages loss over all hypothetical cases. The square identifies the loss minimum; circles identify conventional testing thresholds. Moving right reduces false positives while increasing missed harm. The shape depends on the stated prevalence, signal distributions, and costs.
+
+Now reverse the costs to $C_{FP}=20$ and $C_{FN}=1$. The five-percent rule has expected loss 0.936, the one-percent rule 0.243, and the minimum-loss rule 0.097 at $c^*=3.596$. Severe mistaken interventions can justify a more demanding threshold. A critique of excessive caution is strongest when it states why the particular missed harm is serious and why the proposed action has smaller or reversible costs.
+
+### 6.44.3 Posterior Beliefs, Power, and Moral Reasons
+
+Under the same binary losses, a person who assigns posterior probability $q$ to harm acts when $(1-q)C_{FP}<qC_{FN}$, or $q>C_{FP}/(C_{FP}+C_{FN})$. For costs one and twenty, this probability threshold is $1/21$. A p-value is not $q$: it concerns a tail probability under a specified null rather than a posterior probability of harm. Substituting a p-value for $q$ gives the formula a different and invalid interpretation.
+
+Power likewise belongs to a specified alternative and design. The inverse-power analysis in §6.34 evaluates plausible effects and detectable magnitudes; it avoids treating power computed at the noisy observed estimate as independent evidence. A failure to reject can reflect low power, a small effect, misspecification, or other conditions. An action requires weighing those possibilities alongside the consequences of waiting.
+
+Expected loss supplies one account of the consequences. A contractualist assessment also considers whether a particular person's serious burden can be justified through a principle that affected people could not reasonably reject (Scanlon, 1998, chapter 5). Many small benefits to others do not automatically answer that person's objection. Common loss units are an explicit modeling choice; the arithmetic cannot establish that every morally relevant consideration is commensurable.
+
+### 6.44.4 Complete Python and Reproduction
+
+The program computes exact probabilities, both cost scenarios, a threshold grid for the figure, and numerical labels. It checks a symmetry benchmark, probability boundaries, an equal-cost case, a separately enumerated optimum, and posterior odds at the analytical threshold. Run `python3 03_Data_and_Code/Evidence_Standards/error_costs.py` from the repository root. It writes results beside the script in `results/`; no external dataset, simulation draw, or package is required.
+
+Python source: [error_costs.py](../../03_Data_and_Code/Evidence_Standards/error_costs.py)
+
+```python
+"""Exact synthetic error probabilities and decision losses; standard library only."""
+
+from csv import DictWriter
+from math import isclose, log
+from pathlib import Path
+from statistics import NormalDist
+import json
+
+
+NORMAL = NormalDist()
+PREVALENCE = 0.10
+SIGNAL_SHIFT = 2.0
+OUTPUT = Path(__file__).resolve().parent / "results"
+
+
+def error_rates(cutoff, shift=SIGNAL_SHIFT):
+    """Flag harm when Z > cutoff; Z is N(0,1) or N(shift,1)."""
+    false_positive = NORMAL.cdf(-cutoff)
+    false_negative = NORMAL.cdf(cutoff - shift)
+    return false_positive, false_negative
+
+
+def expected_loss(cutoff, false_positive_cost, false_negative_cost,
+                  prevalence=PREVALENCE, shift=SIGNAL_SHIFT):
+    alpha, beta = error_rates(cutoff, shift)
+    return ((1 - prevalence) * alpha * false_positive_cost
+            + prevalence * beta * false_negative_cost)
+
+
+def optimal_cutoff(false_positive_cost, false_negative_cost,
+                   prevalence=PREVALENCE, shift=SIGNAL_SHIFT):
+    """Minimize loss for two normal states with equal variance and positive shift."""
+    if not 0 < prevalence < 1 or shift <= 0:
+        raise ValueError("Use a prevalence in (0,1) and a positive signal shift.")
+    if min(false_positive_cost, false_negative_cost) <= 0:
+        raise ValueError("Error costs must be positive.")
+    odds = ((1 - prevalence) * false_positive_cost
+            / (prevalence * false_negative_cost))
+    return shift / 2 + log(odds) / shift
+
+
+def write_csv(path, records):
+    with path.open("w", newline="") as handle:
+        writer = DictWriter(handle, fieldnames=list(records[0]))
+        writer.writeheader()
+        writer.writerows(records)
+
+
+def verify_calculations():
+    # Symmetry gives an independent benchmark at the midpoint of the signals.
+    alpha, beta = error_rates(SIGNAL_SHIFT / 2)
+    assert isclose(alpha, beta, abs_tol=1e-12)
+    assert isclose(error_rates(0)[0], 0.5, abs_tol=1e-12)
+    assert isclose(optimal_cutoff(1, 1, prevalence=0.5), 1.0)
+    # Check the analytical optimum against a separately enumerated dense grid.
+    grid = [i / 1000 for i in range(-1000, 6001)]
+    for fp, fn in [(1, 20), (20, 1)]:
+        optimum = optimal_cutoff(fp, fn)
+        grid_optimum = min(grid, key=lambda c: expected_loss(c, fp, fn))
+        assert abs(optimum - grid_optimum) <= 0.00051
+        assert expected_loss(optimum, fp, fn) <= expected_loss(grid_optimum, fp, fn) + 1e-12
+    # Posterior odds at the optimum equal the specified loss ratio.
+    cutoff = optimal_cutoff(1, 20)
+    posterior_odds = (PREVALENCE / (1 - PREVALENCE)
+                      * NORMAL.pdf(cutoff - SIGNAL_SHIFT) / NORMAL.pdf(cutoff))
+    assert isclose(posterior_odds, 1 / 20, rel_tol=1e-12)
+    return "Passed: symmetry, probability boundary, equal-cost benchmark, grid optima, posterior odds."
+
+
+def main():
+    verification = verify_calculations()
+    OUTPUT.mkdir(exist_ok=True)
+    scenarios = [("Missed harm costs 20", 1.0, 20.0),
+                 ("Mistaken intervention costs 20", 20.0, 1.0)]
+    rows = []
+    for scenario, fp, fn in scenarios:
+        rules = [("One-percent test", NORMAL.inv_cdf(0.99)),
+                 ("Five-percent test", NORMAL.inv_cdf(0.95)),
+                 ("Minimum expected loss", optimal_cutoff(fp, fn))]
+        for rule, cutoff in rules:
+            alpha, beta = error_rates(cutoff)
+            rows.append({
+                "scenario": scenario, "rule": rule, "cutoff": cutoff,
+                "prevalence": PREVALENCE, "signal_shift": SIGNAL_SHIFT,
+                "false_positive_cost": fp, "false_negative_cost": fn,
+                "false_positive_rate": alpha, "false_negative_rate": beta,
+                "power": 1 - beta,
+                "expected_loss": expected_loss(cutoff, fp, fn),
+            })
+    write_csv(OUTPUT / "decision_rules.csv", rows)
+    write_csv(OUTPUT / "figure_points.csv", rows[:3])
+    commands = {"PrevalencePercent": 100 * PREVALENCE, "SignalShift": SIGNAL_SHIFT}
+    for prefix, row in zip(["One", "Five", "Optimal"], rows[:3]):
+        commands[prefix + "Cutoff"] = row["cutoff"]
+        commands[prefix + "Loss"] = row["expected_loss"]
+    (OUTPUT / "figure_values.tex").write_text("\n".join(
+        "\\newcommand{\\" + name + "}{" + f"{value:.12f}" + "}"
+        for name, value in commands.items()) + "\n")
+    curve = []
+    for index in range(161):
+        cutoff = index / 40
+        alpha, beta = error_rates(cutoff)
+        curve.append({
+            "cutoff": cutoff, "false_positive_rate": alpha,
+            "false_negative_rate": beta,
+            "missed_harm_cost_20": expected_loss(cutoff, 1, 20),
+            "mistaken_intervention_cost_20": expected_loss(cutoff, 20, 1),
+        })
+    write_csv(OUTPUT / "risk_curve.csv", curve)
+    summary = {
+        "data_status": "Synthetic known distributions; no estimated market effects.",
+        "unit": "One hypothetical case before observing its signal.",
+        "null": "No specified harm; Z ~ N(0,1).",
+        "alternative": "Specified harm; Z ~ N(2,1).",
+        "prevalence": PREVALENCE,
+        "loss_units": "Illustrative comparable loss units per case.",
+        "correct_decision_loss": 0,
+        "verification": verification,
+        "rules": rows,
+    }
+    (OUTPUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(verification)
+    for row in rows:
+        print(f"{row['scenario']} | {row['rule']}: "
+              f"alpha={row['false_positive_rate']:.4f}, "
+              f"beta={row['false_negative_rate']:.4f}, "
+              f"loss={row['expected_loss']:.4f}")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## 6.45 Evidence for Action Before Precise Identification
+
+An investigation, a temporary protection, and a punitive remedy impose different burdens. Credible documents or descriptive patterns can support obtaining records even when the causal magnitude remains unresolved. A reversible safeguard can be justified where a serious exposure is credible and delay imposes substantial costs. A sanction requires its separate factual and legal predicates. The appropriate evidentiary standard therefore attaches to a specific action and institutional authority.
+
+For electricity infrastructure, relevant next steps include linking project commitments, cancellations, investments, tariff proceedings, and household bills. Phantom projects could create exposure before operation or after cancellation; determining contamination of a particular control group requires those records. An imprecise average-price estimate leaves this inquiry unresolved. It also supplies no evidence by itself that a project harmed households.
+
+For targeted pricing, records about available alternatives, switching frictions, targeting criteria, and costs can bear on a complaint before a complete demand model is estimated. The governing legal question remains specific to the alleged conduct. United States merger guidance considers documents, testimony, economic evidence, and structural presumptions in assessing prospective threats to competition ([DOJ and FTC, 2023, §4.1](https://www.justice.gov/atr/merger-guidelines/tools/sources-of-evidence)). This agency guidance is nonbinding and does not replace the elements of other claims. M9 §§9.56–9.59 compares such institutional standards with the reasons affected people can demand.

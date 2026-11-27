@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=2.5cm,minimum height=1.55cm] (harm) at (1.35,0) {\textbf{Definition of Harm}\\Whose interests\\have standing?};
+\node[box,text width=2.5cm,minimum height=1.55cm] (evidence) at (4.75,0) {\textbf{Eligible Evidence}\\Which records and\\voices count?};
+\node[box,text width=2.5cm,minimum height=1.55cm] (rule) at (8.15,0) {\textbf{Decision Rule}\\How much evidence\\for this action?};
+\node[orangebox,text width=2.5cm,minimum height=1.55cm] (action) at (11.55,0) {\textbf{Action}\\Investigate, protect,\\or continue?};
+\draw[edge] (harm) -- (evidence);\draw[edge] (evidence) -- (rule);\draw[edge] (rule) -- (action);
+\node[orangebox,text width=5.0cm,minimum height=1.1cm] (excluded) at (3.05,-2.65) {\textbf{Excluded Concerns}\\People continue to bear their burdens.};
+\node[box,text width=5.0cm,minimum height=1.1cm] (review) at (9.85,-2.65) {\textbf{Justification and Review}\\Who bears each error? Is the rule reasonable?};
+\draw[accent] (harm.south) -- (excluded.north -| harm.south);
+\draw[accent] (excluded) -- (review);
+\draw[accent,dashed] (review.north) -- (rule.south);
+\node[align=center,text width=13.5cm,font=\footnotesize] at (6.45,-4.2) {An institutional standard can allocate uncertainty before an estimate is calculated.\\Its consequences and justification require evidence; intent is a separate question.};
+\end{tikzpicture}

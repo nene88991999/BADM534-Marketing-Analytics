@@ -25,3 +25,7 @@ Read M2 §§2.30–2.31, M6 §6.43, and M9 §§9.51–9.54 in the [notes](../../
 Specify a project-linked study covering proposed, canceled, delayed, and operating facilities. State the household outcome, counterfactual, dates, financing links, sample restrictions, and required records. Design controlled access and public aggregates that permit criticism while protecting identities. Identify whose question each data holder's system was designed to answer and where additional collection or linkage is needed.
 
 End with a supported public statement and a separate recommendation. Explain which evidence could reverse the factual judgment and which reason could change the recommendation. Do not infer a favorable or adverse causal effect merely from the availability of records.
+
+## Evidence and the Proposed Action
+
+Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.

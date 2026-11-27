@@ -1,7 +1,7 @@
 {
   "title": "Marketing Analytics",
   "author": "Nathan Yang",
-  "updated_on": "2026-11-26",
+  "updated_on": "2026-11-27",
   "status": "Spring 2027 meeting calendar; assessment and presentation requirements pending",
   "basis": "Course Explorer section A (CRN 77732) and the amended Senate 2026-2027 academic calendar; 15 Wednesday meetings excluding spring break",
   "guest_speakers": false,
@@ -17,11 +17,11 @@
       "modules": "M1",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 35,
+      "slides": 36,
       "companion": "S01_Marketing_Decisions_and_AI_Coding.md",
       "pdf": "S01_Marketing_Decisions_and_AI_Coding.pdf",
       "python_activity": "Implement and assess order aggregation; record model, input, parser, and scoring versions. Recompute the synthetic recommendation in optional follow-up practice. Assess execution, method, reported numbers, and interpretation separately. Reconstruct published failure denominators and assess silent errors.",
-      "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster. Statistical evidence and the independence unit in generated code. Execution feedback, independent verification, and the meaning of complete output. Reconstruct an AI-assisted recommendation through five argument steps and identify a condition for revision. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Identify who chooses the objective and which duties govern the analyst’s judgment.",
+      "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision. Distinguish cancellation events, definitions, and evidence. Compare task information and development feedback on the fixed mHealth logging roster. Statistical evidence and the independence unit in generated code. Execution feedback, independent verification, and the meaning of complete output. Reconstruct an AI-assisted recommendation through five argument steps and identify a condition for revision. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Identify who chooses the objective and which duties govern the analyst’s judgment. Explain how disciplinary institutions shape the choice of analytical questions.",
       "ethics": "Data minimization, authorized processing, and verifiable AI code",
       "timing": [
         {
@@ -82,7 +82,8 @@
       "date": "2027-01-20",
       "agent_workflow_minutes": 10,
       "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
-      "ai_augmented_learning_coverage": "Use five minutes within the existing 155–170 discussion to compare representations and preserve premises."
+      "ai_augmented_learning_coverage": "Use five minutes within the existing 155–170 discussion to compare representations and preserve premises.",
+      "evidence_standards_coverage": "Use five minutes of the opening decision discussion for measurement and disciplinary authority."
     },
     {
       "session": 2,
@@ -90,11 +91,11 @@
       "modules": "M2",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 29,
+      "slides": 30,
       "companion": "S02_Customer_Data_and_Measurement.md",
       "pdf": "S02_Customer_Data_and_Measurement.pdf",
       "python_activity": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Assess the synthetic cancellation queue, exclusion reasons, and fixed subscription denominator. Use the optional Digital Usage lab for the complete geographic analysis. Optional synthetic disclosure comparison and bounds in M2 §2.31.",
-      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states. Digital-usage comparisons distinguish geographic activity from individual service needs.",
+      "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations. Compare requests with recorded completion and preserve unknown states. Digital-usage comparisons distinguish geographic activity from individual service needs. Distinguish an interest, its measure, and the standard for action.",
       "ethics": "Missingness, sample exclusions, and customer representation",
       "timing": [
         {
@@ -154,7 +155,8 @@
       ],
       "date": "2027-01-27",
       "digital_usage_minutes": 8,
-      "ai_augmented_learning_coverage": "Use minutes 148–155 for a prediction and bill calculation; extend percentages in optional practice."
+      "ai_augmented_learning_coverage": "Use minutes 148–155 for a prediction and bill calculation; extend percentages in optional practice.",
+      "evidence_standards_coverage": "Use five minutes of measurement discussion for the interest, its representation, and the action standard."
     },
     {
       "session": 3,
@@ -233,11 +235,11 @@
       "modules": "M3",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 29,
+      "slides": 30,
       "companion": "S04_Regression_and_Marketing_Interpretation.md",
       "pdf": "S04_Regression_and_Marketing_Interpretation.pdf",
       "python_activity": "Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional Digital Usage lab for the complete geographic analysis. Reconstruct paired mHealth logging and compare user and day uncertainty. Check variance and sample construction separately from the coefficient.",
-      "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation. P-value distributions and utility-average versus household outcomes. Bad controls, phantom-project exposure, and thoughtful sample design.",
+      "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price. Digital-usage comparisons distinguish geographic activity from individual service needs. Same descriptive change with different reported precision. Complete regression output can conceal an incorrect uncertainty calculation. P-value distributions and utility-average versus household outcomes. Bad controls, phantom-project exposure, and thoughtful sample design. Separate estimator properties from the consequences of a decision rule.",
       "ethics": "Substantiation and the distinction between association and benefit; measurement and household burdens",
       "timing": [
         {
@@ -300,7 +302,8 @@
       "digital_usage_minutes": 10,
       "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
       "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice.",
-      "bad_controls_practice": "../07_Labs/Bad_Controls/README.md"
+      "bad_controls_practice": "../07_Labs/Bad_Controls/README.md",
+      "evidence_standards_coverage": "Use five minutes of interpretation discussion to distinguish unbiasedness and decision consequences."
     },
     {
       "session": 5,
@@ -308,11 +311,11 @@
       "modules": "M4",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 31,
+      "slides": 33,
       "companion": "S05_Conjoint_and_Product_Design.md",
       "pdf": "S05_Conjoint_and_Product_Design.pdf",
       "python_activity": "Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.",
-      "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus. Compare fixed purchase laws under two ordered monetary value systems; distinguish ranking from welfare.",
+      "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus. Compare fixed purchase laws under two ordered monetary value systems; distinguish ranking from welfare. Assess demand restrictions without assuming a direction of markup bias from integration.",
       "ethics": "Price completeness and the attributes customers actually evaluate",
       "timing": [
         {
@@ -371,7 +374,8 @@
         }
       ],
       "date": "2027-02-17",
-      "auxiliary_data_minutes": 15
+      "auxiliary_data_minutes": 15,
+      "evidence_standards_coverage": "Use ten minutes of the existing product-design discussion for heterogeneous demand, markups, and customer reasons; extended sensitivity is optional practice."
     },
     {
       "session": 6,
@@ -450,11 +454,11 @@
       "modules": "M5",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 46,
+      "slides": 47,
       "companion": "S07_Text_Social_Media_and_Networks.md",
       "pdf": "S07_Text_Social_Media_and_Networks.pdf",
       "python_activity": "Assess pricing-source support and reproduce the four-zone compression calculation; compare original and compressed access. Trace retrieved text to the qualitative comparison matrix; full source collection is optional practice.",
-      "application": "Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph. Compare replacement text coordinates and recorded-category targets within the existing mHealth discussion. Utility cost recovery, qualitative negative cases, and household reasons.",
+      "application": "Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph. Compare replacement text coordinates and recorded-category targets within the existing mHealth discussion. Utility cost recovery, qualitative negative cases, and household reasons. Use credible qualitative mechanisms to justify proportionate inquiry.",
       "ethics": "Evidence for labels, review authenticity, and limits of institutional interpretation",
       "timing": [
         {
@@ -521,7 +525,8 @@
       "date": "2027-03-03",
       "graph_coarsening_minutes": 15,
       "graph_coarsening_allocation": "Ten minutes of Python plus five minutes within the retail-network application block.",
-      "qualitative_evidence": "M5 §5.27 and M9 §9.33; integrated into existing discussion; complete collection and independent coding are optional lab work"
+      "qualitative_evidence": "M5 §5.27 and M9 §9.33; integrated into existing discussion; complete collection and independent coding are optional lab work",
+      "evidence_standards_coverage": "Use five minutes of existing qualitative-evidence discussion to match mechanism evidence to a proportionate inquiry."
     },
     {
       "session": 8,
@@ -575,11 +580,11 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 43,
+      "slides": 46,
       "companion": "S09_Experiments_and_Incremental_Value.md",
       "pdf": "S09_Experiments_and_Incremental_Value.pdf",
-      "python_activity": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales. Compare naive and population-weighted pricing contrasts under unequal exposure.",
-      "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations. Inverse power (Andrews, 1989) and nuisance-parameter sensitivity. Compare observationally equivalent price models and specify the randomized cells that distinguish them.",
+      "python_activity": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Compare customer-row and store-mean tests under a known zero effect. Calculate prompt effects on additive and proportional-failure scales. Compare naive and population-weighted pricing contrasts under unequal exposure. Compare exact normal error probabilities and expected loss under two opposing cost specifications.",
+      "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Interpret the information-by-feedback interaction at a fixed model version. Store assignment, shared shocks, false positives, and Monte Carlo uncertainty. A workflow comparison changes the opportunity to execute, revise, and verify. Statistical detection versus profit, table-based power, and unsupported mechanism interpretations. Inverse power (Andrews, 1989) and nuisance-parameter sensitivity. Compare observationally equivalent price models and specify the randomized cells that distinguish them. Compare Type I and Type II errors under explicit, asymmetric loss specifications.",
       "ethics": "Defensible treatment designs and informed customer choice; meaningful harms left unresolved by a weak test. Compare the individual reasons for accepting experimental risk.",
       "timing": [
         {
@@ -637,7 +642,8 @@
       "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
       "statistical_claims_coverage": "Integrated in existing worked comparison and ethics discussion; full simulations and paper critique remain optional ungraded practice. Inverse power (Andrews, 1989) and nuisance-parameter sensitivity.",
       "pricing_reasons_coverage": "Use the exposure example within minutes 135–155; longer exercise optional.",
-      "ai_augmented_learning_coverage": "Use five minutes within the existing 45–70 comparison for the four-cell learning example."
+      "ai_augmented_learning_coverage": "Use five minutes within the existing 45–70 comparison for the four-cell learning example.",
+      "evidence_standards_coverage": "Use ten minutes within the 45–70 worked-comparison block and fifteen minutes within the 80–125 Python block for exact error costs. Use the remaining time for selected experiment examples; extended cases are optional practice."
     },
     {
       "session": 10,
@@ -645,11 +651,11 @@
       "modules": "M6",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 30,
+      "slides": 31,
       "companion": "S10_Causal_Comparisons_and_Policy_Evaluation.md",
       "pdf": "S10_Causal_Comparisons_and_Policy_Evaluation.pdf",
       "python_activity": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
-      "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation. Bad controls, phantom-project exposure, and thoughtful sample design. Distinguish existing bills from project-linked causal evidence.",
+      "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation. Bad controls, phantom-project exposure, and thoughtful sample design. Distinguish existing bills from project-linked causal evidence. Distinguish evidence for inquiry from proof of a causal effect or legal violation.",
       "ethics": "Treatment paths, comparison populations, and selection",
       "timing": [
         {
@@ -702,7 +708,8 @@
         }
       ],
       "date": "2027-03-31",
-      "bad_controls_practice": "../07_Labs/Bad_Controls/README.md"
+      "bad_controls_practice": "../07_Labs/Bad_Controls/README.md",
+      "evidence_standards_coverage": "Use five minutes within 155–170 for the evidence needed for records, protection, and remedy."
     },
     {
       "session": 11,
@@ -710,11 +717,11 @@
       "modules": "M7",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 60,
+      "slides": 61,
       "companion": "S11_Prediction_Validation_and_Marketing_Actions.md",
       "pdf": "S11_Prediction_Validation_and_Marketing_Actions.pdf",
       "python_activity": "Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance. Hand-check reconstruction, coordinate alignment, and review decisions; full representation programs are optional practice. Evaluate constructed mHealth errors with total-only and per-user checks.",
-      "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task. Compare word and character representations on unseen mHealth descriptions, keeping geometry and classifier outcomes separate. Checker validity depends on the required population, fields, and numerical target. Separate predicted engagement from a defensible objective and stopping requirement.",
+      "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator. Separate total reconstruction, component errors, feature interpretation, and routing outcomes. Assess customer-level outputs, actions, and the checker using a fixed logging task. Compare word and character representations on unseen mHealth descriptions, keeping geometry and classifier outcomes separate. Checker validity depends on the required population, fields, and numerical target. Separate predicted engagement from a defensible objective and stopping requirement. Evaluate prediction thresholds through customer error costs and reasons.",
       "ethics": "Evidence for diagnoses, meaningful customer choice, review access, and consequences of incorrect routing",
       "timing": [
         {
@@ -802,7 +809,8 @@
       "graph_coarsening_minutes": 5,
       "representation_evaluation_minutes": 15,
       "agent_workflow_minutes": 10,
-      "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional"
+      "econometric_coding_coverage": "Integrated within existing workflow or inference discussion; longer lab optional",
+      "evidence_standards_coverage": "Use five minutes of prediction discussion for customer error costs and calibrated thresholds."
     },
     {
       "session": 12,
@@ -868,11 +876,11 @@
       "modules": "M8",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 22,
+      "slides": 23,
       "companion": "S13_Adaptive_Recommendations_and_Marketing_Budgets.md",
       "pdf": "S13_Adaptive_Recommendations_and_Marketing_Budgets.pdf",
       "python_activity": "Compare list objectives and solve a budget allocation with an independent grid check.",
-      "application": "Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation. Evaluate service restoration under profit and population access.",
+      "application": "Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation. Evaluate service restoration under profit and population access. Match evidence and procedural safeguards to investigation, protection, or remedy.",
       "ethics": "Attention, adaptive feedback, and platform incentives",
       "timing": [
         {
@@ -930,7 +938,8 @@
           "activity": "Ethics and Decision Discussion"
         }
       ],
-      "date": "2027-04-21"
+      "date": "2027-04-21",
+      "evidence_standards_coverage": "Use five minutes of policy discussion for investigation, protection, and remedy."
     },
     {
       "session": 14,
@@ -938,11 +947,11 @@
       "modules": "M8, M9",
       "duration_minutes": 170,
       "type": "instruction and applied work",
-      "slides": 101,
+      "slides": 105,
       "companion": "S14_Generative_AI_Consumer_Choice_and_Regulation.md",
       "pdf": "S14_Generative_AI_Consumer_Choice_and_Regulation.pdf",
       "python_activity": "Compare synthetic pricing objectives and signal accuracy, then evaluate customer incidence and renewal. Use the optional Digital Usage lab for the complete geographic analysis. Explain the scope of a joint advertising test and the further evidence needed for welfare. Calculate the hypothetical break-even loss for additional review.",
-      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, mobile targeting (Dubé et al., 2017), and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice. Compare conflicts of interest, reward-learning evidence, and consumer control through the synthetic feed case and Kantian, Scanlonian, and Confucian arguments. Bad controls, phantom-project exposure, and thoughtful sample design. Evaluate data as artifacts, truth and norms, undone science, and institutional duties to produce evidence.",
+      "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, mobile targeting (Dubé et al., 2017), and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed. Test definitions, counterfactual premises, welfare valuations, and the strongest reply to an electricity or pricing criticism. Examine the worth of the objective, empirical representation, and Kantian limits alongside practical justification. Assess the ontological spectrum and critiques of empiricism through a selected case; extended source comparisons remain optional practice. Compare conflicts of interest, reward-learning evidence, and consumer control through the synthetic feed case and Kantian, Scanlonian, and Confucian arguments. Bad controls, phantom-project exposure, and thoughtful sample design. Evaluate data as artifacts, truth and norms, undone science, and institutional duties to produce evidence. Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections.",
       "ethics": "Kantian and Confucian conduct; Scanlonian reasons and reasonable rejection; stakeholder standing, public voice, and truthful claims. Reasonable rejection, pricing authority, antitrust evidence, and access to critical replication.; measurement quality, worthy objectives, and reasonableness across pricing and data-center claims",
       "timing": [
         {
@@ -991,19 +1000,19 @@
           "start_minute": 90,
           "end_minute": 95,
           "minutes": 5,
-          "activity": "Ontological Scope, Counterexamples, and an Ought Conclusion"
+          "activity": "Premises for Proportionate Protection Under Uncertainty"
         },
         {
           "start_minute": 95,
           "end_minute": 100,
           "minutes": 5,
-          "activity": "Data, Truth, Norms, and Reasons Owed to Households"
+          "activity": "Evidentiary Standards and the Burden of Uncertainty"
         },
         {
           "start_minute": 100,
           "end_minute": 110,
           "minutes": 10,
-          "activity": "Pricing Burdens and Feasible Alternatives"
+          "activity": "Pricing Burdens, Feasible Alternatives, and the Strongest Reply"
         },
         {
           "start_minute": 110,
@@ -1040,17 +1049,17 @@
         {
           "start_minute": 90,
           "end_minute": 95,
-          "activity": "Premises and an Ought Conclusion"
+          "activity": "Premises for Proportionate Protection Under Uncertainty"
         },
         {
           "start_minute": 95,
           "end_minute": 100,
-          "activity": "Stakeholder Reasons and Public Voice"
+          "activity": "Evidentiary Standards and the Burden of Uncertainty"
         },
         {
           "start_minute": 100,
           "end_minute": 110,
-          "activity": "Demand Information and Pricing Objectives"
+          "activity": "Pricing Burdens, Feasible Alternatives, and the Strongest Reply"
         },
         {
           "start_minute": 110,
@@ -1071,7 +1080,8 @@
       "qualitative_evidence": "M5 §5.27 and M9 §9.33; integrated into existing discussion; complete collection and independent coding are optional lab work",
       "pricing_reasons_coverage": "Select the demand-completion and burden comparison at 50–60, a Kantian or Scanlonian pricing case within 80–110, and antitrust evidence within the existing policy discussion. Other cases are alternative discussions; extended reconstruction remains optional.",
       "ai_augmented_learning_coverage": "Use three minutes within the existing ethics discussion for learner authority and supported disagreement.",
-      "bad_controls_practice": "../07_Labs/Bad_Controls/README.md"
+      "bad_controls_practice": "../07_Labs/Bad_Controls/README.md",
+      "evidence_standards_coverage": "Use 90–95 for the premises of protection under uncertainty, 95–100 for evidentiary standards, and 100–110 for pricing burdens and the strongest reply. Select these slides within existing discussion; the full deck is a case library, and extended comparisons are optional practice."
     },
     {
       "session": 15,

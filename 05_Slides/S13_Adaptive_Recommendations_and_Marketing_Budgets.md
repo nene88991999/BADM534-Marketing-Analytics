@@ -13,6 +13,7 @@ Session 13. M8. 170 minutes.
 - Allocate a fixed marketing budget using marginal response.
 - Assess forecast coverage after demand changes and respect delayed outcome information.
 - Distinguish estimated response uncertainty from the choice and justification of an objective.
+- Match evidence and procedural safeguards to investigation, protection, or remedy.
 
 ## Related Materials
 
@@ -24,6 +25,7 @@ Session 13. M8. 170 minutes.
 - [Optional dose-response lab](../07_Labs/Dose_Response/README.md)
 - [Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)
 - [Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)
+- [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 
 ## Slide 1: Adaptive Recommendations and Marketing Budgets
 
@@ -272,7 +274,17 @@ Tim Wu's Blind Spot discusses attention markets and the difficulty of analyzing 
 
 Source: (Wu, 2019). https://scholarship.law.columbia.edu/faculty_scholarship/2029/
 
-## Slide 22: Policy Discussion
+## Slide 22: Investigation, Protection, and Remedy
+
+- Investigation obtains information about a credible concern.
+- Temporary protection limits exposure and specifies review.
+- A remedy requires its applicable factual and legal predicates.
+
+A pricing rollout leaves people exposed while uncertainty remains. Compare unrestricted deployment with a limited pilot, disclosure, review, and complete prohibition. The status quo can impose losses. Evidentiary burdens affect deterrence and useful conduct as well as classification errors (Kaplow, 2012). Specify the responsible authority, the people bearing each error, and conditions for revision. M8 §8.34.
+
+Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 23: Policy Discussion
 
 - What changes when the recommender learns during the experiment?
 - Which outcome measures the customer's stated goal?

@@ -72,3 +72,7 @@ For targeted pricing, prediction of willingness to pay helps a firm select offer
 ## Sources and Reproduction
 
 The [annotated readings](READINGS.md) and [catalog](catalog.json) record 16 sources, including contrary evidence, inspection scope, local copies, and publication versions. Eight new PDFs and two existing local readings support the collection. It links to the [historical collection](../46_Measurement_and_Disciplinary_History/README.md) and existing philosophy readings. Source PDFs in `readings/` remain local to Dropbox. Public course materials contain original explanations, links, and reproducible synthetic calculations. This collection makes no empirical finding of unlawful conduct by a named firm and no finding of intentional misconduct by a method's author.
+
+## Teaching Integration
+
+[The lecture notes](../../06_Lecture_Notes/README.md#measurement-traditions-and-evidence-for-protection) integrate the argument across M1–M9, with full Python in M6 §6.44 and extended philosophy in M9 §§9.55–9.59. [Selected session discussions](../../05_Slides/SESSION_PLAN.md#evidence-standards-and-unequal-error-costs), the syllabus, and [optional practice](../../07_Labs/Evidence_Standards/README.md) connect the readings to pricing, household electricity, and prediction thresholds.

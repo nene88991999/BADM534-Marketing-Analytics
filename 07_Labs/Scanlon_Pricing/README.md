@@ -18,3 +18,7 @@ Apply the same argument to dynamic-pricing communication and the data-center rea
 For discussion, one person defends the objective and another represents an affected person with little bargaining power. Give both the same exact factual results. Identify whether the disagreement concerns a fact, a reason, or the relative strength of competing objections. Explain why actual acceptance, majority approval, and any single objection do not alone settle reasonableness.
 
 AI assistance can help trace code, inspect denominators, and propose counterexamples. Check each legal quotation and claim against its primary source. Preserve actual terms, source versions, and execution status. Never invent empirical consent, a conspiracy, a damages estimate, or an author motive.
+
+## Evidence and the Proposed Action
+
+Use [Evidence Standards and Reasonable Protection](../Evidence_Standards/README.md) to distinguish an inquiry, a temporary safeguard, and a remedy. Compare the consequences of false alarms and missed harm, defend the interests included in the analysis, and answer the strongest reasonable objection. The complete synthetic calculation appears in M6 §6.44; M9 §§9.55–9.59 connects the decision to disciplinary history and institutional standards.

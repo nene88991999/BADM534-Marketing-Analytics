@@ -13,6 +13,7 @@ Session 10. M6. 170 minutes.
 - Assess whether a comparison group is suitable for the McBroken policy question.
 - Estimate and assess a nonlinear discount response with explicit confounding and overlap conditions.
 - Distinguish covariate adjustment, project exposure, and the population represented by a convenient sample.
+- Distinguish evidence for inquiry from proof of a causal effect or legal violation.
 
 ## Related Materials
 
@@ -26,6 +27,7 @@ Session 10. M6. 170 minutes.
 - [Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)
 - [Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)
 - [Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)
+- [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 
 ## Slide 1: Causal Comparisons and Policy Evaluation
 
@@ -357,7 +359,17 @@ The claim that actual household costs will never be collected is contradicted by
 
 Source: M6 §6.43. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md; https://www.eia.gov/consumption/residential/faqs.php
 
-## Slide 30: Causal-Design Discussion
+## Slide 30: Unresolved Causation and Proportionate Inquiry
+
+- Project records can establish exposure before a precise bill effect is estimated.
+- Compare the costs of seeking records, limiting exposure, and imposing a remedy.
+- State authority, review, and evidence that would change the action.
+
+Phantom projects could expose comparison utilities to infrastructure costs before opening or after cancellation. Determining actual contamination requires project and utility records. An imprecise realized-price estimate establishes neither harmlessness nor harm by itself. Credible mechanism evidence can support an investigation; a sanction requires separate factual and legal predicates. Current United States merger guidance considers documents, testimony, structure, and economic analysis, but is nonbinding agency guidance and concerns a distinct legal setting (DOJ and FTC, 2023). M6 §6.45.
+
+Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 31: Causal-Design Discussion
 
 - What would the treated group have experienced without the policy?
 - Which group or action lacks comparable support?

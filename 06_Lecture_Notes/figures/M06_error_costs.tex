@@ -1,0 +1,28 @@
+\begingroup
+\input{../03_Data_and_Code/Evidence_Standards/results/figure_values.tex}
+\begin{tikzpicture}
+\begin{axis}[
+ width=13.5cm,height=7.7cm,xmin=0,xmax=4,ymin=0,ymax=2,
+ xlabel={Signal Threshold for Protective Action},
+ ylabel={Expected Loss per Case},
+ title={Costly Missed Harm Changes the Preferred Threshold},
+ title style={font=\bfseries\small,text=IlliniBlue},
+ tick label style={font=\small,text=IlliniBlue},
+ label style={font=\small,text=IlliniBlue},
+ axis line style={IlliniBlue},axis lines=left,
+ grid=major,grid style={LightStorm!55},
+ every axis plot/.append style={thick},
+ legend style={font=\small,draw=none,at={(0.02,0.97)},anchor=north west},
+ clip=true]
+\addplot[IlliniBlue,very thick] table[x=cutoff,y=missed_harm_cost_20,col sep=comma] {../03_Data_and_Code/Evidence_Standards/results/risk_curve.csv};
+\addlegendentry{Synthetic Expected Loss}
+\addplot[only marks,mark=*,mark size=3pt,IlliniOrange] table[x=cutoff,y=expected_loss,col sep=comma] {../03_Data_and_Code/Evidence_Standards/results/figure_points.csv};
+\addlegendentry{Decision Rules}
+\node[anchor=north west,align=left,font=\small,text=IlliniBlue,yshift=-6pt] at (axis cs:\OptimalCutoff,\OptimalLoss) {Minimum Loss\\$c=\pgfmathprintnumber[fixed,precision=3]{\OptimalCutoff}$; Loss $=\pgfmathprintnumber[fixed,precision=3]{\OptimalLoss}$};
+\node[anchor=south east,align=right,font=\small,text=IlliniBlue,xshift=-5pt,yshift=5pt] at (axis cs:\FiveCutoff,\FiveLoss) {5\% Test\\Loss $=\pgfmathprintnumber[fixed,precision=3]{\FiveLoss}$};
+\node[anchor=south east,align=right,font=\small,text=IlliniBlue,xshift=-5pt,yshift=5pt] at (axis cs:\OneCutoff,\OneLoss) {1\% Test\\Loss $=\pgfmathprintnumber[fixed,precision=3]{\OneLoss}$};
+\addplot[only marks,mark=square*,mark size=3pt,IlliniOrange] coordinates {(\OptimalCutoff,\OptimalLoss)};
+\end{axis}
+\node[anchor=north,align=center,text width=13cm,font=\small,text=IlliniBlue] at (6.1,-1.4) {Synthetic Cases: \pgfmathprintnumber{\PrevalencePercent}\% Harmful; Signal Means 0 and \pgfmathprintnumber{\SignalShift}, Both With Variance 1.\\Missed Harm Costs 20 Units; Mistaken Intervention Costs 1 Unit.};
+\end{tikzpicture}
+\endgroup

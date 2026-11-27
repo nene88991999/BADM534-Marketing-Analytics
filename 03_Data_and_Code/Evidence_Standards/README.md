@@ -196,3 +196,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## Course Connections
+
+The complete source and derivation appear in [M6 §6.44](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md). [M4 §4.30](../../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md) examines heterogeneous demand and markup interpretation; [M9 §§9.55–9.59](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) develops the historical and philosophical argument. [Optional practice](../../07_Labs/Evidence_Standards/README.md) varies prevalence and compares competing reasons. Shared note and slide figures read the same saved numerical outputs.

@@ -14,7 +14,7 @@
 \noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
 \vspace{.7cm}
 {\large By Nathan Yang\par}
-{\large November 26, 2026\par}
+{\large November 27, 2026\par}
 \end{titlepage}
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
@@ -64,12 +64,18 @@ every relevant consideration to acquire a numerical measure. It requires
 explicit premises, attention to objections, and scrutiny of the factual
 claims on which it rests.
 
+Standards of evidence also allocate consequences. A demanding threshold
+can prevent mistaken intervention while leaving people exposed to
+serious harm. I assess both errors, who bears them, and the available
+responses. Credible evidence can justify inquiry or proportionate
+protection before precise causal identification, while factual claims
+remain subject to scrutiny.
+
 The distinction between phenomena and noumena (Kant, 1781/1787)
 reinforces the limits of allowing empirical observation to define the
-whole discussion. A model represents a person through observable
-behavior and the conditions under which it is recorded. Thinking of that
-person as a free and morally accountable agent raises practical
-questions that the model does not settle. I regard noumenal
+whole discussion. A behavioral model represents a person under recorded
+conditions. The person's standing as a free and morally accountable
+agent raises further practical questions. I regard noumenal
 considerations as a reason to resist treating an empirical
 representation as an exhaustive account of the person; they do not
 supply hidden quantities for a future model to estimate. Marketing
@@ -2229,6 +2235,40 @@ and people able to challenge the recommendation. M9 §§9.45--9.49
 develops the philosophical argument and a complete synthetic feed
 comparison. Its central question is what the analyst ought to recommend
 when commercial rewards and consumer purposes diverge.
+
+\hypertarget{M01-measurement-and-disciplinary-authority}{%
+\section{Measurement and Disciplinary
+Authority}\label{M01-measurement-and-disciplinary-authority}}
+
+\noindent A manager can ask how much an offer raises revenue and whether the firm
+ought to make that offer. The questions call for different premises.
+Quantitative training gives analysts authority over the first question;
+extending that authority to the second requires a reason why the
+measured objective deserves pursuit. A precise revenue estimate leaves
+the customer's reasons for refusing exploitation unresolved.
+
+The history of economics and marketing helps explain why measurement
+acquired this authority. The Cowles Commission began in 1932 with the
+motto ``Science is Measurement'' and adopted ``Theory and Measurement''
+in 1952. Its history includes a sustained concern with economic
+structure, identification, and policy, so the motto alone supports no
+claim that theory or ethics disappeared
+(\href{https://cowles.yale.edu/sites/default/files/2022-08/history-cowles.pdf}{Christ,
+1952, pp.~61--62}). Marketing's managerial turn made the firm's
+decisions a central organizing perspective, while research about
+marketing's societal consequences continued in specialized venues
+(\href{https://link.springer.com/article/10.1007/s11747-011-0277-y}{Wilkie
+and Moore, 2012}). Institutional priorities can shape the questions that
+receive resources and prestige without determining every scholar's
+position.
+
+For a pricing recommendation, state the firm's proposed action, the
+affected person's interests, and the reasons for treating those
+interests as relevant. Then identify the empirical comparison needed.
+Reversing this order can allow the availability of data to select the
+purpose of the analysis. M9 §9.55 examines the historical evidence; M6
+§6.44 shows how an apparently technical significance rule can also
+allocate the consequences of uncertainty.
 
 \hypertarget{M02-m2.-customer-data-measurement-and-visualization}{%
 \chapter{Customer Data, Measurement, and
@@ -6062,6 +6102,36 @@ if __name__ == "__main__":
     main()
 \end{Verbatim}
 
+\hypertarget{M02-defining-harm-before-choosing-its-measure}{%
+\section{Defining Harm Before Choosing Its
+Measure}\label{M02-defining-harm-before-choosing-its-measure}}
+
+\noindent A household can face a serious electricity burden through a higher bill,
+reduced essential consumption, disconnection risk, or an obligation to
+finance infrastructure. A dataset containing revenue per kWh represents
+one part of this situation. If an institution recognizes harm only
+through that variable, other interests lose standing before statistical
+analysis begins. The definition of the outcome therefore helps determine
+whose concerns the analysis can address.
+
+Separate the object, its empirical representation, and the decision
+criterion. The object might be household expenditure; its representation
+might require matched billing records with consistent account and time
+coverage; the criterion might concern an avoidable burden on households
+with limited alternatives. Missing access to a measure leaves an
+evidential gap. It does not erase the object or justify treating its
+value as zero. Bills are empirically observable quantities, distinct
+from the Kantian question of the person as a free moral agent.
+
+Apply the same distinction to targeted pricing. A purchase records
+acceptance under particular alternatives. It can support estimation of
+demand while leaving the customer's dependence, ability to switch, and
+authority over personal information unresolved. An adequate measurement
+plan names these interests and the records or testimony that could bear
+on them. It also states which normative judgments remain after those
+records are collected. M9 §§9.56--9.58 connects this choice of evidence
+to institutional responsibility.
+
 \hypertarget{M03-m3.-regression-interpretation-and-marketing-decisions}{%
 \chapter{Regression, Interpretation, and Marketing
 Decisions}\label{M03-m3.-regression-interpretation-and-marketing-decisions}}
@@ -7658,6 +7728,38 @@ if __name__ == "__main__":
         print(row["case"], round(row["unadjusted"], 6),
               round(row["adjusted"], 6))
 \end{Verbatim}
+
+\hypertarget{M03-unbiased-estimation-and-the-consequences-of-error}{%
+\section{Unbiased Estimation and the Consequences of
+Error}\label{M03-unbiased-estimation-and-the-consequences-of-error}}
+
+\noindent A regulator considering an inquiry needs evidence about harm and a
+reason for acting on that evidence. Unbiasedness describes the
+repeated-sampling expectation of an estimator under a specified model:
+\(E[\widehat\theta]=\theta\). It does not determine how the regulator
+should respond to an uncertain estimate. Two unbiased estimators can
+have different variances; two decision rules using the same estimator
+can expose different people to different losses.
+
+Suppose a fixed null states that the specified harmful effect is absent.
+A Type I error flags harm under that null. A Type II error misses a
+specified harmful alternative. A significance level controls the first
+probability under the testing assumptions. It leaves the severity,
+duration, distribution, and reversibility of the two mistakes unstated.
+Increasing the evidentiary threshold can reduce mistaken intervention
+while leaving more harmful cases unaddressed. Treating that change as an
+unconditional improvement requires a further judgment about
+consequences.
+
+Decision-focused econometrics evaluates the mapping from evidence to
+action against the losses in relevant states of the world
+(\href{https://doi.org/10.3982/ECTA17985}{Manski, 2021}). Its demands
+include accurate statistical calculations and an explicit account of the
+decision. In M6 §6.44, the signal distributions remain fixed while the
+costs assigned to the two errors change. The preferred threshold changes
+even though the quality of the evidence does not. A claim of statistical
+rigor therefore needs an accompanying explanation of whose errors the
+decision rule seeks to avoid.
 
 \hypertarget{M04-m4.-product-preferences-customer-segments-and-lifetime-value}{%
 \chapter{Product Preferences, Customer Segments, and Lifetime
@@ -10813,6 +10915,89 @@ def main():
 if __name__ == "__main__":
     main()
 \end{Verbatim}
+
+\hypertarget{M04-heterogeneous-demand-market-power-and-consumer-interests}{%
+\section{Heterogeneous Demand, Market Power, and Consumer
+Interests}\label{M04-heterogeneous-demand-market-power-and-consumer-interests}}
+
+\noindent A firm uses a demand model to decide which customers should receive
+which prices. Integrating over heterogeneous tastes aggregates
+individual choice probabilities into market demand. In a Bayesian
+aggregate-share specification, a distribution of tastes, common demand
+shocks, price equations, and priors jointly determine what the model can
+learn. Normal heterogeneity and the restrictions addressing price
+endogeneity remain substantive assumptions
+(\href{https://ice.uchicago.edu/2008_presentations/Rossi/bayesian_agg_share_092607.pdf}{Jiang
+et al., 2009, §§2--3}; linked 2007 preprint). Flexible integration
+improves the representation of variation only to the extent that the
+chosen structure captures the relevant variation.
+
+The ethical issue becomes acute when differences in observed willingness
+to pay are treated as sufficient reasons for different treatment. A
+customer can be price insensitive because a product is valuable,
+alternatives are inaccessible, switching is costly, or the service is
+essential. These mechanisms can produce similar observed responses while
+supporting different judgments about exploitation and pricing authority.
+Good fit leaves this interpretive question open. The demand-completion
+example in §4.29 holds observable product rankings fixed while changing
+welfare implications, making the additional valuation assumptions
+consequential.
+
+\hypertarget{M04-integration-and-implied-markups}{%
+\subsection{Integration and Implied
+Markups}\label{M04-integration-and-implied-markups}}
+
+\noindent A markup calculation also requires a model of conduct and costs. For a
+single-product firm, the standard interior pricing condition follows
+from maximizing \((p-c)q(p)\). Here \(p\) is price, \(c\) is constant
+marginal cost, and \(q(p)\) is differentiable demand at that price.
+Under an interior profit maximum with positive quantity and negative
+demand slope, the first-order condition is \(q(p)+(p-c)q'(p)=0\).
+Dividing by quantity and using the own-price elasticity
+\(\varepsilon=pq'(p)/q(p)\) gives
+
+\[\frac{p-c}{p}=\frac{1}{|\varepsilon|}.\]
+
+A smaller absolute elasticity implies a larger implied markup under
+these conditions. Integration over heterogeneity has no general tendency
+to lower markups or excuse conduct. Multiproduct ownership and
+substitution change the relevant pricing equations. The object of
+scrutiny is the supported demand and conduct interpretation, including
+its uncertainty, rather than integration as a mathematical operation.
+
+\hypertarget{M04-precision-conditional-on-restrictions}{%
+\subsection{Precision Conditional on
+Restrictions}\label{M04-precision-conditional-on-restrictions}}
+
+\noindent Identification asks which variation separates tastes, common shocks,
+endogenous prices, and alternative conduct models. Under suitable
+restrictions, nonparametric identification can distinguish competing
+oligopoly models and support enforcement
+(\href{https://cowles.yale.edu/sites/default/files/2022-09/d1744.pdf}{Berry
+and Haile, 2014}; linked 2010 working paper). A critique that rejects
+identification merely because a firm invokes it discards information
+that can establish harmful conduct.
+
+A demanding assessment instead compares the likelihood, prior,
+identified set, and decision. In partially identified settings,
+posterior concentration within an identified set can continue to depend
+on the prior even in large samples
+(\href{https://doi.org/10.3982/ECTA8360}{Moon and Schorfheide, 2012}).
+Report which conclusions follow from observations and which depend on
+restrictions. Relaxing an instrument's exclusion restriction can reveal
+whether a decision remains supported under plausible departures from
+exact exogeneity (\href{https://doi.org/10.1162/REST_a_00139}{Conley et
+al., 2012}).
+
+For a targeted-price recommendation, compare the outside option,
+switching costs, ownership, marginal costs, and available products with
+institutional records. Evaluate how alternative assumptions change the
+recommended action and the burdens on each customer group. A policy can
+remain ethically objectionable even if its demand estimates are
+accurate. A legal allegation additionally requires the conduct and other
+elements specified by the applicable law. M9 §§9.56--9.59 examines when
+an institution's demand for precision itself imposes an unjustified
+burden on those seeking protection.
 
 \hypertarget{M05-m5.-text-social-media-and-customer-networks}{%
 \chapter{Text, Social Media, and Customer
@@ -14323,6 +14508,39 @@ and evidence for the proposed allocation. Investor disclosures also
 leave residents' experiences and authority to challenge charges largely
 unobserved. Those questions require additional sources, as developed in
 §9.33.
+
+\hypertarget{M05-qualitative-evidence-and-the-threshold-for-inquiry}{%
+\section{Qualitative Evidence and the Threshold for
+Inquiry}\label{M05-qualitative-evidence-and-the-threshold-for-inquiry}}
+
+\noindent A consumer representative deciding whether to seek billing records can
+use evidence of cost-recovery mechanisms before estimating a causal bill
+effect. Utility statements about investment, rate cases, and recovery
+from customer classes identify questions for further inquiry. Their
+value depends on speaker role, timing, exact wording, corroborating
+records, and contrary evidence. Repeated statements from the same source
+or investor audience do not become independent observations merely
+because a text model assigns them separate rows.
+
+The excerpts in §5.27 support specific institutional mechanisms. Much of
+that selected material dates from 2026, after the data-center paper's
+2020--2025 period, and the paper itself discusses cost recovery and some
+positive residential spillovers. A careful argument preserves these
+facts while asking whether a broad reassurance about household costs
+remains supported. Text evidence can establish that a proposed mechanism
+is taken seriously by decision makers while leaving its historical
+magnitude and incidence unresolved.
+
+Translate the evidence into a proportionate next step: obtain the
+relevant tariff filing, trace an investment's approval and recovery
+dates, examine abandoned projects, and compare affected customer
+classes. Code both supporting and disconfirming passages, preserve full
+context, and document selection rules, following the qualitative
+standards in the
+\href{../01_Resources/42_Qualitative_Evidence/README.md}{source guide}.
+The justification for opening that inquiry differs from the evidence
+required to attribute a particular household loss or impose a sanction.
+M6 §6.45 and M9 §9.58 make those decision thresholds explicit.
 
 \hypertarget{M06-m6.-causal-effects-and-marketing-experiments}{%
 \chapter{Causal Effects and Marketing
@@ -18993,6 +19211,325 @@ restricted access make those premises harder to assess; they do not make
 the burden disappear. A defensible response narrows the public claim,
 improves the design, or acknowledges the remaining uncertainty.
 Disclosure and causal identification are complementary requirements.
+
+\hypertarget{M06-type-i-and-type-ii-errors-under-unequal-costs}{%
+\section{Type I and Type II Errors Under Unequal
+Costs}\label{M06-type-i-and-type-ii-errors-under-unequal-costs}}
+
+\noindent An agency deciding whether to investigate possible consumer harm faces
+two mistakes: an unnecessary intervention and a harmful practice left
+unaddressed. A one-sided test can control false alarms without selecting
+an appropriate action. The choice also depends on how often harm occurs,
+who bears each error, and what the intervention does. Decision theory
+makes these judgments explicit
+(\href{https://doi.org/10.3982/ECTA17985}{Manski, 2021}).
+
+\hypertarget{M06-a-synthetic-decision-with-known-signals}{%
+\subsection{A Synthetic Decision With Known
+Signals}\label{M06-a-synthetic-decision-with-known-signals}}
+
+\noindent Consider a population of hypothetical cases before their signals are
+observed. Ten percent involve the specified harm. A standardized signal
+\(Z\) has distribution \(N(0,1)\) in harmless cases and \(N(d,1)\) in
+harmful cases, with \(d=2\). A rule takes protective action when
+\(Z>c\). Correct actions have zero loss; a false positive costs
+\(C_{FP}\) and a false negative costs \(C_{FN}\) in illustrative
+comparable loss units per case. These inputs define a two-state
+illustration. They are unrelated to an estimated prevalence or effect in
+an actual pricing or electricity market.
+
+The null is the absence of the specified harm. The false-positive
+probability is \(\alpha(c)=1-\Phi(c)\), where \(\Phi\) is the standard
+normal cumulative distribution function. At the specified alternative,
+the false-negative probability is \(\beta(c)=\Phi(c-d)\), and power is
+\(1-\beta(c)\). Averaging losses over the population, with harmful share
+\(\pi=0.10\), gives
+
+\[R(c)=(1-\pi)\alpha(c)C_{FP}+\pi\beta(c)C_{FN}.\]
+
+The first term weights unnecessary interventions among harmless cases.
+The second weights missed harm among harmful cases. Both are losses per
+case in the full population, so a comparison must preserve the
+denominator and the same loss units. A composite harmful alternative
+would require a distribution over effects or separate evaluation across
+them.
+
+To find the least costly threshold, equate the marginal reduction in
+false-positive losses with the marginal increase in false-negative
+losses. The normal-density ratio is
+\(\phi(c-d)/\phi(c)=\exp(dc-d^2/2)\). For positive costs, \(0<\pi<1\),
+and \(d>0\), the minimizing threshold is
+
+\[c^*=\frac{d}{2}+\frac{1}{d}\log\left(\frac{(1-\pi)C_{FP}}{\pi C_{FN}}\right).\]
+
+Raising the cost of missed harm lowers this threshold; raising the cost
+of mistaken intervention increases it. These comparative effects hold
+the signal distributions and harmful share fixed. The expression is an
+optimal rule for the specified illustration. It does not establish a
+legal burden of proof or a universally acceptable error rate.
+
+\hypertarget{M06-the-same-evidence-different-consequences}{%
+\subsection{The Same Evidence, Different
+Consequences}\label{M06-the-same-evidence-different-consequences}}
+
+\noindent First set \(C_{FP}=1\) and \(C_{FN}=20\). The results below use the
+exact normal probabilities, with rounding only for presentation.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Rule & Signal Cutoff & False Positive & Missed Harm & Loss per Case \\
+\midrule
+
+One-percent test & 2.326 & 1.0\% & 62.8\% & 1.265 \\
+Five-percent test & 1.645 & 5.0\% & 36.1\% & 0.767 \\
+Minimum expected loss & 0.601 & 27.4\% & 8.1\% & 0.408 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The one-percent rule produces fewer false alarms and much more missed
+harm. Under these illustrative costs, its expected loss exceeds that of
+the five-percent rule. The loss-minimizing rule accepts a substantial
+false-positive rate because each missed harm costs twenty times as much.
+The comparison makes that tradeoff visible; judging it requires
+examining what the proposed protective action actually imposes on each
+person.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M06_error_costs.tex}
+\caption{With ten percent harmful cases and fixed normal signal distributions, expected loss reaches its minimum near a signal cutoff of 0.601 when missed harm costs twenty units and mistaken intervention costs one. The five-percent and one-percent test thresholds lie to the right and produce higher expected loss.}\label{fig:M06_error_costs}
+\end{figure}
+
+\textbf{Figure interpretation.} The horizontal axis changes the action
+threshold while holding evidence quality fixed. The blue curve averages
+loss over all hypothetical cases. The square identifies the loss
+minimum; circles identify conventional testing thresholds. Moving right
+reduces false positives while increasing missed harm. The shape depends
+on the stated prevalence, signal distributions, and costs.
+
+Now reverse the costs to \(C_{FP}=20\) and \(C_{FN}=1\). The
+five-percent rule has expected loss 0.936, the one-percent rule 0.243,
+and the minimum-loss rule 0.097 at \(c^*=3.596\). Severe mistaken
+interventions can justify a more demanding threshold. A critique of
+excessive caution is strongest when it states why the particular missed
+harm is serious and why the proposed action has smaller or reversible
+costs.
+
+\hypertarget{M06-posterior-beliefs-power-and-moral-reasons}{%
+\subsection{Posterior Beliefs, Power, and Moral
+Reasons}\label{M06-posterior-beliefs-power-and-moral-reasons}}
+
+\noindent Under the same binary losses, a person who assigns posterior probability
+\(q\) to harm acts when \((1-q)C_{FP}<qC_{FN}\), or
+\(q>C_{FP}/(C_{FP}+C_{FN})\). For costs one and twenty, this probability
+threshold is \(1/21\). A p-value is not \(q\): it concerns a tail
+probability under a specified null rather than a posterior probability
+of harm. Substituting a p-value for \(q\) gives the formula a different
+and invalid interpretation.
+
+Power likewise belongs to a specified alternative and design. The
+inverse-power analysis in §6.34 evaluates plausible effects and
+detectable magnitudes; it avoids treating power computed at the noisy
+observed estimate as independent evidence. A failure to reject can
+reflect low power, a small effect, misspecification, or other
+conditions. An action requires weighing those possibilities alongside
+the consequences of waiting.
+
+Expected loss supplies one account of the consequences. A contractualist
+assessment also considers whether a particular person's serious burden
+can be justified through a principle that affected people could not
+reasonably reject (Scanlon, 1998, chapter 5). Many small benefits to
+others do not automatically answer that person's objection. Common loss
+units are an explicit modeling choice; the arithmetic cannot establish
+that every morally relevant consideration is commensurable.
+
+\hypertarget{M06-complete-python-and-reproduction}{%
+\subsection{Complete Python and
+Reproduction}\label{M06-complete-python-and-reproduction}}
+
+\noindent The program computes exact probabilities, both cost scenarios, a
+threshold grid for the figure, and numerical labels. It checks a
+symmetry benchmark, probability boundaries, an equal-cost case, a
+separately enumerated optimum, and posterior odds at the analytical
+threshold. Run
+\texttt{python3\ 03\_Data\_and\_Code/Evidence\_Standards/error\_costs.py}
+from the repository root. It writes results beside the script in
+\texttt{results/}; no external dataset, simulation draw, or package is
+required.
+
+\FloatBarrier
+\Needspace{8\baselineskip}
+Python source:
+\href{../03_Data_and_Code/Evidence_Standards/error_costs.py}{error\_costs.py}
+
+\begin{Verbatim}[breaklines,breakanywhere,fontsize=\small]
+"""Exact synthetic error probabilities and decision losses; standard library only."""
+
+from csv import DictWriter
+from math import isclose, log
+from pathlib import Path
+from statistics import NormalDist
+import json
+
+
+NORMAL = NormalDist()
+PREVALENCE = 0.10
+SIGNAL_SHIFT = 2.0
+OUTPUT = Path(__file__).resolve().parent / "results"
+
+
+def error_rates(cutoff, shift=SIGNAL_SHIFT):
+    """Flag harm when Z > cutoff; Z is N(0,1) or N(shift,1)."""
+    false_positive = NORMAL.cdf(-cutoff)
+    false_negative = NORMAL.cdf(cutoff - shift)
+    return false_positive, false_negative
+
+
+def expected_loss(cutoff, false_positive_cost, false_negative_cost,
+                  prevalence=PREVALENCE, shift=SIGNAL_SHIFT):
+    alpha, beta = error_rates(cutoff, shift)
+    return ((1 - prevalence) * alpha * false_positive_cost
+            + prevalence * beta * false_negative_cost)
+
+
+def optimal_cutoff(false_positive_cost, false_negative_cost,
+                   prevalence=PREVALENCE, shift=SIGNAL_SHIFT):
+    """Minimize loss for two normal states with equal variance and positive shift."""
+    if not 0 < prevalence < 1 or shift <= 0:
+        raise ValueError("Use a prevalence in (0,1) and a positive signal shift.")
+    if min(false_positive_cost, false_negative_cost) <= 0:
+        raise ValueError("Error costs must be positive.")
+    odds = ((1 - prevalence) * false_positive_cost
+            / (prevalence * false_negative_cost))
+    return shift / 2 + log(odds) / shift
+
+
+def write_csv(path, records):
+    with path.open("w", newline="") as handle:
+        writer = DictWriter(handle, fieldnames=list(records[0]))
+        writer.writeheader()
+        writer.writerows(records)
+
+
+def verify_calculations():
+    # Symmetry gives an independent benchmark at the midpoint of the signals.
+    alpha, beta = error_rates(SIGNAL_SHIFT / 2)
+    assert isclose(alpha, beta, abs_tol=1e-12)
+    assert isclose(error_rates(0)[0], 0.5, abs_tol=1e-12)
+    assert isclose(optimal_cutoff(1, 1, prevalence=0.5), 1.0)
+    # Check the analytical optimum against a separately enumerated dense grid.
+    grid = [i / 1000 for i in range(-1000, 6001)]
+    for fp, fn in [(1, 20), (20, 1)]:
+        optimum = optimal_cutoff(fp, fn)
+        grid_optimum = min(grid, key=lambda c: expected_loss(c, fp, fn))
+        assert abs(optimum - grid_optimum) <= 0.00051
+        assert expected_loss(optimum, fp, fn) <= expected_loss(grid_optimum, fp, fn) + 1e-12
+    # Posterior odds at the optimum equal the specified loss ratio.
+    cutoff = optimal_cutoff(1, 20)
+    posterior_odds = (PREVALENCE / (1 - PREVALENCE)
+                      * NORMAL.pdf(cutoff - SIGNAL_SHIFT) / NORMAL.pdf(cutoff))
+    assert isclose(posterior_odds, 1 / 20, rel_tol=1e-12)
+    return "Passed: symmetry, probability boundary, equal-cost benchmark, grid optima, posterior odds."
+
+
+def main():
+    verification = verify_calculations()
+    OUTPUT.mkdir(exist_ok=True)
+    scenarios = [("Missed harm costs 20", 1.0, 20.0),
+                 ("Mistaken intervention costs 20", 20.0, 1.0)]
+    rows = []
+    for scenario, fp, fn in scenarios:
+        rules = [("One-percent test", NORMAL.inv_cdf(0.99)),
+                 ("Five-percent test", NORMAL.inv_cdf(0.95)),
+                 ("Minimum expected loss", optimal_cutoff(fp, fn))]
+        for rule, cutoff in rules:
+            alpha, beta = error_rates(cutoff)
+            rows.append({
+                "scenario": scenario, "rule": rule, "cutoff": cutoff,
+                "prevalence": PREVALENCE, "signal_shift": SIGNAL_SHIFT,
+                "false_positive_cost": fp, "false_negative_cost": fn,
+                "false_positive_rate": alpha, "false_negative_rate": beta,
+                "power": 1 - beta,
+                "expected_loss": expected_loss(cutoff, fp, fn),
+            })
+    write_csv(OUTPUT / "decision_rules.csv", rows)
+    write_csv(OUTPUT / "figure_points.csv", rows[:3])
+    commands = {"PrevalencePercent": 100 * PREVALENCE, "SignalShift": SIGNAL_SHIFT}
+    for prefix, row in zip(["One", "Five", "Optimal"], rows[:3]):
+        commands[prefix + "Cutoff"] = row["cutoff"]
+        commands[prefix + "Loss"] = row["expected_loss"]
+    (OUTPUT / "figure_values.tex").write_text("\n".join(
+        "\\newcommand{\\" + name + "}{" + f"{value:.12f}" + "}"
+        for name, value in commands.items()) + "\n")
+    curve = []
+    for index in range(161):
+        cutoff = index / 40
+        alpha, beta = error_rates(cutoff)
+        curve.append({
+            "cutoff": cutoff, "false_positive_rate": alpha,
+            "false_negative_rate": beta,
+            "missed_harm_cost_20": expected_loss(cutoff, 1, 20),
+            "mistaken_intervention_cost_20": expected_loss(cutoff, 20, 1),
+        })
+    write_csv(OUTPUT / "risk_curve.csv", curve)
+    summary = {
+        "data_status": "Synthetic known distributions; no estimated market effects.",
+        "unit": "One hypothetical case before observing its signal.",
+        "null": "No specified harm; Z ~ N(0,1).",
+        "alternative": "Specified harm; Z ~ N(2,1).",
+        "prevalence": PREVALENCE,
+        "loss_units": "Illustrative comparable loss units per case.",
+        "correct_decision_loss": 0,
+        "verification": verification,
+        "rules": rows,
+    }
+    (OUTPUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(verification)
+    for row in rows:
+        print(f"{row['scenario']} | {row['rule']}: "
+              f"alpha={row['false_positive_rate']:.4f}, "
+              f"beta={row['false_negative_rate']:.4f}, "
+              f"loss={row['expected_loss']:.4f}")
+
+
+if __name__ == "__main__":
+    main()
+\end{Verbatim}
+
+\hypertarget{M06-evidence-for-action-before-precise-identification}{%
+\section{Evidence for Action Before Precise
+Identification}\label{M06-evidence-for-action-before-precise-identification}}
+
+\noindent An investigation, a temporary protection, and a punitive remedy impose
+different burdens. Credible documents or descriptive patterns can
+support obtaining records even when the causal magnitude remains
+unresolved. A reversible safeguard can be justified where a serious
+exposure is credible and delay imposes substantial costs. A sanction
+requires its separate factual and legal predicates. The appropriate
+evidentiary standard therefore attaches to a specific action and
+institutional authority.
+
+For electricity infrastructure, relevant next steps include linking
+project commitments, cancellations, investments, tariff proceedings, and
+household bills. Phantom projects could create exposure before operation
+or after cancellation; determining contamination of a particular control
+group requires those records. An imprecise average-price estimate leaves
+this inquiry unresolved. It also supplies no evidence by itself that a
+project harmed households.
+
+For targeted pricing, records about available alternatives, switching
+frictions, targeting criteria, and costs can bear on a complaint before
+a complete demand model is estimated. The governing legal question
+remains specific to the alleged conduct. United States merger guidance
+considers documents, testimony, economic evidence, and structural
+presumptions in assessing prospective threats to competition
+(\href{https://www.justice.gov/atr/merger-guidelines/tools/sources-of-evidence}{DOJ
+and FTC, 2023, §4.1}). This agency guidance is nonbinding and does not
+replace the elements of other claims. M9 §§9.56--9.59 compares such
+institutional standards with the reasons affected people can demand.
 
 \hypertarget{M07-m7.-prediction-machine-learning-and-marketing-actions}{%
 \chapter{Prediction, Machine Learning, and Marketing
@@ -24826,6 +25363,36 @@ its measurements support. A consumer's authority to revise an
 instruction deserves evaluation regardless of how accurately a model
 predicts compliance.
 
+\hypertarget{M07-prediction-thresholds-and-consumer-consequences}{%
+\section{Prediction Thresholds and Consumer
+Consequences}\label{M07-prediction-thresholds-and-consumer-consequences}}
+
+\noindent A customer-service model can rank complaints accurately while assigning
+an unsuitable threshold for human review. The threshold determines which
+customers receive help, which mistakes remain unresolved, and how much
+staff time the policy uses. A predictive score therefore enters a
+decision with losses; its ranking accuracy supplies only part of the
+justification.
+
+With a calibrated probability of a specified service failure, compare
+the loss from unnecessary review with the loss from leaving that failure
+unaddressed. State the population, prevalence, action, time horizon, and
+conditional error rates. A cutoff chosen to reduce staffing expense can
+transfer costs to customers whose complaints are harder to classify.
+Evaluate errors by relevant groups and examine whether the available
+labels themselves omit harms. Calibration on recorded complaints
+provides limited reassurance about people whose complaints never enter
+the system.
+
+The synthetic comparison in M6 §6.44 holds predictive information fixed
+and changes the relative costs of errors. Its full Python separates a
+posterior probability from a significance-test p-value. Applying the
+logic to customer service requires credible calibration, a specified
+action, and evidence about its consequences. Philosophical assessment
+then asks whether the resulting burdens are reasonable from each
+affected position. A highly predictable response to dependence or
+vulnerability does not make exploiting that response a worthy objective.
+
 \hypertarget{M08-m8.-current-topics-and-integrated-marketing-decisions}{%
 \chapter{Current Topics and Integrated Marketing
 Decisions}\label{M08-m8.-current-topics-and-integrated-marketing-decisions}}
@@ -27820,6 +28387,43 @@ electricity reassurance present related questions about the outcome
 selected and the authority of the resulting claim. Recommendations
 should identify the affected person's objection, the feasible
 alternative, and the evidence or reason that would justify revision.
+
+\hypertarget{M08-investigation-protection-and-remedy}{%
+\section{Investigation, Protection, and
+Remedy}\label{M08-investigation-protection-and-remedy}}
+
+\noindent A firm deciding whether to expand targeted pricing should evaluate the
+effects of continuing the practice while uncertainty remains.
+Continuation exposes people to possible losses just as restriction can
+impose costs on a useful service. Treating the existing commercial
+arrangement as the costless default embeds a decision before the
+evidence is assessed.
+
+Separate three actions. Investigation seeks information through relevant
+records, customer accounts, and institutional comparisons. Temporary
+protection limits a credible exposure while preserving review and
+feasible alternatives. A remedy addresses established conduct under the
+applicable legal or contractual standard. Their consequences, authority,
+and evidence requirements differ. A statistical threshold suited to one
+action can be inappropriate for another
+(\href{https://yalelawjournal.org/article/burden-of-proof}{Kaplow,
+2012}).
+
+For a pricing rollout, compare a limited pilot with disclosure and
+review against unrestricted deployment and complete prohibition. For
+electricity, compare obtaining project and cost-allocation records with
+making a public claim of harmlessness or assigning a particular loss to
+a project. State what would change the recommendation and who can
+contest the evidence. Where the customer has little control over
+exposure, the firm's access to relevant information supplies a reason
+for placing some evidence-production burden on the firm.
+
+The action must remain proportionate to the concern and open to
+revision. Expected-loss calculations in M6 §6.44 clarify the assumed
+costs of mistakes. The argument in M9 §9.58 adds the person's standing,
+the factual grounds for concern, and the normative premise needed for an
+ought conclusion. Accuracy and identification contribute to that
+judgment while leaving these further reasons to be defended.
 
 \hypertarget{M09-marketing-dialectics}{%
 \chapter{Marketing Dialectics}\label{M09-marketing-dialectics}}
@@ -34226,5 +34830,338 @@ complete those connections. Where the broader claim remains unsupported,
 the authors and institutions communicating it ought to state the
 narrower result and the unresolved burden question. A valid calculation
 can inform public discourse while still being inadequate to close it.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-measurement-disciplinary-history-and-ethical-ends}{%
+\section{Measurement, Disciplinary History, and Ethical
+Ends}\label{M09-measurement-disciplinary-history-and-ethical-ends}}
+
+\noindent A profession's methods influence which questions its members can answer
+and which questions receive authority. When measurable outcomes organize
+training, funding, publication, and managerial practice, concerns that
+resist those outcomes can receive less attention. The historical
+question is how these institutions developed and what their choices
+displaced. Establishing that history requires evidence about programs,
+incentives, and intellectual disputes; a disciplinary slogan alone
+supplies little evidence about the motives of particular researchers.
+
+\hypertarget{M09-measurement-and-the-need-for-theory}{%
+\subsection{Measurement and the Need for
+Theory}\label{M09-measurement-and-the-need-for-theory}}
+
+\noindent The Cowles Commission began in 1932 with the motto ``Science is
+Measurement.'' Its 1952 adoption of ``Theory and Measurement'' reflected
+an institution in which economic structure and the interpretation of
+statistical evidence had become central
+(\href{https://cowles.yale.edu/sites/default/files/2022-08/history-cowles.pdf}{Christ,
+1952, pp.~61--62}). The critique of measurement without theory argued
+that observed regularities require an economic structure to support
+interpretation
+(\href{https://fairmodel.econ.yale.edu/ec439/koop1.pdf}{Koopmans,
+1947}). These records support a history of organized quantitative
+inquiry and disagreement about its foundations. They also complicate an
+account in which economics simply replaced thought with measurement.
+
+The separation of economics from judgments about ends gave technical
+expertise a narrower formal remit. Defining economics through the
+relation between ends and scarce means allowed an economist to examine
+consistency and consequences while leaving the worth of ends to further
+judgment
+(\href{https://milescorak.com/wp-content/uploads/2020/02/robbins-essay-nature-significance-economic-science.pdf}{Robbins,
+1935, pp.~24, 148--151}). The same text expressly encouraged reflection
+on ethics. The critical question is therefore what happens when an
+institutional practice treats a chosen commercial end as settled and
+allows technical optimization to dominate the remaining discussion.
+Historical separation of economics and moral philosophy was contested
+(\href{https://doi.org/10.1093/acprof:oso/9780198701392.003.0008}{Schliesser,
+2016}).
+
+\hypertarget{M09-business-education-and-the-managerial-perspective}{%
+\subsection{Business Education and the Managerial
+Perspective}\label{M09-business-education-and-the-managerial-perspective}}
+
+\noindent Foundation funding and institutional reform helped quantitative social
+science acquire authority in business education
+(\href{https://www.hbs.edu/ris/Publication\%20Files/11-070.pdf}{Khurana
+et al., 2011}). Marketing's managerial turn organized much of the field
+around decisions facing firms, including products, prices, promotion,
+and distribution. Historical accounts document a decline in the
+mainstream prominence of societal questions alongside the growth of
+specialized venues that continued to investigate them
+(\href{https://link.springer.com/article/10.1007/s11747-011-0277-y}{Wilkie
+and Moore, 2003, 2012}). This distinction matters: a shift in
+disciplinary prominence does not establish that all relevant work
+disappeared or identify editorial rejection as its sole cause.
+
+A managerial perspective can recognize customers mainly through
+variables that predict response to the firm's actions. Purchases become
+evidence of preference; retention becomes evidence of relationship
+value; engagement becomes evidence of usefulness. Each inference needs
+further premises. Customers can buy under restricted alternatives,
+remain because exit is costly, or engage in ways they would prefer to
+resist. The question is which institutional practices preserve these
+competing interpretations and whose testimony can challenge the firm's
+representation.
+
+Quantification can acquire authority because it promises impersonal
+judgment across institutions where trust is limited (Porter, 1995).
+Historical analysis of United States policy also traces the growing
+authority of efficiency-oriented economic reasoning relative to other
+political values
+(\href{https://epberman.net/wp-content/uploads/2022/02/berman_economist_1p_uncorrected-ch.-1.pdf}{Berman,
+2022, chapter 1}). These accounts motivate scrutiny of how a decision
+criterion becomes normal. They leave room for measurement that exposes
+exploitation, identifies market power, or gives public claims a basis
+for challenge.
+
+\hypertarget{M09-phenomena-and-the-scope-of-the-person}{%
+\subsection{Phenomena and the Scope of the
+Person}\label{M09-phenomena-and-the-scope-of-the-person}}
+
+\noindent Observed behavior, statistical associations, and latent preference
+models remain within empirical inquiry. An unobserved taste parameter is
+a modeling object; an unavailable bill is a missing record. Neither
+acquires the status of a Kantian noumenon through its absence from the
+dataset. The philosophical concern is whether empirical representation
+is being treated as an exhaustive account of the person, including the
+person's authority, reasons, and moral standing.
+
+A history of emphasis on measurement can explain why phenomena receive
+institutional attention. Establishing a historical abandonment of
+noumenal questions would require a more specific account of how those
+concepts were understood and excluded. The supported contemporary
+criticism is that a field can become narrow when it lets the
+tractability of a question determine its importance. A technically
+accomplished analysis still owes a justification for the end it serves
+and the burdens its recommendation creates.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-evidentiary-standards-as-conceptual-engineering}{%
+\section{Evidentiary Standards as Conceptual
+Engineering}\label{M09-evidentiary-standards-as-conceptual-engineering}}
+
+\noindent A customer seeking protection from a pricing practice must first make
+the complaint intelligible under an institution's categories. If the
+institution defines harm as a precisely identified average price effect,
+losses involving access, dependence, privacy, or unequal treatment may
+receive little standing. The definition selects the concerns that can
+reach a decision. A further rule requiring nonintervention whenever the
+estimate is inconclusive allocates the remaining uncertainty to people
+exposed to the practice.
+
+Conceptual engineering examines the concepts through which people
+understand situations and organize responses. Conceptual resources can
+direct attention toward particular features and make certain actions
+available
+(\href{https://sallyhaslanger.weebly.com/uploads/1/8/2/7/18272031/haslanger_san_raffaele_4_hdo.pdf}{Haslanger,
+2022, pp.~1--4}). Applied to evidentiary standards, the question is how
+the meanings of harm, evidence, and rigor organize an institution's
+response. This application supplies a framework for evaluating the
+standard; its operation in a particular institution requires evidence.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_evidence_standards.tex}
+\caption{The definition of harm determines eligible evidence; eligible evidence and a decision threshold determine action. Concerns excluded by the definition remain borne by affected people. Reviewing the definition and the consequences can change the standard without changing the observations.}\label{fig:M09_evidence_standards}
+\end{figure}
+
+\textbf{Figure interpretation.} The upper path follows a complaint from
+its definition through evidence to a decision. The lower path records
+burdens excluded from that process. An orange return arrow asks whether
+the standard can be justified to those who bear those burdens. Accurate
+calculations along the upper path can coexist with an objection to the
+rule that selects the path.
+
+\hypertarget{M09-when-rigor-can-shield-harmful-conduct}{%
+\subsection{When Rigor Can Shield Harmful
+Conduct}\label{M09-when-rigor-can-shield-harmful-conduct}}
+
+\noindent Suppose a firm can introduce a practice on forecasts of profit while
+consumers must establish a precisely identified causal loss before
+obtaining a low-cost safeguard. The asymmetry can leave the firm's
+prospective benefits actionable and the customer's prospective losses
+inert. A harmful firm benefits if unresolved evidence automatically
+permits continuation. Calling the rule rigorous does not establish that
+the allocation is reasonable. Its defense requires explaining why the
+costs of mistaken restriction outweigh the losses imposed by waiting.
+
+The strongest criticism concerns this institutional asymmetry. It does
+not require claiming that statistical care is objectionable or that
+every inconclusive estimate reflects manipulation. Establishing
+intentional concealment requires evidence of intent. Establishing actual
+unlawful conduct requires its legal elements. A rule can nevertheless
+impose an unjustified burden through its design and effects even when
+analysts implement its calculations conscientiously.
+
+Inductive risk concerns the consequences of accepting or rejecting
+uncertain claims. Where error has substantial social consequences,
+values enter judgments about acceptable uncertainty, interpretation, and
+scrutiny
+(\href{https://www.stephanieruphy.com/wp-content/uploads/2020/10/Douglas-2000.pdf}{Douglas,
+2000}). A responsible response makes these judgments explicit and
+preserves accurate reporting of the evidence. Serious possible harm
+supplies a reason to investigate or protect; it supplies no missing
+observation and establishes no causal estimate by itself.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-heterogeneity-and-the-interpretation-of-consumer-harm}{%
+\section{Heterogeneity and the Interpretation of Consumer
+Harm}\label{M09-heterogeneity-and-the-interpretation-of-consumer-harm}}
+
+\noindent A pricing model can represent a constrained customer as someone with a
+high willingness to pay. The prediction may be accurate while the
+interpretation suppresses a reason for restraint. If the model's
+preference distribution becomes the complete description of customer
+interests, dependence and limited alternatives can enter only through
+their contribution to profitable targeting. A person then appears as an
+opportunity for price discrimination before appearing as someone to whom
+a reason is owed.
+
+Three judgments remain distinct. The statistical judgment asks whether
+the model estimates response under its assumptions. The economic
+judgment asks what mechanisms and conduct generate that response. The
+moral judgment asks whether the firm may use the information in the
+proposed way. Flexibility in the first judgment does not settle the
+other two. M4 §4.30 explains why integrating tastes has no inherent
+direction of bias for inferred markups and why identification can
+support an enforcement case.
+
+The critique becomes empirically assessable when it names the suppressed
+mechanism or restriction. Compare alternative outside options, switching
+costs, priors, instruments, and conduct assumptions against
+institutional evidence. Report uncertainty that survives these
+comparisons. Then assess whether the decision rule gives consumers a
+reasonable opportunity to obtain protection under that uncertainty.
+Treating every imperfectly identified harm as negligible would convert a
+limit of evidence into a substantive presumption favoring continued
+exposure.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-a-reasonable-principle-for-acting-under-uncertainty}{%
+\section{A Reasonable Principle for Acting Under
+Uncertainty}\label{M09-a-reasonable-principle-for-acting-under-uncertainty}}
+
+\noindent A public authority must decide what to do while people remain exposed to
+a possible harm. The question has ontological, epistemic, and normative
+premises. Keeping these premises distinct prevents both an unsupported
+accusation and a policy that silently assigns all uncertainty to those
+least able to bear it.
+
+\textbf{Ontological premise.} A person's dependence, financial burden,
+and authority over personal information can exist without an adequate
+variable in the analyst's dataset. The record's boundaries do not
+determine the boundaries of the person's interests. This premise
+distinguishes an interest from its measurement; it does not classify
+every unmeasured interest as noumenal.
+
+\textbf{Epistemic premise.} Credible institutional mechanisms,
+documents, testimony, and descriptive patterns can support concern while
+leaving the causal magnitude unresolved. Source quality, timing,
+selection, and alternative explanations determine how much support they
+provide. A statistically insignificant estimate leaves multiple
+explanations open. An account of inquiry must preserve contrary evidence
+and identify what would change the concern.
+
+\textbf{Normative premise.} People have reasons to reject a principle
+that imposes serious, avoidable exposure merely because others cannot
+satisfy a demanding identification requirement. They also have reasons
+to reject reckless restriction, wrongful accusation, unfair procedures,
+and losses to livelihood or valuable services. Contractualist judgment
+compares principles through these individual objections and feasible
+alternatives (Scanlon, 1998, chapter 5).
+
+\textbf{Conclusion.} Where credible evidence indicates serious exposure
+and a feasible response imposes smaller, proportionate, and reversible
+burdens, an authority can be justified in obtaining records or limiting
+exposure before exact causal identification. A remedy must satisfy its
+own factual and legal requirements. The action should specify review, a
+route for challenge, and evidence or reasons that would justify
+continuation, revision, or withdrawal.
+
+\begin{figure}[htbp]
+\centering
+\input{figures/M09_reasons_under_uncertainty.tex}
+\caption{Ontological, epistemic, and normative premises jointly support a proposed action. The strongest objection tests each premise and the alternative; review can revise either the evidence or the rule. Accurate measurement alone supplies only part of this argument.}\label{fig:M09_reasons_under_uncertainty}
+\end{figure}
+
+\textbf{Figure interpretation.} Three separate premises enter the action
+conclusion. The lower return path tests the strongest objection and the
+costs of feasible alternatives. A serious objection may defeat the
+proposed action even if the empirical premises are correct. New evidence
+can also defeat the concern without changing the ethical principle.
+
+\hypertarget{M09-error-costs-and-the-strongest-reply}{%
+\subsection{Error Costs and the Strongest
+Reply}\label{M09-error-costs-and-the-strongest-reply}}
+
+\noindent An influential antitrust argument gives substantial weight to mistaken
+condemnation because precedent can persist, while entry may correct
+tolerated monopoly power
+(\href{https://chicagounbound.uchicago.edu/journal_articles/1153/}{Easterbrook,
+1984, pp.~2--4}). A critical reply questions the assumptions about
+self-correction, barriers, innovation, and the frequency and cost of
+missed violations
+(\href{https://digitalcommons.wcl.american.edu/facsch_lawrev/1356/}{Baker,
+2015}). The disagreement turns on institutional mechanisms and
+consequences. Decision theory supplies no universal presumption favoring
+either intervention or firms.
+
+M6 §6.44 holds the evidence fixed and reverses the losses of the two
+mistakes. The preferred threshold reverses with them. Legal burdens
+additionally affect deterrence, useful conduct, and litigation
+incentives
+(\href{https://yalelawjournal.org/article/burden-of-proof}{Kaplow,
+2012}). An inquiry or reversible protection can be justified under
+evidence that would be insufficient for a severe sanction. Relevant
+authority and procedural rights remain part of the decision.
+
+A contractualist assessment also asks whose serious burden is being
+justified. Aggregating small gains to many people does not automatically
+defeat an individual's objection to a serious loss. Conversely, invoking
+the word harm does not settle the comparison. A sound argument
+identifies the person, the burden, the feasible alternative, and the
+strongest reasonable objection. The resulting ought conclusion can be
+firm while remaining open to factual and moral revision.
+
+\Needspace{8\baselineskip}
+
+\hypertarget{M09-electricity-targeted-pricing-and-institutional-responsibility}{%
+\section{Electricity, Targeted Pricing, and Institutional
+Responsibility}\label{M09-electricity-targeted-pricing-and-institutional-responsibility}}
+
+\noindent For electricity, a household can reasonably ask why an average
+revenue-per-kWh result should settle a concern about bills, essential
+consumption, future infrastructure charges, or exposure to a canceled
+project. The empirical objects differ. Existing public data and
+confidential billing records provide partial information; institutional
+access and linkage remain consequential. Phantom projects can create a
+mechanism of exposure, but establishing its presence in a particular
+comparison group requires project and utility records. Selected call
+excerpts support specified recovery mechanisms and often concern a later
+period. These distinctions identify the inquiry that broad reassurance
+leaves unresolved.
+
+For targeted pricing, a customer can ask why accurate prediction of
+acceptance authorizes exploiting restricted alternatives. A firm's
+reason based on expected profit meets the customer's reasons concerning
+dependence, privacy, and authority to refuse. The firm may defend the
+practice through lower prices for some customers, improved access, or a
+valuable service. Assess those defenses against the actual policy and a
+feasible alternative. A demand model contributes evidence to this
+comparison without selecting whose interests have standing.
+
+Across both cases, statistical uncertainty creates a question about
+responsibility. Institutions can distribute the burden of producing
+evidence according to access, control, exposure, and the cost of
+obtaining reliable records. An actor that controls relevant information
+has a reason to facilitate scrutiny when its activity creates a credible
+threat. This principle supports proportionate evidence production and
+review while preserving the factual requirements of a particular
+allegation. The defensible conclusion states what ought to be done, for
+whom, on which premises, and under what conditions it should change.
 
 \end{document}

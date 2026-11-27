@@ -15,6 +15,7 @@ Session 01. M1. 170 minutes.
 - Reconstruct a recommendation through its premises, a counterexample, and a condition for revision.
 - Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.
 - Identify incentives and duties that shape the analytical question.
+- Explain how disciplinary institutions shape the choice of analytical questions.
 
 ## Related Materials
 
@@ -34,6 +35,7 @@ Session 01. M1. 170 minutes.
 - [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
 - ../07_Labs/AI_Augmented_Learning/README.md
+- [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 
 ## Slide 1: Marketing Decisions and AI-Assisted Coding
 
@@ -412,7 +414,17 @@ An easier explanation remains responsible for the conditions that make its concl
 
 Source: M1, Section 1.21, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md
 
-## Slide 35: Decision Discussion
+## Slide 35: Measurement and Disciplinary Authority
+
+- Cowles adopted “Science is Measurement” in 1932 and “Theory and Measurement” in 1952.
+- Managerial questions acquired disciplinary prominence; societal inquiry continued.
+- Identify whose decision and whose interests organize the analysis.
+
+Historical records support a shift in institutional emphasis without establishing that theory or ethics disappeared. The Cowles history includes concern with structure, identification, and policy. The managerial turn in marketing gave firms a central perspective while specialized venues continued societal research. A revenue effect and an ethical justification require different premises (Christ, 1952; Wilkie and Moore, 2012). Ask what the customer can reasonably contest even if the estimate is accurate.
+
+Source: ../01_Resources/46_Measurement_and_Disciplinary_History/README.md
+
+## Slide 36: Decision Discussion
 
 - Which customer receives the renewal offer?
 - What changes if every treated renewal receives a discount?

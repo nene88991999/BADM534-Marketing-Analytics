@@ -163,6 +163,12 @@
       "path": "07_Labs/Data_Truth_and_Norms/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "evidence-standards",
+      "path": "07_Labs/Evidence_Standards/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -460,12 +466,13 @@
     "01_Resources/47_Evidence_Standards_and_Error_Costs/README.md",
     "03_Data_and_Code/Evidence_Standards/README.md",
     "03_Data_and_Code/Evidence_Standards/VERIFICATION.md",
-    "03_Data_and_Code/Evidence_Standards/results/README.md"
+    "03_Data_and_Code/Evidence_Standards/results/README.md",
+    "07_Labs/Evidence_Standards/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
     "status": "available",
-    "updated_on": "2026-11-26",
+    "updated_on": "2026-11-27",
     "index": "06_Lecture_Notes/README.md",
     "pdf": "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf",
     "module_sources": [
@@ -509,12 +516,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-26-writing-alignment",
+    "revision": "2026-11-27-integrated-evidence-standards",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 147,
-    "pages": 601,
+    "figures_count": 150,
+    "pages": 620,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -547,7 +554,9 @@
     "learning_design": "03_Data_and_Code/Learning_Design/README.md",
     "preface": "06_Lecture_Notes/Preface.md",
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
-    "data_production_examples": "03_Data_and_Code/Data_Production/README.md"
+    "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
+    "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
+    "python_source_blocks": 130
   },
   "datasets": [
     {
@@ -635,7 +644,7 @@
   "teaching_plan": "02_Syllabus/TEACHING_PLAN.md",
   "lectures": {
     "status": "available",
-    "updated_on": "2026-11-26",
+    "updated_on": "2026-11-27",
     "index": "05_Slides/README.md",
     "combined_pdf": "05_Slides/Marketing_Analytics_Lectures.pdf",
     "session_plan": "05_Slides/SESSION_PLAN.md",
@@ -644,7 +653,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 520,
+    "slides": 536,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -691,7 +700,7 @@
     "markdown": "02_Syllabus/Marketing_Analytics_Syllabus.md",
     "pdf": "02_Syllabus/Marketing_Analytics_Syllabus.pdf",
     "term": "Spring 2027",
-    "updated_on": "2026-11-26",
+    "updated_on": "2026-11-27",
     "grading_status": "not released",
     "attendance_and_late_work_policy_status": "not released",
     "calendar_source": "https://senate.illinois.edu/academic_calendars/2026-2027ac.pdf",
@@ -732,11 +741,14 @@
     "resources": "01_Resources/15_Marketing_Dialectics/README.md",
     "catalog": "01_Resources/15_Marketing_Dialectics/catalog.json",
     "example": "03_Data_and_Code/Marketing_Dialectics/README.md",
-    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases",
+    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty",
     "source_records": 41,
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
-    "verified_on": "2026-11-06"
+    "verified_on": "2026-11-06",
+    "pages": 110,
+    "figures_count": 26,
+    "updated_on": "2026-11-27"
   },
   "ai_experimentation_pricing": {
     "resources": "01_Resources/16_AI_Experimentation_and_Pricing/README.md",
@@ -1217,7 +1229,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-27-measurement-and-evidence-standards",
+  "revision": "2026-11-27-integrated-evidence-standards",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1704,7 +1716,7 @@
   },
   "measurement_and_evidence_standards": {
     "released_on": "2026-11-27",
-    "format": "Linked research supplements and a complete synthetic worked example",
+    "format": "Integrated notes, session decks, syllabus, optional lab, and wiki lesson",
     "historical_resources": "01_Resources/46_Measurement_and_Disciplinary_History/README.md",
     "historical_catalog": "01_Resources/46_Measurement_and_Disciplinary_History/catalog.json",
     "evidence_resources": "01_Resources/47_Evidence_Standards_and_Error_Costs/README.md",
@@ -1712,8 +1724,13 @@
     "example": "03_Data_and_Code/Evidence_Standards/README.md",
     "verification": "03_Data_and_Code/Evidence_Standards/VERIFICATION.md",
     "related_modules": [
+      "M1",
+      "M2",
+      "M3",
       "M4",
+      "M5",
       "M6",
+      "M7",
       "M8",
       "M9"
     ],
@@ -1721,7 +1738,35 @@
     "evidence_source_records": 16,
     "new_local_pdf_copies": 17,
     "original_programs": 1,
-    "original_tikz_figures": 1,
-    "scope": "Historical interpretation, conditional philosophical argument, and exact synthetic decisions; no empirical finding of unlawful conduct or systematic enforcement bias from Bayesian integration."
+    "original_tikz_figures": 4,
+    "scope": "Historical interpretation, conditional philosophical argument, and exact synthetic decisions; no empirical finding of unlawful conduct or systematic enforcement bias from Bayesian integration.",
+    "integrated_on": "2026-11-27",
+    "integrated_sections": [
+      "1.23",
+      "2.32",
+      "3.22",
+      "4.30",
+      "5.28",
+      "6.44–6.45",
+      "7.48",
+      "8.34",
+      "9.55–9.59"
+    ],
+    "sessions": [
+      1,
+      2,
+      4,
+      5,
+      7,
+      9,
+      10,
+      11,
+      13,
+      14
+    ],
+    "lab": "07_Labs/Evidence_Standards/README.md",
+    "wiki": "08_Wiki/pilot/index.html#uncertainty",
+    "shared_tikz_figures": 3,
+    "worked_example_tikz_figures": 1
   }
 }

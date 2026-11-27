@@ -13,6 +13,7 @@ Session 04. M3. 170 minutes.
 - Reproduce an association while preserving its time and sample definitions.
 - Distinguish a primary response coefficient from source bias.
 - Justify controls and sample restrictions through a causal structure.
+- Separate estimator properties from the consequences of a decision rule.
 
 ## Related Materials
 
@@ -30,6 +31,7 @@ Session 04. M3. 170 minutes.
 - ../01_Resources/41_Statistical_Claims_and_Decisions/README.md
 - [Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)
 - [Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)
+- [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 
 ## Slide 1: Regression and Marketing Interpretation
 
@@ -350,7 +352,17 @@ A realized mediator coefficient need not be a controlled direct effect. A direct
 
 Source: ../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md
 
-## Slide 29: Regression Discussion
+## Slide 29: Unbiasedness Leaves the Decision Open
+
+- Unbiasedness concerns the sampling expectation of an estimator.
+- Type I and Type II errors concern a specified null and alternative.
+- The action also requires consequences, affected people, and feasible alternatives.
+
+Two unbiased estimators can have different variances; two rules using the same estimate can impose different losses. Fix the null as absence of the specified harm before naming false positives and missed harm. A lower significance level reduces false alarms while increasing missed harm at a fixed alternative. Whether that is preferable depends on the action and consequences. Decision-focused econometrics makes this comparison explicit (Manski, 2021).
+
+Source: ../03_Data_and_Code/Evidence_Standards/README.md
+
+## Slide 30: Regression Discussion
 
 - Which comparison supports the coefficient?
 - What variable could reverse its interpretation?

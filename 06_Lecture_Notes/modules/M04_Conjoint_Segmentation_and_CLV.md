@@ -1858,3 +1858,25 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 4.30 Heterogeneous Demand, Market Power, and Consumer Interests
+
+A firm uses a demand model to decide which customers should receive which prices. Integrating over heterogeneous tastes aggregates individual choice probabilities into market demand. In a Bayesian aggregate-share specification, a distribution of tastes, common demand shocks, price equations, and priors jointly determine what the model can learn. Normal heterogeneity and the restrictions addressing price endogeneity remain substantive assumptions ([Jiang et al., 2009, §§2–3](https://ice.uchicago.edu/2008_presentations/Rossi/bayesian_agg_share_092607.pdf); linked 2007 preprint). Flexible integration improves the representation of variation only to the extent that the chosen structure captures the relevant variation.
+
+The ethical issue becomes acute when differences in observed willingness to pay are treated as sufficient reasons for different treatment. A customer can be price insensitive because a product is valuable, alternatives are inaccessible, switching is costly, or the service is essential. These mechanisms can produce similar observed responses while supporting different judgments about exploitation and pricing authority. Good fit leaves this interpretive question open. The demand-completion example in §4.29 holds observable product rankings fixed while changing welfare implications, making the additional valuation assumptions consequential.
+
+### 4.30.1 Integration and Implied Markups
+
+A markup calculation also requires a model of conduct and costs. For a single-product firm, the standard interior pricing condition follows from maximizing $(p-c)q(p)$. Here $p$ is price, $c$ is constant marginal cost, and $q(p)$ is differentiable demand at that price. Under an interior profit maximum with positive quantity and negative demand slope, the first-order condition is $q(p)+(p-c)q'(p)=0$. Dividing by quantity and using the own-price elasticity $\varepsilon=pq'(p)/q(p)$ gives
+
+$$\frac{p-c}{p}=\frac{1}{|\varepsilon|}.$$
+
+A smaller absolute elasticity implies a larger implied markup under these conditions. Integration over heterogeneity has no general tendency to lower markups or excuse conduct. Multiproduct ownership and substitution change the relevant pricing equations. The object of scrutiny is the supported demand and conduct interpretation, including its uncertainty, rather than integration as a mathematical operation.
+
+### 4.30.2 Precision Conditional on Restrictions
+
+Identification asks which variation separates tastes, common shocks, endogenous prices, and alternative conduct models. Under suitable restrictions, nonparametric identification can distinguish competing oligopoly models and support enforcement ([Berry and Haile, 2014](https://cowles.yale.edu/sites/default/files/2022-09/d1744.pdf); linked 2010 working paper). A critique that rejects identification merely because a firm invokes it discards information that can establish harmful conduct.
+
+A demanding assessment instead compares the likelihood, prior, identified set, and decision. In partially identified settings, posterior concentration within an identified set can continue to depend on the prior even in large samples ([Moon and Schorfheide, 2012](https://doi.org/10.3982/ECTA8360)). Report which conclusions follow from observations and which depend on restrictions. Relaxing an instrument's exclusion restriction can reveal whether a decision remains supported under plausible departures from exact exogeneity ([Conley et al., 2012](https://doi.org/10.1162/REST_a_00139)).
+
+For a targeted-price recommendation, compare the outside option, switching costs, ownership, marginal costs, and available products with institutional records. Evaluate how alternative assumptions change the recommended action and the burdens on each customer group. A policy can remain ethically objectionable even if its demand estimates are accurate. A legal allegation additionally requires the conduct and other elements specified by the applicable law. M9 §§9.56–9.59 examines when an institution's demand for precision itself imposes an unjustified burden on those seeking protection.

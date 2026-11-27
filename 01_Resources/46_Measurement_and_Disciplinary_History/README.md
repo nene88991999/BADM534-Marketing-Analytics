@@ -43,3 +43,7 @@ The resulting criticism concerns a transfer of authority. A standard designed to
 ## Reading and Access Records
 
 The [annotated readings](READINGS.md) and [catalog](catalog.json) contain 18 historical sources with inspection scope, versions, links, and access records. Nine PDFs are held under the local `readings/` directory. These source copies remain in Dropbox; GitHub publishes the original annotations and source links. Downloading a complete document does not imply that every page was inspected. The catalog identifies the passages or previews used. The linked error-cost collection records the decision-theory reading separately; the catalog counts overlap with other course collections and are not a unique-library total.
+
+## Teaching Integration
+
+[The lecture notes](../../06_Lecture_Notes/README.md#measurement-traditions-and-evidence-for-protection) integrate the argument across M1–M9, with full Python in M6 §6.44 and extended philosophy in M9 §§9.55–9.59. [Selected session discussions](../../05_Slides/SESSION_PLAN.md#evidence-standards-and-unequal-error-costs), the syllabus, and [optional practice](../../07_Labs/Evidence_Standards/README.md) connect the readings to pricing, household electricity, and prediction thresholds.

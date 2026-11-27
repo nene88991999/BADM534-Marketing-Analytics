@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.7cm,minimum height=1.55cm] (ontology) at (1.95,0) {\textbf{Ontological Premise}\\A person's interests extend\\beyond recorded variables.};
+\node[box,text width=3.7cm,minimum height=1.55cm] (evidence) at (6.6,0) {\textbf{Epistemic Premise}\\Credible evidence supports\\a serious concern.};
+\node[orangebox,text width=3.7cm,minimum height=1.55cm] (norm) at (11.25,0) {\textbf{Normative Premise}\\Avoidable burdens require\\reasonable justification.};
+\node[orangebox,text width=9.2cm,minimum height=1.15cm] (action) at (6.6,-2.7) {\textbf{Ought Conclusion}\\Seek records or use proportionate, reversible protection; specify review.};
+\draw[edge] (ontology.south) -- (action.north -| ontology.south);
+\draw[edge] (evidence.south) -- (action.north);
+\draw[accent] (norm.south) -- (action.north -| norm.south);
+\node[box,text width=9.2cm,minimum height=1.0cm] (reply) at (6.6,-4.8) {\textbf{Strongest Objection}\\Compare individual burdens, authority, evidence, and feasible alternatives.};
+\draw[edge] (action) -- (reply);
+\draw[accent,dashed] (reply.west) -- (-.45,-4.8) -- (-.45,0) -- (ontology.west);
+\draw[accent,dashed] (reply.east) -- (13.65,-4.8) -- (13.65,0) -- (norm.east);
+\end{tikzpicture}

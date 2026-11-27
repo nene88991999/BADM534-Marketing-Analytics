@@ -32,3 +32,9 @@ The executed Python used the standard library. Figure rendering used Tectonic an
 ## Interpretation
 
 The checks establish the calculations under the stated assumptions. They do not determine which losses an actual institution ought to use, whether harms can be placed on a common scale, or whether a particular legal standard is satisfied. Those questions require institutional evidence and moral or legal justification.
+
+## Integrated Teaching Checks
+
+On November 27, 2026, the unchanged complete program reproduced all six decision comparisons. The optional lab's separate prevalence sensitivity ran at 0.01, 0.10, and 0.30, giving preferred cutoffs 1.799694, 0.600746, and −0.074217 with fixed costs one and twenty and signal separation two. It independently recombined the two population-weighted losses. The additional sensitivity leaves the released figure inputs unchanged.
+
+M6 §6.44 contains the complete matching source; all 130 course Python listings passed source agreement and syntax checks. The shared note and slide figure uses the existing CSV curve and generated labels. The notes, selected decks, syllabus, and wiki extension were rebuilt and visually checked. The wiki's original bill calculator and the new static decision comparison passed the checks recorded in its [verification](../../08_Wiki/pilot/VERIFICATION.md).

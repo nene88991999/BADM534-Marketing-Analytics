@@ -4,7 +4,7 @@ By Nathan Yang
 
 Fifteen session decks cover the eight core modules and Marketing Dialectics, with AI-assisted coding, recurring data cases, ethics, and regulation. Each meeting has a proposed 170-minute plan. The sequence has 13 instructional meetings and two provisional presentation meetings, with no guest speakers. The [Spring 2027 syllabus](../02_Syllabus/Marketing_Analytics_Syllabus.md) and dated session plan are available; assessment policies remain pending.
 
-The combined deck contains 520 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
+The combined deck contains 536 slides. Read the [combined deck](Marketing_Analytics_Lectures.pdf), the [session plan](SESSION_PLAN.md), or a session below. Each PDF has editable LaTeX and a complete Markdown companion with projected text, code, equations, figure descriptions, and substantive presenter notes.
 
 ## Session Decks
 
@@ -190,3 +190,7 @@ Sessions 4, 10, and 14 connect causal adjustment, phantom projects, convenience 
 ## Data, Truth, and Norms
 
 Six slides in Sessions 2, 10, and 14 connect data production, selected evidence, existing billing data, causal counterfactuals, and reasons owed to households. Three editable diagrams accompany [M2 §§2.30–2.31, M6 §6.43, and M9 §§9.51–9.54](../06_Lecture_Notes/README.md). The [source guide](../01_Resources/45_Data_Truth_and_Norms/README.md) records the inspected philosophical and institutional evidence.
+
+## Measurement Traditions and Unequal Error Costs
+
+Sessions 1, 2, 4, 5, 7, 9, 10, 11, 13, and 14 connect institutional history, the definition of harm, heterogeneity, and evidence for action. Session 9 derives the [synthetic decision example](../03_Data_and_Code/Evidence_Standards/README.md); Session 14 uses editable diagrams for evidentiary standards and reasonable protection. The [session plan](SESSION_PLAN.md#evidence-standards-and-unequal-error-costs) selects these discussions within existing meeting blocks. [Optional practice](../07_Labs/Evidence_Standards/README.md) supplies extended calculation and philosophical arguments.

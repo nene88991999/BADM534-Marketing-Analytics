@@ -13,6 +13,7 @@ Session 02. M2. 170 minutes.
 - Assess changing coverage in mHealth, McBroken, and earnings-call records.
 - Preserve requests, confirmations, unknown states, and the reporting cutoff.
 - Trace data production and identify the effect of selective access on population claims.
+- Distinguish an interest, its measure, and the standard for action.
 
 ## Related Materials
 
@@ -26,6 +27,7 @@ Session 02. M2. 170 minutes.
 - [Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)
 - ../07_Labs/AI_Augmented_Learning/README.md
 - [Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)
+- [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 
 ## Slide 1: Customer Data and Measurement
 
@@ -344,7 +346,17 @@ In both constructed worlds, all current bills are recorded internally and all ot
 
 Source: M2 §§2.30–2.31. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md
 
-## Slide 29: Measurement Discussion
+## Slide 29: A Definition of Harm Selects Evidence
+
+- Name the interest: expenditure, access, dependence, or authority.
+- Define the record and population that represent that interest.
+- Explain what the proposed decision requires beyond the recorded variable.
+
+If only average revenue per kWh qualifies as evidence of electricity harm, concerns about bills, consumption sacrifice, and future charges can lose standing before estimation. A missing record leaves an empirical gap; it does not remove the underlying interest. Bills and latent tastes remain empirical objects, distinct from the Kantian question of free moral agency. M2 §2.32 connects measurement choices to M9 §9.56.
+
+Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 30: Measurement Discussion
 
 - Could recorded activity rise because low-activity users disappear?
 - Would deleting unmatched days change the target population?

@@ -22,3 +22,7 @@ The page retains links to the surrounding repository. A future deployment must i
 Edit `index.html`, `styles.css`, `logic.js`, and `lesson.js`; preserve `LESSON.md` alongside them. `build_pilot.py` refreshes the full Python listing and `reference_data.js` from the standalone program and existing synthetic table. Keep the figure editable in TikZ. Check modified browser inputs independently and inspect keyboard operation and a narrow viewport. [Verification](../../03_Data_and_Code/Learning_Design/VERIFICATION.md) records the checks that ran.
 
 The page uses Illinois colors and the course's parchment direction. No raster illustration, external font, or third-party implementation was copied. The analytical diagram has an equivalent text description.
+
+## Action Under Uncertainty
+
+The `uncertainty` section and matching Markdown text add a static, accessible comparison of error costs, an editable TikZ figure, and questions about records, protection, and remedy. The original bill inputs and feedback remain interactive. The new section links to the full standard-library calculation and optional practice; it collects no responses.

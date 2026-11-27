@@ -15,6 +15,7 @@ Session 05. M4. 170 minutes.
 - Allocate human and synthetic responses at a common accuracy target.
 - Separate better demand information from joint pricing when evaluating customer surplus.
 - Explain why identical product rankings can leave the sign of a welfare change unresolved.
+- Assess demand restrictions without assuming a direction of markup bias from integration.
 
 ## Related Materials
 
@@ -28,6 +29,7 @@ Session 05. M4. 170 minutes.
 - [Pricing Information and Competition](../03_Data_and_Code/Pricing_Competition/README.md)
 - [Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
+- [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 
 ## Slide 1: Conjoint and Product Design
 
@@ -378,7 +380,31 @@ If every cumulative change is nonnegative, consumption value weakly rises for ev
 
 Source: M4 §4.29. ../06_Lecture_Notes/modules/M04_Conjoint_Segmentation_and_CLV.md
 
-## Slide 31: Product-Design Discussion
+## Slide 31: Heterogeneous Demand and the Pricing Interpretation
+
+- Limited alternatives can produce accurately predicted price insensitivity.
+- Flexible fit leaves preference, dependence, and market power to be distinguished.
+- Compare outside options, costs, instruments, priors, and conduct assumptions.
+
+Integrating individual choice probabilities constructs aggregate demand under a specified distribution and model. It does not turn response into a justification for charging more. A normal random-coefficient model retains restrictions; Bayesian precision can depend on priors when parameters are partially identified. Compare the identified set with conditional posterior conclusions and test plausible departures from exclusion restrictions (Jiang et al., 2009; Moon and Schorfheide, 2012; Conley et al., 2012). M4 §4.30.
+
+Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 32: Integration Has No General Markup Direction
+
+For an interior single-product profit maximum with differentiable demand and constant marginal cost:
+
+$$
+\frac{p-c}{p}=\frac{1}{|\varepsilon|}
+$$
+
+Lower absolute price elasticity implies a larger markup under these conditions.
+
+Here p is price, c is constant marginal cost, and epsilon is the own-price elasticity at the optimum. Differentiating (p-c)q(p) gives q+(p-c)q′=0. Multiproduct substitution and ownership require different equations. Flexible heterogeneity has no inherent tendency to lower the inferred markup. Identification can distinguish competing conduct models and support enforcement under stated restrictions (Berry and Haile, 2014). Assess the specification and its use rather than attributing a direction to integration itself.
+
+Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
+
+## Slide 33: Product-Design Discussion
 
 - How much of C's demand comes from existing products?
 - Which design change would identify the price tradeoff?

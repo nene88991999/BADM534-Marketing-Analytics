@@ -11,7 +11,8 @@
       "Distinguish a definition, an inference, a validation condition, and source evidence.",
       "Reconstruct a recommendation through its premises, a counterexample, and a condition for revision.",
       "Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.",
-      "Identify incentives and duties that shape the analytical question."
+      "Identify incentives and duties that shape the analytical question.",
+      "Explain how disciplinary institutions shape the choice of analytical questions."
     ],
     "slides": [
       {
@@ -392,6 +393,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Measurement and Disciplinary Authority",
+        "bullets": [
+          "Cowles adopted “Science is Measurement” in 1932 and “Theory and Measurement” in 1952.",
+          "Managerial questions acquired disciplinary prominence; societal inquiry continued.",
+          "Identify whose decision and whose interests organize the analysis."
+        ],
+        "notes": "Historical records support a shift in institutional emphasis without establishing that theory or ethics disappeared. The Cowles history includes concern with structure, identification, and policy. The managerial turn in marketing gave firms a central perspective while specialized venues continued societal research. A revenue effect and an ethical justification require different premises (Christ, 1952; Wilkie and Moore, 2012). Ask what the customer can reasonably contest even if the estimate is accurate.",
+        "source": "../01_Resources/46_Measurement_and_Disciplinary_History/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Decision Discussion",
         "bullets": [
           "Which customer receives the renewal offer?",
@@ -418,7 +430,8 @@
       "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
       "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
       "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)",
-      "../07_Labs/AI_Augmented_Learning/README.md"
+      "../07_Labs/AI_Augmented_Learning/README.md",
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
     ],
     "practice": "Implement and assess order aggregation, then distinguish code errors from missing observations.",
     "application": "Compare persona and row weights, trace a recommendation to its inputs, and specify the evidence needed for a coupon decision."
@@ -433,7 +446,8 @@
       "Separate missing observations, zeros, and unmatched keys.",
       "Assess changing coverage in mHealth, McBroken, and earnings-call records.",
       "Preserve requests, confirmations, unknown states, and the reporting cutoff.",
-      "Trace data production and identify the effect of selective access on population claims."
+      "Trace data production and identify the effect of selective access on population claims.",
+      "Distinguish an interest, its measure, and the standard for action."
     ],
     "slides": [
       {
@@ -735,6 +749,17 @@
       },
       {
         "kind": "bullets",
+        "title": "A Definition of Harm Selects Evidence",
+        "bullets": [
+          "Name the interest: expenditure, access, dependence, or authority.",
+          "Define the record and population that represent that interest.",
+          "Explain what the proposed decision requires beyond the recorded variable."
+        ],
+        "notes": "If only average revenue per kWh qualifies as evidence of electricity harm, concerns about bills, consumption sacrifice, and future charges can lose standing before estimation. A missing record leaves an empirical gap; it does not remove the underlying interest. Bills and latent tastes remain empirical objects, distinct from the Kantian question of free moral agency. M2 §2.32 connects measurement choices to M9 §9.56.",
+        "source": "../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Measurement Discussion",
         "bullets": [
           "Could recorded activity rise because low-activity users disappear?",
@@ -755,7 +780,8 @@
       "[Cancellation Evidence: Data, Code, and Definitions](../03_Data_and_Code/Ontology_and_Evidence/README.md)",
       "[Digital Usage and Customer Access](../03_Data_and_Code/Digital_Usage/README.md)",
       "../07_Labs/AI_Augmented_Learning/README.md",
-      "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)"
+      "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)",
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
     ],
     "practice": "Build roster-first summaries; assess missing text, zero-match calls, and selected denominators in the earnings-call case. Compare identical synthetic public releases with opposite population effects.",
     "application": "Compare restaurant coverage and conference-call disclosure using explicitly observed populations."
@@ -1085,7 +1111,8 @@
       "Diagnose omitted variables, interactions, and dependence.",
       "Reproduce an association while preserving its time and sample definitions.",
       "Distinguish a primary response coefficient from source bias.",
-      "Justify controls and sample restrictions through a causal structure."
+      "Justify controls and sample restrictions through a causal structure.",
+      "Separate estimator properties from the consequences of a decision rule."
     ],
     "slides": [
       {
@@ -1408,6 +1435,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Unbiasedness Leaves the Decision Open",
+        "bullets": [
+          "Unbiasedness concerns the sampling expectation of an estimator.",
+          "Type I and Type II errors concern a specified null and alternative.",
+          "The action also requires consequences, affected people, and feasible alternatives."
+        ],
+        "notes": "Two unbiased estimators can have different variances; two rules using the same estimate can impose different losses. Fix the null as absence of the specified harm before naming false positives and missed harm. A lower significance level reduces false alarms while increasing missed harm at a fixed alternative. Whether that is preferable depends on the action and consequences. Decision-focused econometrics makes this comparison explicit (Manski, 2021).",
+        "source": "../03_Data_and_Code/Evidence_Standards/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Regression Discussion",
         "bullets": [
           "Which comparison supports the coefficient?",
@@ -1432,7 +1470,8 @@
       "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
       "../01_Resources/41_Statistical_Claims_and_Decisions/README.md",
       "[Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)",
-      "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)"
+      "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)",
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
     ],
     "practice": "Reproduce OLS and assess exact-day matching, specification, and uncertainty. Use the optional statistical-claims and data-center case exercises.",
     "application": "Separate customer response from source bias, then interpret price coefficients when managers observe demand before setting price."
@@ -1449,7 +1488,8 @@
       "Evaluate a synthetic concept screen using distribution fit, shortlist errors, and independent human outcomes.",
       "Allocate human and synthetic responses at a common accuracy target.",
       "Separate better demand information from joint pricing when evaluating customer surplus.",
-      "Explain why identical product rankings can leave the sign of a welfare change unresolved."
+      "Explain why identical product rankings can leave the sign of a welfare change unresolved.",
+      "Assess demand restrictions without assuming a direction of markup bias from integration."
     ],
     "slides": [
       {
@@ -1813,6 +1853,26 @@
       },
       {
         "kind": "bullets",
+        "title": "Heterogeneous Demand and the Pricing Interpretation",
+        "bullets": [
+          "Limited alternatives can produce accurately predicted price insensitivity.",
+          "Flexible fit leaves preference, dependence, and market power to be distinguished.",
+          "Compare outside options, costs, instruments, priors, and conduct assumptions."
+        ],
+        "notes": "Integrating individual choice probabilities constructs aggregate demand under a specified distribution and model. It does not turn response into a justification for charging more. A normal random-coefficient model retains restrictions; Bayesian precision can depend on priors when parameters are partially identified. Compare the identified set with conditional posterior conclusions and test plausible departures from exclusion restrictions (Jiang et al., 2009; Moon and Schorfheide, 2012; Conley et al., 2012). M4 §4.30.",
+        "source": "../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md"
+      },
+      {
+        "kind": "equation",
+        "title": "Integration Has No General Markup Direction",
+        "intro": "For an interior single-product profit maximum with differentiable demand and constant marginal cost:",
+        "equation": "\\frac{p-c}{p}=\\frac{1}{|\\varepsilon|}",
+        "interpretation": "Lower absolute price elasticity implies a larger markup under these conditions.",
+        "notes": "Here p is price, c is constant marginal cost, and epsilon is the own-price elasticity at the optimum. Differentiating (p-c)q(p) gives q+(p-c)q′=0. Multiproduct substitution and ownership require different equations. Flexible heterogeneity has no inherent tendency to lower the inferred markup. Identification can distinguish competing conduct models and support enforcement under stated restrictions (Berry and Haile, 2014). Assess the specification and its use rather than attributing a direction to integration itself.",
+        "source": "../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Product-Design Discussion",
         "bullets": [
           "How much of C's demand comes from existing products?",
@@ -1833,7 +1893,8 @@
       "[Auxiliary Data: Optional Practice](../07_Labs/Auxiliary_Data/README.md)",
       "[Pricing Information and Competition](../03_Data_and_Code/Pricing_Competition/README.md)",
       "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
-      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)"
+      "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)",
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
     ],
     "practice": "Calculate choice probabilities and compare human and synthetic sampling costs at a common accuracy target.",
     "application": "Use 20 minutes for synthetic concept screening and human validation, followed by 10 minutes for demand information, pricing objectives, and customer surplus."
@@ -2168,7 +2229,8 @@
       "Trace how anchors, similarities, and persona weighting determine a text-based rating.",
       "Compare feature preservation, group weighting, and access at original network origins.",
       "Distinguish recorded-category agreement from the compatibility of a replacement text representation.",
-      "Use contextual coding, negative cases, and source comparison to assess utility cost-recovery claims."
+      "Use contextual coding, negative cases, and source comparison to assess utility cost-recovery claims.",
+      "Use credible qualitative mechanisms to justify proportionate inquiry."
     ],
     "slides": [
       {
@@ -2625,6 +2687,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Mechanism Evidence Can Justify an Inquiry",
+        "bullets": [
+          "Preserve source role, timing, exact wording, and contrary passages.",
+          "Use cost-recovery statements to identify the records an inquiry needs.",
+          "Distinguish a credible mechanism from an estimated historical bill effect."
+        ],
+        "notes": "Most selected utility-call material concerns 2026, after the study’s 2020–2025 period. The study also discusses cost recovery and reports some positive residential spillovers. These facts constrain a claim of contradiction. Contextual coding can support inquiry into commitments, canceled projects, tariff cases, and customer classes without establishing the magnitude of pass-through. The evidence for requesting records differs from the evidence for assigning liability. M5 §§5.27–5.28.",
+        "source": "../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Text-Analysis Discussion",
         "bullets": [
           "Which label disagreement would change the service decision?",
@@ -2652,7 +2725,8 @@
       "[Graph Coarsening: Data and Code](../03_Data_and_Code/Graph_Coarsening/README.md)",
       "[Graph Coarsening: Optional Practice](../07_Labs/Graph_Coarsening/README.md)",
       "[Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)",
-      "[Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)"
+      "[Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)",
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
     ],
     "practice": "Assess pricing-source support and reproduce the four-zone compression calculation; compare original and compressed access.",
     "application": "Compare pricing evidence, anchor sensitivity, and network interpretation. Retain original origins, group sizes, and access denominators when compressing a graph."
@@ -2800,7 +2874,8 @@
       "Plan power and use prior outcomes to improve precision.",
       "Explain the information conditions supporting a fixed research allocation.",
       "Separate correct weighting of a pricing experiment from a justified allocation of customer exposure.",
-      "Distinguish historical model fit from identification and specify evidence that separates competing mechanisms."
+      "Distinguish historical model fit from identification and specify evidence that separates competing mechanisms.",
+      "Compare Type I and Type II errors under explicit, asymmetric loss specifications."
     ],
     "slides": [
       {
@@ -2975,6 +3050,37 @@
         "description": "In a synthetic joint Wald test, an 80% power boundary crosses the A axis at 1.55 and the B axis at 6.21 dollars/MWh. Independent estimator SEs are 0.50 and 2.00. The curve is a power boundary, not a confidence ellipse centered on an estimate.",
         "notes": "The joint test has two restrictions and size 5%. Every point on the boundary gives 80% power under the fixed Gaussian covariance. Departures inside it have less power. Both outcomes use dollars/MWh; changing units requires transforming the covariance and the interpretation of a direction. The covariance is illustrative and does not reconstruct the unavailable developer-contrast covariance.",
         "source": "M6 §6.34. ../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md"
+      },
+      {
+        "kind": "equation",
+        "title": "The Consequences of Two Statistical Errors",
+        "intro": "Fix the null as absence of specified harm; act when the signal exceeds a threshold.",
+        "equation": "R=(1-\\pi)\\alpha C_{FP}+\\pi\\beta C_{FN}",
+        "interpretation": "Prevalence, conditional errors, and losses jointly determine expected loss per case.",
+        "notes": "Pi is the harmful share before observing a signal. Alpha is the false-positive rate in harmless cases; beta is missed harm under a specified harmful alternative. Costs are in comparable illustrative loss units, and correct decisions have zero loss. A significance level specifies alpha without specifying the other terms. This simplified decision model supplies no legal burden of proof. M6 §6.44 and the complete standard-library program retain the exact calculation.",
+        "source": "../03_Data_and_Code/Evidence_Standards/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Fixed Evidence, Unequal Error Costs",
+        "figure": "../06_Lecture_Notes/figures/M06_error_costs.tex",
+        "caption": "Fixed signals and prevalence; only the action threshold changes.",
+        "description": "The expected-loss curve reaches its minimum at signal cutoff 0.601 with loss 0.408. The five-percent cutoff gives loss 0.767 and the one-percent cutoff 1.265. Ten percent of cases are harmful; signals are normal with means zero and two and unit variance.",
+        "notes": "Only the action threshold changes along the curve. The minimum accepts a 27.4 percent false-positive rate and misses 8.1 percent of harmful cases because missed harm is twenty times as costly. The result is conditional on this artificial population and loss specification; it is not a recommendation for a legal threshold. The plotted curve and labels come directly from the saved Python outputs. Ask who bears each mistake and whether the proposed action is reversible.",
+        "source": "../03_Data_and_Code/Evidence_Standards/README.md",
+        "fixed_figure_font": true,
+        "figure_height": 0.74
+      },
+      {
+        "kind": "bullets",
+        "title": "Reverse the Costs and Reconsider the Action",
+        "bullets": [
+          "Keep the same signals and ten-percent harmful share.",
+          "Mistaken intervention now costs 20; missed harm costs 1.",
+          "The minimum-loss cutoff rises from 0.601 to 3.596."
+        ],
+        "notes": "Under reversed costs, expected loss is 0.936 for the five-percent rule, 0.243 for the one-percent rule, and 0.097 for the minimum-loss rule. An intervention with severe irreversible consequences can warrant a higher threshold. Opening an inquiry and imposing a severe sanction need different justification. A posterior probability of harm is distinct from a p-value. The complete program checks the analytic optimum against a separate grid. M6 §§6.44–6.45.",
+        "source": "../03_Data_and_Code/Evidence_Standards/README.md"
       },
       {
         "kind": "figure",
@@ -3315,7 +3421,8 @@
       "[Pricing, Individual Reasons, and Antitrust Practice](../07_Labs/Scanlon_Pricing/README.md)",
       "[Analytical Arguments: Python and Results](../03_Data_and_Code/Analytical_Arguments/README.md)",
       "[Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)",
-      "../07_Labs/AI_Augmented_Learning/README.md"
+      "../07_Labs/AI_Augmented_Learning/README.md",
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
     ],
     "practice": "Reproduce experiment calculations and specify purchase, return, and cancellation outcomes. Use the optional statistical-claims and data-center case exercises.",
     "application": "Compare fixed and adaptive research designs, treatment effects, AI-generated proposals, and customer outcomes. Evaluate inverse power, specified alternatives, and directional sensitivity. Targeted exposure, correct population weighting, and reasons for bearing experimental risk."
@@ -3330,7 +3437,8 @@
       "Evaluate a policy under selected exposure and support restrictions.",
       "Assess whether a comparison group is suitable for the McBroken policy question.",
       "Estimate and assess a nonlinear discount response with explicit confounding and overlap conditions.",
-      "Distinguish covariate adjustment, project exposure, and the population represented by a convenient sample."
+      "Distinguish covariate adjustment, project exposure, and the population represented by a convenient sample.",
+      "Distinguish evidence for inquiry from proof of a causal effect or legal violation."
     ],
     "slides": [
       {
@@ -3645,6 +3753,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Unresolved Causation and Proportionate Inquiry",
+        "bullets": [
+          "Project records can establish exposure before a precise bill effect is estimated.",
+          "Compare the costs of seeking records, limiting exposure, and imposing a remedy.",
+          "State authority, review, and evidence that would change the action."
+        ],
+        "notes": "Phantom projects could expose comparison utilities to infrastructure costs before opening or after cancellation. Determining actual contamination requires project and utility records. An imprecise realized-price estimate establishes neither harmlessness nor harm by itself. Credible mechanism evidence can support an investigation; a sanction requires separate factual and legal predicates. Current United States merger guidance considers documents, testimony, structure, and economic analysis, but is nonbinding agency guidance and concerns a distinct legal setting (DOJ and FTC, 2023). M6 §6.45.",
+        "source": "../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Causal-Design Discussion",
         "bullets": [
           "What would the treated group have experienced without the policy?",
@@ -3665,7 +3784,8 @@
       "[Optional dose-response lab](../07_Labs/Dose_Response/README.md)",
       "[Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)",
       "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)",
-      "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)"
+      "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)",
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
     ],
     "practice": "Compute policy values and diagnose a deliberately unsupported recommendation action.",
     "application": "Use 20 minutes for discount response, overlap, interval coverage, and pooling; retain 10 minutes for comparison-group and event interpretation. Distinguish observed household bills, linked project evidence, and the causal counterfactual."
@@ -3688,7 +3808,8 @@
       "Evaluate omitted auxiliary bias separately from sampling variance.",
       "Distinguish oracle group purity from held-out prediction and detect label use during preprocessing.",
       "Compare reconstruction, component errors, feature interpretation, and decision outcomes.",
-      "Compare geometric similarity, classifier compatibility, coordinate alignment, and retraining on the same descriptions."
+      "Compare geometric similarity, classifier compatibility, coordinate alignment, and retraining on the same descriptions.",
+      "Evaluate prediction thresholds through customer error costs and reasons."
     ],
     "slides": [
       {
@@ -4474,6 +4595,17 @@
       },
       {
         "kind": "bullets",
+        "title": "A Prediction Threshold Allocates Customer Burdens",
+        "bullets": [
+          "Ranking accuracy leaves the action threshold open.",
+          "Compare unnecessary review with unresolved customer harm.",
+          "Check calibration, missing complaints, group errors, and reasonable objections."
+        ],
+        "notes": "An accurate model may still send too few serious complaints to human review if the threshold reflects staffing expense alone. Costs borne by customers belong in the decision. Recorded labels can omit people unable to file a complaint, so calibration on those labels has limited scope. M6 §6.44 changes error costs while holding information fixed; M7 §7.48 applies that reasoning to service decisions. A willingness to accept an offer can be predictable while its exploitation remains objectionable.",
+        "source": "../03_Data_and_Code/Evidence_Standards/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Prediction Discussion",
         "bullets": [
           "Which error uses scarce review capacity?",
@@ -4511,7 +4643,8 @@
       "[Representation Alignment: Programs and Results](../03_Data_and_Code/Representation_Alignment/README.md)",
       "[Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)",
       "[Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)",
-      "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)"
+      "[Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)",
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
     ],
     "practice": "Construct demand intervals and complaint-label sets, then evaluate omitted auxiliary bias separately from sampling variance.",
     "application": "Use twenty minutes for anomaly diagnosis and ten minutes for forecast and grader comparisons. Trace graph-label use within the validation block and preserve every evaluation denominator."
@@ -4722,7 +4855,8 @@
       "Evaluate list objectives and customer goals.",
       "Allocate a fixed marketing budget using marginal response.",
       "Assess forecast coverage after demand changes and respect delayed outcome information.",
-      "Distinguish estimated response uncertainty from the choice and justification of an objective."
+      "Distinguish estimated response uncertainty from the choice and justification of an objective.",
+      "Match evidence and procedural safeguards to investigation, protection, or remedy."
     ],
     "slides": [
       {
@@ -4992,6 +5126,17 @@
       },
       {
         "kind": "bullets",
+        "title": "Investigation, Protection, and Remedy",
+        "bullets": [
+          "Investigation obtains information about a credible concern.",
+          "Temporary protection limits exposure and specifies review.",
+          "A remedy requires its applicable factual and legal predicates."
+        ],
+        "notes": "A pricing rollout leaves people exposed while uncertainty remains. Compare unrestricted deployment with a limited pilot, disclosure, review, and complete prohibition. The status quo can impose losses. Evidentiary burdens affect deterrence and useful conduct as well as classification errors (Kaplow, 2012). Specify the responsible authority, the people bearing each error, and conditions for revision. M8 §8.34.",
+        "source": "../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md"
+      },
+      {
+        "kind": "bullets",
         "title": "Policy Discussion",
         "bullets": [
           "What changes when the recommender learns during the experiment?",
@@ -5010,7 +5155,8 @@
       "[Discount response examples](../03_Data_and_Code/Dose_Response/README.md)",
       "[Optional dose-response lab](../07_Labs/Dose_Response/README.md)",
       "[Retail Accessibility: Programs and Inputs](../03_Data_and_Code/Retail_Accessibility/README.md)",
-      "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)"
+      "[Optional Retail Access Practice](../07_Labs/Retail_Accessibility/README.md)",
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
     ],
     "practice": "Compare list objectives and solve a budget allocation with an independent grid check.",
     "application": "Compare known-function decision objectives within the existing application block, alongside feedback and forecast interpretation. Evaluate service restoration under profit and population access."
@@ -5039,7 +5185,8 @@
       "Assess a case interpretation using ontological scope, empirical evidence, and philosophical reasons.",
       "Assess conflicts of interest through duties, consumer purposes, and reasons for a feasible alternative.",
       "Defend the empirical and moral premises behind reassurance to affected households.",
-      "Distinguish truth, evidential warrant, and the norms governing disclosure and public justification."
+      "Distinguish truth, evidential warrant, and the norms governing disclosure and public justification.",
+      "Evaluate evidentiary standards through conceptual engineering, error costs, and reasonable objections."
     ],
     "slides": [
       {
@@ -6212,6 +6359,48 @@
         "source": "M9 §§9.51–9.54. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md"
       },
       {
+        "kind": "figure",
+        "title": "Evidentiary Standards Allocate Uncertainty",
+        "figure": "../06_Lecture_Notes/figures/M09_evidence_standards.tex",
+        "caption": "A definition of harm and a decision rule determine which concerns receive a response.",
+        "description": "The upper path connects the definition of harm, eligible evidence, the decision rule, and action. The lower path shows that excluded concerns remain borne by people; justification and review feed back into the decision rule.",
+        "notes": "Conceptual engineering asks how concepts organize attention and responses (Haslanger, 2022). Applied here, a standard that admits only a precisely identified average price effect can exclude access, dependence, or decision authority. If uncertainty always requires nonintervention, the standard allocates exposure to consumers. This can benefit harmful conduct even when calculations are correct. Whether an actual institution operates this way requires evidence; deliberate manipulation is a separate claim. M9 §9.56.",
+        "source": "../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md",
+        "fixed_figure_font": true
+      },
+      {
+        "kind": "bullets",
+        "title": "The Critical Claim Must Name the Asymmetry",
+        "bullets": [
+          "Can a firm act on forecasts while customers need precise causal proof for protection?",
+          "Who bears the consequences while that proof remains unavailable?",
+          "Would a feasible safeguard impose a smaller, reversible burden?"
+        ],
+        "notes": "The criticism is strongest when it specifies the rule, the action, access to evidence, and the people bearing each error. Inductive risk makes the consequences of uncertain inference relevant to scrutiny and interpretation (Douglas, 2000). Values do not supply missing facts. A blanket claim that identification or Bayesian integration prevents enforcement is inconsistent with applications that identify market power. M9 §§9.56–9.57.",
+        "source": "../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md"
+      },
+      {
+        "kind": "figure",
+        "title": "Build an Argument for Action Under Uncertainty",
+        "figure": "../06_Lecture_Notes/figures/M09_reasons_under_uncertainty.tex",
+        "caption": "An ought conclusion requires supported factual premises and a defended principle.",
+        "description": "Ontological, epistemic, and normative premises enter a proposed proportionate action. The strongest objection and feasible alternatives form a review path back to the premises.",
+        "notes": "A person’s interests extend beyond a dataset. Credible institutional evidence can support serious concern without an exact causal magnitude. A principle must compare the individual burdens of exposure and mistaken restriction (Scanlon, 1998). Together these premises can justify records or reversible protection, with review and legal authority. Their conclusion is conditional; a factual or moral objection can defeat it. M9 §9.58.",
+        "source": "../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md",
+        "fixed_figure_font": true
+      },
+      {
+        "kind": "bullets",
+        "title": "Evaluate the Strongest Reply",
+        "bullets": [
+          "False condemnation can harm livelihood, useful services, and fair procedures.",
+          "Missed harm can persist when entry, exit, or public challenge is difficult.",
+          "Compare both mechanisms and the burdens of the particular proposed action."
+        ],
+        "notes": "The influential argument that precedent makes false positives persistent while entry corrects false negatives rests on contestable institutional assumptions (Easterbrook, 1984; Baker, 2015). The synthetic threshold reverses when the relative costs reverse. Expected-loss aggregation clarifies consequences, while a contractualist assessment also asks whether serious individual burdens are reasonably justifiable. Electricity reassurance and targeted pricing require that same examination of who can obtain evidence and who can contest the rule. M9 §§9.58–9.59.",
+        "source": "../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md"
+      },
+      {
         "kind": "bullets",
         "title": "A Decision with Consumer Outcomes",
         "bullets": [
@@ -6259,7 +6448,8 @@
       "[Conflicts of Interest: Optional Practice](../07_Labs/Conflicts_of_Interest/README.md)",
       "[Bad Controls and Project Exposure](../01_Resources/44_Bad_Controls_and_Project_Exposure/README.md)",
       "[Optional Research-Design Practice](../07_Labs/Bad_Controls/README.md)",
-      "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)"
+      "[Data, Truth, and Norms](../01_Resources/45_Data_Truth_and_Norms/README.md)",
+      "[Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)"
     ],
     "practice": "Defend a recommendation using factual and normative premises, an affected person's strongest objection, and a feasible alternative. Extended numerical and philosophical cases are optional practice.",
     "application": "Evaluate customer outcomes, public claims, and institutional duties through Kantian, Confucian, and Scanlonian arguments. Compare stakeholder reasons and opportunities to contest evidence. Personalized pricing, demand completions, Dubé mobile targeting, and antitrust proof with Scanlonian reasons. Compare rational acceptance with reasonable rejection across pricing and infrastructure reassurance, holding factual estimates fixed."

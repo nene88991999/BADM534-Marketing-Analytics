@@ -10,20 +10,20 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 
 | Session | Date | Module | Focus | Minutes | Slides |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 35 |
-| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 29 |
+| 01 | Jan 20 | M1 | [Marketing Decisions and AI-Assisted Coding](S01_Marketing_Decisions_and_AI_Coding.md) | 170 | 36 |
+| 02 | Jan 27 | M2 | [Customer Data and Measurement](S02_Customer_Data_and_Measurement.md) | 170 | 30 |
 | 03 | Feb 3 | M2 | [Visualization and Data Quality](S03_Visualization_and_Data_Quality.md) | 170 | 27 |
-| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 29 |
-| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 31 |
+| 04 | Feb 10 | M3 | [Regression and Marketing Interpretation](S04_Regression_and_Marketing_Interpretation.md) | 170 | 30 |
+| 05 | Feb 17 | M4 | [Conjoint and Product Design](S05_Conjoint_and_Product_Design.md) | 170 | 33 |
 | 06 | Feb 24 | M4 | [Segmentation and Customer Lifetime Value](S06_Segmentation_and_Customer_Lifetime_Value.md) | 170 | 28 |
-| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 46 |
+| 07 | Mar 3 | M5 | [Text, Social Media, and Networks](S07_Text_Social_Media_and_Networks.md) | 170 | 47 |
 | 08 | Mar 10 | M1-M5 | [Project Evidence and Midterm Presentations](S08_Project_Evidence_and_Midterm_Presentations.md) | 170 | 11 |
-| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 43 |
-| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 30 |
-| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 60 |
+| 09 | Mar 24 | M6 | [Experiments and Incremental Value](S09_Experiments_and_Incremental_Value.md) | 170 | 46 |
+| 10 | Mar 31 | M6 | [Causal Comparisons and Policy Evaluation](S10_Causal_Comparisons_and_Policy_Evaluation.md) | 170 | 31 |
+| 11 | Apr 7 | M7 | [Prediction, Validation, and Marketing Actions](S11_Prediction_Validation_and_Marketing_Actions.md) | 170 | 61 |
 | 12 | Apr 14 | M7 | [Recommendation Systems and Customer Goals](S12_Recommendation_Systems_and_Customer_Goals.md) | 170 | 18 |
-| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 22 |
-| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 101 |
+| 13 | Apr 21 | M8 | [Adaptive Recommendations and Marketing Budgets](S13_Adaptive_Recommendations_and_Marketing_Budgets.md) | 170 | 23 |
+| 14 | Apr 28 | M8, M9 | [Generative AI, Consumer Choice, and Regulation](S14_Generative_AI_Consumer_Choice_and_Regulation.md) | 170 | 105 |
 | 15 | May 5 | M1-M8 | [Integrated Decisions and Final Presentations](S15_Integrated_Decisions_and_Final_Presentations.md) | 170 | 10 |
 
 ## Meeting Activities
@@ -330,9 +330,9 @@ The total is 2,550 scheduled minutes (42.5 hours), including 150 minutes of brea
 | 60–70 | Wendy's Pricing Case and Evidence |
 | 70–80 | Break |
 | 80–90 | Kantian, Confucian, and Scanlonian Evaluation |
-| 90–95 | Ontological Scope, Counterexamples, and an Ought Conclusion |
-| 95–100 | Data, Truth, Norms, and Reasons Owed to Households |
-| 100–110 | Pricing Burdens and Feasible Alternatives |
+| 90–95 | Premises for Proportionate Protection Under Uncertainty |
+| 95–100 | Evidentiary Standards and the Burden of Uncertainty |
+| 100–110 | Pricing Burdens, Feasible Alternatives, and the Strongest Reply |
 | 110–130 | Pricing, Renewal, and Reproducible Calculation |
 | 130–155 | Pricing Policy, Cancellation, and Environmental Claims |
 | 155–165 | Digital Channels and Meaningful Customer Choice |
@@ -410,3 +410,20 @@ Session 4 uses the existing worked-comparison block (minutes 45–70) to contras
 M2 §§2.30–2.31 trace data production and compare identical public records with opposite synthetic population effects. Use the Session 2 discussion block at minutes 155–170 for the two diagrams and the interpretation; the complete code and weighting extension are optional practice. Session 10 uses its existing minutes 155–170 for billing records, project linkage, and causal counterfactuals. Session 14 uses minutes 95–100 for the artifact analogy, distinct norms, and a Scanlonian argument about evidential responsibility, with the fuller reading and exercise outside that short comparison. The six added slides are selected discussion aids within the existing schedule; the 15 meetings remain 170 minutes each.
 
 The [26-source guide](../01_Resources/45_Data_Truth_and_Norms/README.md), [program](../03_Data_and_Code/Data_Production/README.md), and [optional ungraded practice](../07_Labs/Data_Truth_and_Norms/README.md) distinguish accurate records, representative evidence, causal identification, and permissible recommendations. Existing household billing and public expenditure data correct the claim that such information is never collected or released. The research problem concerns adequate linkage, access, and counterfactual design.
+
+## Evidence Standards and Unequal Error Costs
+
+The [optional lab](../07_Labs/Evidence_Standards/README.md) links M1 §1.23, M2 §2.32, M3 §3.22, M4 §4.30, M5 §5.28, M6 §§6.44–6.45, M7 §7.48, M8 §8.34, and M9 §§9.55–9.59.
+
+- **Session 01:** Use five minutes of the opening decision discussion for measurement and disciplinary authority.
+- **Session 02:** Use five minutes of measurement discussion for the interest, its representation, and the action standard.
+- **Session 04:** Use five minutes of interpretation discussion to distinguish unbiasedness and decision consequences.
+- **Session 05:** Use ten minutes of the existing product-design discussion for heterogeneous demand, markups, and customer reasons; extended sensitivity is optional practice.
+- **Session 07:** Use five minutes of existing qualitative-evidence discussion to match mechanism evidence to a proportionate inquiry.
+- **Session 09:** Use ten minutes within the 45–70 worked-comparison block and fifteen minutes within the 80–125 Python block for exact error costs. Use the remaining time for selected experiment examples; extended cases are optional practice.
+- **Session 10:** Use five minutes within 155–170 for the evidence needed for records, protection, and remedy.
+- **Session 11:** Use five minutes of prediction discussion for customer error costs and calibrated thresholds.
+- **Session 13:** Use five minutes of policy discussion for investigation, protection, and remedy.
+- **Session 14:** Use 90–95 for the premises of protection under uncertainty, 95–100 for evidentiary standards, and 100–110 for pricing burdens and the strongest reply. Select these slides within existing discussion; the full deck is a case library, and extended comparisons are optional practice.
+
+These allocations select among the existing examples within each 170-minute meeting. The full decks retain alternatives and detailed follow-up; the complete code and extended philosophical comparisons remain available for optional practice.

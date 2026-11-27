@@ -114,3 +114,7 @@ The [optional ungraded practice](Bad_Controls/README.md) asks students to defend
 ## Data, Truth, and Norms
 
 [Optional ungraded practice](Data_Truth_and_Norms/README.md) connects selected evidence and causal counterfactuals to the artifact analogy, distinct norms, and an argument about institutional duties to provide household evidence.
+
+## Evidence Standards and Reasonable Protection
+
+[Optional ungraded practice](Evidence_Standards/README.md) compares exact synthetic error probabilities, opposing loss specifications, demand restrictions, and a philosophical argument for action under uncertainty. It connects measurement history to pricing and household electricity through an identified person, a supported concern, a normative premise, a feasible alternative, and conditions for revision.

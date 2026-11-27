@@ -35,3 +35,7 @@ The [representation examples](../03_Data_and_Code/Representation_Evaluation/READ
 ## Task Context and Workflow Evaluation
 
 The [workflow example](../03_Data_and_Code/Agent_Workflows/README.md) supplies a future static page that exposes the roster, date interval, customer-level output, and checker result. Keep task definitions, input hashes, full code, and expected outputs available as separate downloads. A student can predict the consequence of omitting zero-log users or swapping two customer counts before revealing the result. Distinguish the measured logging table from the hypothetical cost example and the unexecuted model protocol. Targeted context links and stable module anchors can support agents without a server-side agent framework. No site has been deployed.
+
+## Evidence and Action in the Pilot
+
+The [electricity pilot](pilot/index.html#uncertainty) and its [complete text](pilot/LESSON.md#action-while-evidence-is-incomplete) connect the price–bill distinction to evidence for inquiry and proportionate protection. The synthetic threshold figure links to complete Python and opposing error-cost specifications. The extension preserves the difference between a possible mechanism, a causal estimate, and a normative judgment.

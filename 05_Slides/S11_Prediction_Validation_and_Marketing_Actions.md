@@ -21,6 +21,7 @@ Session 11. M7. 170 minutes.
 - Distinguish oracle group purity from held-out prediction and detect label use during preprocessing.
 - Compare reconstruction, component errors, feature interpretation, and decision outcomes.
 - Compare geometric similarity, classifier compatibility, coordinate alignment, and retraining on the same descriptions.
+- Evaluate prediction thresholds through customer error costs and reasons.
 
 ## Related Materials
 
@@ -51,6 +52,7 @@ Session 11. M7. 170 minutes.
 - [Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)
 - [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
+- [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -770,7 +772,17 @@ The DOJ's Meta housing-ad settlement addresses discriminatory delivery as well a
 
 Source: DOJ, United States v. Meta Platforms. https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny
 
-## Slide 60: Prediction Discussion
+## Slide 60: A Prediction Threshold Allocates Customer Burdens
+
+- Ranking accuracy leaves the action threshold open.
+- Compare unnecessary review with unresolved customer harm.
+- Check calibration, missing complaints, group errors, and reasonable objections.
+
+An accurate model may still send too few serious complaints to human review if the threshold reflects staffing expense alone. Costs borne by customers belong in the decision. Recorded labels can omit people unable to file a complaint, so calibration on those labels has limited scope. M6 §6.44 changes error costs while holding information fixed; M7 §7.48 applies that reasoning to service decisions. A willingness to accept an offer can be predictable while its exploitation remains objectionable.
+
+Source: ../03_Data_and_Code/Evidence_Standards/README.md
+
+## Slide 61: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?
