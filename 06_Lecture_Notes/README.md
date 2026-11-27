@@ -259,3 +259,7 @@ M4 §4.32 and M9 §§9.76–9.82 assess the transition from market prediction to
 ## Modern Power and Evidence About Harm
 
 M6 §§6.47–6.51 distinguish power against zero from evidence excluding a specified price increase. Six reported-table comparisons, three imposed bias scenarios, complete Python, and an editable TikZ diagram connect the calculations to modern design-based methods. M9 §9.83 examines public reassurance and the reasons owed to households facing unresolved costs. The [11-source guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) records source versions and the distinction between executed scalar calculations and procedures requiring the original panel.
+
+## Research Responsibility for Categorical Reassurance
+
+M8 §§8.31–8.31.1 identify the unsupported HBS no-increase claim and the paper's own interpretive errors. M9 §9.83 defends an obligation to correct consequential reassurance whose evidentiary premise fails. The [source review](../01_Resources/41_Statistical_Claims_and_Decisions/HBS_REVIEW.md) records the checked passages and separates demonstrated errors from allegations about intention or realized injury.

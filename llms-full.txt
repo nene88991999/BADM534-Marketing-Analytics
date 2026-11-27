@@ -536,7 +536,7 @@ Generated from course.json and the source files identified below. This file cont
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-modern-power-and-harm-bounds",
+    "revision": "2026-11-27-hbs-reassurance-and-research-responsibility",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
@@ -1249,7 +1249,7 @@ Generated from course.json and the source files identified below. This file cont
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-27-modern-power-and-harm-bounds",
+  "revision": "2026-11-27-hbs-reassurance-and-research-responsibility",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1466,7 +1466,8 @@ Generated from course.json and the source files identified below. This file cont
     "public_communication": "01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md",
     "related_philosophical_arguments": "philosophical_arguments",
     "public_communication_updated_on": "2026-11-27",
-    "public_communication_focus": "HBS coverage as an example of overstatement; nonrejection, uncertainty, a justified harm threshold, and reasons owed to affected households."
+    "public_communication_focus": "Documented inferential and reporting errors in the paper and categorical HBS reassurance; a defended obligation to correct unsupported public claims, distinct from allegations about intent or realized injury.",
+    "public_communication_review": "01_Resources/41_Statistical_Claims_and_Decisions/HBS_REVIEW.md"
   },
   "logic_and_inverse_power": {
     "implemented_on": "2026-11-26",
@@ -3153,6 +3154,10 @@ M4 §4.32 and M9 §§9.76–9.82 assess the transition from market prediction to
 
 M6 §§6.47–6.51 distinguish power against zero from evidence excluding a specified price increase. Six reported-table comparisons, three imposed bias scenarios, complete Python, and an editable TikZ diagram connect the calculations to modern design-based methods. M9 §9.83 examines public reassurance and the reasons owed to households facing unresolved costs. The [11-source guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) records source versions and the distinction between executed scalar calculations and procedures requiring the original panel.
 
+## Research Responsibility for Categorical Reassurance
+
+M8 §§8.31–8.31.1 identify the unsupported HBS no-increase claim and the paper's own interpretive errors. M9 §9.83 defends an obligation to correct consequential reassurance whose evidentiary premise fails. The [source review](../01_Resources/41_Statistical_Claims_and_Decisions/HBS_REVIEW.md) records the checked passages and separates demonstrated errors from allegations about intention or realized injury.
+
 ---
 
 ## Source: 06_Lecture_Notes/Preface.md
@@ -3453,6 +3458,10 @@ Sessions 5 and 14 select the budget comparison, argument diagram, compensation e
 ## Modern Power and Household Reassurance
 
 Session 9 adds the null-region diagram, six-price-comparison interpretation, and the inputs required by newer full-design methods. Session 14 connects the four-owner price margins to public reassurance and reasons owed to households. The [source guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md), [Python](../03_Data_and_Code/Modern_Power/README.md), and [optional practice](../07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) accompany M6 §§6.47–6.51 and M9 §9.83. These six added slides are selected within existing discussion blocks.
+
+## Unsupported Reassurance and Correction
+
+Session 14 identifies the HBS categorical no-increase claim as misleading, separates the paper's own interpretive errors, and defends an obligation to correct unsupported reassurance. The existing price tables and meeting allocation are retained. M8 §§8.31–8.31.1 and M9 §9.83 develop the statistical and philosophical arguments.
 
 ---
 
@@ -4073,6 +4082,10 @@ M4 §4.32 and M9 §§9.76–9.82 use the [13-source guide](../01_Resources/50_Ch
 ## Modern Power and Harm Bounds
 
 The [2018–2026 collection](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) supports M6 §§6.47–6.51 and M9 §9.83. Panel power and staggered timing clarify design inputs; pre-trend equivalence and sensitivity clarify identification; cluster and synthetic-control inference clarify uncertainty. The [Python example](../03_Data_and_Code/Modern_Power/README.md) implements scalar price comparisons and imposed bias bounds with published estimates. One editable TikZ diagram distinguishes the two null hypotheses. Sessions 9 and 14 select these examples within existing discussion time.
+
+## Categorical Reassurance and Research Responsibility
+
+M6 §6.49, M8 §§8.31–8.31.1, and M9 §9.83 identify the HBS no-increase assertion as statistically unsupported and misleading. The critique separately addresses the paper's affordability interpretation, residual attribution, and direct-test significance convention. The [claim guide](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the documented errors to a reasoned obligation to correct them.
 
 ---
 
@@ -4873,6 +4886,10 @@ Session 5 can use its final 15-minute discussion for the budget comparison in M9
 
 Session 9 selects the null-region diagram and residential price comparison within the existing 155–170 discussion, with full code assigned only as optional practice. Session 14 selects the four-owner price comparison and the reasons owed to households within its existing 75-minute ethics block. The [modern-method guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) distinguishes executed scalar calculations from design-dependent procedures requiring the utility panel. These selections preserve the 15 dated meetings and their 170-minute allocations.
 
+## Research Responsibility in the Existing Ethics Discussion
+
+Session 14's existing research-communication case connects the categorical reassurance, the paper's own interpretive errors, and the obligation to correct them. Select the claim-and-evidence comparison within the existing ethics block. The 130-slide case library and 170-minute meeting retain their existing scope.
+
 ---
 
 ## Source: 02_Syllabus/TEACHING_PLAN.md
@@ -5280,6 +5297,10 @@ M9 §§9.76–9.82 examines the moral premises connecting demand, monetary valua
 M9 §9.83 links the electricity-price comparison to reasons owed to exposed households. The categorical four-developer reassurance in [HBS coverage](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) exceeds what a zero-effect nonrejection establishes (Kost, 2026). M6 §§6.47–6.51 reconstruct six price-margin comparisons from the reported tables. The [source and verification guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) records methods, versions, and execution scope.
 
 The criticism concerns the specified price margins and the extension from a utility-average outcome to household harmlessness. It makes no finding of realized household injury, author intention, or legal liability. Requests for evidence and reversible safeguards require reasons appropriate to their burdens; they need not share the threshold for a final penalty.
+
+## Research Responsibility for Unsupported Reassurance
+
+M8 §§8.31–8.31.1 establish the inferential defects using the paper's reported estimates and the verified HBS statement. M9 §9.83 defends correction as an obligation to affected households under principles of truthful communication and reasonable justification. The claim assessment distinguishes a demonstrated reporting or interpretation error from intention, actual policy reliance, and realized injury. The [public-communication guide](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md) records the comparison.
 
 ---
 
@@ -8874,15 +8895,17 @@ A strong criticism grants the economic result for the sake of argument and ident
 
 The corresponding strongest reply is that economic analysis can reveal shortages, exclusion, unintended incidence, and the costs of a proposed safeguard. Those findings can defeat an ethical recommendation whose factual premises are wrong. Marketing Dialectics requires both forms of scrutiny: reliable accounts of consequences and a defensible principle governing their imposition. A moral violation follows when the relevant factual premises and defended duties establish it. School affiliation, mathematical sophistication, and commercial success each leave that argument to be made.
 
-## 9.83 Power, Reassurance, and Responsibility for Unresolved Harm
+## 9.83 Unsupported Reassurance and Research Responsibility
 
-\noindent A household asked to accept an infrastructure commitment has reason to ask which burdens the evidence has excluded. An institution that answers with a nonsignificant coefficient changes the question unless it also supplies the outcome, relevant population, harm margin, and uncertainty. The numerical comparisons in §§6.47–6.51 show that the electricity paper's price summaries leave the displayed positive margins unresolved under both conventional and newer scalar equivalence procedures. The issue is the authority granted to the conclusion, rather than the age or sophistication of the test.
+\noindent A household asked to accept an infrastructure commitment is entitled to reasons addressing the burden it may bear. A researcher or institution that offers a categorical assurance assumes an obligation to support that assurance. In the electricity case, the reported subgroup estimate leaves positive price effects unresolved, while the public interpretation presents an absence of consumer cost increases. The inferential failure is established by comparing the claim with the reported uncertainty. Under a principle requiring consequential assurances to be justified to those exposed, publishing that reassurance is ethically objectionable.
 
-The [HBS coverage](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) gives categorical reassurance about the four named developers that exceeds the uncertain subgroup estimate (Kost, 2026). A public statement can affect whose objections receive attention even when the underlying paper acknowledges uncertainty. The moral concern is that residents may be asked to bear an exposure that the evidence has not excluded, while the institution presents that uncertainty as a reason to dismiss further scrutiny. Actual reliance on the statement and resulting harm require evidence of their own.
+The [HBS claim](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) and the paper's own affordability interpretation require separate accountability (Kost, 2026; Rana et al., 2026). The public categorical denial suppresses the uncertainty that remains in the subgroup estimate. The paper's move from an average price effect to a judgment about affordability leaves household incidence and acceptable burdens unestablished. Its attribution of the residual price growth to named causes adds an unsupported causal interpretation. Sections 8.31–8.31.1 identify these errors directly. The numerical comparisons in §§6.47–6.51 show which specified price increases remain unresolved.
 
-A Scanlonian assessment compares the reasons for the proposed principle with reasons supporting a feasible alternative (Scanlon, 1998, chapter 5). Consider permitting categorical reassurance whenever a zero-effect test fails to reject. Exposed households have reasons to object when the rule shifts unresolved burdens onto them and the analyst could instead state a supported upper bound, disclose the missing outcome, or recommend proportionate inquiry. Firms and other users also have reasons to resist unsupported accusations and costly restrictions. A narrower public claim, records request, or reversible protection can address these competing positions without treating uncertainty as proof of either innocence or injury.
+A Scanlonian argument compares a principle permitting this reassurance with a feasible principle requiring a supported, bounded statement (Scanlon, 1998, chapter 5). Residents can reasonably object to being asked to accept an unresolved exposure on the authority of a stronger scientific claim than the evidence warrants. The institution can communicate the estimate, disclose the remaining cost range, and identify a proportionate inquiry. Those alternatives preserve the contribution of the research while avoiding unsupported certainty. A desire to attract attention, simplify a message, or promote development supplies no adequate answer to the resident's objection.
 
-The corresponding duty applies to criticism. Choosing methods or suppressing a material result because it complicates the desired argument makes the objection less defensible. A bounded conclusion about one aggregate quantity leaves a further argument about household harm. The stronger criticism identifies the exact outcome, margin, and unsupported extension. A Kantian commitment to truthful justification requires the same care when a conclusion is commercially reassuring and when it is critical (Kant, 1785).
+This argument locates the ethical failure in the communication and its justification. It does not require proof that the unmeasured harm occurred. Requiring residents to establish a final causal loss before challenging unsupported reassurance would reverse the burden of substantiating the published assertion. A request for billing records, prospective monitoring, or a reversible cost guarantee can require a different evidentiary standard from a final penalty. The costs of each response still require comparison, but uncertainty gives the institution no entitlement to declare an exposed group unharmed.
+
+Kantian respect for persons requires preserving their capacity to judge the reasons offered for a decision (Kant, 1785, second section). Presenting an unresolved burden as absent deprives the public statement of a premise essential to that judgment. Institutional authority magnifies the responsibility to communicate the premise accurately. The justified remedy is to correct the categorical statement, revise the unsupported affordability and residual-attribution interpretations, and state the remaining empirical questions. Findings of deliberate deception or a particular downstream injury would require further evidence; the demonstrated interpretive errors already warrant correction.
 
 ---
 
@@ -14500,7 +14523,7 @@ Use the [electricity paper and companion](../../01_Resources/41_Statistical_Clai
 
 ## Evaluate Public Reassurance and Household Agency
 
-Assess the HBS example of overstatement [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) using M8 §8.31.1 and the [public-communication guide](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md). The central question is when the label “statistically insignificant” supplies no substantive conclusion about harm.
+Assess the unsupported categorical HBS reassurance [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) using M8 §8.31.1 and the [public-communication guide](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md). The central question is when the label “statistically insignificant” supplies no substantive conclusion about harm.
 
 1. Record the exact reassurance, speaker, date, population, and period. Locate the future-price qualification and explain whether it resolves the historical claim.
 2. Reconstruct Table 4's four-developer interval with `data_center_claims.py`. State its units and explain why a positive estimate with this uncertainty supports neither categorical harmlessness nor proof of harm. Use the direct equality test to assess the developer contrast.
@@ -14553,7 +14576,7 @@ A household is deciding whether public reassurance about data centers and electr
 4. Derive the scalar folded-normal critical region. Compare its rejection condition with TOST and check its probability at both boundary values. Explain the scope of the result for the six displayed margins.
 5. Defend a meaningful price margin from a household's perspective. Identify the consumption, fixed-charge, income, distributional, and horizon information needed to translate a utility-average price effect into a burden.
 6. Select one full-design method from the reading guide. Specify its missing inputs and explain how canceled-project exposure could affect the target or donor comparison. Do not substitute an assumed SE multiplier for those inputs.
-7. Write a supported criticism of the HBS reassurance. State the unresolved price increase, the scope of the outcome, and a proportionate action. Identify evidence that would warrant revising that criticism.
+7. State a definite judgment about the categorical HBS reassurance and support it with the reported estimate and unresolved margins. Separately identify the paper's unsupported affordability interpretation, residual attribution, and significance convention. Defend a correction through a normative premise about reasons owed to residents. Distinguish this demonstrated communication failure from an allegation about intention or a realized household loss.
 
 ---
 
@@ -14755,7 +14778,7 @@ The synthetic incidence example preserves total revenue and use while changing w
 
 ## Communication and Potential Harm
 
-The HBS article provides an example of overstatement: its categorical developer claim exceeds the uncertain Table 4 estimates [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple). Its future-price qualification leaves the historical inference unresolved. Statistical insignificance alone supplies no substantive conclusion about harmlessness; the [communication exercise](../../07_Labs/Statistical_Inference/README.md#evaluate-public-reassurance-and-household-agency) requires an estimate, uncertainty, a justified harm threshold, and the missing premise. This is academic coverage. Company circulation on X has not been verified: public web searches did not produce a confirmed company post, and direct X search required a login on November 26, 2026. Absence of a verified post is an access and evidence limit, not proof that no such post exists.
+The HBS categorical no-increase claim is statistically unsupported and misleading: it presents an unresolved developer effect as an absence of a consumer cost increase [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple). The claim warrants correction. Its future-price qualification leaves the historical inference unresolved. Statistical insignificance alone supplies no substantive conclusion about harmlessness; the [communication exercise](../../07_Labs/Statistical_Inference/README.md#evaluate-public-reassurance-and-household-agency) requires an estimate, uncertainty, a justified harm threshold, and the missing premise. This is academic coverage. Company circulation on X has not been verified: public web searches did not produce a confirmed company post, and direct X search required a login on November 26, 2026. Absence of a verified post is an access and evidence limit, not proof that no such post exists.
 
 Overstated reassurance could weaken scrutiny of cost allocation, guarantees, and review, leaving households exposed to risks that the study has not ruled out. Demonstrating that this paper caused an approval, a weakened safeguard, or a household loss requires additional evidence. A rigorous classroom criticism identifies the unsupported inference and its possible decision consequences without inventing intention, corporate dissemination, or observed harm.
 
@@ -15120,13 +15143,22 @@ A successful argument identifies a consequential omission and supports it. A lis
 
 A research finding can influence policy through the public interpretation attached to it. The relevant decision is whether the evidence justifies publishing that interpretation and using it to allocate burdens or close a dispute. [M9 §§9.28–9.32](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) develops the philosophical argument; [M8 §8.31](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) examines research as public reassurance.
 
-## HBS Coverage as an Example of Overstatement
+## HBS Reassurance and the Obligation to Correct It
 
-The HBS Working Knowledge article gives an example of overstatement when it attributes no consumer electricity-cost increase to the four large developers [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple). Its future-price qualification leaves the historical inference unresolved. The defect can be established by comparing that inference with the paper's own reported uncertainty.
+The categorical no-increase claim in [HBS Working Knowledge](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) is statistically unsupported and misleading (Kost, 2026). M8 §8.31 preserves two short excerpts and their context. A warning about future prices cannot establish the historical absence asserted for the developer subgroup.
 
-Table 4's preferred residential specification reports a four-developer coefficient of 0.158 with clustered standard error 0.160. It uses 627 observations from 41 treated utilities. The coefficient measures dollars per MWh of average residential electricity price per percentage point of cumulative capacity relative to utility peak demand. A normal-approximation 95% interval is approximately [-0.156, 0.472] in those units. The direct developer-equality test has p=0.101 [(Rana et al., 2026, Table 4)](RanaKapsNetessine_WorkingPaper2026.pdf). The [complete calculation](../../03_Data_and_Code/Statistical_Inference/data_center_claims.py) and [M6 §6.33](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) preserve the estimand and units.
+The inference fails on the paper's own numbers. Table 4, column 4 uses 627 observations from 41 treated utilities and reports a coefficient of 0.158 with clustered SE 0.160. The units are USD/MWh of average residential price per percentage point of capacity exposure. Under the fixed Gaussian approximation, the 95% interval is [-0.156, 0.472] and the one-sided 95% upper bound is 0.421. The [retained price comparisons](../../03_Data_and_Code/Modern_Power/README.md) fail to exclude the illustrative positive margins. None establishes a categorical absence of a price effect.
 
-For the question of whether harm is absent or negligible, statistical insignificance alone has no determinate substantive interpretation. The same label can accompany very different intervals and economically consequential alternatives. A small-effect conclusion requires a justified margin and evidence excluding larger effects under an adequate design. Different subgroup significance levels do not establish a group difference. The evidence also leaves the opposite categorical claim, that these developers necessarily caused harm, unsupported.
+| Claim or Reporting Choice | Evidence | Demonstrated Defect |
+| --- | --- | --- |
+| Categorical absence for the four-developer group in public coverage | Positive estimate and substantial uncertainty in Table 4 | A zero-null nonrejection is presented as an absence of an increase |
+| Affordability reassurance in the paper's abstract | Average price outcome and a reference effect equal to 4% of observed price growth | The ratio supplies neither a household-harm tolerance nor household incidence |
+| Page 3 attribution of 96% of the rise to inflation, fuel, and grid costs | Subtraction of the estimated data-center share | An arithmetic residual does not identify the named causes |
+| Developer contrast described as marginally significant on p. 26 | Direct Wald p=0.101; table convention p<0.10 | The reported test does not meet the displayed significance convention |
+
+The [unchanged paper](RanaKapsNetessine_WorkingPaper2026.pdf) contains positive overall findings and uses cautious detection language for the subgroup in some passages (Rana et al., 2026). The criticism identifies the stronger interpretations and the public categorical claim. It does not attribute every phrase in the article to the paper's authors.
+
+M9 §9.83 defends a normative conclusion: an institution ought to correct a consequential assurance whose evidentiary premise fails. The critic does not have to establish a realized loss before identifying that failure. The case establishes errors in interpretation and a reasoned objection to issuing the assurance. It establishes no finding of deliberate deception, coordinated corporate dissemination, or a specific injury caused by the article.
 
 ## Compare Public Interpretations
 

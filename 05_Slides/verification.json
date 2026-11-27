@@ -1994,5 +1994,64 @@
     "matching_python_listings": 135,
     "referenced_tikz_figures": 160,
     "execution_scope": "Six reported-price margin comparisons and three imposed scalar bias scenarios; no full-panel replication."
+  },
+  "hbs_reassurance_revision": {
+    "verified_on": "2026-11-27",
+    "record": "01_Resources/41_Statistical_Claims_and_Decisions/HBS_REVIEW.md",
+    "artifacts": {
+      "06_Lecture_Notes/Marketing_Analytics_Lecture_Notes.pdf": {
+        "pages": 679,
+        "sha256": "c815c28beb85c38bdb26163a09f6e21bca967de3fbbfb2056870f187554d552c"
+      },
+      "06_Lecture_Notes/Marketing_Dialectics.pdf": {
+        "pages": 142,
+        "sha256": "0547b61e823aaf9d67f07dbff63e318af312a9e6ef10b8ac8d459755c30b226e"
+      },
+      "05_Slides/S14_Generative_AI_Consumer_Choice_and_Regulation.pdf": {
+        "pages": 130,
+        "sha256": "cffe9e03a34806874a5dc2c3ab15bd6650ad566a7c013b63209e5e6c00411be5"
+      },
+      "05_Slides/Marketing_Analytics_Lectures.pdf": {
+        "pages": 575,
+        "sha256": "8f60867a9ba019db5e1bb43c9f812b8432bad11d250d978e9a04bc8e8c4234e1"
+      }
+    },
+    "visual_review": {
+      "full_notes_pages": [
+        10,
+        13,
+        379,
+        380,
+        381,
+        382,
+        534,
+        535,
+        536,
+        678,
+        679
+      ],
+      "dialectics_pages": [
+        141,
+        142
+      ],
+      "session14_slides": [
+        53,
+        54,
+        55,
+        60,
+        61,
+        62,
+        68,
+        69,
+        70,
+        127,
+        128,
+        129,
+        130
+      ]
+    },
+    "matching_python_listings": 135,
+    "numerical_calculations": "Inputs, programs, and saved numerical results unchanged; new review concerns interpretation and communication.",
+    "compilation": "All affected PDFs built; no overfull boxes or error messages."
   }
 }

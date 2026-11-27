@@ -2,13 +2,22 @@
 
 A research finding can influence policy through the public interpretation attached to it. The relevant decision is whether the evidence justifies publishing that interpretation and using it to allocate burdens or close a dispute. [M9 §§9.28–9.32](../../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md) develops the philosophical argument; [M8 §8.31](../../06_Lecture_Notes/modules/M08_Current_Topics_and_Integrated_Decisions.md) examines research as public reassurance.
 
-## HBS Coverage as an Example of Overstatement
+## HBS Reassurance and the Obligation to Correct It
 
-The HBS Working Knowledge article gives an example of overstatement when it attributes no consumer electricity-cost increase to the four large developers [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple). Its future-price qualification leaves the historical inference unresolved. The defect can be established by comparing that inference with the paper's own reported uncertainty.
+The categorical no-increase claim in [HBS Working Knowledge](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) is statistically unsupported and misleading (Kost, 2026). M8 §8.31 preserves two short excerpts and their context. A warning about future prices cannot establish the historical absence asserted for the developer subgroup.
 
-Table 4's preferred residential specification reports a four-developer coefficient of 0.158 with clustered standard error 0.160. It uses 627 observations from 41 treated utilities. The coefficient measures dollars per MWh of average residential electricity price per percentage point of cumulative capacity relative to utility peak demand. A normal-approximation 95% interval is approximately [-0.156, 0.472] in those units. The direct developer-equality test has p=0.101 [(Rana et al., 2026, Table 4)](RanaKapsNetessine_WorkingPaper2026.pdf). The [complete calculation](../../03_Data_and_Code/Statistical_Inference/data_center_claims.py) and [M6 §6.33](../../06_Lecture_Notes/modules/M06_Causal_Inference_and_Experiments.md) preserve the estimand and units.
+The inference fails on the paper's own numbers. Table 4, column 4 uses 627 observations from 41 treated utilities and reports a coefficient of 0.158 with clustered SE 0.160. The units are USD/MWh of average residential price per percentage point of capacity exposure. Under the fixed Gaussian approximation, the 95% interval is [-0.156, 0.472] and the one-sided 95% upper bound is 0.421. The [retained price comparisons](../../03_Data_and_Code/Modern_Power/README.md) fail to exclude the illustrative positive margins. None establishes a categorical absence of a price effect.
 
-For the question of whether harm is absent or negligible, statistical insignificance alone has no determinate substantive interpretation. The same label can accompany very different intervals and economically consequential alternatives. A small-effect conclusion requires a justified margin and evidence excluding larger effects under an adequate design. Different subgroup significance levels do not establish a group difference. The evidence also leaves the opposite categorical claim, that these developers necessarily caused harm, unsupported.
+| Claim or Reporting Choice | Evidence | Demonstrated Defect |
+| --- | --- | --- |
+| Categorical absence for the four-developer group in public coverage | Positive estimate and substantial uncertainty in Table 4 | A zero-null nonrejection is presented as an absence of an increase |
+| Affordability reassurance in the paper's abstract | Average price outcome and a reference effect equal to 4% of observed price growth | The ratio supplies neither a household-harm tolerance nor household incidence |
+| Page 3 attribution of 96% of the rise to inflation, fuel, and grid costs | Subtraction of the estimated data-center share | An arithmetic residual does not identify the named causes |
+| Developer contrast described as marginally significant on p. 26 | Direct Wald p=0.101; table convention p<0.10 | The reported test does not meet the displayed significance convention |
+
+The [unchanged paper](RanaKapsNetessine_WorkingPaper2026.pdf) contains positive overall findings and uses cautious detection language for the subgroup in some passages (Rana et al., 2026). The criticism identifies the stronger interpretations and the public categorical claim. It does not attribute every phrase in the article to the paper's authors.
+
+M9 §9.83 defends a normative conclusion: an institution ought to correct a consequential assurance whose evidentiary premise fails. The critic does not have to establish a realized loss before identifying that failure. The case establishes errors in interpretation and a reasoned objection to issuing the assurance. It establishes no finding of deliberate deception, coordinated corporate dissemination, or a specific injury caused by the article.
 
 ## Compare Public Interpretations
 

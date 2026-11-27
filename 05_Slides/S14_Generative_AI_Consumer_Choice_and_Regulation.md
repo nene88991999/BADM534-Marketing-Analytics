@@ -676,13 +676,13 @@ Two one-sided tests at 5% require the 90% t interval within both bounds. A six-s
 
 Source: M9 §§9.25–9.26. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 54: HBS Coverage: An Example of Overstatement
+## Slide 54: The HBS No-Increase Claim is Misleading
 
-- HBS attributes no consumer price increase to four large developers (Kost, 2026).
-- Table 4 reports a positive, imprecise estimate (Rana et al., 2026).
-- Statistical insignificance alone supplies no conclusion of harmlessness.
+- The categorical claim removes uncertainty that Table 4 leaves unresolved.
+- An insignificant coefficient does not establish an absence of a price increase.
+- The claim warrants correction; a future-price caveat does not justify it.
 
-The preferred residential specification uses 627 observations from 41 treated utilities. The four-developer slope is 0.158 with clustered standard error 0.160, in dollars per MWh per percentage point of cumulative data-center capacity relative to utility peak demand. Its normal-approximation 95% interval is [-0.156, 0.472]. The direct developer-equality test has p=0.101. A small-harm claim needs a justified threshold, an appropriate uncertainty bound, and a defensible design. The future-price qualification in the HBS article does not repair its categorical historical inference. Nonrejection also leaves proof of harm unsupported. TheEnergyMag preserves the distinction between nonrejection and absence (Zhao, 2026).
+The public categorical claim is documented in M8 §8.31 (Kost, 2026). The underlying residential specification uses 627 observations from 41 treated utilities. The four-developer slope is 0.158 with clustered SE 0.160 in USD/MWh per capacity-exposure percentage point. Its fixed-normal 95% interval is [-0.156, 0.472] and its one-sided upper bound is 0.421 (Rana et al., 2026, Table 4). The inference from nonrejection to absence is invalid. Correcting the claim does not require first proving a household loss. The article also reports positive overall effects; the target is its categorical subgroup reassurance. M8 §8.31.1 and M9 §9.83.
 
 Source: (Kost, 2026): https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple ; (Rana et al., 2026, Table 4); (Zhao, 2026): https://www.theenergymag.com/news/market-news/data-center-add-little-home-power-cost-study ; M8 §8.31.1 and M9 §9.26. ../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md
 
@@ -752,13 +752,13 @@ Use the exact source passage. A construction can demonstrate that an inference f
 
 Source: M9 §9.40. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
-## Slide 61: Write the Missing Premise
+## Slide 61: The Paper Also Exceeds Its Own Evidence
 
-- Nonrejection becomes harmlessness only by adding an unsupported sensitivity claim.
-- An owner-list complement becomes a business model only with classification evidence.
-- An arithmetic residual becomes a causal account only with identification.
+- Four percent of historical price growth is no affordability threshold.
+- The remaining 96% does not identify inflation, fuel, or grid costs.
+- The reported developer-difference p=0.101 exceeds the stated 10% cutoff.
 
-Reconstruct each claim from its exact source. Table 4 and HBS coverage supply the reassurance example; Section 4.1 defines the owner groups; page 3 attributes the residual growth to named causes. Grant correct calculations before challenging their interpretation. A counterexample must preserve the stated premises. A reporting inconsistency, an unsupported extension, and a contradiction are different findings.
+The paper itself connects average price findings to affordability in the abstract, assigns the residual price rise to named causes on page 3, and labels the direct Wald comparison marginally significant on page 26 (Rana et al., 2026). A subtraction does not estimate the contributions of those causes. A share of total historical price growth does not specify a household's acceptable burden. The reported direct test does not meet the table's p<0.10 convention. These are specific defects in interpretation and reporting. The paper's positive overall results and more qualified detection wording remain part of the record. M8 §§8.31–8.31.1.
 
 Source: M9 §9.27. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md
 
@@ -838,13 +838,13 @@ Descriptive, instrumental, and normative uses of stakeholder theory require diff
 
 Source: M9 §§9.30–9.32; selected readings on reasons and stakeholder obligations. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
-## Slide 69: Whose Voice Can Challenge a Prestigious Claim?
+## Slide 69: Residents Ought Not Have to Disprove Unsupported Reassurance
 
-- What justification does a university owe residents before reassuring them?
-- Trace the HBS claim to its estimate, uncertainty, and missing premise.
-- State what the institution ought to disclose and why residents could accept it.
+- The institution must substantiate the assurance it publishes.
+- An exposed household can reasonably reject unsupported certainty.
+- Correct the claim, disclose the unresolved burden, and justify the response.
 
-Use the verified HBS article (Kost, 2026) and the bounds in M8 §8.31.1. Ask for the strongest reasonable objection to a rule that treats an insignificant estimate as sufficient reassurance about household burdens. A household has a reason to request the measured outcome, unresolved cost range, and conditions for correction. Compare that objection with the institution’s reasons for timely communication and open inquiry. Institutional prestige supplies no missing premise. A prejudice-based credibility deficit requires evidence beyond unequal credentials (Fricker, 2007); institutions that assess testimony also require scrutiny (Anderson, 2012). Verify actual use in a proceeding before alleging that the article silenced objections.
+The duty to substantiate a public claim belongs to the party making it. Requiring residents to prove a final causal loss before they can challenge an unsupported assurance reverses that burden. A Scanlonian argument compares the reasons for permitting the assurance with a feasible principle requiring an accurate, bounded statement (Scanlon, 1998, chapter 5). The conclusion concerns a communication whose premise fails; proof of actual reliance or injury is a separate question. A records request, prospective monitoring, and a final penalty impose different burdens and need distinct justification. M9 §9.83.
 
 Source: (Kost, 2026): https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple ; M9 §§9.30–9.32. ../01_Resources/15_Marketing_Dialectics/07_Stakeholders_and_Reasons/README.md
 
@@ -1488,7 +1488,7 @@ Effectiveness at inducing activity leaves the worth of the activity open (Knight
 
 Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.md
 
-## Slide 128: Developer Reassurance Exceeds the Reported Evidence
+## Slide 128: The Reported Numbers Fail to Support the Assurance
 
 | Margin | Power vs. Zero | Margin p | Folded p |
 | --- | --- | --- | --- |
@@ -1498,17 +1498,17 @@ Source: ../01_Resources/50_Chicago_Price_Theory_and_Moral_Justification/README.m
 
 Units: USD/MWh per exposure point. One-sided 95% upper bound: 0.421.
 
-The HBS coverage makes a categorical statement about four named developers (Kost, 2026). The underlying four-owner estimate is 0.158 with utility-clustered SE 0.160 (Rana et al., 2026, Table 4, column 4, p. 26). Under a fixed Gaussian approximation, the one-sided margin test, TOST, and scalar folded-normal test leave the displayed illustrative price margins unexcluded at 5%. TOST p-values match the displayed margin p-values. This outcome is average residential revenue per MWh, with no direct household-bill measurement. The paper also has positive findings; the criticism concerns this extension of a nonrejection. No overall reference-exposure ratio is applied to the subgroup. M9 §9.83 and M6 §6.49.
+All three illustrative positive margins remain unresolved under the one-sided margin test, TOST, and scalar folded-normal procedure at 5%. TOST p-values match the margin p-values. The fixed Gaussian approximation uses a four-owner estimate of 0.158 and utility-clustered SE 0.160 (Rana et al., 2026, Table 4). The HBS categorical cost denial is therefore statistically unjustified (Kost, 2026). The broader failure is the inference from a zero-null nonrejection to an absence of an increase; selecting a numerical margin does not determine that logical point. The outcome is average residential revenue per MWh. No overall reference-exposure ratio is applied to the subgroup. M6 §6.49 and M8 §8.31.1.
 
 Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple
 
-## Slide 129: What is Owed to People Facing Unresolved Costs?
+## Slide 129: Unsupported Assurance is a Failure of Research Responsibility
 
-- State the burden the evidence actually excludes.
-- Explain whose costs remain outside the outcome and time horizon.
-- Defend a proportionate response to the remaining uncertainty.
+- A consequential assurance requires reasons addressing those exposed.
+- A supported, bounded statement is a feasible alternative.
+- The demonstrated interpretive errors already warrant correction.
 
-Residents have reasons to reject a public rule that converts an insensitive test into reassurance while leaving their exposure unresolved. A request for billing records, prospective monitoring, or a reversible protection can have a different evidentiary burden from a final finding of wrongdoing. Reasonable justification considers the burdens of both mistaken intervention and tolerated harm (Scanlon, 1998, 2009). Neither a p-value nor a philosophical principle chooses the numerical margin by itself. The conclusion concerns the specified price comparisons; a valid small-effect result would still require an argument connecting its estimand to household welfare. M9 §9.83.
+Under the defended principle, issuing categorical reassurance without the required evidence is ethically objectionable. The public claim can affect whether residents' concerns receive scrutiny, although any actual policy reliance must be documented. Respect for persons requires preserving their capacity to assess the reasons offered (Kant, 1785, second section). Reasonable justification compares the burdens of the proposed communication with a feasible, accurate alternative (Scanlon, 1998, chapter 5). No finding of deliberate deception is needed to establish the inferential defect or the duty to correct it. M9 §9.83.
 
 Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md
 

@@ -291,3 +291,7 @@ M4 §4.32 and M9 §§9.76–9.82 use the [13-source guide](../01_Resources/50_Ch
 ## Modern Power and Harm Bounds
 
 The [2018–2026 collection](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) supports M6 §§6.47–6.51 and M9 §9.83. Panel power and staggered timing clarify design inputs; pre-trend equivalence and sensitivity clarify identification; cluster and synthetic-control inference clarify uncertainty. The [Python example](../03_Data_and_Code/Modern_Power/README.md) implements scalar price comparisons and imposed bias bounds with published estimates. One editable TikZ diagram distinguishes the two null hypotheses. Sessions 9 and 14 select these examples within existing discussion time.
+
+## Categorical Reassurance and Research Responsibility
+
+M6 §6.49, M8 §§8.31–8.31.1, and M9 §9.83 identify the HBS no-increase assertion as statistically unsupported and misleading. The critique separately addresses the paper's affordability interpretation, residual attribution, and direct-test significance convention. The [claim guide](../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md) connects the documented errors to a reasoned obligation to correct them.

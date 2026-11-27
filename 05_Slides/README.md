@@ -218,3 +218,7 @@ Sessions 5 and 14 select the budget comparison, argument diagram, compensation e
 ## Modern Power and Household Reassurance
 
 Session 9 adds the null-region diagram, six-price-comparison interpretation, and the inputs required by newer full-design methods. Session 14 connects the four-owner price margins to public reassurance and reasons owed to households. The [source guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md), [Python](../03_Data_and_Code/Modern_Power/README.md), and [optional practice](../07_Labs/Statistical_Inference/README.md#modern-power-and-harm-bounds) accompany M6 §§6.47–6.51 and M9 §9.83. These six added slides are selected within existing discussion blocks.
+
+## Unsupported Reassurance and Correction
+
+Session 14 identifies the HBS categorical no-increase claim as misleading, separates the paper's own interpretive errors, and defends an obligation to correct unsupported reassurance. The existing price tables and meeting allocation are retained. M8 §§8.31–8.31.1 and M9 §9.83 develop the statistical and philosophical arguments.

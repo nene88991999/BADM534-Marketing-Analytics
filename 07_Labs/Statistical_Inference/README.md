@@ -49,7 +49,7 @@ Use the [electricity paper and companion](../../01_Resources/41_Statistical_Clai
 
 ## Evaluate Public Reassurance and Household Agency
 
-Assess the HBS example of overstatement [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) using M8 §8.31.1 and the [public-communication guide](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md). The central question is when the label “statistically insignificant” supplies no substantive conclusion about harm.
+Assess the unsupported categorical HBS reassurance [(Kost, 2026)](https://www.library.hbs.edu/working-knowledge/blaming-data-centers-for-higher-electric-bills-its-not-that-simple) using M8 §8.31.1 and the [public-communication guide](../../01_Resources/41_Statistical_Claims_and_Decisions/PUBLIC_COMMUNICATION_AND_PUBLICATION.md). The central question is when the label “statistically insignificant” supplies no substantive conclusion about harm.
 
 1. Record the exact reassurance, speaker, date, population, and period. Locate the future-price qualification and explain whether it resolves the historical claim.
 2. Reconstruct Table 4's four-developer interval with `data_center_claims.py`. State its units and explain why a positive estimate with this uncertainty supports neither categorical harmlessness nor proof of harm. Use the direct equality test to assess the developer contrast.
@@ -102,4 +102,4 @@ A household is deciding whether public reassurance about data centers and electr
 4. Derive the scalar folded-normal critical region. Compare its rejection condition with TOST and check its probability at both boundary values. Explain the scope of the result for the six displayed margins.
 5. Defend a meaningful price margin from a household's perspective. Identify the consumption, fixed-charge, income, distributional, and horizon information needed to translate a utility-average price effect into a burden.
 6. Select one full-design method from the reading guide. Specify its missing inputs and explain how canceled-project exposure could affect the target or donor comparison. Do not substitute an assumed SE multiplier for those inputs.
-7. Write a supported criticism of the HBS reassurance. State the unresolved price increase, the scope of the outcome, and a proportionate action. Identify evidence that would warrant revising that criticism.
+7. State a definite judgment about the categorical HBS reassurance and support it with the reported estimate and unresolved margins. Separately identify the paper's unsupported affordability interpretation, residual attribution, and significance convention. Defend a correction through a normative premise about reasons owed to residents. Distinguish this demonstrated communication failure from an allegation about intention or a realized household loss.

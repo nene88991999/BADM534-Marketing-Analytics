@@ -453,3 +453,7 @@ Session 5 can use its final 15-minute discussion for the budget comparison in M9
 ## Modern Power and Harm Bounds
 
 Session 9 selects the null-region diagram and residential price comparison within the existing 155–170 discussion, with full code assigned only as optional practice. Session 14 selects the four-owner price comparison and the reasons owed to households within its existing 75-minute ethics block. The [modern-method guide](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md) distinguishes executed scalar calculations from design-dependent procedures requiring the utility panel. These selections preserve the 15 dated meetings and their 170-minute allocations.
+
+## Research Responsibility in the Existing Ethics Discussion
+
+Session 14's existing research-communication case connects the categorical reassurance, the paper's own interpretive errors, and the obligation to correct them. Select the claim-and-evidence comparison within the existing ethics block. The 130-slide case library and 170-minute meeting retain their existing scope.

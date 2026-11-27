@@ -3016,7 +3016,7 @@ The four-owner result supplies a more direct assessment of the categorical devel
 | 0.20 | 24.0% | 0.396 | 0.384 |
 | 0.30 | 46.6% | 0.187 | 0.185 |
 
-TOST gives the same displayed p-values as the one-sided margin test for these positive estimates. The nonsignificant zero-effect test therefore provides no basis for claiming that these developers left residential prices unchanged. The estimates remain compatible with positive price effects at every displayed margin. They also leave the actual effect uncertain. Increasing precision while holding a positive point estimate fixed cannot turn that estimate into evidence of an exactly zero effect; it can change which positive margins are excluded.
+TOST gives the same displayed p-values as the one-sided margin test for these positive estimates. The HBS categorical no-increase claim is statistically unjustified: nonrejection of zero does not establish the absence of a price increase, and every displayed positive margin remains unresolved. This is a substantive error in communicating the result. The duty to correct it follows from the unsupported assertion itself, without requiring proof of realized household injury. Increasing precision while holding a positive point estimate fixed can change which positive margins are excluded; the present comparisons justify no claim of an exactly zero effect. Sections 8.31–8.31.1 connect this error to the paper's own affordability and residual-attribution interpretations.
 
 
 ## 6.50 Bias, Missing Outcomes, and the Scope of Reassurance
