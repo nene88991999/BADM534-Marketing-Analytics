@@ -16,6 +16,7 @@ Session 02. M2. 170 minutes.
 - Distinguish an interest, its measure, and the standard for action.
 - Distinguish events, records, dataset versions, and copies; assess the meaning of an administrative outcome.
 - Distinguish reproducible arithmetic from reliable records and preserve evidence needed for independent challenge.
+- Preserve source records and explain a superseding correction.
 
 ## Related Materials
 
@@ -32,6 +33,8 @@ Session 02. M2. 170 minutes.
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 - [Artifact and NDA practice](../07_Labs/Data_Truth_and_Norms/README.md)
 - [Research-integrity code and data](../03_Data_and_Code/Research_Integrity/README.md)
+- [Evidence, Claims, and Decisions](../03_Data_and_Code/Evidence_Governance/README.md)
+- [Evidence and Correction: Optional Practice](../07_Labs/Evidence_Governance/README.md)
 
 ## Slide 1: Customer Data and Measurement
 
@@ -418,7 +421,17 @@ The candidate rule requires all four Cambria minus Calibri offsets to be between
 
 Source: M2 §2.35; M9 §9.84. ../03_Data_and_Code/Research_Integrity/README.md
 
-## Slide 35: Measurement Discussion
+## Slide 35: Preserve the Record and the Correction
+
+- Keep source, calculation, claim, and decision records separate.
+- A correction identifies the earlier decision and the reason for change.
+- A checksum identifies bytes; the claim still needs support.
+
+The original program creates a fictional decision, rejects an overwrite through exclusive file creation, and retains a superseding decision. This demonstrates preservation within that function. Deployment permissions are needed to prevent other writers from bypassing it. An accepted decision is an institutional artifact whose existence does not establish the truth of its contents.
+
+Source: M2, Section 2.36. ../06_Lecture_Notes/modules/M02_Customer_Data_and_Visualization.md; M9, Section 9.85, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md; original teaching example: ../03_Data_and_Code/Evidence_Governance/README.md
+
+## Slide 36: Measurement Discussion
 
 - Could recorded activity rise because low-activity users disappear?
 - Would deleting unmatched days change the target population?

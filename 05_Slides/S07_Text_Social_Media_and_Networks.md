@@ -18,6 +18,7 @@ Session 07. M5. 170 minutes.
 - Use contextual coding, negative cases, and source comparison to assess utility cost-recovery claims.
 - Use credible qualitative mechanisms to justify proportionate inquiry.
 - Distinguish engagement evidence, user endorsement, unwanted continuation, and documented research use.
+- Distinguish a preserved call passage, its coding, and a claim about household costs.
 
 ## Related Materials
 
@@ -40,6 +41,8 @@ Session 07. M5. 170 minutes.
 - [Representation Alignment: Optional Practice](../07_Labs/Representation_Alignment/README.md)
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
 - [Marketing Research and Online Engagement](../01_Resources/49_Online_Engagement_and_Agency/README.md)
+- [Evidence, Claims, and Decisions](../03_Data_and_Code/Evidence_Governance/README.md)
+- [Evidence and Correction: Optional Practice](../07_Labs/Evidence_Governance/README.md)
 
 ## Slide 1: Text, Social Media, and Networks
 
@@ -591,7 +594,17 @@ Most selected utility-call material concerns 2026, after the study’s 2020–20
 
 Source: ../01_Resources/47_Evidence_Standards_and_Error_Costs/README.md
 
-## Slide 49: Text-Analysis Discussion
+## Slide 49: From a Call Excerpt to a Cost Claim
+
+- Preserve the speaker, date, exact passage, and surrounding conditions.
+- Separate the passage, its code, and the substantive inference.
+- A financing mechanism needs a further link to realized household costs.
+
+Use one of the boxed utility-call excerpts in M5 Section 5.27. Identify whether the passage concerns a rate base, regulatory approval, or a customer-specific tariff. Retain counterevidence and coding disagreements. Later disclosures can motivate scrutiny of a cost mechanism while leaving the earlier panel treatment effect unresolved. A valid source identifier does not decide what the passage entails.
+
+Source: M5, Sections 5.27 and 5.30. ../06_Lecture_Notes/modules/M05_Text_Social_and_Network_Analysis.md; M9, Section 9.85, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md; original teaching example: ../03_Data_and_Code/Evidence_Governance/README.md
+
+## Slide 50: Text-Analysis Discussion
 
 - Which label disagreement would change the service decision?
 - How does the expected queue change when prevalence falls?

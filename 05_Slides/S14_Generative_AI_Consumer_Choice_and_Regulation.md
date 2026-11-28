@@ -34,6 +34,7 @@ Session 14. M8, M9. 170 minutes.
 - Evaluate marketing mechanisms and documented engagement practices through user purposes, evidence scope, and reasonable alternatives.
 - Distinguish price-theory predictions, monetary welfare comparisons, and moral justification of the terms of choice.
 - Evaluate data governance through corporate standing, responsibility, maxims, and the conditions for independent correction.
+- Distinguish institutional authority from evidential warrant and assess an affected person’s objection.
 
 ## Related Materials
 
@@ -84,6 +85,8 @@ Session 14. M8, M9. 170 minutes.
 - [Modern Power and Harm Bounds](../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md)
 - [Corporate standing and Kilts policies](../01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/README.md)
 - [Replication case and source statuses](../01_Resources/52_Research_Integrity_and_Replication/README.md)
+- [Evidence, Claims, and Decisions](../03_Data_and_Code/Evidence_Governance/README.md)
+- [Evidence and Correction: Optional Practice](../07_Labs/Evidence_Governance/README.md)
 
 ## Slide 1: Generative AI, Consumer Choice, and Regulation
 
@@ -1633,7 +1636,43 @@ Under the defended principle, issuing categorical reassurance without the requir
 
 Source: ../01_Resources/51_Modern_Power_and_Harm_Bounds/README.md
 
-## Slide 141: A Decision with Consumer Outcomes
+## Slide 141: Authority and Evidential Warrant
+
+Internal approval leaves the affected person’s objection open.
+
+**Figure description:** Institutional authority and evidential warrant answer different questions. A fictional household objection leads to comparing a bounded statement and further inquiry with categorical reassurance.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M09_authority_and_warrant.tex)
+
+Authority determines who may publish; evidence determines what is supported. Compare a principle allowing categorical reassurance after approval with one requiring supported wording and a correction route. The affected household may lack the bargaining power or data access needed to challenge an authoritative statement. Evaluate individual reasons and feasible alternatives (Scanlon, 1998, chapter 5).
+
+Source: M9, Section 9.85, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md; original teaching example: ../03_Data_and_Code/Evidence_Governance/README.md
+
+## Slide 142: What the Price Table Supports
+
+| Reported-Table Reconstruction | Result |
+| --- | --- |
+| Estimated reference price change | 1.749 USD/MWh |
+| 95% interval | [−0.326, 3.825] USD/MWh |
+| Two-sided zero-null p-value | 0.0986 |
+
+Utility-average residential price; normal approximation using the reported clustered SE.
+
+The coefficient is 0.261 and clustered SE 0.158 in Table 2, column 4 (Rana et al., 2026). Both are multiplied by 100 times 456 divided by 6804 to reproduce the reference-exposure calculation. The source reports 627 utility-year observations and 41 treated utilities in 2020–2025. The source does not measure individual household bills. Nonrejection leaves positive price increases compatible with the interval. Fictional managerial approval adds no missing empirical premise.
+
+Source: M9, Section 9.85, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md; original teaching example: ../03_Data_and_Code/Evidence_Governance/README.md
+
+## Slide 143: A Reasonable Challenge and a Visible Correction
+
+- State the household’s strongest objection and the institution’s reply.
+- Compare categorical reassurance with a supported, bounded statement.
+- Preserve the earlier decision, its correction, and responsibility for follow-up.
+
+A feasible principle permits timely publication of the estimate while preserving its outcome and uncertainty. The desire for a stronger message does not answer the resident’s objection on these stipulated facts. Formulate a maxim through circumstance, action, and end. Respect for persons concerns their capacity to judge the reasons offered (Kant, 1785, 4:429). Retained records clarify responsibility across distributed work (Nissenbaum, 1996).
+
+Source: M9, Section 9.85, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md; original teaching example: ../03_Data_and_Code/Evidence_Governance/README.md
+
+## Slide 144: A Decision with Consumer Outcomes
 
 - State the decision, affected people, and evidence.
 - Defend what the actor ought to do, with a normative premise.

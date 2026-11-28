@@ -3412,3 +3412,20 @@ A customer-service model can rank complaints accurately while assigning an unsui
 With a calibrated probability of a specified service failure, compare the loss from unnecessary review with the loss from leaving that failure unaddressed. State the population, prevalence, action, time horizon, and conditional error rates. A cutoff chosen to reduce staffing expense can transfer costs to customers whose complaints are harder to classify. Evaluate errors by relevant groups and examine whether the available labels themselves omit harms. Calibration on recorded complaints provides limited reassurance about people whose complaints never enter the system.
 
 The synthetic comparison in M6 §6.44 holds predictive information fixed and changes the relative costs of errors. Its full Python separates a posterior probability from a significance-test p-value. Applying the logic to customer service requires credible calibration, a specified action, and evidence about its consequences. Philosophical assessment then asks whether the resulting burdens are reasonable from each affected position. A highly predictable response to dependence or vulnerability does not make exploiting that response a worthy objective.
+
+## 7.49 Record Checks and Unsupported Conclusions
+
+\noindent A team deciding whether an AI-assisted report is ready for publication needs an evaluation that can detect unsupported conclusions. A checker may require a source identifier and verify the reported number. Its successful execution is informative about those checks. The team must also assess whether the wording preserves the source's outcome, uncertainty, and scope.
+
+Consider eight authored claims about the reported electricity-price estimate reconstructed in M9 §9.85.2. Three claims have adequate traceable support and five fail the stated criterion. The first checker requires fields, finite values, and source identifiers that resolve. The second also checks the quantity, units, outcome, and numerical value against the table. Neither checker reads the reference judgments when accepting a claim.
+
+| Checker | Claims Evaluated | Accepted | Unsupported Claims Accepted | Supported Claims Rejected |
+| --- | --- | --- | --- | --- |
+| Record requirements | 8 | 7 | 4 | 0 |
+| Record, quantity, unit, outcome, and number requirements | 8 | 4 | 1 | 0 |
+
+The additional checks reject an incorrect number and two explicit household-assurance records whose outcome and conclusion depart from the table. The remaining failure is more revealing. Its metadata correctly identify the p-value and utility-price outcome, while its sentence declares that insignificance proves no household harm. Both checkers accept the record. The sentence introduces a conclusion absent from the metadata used by the checking rule.
+
+These cases are deliberately constructed to expose particular failures. Their counts describe the eight records and provide no estimate of an AI system's error frequency. Extending the checker to a new distinction requires both a representation of that distinction and a test that exercises it. Human review or a separate model-based assessment must itself be evaluated against explicit criteria and disagreements. A further approval step alone supplies no guarantee of sound interpretation.
+
+The complete standard-library program and six independent checks are linked in [Evidence, Claims, and Decisions](../../03_Data_and_Code/Evidence_Governance/README.md); §9.85.5 reproduces the program. The comparison holds the records and reference judgments fixed, changes the checking rules, and retains every case, including the semantic failure missed by the stronger checker.

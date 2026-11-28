@@ -2988,3 +2988,289 @@ The connection to the electricity and pricing cases is responsibility for warran
 (Shu et al., 2012), [Signing at the Beginning](https://doi.org/10.1073/pnas.1209746109), retracted; (PNAS, 2021), [retraction record](https://pubmed.ncbi.nlm.nih.gov/34518237/); (Kristal et al., 2020), [Signing at the Beginning Versus at the End Does Not Decrease Dishonesty](https://doi.org/10.1073/pnas.1911695117); (Simonsohn et al., 2021), [independent investigation](https://datacolada.org/98) and [public archive](https://researchbox.org/336); (Ariely, 2021), [response](https://datacolada.org/wp-content/uploads/DanBlogComment_Aug_16_2021_final.pdf); (Ariely, 2024), [investigation statement](https://danariely.com/wp-content/uploads/2024/04/ArielyEndofIStatment.pdf).
 
 (Journal of Marketing Research, 2024), [Expression of Concern](https://doi.org/10.1177/00222437241285882); (Hyndman and Bisin, 2026), [Replication of Procrastination, Deadlines, and Performance](https://doi.org/10.1177/09567976261460772); (Psychological Science, 2026), [retraction](https://doi.org/10.1177/09567976261488042); (Simonsohn et al., 2026a, 2026b), [Study 2 investigation](https://datacolada.org/138) and [Study 1 investigation](https://datacolada.org/139). Source versions, inspection scope, and correction status are recorded in the [replication reading guide](../../01_Resources/52_Research_Integrity_and_Replication/README.md).
+
+## 9.85 Authority, Evidence, and the Right to Challenge
+
+### 9.85.1 Who May Approve a Claim?
+
+\noindent An institution can authorize a public statement without adequately supporting its content. The distinction matters when an AI assistant prepares a summary and a manager approves it. The approval establishes who accepted responsibility for publication. A resident whose electricity costs may change can still ask whether the underlying evidence answers the question about those costs. An internal approval procedure leaves that question open.
+
+A proposed repository protocol separates human-authorized statements, preserved observations, generated interpretations, and accepted decisions [(JustinTSmith, 2026)](https://github.com/JustinTSmith/Agent-Epistemic-Engine/tree/ae6ad9296c5a85b787978b121d76408197d5c3da). These distinctions help prevent an assistant's rewrite from silently replacing a source. The protocol also assigns higher trust ranks to human statements than to datasets and generated outputs. Such a ranking can express authority to set requirements, but it supplies no general epistemic rule for resolving disagreement about an empirical claim. A measured outcome may give a strong reason to reject a manager's assertion; the measurement itself remains subject to scrutiny of its construction and relevance.
+
+The distinction connects to the artifactual account of data. Organizational practices can establish the existence and status of a record, including whether it counts as an accepted decision. Those practices do not make its representation of household costs accurate. The dependence of an artifact on human practices and its ability to support a particular inference are separate questions (Thomasson, 2003; §9.60). Treating an accepted record as sufficient evidence confuses a fact about institutional status with a claim about the world.
+
+### 9.85.2 A Valid Record of an Unsupported Assurance
+
+\noindent Consider a fictional communications manager deciding whether to publish a categorical assurance that data centers cause no household harm. The empirical input is the reported utility-average residential-price regression for 2020–2025: coefficient 0.261, clustered standard error 0.158, 627 utility-year observations, and 41 treated utilities (Rana et al., 2026, Table 2, column 4). These are the paper's reported quantities. The eight claim records and managerial approvals below are constructed examples.
+
+To express the coefficient at the paper's reference exposure, multiply the estimate and standard error by the ratio-of-means scaling used in the course reconstruction:
+
+$$
+s=100\frac{456}{6804}=6.70194,\qquad
+\widehat{\Delta}=s(0.261)=1.7492,\qquad
+\operatorname{SE}(\widehat{\Delta})=s(0.158)=1.0589.
+$$
+
+Here $s$ translates the reported exposure coefficient to the reference comparison on pp. 23–24, and $\widehat{\Delta}$ is a change in utility-average residential price in dollars per megawatt-hour. This reference exposure uses reported means, with no reconstruction of individual treatment effects or household bills. Holding the published clustered standard error fixed and using a normal approximation gives a two-sided zero-null p-value of 0.0986, a 95% interval of [−0.3262, 3.8246], and a one-sided 95% upper bound of 3.4910 dollars per megawatt-hour. These are calculations from reported statistics; the original panel is not available in this example.
+
+At the 5% two-sided threshold, the zero null is not rejected. The interval retains positive price increases, and the measured outcome leaves household expenditure, usage, fixed charges, and the relevant incidence unresolved. An assurance of no household harm exceeds both the statistical result and the outcome represented. A valid source citation and an approving signature cannot supply either missing premise.
+
+| Claim Record | Record Check | Quantity and Outcome Check | Reference Judgment |
+| --- | --- | --- | --- |
+| Correct estimate and source | Accept | Accept | Supported |
+| Correct p-value and nonrejection statement | Accept | Accept | Supported |
+| Correct one-sided upper bound | Accept | Accept | Supported |
+| Explicit assurance of zero household harm | Accept | Reject | Unsupported |
+| Same assurance with fictional managerial approval | Accept | Reject | Unsupported |
+| Correct estimate with an unresolved source identifier | Reject | Reject | Unsupported as a traceable claim |
+| Zero substituted for the estimated increase | Accept | Reject | Unsupported |
+| Correct p-value metadata with prose asserting proof of no harm | Accept | Accept | Unsupported |
+
+The reference criterion assesses the complete assertion and its traceable support. A missing source is a failure of that criterion even when the number happens to be correct. The final case keeps the valid p-value metadata unchanged and replaces the prose with the sentence, “The insignificant result proves that households suffer no harm.” Both automated rules miss the contradiction because they do not evaluate what the sentence asserts. The case makes the remaining evidential judgment visible.
+
+### 9.85.3 Reasons Owed to an Affected Household
+
+\noindent A resident has reason to object to a principle that permits institutions to replace unresolved cost exposure with categorical reassurance whenever an internal reviewer approves the wording. The resident bears a potential financial burden and may have limited access to the data needed to challenge the statement. The institution gains convenience and a simpler message. A feasible alternative is to publish the bounded estimate, state the outcome it represents, investigate the household-cost mechanism, and provide a visible correction route. Contractualist assessment compares the reasons individuals have to reject these competing principles (Scanlon, 1998, chapter 5).
+
+The objection concerns the quality of the reasons offered to people whose interests are at stake. It does not require proof that every data center raises every household's bill. The institution's strongest reply may invoke the cost of collecting additional evidence or the public benefit of timely information. The alternative already permits timely communication of the supported finding. On these stipulated facts, the desire to publish a stronger assurance gives no adequate answer to the household's objection. A different evidential record or a materially different burden of verification would require reassessment.
+
+![Authority, Evidence, and an Affected Person's Objection](../figures/M09_authority_and_warrant.png)
+
+**Figure description.** Institutional authority answers who may approve publication. Evidential warrant answers what the source supports. An affected household can challenge the public claim across both dimensions. The comparison then turns to a feasible alternative: communicate the bounded estimate, investigate the bill mechanism, and correct unsupported reassurance. The resident's statement is a fictional formulation of the objection.
+
+A corresponding maxim specifies the circumstance, action, and end: “When evidence leaves household exposure unresolved, I will communicate its supported scope and preserve a route for challenge so that affected people can assess the reasons for the decision.” Its justification concerns the person's capacity to judge and pursue ends (Kant, 1785, 4:429; §9.65.8). An opposite maxim that substitutes institutional prestige for a missing evidential premise treats the audience's reliance as an instrument of persuasion. The empirical assessment must establish the particular misrepresentation before assigning that criticism to an actual institution.
+
+### 9.85.4 Correction and Responsibility
+
+\noindent Suppose the fictional manager has already approved the assurance. The correction should retain the earlier statement, identify the reason for withdrawing it, and name the supported replacement. It should also identify reports or decisions that relied on the earlier assertion. Preserving history allows responsibility to be examined across the person who generated the wording, the person who approved it, and those who continued using it after the defect became known. Distributed work can obscure accountability unless these roles and dependencies remain visible (Nissenbaum, 1996; §9.65.7).
+
+The program creates a first decision, rejects an attempt to overwrite it through the same function, and appends a second decision with a `supersedes` reference. The earlier bytes remain intact. This is a demonstration of preservation through a particular function; preventing modification by every writer also requires enforced permissions. A repository protocol is effective only to the extent that its implementation and deployment enforce the relevant rules.
+
+The upstream validator checks selected record requirements, source formats, references, and changes to protected material. Its documented trust ranks are not used to establish support for substantive claims in the inspected implementation. Its fixture tests assess specified validation failures, with no empirical demonstration that the procedure prevents false conclusions [(JustinTSmith, 2026)](https://github.com/JustinTSmith/Agent-Epistemic-Engine/blob/ae6ad9296c5a85b787978b121d76408197d5c3da/scripts/validate.py). The original course example isolates the same distinction: stronger record checks improve the eight-case comparison while leaving the prose/metadata contradiction accepted.
+
+### 9.85.5 Reproducible Claim and Decision Assessment
+
+\noindent Run the following program from its saved location in `03_Data_and_Code/Evidence_Governance`. It loads the single `residential_reference` row from the existing reported-table CSV, independently reconstructs the normal-approximation quantities, evaluates eight authored claims under two rules, and writes claim-level results and a fictional decision history. The comparison holds the claims and reference judgments fixed. Those judgments are used to describe the checking errors after evaluation and never determine a checker's acceptance.
+
+The first rule accepts seven of eight claims, including four unsupported claims. The additional quantity, unit, outcome, and number checks accept four claims, including one unsupported claim. Both retain all three supported claims. These counts describe deliberately chosen diagnostic cases and are not estimated error rates for a language model. The separate six-test suite checks arithmetic, missing references, wrong numbers, the effect of managerial approval, independence from reference judgments, and preservation of decision history.
+
+Python source: [evidence_example.py](../../03_Data_and_Code/Evidence_Governance/evidence_example.py)
+
+```python
+"""Compare record validation with support for eight constructed claims.
+
+Uses a published-table reconstruction already included in the course.
+The claims, human approval, decisions, and reference judgments are authored
+teaching cases. No model calls or upstream repository code are used.
+"""
+from pathlib import Path
+from statistics import NormalDist
+import argparse
+import csv
+import hashlib
+import json
+import math
+import re
+import tempfile
+
+HERE = Path(__file__).resolve().parent
+INPUT = HERE.parent / "Statistical_Inference/results/data_center_estimates.csv"
+TARGET = "utility_average_residential_price"
+UNITS = "USD/MWh at reference exposure"
+
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def reconstruct(path=INPUT):
+    with Path(path).open(newline="", encoding="utf-8") as stream:
+        rows = list(csv.DictReader(stream))
+    selected = [row for row in rows if row["case"] == "residential_reference"]
+    if len(selected) != 1:
+        raise ValueError("Expected one residential-reference row")
+    row = selected[0]
+    b, se = float(row["reported_coefficient"]), float(row["reported_se"])
+    scale = float(row["scale"])
+    if not all(math.isfinite(x) for x in (b, se, scale)) or se <= 0 or scale <= 0:
+        raise ValueError("Finite coefficient and positive SE and scale required")
+    if row["units"] != UNITS:
+        raise ValueError("Unexpected units")
+    normal = NormalDist()
+    estimate, uncertainty = b * scale, se * scale
+    values = {
+        "estimate": estimate,
+        "se": uncertainty,
+        "p_zero": 2 * normal.cdf(-abs(b / se)),
+        "ci95_low": estimate - normal.inv_cdf(.975) * uncertainty,
+        "ci95_high": estimate + normal.inv_cdf(.975) * uncertainty,
+        "upper95": estimate + normal.inv_cdf(.95) * uncertainty,
+    }
+    for key, value in values.items():
+        if not math.isclose(value, float(row[key]), rel_tol=1e-10, abs_tol=1e-12):
+            raise ValueError("Reconstruction disagrees with saved " + key)
+    return {"source": row["source"], "reported_coefficient": b,
+            "reported_se": se, "scale": scale, "target": TARGET,
+            "units": UNITS, "normal_approximation": True, **values}
+
+
+def make_claims(values):
+    # Reference judgments concern these complete records and their wording.
+    # They are disclosed teaching labels, never inputs to either checker.
+    specifications = [
+        ("estimate", "estimate", values["estimate"], TARGET, ["table"], True,
+         "The scaled estimate is about 1.75 USD/MWh at reference exposure."),
+        ("nonrejection", "p_zero", values["p_zero"], TARGET, ["table"], True,
+         "The two-sided normal test does not reject zero at five percent."),
+        ("upper-bound", "upper95", values["upper95"], TARGET, ["table"], True,
+         "The one-sided 95 percent normal upper bound is about 3.49 USD/MWh."),
+        ("household-assurance", "no_harm", 0.0, "household_bill", ["table"], False,
+         "The evidence demonstrates that data centers do not harm households."),
+        ("approved-assurance", "no_harm", 0.0, "household_bill",
+         ["table", "manager-approval"], False,
+         "Manager approval establishes that households suffer no harm."),
+        ("missing-source", "estimate", values["estimate"], TARGET,
+         ["absent-table"], False,
+         "The scaled estimate is about 1.75 USD/MWh at reference exposure."),
+        ("wrong-number", "estimate", 0.0, TARGET, ["table"], False,
+         "The estimated utility price effect equals zero."),
+        ("mismatched-text", "p_zero", values["p_zero"], TARGET, ["table"], False,
+         "The insignificant result proves that households suffer no harm."),
+    ]
+    return [{"id": key, "quantity": quantity, "value": value, "target": target,
+             "sources": sources, "reference_acceptable": reference,
+             "statement": statement, "units": "probability" if quantity == "p_zero"
+             else UNITS if target == TARGET else "USD/household/month"}
+            for key, quantity, value, target, sources, reference, statement in specifications]
+
+
+def record_errors(record, sources):
+    errors = []
+    for key in ("id", "statement", "quantity", "target", "units", "sources", "value"):
+        if key not in record:
+            errors.append("missing field: " + key)
+    if errors:
+        return errors
+    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", record["id"]):
+        errors.append("invalid identifier")
+    if not isinstance(record["sources"], list) or not record["sources"]:
+        errors.append("sources must be a nonempty list")
+    else:
+        errors.extend("unresolved source: " + source for source in record["sources"]
+                      if source not in sources)
+    if not isinstance(record["value"], (float, int)) or not math.isfinite(record["value"]):
+        errors.append("nonfinite value")
+    return errors
+
+
+def contract_errors(record, sources, values):
+    errors = record_errors(record, sources)
+    if errors:
+        return errors
+    if "table" not in record["sources"]:
+        errors.append("reported table required")
+    if record["target"] != TARGET:
+        errors.append("recorded outcome does not measure the claimed target")
+    quantity = record["quantity"]
+    if quantity not in ("estimate", "p_zero", "upper95"):
+        errors.append("quantity requires additional premises and evidence")
+    else:
+        units = "probability" if quantity == "p_zero" else UNITS
+        if record["units"] != units:
+            errors.append("units disagree")
+        if not math.isclose(record["value"], values[quantity], rel_tol=1e-10, abs_tol=1e-12):
+            errors.append("number disagrees with the reconstruction")
+    # No natural-language entailment check is performed here.
+    return errors
+
+
+def append_record(directory, record):
+    """Exclusive creation preserves an existing record; it does not prove truth."""
+    key = record["id"]
+    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", key):
+        raise ValueError("Invalid record identifier")
+    path = Path(directory) / (key + ".json")
+    with path.open("x", encoding="utf-8") as stream:
+        json.dump(record, stream, indent=2, sort_keys=True)
+        stream.write("\n")
+    return path
+
+
+def revision_example():
+    first = {"id": "decision-v1", "status": "accepted",
+             "action": "publish an assurance", "claim": "household-assurance",
+             "scenario": "fictional institutional decision"}
+    revised = {"id": "decision-v2", "status": "accepted",
+               "action": "withdraw the assurance and publish the bounded estimate",
+               "claim": "estimate", "supersedes": "decision-v1",
+               "reason": "Nonrejection and utility prices do not establish no household harm."}
+    with tempfile.TemporaryDirectory() as name:
+        original = append_record(name, first)
+        before = digest(original)
+        try:
+            append_record(name, {**first, "action": "silently rewrite the old decision"})
+        except FileExistsError:
+            rejected = True
+        else:
+            rejected = False
+        append_record(name, revised)
+        checks = {"overwrite_rejected": rejected,
+                  "original_preserved": digest(original) == before,
+                  "revision_retained": len(list(Path(name).glob("*.json"))) == 2}
+    return [first, revised], checks
+
+
+def write_csv(path, rows):
+    with path.open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main(out):
+    out.mkdir(parents=True, exist_ok=True)
+    values = reconstruct()
+    sources = {"table": {"kind": "reported_table", "sha256": digest(INPUT)},
+               "manager-approval": {"kind": "human", "scenario": "fictional approval"}}
+    claims = make_claims(values)
+    rows = []
+    for claim in claims:
+        structural = record_errors(claim, sources)
+        contract = contract_errors(claim, sources, values)
+        rows.append({**claim, "sources": ";".join(claim["sources"]),
+                     "record_valid": not structural, "contract_valid": not contract,
+                     "record_errors": "; ".join(structural),
+                     "contract_errors": "; ".join(contract)})
+    comparisons = []
+    for rule in ("record_valid", "contract_valid"):
+        comparisons.append({"rule": rule, "records": len(rows),
+                            "accepted": sum(row[rule] for row in rows),
+                            "false_approvals": sum(row[rule] and not row["reference_acceptable"]
+                                                   for row in rows),
+                            "false_rejections": sum(not row[rule] and row["reference_acceptable"]
+                                                    for row in rows)})
+    history, checks = revision_example()
+    if not all(checks.values()):
+        raise AssertionError("Revision history was not preserved")
+    write_csv(out / "claim_assessments.csv", rows)
+    write_csv(out / "checker_comparison.csv", comparisons)
+    for filename, value in (("table_reconstruction.json", values),
+                            ("decision_history.json", history), ("preservation_checks.json", checks)):
+        (out / filename).write_text(json.dumps(value, indent=2, sort_keys=True) + "\n")
+    outputs = ["claim_assessments.csv", "checker_comparison.csv", "table_reconstruction.json",
+               "decision_history.json", "preservation_checks.json"]
+    manifest = {"input": "../Statistical_Inference/results/data_center_estimates.csv",
+                "input_sha256": digest(INPUT), "program_sha256": digest(__file__),
+                "constructed_claims": len(claims), "live_model_calls": 0,
+                "upstream_code_executed": False,
+                "scope": "Normal approximation from rounded published summaries; authored claim cases.",
+                "outputs": {name: digest(out / name) for name in outputs}}
+    (out / "manifest.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
+    print(json.dumps({"checker_comparison": comparisons, "preservation": checks}, indent=2))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--out", type=Path, default=HERE / "results")
+    main(parser.parse_args().out)
+```

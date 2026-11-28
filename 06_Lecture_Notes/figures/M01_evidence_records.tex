@@ -1,0 +1,12 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=3.1cm,minimum height=1.3cm] (source) at (0,0) {Source record\\Passage, table, version};
+\node[box,text width=3.1cm,minimum height=1.3cm] (claim) at (4.9,0) {Analytical claim\\Calculation and scope};
+\node[orangebox,text width=3.1cm,minimum height=1.3cm] (decision) at (9.8,0) {Decision\\Action and reasons};
+\draw[edge] (source) -- node[above,font=\scriptsize] {supports?} (claim);
+\draw[edge] (claim) -- node[above,font=\scriptsize] {justifies?} (decision);
+\node[align=center,text width=3.7cm,font=\footnotesize,execute at begin node=\hyphenpenalty10000] at (0,-1.7) {Preserve the source.\\Check its version\\and recorded bytes.};
+\node[align=center,text width=3.7cm,font=\footnotesize,execute at begin node=\hyphenpenalty10000] at (4.9,-1.7) {Check the quantity,\\units, uncertainty,\\and actual sentence.};
+\node[align=center,text width=3.7cm,font=\footnotesize,execute at begin node=\hyphenpenalty10000] at (9.8,-1.7) {Consider affected people.\\State a condition\\for revision.};
+\node[box,text width=10.6cm,font=\footnotesize] (revision) at (4.9,-3.35) {A correction preserves the earlier record and states what changed, why, and who must act.};
+\draw[accent] (decision.east) -- ++(.55,0) |- (revision.east);
+\end{tikzpicture}

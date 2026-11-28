@@ -126,3 +126,7 @@ The [engagement exercise](Conflicts_of_Interest/README.md#marketing-publications
 ## Replication and Responsibility
 
 [Research Integrity](Research_Integrity/README.md) is optional ungraded practice on source records, competing explanations, publication status, responsibility, and maxims. It connects to [Data, Truth, and Norms](Data_Truth_and_Norms/README.md).
+
+## Evidence, Authority, and Correction
+
+[Optional ungraded practice](Evidence_Governance/README.md) asks students to trace a claim to its source, inspect checker failures, defend a reasonable publication principle, and preserve a visible correction. The example uses published summary statistics and fictional claims and decisions; it requires no model access.

@@ -2654,3 +2654,13 @@ summary = {
 (OUTPUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
 print(json.dumps(summary, indent=2))
 ```
+
+## 2.36 Preserved Records and the Authority to Revise
+
+\noindent When a customer record changes, an analyst needs to distinguish a correction to the record from a change in its interpretation. Overwriting an old summary can remove the information needed to explain a prior decision. Preserving the original observation and adding a dated correction allows a reviewer to reconstruct what the decision maker knew and why the recommendation changed. The same principle applies to an AI-generated summary of a table or a customer interview.
+
+Use separate identifiers for the source, the transformation, the claim, and the decision. A source record identifies its location, version, observation unit, and collection conditions. A derived record names the sources and computation. A decision record states the action, authorizing role, reasons, and any superseded decision. A checksum can detect whether the source bytes changed; it gives no independent evidence that the source correctly represents customer behavior. Provenance and substantive reliability therefore remain distinct features of the artifact.
+
+The Python example in M9 §9.85.5 creates a fictional accepted decision and attempts to overwrite it through a function using exclusive file creation. The attempt fails. A second decision then withdraws the reassurance, identifies the earlier decision through `supersedes`, and retains the reason for correction. Both records remain available. This behavior is enforced within the example's function; a deployed system also needs permissions that prevent another writer from bypassing the function.
+
+Preservation supports responsibility because a misleading interpretation can continue to influence reports after its source file changes. The analyst should identify the dependent claims, communicate the correction to their users, and retain the earlier source and reasoning. A valid historical record of an approval establishes that the approval occurred. It does not convert the approved assertion into a reliable description of the world. The distinction follows from separating the creation of an institutional artifact from the truth of what it represents (Thomasson, 2003; see M9 §9.60).

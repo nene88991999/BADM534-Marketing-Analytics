@@ -22,6 +22,7 @@ Session 11. M7. 170 minutes.
 - Compare reconstruction, component errors, feature interpretation, and decision outcomes.
 - Compare geometric similarity, classifier compatibility, coordinate alignment, and retraining on the same descriptions.
 - Evaluate prediction thresholds through customer error costs and reasons.
+- Identify unsupported conclusions accepted by a record checker.
 
 ## Related Materials
 
@@ -53,6 +54,8 @@ Session 11. M7. 170 minutes.
 - [Coding Workflows: Published Evidence](../01_Resources/40_Econometric_Coding_Workflows/README.md)
 - [Coding Workflows: Python and Checks](../03_Data_and_Code/Agent_Workflows/README.md)
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
+- [Evidence, Claims, and Decisions](../03_Data_and_Code/Evidence_Governance/README.md)
+- [Evidence and Correction: Optional Practice](../07_Labs/Evidence_Governance/README.md)
 
 ## Slide 1: Prediction, Validation, and Marketing Actions
 
@@ -782,7 +785,20 @@ An accurate model may still send too few serious complaints to human review if t
 
 Source: ../03_Data_and_Code/Evidence_Standards/README.md
 
-## Slide 61: Prediction Discussion
+## Slide 61: A Valid Record Can Carry an Unsupported Claim
+
+| Checking Rule | Accepted | Unsupported Accepted |
+| --- | --- | --- |
+| Record fields and references | 7 | 4 |
+| Plus quantities, units, and outcome | 4 | 1 |
+
+Eight constructed cases: three supported and five unsupported claims.
+
+The stronger checker rejects the wrong number and explicit household-assurance records. It still accepts correct p-value metadata paired with prose claiming proof of no harm. Neither checker uses the reference labels to accept a record. These selected cases diagnose coverage and do not estimate an AI system error rate. The complete program and six tests are available with the notes.
+
+Source: M7, Section 7.49. ../06_Lecture_Notes/modules/M07_Prediction_and_Machine_Learning.md; M9, Section 9.85, Marketing Analytics Lecture Notes. ../06_Lecture_Notes/modules/M09_Marketing_Dialectics.md; original teaching example: ../03_Data_and_Code/Evidence_Governance/README.md
+
+## Slide 62: Prediction Discussion
 
 - Which error uses scarce review capacity?
 - Which feature becomes available too late?

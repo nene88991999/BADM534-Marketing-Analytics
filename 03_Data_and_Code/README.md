@@ -201,3 +201,7 @@ The [synthetic valuation examples](Price_Theory_and_Justification/README.md) cal
 ## Research Integrity
 
 [Research_Integrity](Research_Integrity/README.md) contains the public licensed insurance-study artifact, its codebook, complete Python diagnostics, and aggregate outputs. It examines record reliability without treating the challenged values as genuine customer behavior.
+
+## Evidence, Claims, and Decisions
+
+[Evidence_Governance](Evidence_Governance/README.md) contains a standard-library Python program, eight authored claim cases, six tests, and a fictional correction history. It reconstructs an existing published-table estimate and compares record checks with quantity and outcome checks. Correct metadata can still carry an unsupported sentence.

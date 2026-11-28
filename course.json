@@ -169,6 +169,13 @@
       "path": "07_Labs/Evidence_Standards/README.md",
       "status": "available as public optional ungraded practice",
       "graded": false
+    },
+    {
+      "id": "evidence-governance",
+      "title": "Evidence, Authority, and Correction",
+      "path": "07_Labs/Evidence_Governance/README.md",
+      "status": "available as public optional ungraded practice",
+      "graded": false
     }
   ],
   "module_map": "COURSE_MAP.md",
@@ -484,7 +491,11 @@
     "01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md",
     "01_Resources/52_Research_Integrity_and_Replication/README.md",
     "03_Data_and_Code/Research_Integrity/README.md",
-    "07_Labs/Research_Integrity/README.md"
+    "07_Labs/Research_Integrity/README.md",
+    "01_Resources/53_Evidence_Governance/README.md",
+    "03_Data_and_Code/Evidence_Governance/README.md",
+    "03_Data_and_Code/Evidence_Governance/AGENTS.md",
+    "07_Labs/Evidence_Governance/README.md"
   ],
   "publication_note": "Course preparation repository. No public wiki deployed. Historic sample syllabus and templates are local only.",
   "lecture_notes": {
@@ -533,12 +544,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-glossary-and-contents",
+    "revision": "2026-11-27-evidence-claims-and-decisions",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
-    "figures_count": 165,
-    "pages": 722,
+    "figures_count": 167,
+    "pages": 734,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -573,10 +584,11 @@
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
     "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
     "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
-    "python_source_blocks": 136,
+    "python_source_blocks": 137,
     "glossary": "06_Lecture_Notes/Glossary.md",
-    "glossary_terms": 280,
-    "table_of_contents": "Linked table immediately after the title page; chapters, sections, and glossary letters."
+    "glossary_terms": 283,
+    "table_of_contents": "Linked table immediately after the title page; chapters, sections, and glossary letters.",
+    "evidence_governance": "03_Data_and_Code/Evidence_Governance/README.md"
   },
   "datasets": [
     {
@@ -673,7 +685,7 @@
     "author": "Nathan Yang",
     "meetings": 15,
     "minutes_per_meeting": 170,
-    "slides": 589,
+    "slides": 596,
     "art_direction": "05_Slides/ART_DIRECTION.md",
     "artwork_provenance": "05_Slides/assets/PROVENANCE.md",
     "calendar_status": "available; Spring 2027 dates verified against the official academic calendar and course listing",
@@ -761,16 +773,16 @@
     "resources": "01_Resources/15_Marketing_Dialectics/README.md",
     "catalog": "01_Resources/15_Marketing_Dialectics/catalog.json",
     "example": "03_Data_and_Code/Marketing_Dialectics/README.md",
-    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty; marketing research, online engagement mechanisms, documented industry applications, and authority to stop; Chicago price theory, monetary valuation, rational addiction, compensation, and the moral justification of market institutions; artifactual data, corporate standing, NDA governance, responsibility, maxims, replication, and correction",
+    "coverage": "Kantian critique and ethics; scrutiny of interested claims (Hume, 1741; Smith, 1776); Confucian conduct; Scanlonian reasons; stakeholder obligations and public voice; empirical and industry cases; measurement history, conceptual engineering of evidentiary standards, unequal error costs, and proportionate action under uncertainty; marketing research, online engagement mechanisms, documented industry applications, and authority to stop; Chicago price theory, monetary valuation, rational addiction, compensation, and the moral justification of market institutions; artifactual data, corporate standing, NDA governance, responsibility, maxims, replication, and correction; source preservation, claim support, institutional authority, reasonable objection, and decision correction",
     "source_records": 41,
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06",
-    "pages": 185,
-    "figures_count": 36,
+    "pages": 193,
+    "figures_count": 37,
     "updated_on": "2026-11-27",
     "glossary": "06_Lecture_Notes/Glossary.md",
-    "glossary_terms": 280,
+    "glossary_terms": 283,
     "table_of_contents": "Linked table immediately after the title page; chapters, sections, and glossary letters."
   },
   "ai_experimentation_pricing": {
@@ -1252,7 +1264,7 @@
     "original_programs_executed": 2,
     "independent_course_tests_passed": 6
   },
-  "revision": "2026-11-27-hbs-reassurance-and-research-responsibility",
+  "revision": "2026-11-27-evidence-claims-and-decisions",
   "writing_guide": "WRITING_STYLE.md",
   "agent_workflow_evaluation": {
     "resources": "01_Resources/35_Agent_Workflow_Evaluation/README.md",
@@ -1926,5 +1938,35 @@
     "landscape_slide_figure_variants": 5,
     "rendered_pages_checked": 55,
     "verification_date": "2026-11-27"
+  },
+  "evidence_governance": {
+    "resources": "01_Resources/53_Evidence_Governance/README.md",
+    "catalog": "01_Resources/53_Evidence_Governance/catalog.json",
+    "examples": "03_Data_and_Code/Evidence_Governance/README.md",
+    "lab": "07_Labs/Evidence_Governance/README.md",
+    "manifest": "03_Data_and_Code/Evidence_Governance/results/manifest.json",
+    "verification": "03_Data_and_Code/Evidence_Governance/VERIFICATION.md",
+    "implemented_on": "2026-11-27",
+    "sections": [
+      "M1 §1.25",
+      "M2 §2.36",
+      "M5 §5.30",
+      "M7 §7.49",
+      "M9 §9.85"
+    ],
+    "sessions": [
+      1,
+      2,
+      7,
+      11,
+      14
+    ],
+    "original_programs_executed": 1,
+    "independent_tests_passed": 6,
+    "original_figures": 2,
+    "constructed_claims": 8,
+    "model_api_calls": 0,
+    "upstream_execution": false,
+    "scope": "Reported-table reconstruction with authored claim records, fictional human approval, and fictional decision history; diagnostic checking coverage, not estimated AI performance."
   }
 }

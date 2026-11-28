@@ -1,0 +1,9 @@
+id,quantity,value,target,sources,reference_acceptable,statement,units,record_valid,contract_valid,record_errors,contract_errors
+estimate,estimate,1.7492063492063492,utility_average_residential_price,table,True,The scaled estimate is about 1.75 USD/MWh at reference exposure.,USD/MWh at reference exposure,True,True,,
+nonrejection,p_zero,0.09855519618015611,utility_average_residential_price,table,True,The two-sided normal test does not reject zero at five percent.,probability,True,True,,
+upper-bound,upper95,3.4909525883979953,utility_average_residential_price,table,True,The one-sided 95 percent normal upper bound is about 3.49 USD/MWh.,USD/MWh at reference exposure,True,True,,
+household-assurance,no_harm,0.0,household_bill,table,False,The evidence demonstrates that data centers do not harm households.,USD/household/month,True,False,,recorded outcome does not measure the claimed target; quantity requires additional premises and evidence
+approved-assurance,no_harm,0.0,household_bill,table;manager-approval,False,Manager approval establishes that households suffer no harm.,USD/household/month,True,False,,recorded outcome does not measure the claimed target; quantity requires additional premises and evidence
+missing-source,estimate,1.7492063492063492,utility_average_residential_price,absent-table,False,The scaled estimate is about 1.75 USD/MWh at reference exposure.,USD/MWh at reference exposure,False,False,unresolved source: absent-table,unresolved source: absent-table
+wrong-number,estimate,0.0,utility_average_residential_price,table,False,The estimated utility price effect equals zero.,USD/MWh at reference exposure,True,False,,number disagrees with the reconstruction
+mismatched-text,p_zero,0.09855519618015611,utility_average_residential_price,table,False,The insignificant result proves that households suffer no harm.,probability,True,True,,

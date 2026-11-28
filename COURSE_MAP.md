@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [Preface](06_Lecture_Notes/Preface.md) explains the relationship between analytical tools and philosophical reasoning. The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 165 figures. Both PDF volumes open with a linked table of contents and end with an alphabetized [Glossary of Terms](06_Lecture_Notes/Glossary.md), with definitions and references to the relevant sections. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [Preface](06_Lecture_Notes/Preface.md) explains the relationship between analytical tools and philosophical reasoning. The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 167 figures. Both PDF volumes open with a linked table of contents and end with an alphabetized [Glossary of Terms](06_Lecture_Notes/Glossary.md), with definitions and references to the relevant sections. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 
@@ -259,3 +259,9 @@ M4 §4.32 and M9 §§9.76–9.82 connect monetary valuation, rational addiction,
 M9 §§9.60.3, 9.63.4–9.63.5, and 9.65.2–9.65.8 connect dataset creation to corporate standing, NDA terms, responsibility, and maxims. The [Kilts policy case](01_Resources/45_Data_Truth_and_Norms/06_Corporate_Standing/KILTS_CASE.md) separates documented restrictions from claims about suppression. M2 §2.35 supplies a complete Python assessment of the public insurance artifact; M9 §9.84 examines replication, correction, and the distinction between unreliable evidence and personal culpability. The [research-integrity sources](01_Resources/52_Research_Integrity_and_Replication/README.md) record publication statuses as of November 27, 2026.
 
 Sessions 2 and 14 include these cases within their existing measurement and ethical-reasoning activities. The expanded decks provide alternative examples; the 170-minute meetings, dates, and pending assessment policies remain unchanged. The [optional replication exercise](07_Labs/Research_Integrity/README.md) and [artifact exercise](07_Labs/Data_Truth_and_Norms/README.md) require a defensible inference, maxim, and allocation of responsibility.
+
+## Evidence, Claims, and Decisions
+
+M1 §1.25, M2 §2.36, M5 §5.30, M7 §7.49, and M9 §9.85 connect source preservation to claim support, checking coverage, authority, and reasonable objection. An original eight-case example reconstructs a reported electricity-price result and demonstrates an unsupported sentence that passes correct metadata checks. The complete Python, six tests, two editable TikZ figures, and optional exercise accompany selected discussion in Sessions 1, 2, 7, 11, and 14.
+
+See the [resource guide](01_Resources/53_Evidence_Governance/README.md), [program and results](03_Data_and_Code/Evidence_Governance/README.md), and [optional practice](07_Labs/Evidence_Governance/README.md). The diagnostic cases are authored examples, with no model calls or execution of upstream code.

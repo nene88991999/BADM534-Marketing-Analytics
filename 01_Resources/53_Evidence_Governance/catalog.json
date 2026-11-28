@@ -1,0 +1,41 @@
+{
+  "title": "Evidence, Claims, and Decisions in AI Workflows",
+  "reviewed_on": "2026-11-27",
+  "source_author": "JustinTSmith",
+  "source_year": 2026,
+  "repository": "https://github.com/JustinTSmith/Agent-Epistemic-Engine",
+  "commit": "ae6ad9296c5a85b787978b121d76408197d5c3da",
+  "commit_date": "2026-09-08",
+  "license": "No license file found in the inspected repository tree; repository license metadata is null.",
+  "redistribution": "Original course explanation and independently written code only; upstream source not republished.",
+  "upstream_executed": false,
+  "inspected_files": [
+    {
+      "path": "CONTEXT_PROTOCOL.md",
+      "url": "https://github.com/JustinTSmith/Agent-Epistemic-Engine/blob/ae6ad9296c5a85b787978b121d76408197d5c3da/CONTEXT_PROTOCOL.md",
+      "teaching_relevance": "Record roles, provenance, revisions, and proposed trust hierarchy."
+    },
+    {
+      "path": "scripts/validate.py",
+      "url": "https://github.com/JustinTSmith/Agent-Epistemic-Engine/blob/ae6ad9296c5a85b787978b121d76408197d5c3da/scripts/validate.py",
+      "teaching_relevance": "Implemented metadata and reference checks; substantive entailment is outside these checks."
+    },
+    {
+      "path": "tests/test_validator.sh",
+      "url": "https://github.com/JustinTSmith/Agent-Epistemic-Engine/blob/ae6ad9296c5a85b787978b121d76408197d5c3da/tests/test_validator.sh",
+      "teaching_relevance": "Seven expected validation messages from three invalid fixture files."
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "url": "https://github.com/JustinTSmith/Agent-Epistemic-Engine/blob/ae6ad9296c5a85b787978b121d76408197d5c3da/.github/workflows/validate.yml",
+      "teaching_relevance": "Agent change restrictions applied to pull requests."
+    },
+    {
+      "path": "QUICKSTART.md",
+      "url": "https://github.com/JustinTSmith/Agent-Epistemic-Engine/blob/ae6ad9296c5a85b787978b121d76408197d5c3da/QUICKSTART.md",
+      "teaching_relevance": "Branch protection and repository-specific configuration are required."
+    }
+  ],
+  "course_example": "../../03_Data_and_Code/Evidence_Governance/README.md",
+  "scope": "Protocol and implementation inspection, followed by an original eight-case diagnostic example; no empirical evaluation of the upstream system."
+}

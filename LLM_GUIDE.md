@@ -67,3 +67,7 @@ Use M9 §§9.45–9.49 and the [worked example](03_Data_and_Code/Conflicts_of_In
 ## Evidence Standards and Moral Reasons
 
 For questions about statistical rigor, read M6 §§6.44–6.45 and M9 §§9.55–9.59. State the null, alternative, action, affected people, and consequences before comparing errors. Keep p-values distinct from posterior probabilities. Explain why flexible heterogeneity has no inherent direction of markup bias, and why model fit leaves conduct and justification to be assessed. Support an ought conclusion with explicit factual and normative premises, a feasible alternative, the strongest objection, and conditions for revision. The [optional lab](07_Labs/Evidence_Standards/README.md) permits differing recommendations supported by reasons.
+
+## Sources, Claims, and Decisions
+
+For AI-assisted recommendations, identify the exact source passage or table, its version, the calculation, the proposed claim, and the reasons for the action. Treat source references and validation results as evidence of the checks actually performed. Human approval does not establish the truth of an empirical premise. Preserve a superseded decision and the reason for correction. The [evidence example](03_Data_and_Code/Evidence_Governance/README.md) includes a claim with valid metadata and misleading prose, and the [exercise](07_Labs/Evidence_Governance/README.md) develops reasonable objections and alternatives.

@@ -1,0 +1,9 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=4.6cm,minimum height=1.3cm] (authority) at (0,0) {Institutional authority\\Who may approve publication?};
+\node[box,text width=4.6cm,minimum height=1.3cm] (evidence) at (6.3,0) {Evidential warrant\\What does the source support?};
+\node[orangebox,text width=10.1cm,minimum height=1.2cm] (person) at (3.15,-2.2) {Affected person's objection\\``Your approval does not answer my concern about household bills.''};
+\draw[edge] (authority.south) -- (person.north -| authority.south);
+\draw[edge] (evidence.south) -- (person.north -| evidence.south);
+\node[box,text width=10.1cm,minimum height=1cm] (alternative) at (3.15,-4.2) {Feasible alternative\\Publish the bounded estimate, investigate the bill mechanism, and correct unsupported reassurance.};
+\draw[accent] (person) -- node[right,font=\scriptsize] {compare reasons and burdens} (alternative);
+\end{tikzpicture}

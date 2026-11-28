@@ -1,0 +1,17 @@
+[
+  {
+    "action": "publish an assurance",
+    "claim": "household-assurance",
+    "id": "decision-v1",
+    "scenario": "fictional institutional decision",
+    "status": "accepted"
+  },
+  {
+    "action": "withdraw the assurance and publish the bounded estimate",
+    "claim": "estimate",
+    "id": "decision-v2",
+    "reason": "Nonrejection and utility prices do not establish no household harm.",
+    "status": "accepted",
+    "supersedes": "decision-v1"
+  }
+]

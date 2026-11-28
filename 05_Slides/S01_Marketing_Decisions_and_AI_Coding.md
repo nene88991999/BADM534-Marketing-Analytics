@@ -16,6 +16,7 @@ Session 01. M1. 170 minutes.
 - Evaluate the worth of the objective and distinguish empirical representation from the practical standing of affected people.
 - Identify incentives and duties that shape the analytical question.
 - Explain how disciplinary institutions shape the choice of analytical questions.
+- Trace a recommendation through sources, claims, and reasons for action.
 
 ## Related Materials
 
@@ -36,6 +37,8 @@ Session 01. M1. 170 minutes.
 - [Five-Step Argument Practice](../07_Labs/Philosophical_Arguments/README.md)
 - ../07_Labs/AI_Augmented_Learning/README.md
 - [Evidence Standards and Optional Practice](../07_Labs/Evidence_Standards/README.md)
+- [Evidence, Claims, and Decisions](../03_Data_and_Code/Evidence_Governance/README.md)
+- [Evidence and Correction: Optional Practice](../07_Labs/Evidence_Governance/README.md)
 
 ## Slide 1: Marketing Decisions and AI-Assisted Coding
 
@@ -434,7 +437,19 @@ A recorded subscription can be measured perfectly while voluntary continuation r
 
 Source: ../01_Resources/48_Statistical_Virtues_and_Ontology/README.md
 
-## Slide 37: Decision Discussion
+## Slide 37: Sources, Claims, and Decisions
+
+A source reference, a supported claim, and a justified decision require different checks.
+
+**Figure description:** Source records lead to analytical claims through evidential support and to decisions through reasons. A correction preserves the earlier record and identifies what changed.
+
+[Editable TikZ](../06_Lecture_Notes/figures/M01_evidence_records.tex)
+
+Preserve the passage or table, its version, the calculation, the claim, and the decision. A checksum establishes which bytes were used. The analyst must still assess whether the sentence follows from the evidence and whether the action can be justified to affected people. Human authority to approve a decision does not establish its empirical premise.
+
+Source: M1, Section 1.25. ../06_Lecture_Notes/modules/M01_Marketing_Analytics_and_Python.md; (JustinTSmith, 2026). https://github.com/JustinTSmith/Agent-Epistemic-Engine/tree/ae6ad9296c5a85b787978b121d76408197d5c3da
+
+## Slide 38: Decision Discussion
 
 - Which customer receives the renewal offer?
 - What changes if every treated renewal receives a discount?

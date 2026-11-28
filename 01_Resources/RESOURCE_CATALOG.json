@@ -4010,6 +4010,33 @@
       "teaching_use": "Original derivation; use the later Black update for the implemented coefficients.",
       "cautions": "Methods for dietary assessment require attention to instrument, population, and available metadata.",
       "prerequisites": "M1 data units and M2 measurement"
+    },
+    {
+      "id": "EG01",
+      "category": "53_Evidence_Governance",
+      "title": "Evidence, Claims, and Decisions in AI Workflows",
+      "url": "https://github.com/JustinTSmith/Agent-Epistemic-Engine",
+      "owner": "JustinTSmith",
+      "priority": "Optional",
+      "kind": "Repository protocol and original course example",
+      "modules": [
+        "M1",
+        "M2",
+        "M5",
+        "M7",
+        "M9"
+      ],
+      "focus": "Source preservation, claim support, checking coverage, authority, and correction.",
+      "teaching_use": "Compare eight authored claims against a reported-table reconstruction and defend a reasonable publication decision.",
+      "cautions": "Metadata validation does not establish truth. Constructed diagnostic counts are not AI error rates.",
+      "rights": "Upstream license absent; source linked without redistribution. Teaching code is independently written.",
+      "access": "Public GitHub repository inspected at ae6ad9296c5a85b787978b121d76408197d5c3da.",
+      "reviewed_on": "2026-11-27",
+      "local_files": [
+        "53_Evidence_Governance/README.md",
+        "53_Evidence_Governance/catalog.json"
+      ],
+      "prerequisites": "Basic Python, uncertainty, and the distinction between an observation and a claim."
     }
   ],
   "scope": "Curated resource library covering the sample syllabus and AI-assisted coding. Sources are material for later lesson design, not validated assignments."

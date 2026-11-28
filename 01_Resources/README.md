@@ -200,3 +200,7 @@ The [11-source collection](51_Modern_Power_and_Harm_Bounds/README.md) covers 201
 ## Data Governance and Research Integrity
 
 [Corporate standing, responsibility, and maxims](45_Data_Truth_and_Norms/06_Corporate_Standing/README.md) and the [replication collection](52_Research_Integrity_and_Replication/README.md) connect M2 measurement checks to M9 ethical arguments. The [public Python example](../03_Data_and_Code/Research_Integrity/README.md) analyzes an openly licensed challenged artifact, with complete source code in the notes.
+
+## Evidence, Claims, and Decisions
+
+[Evidence Governance](53_Evidence_Governance/README.md) reviews a pinned repository protocol and its validator. The original course example distinguishes preserved records, supported claims, and justified decisions, using eight constructed claims about a reported electricity-price estimate. The curated catalog entry is EG01. Upstream source is linked without redistribution.
