@@ -8,6 +8,7 @@ Apply the course [writing guide](../WRITING_STYLE.md). State illustrative values
 
 - Edit `modules/M*.md` as the primary prose source. Keep module IDs and numbered section references stable when practical.
 - Edit `Preface.md` for the unnumbered opening of the complete notes. Keep its philosophical argument in the author's voice and exclude collaboration history.
+- Edit `Glossary.md` for the shared, alphabetized glossary at the end of both note volumes. Keep definitions consistent with the linked sections and retain section links. The build places a linked table of contents immediately after each title page and preserves the M1–M9 numbering.
 - Edit `figures/M*.tex` for figures and `figures/style.tex` for shared styling. Keep the PNG filename synchronized with the Markdown image link.
 - Run `build_notes.py` to regenerate `Marketing_Analytics_Lecture_Notes.tex` and the PDF. Do not make prose changes only in the generated LaTeX file.
 - Use `--figures` when a TikZ figure changes. The PDF and Markdown previews should represent the same figure.

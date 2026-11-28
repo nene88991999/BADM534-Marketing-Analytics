@@ -21,7 +21,7 @@ The course is planned with no guest speakers. The eight core modules and Marketi
 
 ## Lecture Notes
 
-The [Preface](06_Lecture_Notes/Preface.md) explains the relationship between analytical tools and philosophical reasoning. The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 140 figures. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
+The [Preface](06_Lecture_Notes/Preface.md) explains the relationship between analytical tools and philosophical reasoning. The [lecture-note index](06_Lecture_Notes/README.md) maps the eight core modules and Marketing Dialectics to detailed explanations, worked cases, and 165 figures. Both PDF volumes open with a linked table of contents and end with an alphabetized [Glossary of Terms](06_Lecture_Notes/Glossary.md), with definitions and references to the relevant sections. [Synthetic data and reproducible calculations](03_Data_and_Code/Lecture_Examples/README.md) accompany the notes. These notes do not establish current assessment requirements.
 
 ## Across Modules
 

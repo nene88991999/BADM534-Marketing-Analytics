@@ -1,6 +1,28 @@
 \input{preamble.tex}
 \begin{document}
-\hypersetup{pdftitle={Marketing Dialectics}}
+\hypersetup{pdftitle={Marketing Dialectics},pageanchor=false}
+\begin{titlepage}
+\color{IlliniBlue}
+\vspace*{1.2cm}
+{\Huge\bfseries Marketing Analytics\par}
+\vspace{.8cm}
+{\LARGE Marketing Dialectics\par}
+\vspace{1.1cm}
+\noindent{\color{IlliniOrange}\rule{\textwidth}{2pt}}\par
+\vspace{.7cm}
+{\large By Nathan Yang\par}
+{\large November 27, 2026\par}
+\end{titlepage}
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\renewcommand{\contentsname}{Table of Contents}
+\pdfbookmark[0]{Table of Contents}{table-of-contents}
+\begingroup
+\setlength{\parskip}{2pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
 \setcounter{chapter}{8}
 \hypertarget{M09-marketing-dialectics}{%
 \chapter{Marketing Dialectics}\label{M09-marketing-dialectics}}
@@ -9764,5 +9786,2703 @@ Procrastination, Deadlines, and Performance}; (Psychological Science,
 versions, inspection scope, and correction status are recorded in the
 \href{../01_Resources/52_Research_Integrity_and_Replication/README.md}{replication
 reading guide}.
+\clearpage
+\begingroup
+\setlength{\parindent}{0pt}
+\hypertarget{module-glossary-of-terms}{%
+\chapter*{Glossary of Terms}\label{module-glossary-of-terms}}
+\addcontentsline{toc}{chapter}{Glossary of Terms}
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-a}{%
+\section*{A}\label{module-a}}
+\addcontentsline{toc}{section}{A}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{A/B Test.} An experiment comparing two assigned versions of an
+intervention. Random assignment supports a causal comparison when
+implementation, outcome measurement, attrition, and interference are
+handled consistently with the design.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-designing-an-experiment-around-the-decision}{M6
+§6.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Accountability.} The obligation to answer for a decision and
+provide relevant reasons or records. Accountability can attach to a role
+even when personal blame for the resulting harm remains unresolved.
+\hyperref[M09-responsibility-for-the-artifact-and-its-uses]{M9
+§9.65.7}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Accuracy.} The proportion of classified observations whose
+predicted labels match the reference labels. Its meaning depends on
+class prevalence, label quality, and the consequences of different
+errors.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-case-study-accuracy-can-conceal-a-useless-model}{M7
+§7.5}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Adaptive Experiment.} An experiment whose assignment rule
+changes in response to accumulated observations. Valid inference and
+policy evaluation must account for the changing probabilities and the
+information used to choose them.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-ai-experimentation-and-personalized-pricing}{M8
+§8.20}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Adstock.} A transformation summarizing current and past
+advertising exposure under an assumed persistence rule. Its decay
+parameter controls carryover, and its causal interpretation requires a
+design addressing the determinants of spending.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-marketing-mix-models-combine-carryover-and-saturation}{M8
+§8.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Agency.} A person's capacity to form, revise, and act on
+purposes. Recorded purchases or continued engagement supply evidence
+about behavior; assessing agency also requires attention to
+understanding, alternatives, and authority to refuse.
+\hyperref[M09-personalization-learning-and-the-ability-to-revise-a-goal]{M9
+§9.7};
+\hyperref[M09-personalization-and-the-learners-authority]{M9
+§9.44}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{AI-Assisted Coding.} Developing or revising code with a language
+model or coding agent. A defensible workflow specifies the task,
+inspects inputs, implements small steps, and checks the resulting
+calculations and interpretations independently.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-ai-assisted-coding-as-a-sequence-of-verifiable-steps}{M1
+§1.5};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-specifications-independent-checks-and-retained-skills}{M1
+§1.14}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Algorithmic Pricing.} Setting or recommending prices through an
+automated rule. Its economic and moral implications depend on the
+information shared, decisions delegated, customer alternatives, and
+comparison with feasible pricing arrangements.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-shared-pricing-systems-and-customer-choice}{M8
+§8.28}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Annotation.} Assigning a label or interpretation to a document,
+passage, or observation. A useful annotation protocol defines the
+construct, unit, decision rules, and treatment of ambiguity before
+labels become evaluation targets.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-human-and-llm-annotation}{M5
+§5.6}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Anticipation.} A response that occurs before the recorded
+treatment date because an actor expects the intervention. Preparatory
+utility investment can create exposure before a data center opens,
+changing the interpretation of pre-treatment periods.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-institutional-exposure-and-the-meaning-of-an-untreated-utility}{M6
+§6.35};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-phantom-projects-and-the-meaning-of-a-control}{M6
+§6.41}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Antinomy.} A conflict in which reason appears to support
+opposing conclusions about an unconditioned object beyond possible
+experience. In Kantian dialectic, this concerns reason's claims to
+knowledge; an ordinary empirical disagreement is not automatically an
+antinomy (Kant, 1781/1787).
+\hyperref[M09-transcendental-dialectic-and-the-limits-of-reason]{M9
+§9.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Area Under the ROC Curve (ROC AUC).} The probability that a
+randomly selected positive receives a higher score than a randomly
+selected negative, plus half the probability of a tie. It summarizes
+ranking across the two classes without specifying an action threshold.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-ranking-and-calibration-answer-different-questions}{M7
+§7.6}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Argument.} A set of premises offered as reasons for a
+conclusion. An analytical recommendation needs an empirical account of
+the proposed action and a defended normative premise connecting that
+account to what ought to be done.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-a-recommendation-as-an-argument}{M1
+§1.20};
+\hyperref[M09-logical-consequence-and-a-defensible-recommendation]{M9
+§9.40}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Artifactual Object.} An object whose creation, identity, or
+persistence depends on human practices. A dataset can depend on
+recording rules and institutions while the people, events, and burdens
+it represents have independent conditions of existence and truth
+(Thomasson, 1999, 2003).
+\hyperref[M09-the-ontology-of-a-dataset]{M9
+§9.60}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Aspect Sentiment.} A judgment about a particular attribute, such
+as delivery or product quality, within a text. A document can express
+positive and negative views about different attributes, making a single
+overall label inadequate for some decisions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-sentiment-aspect-labels-and-topic-models}{M5
+§5.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Assignment Unit.} The entity to which a treatment is allocated,
+such as a customer, store, or market. It may differ from the row in the
+analysis, and it helps determine the appropriate comparison and
+uncertainty calculation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-designing-an-experiment-around-the-decision}{M6
+§6.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Association.} A statistical relationship between observed
+quantities. An association can arise from a causal effect, common
+causes, selection, measurement, or their combination; its interpretation
+requires a stated design and comparison.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-a-conditional-mean-and-a-regression-line}{M3
+§3.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-why-the-treated-untreated-difference-can-be-biased}{M6
+§6.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Association Rule.} A conditional co-occurrence pattern among
+items, often summarized by support, confidence, and lift. A basket
+association can guide prediction or merchandising hypotheses while
+leaving the causal effect of a recommendation unresolved.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-mhealth-basket-associations-and-future-validation}{M7
+§7.17}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Attrition.} Loss of observations or outcomes after units enter a
+study. When loss depends on treatment or outcomes, analyzing only
+retained units can change the population represented and distort the
+intended comparison.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-implementation-checks-that-protect-the-comparison}{M6
+§6.6}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Autonomy.} The capacity and authority to direct action through
+one's own deliberation. In the Kantian discussion, autonomy concerns
+rational self-legislation; a marketing application also examines whether
+customers can understand, reconsider, and refuse a proposed course of
+action.
+\hyperref[M09-respect-for-persons-and-commercial-exchange]{M9
+§9.4};
+\hyperref[M09-phenomena-noumena-and-the-ends-of-analysis]{M9
+§9.41}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Average Treatment Effect (ATE).} The mean difference between the
+outcomes that the target population would experience under two treatment
+conditions. Estimating it requires a design or assumptions that connect
+observed outcomes to the missing counterfactual outcomes.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-define-the-treatment-outcome-and-estimand}{M6
+§6.1}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-b}{%
+\section*{B}\label{module-b}}
+\addcontentsline{toc}{section}{B}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Bad Control.} A variable whose inclusion in an adjustment set
+distorts the intended causal comparison. Conditioning on a mediator,
+collider, or treatment-affected variable can create bias or change the
+estimand, depending on the causal structure.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-a-control-variable-needs-a-causal-role}{M3
+§3.20};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-treatment-affected-covariates-in-a-panel}{M6
+§6.40}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Basal Metabolic Rate (BMR).} The energy required to sustain
+basic physiological functions under standardized resting conditions.
+Predicted BMR depends on the available physiological inputs and the
+population for which the prediction equation is appropriate.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-mhealth-nutrition-knowledge-and-sample-restrictions}{M2
+§2.11}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Baseline.} A specified reference for comparison, such as a
+pre-intervention outcome, simple forecasting model, or existing policy.
+The analyst should identify which meaning applies and hold the relevant
+comparison constant.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-baselines-loss-functions-and-regularization}{M7
+§7.2};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-designing-an-experiment-around-the-decision}{M6
+§6.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Bayesian Inference.} Updating a prior distribution with a
+likelihood to obtain a posterior distribution over unknown quantities.
+Posterior conclusions depend on the sampling model, prior, observed
+information, and the relationship between the modeled quantity and the
+substantive claim.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-released-retail-data-integrated-heterogeneity-and-competing-explanations}{M4
+§4.31};
+\hyperref[M09-heterogeneity-and-the-interpretation-of-consumer-harm]{M9
+§9.57}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Benevolence.} Concern for the well-being of others as a ground
+for conduct. In the Confucian applications, the quality of relationships
+and responsibility to customers constrain the pursuit of commercial
+advantage.
+\hyperref[M09-righteousness-and-profit]{M9
+§9.11.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Bias.} The difference between an estimator's expected value and
+its target under a stated data-generating process. A low-bias estimator
+for one target can still answer the wrong substantive question or
+support an unjustified decision.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-unbiased-estimation-and-the-consequences-of-error}{M3
+§3.22};
+\hyperref[M09-statistical-virtues-and-ontological-laziness]{M9
+§9.66}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Bias-Variance Tradeoff.} A comparison between systematic
+estimation error and sampling variability. Regularization may reduce
+expected prediction error by accepting bias in exchange for lower
+variance; its desirability depends on the target and loss being
+evaluated.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-baselines-loss-functions-and-regularization}{M7
+§7.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Bootstrap.} A resampling method that approximates sampling
+uncertainty by repeatedly drawing from observed data. Resampling must
+preserve the dependence relevant to the design, such as repeated records
+belonging to the same customer or assignment cluster.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-uncertainty-dependence-and-practical-importance}{M3
+§3.6}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Burden of Justification.} The responsibility to provide adequate
+reasons for a claim or action. Its allocation depends on authority,
+access to evidence, exposure to harm, and feasible alternatives; a
+company's convenience does not settle what affected people must accept.
+\hyperref[M09-self-interest-and-the-burden-of-justification]{M9
+§9.10};
+\hyperref[M09-who-ought-to-bear-the-burden-of-producing-evidence]{M9
+§9.54}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-c}{%
+\section*{C}\label{module-c}}
+\addcontentsline{toc}{section}{C}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Calibration.} Agreement between stated probabilities and
+observed event frequencies over a defined evaluation population.
+Calibration concerns probability quality; it does not by itself
+establish good ranking, equitable treatment, or a justified decision
+threshold.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-ranking-and-calibration-answer-different-questions}{M7
+§7.6}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Candidate Set.} The alternatives eligible for ranking or
+recommendation at a particular decision. Evaluation depends on how this
+set is formed, which options are excluded, and what information was
+available when selection occurred.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-recommendation-models-and-the-candidate-set}{M7
+§7.10}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Cannibalization.} Sales of one product or offer that replace
+sales of another product supplied by the same firm. Evaluating a launch
+requires the resulting change in total contribution, including displaced
+purchases.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-case-study-a-new-bundle-can-cannibalize-existing-sales}{M4
+§4.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Carryover.} The persistence of an intervention's influence
+across later periods. A marketing-mix model may represent advertising
+carryover through an adstock transformation whose parameters determine
+how past exposure enters current response.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-marketing-mix-models-combine-carryover-and-saturation}{M8
+§8.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Categorical Imperative.} A principle of moral obligation whose
+authority does not depend on achieving a chosen contingent end. Its
+universal-law and humanity formulations examine the principle of action
+and the treatment of persons (Kant, 1785).
+\hyperref[M09-respect-for-persons-and-commercial-exchange]{M9
+§9.4};
+\hyperref[M09-a-kantian-critique-of-commercial-optimization]{M9
+§9.16}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Causal Effect.} The difference in an outcome under specified
+alternative interventions for a defined unit or population. The effect
+must be distinguished from an observed difference between groups that
+may have experienced different selection and background conditions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-define-the-treatment-outcome-and-estimand}{M6
+§6.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-why-the-treated-untreated-difference-can-be-biased}{M6
+§6.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Causal Identification.} The connection between observable
+information and a causal target under stated assumptions. Identification
+addresses whether the target is determined in principle; sampling
+uncertainty concerns how accurately it is estimated from finite data.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-observational-adjustment-and-its-limits}{M6
+§6.7};
+\hyperref[M09-compatibility-identification-and-valuation]{M9
+§9.40.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Causal Responsibility.} Contribution to producing an outcome. It
+is distinct from the duties of a role, the obligation to answer for
+conduct, moral blame, and the capacity to repair the resulting problem.
+\hyperref[M09-responsibility-for-the-artifact-and-its-uses]{M9
+§9.65.7}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Censoring.} Incomplete observation of an event time. For a
+customer still active when observation ends, the duration is known to
+exceed the observed period, and treating the end of observation as the
+event would misstate the outcome.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-mhealth-time-until-a-logging-gap}{M4
+§4.13}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Choice Probability.} The probability that a customer selects an
+alternative from a specified set under a model and information state.
+Substitution patterns depend on the utility specification, alternatives,
+and distribution of unobserved components.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-utility-choice-probabilities-and-willingness-to-pay}{M4
+§4.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Cluster-Robust Standard Error.} An uncertainty calculation that
+permits dependence within specified clusters while relying on suitable
+independence or weak dependence across clusters. Cluster choice and the
+number of informative clusters matter for the approximation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-uncertainty-dependence-and-practical-importance}{M3
+§3.6};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-store-assignment-and-false-discoveries}{M6
+§6.30}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Clustering.} Grouping observations according to a chosen
+representation and similarity criterion. A mathematically stable
+partition can still have little managerial meaning if the features,
+scaling, or resulting groups do not match the decision.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-segmentation-begins-with-a-definition-of-similarity}{M4
+§4.5};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-stable-segments-and-substantive-meaning}{M4
+§4.25}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Cohort.} A group defined by a common entry event or other fixed
+rule, such as customers who first subscribed in a particular month.
+Cohort comparisons require consistent follow-up horizons and
+denominators.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-cohorts-retention-and-customer-age}{M2
+§2.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Collider.} A variable caused by two other variables in a causal
+structure. Conditioning on it can create an association between its
+causes, including a spurious path between treatment and outcome.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-a-control-variable-needs-a-causal-role}{M3
+§3.20};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-exact-examples-of-helpful-and-harmful-adjustment}{M3
+§3.21}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Compatibility.} Consistency between a claim and the available
+evidence under stated assumptions. One compatible explanation does not
+establish that it is actual or that every other explanation has been
+excluded.
+\hyperref[M09-premises-consequences-and-counterexamples]{M9
+§9.27.1};
+\hyperref[M09-compatibility-identification-and-valuation]{M9
+§9.40.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Conceptual Engineering.} The deliberate assessment or revision
+of concepts for a purpose. Defining harm, admissible evidence, or
+success can redistribute which concerns receive attention before a
+statistical calculation begins.
+\hyperref[M09-evidentiary-standards-as-conceptual-engineering]{M9
+§9.56}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Confidence Interval.} A set produced by a procedure with a
+specified long-run coverage rate under its assumptions. Its width and
+position describe uncertainty about the target; a wide interval around
+zero can leave economically important effects unresolved.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-uncertainty-dependence-and-practical-importance}{M3
+§3.6};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-choosing-the-null-for-a-claim-about-harm}{M6
+§6.47}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Conflict of Interest.} A situation in which a secondary interest
+can improperly influence judgment owed to another person or purpose. Its
+existence supplies a reason for safeguards and scrutiny without proving
+that a particular judgment was corrupted.
+\hyperref[M09-conflicts-of-interest-and-the-analysts-judgment]{M9
+§9.45}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Conformal Prediction.} A method that uses a calibration sample
+and nonconformity scores to construct prediction sets or intervals with
+coverage guarantees under specified conditions. Marginal coverage
+generally does not imply equal coverage for every customer subgroup.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-demand-intervals-and-the-distribution-of-forecast-errors}{M7
+§7.24};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-prediction-sets-and-customer-service-routing}{M7
+§7.25}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Confounding.} A distortion of a causal comparison caused by
+common influences on treatment and outcome. Adjustment can address
+measured confounding under suitable assumptions, while predictive fit
+alone does not establish that the comparison is causal.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-why-the-treated-untreated-difference-can-be-biased}{M6
+§6.2};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-observational-adjustment-and-its-limits}{M6
+§6.7}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Confucian Role Ethics.} An approach that evaluates conduct
+through relationships, responsibilities, and cultivated judgment.
+Evaluating a commercial role requires considering humaneness,
+appropriate conduct, and reciprocity alongside formal obligations.
+\hyperref[M09-confucian-perspectives-on-marketing-conduct]{M9
+§9.11}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Conjoint Analysis.} A method for learning preferences from
+evaluations or choices among profiles whose attributes vary by design.
+Design, task realism, identification, and the relationship between
+stated and actual choices determine the usefulness of the estimated
+tradeoffs.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-product-design-requires-tradeoffs}{M4
+§4.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-estimate-and-validate-preferences}{M4
+§4.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Consent.} Authorization under conditions that support
+understanding, voluntariness, and a meaningful opportunity to refuse. A
+click, purchase, or continuing payment does not by itself establish that
+those conditions hold.
+\hyperref[M09-worked-case-identical-renewal-different-customer-intent]{M9
+§9.5};
+\hyperref[M09-mobile-targeting-and-authority-over-customer-information]{M9
+§9.37}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Construct.} The concept an analysis seeks to represent, such as
+satisfaction, agency, or affordability. Its relationship to a recorded
+variable must be defended through definitions, measurement choices, and
+evidence relevant to the intended use.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-define-the-construct-and-the-document}{M5
+§5.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-defining-harm-before-choosing-its-measure}{M2
+§2.32}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Construct Validity.} The adequacy of a measurement or
+operational procedure for representing its intended construct. A
+reliably recorded quantity can still be an inadequate measure of the
+customer interest named in the claim.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-electricity-prices-household-bills-and-the-unit-of-harm}{M2
+§2.28};
+\hyperref[M09-worked-assessments-of-the-missing-object]{M9
+§9.68}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Consumer Harm Elasticity.} The proportional change in a
+specified consumer-harm measure relative to a proportional change in a
+specified statistical property. In the worked example, it is a
+conditional sensitivity calculation whose sign and interpretation depend
+on the model, baseline, and decision rule.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-greater-precision-and-fewer-detected-harms}{M6
+§6.46};
+\hyperref[M09-heterogeneity-and-the-interpretation-of-consumer-harm]{M9
+§9.57}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Consumer Surplus.} The difference between modeled willingness to
+pay and expenditure for the purchased quantity. Its welfare
+interpretation depends on the preference model, available alternatives,
+and treatment of constraints; it does not exhaust reasons concerning
+autonomy or fair treatment.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-demand-information-pricing-and-consumer-surplus}{M4
+§4.26};
+\hyperref[M09-identical-tested-demand-and-opposite-welfare-conclusions]{M9
+§9.35}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Contestability.} An affected person's effective opportunity to
+question a classification, claim, or decision and obtain a response
+capable of changing it. Nominal access to a complaint form can coexist
+with an ineffective route for challenge.
+\hyperref[M09-reasons-owed-to-the-people-represented]{M9
+§9.62};
+\hyperref[M09-justifying-restricted-research-to-affected-people]{M9
+§9.65}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Contextual Integrity.} An account of privacy that evaluates
+information flows by their social context, actors, attributes, and
+transmission principles. A restriction requires attention to the
+appropriate flow and protected person, not secrecy as an end in itself
+(Nissenbaum, 2004).
+\hyperref[M09-a-philosophical-argument-against-protective-secrecy]{M9
+§9.65.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Contractualism.} An ethical approach that asks whether
+principles regulating conduct could be reasonably rejected by affected
+individuals. Justification depends on their reasons and burdens under
+feasible alternatives, rather than treating aggregate advantage as
+sufficient (Scanlon, 1998).
+\hyperref[M09-what-a-company-ought-to-do]{M9
+§9.30};
+\hyperref[M09-maxims-of-data-production-and-disclosure]{M9
+§9.65.8}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Contradiction in Conception.} A failure in universalization
+where the maxim undermines a practice or means that its own action
+presupposes (Kant, 1785). Seeking the credibility of observation while
+knowingly presenting invention as observation supplies an analogous
+research case.
+\hyperref[M09-maxims-of-data-production-and-disclosure]{M9
+§9.65.8}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Contradiction in Willing.} A failure in universalization where
+an agent cannot consistently will the maxim as universal alongside ends
+necessarily implicated in rational agency. An unpopular outcome or a
+personal dislike alone does not establish this contradiction (Kant,
+1785).
+\hyperref[M09-maxims-of-data-production-and-disclosure]{M9
+§9.65.8}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Control Group.} Units used to represent the outcome that treated
+units would have experienced under the comparison condition. Absence of
+a recorded operating data center does not by itself establish absence of
+preparatory investment or other exposure.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-difference-in-differences-and-a-counterfactual-trend}{M6
+§6.8};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-phantom-projects-and-the-meaning-of-a-control}{M6
+§6.41}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Cosine Similarity.} The normalized inner product of two nonzero
+vectors. It compares their directions in a chosen representation, so its
+substantive meaning depends on how that representation encodes the
+objects of interest.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-embeddings-and-semantic-similarity}{M5
+§5.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Counterexample.} A case in which an argument's premises hold
+while its proposed conclusion fails. It defeats the asserted entailment,
+although establishing which case describes the actual world remains an
+empirical question.
+\hyperref[M09-premises-consequences-and-counterexamples]{M9
+§9.27.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Counterfactual.} The outcome or state that would obtain under a
+specified alternative to the observed action or condition. Its
+credibility depends on the design, assumptions, and institutional
+details supporting the alternative.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-define-the-treatment-outcome-and-estimand}{M6
+§6.1};
+\hyperref[M09-pricing-evidence-in-a-u.s.-antitrust-case]{M9
+§9.38}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Coverage.} The proportion of relevant cases represented by data,
+or the probability that an interval contains its target. These uses
+require different denominators and should be distinguished whenever
+reporting evidence coverage or statistical coverage.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-access-to-evidence-changes-the-review-sample}{M2
+§2.20};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-demand-intervals-and-the-distribution-of-forecast-errors}{M7
+§7.24}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Cross-Fitting.} Estimating nuisance components on observations
+separate from those used in a subsequent estimating equation, often
+rotating across folds. This separation helps control overfitting effects
+under the estimator's additional assumptions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-adjustment-for-selected-discount-intensity}{M6
+§6.23}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Cross-Validation.} Evaluating a modeling procedure across
+held-out subsets of the available data. Splits must respect the
+deployment setting, and every learned preprocessing or tuning step must
+be kept separate from the corresponding validation observations.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-cross-validation-and-leakage}{M7
+§7.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Culpability.} The basis for moral blame, assessed through
+knowledge, intention, negligence, control, and reasonable alternatives.
+A defective dataset or retracted article does not alone establish which
+individual knowingly caused the defect.
+\hyperref[M09-responsibility-for-the-artifact-and-its-uses]{M9
+§9.65.7};
+\hyperref[M09-misleading-research-replication-and-correction]{M9
+§9.84}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{CUPED.} A control-variate adjustment that uses pre-treatment
+information to reduce experimental outcome variance. Its justification
+requires preserving the treatment comparison and handling estimation of
+the adjustment consistently with the design.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-mhealth-prior-activity-and-experiment-precision}{M6
+§6.15}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Customer Lifetime Value (CLV).} The discounted expected
+contribution from a customer relationship over a defined horizon, net of
+the costs included in the calculation. Retention, timing, margin,
+acquisition expense, and discounting determine its interpretation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-customer-lifetime-value-depends-on-timing-and-margin}{M4
+§4.7}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-d}{%
+\section*{D}\label{module-d}}
+\addcontentsline{toc}{section}{D}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Data Dictionary.} Documentation of variables, units, allowable
+values, missing-value conventions, and observation units. It supports
+consistent use of a file but must be reconciled with the records and
+collection process.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-mhealth-from-food-entries-to-a-decision-table}{M1
+§1.8}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Data Leakage.} Use of information during training or evaluation
+that would be unavailable at the intended prediction time or would
+improperly reveal evaluation outcomes. Leakage can produce strong
+reported performance that fails under actual deployment.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-cross-validation-and-leakage}{M7
+§7.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Data Lineage.} The documented path from source records through
+extracts, joins, transformations, and released outputs. Preserving
+lineage allows a critic to connect a reported quantity to the decisions
+that produced it.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-data-have-a-production-history}{M2
+§2.30};
+\hyperref[M09-responsibility-for-the-artifact-and-its-uses]{M9
+§9.65.7}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Data Provenance.} Information about a dataset's origin,
+collection, authorship, version, and processing history. Provenance
+helps assess what the records represent and which claims they can
+support.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-data-have-a-production-history}{M2
+§2.30};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-reproducing-a-result-and-assessing-its-records}{M2
+§2.35}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Data-Generating Process.} The probabilistic or institutional
+account of how observations arise. A simulation specifies such a
+process, while an empirical analysis must justify how its model relates
+to actual selection, measurement, and behavior.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-unbiased-estimation-and-the-consequences-of-error}{M3
+§3.22};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-why-the-treated-untreated-difference-can-be-biased}{M6
+§6.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Decision Threshold.} The cutoff at which a score, probability,
+or evidential quantity triggers an action. A justified threshold
+connects uncertainty to the costs, benefits, and reasons associated with
+acting or withholding action.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-thresholds-should-reflect-the-decision}{M7
+§7.7};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-prediction-thresholds-and-consumer-consequences}{M7
+§7.48}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Deduction.} Inference in which the conclusion follows
+necessarily from the premises. A valid deduction can still fail to
+establish a substantive conclusion when its premises are false or
+unsupported.
+\hyperref[M09-premises-consequences-and-counterexamples]{M9
+§9.27.1};
+\hyperref[M09-validity-soundness-and-evidential-support]{M9
+§9.40.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Denominator.} The population, exposure, or total relative to
+which a rate or proportion is calculated. Changing the denominator can
+change the meaning of a comparison even when the numerator remains
+fixed.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-define-the-population-before-the-metric}{M2
+§2.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-earnings-calls-pricing-language-speaking-exposure-and-meaning}{M5
+§5.14}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Deontology.} An approach to morality that gives duties and
+constraints on conduct a role independent of maximizing aggregate
+consequences. The Kantian applications examine principles and treatment
+of persons alongside the outcomes of marketing practices.
+\hyperref[M09-respect-for-persons-and-commercial-exchange]{M9
+§9.4};
+\hyperref[M09-a-kantian-critique-of-commercial-optimization]{M9
+§9.16}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Derivative Moral Right.} A right whose justification rests on
+the interests or rights of others. A corporation may claim protection
+through the people it serves or represents, but the relevant interests
+and restriction still require a specific defense (Pasternak, 2017).
+\hyperref[M09-corporate-duties-and-human-protections]{M9
+§9.65.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Descriptive Claim.} A statement about observed records or a
+specified population summary. Its support depends on measurement,
+selection, denominators, and the scope of observation; a descriptive
+comparison does not automatically identify an intervention's effect.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-interpreting-and-communicating-a-result}{M1
+§1.6};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-define-the-population-before-the-metric}{M2
+§2.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Development Set.} Observations used to choose models, prompts,
+hyperparameters, or analytical procedures. Repeated selection makes this
+set part of development and creates a need for independent final
+evaluation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-repeated-selection-can-improve-a-score-without-improving-prediction}{M7
+§7.20};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-repeated-prompt-revision-and-independent-text-evaluation}{M5
+§5.15}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Difference-in-Differences (DiD).} A comparison of changes in
+outcomes across treated and comparison groups. A causal interpretation
+requires a justified counterfactual trend and appropriate handling of
+timing, anticipation, composition, and spillovers.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-difference-in-differences-and-a-counterfactual-trend}{M6
+§6.8};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-continuous-treatment-and-parallel-trends}{M6
+§6.27}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Distribution Shift.} A change between the data distribution used
+to develop or evaluate a model and the distribution encountered later.
+Changes in customers, policies, measurement, or labels can invalidate
+earlier performance or coverage claims.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-demand-intervals-and-the-distribution-of-forecast-errors}{M7
+§7.24};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-prediction-intervals-when-demand-changes}{M8
+§8.21}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Dose-Response Curve.} The expected outcome under different
+levels of a treatment, such as discount depth. A causal curve requires a
+defined population, adequate treatment support, and assumptions linking
+observed dose variation to interventions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-discount-depth-and-the-causal-response-curve}{M6
+§6.22};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-adjustment-for-selected-discount-intensity}{M6
+§6.23}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Double Machine Learning.} An estimation approach that combines
+nuisance-function learning with estimating equations designed to reduce
+sensitivity to nuisance errors, commonly using cross-fitting. Causal
+validity still depends on identification assumptions and suitable rates
+or regularity conditions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-adjustment-for-selected-discount-intensity}{M6
+§6.23}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Dynamic Pricing.} Prices that vary over time or market
+conditions. Whether a practice involves deception, discrimination,
+coordination, or justified adjustment depends on its actual conduct and
+institutional setting.
+\hyperref[M09-pricing-policy-what-conduct-is-being-evaluated]{M9
+§9.15};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-pricing-communication-customer-outcomes-and-regulatory-evidence}{M8
+§8.16}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-e}{%
+\section*{E}\label{module-e}}
+\addcontentsline{toc}{section}{E}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Ecological Inference.} Drawing conclusions about individuals
+from aggregate observations. Area averages can conceal differences in
+exposure, consumption, and costs, so a household interpretation requires
+additional evidence or assumptions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-electricity-prices-household-bills-and-the-unit-of-harm}{M2
+§2.28};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-area-income-digital-usage-and-the-comparison-defined-by-controls}{M3
+§3.17}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Economic Significance.} The magnitude of an effect relative to a
+substantive decision, burden, or benchmark. It is distinct from
+statistical significance and requires stated units, a meaningful
+comparison, and attention to uncertainty.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-power-precision-and-the-minimum-useful-effect}{M6
+§6.5};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-statistical-detection-and-a-profitable-campaign}{M6
+§6.32}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Elasticity.} The proportional response of one quantity to a
+proportional change in another, holding the specified conditions fixed.
+Its substantive interpretation depends on the variables, comparison, and
+whether the relationship is descriptive, structural, or causal.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-price-elasticity-when-prices-respond-to-demand}{M3
+§3.12}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Embedding.} A numerical representation of an object, such as a
+text, in a vector space. Similarity in that space reflects the
+representation and training objective; it requires validation for the
+marketing construct and population of interest.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-embeddings-and-semantic-similarity}{M5
+§5.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Empiricism.} A family of views emphasizing experience or
+observation in knowledge. Critical assessment asks whether measurable
+regularities can settle questions of ontology or moral permission
+without further premises.
+\hyperref[M09-philosophical-critiques-of-empiricism-and-reduction]{M9
+§9.43};
+\hyperref[M09-philosophical-grounds-for-the-critique]{M9
+§9.67}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Epistemic Fallacy.} The reduction of questions about what exists
+to questions about how it is known. The critique preserves a distinction
+between a real burden and the available means of measuring or
+identifying it (Bhaskar, 2007).
+\hyperref[M09-abstraction-and-the-object-represented]{M9
+§9.67.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Epistemic Injustice.} A wrong affecting people in their capacity
+as knowers, including diminished credibility or inadequate shared
+resources for making their experience intelligible. Institutional
+prestige can affect whose account receives uptake in a public dispute.
+\hyperref[M09-who-counts-as-a-stakeholder-and-why]{M9
+§9.32}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Epistemic Norm.} A standard governing warranted belief or
+inquiry, such as attention to evidence, independent criticism, and
+reliable inference. Compliance with an epistemic standard leaves further
+questions about the permissible use of the resulting claim.
+\hyperref[M09-truth-warrant-and-the-different-force-of-norms]{M9
+§9.52}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Epistemology.} Inquiry into knowledge, justification, and the
+grounds of belief. In analytics, it asks what supports an interpretation
+and how evidence, assumptions, and criticism affect its warrant.
+\hyperref[M09-truth-warrant-and-the-different-force-of-norms]{M9
+§9.52};
+\hyperref[M09-philosophical-grounds-for-the-critique]{M9
+§9.67}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Equivalence Test.} A test designed to assess whether an effect
+lies within a pre-specified interval of substantively negligible values.
+Failure to reject a zero-effect null does not substitute for
+demonstrating equivalence within those margins.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-choosing-the-null-for-a-claim-about-harm}{M6
+§6.47};
+\hyperref[M09-evidence-for-a-small-burden]{M9
+§9.25}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Equivocation.} A change in the meaning of a term within an
+argument that makes an inference appear stronger than it is. Moving from
+an average electricity price to a claim about household bills can
+conceal a change in the object being evaluated.
+\hyperref[M09-the-question-and-the-meaning-of-its-terms]{M9
+§9.40.2};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-electricity-prices-household-bills-and-the-unit-of-harm}{M2
+§2.28}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Estimand.} The quantity an analysis seeks to learn, defined
+through its population, outcome, treatment or comparison, and time
+horizon. A precise estimator can be unhelpful if its estimand differs
+from the question used to justify action.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-define-the-treatment-outcome-and-estimand}{M6
+§6.1};
+\hyperref[M09-statistical-virtues-and-ontological-laziness]{M9
+§9.66}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Estimator.} A rule for calculating an estimate from observed
+data. Its bias, variance, and other properties are defined relative to a
+target, sampling process, and assumptions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-a-conditional-mean-and-a-regression-line}{M3
+§3.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-unbiased-estimation-and-the-consequences-of-error}{M3
+§3.22}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Evidential Warrant.} The support that evidence and defensible
+premises provide for a claim. Warrant concerns the relationship between
+evidence and interpretation; the institutional approval of an output
+alone does not establish it.
+\hyperref[M09-truth-warrant-and-the-different-force-of-norms]{M9
+§9.52}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Exchangeability.} A symmetry under which the joint distribution
+is unchanged by permitted permutations of observations. It underlies
+standard conformal guarantees and must be assessed against time
+dependence, group structure, and changing policies.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-demand-intervals-and-the-distribution-of-forecast-errors}{M7
+§7.24}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Exclusion Restriction.} The condition that an instrument affects
+the outcome only through the treatment channel relevant to the model. A
+strong first-stage relationship does not establish this condition.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-price-elasticity-when-prices-respond-to-demand}{M3
+§3.12};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-other-designs-discontinuities-and-instruments}{M6
+§6.9}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Expected Loss.} The probability-weighted consequence of errors
+or actions under a specified loss function. Choosing the loss function
+assigns importance to outcomes and affected parties, so optimization
+requires a defended objective.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-thresholds-should-reflect-the-decision}{M7
+§7.7};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-type-i-and-type-ii-errors-under-unequal-costs}{M6
+§6.44}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Expression of Concern.} A formal journal notice identifying
+unresolved concerns about a published article. It differs from a
+retraction and does not establish that every result, author, or
+associated study is fraudulent.
+\hyperref[M09-misleading-research-replication-and-correction]{M9
+§9.84}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{External Validity.} The credibility of extending a finding to a
+different population, setting, policy, or period. A well-identified
+effect in one study requires additional reasoning to support its use
+under changed conditions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-experimental-evidence-and-ai-assisted-decisions}{M6
+§6.21};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-model-updates-and-the-decision-to-revisit-an-analysis}{M8
+§8.18}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-f}{%
+\section*{F}\label{module-f}}
+\addcontentsline{toc}{section}{F}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{False Discovery Rate.} The expected proportion of false
+rejections among rejected hypotheses, with the proportion defined as
+zero when there are no rejections. Control depends on the procedure and
+its assumptions about the tests.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-store-assignment-and-false-discoveries}{M6
+§6.30}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{False Negative.} A case in which a decision rule fails to flag a
+condition that is present. Its frequency and harm depend on the target
+condition, threshold, reference evidence, and consequences of
+withholding action.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-case-study-accuracy-can-conceal-a-useless-model}{M7
+§7.5};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-prediction-thresholds-and-consumer-consequences}{M7
+§7.48}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{False Positive.} A case in which a decision rule flags a
+condition that is absent. Its practical cost depends on the action
+triggered; an exploratory inquiry and a final penalty can impose
+different burdens.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-prediction-thresholds-and-consumer-consequences}{M7
+§7.48};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-type-i-and-type-ii-errors-under-unequal-costs}{M6
+§6.44}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Feature.} An input supplied to a prediction or estimation
+procedure. Feature availability, construction, scaling, and timing
+affect validity, especially when preprocessing learns from data or a
+feature is affected by treatment.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-specify-the-forecast-origin-and-target}{M7
+§7.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-cross-validation-and-leakage}{M7
+§7.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Feedback Loop.} A process in which model-directed actions
+influence the observations used for subsequent learning. Recommendations
+shape exposure, so observed clicks can reflect both customer preferences
+and the policy that made items visible.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-recommendation-systems-learn-from-selected-exposure}{M8
+§8.1};
+\hyperref[M09-personalization-and-the-learners-authority]{M9
+§9.44}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Fixed Effects.} Parameters representing persistent differences
+across specified units or periods. Their inclusion changes the variation
+used to estimate a relationship and does not automatically remove
+time-varying confounding or treatment-induced selection.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-diagnostics-and-panel-data}{M3
+§3.7}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Forecast Origin.} The moment at which a prediction is made and
+the information set is fixed. Features, training labels, and evaluation
+splits must respect what could actually be known at that time.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-specify-the-forecast-origin-and-target}{M7
+§7.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-event-timing-and-information-at-the-alert}{M7
+§7.30}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Free Will.} The philosophical question of agency and control
+relevant to a person's authorship of action and responsibility.
+Statistical predictability or randomness alone does not resolve that
+question.
+\hyperref[M09-phenomena-noumena-and-the-ends-of-analysis]{M9
+§9.41}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-g}{%
+\section*{G}\label{module-g}}
+\addcontentsline{toc}{section}{G}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Gamification.} Use of game-associated features, such as points,
+streaks, or challenges, within another activity. Evaluating it requires
+distinguishing beneficial goal support from burdens that arise when
+continued activity loses the user's endorsement.
+\hyperref[M09-marketing-research-and-compulsive-online-engagement]{M9
+§9.70};
+\hyperref[M09-whose-value-does-gamification-create]{M9
+§9.73}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Generalized Propensity Score.} A representation of the
+conditional distribution or density of treatment intensity given
+covariates. Its role in a causal dose-response analysis depends on
+overlap, the assignment assumptions, and the treatment scale.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-adjustment-for-selected-discount-intensity}{M6
+§6.23};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-overlap-weight-concentration-and-missing-confounders}{M6
+§6.24}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Goldberg Screen.} An assessment comparing reported energy intake
+with basal metabolic rate and an expected activity-related requirement
+under specified variability assumptions. Appropriate use depends on the
+instrument, observation period, population, and availability of relevant
+physiological information.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-mhealth-nutrition-knowledge-and-sample-restrictions}{M2
+§2.11}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Graph.} A representation of entities as nodes and specified
+relationships as edges. The meaning of an edge, the included population,
+and the direction or weight of a relation determine which substantive
+questions the graph can answer.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-networks-connections-reach-and-brokerage}{M5
+§5.7};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-attributed-claims-and-graph-relationships}{M5
+§5.25}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Graph Coarsening.} Reducing a graph by grouping or aggregating
+nodes while seeking to preserve selected properties. A good compression
+score does not establish that customer access or predictive conclusions
+survive the transformation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-compressing-a-network-and-preserving-customer-access}{M5
+§5.24};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-network-compression-label-purity-and-predictive-evidence}{M7
+§7.38}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Ground Truth.} The reference used to judge a prediction or
+label. In an empirical application, that reference has its own
+collection rules, uncertainty, and possible error; the label alone
+supplies no guarantee of truth.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-evaluate-the-grader-and-justify-the-rubric}{M5
+§5.20};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-evaluation-coverage-and-the-costs-of-grading-errors}{M7
+§7.26}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-h}{%
+\section*{H}\label{module-h}}
+\addcontentsline{toc}{section}{H}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Harm.} An adverse effect on a specified person's interests or
+standing. A defensible analysis identifies the affected person, burden,
+comparison, and timing before selecting a proxy or deciding what
+evidence would justify protection.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-defining-harm-before-choosing-its-measure}{M2
+§2.32};
+\hyperref[M09-who-counts-as-a-stakeholder-and-why]{M9
+§9.32}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Hash.} A deterministic digest computed from a file's bytes. A
+matching cryptographic hash can verify that two copies are
+byte-identical; it does not establish the truth of the observations or
+the adequacy of their interpretation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-worked-example-retention-and-pending-cancellation}{M2
+§2.34};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-reproducing-a-result-and-assessing-its-records}{M2
+§2.35}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Heterogeneity.} Differences across customers, products, markets,
+or periods in characteristics, responses, or preferences. Modeling these
+differences can change fit, uncertainty, and estimated incidence, with
+no universal direction for the detection of harm.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-heterogeneous-demand-market-power-and-consumer-interests}{M4
+§4.30};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-greater-precision-and-fewer-detected-harms}{M6
+§6.46}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Hierarchy in a Statistical Model.} A structure in which
+unit-specific parameters are related through shared distributional
+parameters. It enables partial pooling and makes assumptions about
+similarity consequential for individual estimates.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-released-retail-data-integrated-heterogeneity-and-competing-explanations}{M4
+§4.31};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-store-decisions-and-partial-pooling}{M6
+§6.26}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Humanity Formulation.} The requirement to treat humanity, in
+oneself and others, always also as an end and never merely as a means.
+Its marketing applications examine deception, authority, and the
+person's capacity to judge and pursue ends (Kant, 1785).
+\hyperref[M09-respect-for-persons-and-commercial-exchange]{M9
+§9.4};
+\hyperref[M09-maxims-of-data-production-and-disclosure]{M9
+§9.65.8}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Hyperparameter.} A choice governing a learning procedure, such
+as regularization strength or tree depth. It should be selected using
+training or development information while preserving an independent
+basis for final evaluation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-baselines-loss-functions-and-regularization}{M7
+§7.2};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-cross-validation-and-leakage}{M7
+§7.4}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-i}{%
+\section*{I}\label{module-i}}
+\addcontentsline{toc}{section}{I}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Identification.} Whether a target is uniquely determined by the
+information and assumptions available. Observationally equivalent
+explanations can leave a target unidentified even with unlimited data
+from the same observation process.
+\hyperref[M09-compatibility-identification-and-valuation]{M9
+§9.40.3};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-equal-historical-fit-and-different-price-effects}{M6
+§6.38}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Inductive Risk.} The risk of error when evidence supports an
+inference without determining its truth with certainty. The consequences
+of accepting or rejecting a claim can matter for evidential standards
+and decisions about action.
+\hyperref[M09-truth-warrant-and-the-different-force-of-norms]{M9
+§9.52};
+\hyperref[M09-a-reasonable-principle-for-acting-under-uncertainty]{M9
+§9.58}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Information Set.} The facts, signals, records, and tools
+available to an actor at a specified time. Respecting that boundary is
+necessary when evaluating forecasts, experiments, agent behavior, or the
+reasonableness of a past decision.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-information-tools-and-a-verified-analysis}{M1
+§1.17};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-available-information-and-observed-answers}{M7
+§7.44}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Instrumental Rationality.} Choosing effective means to a given
+end. A profitable or statistically efficient action can satisfy this
+criterion while leaving the worthiness of the end and reasons owed to
+others unresolved.
+\hyperref[M09-what-a-company-ought-to-do]{M9
+§9.30};
+\hyperref[M09-deliberate-about-ends-before-optimizing-means]{M9
+§9.41.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Instrumental Variable.} A source of treatment variation used to
+isolate a causal comparison under relevance, exclusion, and other
+design-specific assumptions. The resulting effect depends on the
+population and variation identified by those assumptions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-price-elasticity-when-prices-respond-to-demand}{M3
+§3.12};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-other-designs-discontinuities-and-instruments}{M6
+§6.9}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Integration over Heterogeneity.} Averaging over a modeled
+distribution of differing preferences or response parameters when
+calculating a likelihood, prediction, or welfare quantity. The result
+inherits the specification, distributional assumptions, and definition
+of the target.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-released-retail-data-integrated-heterogeneity-and-competing-explanations}{M4
+§4.31};
+\hyperref[M09-heterogeneity-and-the-interpretation-of-consumer-harm]{M9
+§9.57}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Intent-to-Treat Effect.} The effect of assignment to an
+intervention, regardless of subsequent compliance or uptake. It answers
+a policy question about offering or assigning the treatment under the
+implementation studied.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-case-study-estimate-an-email-assignment-effect}{M6
+§6.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Interaction.} A specification in which the relationship between
+one variable and an outcome depends on another variable. Interpreting
+the model requires the relevant combination of coefficients and the
+support of the interacting variables.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-interactions-describe-how-a-relationship-changes}{M3
+§3.5}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Interference.} A situation in which one unit's outcome depends
+on another unit's treatment. It can undermine a comparison that treats
+customers, stores, or utilities as isolated and requires an exposure
+definition matched to the mechanism.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-designing-an-experiment-around-the-decision}{M6
+§6.3};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-institutional-exposure-and-the-meaning-of-an-untreated-utility}{M6
+§6.35}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Internal Validity.} The credibility of the study's inference for
+the comparison and population it actually studies. Assignment,
+measurement, attrition, and analysis choices determine this credibility;
+broad external applicability is a separate question.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-designing-an-experiment-around-the-decision}{M6
+§6.3};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-implementation-checks-that-protect-the-comparison}{M6
+§6.6}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Inverse Power.} Reasoning from a test's power properties and
+nonrejection to bounds or statements about effects still compatible with
+the result. It requires a specified test and assumptions; substituting
+the observed estimate for a meaningful alternative does not establish no
+harm.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-inverse-power-and-the-scope-of-nonrejection}{M6
+§6.34}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-j}{%
+\section*{J}\label{module-j}}
+\addcontentsline{toc}{section}{J}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Join Cardinality.} The relationship between key occurrences in
+two tables, such as one-to-one or one-to-many. Unexpected many-to-many
+matches can duplicate records and change totals without producing a
+software error.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-the-unit-of-observation-determines-the-calculation}{M1
+§1.2};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-build-a-customer-table-without-losing-customers}{M2
+§2.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Justification.} Reasons adequate to support a belief, claim, or
+action. Empirical support for a response estimate and moral permission
+to use it answer different questions, each requiring premises suited to
+its conclusion.
+\hyperref[M09-a-critical-examination-of-marketing-claims]{M9
+§9.3};
+\hyperref[M09-what-a-company-ought-to-do]{M9
+§9.30}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-k}{%
+\section*{K}\label{module-k}}
+\addcontentsline{toc}{section}{K}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{K-Means.} A clustering procedure that seeks centers minimizing
+within-group squared distances. Feature scaling, the number of centers,
+initialization, and the geometry of the representation affect the
+resulting partition.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-segmentation-begins-with-a-definition-of-similarity}{M4
+§4.5};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-clustering-cost-and-the-meaning-of-a-segment}{M4
+§4.18}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Known to Be the Never Known.} An expression for a principled
+limit on theoretical knowledge, developed through Kantian noumena. It is
+distinct from a presently unmeasured empirical quantity and does not
+license factual assertions without evidence.
+\hyperref[M09-the-known-to-be-the-never-known]{M9
+§9.41.5}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-l}{%
+\section*{L}\label{module-l}}
+\addcontentsline{toc}{section}{L}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Label Shift.} A change in the prevalence of outcome classes
+across populations or periods while class-conditional feature
+distributions remain stable. Precision can change with prevalence even
+when class-conditional error rates remain fixed.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-case-study-a-complaint-detector-under-changing-prevalence}{M5
+§5.5}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Leakage.} See \textbf{Data Leakage}.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-cross-validation-and-leakage}{M7
+§7.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Learning Objective.} The quantity a training or adaptation
+procedure seeks to improve. Selecting the objective defines which
+responses count as success and requires justification when the resulting
+behavior affects people.
+\hyperref[M09-personalization-and-the-learners-authority]{M9
+§9.44};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-a-predictable-response-and-a-defensible-objective}{M7
+§7.47}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Legal Personhood.} Recognition of an entity as a bearer of
+rights or duties within a legal system. It is distinct from biological
+humanity, moral agency, and the grounds for moral protection.
+\hyperref[M09-corporate-duties-and-human-protections]{M9
+§9.65.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Likelihood.} The probability or density of observed data viewed
+as a function of model parameters. It organizes evidence within the
+specified model and does not establish the adequacy of that model for a
+broader interpretation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-released-retail-data-integrated-heterogeneity-and-competing-explanations}{M4
+§4.31}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{LLM-as-Judge.} Use of a language model to score or label other
+outputs. Its judgments require validation against the intended rubric,
+error costs, stability across versions, and independence from the
+procedure being evaluated.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-evaluate-the-grader-and-justify-the-rubric}{M5
+§5.20};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-evaluation-coverage-and-the-costs-of-grading-errors}{M7
+§7.26}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Logical Validity.} A property of an argument in which the
+conclusion must follow if its premises are true. Validity concerns the
+inferential structure; the truth and evidential support of the premises
+require separate assessment.
+\hyperref[M09-logical-assessment-of-an-empirical-argument]{M9
+§9.27};
+\hyperref[M09-validity-soundness-and-evidential-support]{M9
+§9.40.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Logistic Regression.} A model that relates covariates to the log
+odds of a binary outcome. Its probability predictions are nonlinear in
+the covariates, and causal interpretations require additional design or
+identification assumptions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-logistic-regression-trees-and-ensembles}{M7
+§7.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Loss Function.} A rule assigning a cost to a prediction error or
+decision outcome. Its choice determines which mistakes the procedure
+prioritizes and may omit consumer burdens that matter to the decision.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-baselines-loss-functions-and-regularization}{M7
+§7.2};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-thresholds-should-reflect-the-decision}{M7
+§7.7}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-m}{%
+\section*{M}\label{module-m}}
+\addcontentsline{toc}{section}{M}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Many Hands, Problem of.} The difficulty of allocating
+responsibility when many actors contribute to an outcome while knowledge
+and authority are distributed among them. Identifiable duties and
+records of decisions help prevent diffusion of accountability
+(Nissenbaum, 1996).
+\hyperref[M09-responsibility-for-the-artifact-and-its-uses]{M9
+§9.65.7}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Marginal Effect.} The change in a modeled outcome associated
+with a small change in one input at specified values of other inputs. In
+nonlinear models, it can differ across observations and from the
+reported coefficient.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-a-linear-coefficient-and-a-nonlinear-decision}{M3
+§3.14}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Marginal Return.} The additional contribution generated by the
+next unit of spending or effort. Allocation decisions compare marginal
+returns under the relevant constraints, rather than assuming that the
+highest historical average return deserves the next dollar.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-case-study-allocate-the-next-dollar-using-marginal-returns}{M8
+§8.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Market Power.} The ability to profitably sustain prices or other
+terms above a relevant competitive benchmark. Assessing it requires
+attention to substitution, entry, constraints, and the conduct at issue,
+alongside estimated demand.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-heterogeneous-demand-market-power-and-consumer-interests}{M4
+§4.30};
+\hyperref[M09-pricing-evidence-in-a-u.s.-antitrust-case]{M9
+§9.38}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Marketing Dialectics.} Critical examination of the premises
+connecting commercial results, claims about customers, and
+recommendations. This application draws on philosophical dialectic and
+ethical justification while preserving the distinction from a technical
+Kantian antinomy.
+\hyperref[M09-transcendental-dialectic-and-the-limits-of-reason]{M9
+§9.2};
+\hyperref[M09-a-critical-examination-of-marketing-claims]{M9
+§9.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Marketing-Mix Model.} A model relating marketing activity and
+other covariates to an outcome over time or across units. Carryover,
+saturation, confounding, and the chosen outcome affect the meaning of
+budget recommendations.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-marketing-mix-models-combine-carryover-and-saturation}{M8
+§8.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Maxim.} A subjective principle of action stated through its
+circumstance, action, and end. Moral assessment requires a faithful
+account of the operative principle, including the purpose of a
+restriction or assurance (Kant, 1785).
+\hyperref[M09-maxims-of-data-production-and-disclosure]{M9
+§9.65.8}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Mean Absolute Error (MAE).} The average absolute difference
+between predictions and observed outcomes over a specified sample. It
+preserves the outcome's units and weights errors linearly, so evaluation
+still requires a sample and loss appropriate to the decision.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-baselines-loss-functions-and-regularization}{M7
+§7.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Measurement.} The process of representing a defined attribute
+through observations and rules. Accuracy in recording a variable leaves
+a further question about whether that variable represents the
+substantive object named in a claim.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-electricity-prices-household-bills-and-the-unit-of-harm}{M2
+§2.28};
+\hyperref[M09-the-ontology-of-a-dataset]{M9
+§9.60}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Measurement Error.} A discrepancy between a recorded measure and
+the quantity it is intended to represent. Its consequences depend on how
+the error relates to treatment, outcomes, covariates, and selection.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-mcdonalds-measuring-ice-cream-availability}{M2
+§2.16};
+\hyperref[M09-worked-assessments-of-the-missing-object]{M9
+§9.68}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Mediator.} A variable on a causal pathway from treatment to
+outcome. Adjusting for it can remove part of the total effect and
+requires additional assumptions if the target is a direct effect.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-a-control-variable-needs-a-causal-role}{M3
+§3.20};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-treatment-affected-covariates-in-a-panel}{M6
+§6.40}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Minimum Detectable Effect (MDE).} The effect magnitude
+associated with a chosen power under a specified design, significance
+level, and alternative. It is a design quantity, and it need not equal
+the smallest effect that matters economically.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-power-precision-and-the-minimum-useful-effect}{M6
+§6.5};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-statistical-detection-and-a-profitable-campaign}{M6
+§6.32}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Missingness.} Absence of a record or value that the analysis
+would otherwise use. Missing observations can represent unrecorded
+activity, unavailable documents, or loss to follow-up; treating them as
+zeros requires substantive justification.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-build-a-customer-table-without-losing-customers}{M2
+§2.2};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-mhealth-recorded-variety-and-missing-days}{M2
+§2.10}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Modality.} The status of a claim as possible, necessary, or
+actual. Showing that a model permits a reassuring explanation does not
+establish that the explanation occurred, and identifying a possible
+burden does not establish its realized magnitude.
+\hyperref[M09-compatibility-identification-and-valuation]{M9
+§9.40.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Moral Agency.} The capacity of an actor to bear moral
+obligations and answer for choices. Arguments that an organization can
+bear duties do not by themselves establish that it has all the moral
+protections of a human person.
+\hyperref[M09-corporate-duties-and-human-protections]{M9
+§9.65.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Moral Standing.} The status of having interests or claims that
+count directly in moral evaluation. It is distinct from legal personhood
+and from the capacity to make morally responsible choices.
+\hyperref[M09-corporate-duties-and-human-protections]{M9
+§9.65.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Multiple Testing.} Examining several hypotheses or outcomes
+within a research process. Interpreting selected significant findings
+requires attention to the family of comparisons, selection rules, and
+the error criterion being controlled.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-store-assignment-and-false-discoveries}{M6
+§6.30}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-n}{%
+\section*{N}\label{module-n}}
+\addcontentsline{toc}{section}{N}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Network Centrality.} A measure of a node's position or
+importance in a specified graph. Degree, brokerage, and path-based
+measures answer different questions; a high score does not automatically
+establish influence on purchasing.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-networks-connections-reach-and-brokerage}{M5
+§5.7}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Non-Disclosure Agreement (NDA).} An agreement restricting access
+to or disclosure of information. Its evidential and moral significance
+depends on the actual terms governing selection, analysis, publication,
+preservation, and independent challenge.
+\hyperref[M09-research-under-confidentiality-agreements]{M9
+§9.63};
+\hyperref[M09-worked-case-confidentiality-and-corporate-accountability]{M9
+§9.65.5}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Noninferiority Test.} A test asking whether an outcome is no
+worse than a reference by more than a specified margin. The direction,
+units, margin, and assumptions must match the practical assurance being
+offered.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-choosing-the-null-for-a-claim-about-harm}{M6
+§6.47}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Nonrejection.} A test outcome that does not meet the rule for
+rejecting its null hypothesis. Its substantive meaning depends on
+uncertainty and the effects the procedure could detect or exclude; it
+does not alone establish absence or negligibility.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-testing-electricity-price-interpretations-against-the-reported-tables}{M6
+§6.33};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-choosing-the-null-for-a-claim-about-harm}{M6
+§6.47}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Norm.} A standard concerning belief, conduct, or institutional
+practice. Distinguishing epistemic, moral, legal, and professional norms
+prevents success under one standard from being treated as sufficient
+under all the others.
+\hyperref[M09-truth-warrant-and-the-different-force-of-norms]{M9
+§9.52}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Normalized Discounted Cumulative Gain (NDCG).} A ranking measure
+comparing position-discounted relevance with the best ordering under the
+same relevance labels. The cutoff, gain scale, candidate set, and label
+availability determine the comparison.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-ranking-metrics-depend-on-position-and-available-labels}{M7
+§7.11}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Normative Premise.} A premise about what ought to be done,
+permitted, or valued. It supplies a necessary part of an argument that
+moves from a descriptive or causal finding to a recommendation.
+\hyperref[M09-what-a-company-ought-to-do]{M9
+§9.30};
+\hyperref[M09-from-a-conditional-result-to-an-ought-conclusion]{M9
+§9.40.5}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Noumenon.} An object considered apart from the conditions of
+sensible intuition. In its negative Kantian use, it marks a limit on
+theoretical cognition; it is not simply an unmeasured variable awaiting
+a better dataset (Kant, 1781/1787).
+\hyperref[M09-phenomena-noumena-and-the-ends-of-analysis]{M9
+§9.41}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Null Hypothesis.} The parameter restriction or class of states
+against which a statistical procedure evaluates evidence. A zero-effect
+null and a null containing harmful effects pose different inferential
+questions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-choosing-the-null-for-a-claim-about-harm}{M6
+§6.47}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-o}{%
+\section*{O}\label{module-o}}
+\addcontentsline{toc}{section}{O}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Observation Unit.} The entity or event represented by one
+analytical record. A food entry, customer-day, utility-year, and
+household bill describe different objects, even when each becomes a row
+in a table.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-the-unit-of-observation-determines-the-calculation}{M1
+§1.2};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-electricity-prices-household-bills-and-the-unit-of-harm}{M2
+§2.28}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Observational Equivalence.} A situation in which different
+mechanisms or parameter configurations produce the same available
+observations. Additional data, assumptions, or a different design are
+needed to distinguish their substantive implications.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-equal-historical-fit-and-different-price-effects}{M6
+§6.38};
+\hyperref[M09-identical-tested-demand-and-opposite-welfare-conclusions]{M9
+§9.35}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Off-Policy Evaluation.} Estimating the value of a policy using
+observations collected under another policy. Validity depends on
+information about exposure or assignment, support for the proposed
+actions, and assumptions linking recorded outcomes to the target policy.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-ai-assisted-workflow-and-practice}{M6
+§6.11};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-recommendation-systems-learn-from-selected-exposure}{M8
+§8.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Omitted-Variable Bias.} A difference between a regression
+coefficient and its intended target caused by leaving out a relevant
+variable correlated with included regressors. The interpretation depends
+on the model and the target of the coefficient.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-multiple-regression-and-the-comparison-it-uses}{M3
+§3.2};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-case-study-attractive-markets-and-apparent-competitive-benefits}{M3
+§3.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Ontological Adequacy.} The defensibility of an analysis's
+account of the entities, interests, and relationships named in its
+substantive claim. Better statistical performance for a chosen variable
+need not improve that account.
+\hyperref[M09-a-spectrum-of-ontological-adequacy]{M9
+§9.42};
+\hyperref[M09-statistical-virtues-and-ontological-laziness]{M9
+§9.66}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Ontological Laziness.} Treating a convenient representation as
+an adequate account of the relevant reality without defending the
+connection. A substantive criticism identifies the omitted relation and
+explains how it could change the interpretation or decision.
+\hyperref[M09-statistical-virtues-and-ontological-laziness]{M9
+§9.66}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Ontology.} Inquiry into what exists and the kinds of entities
+and relationships involved. In analytics, it asks what a customer,
+outcome, burden, or data object is before a convenient field is treated
+as its complete representation.
+\hyperref[M09-definitions-evidence-and-permission]{M9
+§9.19};
+\hyperref[M09-the-ontology-of-a-dataset]{M9
+§9.60}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Operationalization.} The rules translating a construct into a
+recorded variable or analytical procedure. Counting completed renewals
+operationalizes a billing status; interpreting it as voluntary
+continuation requires further evidence.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-cancellation-requests-and-recorded-completion}{M2
+§2.25};
+\hyperref[M09-what-the-artifact-makes-visible]{M9
+§9.61}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Opportunity Cost.} The value of the best feasible alternative
+forgone by a decision. It depends on the alternatives available to the
+relevant actor and should not be confused with an observed expenditure
+alone.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-ai-services-buyer-burden-and-the-outside-option}{M4
+§4.16};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-case-study-allocate-the-next-dollar-using-marginal-returns}{M8
+§8.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Ordinary Least Squares (OLS).} An estimator choosing
+coefficients to minimize the sum of squared residuals in a linear
+regression. Causal, predictive, and descriptive uses require different
+interpretations and supporting assumptions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-a-conditional-mean-and-a-regression-line}{M3
+§3.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Ought.} A claim about what an actor should do. Its defense
+requires reasons and normative premises alongside empirical evidence
+about the feasible actions and their consequences.
+\hyperref[M09-what-a-company-ought-to-do]{M9
+§9.30};
+\hyperref[M09-from-a-conditional-result-to-an-ought-conclusion]{M9
+§9.40.5}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Outcome.} The quantity evaluated after or in relation to an
+action. Its definition specifies the observation unit, units, timing,
+and population, and determines which consequences enter the analysis.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-define-the-treatment-outcome-and-estimand}{M6
+§6.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-defining-harm-before-choosing-its-measure}{M2
+§2.32}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Outside Option.} The alternative available if a customer
+declines the focal offer. Access, switching costs, essential needs, and
+information can make this option materially different across customers.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-ai-services-buyer-burden-and-the-outside-option}{M4
+§4.16};
+\hyperref[M09-pricing-authority-and-customer-alternatives]{M9
+§9.22}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Overfitting.} Adapting a model or decision process to
+idiosyncrasies of the development data so that reported fit exceeds
+performance on independent cases. Repeated prompt revision can create
+the same problem as repeated model tuning.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-cross-validation-and-leakage}{M7
+§7.4};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-repeated-prompt-revision-and-independent-text-evaluation}{M5
+§5.15}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Overlap.} Availability of treatment or action variation across
+the covariate values relevant to a causal or policy comparison. Weak
+overlap can make estimates depend heavily on a few observations or on
+extrapolation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-overlap-weight-concentration-and-missing-confounders}{M6
+§6.24}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-p}{%
+\section*{P}\label{module-p}}
+\addcontentsline{toc}{section}{P}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{P-Value.} The probability, under the null hypothesis and test
+assumptions, of a statistic at least as incompatible with the null as
+the observed statistic according to the test's ordering. It is not the
+probability that the null is true.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-p-values-across-repeated-marketing-experiments}{M3
+§3.19};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-testing-electricity-price-interpretations-against-the-reported-tables}{M6
+§6.33}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Panel Data.} Repeated observations on the same units over time.
+Their analysis must account for dependence, changing composition,
+timing, and the distinction between differences across units and changes
+within units.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-diagnostics-and-panel-data}{M3
+§3.7};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-customer-differences-and-changes-within-customers}{M2
+§2.22}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Parallel Trends.} A condition that treated and comparison groups
+would have followed the specified common trend in the absence of
+treatment. Similar observed pre-treatment trends may inform its
+plausibility but cannot prove the unobserved counterfactual.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-difference-in-differences-and-a-counterfactual-trend}{M6
+§6.8};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-continuous-treatment-and-parallel-trends}{M6
+§6.27}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Partial Identification.} Learning a set of values consistent
+with the available evidence and assumptions when a unique value is not
+determined. Its usefulness depends on the decision and the consequences
+associated with the remaining possibilities.
+\hyperref[M09-compatibility-identification-and-valuation]{M9
+§9.40.3};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-evidence-for-action-before-precise-identification}{M6
+§6.45}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Partial Pooling.} Estimating unit-specific quantities while
+sharing information through a common model. It can reduce variance and
+pull estimates toward a group distribution, with consequences that
+depend on the degree of pooling and substantive heterogeneity.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-store-decisions-and-partial-pooling}{M6
+§6.26};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-greater-precision-and-fewer-detected-harms}{M6
+§6.46}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Personalization.} Adapting an offer, price, message, or ranking
+to information about a person. Evaluating it requires attention to the
+objective, customer alternatives, distribution of burdens, and authority
+to revise or reject the resulting treatment.
+\hyperref[M09-personalization-learning-and-the-ability-to-revise-a-goal]{M9
+§9.7};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-ai-experimentation-and-personalized-pricing}{M8
+§8.20}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Phantom Data Center.} A proposed or anticipated project that
+does not become an operating facility in the relevant period.
+Preparatory expenditure can precede failure or withdrawal, so
+operating-facility data can miss economically relevant exposure.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-institutional-exposure-and-the-meaning-of-an-untreated-utility}{M6
+§6.35};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-phantom-projects-and-the-meaning-of-a-control}{M6
+§6.41}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Phenomenon.} An object as it appears under the conditions of
+experience. The Kantian discussion distinguishes empirical inquiry into
+appearances from claims to theoretical knowledge of things considered
+independently of those conditions.
+\hyperref[M09-phenomena-noumena-and-the-ends-of-analysis]{M9
+§9.41}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Physical Activity Level (PAL).} A measure of total energy
+expenditure relative to basal metabolic rate over a defined period. An
+assumed PAL in a dietary screen should be distinguished from an
+individually measured value.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-mhealth-nutrition-knowledge-and-sample-restrictions}{M2
+§2.11}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Policy Value.} The expected outcome under a specified rule for
+choosing actions. Its interpretation depends on the target population,
+reward definition, information, and assumptions supporting evaluation of
+that rule.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-ai-assisted-workflow-and-practice}{M6
+§6.11};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-recommendation-systems-learn-from-selected-exposure}{M8
+§8.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Post-Treatment Variable.} A variable determined after treatment
+and potentially affected by it. Conditioning on such a variable can
+block part of the effect, induce selection, or change the population
+being compared.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-a-control-variable-needs-a-causal-role}{M3
+§3.20};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-treatment-affected-covariates-in-a-panel}{M6
+§6.40}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Posterior Distribution.} The distribution over unknown
+quantities obtained by combining a prior with the likelihood of observed
+data. It quantifies uncertainty conditional on the chosen model and
+prior.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-released-retail-data-integrated-heterogeneity-and-competing-explanations}{M4
+§4.31};
+\hyperref[M09-heterogeneity-and-the-interpretation-of-consumer-harm]{M9
+§9.57}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Power.} The probability of rejecting a null hypothesis under a
+specified alternative and design. Power is relative to an effect and
+test; a statement that a study is well powered needs a substantively
+relevant alternative.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-power-precision-and-the-minimum-useful-effect}{M6
+§6.5};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-inverse-power-and-the-scope-of-nonrejection}{M6
+§6.34}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Precision.} In estimation, the concentration of an estimator's
+sampling distribution, often summarized by its standard error. In
+classification, precision is the share of predicted positives that are
+reference positives. The two meanings use different denominators and
+answer different questions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-uncertainty-dependence-and-practical-importance}{M3
+§3.6};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-case-study-a-complaint-detector-under-changing-prevalence}{M5
+§5.5}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Prediction Interval.} A range intended to cover a future outcome
+or another specified predictive target. It includes variation relevant
+to that target and differs from uncertainty about an estimated mean or
+parameter.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-demand-intervals-and-the-distribution-of-forecast-errors}{M7
+§7.24}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Premise.} A proposition offered in support of a conclusion. A
+useful assessment identifies whether it is definitional, empirical,
+theoretical, or normative, and examines the evidence or reasons needed
+to defend it.
+\hyperref[M09-logical-assessment-of-an-empirical-argument]{M9
+§9.27};
+\hyperref[M09-logical-consequence-and-a-defensible-recommendation]{M9
+§9.40}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Price Discrimination.} Charging different prices across
+customers or transactions beyond differences explained by the relevant
+cost comparison. Its economic, legal, and moral evaluation depends on
+the conduct, setting, alternatives, and distribution of gains and
+burdens.
+\hyperref[M09-pricing-policy-what-conduct-is-being-evaluated]{M9
+§9.15};
+\hyperref[M09-pricing-evidence-in-a-u.s.-antitrust-case]{M9
+§9.38}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Prior Distribution.} A distribution representing assumptions or
+information about unknown quantities before updating with the specified
+data. Its influence should be evaluated where evidence is weak or
+pooling affects consequential individual conclusions.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-released-retail-data-integrated-heterogeneity-and-competing-explanations}{M4
+§4.31};
+\hyperref[M09-heterogeneity-and-the-interpretation-of-consumer-harm]{M9
+§9.57}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Privacy.} Protection of people's interests in the collection,
+use, and disclosure of information about them. A corporation's
+commercial confidentiality requires its own justification and is not
+automatically equivalent to a person's privacy claim.
+\hyperref[M09-corporate-duties-and-human-protections]{M9
+§9.65.2};
+\hyperref[M09-a-philosophical-argument-against-protective-secrecy]{M9
+§9.65.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Propensity Score.} The probability of treatment conditional on
+specified pre-treatment covariates. It can support adjustment under
+appropriate assignment assumptions and overlap, while balance on
+observed covariates leaves unobserved confounding unresolved.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-observational-adjustment-and-its-limits}{M6
+§6.7}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Proxy.} A recorded variable used to represent another construct
+or quantity. Its convenience or predictive association does not
+establish that it preserves the meaning of the claim or the interests
+relevant to the decision.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-electricity-prices-household-bills-and-the-unit-of-harm}{M2
+§2.28};
+\hyperref[M09-worked-assessments-of-the-missing-object]{M9
+§9.68}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Publication Bias.} Selection into the public research record
+associated with findings or their perceived publishability. Accurate
+calculations within published studies do not by themselves repair the
+resulting distortion in the visible evidence.
+\hyperref[M09-undone-science-and-the-distribution-of-evidence]{M9
+§9.53};
+\hyperref[M09-selection-before-and-after-estimation]{M9
+§9.63.3}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-q}{%
+\section*{Q}\label{module-q}}
+\addcontentsline{toc}{section}{Q}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Qualitative Evidence.} Interpretive evidence from documents,
+statements, observations, or other contextual records. Credible use
+preserves provenance, sampling, exact meaning, contrary cases, and the
+distinction between an actor's stated account and independently
+established conduct.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-utility-disclosures-as-qualitative-evidence}{M5
+§5.27};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-qualitative-mechanisms-and-a-causal-comparison}{M6
+§6.36}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-r}{%
+\section*{R}\label{module-r}}
+\addcontentsline{toc}{section}{R}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Random Assignment.} Allocation of treatment using a chance
+mechanism with known or controlled probabilities. It supports comparable
+groups in expectation, while finite-sample imbalance, noncompliance,
+missing outcomes, and interference still require assessment.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-designing-an-experiment-around-the-decision}{M6
+§6.3};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-implementation-checks-that-protect-the-comparison}{M6
+§6.6}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Random Seed.} An initialization controlling a pseudorandom
+generator's sequence. Recording it supports reproduction within a
+specified environment, while exact agreement can also depend on
+libraries, algorithms, ordering, and parallel execution.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-python-objects-and-reproducible-calculations}{M1
+§1.3};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-mhealth-planning-a-randomized-suggestion-test}{M6
+§6.13}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Randomization Inference.} Inference based on the distribution of
+a statistic over assignments permitted by the experimental design, often
+under a sharp null. Its validity rests on the assignment mechanism and
+the tested hypothesis.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-mhealth-prior-activity-and-experiment-precision}{M6
+§6.15};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-store-assignment-and-false-discoveries}{M6
+§6.30}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Ranking.} Ordering alternatives according to a score or rule.
+Ranking quality differs from calibrated probability, forecasted
+quantities, and consumer welfare, each of which requires its own target
+and evaluation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-ranking-and-calibration-answer-different-questions}{M7
+§7.6};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-the-same-ranking-can-produce-different-demand-forecasts}{M7
+§7.23}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Reasonable Rejection.} An objection to a general principle
+grounded in an affected person's reasons, burdens, and feasible
+alternatives. It is a standard of interpersonal justification, not a
+count of disapproval or a rule that every preference must prevail
+(Scanlon, 1998).
+\hyperref[M09-what-a-company-ought-to-do]{M9
+§9.30};
+\hyperref[M09-maxims-of-data-production-and-disclosure]{M9
+§9.65.8}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Reasonableness.} The acceptability of reasons and conduct in
+light of relevant persons, burdens, and alternatives. Efficient pursuit
+of a firm's chosen goal can leave reasonableness unresolved when others
+bear consequences they could reasonably reject.
+\hyperref[M09-what-a-company-ought-to-do]{M9
+§9.30};
+\hyperref[M09-a-reasonable-principle-for-acting-under-uncertainty]{M9
+§9.58}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Recall.} The share of reference-positive cases identified as
+positive by a classifier. Improving recall can increase false positives,
+so the operating point requires attention to both the evaluation
+population and the decisions triggered.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-case-study-a-complaint-detector-under-changing-prevalence}{M5
+§5.5};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-case-study-accuracy-can-conceal-a-useless-model}{M7
+§7.5}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Receiver Operating Characteristic (ROC) Curve.} A comparison of
+true-positive and false-positive rates as a binary-score threshold
+varies. It describes classification tradeoffs but leaves action costs,
+class prevalence, and a justified deployment threshold to be specified.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-ranking-and-calibration-answer-different-questions}{M7
+§7.6}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Recency, Frequency, and Monetary Value (RFM).} Customer
+summaries of time since a recorded transaction, transaction frequency,
+and recorded expenditure over defined windows. Their construction
+requires a common reference date and consistent treatment of missing
+activity and observation length.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-mhealth-recency-and-frequency-at-a-fixed-date}{M2
+§2.13}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Reciprocity.} Examination of one's treatment of others from
+their position. In the Confucian application, it motivates attention to
+customers' actual resources and purposes, rather than assuming that the
+manager's own tolerance defines acceptable treatment.
+\hyperref[M09-remonstrance-reciprocity-and-learning]{M9
+§9.11.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Rectification of Names.} A Confucian concern with the
+relationship among descriptions, social roles, and appropriate conduct.
+Calling a process customer care or cancellation carries expectations
+about what the service should actually accomplish.
+\hyperref[M09-trustworthiness-and-the-responsibilities-of-a-role]{M9
+§9.11.2};
+\hyperref[M09-definitions-evidence-and-permission]{M9
+§9.19}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Regression Discontinuity (RD).} A design comparing outcomes near
+a treatment-assignment threshold. A causal interpretation requires
+conditions about continuity, sorting, and treatment implementation and
+typically concerns units near that cutoff.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-other-designs-discontinuities-and-instruments}{M6
+§6.9}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Regularization.} A restriction or penalty that limits model
+complexity or shrinks fitted parameters. It can improve out-of-sample
+performance while changing bias, variance, and the behavior of estimates
+for particular groups.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-baselines-loss-functions-and-regularization}{M7
+§7.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Remedial Responsibility.} A duty to help correct harm, repair an
+unreliable public claim, or change the process producing the problem. It
+can follow from capacity and institutional connection even when personal
+culpability remains unresolved.
+\hyperref[M09-responsibility-for-the-artifact-and-its-uses]{M9
+§9.65.7};
+\hyperref[M09-the-harm-and-the-duty-to-correct]{M9
+§9.84.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Remonstrance.} Reasoned, truthful challenge offered within a
+relationship of service or authority. Its organizational application
+requires an effective opportunity to raise objections and have them
+considered, including objections to a profitable practice.
+\hyperref[M09-remonstrance-reciprocity-and-learning]{M9
+§9.11.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Replication.} Using newly collected data to examine the same
+scientific question. Its design and target must be stated, and a failure
+to replicate does not by itself establish fabrication in the earlier
+study.
+\hyperref[M09-three-questions-about-a-research-claim]{M9
+§9.84.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Reproducibility.} Obtaining consistent computational results
+using the same data, code, and analytical procedure. It supports
+checking calculations while leaving separate questions about source
+integrity, identification, and moral justification.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-reproducing-a-result-and-assessing-its-records}{M2
+§2.35};
+\hyperref[M09-three-questions-about-a-research-claim]{M9
+§9.84.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Research Integrity.} Responsibilities supporting trustworthy
+production, interpretation, preservation, and correction of research. A
+reliable public record requires incentives and institutions that permit
+independent scrutiny as well as accurate computation.
+\hyperref[M09-misleading-research-replication-and-correction]{M9
+§9.84}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Residual.} The difference between an observed outcome and its
+fitted value. A residual can contain unexplained variation, measurement
+error, or omitted mechanisms; its label does not identify a substantive
+cause.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-a-conditional-mean-and-a-regression-line}{M3
+§3.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-hbs-reassurance-and-misleading-research-communication}{M8
+§8.31}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Responsibility.} An allocation of causal contribution, role
+duties, accountability, blame, or repair. These meanings should be
+distinguished because control over a data artifact and authority over
+its use can lie with different actors.
+\hyperref[M09-responsibility-for-the-artifact-and-its-uses]{M9
+§9.65.7}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Retention.} Continued observed participation or subscription
+under a specified rule and horizon. A retained account can coexist with
+an unresolved cancellation request, so interpreting retention as
+voluntary loyalty requires additional evidence.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-cohorts-retention-and-customer-age}{M2
+§2.4};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-worked-example-retention-and-pending-cancellation}{M2
+§2.34}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Retraction.} A formal withdrawal of reliance on a published
+article because of stated reliability or other publication concerns. The
+notice's grounds determine its scope; retraction alone does not identify
+which person knowingly caused a defect.
+\hyperref[M09-misleading-research-replication-and-correction]{M9
+§9.84}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Righteousness.} Judging conduct through what is appropriate or
+morally required, including constraints on the pursuit of gain. In the
+Confucian discussion, profit alone leaves the justification of means and
+relationships unresolved.
+\hyperref[M09-righteousness-and-profit]{M9
+§9.11.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Ritual Propriety (Li).} Patterned social conduct associated with
+cultivation and appropriate relationships in Confucian thought. Its role
+extends beyond formal compliance, and the term should be distinguished
+from the separately written Chinese word for profit also romanized as
+li.
+\hyperref[M09-moral-beginnings-and-cultivated-conduct]{M9
+§9.11.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Role Responsibility.} Duties attached to an actor's position and
+authority, such as preserving source records or correcting a public
+statement. Performance is assessed against what the role required and
+what the person could reasonably know and do.
+\hyperref[M09-responsibility-for-the-artifact-and-its-uses]{M9
+§9.65.7}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Root Mean Squared Error (RMSE).} The square root of the average
+squared prediction error over a specified sample. It has the outcome's
+units and gives larger errors more influence than mean absolute error.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-baselines-loss-functions-and-regularization}{M7
+§7.2}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-s}{%
+\section*{S}\label{module-s}}
+\addcontentsline{toc}{section}{S}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Sample Selection.} The process determining which units or
+observations enter an analysis. Selection can change representation,
+create associations, or remove important exposures, even when the
+retained observations are measured accurately.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-sample-restrictions-and-customer-representation}{M2
+§2.18};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-thoughtful-design-before-convenient-data}{M6
+§6.42}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Saturation.} A decline in the additional response generated by
+further exposure or spending. Estimating a saturation curve requires
+sufficient support and a defensible interpretation of the relationship
+between spending and response.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M08-marketing-mix-models-combine-carryover-and-saturation}{M8
+§8.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Sensitivity Analysis.} Examining how a conclusion changes when
+specified assumptions, inputs, or modeling choices vary. A useful
+exercise identifies the changed object, plausible range, and implication
+for the decision.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-overlap-weight-concentration-and-missing-confounders}{M6
+§6.24};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-bias-missing-outcomes-and-the-scope-of-reassurance}{M6
+§6.50}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Sentiment Analysis.} Classifying or scoring evaluative language
+in a defined text unit. Performance depends on context, reference
+labels, prevalence, and whether the sentiment construct fits the
+managerial question.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-sentiment-aspect-labels-and-topic-models}{M5
+§5.4};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-case-study-a-complaint-detector-under-changing-prevalence}{M5
+§5.5}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Shrinkage.} Movement of an estimate toward a reference value or
+shared distribution through a penalty or statistical model. Its
+consequences depend on the target and heterogeneity; smaller variance
+need not preserve detection of every subgroup burden.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-greater-precision-and-fewer-detected-harms}{M6
+§6.46};
+\hyperref[M09-heterogeneity-and-the-interpretation-of-consumer-harm]{M9
+§9.57}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Soundness.} The property of an argument that is logically valid
+and has true premises. In an empirical assessment, the analyst must also
+explain the evidence supporting those premises and the scope of their
+interpretation.
+\hyperref[M09-validity-soundness-and-evidential-support]{M9
+§9.40.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Spillover.} An effect of one unit's treatment on another unit's
+outcome. Spillovers can expose nominal controls or alter the population
+relevant to an experiment, requiring a design that represents the
+transmission mechanism.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-designing-an-experiment-around-the-decision}{M6
+§6.3};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-institutional-exposure-and-the-meaning-of-an-untreated-utility}{M6
+§6.35}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Stakeholder.} A person or group with interests, claims, or
+exposure relevant to a decision. Moral standing does not depend solely
+on the person's bargaining power, profitability, or ability to attract
+institutional attention.
+\hyperref[M09-who-counts-as-a-stakeholder-and-why]{M9
+§9.32}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Standard Error.} An estimate of the sampling variability of an
+estimator under a specified design or model. It differs from the spread
+of individual outcomes and must reflect the relevant dependence
+structure.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-uncertainty-dependence-and-practical-importance}{M3
+§3.6}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Statistical Significance.} A test result meeting a specified
+rejection threshold under the test's assumptions. It concerns
+compatibility with the tested null, while effect magnitude, decision
+value, and moral permission require further assessment.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-p-values-across-repeated-marketing-experiments}{M3
+§3.19};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-testing-electricity-price-interpretations-against-the-reported-tables}{M6
+§6.33}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Statistical Unbiasedness.} The property that an estimator's
+expectation equals its target under the assumed process. It does not
+establish that the target captures the relevant consumer burden or that
+the associated decision rule is justified.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-unbiased-estimation-and-the-consequences-of-error}{M3
+§3.22};
+\hyperref[M09-statistical-virtues-and-ontological-laziness]{M9
+§9.66}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Structural Model.} A model linking observed behavior to an
+explicit account of preferences, constraints, technology, or strategic
+interaction. Counterfactual conclusions depend on the identification and
+stability of the structure under the proposed change.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-heterogeneous-demand-market-power-and-consumer-interests}{M4
+§4.30};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-equal-historical-fit-and-different-price-effects}{M6
+§6.38}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Substantive Interpretation.} An account of what an analytical
+finding means for the people, institutions, or decision under study. It
+connects the statistical object to the claimed mechanism or burden
+through explicit, supported premises.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-interpreting-and-communicating-a-result}{M1
+§1.6};
+\hyperref[M09-worked-assessments-of-the-missing-object]{M9
+§9.68}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Support.} The values or situations represented by a distribution
+or dataset. Claims about treatments, prices, or customer types outside
+that support require extrapolation or additional evidence.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-overlap-weight-concentration-and-missing-confounders}{M6
+§6.24};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-demand-information-pricing-and-consumer-surplus}{M4
+§4.26}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Survival Function.} The probability that a time-to-event outcome
+exceeds a specified duration. Its interpretation requires a defined
+event, origin, observation horizon, and treatment of censoring.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-mhealth-time-until-a-logging-gap}{M4
+§4.13}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Synthetic Data.} Records generated through a specified
+construction or model. They can verify calculations and explore
+consequences of assumptions, while any claim about actual behavior
+requires validation against appropriate empirical evidence.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-synthetic-consumers-and-product-concept-screening}{M4
+§4.23};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-of-synthetic-consumer-panels}{M7
+§7.36}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-t}{%
+\section*{T}\label{module-t}}
+\addcontentsline{toc}{section}{T}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Target Population.} The set of units to which an analytical
+conclusion is intended to apply. The observed sample and available
+labels may represent only part of that population.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-define-the-population-before-the-metric}{M2
+§2.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-define-the-treatment-outcome-and-estimand}{M6
+§6.1}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Test Set.} Observations reserved for final evaluation after
+development choices are fixed. Its independence and relevance to
+deployment matter more than its label; repeated examination can turn it
+into development information.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-cross-validation-and-leakage}{M7
+§7.4};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-repeated-selection-can-improve-a-score-without-improving-prediction}{M7
+§7.20}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Testimony.} Information offered through another person's or
+institution's account. Its evidential force depends on competence,
+access, incentives, and opportunities for challenge, rather than
+institutional prestige alone.
+\hyperref[M09-who-counts-as-a-stakeholder-and-why]{M9
+§9.32};
+\hyperref[M09-maxims-of-data-production-and-disclosure]{M9
+§9.65.8}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{TF-IDF.} A text representation combining term frequency within a
+document with a weight based on rarity across documents. The corpus,
+document unit, preprocessing, and denominator shape the resulting
+representation.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-representing-language-with-counts-and-weights}{M5
+§5.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Time Split.} An evaluation design that trains on earlier
+information and evaluates on later observations. It should also respect
+label availability, forecast horizons, customer recurrence, and
+preprocessing boundaries.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-cross-validation-and-leakage}{M7
+§7.4};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-mcdonalds-forecasting-availability-with-missing-future-labels}{M7
+§7.18}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Topic Model.} A model organizing patterns of word occurrence
+into latent topics. Interpreting a topic requires examining its
+documents and terms; a statistical component does not automatically
+correspond to a meaningful customer motive.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-sentiment-aspect-labels-and-topic-models}{M5
+§5.4};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M05-mhealth-text-topics-and-their-denominators}{M5
+§5.12}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Training Set.} Observations used to fit model parameters and
+learned transformations. Keeping training operations separate from
+held-out outcomes is necessary for an honest evaluation of performance
+on new cases.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-cross-validation-and-leakage}{M7
+§7.4}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Treatment.} The intervention, exposure, or assignment whose
+effect is being evaluated. A recorded opening date, a proposed project,
+and preparatory infrastructure investment define different treatments
+and possible causal comparisons.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-define-the-treatment-outcome-and-estimand}{M6
+§6.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-institutional-exposure-and-the-meaning-of-an-untreated-utility}{M6
+§6.35}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Trustworthiness.} Conduct that warrants another person's
+reliance on one's representations or performance of a role. The relevant
+judgment concerns what is said and done, including whether the
+organization responds faithfully to the customer's expressed purpose.
+\hyperref[M09-trustworthiness-and-the-responsibilities-of-a-role]{M9
+§9.11.2}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Truth.} Whether a claim holds about its subject under the
+relevant conditions. The creation of a dataset or institutional
+acceptance of an interpretation does not make every represented claim
+true.
+\hyperref[M09-truth-warrant-and-the-different-force-of-norms]{M9
+§9.52};
+\hyperref[M09-created-objects-and-independent-truth-conditions]{M9
+§9.60.3}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Type I Error.} Rejecting a null hypothesis when it is true. Its
+practical meaning depends on how the null is defined and what action
+follows rejection.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-type-i-and-type-ii-errors-under-unequal-costs}{M6
+§6.44};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-choosing-the-null-for-a-claim-about-harm}{M6
+§6.47}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Type II Error.} Failing to reject a null hypothesis under a
+specified alternative where it is false. Its probability depends on that
+alternative, and its societal cost depends on the resulting action or
+inaction.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-type-i-and-type-ii-errors-under-unequal-costs}{M6
+§6.44};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-choosing-the-null-for-a-claim-about-harm}{M6
+§6.47}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-u}{%
+\section*{U}\label{module-u}}
+\addcontentsline{toc}{section}{U}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Undone Science.} Research that remains unperformed or
+underdeveloped despite potential relevance to affected people. The
+distribution of questions and data can reflect institutions and
+incentives; establishing a particular omission's cause requires
+evidence.
+\hyperref[M09-undone-science-and-the-distribution-of-evidence]{M9
+§9.53}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Unit Test.} A check of a small program behavior against a
+defined expected result. Hand-checkable cases and deliberate
+counterexamples can expose errors that a plausible aggregate result
+would conceal.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-ai-assisted-coding-as-a-sequence-of-verifiable-steps}{M1
+§1.5};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-evaluate-a-checker-with-deliberately-incorrect-programs}{M7
+§7.46}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Universalization.} Evaluating whether a maxim can be conceived
+and willed as a universal law. It tests the principle's coherence and
+relation to rational agency, rather than replacing moral reasoning with
+a popularity survey (Kant, 1785).
+\hyperref[M09-maxims-of-data-production-and-disclosure]{M9
+§9.65.8}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Utility.} A representation of preferences within a specified
+choice model. Its normalization and interpretation depend on the model,
+and an estimated utility function does not by itself establish every
+morally relevant interest of the person.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-utility-choice-probabilities-and-willingness-to-pay}{M4
+§4.2};
+\hyperref[M09-a-customer-type-and-a-persons-reasons]{M9
+§9.34}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-v}{%
+\section*{V}\label{module-v}}
+\addcontentsline{toc}{section}{V}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Validation.} Evaluation of whether a measure, model, procedure,
+or interpretation performs adequately for a stated purpose. The relevant
+evidence changes with the object being validated and the use for which
+it is proposed.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M07-validation-cross-validation-and-leakage}{M7
+§7.4};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-defining-harm-before-choosing-its-measure}{M2
+§2.32}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Variable.} A recorded or modeled attribute that takes values
+across units or states. Its name, units, timing, missingness, and
+construction determine the information it can supply.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-from-a-marketing-question-to-an-analytical-object}{M1
+§1.1};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M02-data-have-a-production-history}{M2
+§2.30}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Variance.} The expected squared deviation of a quantity from its
+mean. Outcome variance describes dispersion among outcomes, while
+sampling variance describes variation in an estimator across repeated
+samples or assignments.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M03-uncertainty-dependence-and-practical-importance}{M3
+§3.6};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M06-power-precision-and-the-minimum-useful-effect}{M6
+§6.5}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Vibe Coding.} An informal label for developing software through
+conversational instructions to an AI system. Explicit specifications,
+inspection, small changes, and independent checks make the resulting
+code and claims assessable.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-ai-assisted-coding-as-a-sequence-of-verifiable-steps}{M1
+§1.5};
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M01-specifications-independent-checks-and-retained-skills}{M1
+§1.14}.
+
+\par\Needspace{10\baselineskip}
+\hypertarget{module-w}{%
+\section*{W}\label{module-w}}
+\addcontentsline{toc}{section}{W}
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Warrant.} See \textbf{Evidential Warrant}.
+\hyperref[M09-truth-warrant-and-the-different-force-of-norms]{M9
+§9.52}.
+
+\Needspace{4\baselineskip}
+\noindent\textbf{Willingness to Pay.} The maximum payment consistent with
+choosing an option under specified preferences, resources, and
+alternatives. Its interpretation is affected by income and constraints
+and does not measure every morally relevant reason concerning the
+exchange.
+\href{Marketing_Analytics_Lecture_Notes.pdf\#M04-utility-choice-probabilities-and-willingness-to-pay}{M4
+§4.2};
+\hyperref[M09-willingness-to-pay-and-equal-moral-standing]{M9
+§9.77}.
+
+\endgroup
 
 \end{document}

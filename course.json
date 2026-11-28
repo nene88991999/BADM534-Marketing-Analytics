@@ -196,6 +196,7 @@
     "03_Data_and_Code/README.md",
     "06_Lecture_Notes/README.md",
     "06_Lecture_Notes/Preface.md",
+    "06_Lecture_Notes/Glossary.md",
     "03_Data_and_Code/Lecture_Examples/README.md",
     "05_Slides/README.md",
     "05_Slides/AGENTS.md",
@@ -532,12 +533,12 @@
     "figures": "06_Lecture_Notes/figures/",
     "examples": "03_Data_and_Code/Lecture_Examples/README.md",
     "author": "Nathan Yang",
-    "revision": "2026-11-27-data-artifacts-responsibility-and-replication",
+    "revision": "2026-11-27-glossary-and-contents",
     "recurring_examples": "03_Data_and_Code/mHealth/recurring_examples/README.md",
     "nutrition_resources": "01_Resources/12_Nutrition_and_Dietary_Data_Quality/README.md",
     "resource_integration": "06_Lecture_Notes/RESOURCE_INTEGRATION.md",
     "figures_count": 165,
-    "pages": 698,
+    "pages": 722,
     "mcbroken_examples": "03_Data_and_Code/McBroken/README.md",
     "genai_demand_examples": "03_Data_and_Code/GenAI_Demand/README.md",
     "ethics_and_regulation": "06_Lecture_Notes/ETHICS_AND_REGULATION.md",
@@ -572,7 +573,10 @@
     "bad_control_examples": "03_Data_and_Code/Bad_Controls/README.md",
     "data_production_examples": "03_Data_and_Code/Data_Production/README.md",
     "evidence_standards_examples": "03_Data_and_Code/Evidence_Standards/README.md",
-    "python_source_blocks": 136
+    "python_source_blocks": 136,
+    "glossary": "06_Lecture_Notes/Glossary.md",
+    "glossary_terms": 280,
+    "table_of_contents": "Linked table immediately after the title page; chapters, sections, and glossary letters."
   },
   "datasets": [
     {
@@ -762,9 +766,12 @@
     "downloaded_files": 35,
     "full_work_access_gaps": 9,
     "verified_on": "2026-11-06",
-    "pages": 157,
+    "pages": 185,
     "figures_count": 36,
-    "updated_on": "2026-11-27"
+    "updated_on": "2026-11-27",
+    "glossary": "06_Lecture_Notes/Glossary.md",
+    "glossary_terms": 280,
+    "table_of_contents": "Linked table immediately after the title page; chapters, sections, and glossary letters."
   },
   "ai_experimentation_pricing": {
     "resources": "01_Resources/16_AI_Experimentation_and_Pricing/README.md",
